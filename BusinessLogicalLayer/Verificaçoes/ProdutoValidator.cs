@@ -8,11 +8,7 @@ namespace BusinessLogicalLayer.Verificaçoes
 {
     public class ProdutoValidator
     {
-<<<<<<< HEAD
-=======
 
-        //aoiuioehfvwhexiuqwweihfwe
->>>>>>> 5cb2093aac04f9c0dc01f6428d0d73b84490a2b6
         public string ValidateProdutoNome(string nome)
         {
             if (String.IsNullOrWhiteSpace(nome))

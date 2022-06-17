@@ -9,7 +9,6 @@ namespace BusinessLogicalLayer.Verificaçoes
     public class ProdutoValidator
     {
 
-        //aoiuioehfvwhexiuqwweihfwe
         public string ValidateProdutoNome(string nome)
         {
             if (String.IsNullOrWhiteSpace(nome))

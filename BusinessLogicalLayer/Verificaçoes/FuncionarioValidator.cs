@@ -45,7 +45,9 @@ namespace BusinessLogicalLayer.Verificaçoes
 
             //Se chegou aqui, validamos com sucesso!
             funcionario.Nome = normatization.NormatizeName(funcionario.Nome);
-            return clienteDAL.Create(funcionario);
+            //return clienteDAL.Create(funcionario);
+            return new Response("", false);
+            
         }
     }
 }

@@ -29,7 +29,7 @@ namespace BusinessLogicalLayer
                 return new Response(erros.ToString(), false);
             }
             cliente.Nome = normatization.NormatizeName(cliente.Nome);
-            return clienteDAL.Create(cliente);
+            return clienteDAL.Insert(cliente);
         }
     }
 }

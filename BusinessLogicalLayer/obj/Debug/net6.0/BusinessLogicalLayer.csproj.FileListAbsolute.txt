@@ -63,3 +63,14 @@ C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\obj\Debug\net6
 C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.dll
 C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\obj\Debug\net6.0\refint\BusinessLogicalLayer.dll
 C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.pdb
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\bin\Debug\net6.0\BusinessLogicalLayer.deps.json
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\bin\Debug\net6.0\BusinessLogicalLayer.dll
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\bin\Debug\net6.0\BusinessLogicalLayer.pdb
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\bin\Debug\net6.0\Entities.dll
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\bin\Debug\net6.0\Shared.dll
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\bin\Debug\net6.0\Entities.pdb
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\bin\Debug\net6.0\Shared.pdb
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.csproj.CopyComplete
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\obj\Debug\net6.0\ref\BusinessLogicalLayer.dll

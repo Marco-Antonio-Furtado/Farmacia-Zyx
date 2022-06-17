@@ -32,7 +32,9 @@ namespace BusinessLogicalLayer.Verificaçoes
 
             //Se chegou aqui, validamos com sucesso!
             fornecedor.NomeResponsavel = normatization.NormatizeName(fornecedor.NomeResponsavel);
-            return clienteDAL.Create(fornecedor);
+            // tem que ser fornecedorDAL ao invés de clienteDAL
+            //return clienteDAL.Insert(fornecedor);
+            return new Response("", true);
         }
     }
 }

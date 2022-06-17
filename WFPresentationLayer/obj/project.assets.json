@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\SAMSUNG\\.nuget\\packages\\": {}
+    "C:\\Users\\Marco Antônio\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\WFPresentationLayer\\WFPresentationLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\WFPresentationLayer\\WFPresentationLayer.csproj",
       "projectName": "WFPresentationLayer",
-      "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\WFPresentationLayer\\WFPresentationLayer.csproj",
-      "packagesPath": "C:\\Users\\SAMSUNG\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\WFPresentationLayer\\obj\\",
+      "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\WFPresentationLayer\\WFPresentationLayer.csproj",
+      "packagesPath": "C:\\Users\\Marco Antônio\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\WFPresentationLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\SAMSUNG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Marco Antônio\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

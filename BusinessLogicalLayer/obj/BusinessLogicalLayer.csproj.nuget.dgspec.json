@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj": {}
+    "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj": {
+    "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
+        "projectUniqueName": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
         "projectName": "BusinessLogicalLayer",
-        "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
-        "packagesPath": "C:\\Users\\Marco Antônio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\BusinessLogicalLayer\\obj\\",
+        "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
+        "packagesPath": "C:\\Users\\SAMSUNG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\BusinessLogicalLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Marco Antônio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SAMSUNG\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Entities\\Entities.csproj"
+              "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\Entities\\Entities.csproj"
               }
             }
           }
@@ -65,17 +65,17 @@
         }
       }
     },
-    "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\DataAccessLayer\\DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\Marco Antônio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\DataAccessLayer\\obj\\",
+        "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\DataAccessLayer\\DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\SAMSUNG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Marco Antônio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SAMSUNG\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,8 +89,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Shared\\Shared.csproj"
+              "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\Shared\\Shared.csproj"
               }
             }
           }
@@ -123,17 +123,17 @@
         }
       }
     },
-    "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Entities\\Entities.csproj": {
+    "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\Marco Antônio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\SAMSUNG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Marco Antônio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SAMSUNG\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -147,8 +147,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Shared\\Shared.csproj"
+              "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\Shared\\Shared.csproj"
               }
             }
           }
@@ -187,17 +187,17 @@
         }
       }
     },
-    "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Shared\\Shared.csproj": {
+    "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\Marco Antônio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\SAMSUNG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Marco Antônio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SAMSUNG\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -1,20 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "9vBeN7lW95EjIAYw52X9YJvMVNmrt44EP1gOBWx7wGSsjmqWF8u1yIC4I0R5Aw7wePVq8C0EmN/PqbELkLRS8Q==",
+  "dgSpecHash": "A61qXDUadkyz314/b+48/jFrfrMpb782BLWylE/ce5M3ji3znbTQOP4Uy1qvIlHDMxvk4SCo6JSLlxi0QS/KRQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
+  "projectFilePath": "C:\\Users\\SAMSUNG\\Desktop\\agora sim de novo\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Marco Antônio\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
-    "C:\\Users\\Marco Antônio\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",
-    "C:\\Users\\Marco Antônio\\.nuget\\packages\\npoi\\2.5.6\\npoi.2.5.6.nupkg.sha512",
-    "C:\\Users\\Marco Antônio\\.nuget\\packages\\portable.bouncycastle\\1.8.9\\portable.bouncycastle.1.8.9.nupkg.sha512",
-    "C:\\Users\\Marco Antônio\\.nuget\\packages\\sharpziplib\\1.3.3\\sharpziplib.1.3.3.nupkg.sha512",
-    "C:\\Users\\Marco Antônio\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
-    "C:\\Users\\Marco Antônio\\.nuget\\packages\\system.drawing.common\\4.5.0\\system.drawing.common.4.5.0.nupkg.sha512",
-    "C:\\Users\\Marco Antônio\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
-    "C:\\Users\\Marco Antônio\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.5.0\\system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
-    "C:\\Users\\Marco Antônio\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
-    "C:\\Users\\Marco Antônio\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
+    "C:\\Users\\SAMSUNG\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\SAMSUNG\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",
+    "C:\\Users\\SAMSUNG\\.nuget\\packages\\npoi\\2.5.6\\npoi.2.5.6.nupkg.sha512",
+    "C:\\Users\\SAMSUNG\\.nuget\\packages\\portable.bouncycastle\\1.8.9\\portable.bouncycastle.1.8.9.nupkg.sha512",
+    "C:\\Users\\SAMSUNG\\.nuget\\packages\\sharpziplib\\1.3.3\\sharpziplib.1.3.3.nupkg.sha512",
+    "C:\\Users\\SAMSUNG\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
+    "C:\\Users\\SAMSUNG\\.nuget\\packages\\system.drawing.common\\4.5.0\\system.drawing.common.4.5.0.nupkg.sha512",
+    "C:\\Users\\SAMSUNG\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\SAMSUNG\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.5.0\\system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
+    "C:\\Users\\SAMSUNG\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
+    "C:\\Users\\SAMSUNG\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

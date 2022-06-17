@@ -11,8 +11,8 @@ namespace BusinessLogicalLayer.Verificaçoes
 {
     public class FuncionarioValidator
     {
-        private StringValidator stringValidator = new StringValidator();
-        private Normatization normatization = new Normatization();
+        private RegraValidacaoString stringValidator = new RegraValidacaoString();
+        private RegraNormatizacao normatization = new RegraNormatizacao();
         private ClienteDAL clienteDAL = new ClienteDAL();
 
         public Response Validate(Funcionario funcionario)

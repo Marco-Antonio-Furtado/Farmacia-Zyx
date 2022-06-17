@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,7 @@ namespace Entities
         public string Email { get; set; }
         public string Telefone1 { get; set; }
         public Endereco Endereco { get; set; }
+        public GrauEmpresa Grau { get; set; }
         public string Senha { get; set; }
 
     }

@@ -9,6 +9,10 @@ namespace Entities
 {
     public class Cliente
     {
+        public Cliente()
+        {
+        }
+
         public Cliente(string nome, string cPF, string rG, string email, string telefone1, string telefone2)
         {
             Nome = nome;

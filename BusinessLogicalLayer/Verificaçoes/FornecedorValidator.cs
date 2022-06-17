@@ -11,14 +11,13 @@ namespace BusinessLogicalLayer.Verificaçoes
 {
     public class FornecedorValidator
     {
-        private StringValidator stringValidator = new StringValidator();
-        private Normatization normatization = new Normatization();
+        private RegraValidacaoString stringValidator = new RegraValidacaoString();
+        private RegraNormatizacao normatization = new RegraNormatizacao();
         private ClienteDAL clienteDAL = new ClienteDAL();
 
         public Response Validate(Fornecedor fornecedor)
         {
             StringBuilder erros = new StringBuilder("");
-
 
             erros.Append(stringValidator.ValidateNome(fornecedor.NomeResponsavel));
             erros.Append(stringValidator.ValidateEmail(fornecedor.Email));
@@ -26,26 +25,13 @@ namespace BusinessLogicalLayer.Verificaçoes
             if (!stringValidator.IsCnpj(fornecedor.CNPJ)) erros.Append("CNPJ Invalido");
             erros.Append(stringValidator.ValidateRazaoSocial(fornecedor.RazaoSocial));
 
-
-
-
-
-            
-
-
-            ////CPF do cliente deve ser único
-            //if (clienteDAL.Exists(cliente.CPF).HasSuccess)
-            //{
-            //    erros += "CPF já cadastrado.";
-            //}
-
             if (erros.Length != 0)
             {
                 return new Response(erros.ToString(), false);
             }
 
             //Se chegou aqui, validamos com sucesso!
-            funcionario.Nome = normatization.NormatizeName(funcionario.Nome);
+            fornecedor.NomeResponsavel = normatization.NormatizeName(fornecedor.NomeResponsavel);
             return clienteDAL.Create(fornecedor);
         }
     }

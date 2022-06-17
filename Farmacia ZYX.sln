@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{817167F5-6E17-44E2-96CF-6D2376C97C51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFPresentationLayer", "WFPresentationLayer\WFPresentationLayer.csproj", "{27525501-184A-4839-B1DA-9AA040136413}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WfPresentationLayer", "WfPresentationLayer\WfPresentationLayer.csproj", "{BB3E3F65-E65C-4AF7-9413-BFA03D492C54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{817167F5-6E17-44E2-96CF-6D2376C97C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{817167F5-6E17-44E2-96CF-6D2376C97C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{817167F5-6E17-44E2-96CF-6D2376C97C51}.Release|Any CPU.Build.0 = Release|Any CPU
-		{27525501-184A-4839-B1DA-9AA040136413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27525501-184A-4839-B1DA-9AA040136413}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{27525501-184A-4839-B1DA-9AA040136413}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{27525501-184A-4839-B1DA-9AA040136413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB3E3F65-E65C-4AF7-9413-BFA03D492C54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB3E3F65-E65C-4AF7-9413-BFA03D492C54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB3E3F65-E65C-4AF7-9413-BFA03D492C54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB3E3F65-E65C-4AF7-9413-BFA03D492C54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

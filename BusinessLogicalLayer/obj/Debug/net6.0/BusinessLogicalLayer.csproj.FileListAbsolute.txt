@@ -36,3 +36,30 @@ C:\Users\entra21\Desktop\AdultMoviesLocator\BusinessLogicalLayer\obj\Debug\net6.
 C:\Users\entra21\Desktop\AdultMoviesLocator\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.dll
 C:\Users\entra21\Desktop\AdultMoviesLocator\BusinessLogicalLayer\obj\Debug\net6.0\ref\BusinessLogicalLayer.dll
 C:\Users\entra21\Desktop\AdultMoviesLocator\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.pdb
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.csproj.AssemblyReference.cache
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.AssemblyInfoInputs.cache
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.AssemblyInfo.cs
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.csproj.CoreCompileInputs.cache
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.dll
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.pdb
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\bin\Debug\net6.0\BusinessLogicalLayer.deps.json
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\bin\Debug\net6.0\BusinessLogicalLayer.dll
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\bin\Debug\net6.0\BusinessLogicalLayer.pdb
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\bin\Debug\net6.0\Entities.dll
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\bin\Debug\net6.0\Shared.dll
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\bin\Debug\net6.0\Entities.pdb
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\bin\Debug\net6.0\Shared.pdb
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.csproj.CopyComplete
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\obj\Debug\net6.0\refint\BusinessLogicalLayer.dll
+C:\Users\SAMSUNG\Desktop\agora sim de novo\BusinessLogicalLayer\obj\Debug\net6.0\ref\BusinessLogicalLayer.dll
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.csproj.AssemblyReference.cache
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.AssemblyInfoInputs.cache
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.AssemblyInfo.cs
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.csproj.CoreCompileInputs.cache
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.dll
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\obj\Debug\net6.0\refint\BusinessLogicalLayer.dll
+C:\Users\Marco Antônio\Desktop\Farmacia ZYX\BusinessLogicalLayer\obj\Debug\net6.0\BusinessLogicalLayer.pdb

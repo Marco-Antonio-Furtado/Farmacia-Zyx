@@ -7,19 +7,16 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer
 {
-    internal class StringValidator
+    internal class RegraValidacaoString
     {
-        //private const int MAXIMO_CARACTERES_NOME = 100;
+        private const int MAXIMO_CARACTERES_NOME = 100;
+        private const int MINIMO_CARACTERES_NOME = 3;
+        private const int CARACTERES_CPF = 11;
+        private const int MAXIMO_CARACTERES_EMAIL = 100;
+        private const int MINIMO_CARACTERES_EMAIL = 3;
+        private const int CARACTERES_CEP = 8;
+        private const int CARACTERES_CNPJ = 14;
 
-        /// <summary>
-        /// Verifica algumas regras para o nome, como:
-        /// 1)Apenas alfabeto romano
-        /// 2)Apenas um espaço entre nome e sobrenome
-        /// 3)Mínimo de 3 caracteres
-        /// 4)Mínimo de 2 entre nome e sobrenome
-        /// </summary>
-        /// <param name="nome">Nome a ser validado</param>
-        /// <returns>Retorna vazio "" caso o nome esteja correto</returns>
         public string ValidateNome(string nome)
         {
             if (string.IsNullOrWhiteSpace(nome))
@@ -32,7 +29,7 @@ namespace BusinessLogicalLayer
             //Função que remove os espaços extra entre as strings (deixando apenas um)
             nome = Regex.Replace(nome, @"\s+", " ");
 
-            if (nome.Length < 3)
+            if (nome.Length < MINIMO_CARACTERES_NOME)
             {
                 return "Nome deve conter no mínimo 3 caracteres.";
             }
@@ -56,7 +53,7 @@ namespace BusinessLogicalLayer
                 return "Nome deve conter apenas caracteres do alfabeto romano.";
             }
 
-            if (nome.Length > 100)
+            if (nome.Length > MAXIMO_CARACTERES_NOME)
             {
                 return "Nome não pode conter mais que 100 caracteres.";
             }
@@ -85,7 +82,7 @@ namespace BusinessLogicalLayer
             int resto;
             cpf = cpf.Trim();
             cpf = cpf.Replace(".", "").Replace("-", "");
-            if (cpf.Length != 11)
+            if (cpf.Length != CARACTERES_CPF)
                 return "CPF deve conter 11 caracteres";
             tempCpf = cpf.Substring(0, 9);
             soma = 0;
@@ -125,12 +122,12 @@ namespace BusinessLogicalLayer
 
             email = email.Trim();
 
-            if (email.Length < 5)
+            if (email.Length < MINIMO_CARACTERES_NOME)
             {
                 return "Email não pode conter menos que 5 caracteres.";
             }
 
-            if (email.Length > 100)
+            if (email.Length > MAXIMO_CARACTERES_EMAIL)
             {
                 return "Email não pode conter mais que 100 caracteres.";
             }
@@ -154,7 +151,7 @@ namespace BusinessLogicalLayer
             //Substitui - e . por "" (vazio)
             cep = cep.Replace("-", "").Replace(".", "");
 
-            if (cep.Length != 8)
+            if (cep.Length != CARACTERES_CEP)
             {
                 return "CEP deve conter 8 dígitos (sem considerar hífen/ponto).";
             }
@@ -217,7 +214,7 @@ namespace BusinessLogicalLayer
                 string tempCnpj;
                 cnpj = cnpj.Trim();
                 cnpj = cnpj.Replace(".", "").Replace("-", "").Replace("/", "");
-                if (cnpj.Length != 14)
+                if (cnpj.Length != CARACTERES_CNPJ)
                     return false;
                 tempCnpj = cnpj.Substring(0, 12);
                 soma = 0;

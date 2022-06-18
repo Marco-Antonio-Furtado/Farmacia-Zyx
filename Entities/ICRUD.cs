@@ -15,5 +15,7 @@ namespace Entities
         Response Delete(int id);
         DataResponse<T> GetAll();
         SingleResponse<T> GetByID(int id);
+        SingleResponse<T> GetByEmail(string email);
+
     }
 }

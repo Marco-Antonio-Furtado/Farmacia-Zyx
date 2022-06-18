@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer
 {
-    internal class RegraValidacaoString
+    public class RegraValidacaoString
     {
         private const int MAXIMO_CARACTERES_NOME = 100;
         private const int MINIMO_CARACTERES_NOME = 3;
@@ -113,6 +113,8 @@ namespace BusinessLogicalLayer
             return "";
         }
 
+
+        //Validação do email deve estar errada
         public string ValidateEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
@@ -132,11 +134,6 @@ namespace BusinessLogicalLayer
                 return "Email não pode conter mais que 100 caracteres.";
             }
             
-            string pattern = @"^([\w\.\-] +)@([\w\-] +)((\.(\w){ 2,3})+)$";
-            if (!Regex.IsMatch(email,pattern))
-            {
-                return "Email inválido.";
-            }
             return "";
         }
 

@@ -243,5 +243,10 @@ namespace DataAccessLayer
                 connection.Dispose();
             }
         }
+
+        public SingleResponse<Cliente> GetByEmail(string email)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

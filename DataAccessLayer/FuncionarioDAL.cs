@@ -10,6 +10,15 @@ namespace DataAccessLayer
 {
     public class FuncionarioDAL : ICRUD<Funcionario>
     {
+        public Response Insert(Funcionario item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Response Update(Funcionario item)
+        {
+            throw new NotImplementedException();
+        }
         public Response Delete(int id)
         {
             throw new NotImplementedException();
@@ -25,12 +34,7 @@ namespace DataAccessLayer
             throw new NotImplementedException();
         }
 
-        public Response Insert(Funcionario item)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Response Update(Funcionario item)
+        public SingleResponse<Funcionario> GetByEmail(string email)
         {
             throw new NotImplementedException();
         }

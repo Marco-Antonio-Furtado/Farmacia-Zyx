@@ -9,7 +9,7 @@ namespace Entities
 {
     public class Funcionario
     {
-        public Funcionario(string nome, string cPF, string rG, string email, string telefone1, Endereco endereco)
+        public Funcionario(string nome, string cPF, string rG, string email, string telefone1, Endereco endereco,string senha)
         {
             Nome = nome;
             CPF = cPF;
@@ -17,6 +17,7 @@ namespace Entities
             Email = email;
             Telefone1 = telefone1;
             Endereco = endereco;
+            Senha = senha;
         }
 
         public int ID { get; set; }
@@ -26,7 +27,7 @@ namespace Entities
         public string Email { get; set; }
         public string Telefone1 { get; set; }
         public Endereco Endereco { get; set; }
-        public GrauEmpresa Grau { get; set; }
+        public Hierarquia PosicaoHierarquica { get; set; }
         public string Senha { get; set; }
 
     }

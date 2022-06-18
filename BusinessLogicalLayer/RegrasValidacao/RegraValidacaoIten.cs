@@ -38,7 +38,7 @@ namespace BusinessLogicalLayer.Verificaçoes
         }
         public string ValidateLaboratorio(string laboratorio)
         {
-            if (!String.IsNullOrWhiteSpace(laboratorio))
+            if (String.IsNullOrWhiteSpace(laboratorio))
             {
                 return "laboratorio nao informado";
             }

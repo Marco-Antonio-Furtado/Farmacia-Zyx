@@ -114,3 +114,46 @@ C:\Users\Marco Antônio\Desktop\Farmacia ZYX\WfPresentationLayer\obj\Debug\net6.
 C:\Users\Marco Antônio\Desktop\Farmacia ZYX\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.pdb
 C:\Users\Marco Antônio\Desktop\Farmacia ZYX\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.genruntimeconfig.cache
 C:\Users\Marco Antônio\Desktop\Farmacia ZYX\WfPresentationLayer\obj\Debug\net6.0-windows\ref\WfPresentationLayer.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\WfPresentationLayer.exe
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\WfPresentationLayer.deps.json
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\WfPresentationLayer.runtimeconfig.json
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\WfPresentationLayer.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\WfPresentationLayer.pdb
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\NPOI.OOXML.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\NPOI.OpenXml4Net.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\NPOI.OpenXmlFormats.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\NPOI.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\ICSharpCode.SharpZipLib.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\BusinessLogicalLayer.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\DataAccessLayer.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\Entities.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\Shared.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\BusinessLogicalLayer.pdb
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\Entities.pdb
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\Shared.pdb
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\bin\Debug\net6.0-windows\DataAccessLayer.pdb
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.csproj.AssemblyReference.cache
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Form1.resources
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Properties.Resources.resources
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.csproj.GenerateResource.cache
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.AssemblyInfoInputs.cache
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.AssemblyInfo.cs
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.csproj.CoreCompileInputs.cache
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.csproj.CopyComplete
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\refint\WfPresentationLayer.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.pdb
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.genruntimeconfig.cache
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\ref\WfPresentationLayer.dll
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastroCliente.resources
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.MenuGeral.resources
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastroFuncionario.resources
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.CadastroProduto.resources

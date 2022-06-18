@@ -30,22 +30,21 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabCliente = new System.Windows.Forms.TabPage();
-            this.btnProximo = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtNomeResponsavel = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cmbGenero = new System.Windows.Forms.ComboBox();
-            this.mtxtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.TxtBoxRg = new System.Windows.Forms.TextBox();
+            this.mtxtTelefone2 = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnProximo = new System.Windows.Forms.Button();
+            this.mtxtTelefone1 = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.mtxtDataDeNascimento = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.mtxtCpf = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.tabEndereço = new System.Windows.Forms.TabPage();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.mtxtNumero = new System.Windows.Forms.MaskedTextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -62,7 +61,6 @@
             this.txtRua = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.mtxtCep = new System.Windows.Forms.MaskedTextBox();
-            this.btnCadastrar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabCliente.SuspendLayout();
             this.tabEndereço.SuspendLayout();
@@ -82,17 +80,15 @@
             // tabCliente
             // 
             this.tabCliente.BackColor = System.Drawing.SystemColors.Window;
-            this.tabCliente.Controls.Add(this.btnProximo);
-            this.tabCliente.Controls.Add(this.label7);
-            this.tabCliente.Controls.Add(this.txtNomeResponsavel);
             this.tabCliente.Controls.Add(this.label6);
-            this.tabCliente.Controls.Add(this.cmbGenero);
-            this.tabCliente.Controls.Add(this.mtxtTelefone);
+            this.tabCliente.Controls.Add(this.TxtBoxRg);
+            this.tabCliente.Controls.Add(this.mtxtTelefone2);
+            this.tabCliente.Controls.Add(this.label3);
+            this.tabCliente.Controls.Add(this.btnProximo);
+            this.tabCliente.Controls.Add(this.mtxtTelefone1);
             this.tabCliente.Controls.Add(this.label5);
             this.tabCliente.Controls.Add(this.label4);
             this.tabCliente.Controls.Add(this.txtEmail);
-            this.tabCliente.Controls.Add(this.mtxtDataDeNascimento);
-            this.tabCliente.Controls.Add(this.label3);
             this.tabCliente.Controls.Add(this.mtxtCpf);
             this.tabCliente.Controls.Add(this.label2);
             this.tabCliente.Controls.Add(this.label1);
@@ -103,6 +99,44 @@
             this.tabCliente.Size = new System.Drawing.Size(615, 478);
             this.tabCliente.TabIndex = 0;
             this.tabCliente.Text = "Cliente";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(371, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(28, 20);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "RG";
+            // 
+            // TxtBoxRg
+            // 
+            this.TxtBoxRg.BackColor = System.Drawing.SystemColors.Window;
+            this.TxtBoxRg.Location = new System.Drawing.Point(371, 75);
+            this.TxtBoxRg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxRg.Name = "TxtBoxRg";
+            this.TxtBoxRg.Size = new System.Drawing.Size(203, 27);
+            this.TxtBoxRg.TabIndex = 37;
+            this.TxtBoxRg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // mtxtTelefone2
+            // 
+            this.mtxtTelefone2.BackColor = System.Drawing.SystemColors.Window;
+            this.mtxtTelefone2.Location = new System.Drawing.Point(57, 316);
+            this.mtxtTelefone2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtxtTelefone2.Mask = "+55 (99) 90000-0000";
+            this.mtxtTelefone2.Name = "mtxtTelefone2";
+            this.mtxtTelefone2.Size = new System.Drawing.Size(193, 27);
+            this.mtxtTelefone2.TabIndex = 36;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(57, 292);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 20);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "Telefone2";
             // 
             // btnProximo
             // 
@@ -115,66 +149,29 @@
             this.btnProximo.UseVisualStyleBackColor = true;
             this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
             // 
-            // label7
+            // mtxtTelefone1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(57, 124);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(136, 20);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Nome Responsável";
-            // 
-            // txtNomeResponsavel
-            // 
-            this.txtNomeResponsavel.BackColor = System.Drawing.SystemColors.Window;
-            this.txtNomeResponsavel.Location = new System.Drawing.Point(57, 148);
-            this.txtNomeResponsavel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtNomeResponsavel.Name = "txtNomeResponsavel";
-            this.txtNomeResponsavel.Size = new System.Drawing.Size(203, 27);
-            this.txtNomeResponsavel.TabIndex = 14;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(57, 271);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Genero";
-            // 
-            // cmbGenero
-            // 
-            this.cmbGenero.BackColor = System.Drawing.SystemColors.Window;
-            this.cmbGenero.FormattingEnabled = true;
-            this.cmbGenero.Location = new System.Drawing.Point(57, 295);
-            this.cmbGenero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cmbGenero.Name = "cmbGenero";
-            this.cmbGenero.Size = new System.Drawing.Size(138, 28);
-            this.cmbGenero.TabIndex = 12;
-            // 
-            // mtxtTelefone
-            // 
-            this.mtxtTelefone.BackColor = System.Drawing.SystemColors.Window;
-            this.mtxtTelefone.Location = new System.Drawing.Point(381, 228);
-            this.mtxtTelefone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtxtTelefone.Mask = "+99 (99) 90000-0000";
-            this.mtxtTelefone.Name = "mtxtTelefone";
-            this.mtxtTelefone.Size = new System.Drawing.Size(193, 27);
-            this.mtxtTelefone.TabIndex = 11;
+            this.mtxtTelefone1.BackColor = System.Drawing.SystemColors.Window;
+            this.mtxtTelefone1.Location = new System.Drawing.Point(57, 248);
+            this.mtxtTelefone1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtxtTelefone1.Mask = "+55 (99) 90000-0000";
+            this.mtxtTelefone1.Name = "mtxtTelefone1";
+            this.mtxtTelefone1.Size = new System.Drawing.Size(193, 27);
+            this.mtxtTelefone1.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(381, 204);
+            this.label5.Location = new System.Drawing.Point(57, 224);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 20);
+            this.label5.Size = new System.Drawing.Size(74, 20);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Telefone";
+            this.label5.Text = "Telefone1";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 197);
+            this.label4.Location = new System.Drawing.Point(57, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 20);
             this.label4.TabIndex = 9;
@@ -183,36 +180,16 @@
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
-            this.txtEmail.Location = new System.Drawing.Point(57, 221);
+            this.txtEmail.Location = new System.Drawing.Point(57, 139);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(203, 27);
             this.txtEmail.TabIndex = 8;
             // 
-            // mtxtDataDeNascimento
-            // 
-            this.mtxtDataDeNascimento.BackColor = System.Drawing.SystemColors.Window;
-            this.mtxtDataDeNascimento.Location = new System.Drawing.Point(381, 148);
-            this.mtxtDataDeNascimento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtxtDataDeNascimento.Mask = "00/00/0000";
-            this.mtxtDataDeNascimento.Name = "mtxtDataDeNascimento";
-            this.mtxtDataDeNascimento.Size = new System.Drawing.Size(102, 27);
-            this.mtxtDataDeNascimento.TabIndex = 7;
-            this.mtxtDataDeNascimento.ValidatingType = typeof(System.DateTime);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(381, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Data de Nascimento";
-            // 
             // mtxtCpf
             // 
             this.mtxtCpf.BackColor = System.Drawing.SystemColors.Window;
-            this.mtxtCpf.Location = new System.Drawing.Point(381, 75);
+            this.mtxtCpf.Location = new System.Drawing.Point(57, 193);
             this.mtxtCpf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtxtCpf.Mask = "000,000,000-00";
             this.mtxtCpf.Name = "mtxtCpf";
@@ -222,7 +199,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(381, 51);
+            this.label2.Location = new System.Drawing.Point(57, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 20);
             this.label2.TabIndex = 4;
@@ -272,6 +249,17 @@
             this.tabEndereço.Size = new System.Drawing.Size(615, 478);
             this.tabEndereço.TabIndex = 1;
             this.tabEndereço.Text = "Endereço";
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Location = new System.Drawing.Point(57, 386);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(527, 61);
+            this.btnCadastrar.TabIndex = 36;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click_1);
             // 
             // label15
             // 
@@ -417,17 +405,6 @@
             this.mtxtCep.Size = new System.Drawing.Size(125, 27);
             this.mtxtCep.TabIndex = 1;
             // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.Location = new System.Drawing.Point(57, 386);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(527, 61);
-            this.btnCadastrar.TabIndex = 36;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click_1);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -456,13 +433,7 @@
         private MaskedTextBox mtxtCep;
         private Label label2;
         private MaskedTextBox mtxtCpf;
-        private MaskedTextBox mtxtDataDeNascimento;
-        private Label label3;
-        private Label label7;
-        private TextBox txtNomeResponsavel;
-        private Label label6;
-        private ComboBox cmbGenero;
-        private MaskedTextBox mtxtTelefone;
+        private MaskedTextBox mtxtTelefone1;
         private Label label5;
         private Label label4;
         private TextBox txtEmail;
@@ -483,5 +454,9 @@
         private Label label8;
         private Button btnProximo;
         private Button btnCadastrar;
+        private MaskedTextBox mtxtTelefone2;
+        private Label label3;
+        private Label label6;
+        private TextBox TxtBoxRg;
     }
 }

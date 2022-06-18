@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities.enums
 {
-    public enum GrauEmpresa
+    public enum Hierarquia
     {
         Chefe,
         Gerente,

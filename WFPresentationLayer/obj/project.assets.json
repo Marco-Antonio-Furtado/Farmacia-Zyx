@@ -271,6 +271,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
+          "NPOI": "2.5.6",
           "Shared": "1.0.0",
           "System.Data.SqlClient": "4.8.3"
         },
@@ -870,19 +871,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Marco Antônio\\.nuget\\packages\\": {}
+    "C:\\Users\\SAMSUNG\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\WfPresentationLayer\\WfPresentationLayer.csproj",
+      "projectUniqueName": "C:\\Users\\SAMSUNG\\Desktop\\2\\WfPresentationLayer\\WfPresentationLayer.csproj",
       "projectName": "WfPresentationLayer",
-      "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\WfPresentationLayer\\WfPresentationLayer.csproj",
-      "packagesPath": "C:\\Users\\Marco Antônio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\WfPresentationLayer\\obj\\",
+      "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\2\\WfPresentationLayer\\WfPresentationLayer.csproj",
+      "packagesPath": "C:\\Users\\SAMSUNG\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\SAMSUNG\\Desktop\\2\\WfPresentationLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Marco Antônio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\SAMSUNG\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -896,14 +897,14 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj": {
-              "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj"
+            "C:\\Users\\SAMSUNG\\Desktop\\2\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj": {
+              "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\2\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj"
             },
-            "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Entities\\Entities.csproj"
+            "C:\\Users\\SAMSUNG\\Desktop\\2\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\2\\Entities\\Entities.csproj"
             },
-            "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\Farmacia ZYX\\Shared\\Shared.csproj"
+            "C:\\Users\\SAMSUNG\\Desktop\\2\\Shared\\Shared.csproj": {
+              "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\2\\Shared\\Shared.csproj"
             }
           }
         }

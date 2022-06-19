@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using DataAccessLayer;
+using Entities;
 using Shared;
 using System;
 using System.Collections.Generic;
@@ -10,18 +11,16 @@ namespace BusinessLogicalLayer.BusinessLL
 {
     public class ClienteBll : ICRUD<Cliente>
     {
+        private ClienteDAL clienteDAL = new ClienteDAL();
         public Response Insert(Cliente item)
         {
             ClienteValidator clienteValidator = new ClienteValidator();
-            return clienteValidator.Validate(item);
-
-
-
-
-
-
-
-
+            Response resposta = clienteValidator.Validate(item);
+            if (resposta.HasSuccess)
+            {
+                clienteDAL.Insert(item);
+            }
+                return resposta;
         }
 
         public Response Update(Cliente item)

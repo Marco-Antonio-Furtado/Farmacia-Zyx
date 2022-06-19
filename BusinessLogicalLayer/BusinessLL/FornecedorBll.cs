@@ -1,5 +1,7 @@
-﻿using Entities;
+﻿using BusinessLogicalLayer.Verificaçoes;
+using Entities;
 using Shared;
+using DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +10,18 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer.BusinessLL
 {
-    internal class FornecedorBll : ICRUD<Fornecedor>
+    public class FornecedorBll : ICRUD<Fornecedor>
     {
+        FornecedorDAL fornecedorDAL = new FornecedorDAL();
         public Response Insert(Fornecedor item)
         {
-            throw new NotImplementedException();
+            FornecedorValidator fornecedorValidate = new FornecedorValidator();
+            Response resposta = fornecedorValidate.Validate(item);
+            if (resposta.HasSuccess)
+            {
+                return fornecedorDAL.Insert(item);
+            }
+            return resposta;
         }
 
         public Response Update(Fornecedor item)

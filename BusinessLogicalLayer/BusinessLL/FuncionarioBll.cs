@@ -1,4 +1,6 @@
-﻿using Entities;
+﻿using BusinessLogicalLayer.Verificaçoes;
+using DataAccessLayer;
+using Entities;
 using Shared;
 using System;
 using System.Collections.Generic;
@@ -10,9 +12,16 @@ namespace BusinessLogicalLayer.BusinessLL
 {
     public class FuncionarioBll : ICRUD<Funcionario>
     {
+        FuncionarioDAL funcionarioDAL = new FuncionarioDAL();
         public Response Insert(Funcionario item)
         {
-            throw new NotImplementedException();
+            FuncionarioValidator funcionarioValidator = new FuncionarioValidator();
+            Response resposta = funcionarioValidator.Validate(item);
+            if (resposta.HasSuccess)
+            {
+                return funcionarioDAL.Insert(item);
+            }
+            return resposta;
         }
 
         public Response Update(Funcionario item)

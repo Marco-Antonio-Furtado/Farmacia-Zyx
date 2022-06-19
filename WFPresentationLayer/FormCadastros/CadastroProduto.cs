@@ -1,5 +1,6 @@
 ﻿using BusinessLogicalLayer.BusinessLL;
 using Entities;
+using Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,9 +25,9 @@ namespace WfPresentationLayer
             Produto produto = new Produto(TxtBoxNomeProduto.Text, TxtBoxDescrisaoProduto.Text
                                                   , TxtBoxLaboratorio.Text);
             ProdutoBll produtoBll = new ProdutoBll();
-            string resposta = produtoBll.Insert(produto).Message;
-            MessageBox.Show(resposta);
-            if (resposta == "iria pro banco")
+            Response resposta = produtoBll.Insert(produto);
+            MessageBox.Show(resposta.Message);
+            if (resposta.HasSuccess)
             {
                 this.Close();
             }

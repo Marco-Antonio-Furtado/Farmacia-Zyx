@@ -10,7 +10,7 @@ namespace BusinessLogicalLayer
 {
     internal class RegraNormatizacao
     {
-        public string NormatizeName(string nome)
+        internal string NormatizeName(string nome)
         {
             string nomeNormatizado = new CultureInfo("pt-br").TextInfo.ToTitleCase(nome);
             //Trim -> Remove espaços em branco do começo e do fim da string (mas não do meio)

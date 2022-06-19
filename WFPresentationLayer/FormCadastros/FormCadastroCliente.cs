@@ -1,6 +1,7 @@
 ﻿using BusinessLogicalLayer;
 using BusinessLogicalLayer.BusinessLL;
 using Entities;
+using Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,10 +27,10 @@ namespace WfPresentationLayer
                                           txtBoxEmailCliente.Text, TxtBoxTelefone1Cliente.Text
                                           , TxtBoxTelefone2Cliente.Text);
             ClienteBll clientebll = new ClienteBll();
-            string resposta = clientebll.Insert(cliente).Message;
-            MessageBox.Show(resposta);
+            Response resposta = clientebll.Insert(cliente);
+            MessageBox.Show(resposta.Message);
             //Nao sei se possso esse if
-            if (resposta == "iria pro banco")
+            if (resposta.HasSuccess)
             { this.Close();  }
 
         }

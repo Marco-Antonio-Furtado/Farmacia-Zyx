@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer
 {
-    public class RegraValidacaoString
+    internal class RegraValidacaoString
     {
         private const int MAXIMO_CARACTERES_NOME = 100;
         private const int MINIMO_CARACTERES_NOME = 3;
@@ -17,7 +17,7 @@ namespace BusinessLogicalLayer
         private const int CARACTERES_CEP = 8;
         private const int CARACTERES_CNPJ = 14;
 
-        public string ValidateNome(string nome)
+        internal string ValidateNome(string nome)
         {
             if (string.IsNullOrWhiteSpace(nome))
             {
@@ -67,7 +67,7 @@ namespace BusinessLogicalLayer
         /// </summary>
         /// <param name="cpf">Cpf a ser validado</param>
         /// <returns>Retorna "" se o CPF está válido, caso contrário retorna a mensagem de erro</returns>
-        public string ValidateCPF(string cpf)
+        internal string ValidateCPF(string cpf)
         {
             if (string.IsNullOrWhiteSpace(cpf))
             {
@@ -115,29 +115,31 @@ namespace BusinessLogicalLayer
 
 
         //Validação do email deve estar errada
-        public string ValidateEmail(string email)
+        internal string ValidateEmail(string email)
         {
+            
             if (string.IsNullOrWhiteSpace(email))
             {
                 return "Email deve ser informado.";
             }
-
+            string pattern = @"^[^@\s]+@[^@\s]+.[^@\s]+$";
+            if (!Regex.IsMatch(email, pattern))
+            {
+                return "Email inválido.";
+            }
             email = email.Trim();
-
-            if (email.Length < MINIMO_CARACTERES_NOME)
+            if (email.Length < MINIMO_CARACTERES_EMAIL)
             {
                 return "Email não pode conter menos que 5 caracteres.";
             }
-
             if (email.Length > MAXIMO_CARACTERES_EMAIL)
             {
                 return "Email não pode conter mais que 100 caracteres.";
             }
-            
             return "";
         }
 
-        public string ValidateCEP(string cep)
+        internal string ValidateCEP(string cep)
         {
             if (string.IsNullOrWhiteSpace(cep))
             {
@@ -163,7 +165,7 @@ namespace BusinessLogicalLayer
             return "";
         }
 
-        public string ValidateTelefone(string telefone)
+        internal string ValidateTelefone(string telefone)
         {
             if (string.IsNullOrWhiteSpace(telefone))
             {
@@ -191,7 +193,7 @@ namespace BusinessLogicalLayer
             }
             return "";
         }
-        public string ValidateRG(string RG)
+        internal string ValidateRG(string RG)
         {
             if (string.IsNullOrWhiteSpace(RG))
             {
@@ -199,7 +201,7 @@ namespace BusinessLogicalLayer
             }
             return "";
         }
-        public bool IsCnpj(string cnpj)
+        internal bool IsCnpj(string cnpj)
         {
             
 
@@ -236,7 +238,7 @@ namespace BusinessLogicalLayer
                 return cnpj.EndsWith(digito);
             
         }
-        public string ValidateRazaoSocial(string Razao)
+        internal string ValidateRazaoSocial(string Razao)
         {
             if (string.IsNullOrWhiteSpace(Razao))
             {

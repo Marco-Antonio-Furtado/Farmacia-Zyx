@@ -8,35 +8,36 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    internal class ProdutoDal : ICRUD<Produto>
+    public class ProdutoDal : ICRUD<Produto>
     {
         public Response Insert(Produto item)
         {
-            throw new NotImplementedException();
+            return new Response("ta no banco",true);
         }
 
         public Response Update(Produto item)
         {
-            throw new NotImplementedException();
+            return new Response("ta uptado do banco", true);
         }
         public Response Delete(int id)
         {
-            throw new NotImplementedException();
+            return new Response("ta deletado banco", true);
         }
 
         public DataResponse<Produto> GetAll()
         {
-            throw new NotImplementedException();
+            List<Produto> testes = new List<Produto>();
+            return new DataResponse<Produto>("ta getado com sucesso", true, testes);
         }
 
         public SingleResponse<Produto> GetByID(int id)
         {
-            throw new NotImplementedException();
+            return new SingleResponse<Produto>("Foi getado do id!", true, null);
         }
 
         public SingleResponse<Produto> GetByEmail(string email)
         {
-            throw new NotImplementedException();
+            return new SingleResponse<Produto>("Foi getado do email!", true, null);
         }
     }
 }

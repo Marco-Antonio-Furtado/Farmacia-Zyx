@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer.Verificaçoes
 {
-    public class RegraValidacaoIten
+    internal class RegraValidacaoIten
     {
 
-        public string ValidateProdutoNome(string nome)
+        internal string ValidateProdutoNome(string nome)
         {
             if (String.IsNullOrWhiteSpace(nome))
             {
@@ -23,7 +23,7 @@ namespace BusinessLogicalLayer.Verificaçoes
             return "";
 
         }
-        public string ValidateDescrisaoProduto(string descrisao)
+        internal string ValidateDescrisaoProduto(string descrisao)
         {
             if (String.IsNullOrWhiteSpace(descrisao))
             {
@@ -36,7 +36,7 @@ namespace BusinessLogicalLayer.Verificaçoes
             return "";
 
         }
-        public string ValidateLaboratorio(string laboratorio)
+        internal string ValidateLaboratorio(string laboratorio)
         {
             if (String.IsNullOrWhiteSpace(laboratorio))
             {

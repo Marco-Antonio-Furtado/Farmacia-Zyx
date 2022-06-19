@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    internal class Iten_VendaDal : ICRUD<Item_Venda>
+    public class Iten_VendaDal : ICRUD<Item_Venda>
     {
         public Response Insert(Item_Venda item)
         {

@@ -8,8 +8,7 @@ namespace Entities.enums
 {
     public enum Hierarquia
     {
-        Chefe,
-        Gerente,
+        Administrador,
         Funcionario,
     }
 }

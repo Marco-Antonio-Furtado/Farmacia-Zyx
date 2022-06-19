@@ -5,11 +5,10 @@ using System.Text;
 
 namespace BusinessLogicalLayer
 {
-    public class ClienteValidator
+    internal class ClienteValidator
     {
         private RegraValidacaoString stringValidator = new RegraValidacaoString();
         private RegraNormatizacao normatization = new RegraNormatizacao();
-        private ClienteDAL clienteDAL = new ClienteDAL();
         
         public Response Validate(Cliente cliente)
         {
@@ -24,12 +23,12 @@ namespace BusinessLogicalLayer
             erros.Append(stringValidator.ValidateTelefone(cliente.Telefone2) + "\r\n");
             erros.Append(stringValidator.ValidateRG(cliente.RG) + "\r\n");
 
-            if (erros.ToString() == "")
+            if (String.IsNullOrWhiteSpace(erros.ToString()))
             {
                 return new Response(erros.ToString(), false);
             }
             cliente.Nome = normatization.NormatizeName(cliente.Nome);
-            return new Response("iria pro banco", true);
+            return new Response("Daqui esta indo pro banco", true);
         }
     }
 }

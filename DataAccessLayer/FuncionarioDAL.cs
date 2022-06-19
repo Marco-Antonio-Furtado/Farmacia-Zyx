@@ -12,31 +12,34 @@ namespace DataAccessLayer
     {
         public Response Insert(Funcionario item)
         {
-            throw new NotImplementedException();
+            return new Response("ta no banco", true);
         }
 
         public Response Update(Funcionario item)
         {
-            throw new NotImplementedException();
+            return new Response("ta uptado banco", true);
         }
         public Response Delete(int id)
         {
-            throw new NotImplementedException();
+            return new Response("ta deletado banco", true);
         }
 
         public DataResponse<Funcionario> GetAll()
         {
-            throw new NotImplementedException();
+            List<Funcionario> testes = new List<Funcionario>();
+            return new DataResponse<Funcionario>("ta getado com sucesso", true, testes);
         }
 
         public SingleResponse<Funcionario> GetByID(int id)
         {
-            throw new NotImplementedException();
+            return new SingleResponse<Funcionario>("Foi getado do id!", true, null);
+
         }
 
         public SingleResponse<Funcionario> GetByEmail(string email)
         {
-            throw new NotImplementedException();
+            return new SingleResponse<Funcionario>("foi quetado do email!", false, null);
+
         }
     }
 }

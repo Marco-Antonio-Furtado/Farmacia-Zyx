@@ -9,32 +9,27 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer.Verificaçoes
 {
-    public class ProdutoValidator
+    internal class ProdutoValidator
     {
-        private ClienteDAL clienteDAL = new ClienteDAL();
         private RegraValidacaoIten ItensValidator = new RegraValidacaoIten();
 
-        public Response ValidateIten(Produto produto) 
+        internal Response ValidateIten(Produto produto) 
         {
             StringBuilder erros = new StringBuilder("");
-
+            
 
             erros.Append(ItensValidator.ValidateProdutoNome(produto.Nome) + "\r\n");
             erros.Append(ItensValidator.ValidateDescrisaoProduto(produto.Descriscao) + "\r\n");
             erros.Append(ItensValidator.ValidateLaboratorio(produto.Laboratorio) + "\r\n");
 
-            if (erros.ToString() == "")
+            if (erros.ToString() != "\r\n\r\n\r\n")
             {
                 return new Response(erros.ToString(), false);
             }
-            
-            return new Response("iria pro banco", true);
-
-
-
-
+            else
+            {
+                return new Response("Daqui esta indo pro banco", true);
+            }
         }
-
-
     }
 }

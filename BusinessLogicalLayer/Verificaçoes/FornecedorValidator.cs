@@ -9,11 +9,10 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer.Verificaçoes
 {
-    public class FornecedorValidator
+    internal class FornecedorValidator
     {
         private RegraValidacaoString stringValidator = new RegraValidacaoString();
         private RegraNormatizacao normatization = new RegraNormatizacao();
-        private ClienteDAL clienteDAL = new ClienteDAL();
 
         public Response Validate(Fornecedor fornecedor)
         {
@@ -25,7 +24,7 @@ namespace BusinessLogicalLayer.Verificaçoes
             if (!stringValidator.IsCnpj(fornecedor.CNPJ)) erros.Append("CNPJ Invalido" + "\r\n");
             erros.Append(stringValidator.ValidateRazaoSocial(fornecedor.RazaoSocial) + "\r\n");
 
-            if (erros.ToString() == "")
+            if (String.IsNullOrWhiteSpace(erros.ToString()))
             {
                 return new Response(erros.ToString(), false);
             }
@@ -34,7 +33,7 @@ namespace BusinessLogicalLayer.Verificaçoes
             fornecedor.NomeResponsavel = normatization.NormatizeName(fornecedor.NomeResponsavel);
             // tem que ser fornecedorDAL ao invés de clienteDAL
             //return clienteDAL.Insert(fornecedor);
-            return new Response("", true);
+            return new Response("Daqui esta indo pro banco", true);
         }
     }
 }

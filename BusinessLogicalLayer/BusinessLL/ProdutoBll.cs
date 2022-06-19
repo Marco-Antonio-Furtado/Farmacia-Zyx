@@ -1,4 +1,5 @@
 ﻿using BusinessLogicalLayer.Verificaçoes;
+using DataAccessLayer;
 using Entities;
 using Shared;
 using System;
@@ -11,10 +12,16 @@ namespace BusinessLogicalLayer.BusinessLL
 {
     public class ProdutoBll : ICRUD<Produto>
     {
+        ProdutoDal produtoDAL = new ProdutoDal();
         public Response Insert(Produto item)
         {
             ProdutoValidator produtoValidator = new ProdutoValidator();
-            return produtoValidator.ValidateIten(item);
+            Response resposta = produtoValidator.ValidateIten(item);
+            if (resposta.HasSuccess)
+            {
+                return produtoDAL.Insert(item);
+            }
+            return resposta;
         }
 
         public Response Update(Produto item)

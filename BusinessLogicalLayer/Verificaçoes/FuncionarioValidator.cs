@@ -9,11 +9,10 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer.Verificaçoes
 {
-    public class FuncionarioValidator
+    internal class FuncionarioValidator
     {
         private RegraValidacaoString stringValidator = new RegraValidacaoString();
         private RegraNormatizacao normatization = new RegraNormatizacao();
-        private ClienteDAL clienteDAL = new ClienteDAL();
 
         public Response Validate(Funcionario funcionario)
         {
@@ -25,9 +24,6 @@ namespace BusinessLogicalLayer.Verificaçoes
             erros.Append(stringValidator.ValidateEmail(funcionario.Email) + "\r\n");
             erros.Append(stringValidator.ValidateTelefone(funcionario.Telefone1) + "\r\n");
             erros.Append(stringValidator.ValidateRG(funcionario.RG) + "\r\n");
-
-
-
             erros.Append(stringValidator.ValidateCEP(funcionario.Endereco?.CEP));
 
 
@@ -38,7 +34,7 @@ namespace BusinessLogicalLayer.Verificaçoes
             //}
 
             
-            if (erros.ToString() == "")
+            if (String.IsNullOrWhiteSpace(erros.ToString()))
             {
                 return new Response(erros.ToString(), false);
             }
@@ -46,7 +42,7 @@ namespace BusinessLogicalLayer.Verificaçoes
             //Se chegou aqui, validamos com sucesso!
             funcionario.Nome = normatization.NormatizeName(funcionario.Nome);
             //return clienteDAL.Create(funcionario);
-            return new Response("", false);
+            return new Response("Daqui esta indo pro banco", true);
             
         }
     }

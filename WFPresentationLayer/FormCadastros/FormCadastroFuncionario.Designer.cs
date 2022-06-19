@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TabEndereco = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.TabGeral = new System.Windows.Forms.TabControl();
+            this.TabFuncionario = new System.Windows.Forms.TabPage();
+            this.BtnCadastroEndereco = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.TxtBoxEnderecoFuncionario = new System.Windows.Forms.TextBox();
             this.TxtBoxSenhaFuncionario = new System.Windows.Forms.MaskedTextBox();
@@ -45,91 +45,74 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxNomeFuncionario = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.TabEndereco = new System.Windows.Forms.TabPage();
+            this.BtnCadastroFuncionario = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.mtxtNumero = new System.Windows.Forms.MaskedTextBox();
+            this.TxtBoxNumero = new System.Windows.Forms.MaskedTextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.TxtBoxEstado = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.TxtBoxCidade = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtPontoDeReferencia = new System.Windows.Forms.TextBox();
+            this.TxtBoxPontoDeReferencia = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtComplemento = new System.Windows.Forms.TextBox();
+            this.TxtBoxComplemento = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.TxtBoxBairro = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtRua = new System.Windows.Forms.TextBox();
+            this.TxtBoxRua = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.mtxtCep = new System.Windows.Forms.MaskedTextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.TxtBoxCep = new System.Windows.Forms.MaskedTextBox();
+            this.TabGeral.SuspendLayout();
+            this.TabFuncionario.SuspendLayout();
             this.TabEndereco.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // TabEndereco
+            // TabGeral
             // 
-            this.TabEndereco.AccessibleName = "";
-            this.TabEndereco.Controls.Add(this.tabPage1);
-            this.TabEndereco.Controls.Add(this.tabPage2);
-            this.TabEndereco.Location = new System.Drawing.Point(2, 0);
-            this.TabEndereco.Name = "TabEndereco";
-            this.TabEndereco.SelectedIndex = 0;
-            this.TabEndereco.Size = new System.Drawing.Size(506, 473);
-            this.TabEndereco.TabIndex = 70;
+            this.TabGeral.AccessibleName = "";
+            this.TabGeral.Controls.Add(this.TabFuncionario);
+            this.TabGeral.Controls.Add(this.TabEndereco);
+            this.TabGeral.Location = new System.Drawing.Point(2, 0);
+            this.TabGeral.Name = "TabGeral";
+            this.TabGeral.SelectedIndex = 0;
+            this.TabGeral.Size = new System.Drawing.Size(506, 473);
+            this.TabGeral.TabIndex = 70;
             // 
-            // tabPage1
+            // TabFuncionario
             // 
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.TxtBoxEnderecoFuncionario);
-            this.tabPage1.Controls.Add(this.TxtBoxSenhaFuncionario);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.TxtBoxRgFuncionario);
-            this.tabPage1.Controls.Add(this.TxtBoxTelefone1Funcionario);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.txtBoxEmailFuncionario);
-            this.tabPage1.Controls.Add(this.TxtBoxCpfFuncionario);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.txtBoxNomeFuncionario);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(498, 440);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.TabFuncionario.Controls.Add(this.BtnCadastroEndereco);
+            this.TabFuncionario.Controls.Add(this.label7);
+            this.TabFuncionario.Controls.Add(this.TxtBoxEnderecoFuncionario);
+            this.TabFuncionario.Controls.Add(this.TxtBoxSenhaFuncionario);
+            this.TabFuncionario.Controls.Add(this.label3);
+            this.TabFuncionario.Controls.Add(this.label6);
+            this.TabFuncionario.Controls.Add(this.TxtBoxRgFuncionario);
+            this.TabFuncionario.Controls.Add(this.TxtBoxTelefone1Funcionario);
+            this.TabFuncionario.Controls.Add(this.label5);
+            this.TabFuncionario.Controls.Add(this.label4);
+            this.TabFuncionario.Controls.Add(this.txtBoxEmailFuncionario);
+            this.TabFuncionario.Controls.Add(this.TxtBoxCpfFuncionario);
+            this.TabFuncionario.Controls.Add(this.label2);
+            this.TabFuncionario.Controls.Add(this.label1);
+            this.TabFuncionario.Controls.Add(this.txtBoxNomeFuncionario);
+            this.TabFuncionario.Location = new System.Drawing.Point(4, 29);
+            this.TabFuncionario.Name = "TabFuncionario";
+            this.TabFuncionario.Padding = new System.Windows.Forms.Padding(3);
+            this.TabFuncionario.Size = new System.Drawing.Size(498, 440);
+            this.TabFuncionario.TabIndex = 0;
+            this.TabFuncionario.Text = "Funcionario";
+            this.TabFuncionario.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // BtnCadastroEndereco
             // 
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.label15);
-            this.tabPage2.Controls.Add(this.mtxtNumero);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.txtEstado);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.txtCidade);
-            this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.txtPontoDeReferencia);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.txtComplemento);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.txtBairro);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.txtRua);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.mtxtCep);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(498, 440);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.BtnCadastroEndereco.Location = new System.Drawing.Point(258, 24);
+            this.BtnCadastroEndereco.Name = "BtnCadastroEndereco";
+            this.BtnCadastroEndereco.Size = new System.Drawing.Size(198, 206);
+            this.BtnCadastroEndereco.TabIndex = 83;
+            this.BtnCadastroEndereco.Text = "Cadastrar endereco";
+            this.BtnCadastroEndereco.UseVisualStyleBackColor = true;
+            this.BtnCadastroEndereco.Click += new System.EventHandler(this.BtnCadastroEndereco_Click);
             // 
             // label7
             // 
@@ -261,15 +244,42 @@
             this.txtBoxNomeFuncionario.Size = new System.Drawing.Size(203, 27);
             this.txtBoxNomeFuncionario.TabIndex = 69;
             // 
-            // button1
+            // TabEndereco
             // 
-            this.button1.Location = new System.Drawing.Point(263, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 206);
-            this.button1.TabIndex = 83;
-            this.button1.Text = "Cadastrar endereco";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.TabEndereco.Controls.Add(this.BtnCadastroFuncionario);
+            this.TabEndereco.Controls.Add(this.label15);
+            this.TabEndereco.Controls.Add(this.TxtBoxNumero);
+            this.TabEndereco.Controls.Add(this.label14);
+            this.TabEndereco.Controls.Add(this.TxtBoxEstado);
+            this.TabEndereco.Controls.Add(this.label13);
+            this.TabEndereco.Controls.Add(this.TxtBoxCidade);
+            this.TabEndereco.Controls.Add(this.label12);
+            this.TabEndereco.Controls.Add(this.TxtBoxPontoDeReferencia);
+            this.TabEndereco.Controls.Add(this.label11);
+            this.TabEndereco.Controls.Add(this.TxtBoxComplemento);
+            this.TabEndereco.Controls.Add(this.label10);
+            this.TabEndereco.Controls.Add(this.TxtBoxBairro);
+            this.TabEndereco.Controls.Add(this.label9);
+            this.TabEndereco.Controls.Add(this.TxtBoxRua);
+            this.TabEndereco.Controls.Add(this.label8);
+            this.TabEndereco.Controls.Add(this.TxtBoxCep);
+            this.TabEndereco.Location = new System.Drawing.Point(4, 29);
+            this.TabEndereco.Name = "TabEndereco";
+            this.TabEndereco.Padding = new System.Windows.Forms.Padding(3);
+            this.TabEndereco.Size = new System.Drawing.Size(498, 440);
+            this.TabEndereco.TabIndex = 1;
+            this.TabEndereco.Text = "Endereco";
+            this.TabEndereco.UseVisualStyleBackColor = true;
+            // 
+            // BtnCadastroFuncionario
+            // 
+            this.BtnCadastroFuncionario.Location = new System.Drawing.Point(15, 339);
+            this.BtnCadastroFuncionario.Name = "BtnCadastroFuncionario";
+            this.BtnCadastroFuncionario.Size = new System.Drawing.Size(449, 78);
+            this.BtnCadastroFuncionario.TabIndex = 84;
+            this.BtnCadastroFuncionario.Text = "Cadastrar Funcionario";
+            this.BtnCadastroFuncionario.UseVisualStyleBackColor = true;
+            this.BtnCadastroFuncionario.Click += new System.EventHandler(this.BtnCadastroFuncionario_Click);
             // 
             // label15
             // 
@@ -280,14 +290,14 @@
             this.label15.TabIndex = 64;
             this.label15.Text = "Número";
             // 
-            // mtxtNumero
+            // TxtBoxNumero
             // 
-            this.mtxtNumero.BackColor = System.Drawing.SystemColors.Window;
-            this.mtxtNumero.Location = new System.Drawing.Point(251, 289);
-            this.mtxtNumero.Mask = "0999";
-            this.mtxtNumero.Name = "mtxtNumero";
-            this.mtxtNumero.Size = new System.Drawing.Size(125, 27);
-            this.mtxtNumero.TabIndex = 63;
+            this.TxtBoxNumero.BackColor = System.Drawing.SystemColors.Window;
+            this.TxtBoxNumero.Location = new System.Drawing.Point(251, 289);
+            this.TxtBoxNumero.Mask = "0999";
+            this.TxtBoxNumero.Name = "TxtBoxNumero";
+            this.TxtBoxNumero.Size = new System.Drawing.Size(125, 27);
+            this.TxtBoxNumero.TabIndex = 63;
             // 
             // label14
             // 
@@ -298,14 +308,14 @@
             this.label14.TabIndex = 62;
             this.label14.Text = "Estado";
             // 
-            // txtEstado
+            // TxtBoxEstado
             // 
-            this.txtEstado.BackColor = System.Drawing.SystemColors.Window;
-            this.txtEstado.Location = new System.Drawing.Point(251, 215);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(203, 27);
-            this.txtEstado.TabIndex = 61;
+            this.TxtBoxEstado.BackColor = System.Drawing.SystemColors.Window;
+            this.TxtBoxEstado.Location = new System.Drawing.Point(251, 215);
+            this.TxtBoxEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxEstado.Name = "TxtBoxEstado";
+            this.TxtBoxEstado.Size = new System.Drawing.Size(203, 27);
+            this.TxtBoxEstado.TabIndex = 61;
             // 
             // label13
             // 
@@ -316,14 +326,14 @@
             this.label13.TabIndex = 60;
             this.label13.Text = "Cidade";
             // 
-            // txtCidade
+            // TxtBoxCidade
             // 
-            this.txtCidade.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCidade.Location = new System.Drawing.Point(251, 142);
-            this.txtCidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(203, 27);
-            this.txtCidade.TabIndex = 59;
+            this.TxtBoxCidade.BackColor = System.Drawing.SystemColors.Window;
+            this.TxtBoxCidade.Location = new System.Drawing.Point(251, 142);
+            this.TxtBoxCidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxCidade.Name = "TxtBoxCidade";
+            this.TxtBoxCidade.Size = new System.Drawing.Size(203, 27);
+            this.TxtBoxCidade.TabIndex = 59;
             // 
             // label12
             // 
@@ -334,14 +344,14 @@
             this.label12.TabIndex = 58;
             this.label12.Text = "Ponto de referência";
             // 
-            // txtPontoDeReferencia
+            // TxtBoxPontoDeReferencia
             // 
-            this.txtPontoDeReferencia.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPontoDeReferencia.Location = new System.Drawing.Point(20, 289);
-            this.txtPontoDeReferencia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPontoDeReferencia.Name = "txtPontoDeReferencia";
-            this.txtPontoDeReferencia.Size = new System.Drawing.Size(203, 27);
-            this.txtPontoDeReferencia.TabIndex = 57;
+            this.TxtBoxPontoDeReferencia.BackColor = System.Drawing.SystemColors.Window;
+            this.TxtBoxPontoDeReferencia.Location = new System.Drawing.Point(20, 289);
+            this.TxtBoxPontoDeReferencia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxPontoDeReferencia.Name = "TxtBoxPontoDeReferencia";
+            this.TxtBoxPontoDeReferencia.Size = new System.Drawing.Size(203, 27);
+            this.TxtBoxPontoDeReferencia.TabIndex = 57;
             // 
             // label11
             // 
@@ -352,14 +362,14 @@
             this.label11.TabIndex = 56;
             this.label11.Text = "Complemento";
             // 
-            // txtComplemento
+            // TxtBoxComplemento
             // 
-            this.txtComplemento.BackColor = System.Drawing.SystemColors.Window;
-            this.txtComplemento.Location = new System.Drawing.Point(20, 215);
-            this.txtComplemento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(203, 27);
-            this.txtComplemento.TabIndex = 55;
+            this.TxtBoxComplemento.BackColor = System.Drawing.SystemColors.Window;
+            this.TxtBoxComplemento.Location = new System.Drawing.Point(20, 215);
+            this.TxtBoxComplemento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxComplemento.Name = "TxtBoxComplemento";
+            this.TxtBoxComplemento.Size = new System.Drawing.Size(203, 27);
+            this.TxtBoxComplemento.TabIndex = 55;
             // 
             // label10
             // 
@@ -370,14 +380,14 @@
             this.label10.TabIndex = 54;
             this.label10.Text = "Bairro";
             // 
-            // txtBairro
+            // TxtBoxBairro
             // 
-            this.txtBairro.BackColor = System.Drawing.SystemColors.Window;
-            this.txtBairro.Location = new System.Drawing.Point(251, 69);
-            this.txtBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(203, 27);
-            this.txtBairro.TabIndex = 53;
+            this.TxtBoxBairro.BackColor = System.Drawing.SystemColors.Window;
+            this.TxtBoxBairro.Location = new System.Drawing.Point(251, 69);
+            this.TxtBoxBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxBairro.Name = "TxtBoxBairro";
+            this.TxtBoxBairro.Size = new System.Drawing.Size(203, 27);
+            this.TxtBoxBairro.TabIndex = 53;
             // 
             // label9
             // 
@@ -388,14 +398,14 @@
             this.label9.TabIndex = 52;
             this.label9.Text = "Rua";
             // 
-            // txtRua
+            // TxtBoxRua
             // 
-            this.txtRua.BackColor = System.Drawing.SystemColors.Window;
-            this.txtRua.Location = new System.Drawing.Point(20, 142);
-            this.txtRua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(203, 27);
-            this.txtRua.TabIndex = 51;
+            this.TxtBoxRua.BackColor = System.Drawing.SystemColors.Window;
+            this.TxtBoxRua.Location = new System.Drawing.Point(20, 142);
+            this.TxtBoxRua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxRua.Name = "TxtBoxRua";
+            this.TxtBoxRua.Size = new System.Drawing.Size(203, 27);
+            this.TxtBoxRua.TabIndex = 51;
             // 
             // label8
             // 
@@ -406,46 +416,37 @@
             this.label8.TabIndex = 50;
             this.label8.Text = "CEP";
             // 
-            // mtxtCep
+            // TxtBoxCep
             // 
-            this.mtxtCep.BackColor = System.Drawing.SystemColors.Window;
-            this.mtxtCep.Location = new System.Drawing.Point(20, 69);
-            this.mtxtCep.Mask = "00000-000";
-            this.mtxtCep.Name = "mtxtCep";
-            this.mtxtCep.Size = new System.Drawing.Size(125, 27);
-            this.mtxtCep.TabIndex = 49;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(15, 339);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(449, 78);
-            this.button2.TabIndex = 84;
-            this.button2.Text = "Cadastrar Funcionario";
-            this.button2.UseVisualStyleBackColor = true;
+            this.TxtBoxCep.BackColor = System.Drawing.SystemColors.Window;
+            this.TxtBoxCep.Location = new System.Drawing.Point(20, 69);
+            this.TxtBoxCep.Mask = "00000-000";
+            this.TxtBoxCep.Name = "TxtBoxCep";
+            this.TxtBoxCep.Size = new System.Drawing.Size(125, 27);
+            this.TxtBoxCep.TabIndex = 49;
             // 
             // FormCadastroFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 465);
-            this.Controls.Add(this.TabEndereco);
+            this.Controls.Add(this.TabGeral);
             this.Name = "FormCadastroFuncionario";
             this.Text = "FormCadastroFuncionario";
+            this.TabGeral.ResumeLayout(false);
+            this.TabFuncionario.ResumeLayout(false);
+            this.TabFuncionario.PerformLayout();
             this.TabEndereco.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.TabEndereco.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private TabControl TabEndereco;
-        private TabPage tabPage1;
-        private Button button1;
+        private TabControl TabGeral;
+        private TabPage TabFuncionario;
+        private Button BtnCadastroEndereco;
         private Label label7;
         private TextBox TxtBoxEnderecoFuncionario;
         private MaskedTextBox TxtBoxSenhaFuncionario;
@@ -460,23 +461,23 @@
         private Label label2;
         private Label label1;
         private TextBox txtBoxNomeFuncionario;
-        private TabPage tabPage2;
-        private Button button2;
+        private TabPage TabEndereco;
+        private Button BtnCadastroFuncionario;
         private Label label15;
-        private MaskedTextBox mtxtNumero;
+        private MaskedTextBox TxtBoxNumero;
         private Label label14;
-        private TextBox txtEstado;
+        private TextBox TxtBoxEstado;
         private Label label13;
-        private TextBox txtCidade;
+        private TextBox TxtBoxCidade;
         private Label label12;
-        private TextBox txtPontoDeReferencia;
+        private TextBox TxtBoxPontoDeReferencia;
         private Label label11;
-        private TextBox txtComplemento;
+        private TextBox TxtBoxComplemento;
         private Label label10;
-        private TextBox txtBairro;
+        private TextBox TxtBoxBairro;
         private Label label9;
-        private TextBox txtRua;
+        private TextBox TxtBoxRua;
         private Label label8;
-        private MaskedTextBox mtxtCep;
+        private MaskedTextBox TxtBoxCep;
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer.BusinessLL
 {
-    internal class Iten_VendaBll : ICRUD<Item_Venda>
+    public class Iten_VendaBll : ICRUD<Item_Venda>
     {
         public Response Insert(Item_Venda item)
         {

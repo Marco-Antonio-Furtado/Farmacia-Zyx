@@ -19,11 +19,11 @@ namespace BusinessLogicalLayer.Verificaçoes
             StringBuilder erros = new StringBuilder("");
 
 
-            erros.Append(stringValidator.ValidateNome(funcionario.Nome) + "\r\n");
-            erros.Append(stringValidator.ValidateCPF(funcionario.CPF) + "\r\n");
-            erros.Append(stringValidator.ValidateEmail(funcionario.Email) + "\r\n");
-            erros.Append(stringValidator.ValidateTelefone(funcionario.Telefone1) + "\r\n");
-            erros.Append(stringValidator.ValidateRG(funcionario.RG) + "\r\n");
+            erros.Append(stringValidator.ValidateNome(funcionario.Nome));
+            erros.Append(stringValidator.ValidateCPF(funcionario.CPF));
+            erros.Append(stringValidator.ValidateEmail(funcionario.Email));
+            erros.Append(stringValidator.ValidateTelefone(funcionario.Telefone1));
+            erros.Append(stringValidator.ValidateRG(funcionario.RG));
             erros.Append(stringValidator.ValidateCEP(funcionario.Endereco?.CEP));
 
 
@@ -34,7 +34,7 @@ namespace BusinessLogicalLayer.Verificaçoes
             //}
 
             
-            if (String.IsNullOrWhiteSpace(erros.ToString()))
+            if (!String.IsNullOrWhiteSpace(erros.ToString()))
             {
                 return new Response(erros.ToString(), false);
             }

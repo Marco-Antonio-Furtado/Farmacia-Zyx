@@ -19,6 +19,17 @@ namespace WfPresentationLayer
             CmbFormaPagamento.DataSource = Enum.GetNames(typeof(FormaPagamento));
         }
 
-        
+        private void BtnNovoCliente_Click(object sender, EventArgs e)
+        {
+            FormCadastroCliente formCadastroCliente = new FormCadastroCliente();
+            formCadastroCliente.ShowDialog();
+            
+        }
+
+        private void BtnNovoProduto_Click(object sender, EventArgs e)
+        {
+            FormCadastroProduto formCadastroProduto = new FormCadastroProduto();
+            formCadastroProduto.ShowDialog();
+        }
     }
 }

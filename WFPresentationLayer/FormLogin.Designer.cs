@@ -29,50 +29,47 @@
         private void InitializeComponent()
         {
             this.TxtBoxLogin = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LabelResposta = new System.Windows.Forms.Label();
             this.TxtBoxSenha = new System.Windows.Forms.TextBox();
             this.BtnLogar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TxtBoxLogin
             // 
-            this.TxtBoxLogin.Location = new System.Drawing.Point(168, 60);
+            this.TxtBoxLogin.Location = new System.Drawing.Point(168, 40);
             this.TxtBoxLogin.Name = "TxtBoxLogin";
-            this.TxtBoxLogin.Size = new System.Drawing.Size(125, 27);
+            this.TxtBoxLogin.Size = new System.Drawing.Size(126, 27);
             this.TxtBoxLogin.TabIndex = 0;
+            this.TxtBoxLogin.Text = "Email";
+            this.TxtBoxLogin.Click += new System.EventHandler(this.TxtBoxLogin_TextChanged);
+            this.TxtBoxLogin.Leave += new System.EventHandler(this.TxtBoxLogin_TextChanged);
             // 
-            // label1
+            // LabelResposta
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(190, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Login";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(190, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Senha";
+            this.LabelResposta.AutoSize = true;
+            this.LabelResposta.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LabelResposta.Location = new System.Drawing.Point(109, 158);
+            this.LabelResposta.Name = "LabelResposta";
+            this.LabelResposta.Size = new System.Drawing.Size(199, 20);
+            this.LabelResposta.TabIndex = 4;
+            this.LabelResposta.Text = "Cadastre Com Email e Senha";
             // 
             // TxtBoxSenha
             // 
-            this.TxtBoxSenha.Location = new System.Drawing.Point(168, 140);
+            this.TxtBoxSenha.Location = new System.Drawing.Point(168, 97);
             this.TxtBoxSenha.Name = "TxtBoxSenha";
-            this.TxtBoxSenha.Size = new System.Drawing.Size(125, 27);
-            this.TxtBoxSenha.TabIndex = 2;
+            this.TxtBoxSenha.Size = new System.Drawing.Size(126, 27);
+            this.TxtBoxSenha.TabIndex = 1;
+            this.TxtBoxSenha.Text = "Senha";
+            this.TxtBoxSenha.Click += new System.EventHandler(this.TxtBoxSenha_TextChanged);
+            this.TxtBoxSenha.Leave += new System.EventHandler(this.TxtBoxSenha_TextChanged);
             // 
             // BtnLogar
             // 
             this.BtnLogar.Location = new System.Drawing.Point(339, 40);
             this.BtnLogar.Name = "BtnLogar";
-            this.BtnLogar.Size = new System.Drawing.Size(138, 139);
-            this.BtnLogar.TabIndex = 4;
+            this.BtnLogar.Size = new System.Drawing.Size(138, 138);
+            this.BtnLogar.TabIndex = 2;
             this.BtnLogar.Text = "Logar";
             this.BtnLogar.UseVisualStyleBackColor = true;
             this.BtnLogar.Click += new System.EventHandler(this.BtnLogar_Click);
@@ -81,14 +78,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 269);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(517, 273);
             this.Controls.Add(this.BtnLogar);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.TxtBoxSenha);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LabelResposta);
             this.Controls.Add(this.TxtBoxLogin);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.Name = "FormLogin";
-            this.Text = "FormLogin";
+            this.Text = "Login";
+            this.Enter += new System.EventHandler(this.BtnLogar_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,8 +97,7 @@
         #endregion
 
         private TextBox TxtBoxLogin;
-        private Label label1;
-        private Label label2;
+        private Label LabelResposta;
         private TextBox TxtBoxSenha;
         private Button BtnLogar;
     }

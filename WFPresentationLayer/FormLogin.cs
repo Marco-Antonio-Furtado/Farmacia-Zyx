@@ -21,16 +21,46 @@ namespace WfPresentationLayer
         private void BtnLogar_Click(object sender, EventArgs e)
         {
             MetodoLogin metodoLogin = new MetodoLogin(TxtBoxLogin.Text, TxtBoxSenha.Text);
+            
             if (metodoLogin.IsLoggedIn(metodoLogin))
             {
-                MessageBox.Show("Logado");
+                LabelResposta.Text = "Bem vindo";
                 MenuGeralAdmin menuGeralAdmin = new MenuGeralAdmin();
                 
                     menuGeralAdmin.ShowDialog();
                 
-            }else { MessageBox.Show("tente novamente"); }
+            }else { LabelResposta.Text = "Email ou Senha Invalidos"; }
 
                
         }
+
+        private void TxtBoxLogin_TextChanged(object sender, EventArgs e)
+        {
+            if(TxtBoxLogin.Text == "Email" )
+            {
+                TxtBoxLogin.Text = "";
+                
+            }
+            else if(TxtBoxLogin.Text == "")
+            {
+                TxtBoxLogin.Text = "Email"; 
+            }
+        }
+
+        private void TxtBoxSenha_TextChanged(object sender, EventArgs e)
+        {
+            if (TxtBoxSenha.Text == "Senha")
+            {
+                TxtBoxSenha.Text = "";
+            }
+            else if (TxtBoxSenha.Text == "")
+            {
+                TxtBoxSenha.Text = "Senha";
+            }
+            
+
+        }
+
+        
     }
 }

@@ -59,7 +59,7 @@
             this.TxtBoxRgCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxRgCliente.Name = "TxtBoxRgCliente";
             this.TxtBoxRgCliente.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxRgCliente.TabIndex = 50;
+            this.TxtBoxRgCliente.TabIndex = 6;
             this.TxtBoxRgCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BtnCadastrarCliente
@@ -68,7 +68,7 @@
             this.BtnCadastrarCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnCadastrarCliente.Name = "BtnCadastrarCliente";
             this.BtnCadastrarCliente.Size = new System.Drawing.Size(222, 135);
-            this.BtnCadastrarCliente.TabIndex = 47;
+            this.BtnCadastrarCliente.TabIndex = 7;
             this.BtnCadastrarCliente.Text = "Cadastrar Cliente";
             this.BtnCadastrarCliente.UseVisualStyleBackColor = true;
             this.BtnCadastrarCliente.Click += new System.EventHandler(this.BtnCadastrarCliente_Click);
@@ -81,7 +81,7 @@
             this.TxtBoxTelefone1Cliente.Mask = "+55 (99) 90000-0000";
             this.TxtBoxTelefone1Cliente.Name = "TxtBoxTelefone1Cliente";
             this.TxtBoxTelefone1Cliente.Size = new System.Drawing.Size(193, 27);
-            this.TxtBoxTelefone1Cliente.TabIndex = 46;
+            this.TxtBoxTelefone1Cliente.TabIndex = 4;
             // 
             // label5
             // 
@@ -108,7 +108,7 @@
             this.txtBoxEmailCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBoxEmailCliente.Name = "txtBoxEmailCliente";
             this.txtBoxEmailCliente.Size = new System.Drawing.Size(203, 27);
-            this.txtBoxEmailCliente.TabIndex = 43;
+            this.txtBoxEmailCliente.TabIndex = 2;
             // 
             // TxtBoxCpfCLiente
             // 
@@ -118,7 +118,7 @@
             this.TxtBoxCpfCLiente.Mask = "000,000,000-00";
             this.TxtBoxCpfCLiente.Name = "TxtBoxCpfCLiente";
             this.TxtBoxCpfCLiente.Size = new System.Drawing.Size(193, 27);
-            this.TxtBoxCpfCLiente.TabIndex = 42;
+            this.TxtBoxCpfCLiente.TabIndex = 3;
             // 
             // label2
             // 
@@ -145,7 +145,7 @@
             this.txtBoxNomeCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBoxNomeCliente.Name = "txtBoxNomeCliente";
             this.txtBoxNomeCliente.Size = new System.Drawing.Size(203, 27);
-            this.txtBoxNomeCliente.TabIndex = 39;
+            this.txtBoxNomeCliente.TabIndex = 1;
             // 
             // TxtBoxTelefone2Cliente
             // 
@@ -155,7 +155,7 @@
             this.TxtBoxTelefone2Cliente.Mask = "+55 (99) 90000-0000";
             this.TxtBoxTelefone2Cliente.Name = "TxtBoxTelefone2Cliente";
             this.TxtBoxTelefone2Cliente.Size = new System.Drawing.Size(193, 27);
-            this.TxtBoxTelefone2Cliente.TabIndex = 53;
+            this.TxtBoxTelefone2Cliente.TabIndex = 5;
             // 
             // label3
             // 

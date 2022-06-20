@@ -33,7 +33,7 @@ namespace WfPresentationLayer
 
         private void MenuProdutoCadastrar_Click(object sender, EventArgs e)
         {
-            CadastroProduto cadastroProduto = new CadastroProduto();
+            FormCadastroProduto cadastroProduto = new FormCadastroProduto();
             cadastroProduto.ShowDialog();
         }
 

@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer.BusinessLL
 {
+    
     public class ClienteBll : ICRUD<Cliente>
     {
+        private ClienteValidator clienteValidator = new ClienteValidator();
         private ClienteDAL clienteDAL = new ClienteDAL();
         public Response Insert(Cliente item)
         {
-            ClienteValidator clienteValidator = new ClienteValidator();
             Response resposta = clienteValidator.Validate(item);
             if (resposta.HasSuccess)
             {
@@ -25,11 +26,17 @@ namespace BusinessLogicalLayer.BusinessLL
 
         public Response Update(Cliente item)
         {
-            throw new NotImplementedException();
+            Response resposta = clienteValidator.Validate(item);
+            if(resposta.HasSuccess)
+            {
+                return clienteDAL.Update(item);
+            }
+            else { return resposta; }
+           
         }
         public Response Delete(int id)
         {
-            throw new NotImplementedException();
+            return clienteDAL.Delete(id);
         }
 
         public DataResponse<Cliente> GetAll()

@@ -13,24 +13,30 @@ namespace BusinessLogicalLayer.BusinessLL
     public class FornecedorBll : ICRUD<Fornecedor>
     {
         FornecedorDAL fornecedorDAL = new FornecedorDAL();
+        FornecedorValidator fornecedorValidate = new FornecedorValidator();
+
         public Response Insert(Fornecedor item)
         {
-            FornecedorValidator fornecedorValidate = new FornecedorValidator();
             Response resposta = fornecedorValidate.Validate(item);
             if (resposta.HasSuccess)
             {
                 return fornecedorDAL.Insert(item);
             }
-            return resposta;
+            else { return resposta; }
         }
 
         public Response Update(Fornecedor item)
         {
-            throw new NotImplementedException();
+            Response Resposta = fornecedorValidate.Validate(item);
+            if (Resposta.HasSuccess)
+            {
+                return fornecedorDAL.Update(item);
+            }
+            else { return Resposta; }
         }
         public Response Delete(int id)
         {
-            throw new NotImplementedException();
+            return fornecedorDAL.Delete(id);
         }
 
         public DataResponse<Fornecedor> GetAll()

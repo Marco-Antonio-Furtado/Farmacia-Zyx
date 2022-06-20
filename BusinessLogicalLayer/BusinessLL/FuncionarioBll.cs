@@ -13,24 +13,30 @@ namespace BusinessLogicalLayer.BusinessLL
     public class FuncionarioBll : ICRUD<Funcionario>
     {
         FuncionarioDAL funcionarioDAL = new FuncionarioDAL();
+        FuncionarioValidator funcionarioValidator = new FuncionarioValidator();
         public Response Insert(Funcionario item)
         {
-            FuncionarioValidator funcionarioValidator = new FuncionarioValidator();
+            
             Response resposta = funcionarioValidator.Validate(item);
             if (resposta.HasSuccess)
             {
                 return funcionarioDAL.Insert(item);
             }
-            return resposta;
+            else { return resposta; }
         }
 
         public Response Update(Funcionario item)
         {
-            throw new NotImplementedException();
+            Response resposta = funcionarioValidator.Validate(item);
+            if (resposta.HasSuccess)
+            {
+                return funcionarioDAL.Update(item);
+            }
+            else { return resposta; }
         }
         public Response Delete(int id)
         {
-            throw new NotImplementedException();
+            return funcionarioDAL.Delete(id);
         }
 
         public DataResponse<Funcionario> GetAll()

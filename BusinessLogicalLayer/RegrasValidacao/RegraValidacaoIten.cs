@@ -13,12 +13,12 @@ namespace BusinessLogicalLayer.Verificaçoes
         {
             if (String.IsNullOrWhiteSpace(nome))
             {
-                return "string nao pode ser vazia";
+                return "string nao pode ser vazia\r\n";
             }
             
             if (nome.Length <= 2)
             {
-                return "nome insuficiente";
+                return "nome insuficiente\r\n";
             }
             return "";
 
@@ -27,11 +27,11 @@ namespace BusinessLogicalLayer.Verificaçoes
         {
             if (String.IsNullOrWhiteSpace(descrisao))
             {
-                return "descrisao nao informada";
+                return "descrisao nao informada\r\n";
             }
             if (descrisao.Length <= 2)
             {
-                return "descrisao insuficiente";
+                return "descrisao insuficiente\r\n";
             }
             return "";
 
@@ -40,11 +40,11 @@ namespace BusinessLogicalLayer.Verificaçoes
         {
             if (String.IsNullOrWhiteSpace(laboratorio))
             {
-                return "laboratorio nao informado";
+                return "laboratorio nao informado\r\n";
             }
             if(laboratorio.Length <= 2)
             {
-                return "laboratorio insuficiente";
+                return "laboratorio insuficiente\r\n";
             }
             return "";
 

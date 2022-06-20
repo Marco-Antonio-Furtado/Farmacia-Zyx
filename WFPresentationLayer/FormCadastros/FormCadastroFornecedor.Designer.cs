@@ -57,7 +57,7 @@
             this.TxtBoxNomeResponsavel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxNomeResponsavel.Name = "TxtBoxNomeResponsavel";
             this.TxtBoxNomeResponsavel.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxNomeResponsavel.TabIndex = 63;
+            this.TxtBoxNomeResponsavel.TabIndex = 5;
             this.TxtBoxNomeResponsavel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BtnCadastroFornecedor
@@ -66,7 +66,7 @@
             this.BtnCadastroFornecedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnCadastroFornecedor.Name = "BtnCadastroFornecedor";
             this.BtnCadastroFornecedor.Size = new System.Drawing.Size(222, 135);
-            this.BtnCadastroFornecedor.TabIndex = 62;
+            this.BtnCadastroFornecedor.TabIndex = 6;
             this.BtnCadastroFornecedor.Text = "Cadastrar Fornecedor";
             this.BtnCadastroFornecedor.UseVisualStyleBackColor = true;
             this.BtnCadastroFornecedor.Click += new System.EventHandler(this.BtnCadastroFornecedor_Click);
@@ -79,7 +79,7 @@
             this.TxtBoxTelefoneFornecedor.Mask = "+55 (99) 90000-0000";
             this.TxtBoxTelefoneFornecedor.Name = "TxtBoxTelefoneFornecedor";
             this.TxtBoxTelefoneFornecedor.Size = new System.Drawing.Size(193, 27);
-            this.TxtBoxTelefoneFornecedor.TabIndex = 61;
+            this.TxtBoxTelefoneFornecedor.TabIndex = 4;
             // 
             // label5
             // 
@@ -106,7 +106,7 @@
             this.txtBoxEmailFornecedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBoxEmailFornecedor.Name = "txtBoxEmailFornecedor";
             this.txtBoxEmailFornecedor.Size = new System.Drawing.Size(203, 27);
-            this.txtBoxEmailFornecedor.TabIndex = 58;
+            this.txtBoxEmailFornecedor.TabIndex = 2;
             // 
             // TxtBoxCnpjFornecedor
             // 
@@ -116,7 +116,7 @@
             this.TxtBoxCnpjFornecedor.Mask = "00.000.000/0000-00";
             this.TxtBoxCnpjFornecedor.Name = "TxtBoxCnpjFornecedor";
             this.TxtBoxCnpjFornecedor.Size = new System.Drawing.Size(193, 27);
-            this.TxtBoxCnpjFornecedor.TabIndex = 57;
+            this.TxtBoxCnpjFornecedor.TabIndex = 3;
             // 
             // label2
             // 
@@ -144,13 +144,13 @@
             this.txtBoxRazaoSocial.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBoxRazaoSocial.Name = "txtBoxRazaoSocial";
             this.txtBoxRazaoSocial.Size = new System.Drawing.Size(203, 27);
-            this.txtBoxRazaoSocial.TabIndex = 54;
+            this.txtBoxRazaoSocial.TabIndex = 1;
             // 
             // FormCadastroFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 418);
+            this.ClientSize = new System.Drawing.Size(499, 326);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.TxtBoxNomeResponsavel);
             this.Controls.Add(this.BtnCadastroFornecedor);

@@ -18,13 +18,13 @@ namespace BusinessLogicalLayer.Verificaçoes
         {
             StringBuilder erros = new StringBuilder("");
 
-            erros.Append(stringValidator.ValidateNome(fornecedor.NomeResponsavel) + "\r\n");
-            erros.Append(stringValidator.ValidateEmail(fornecedor.Email) + "\r\n");
-            erros.Append(stringValidator.ValidateTelefone(fornecedor.Telefone) + "\r\n");
-            if (!stringValidator.IsCnpj(fornecedor.CNPJ)) erros.Append("CNPJ Invalido" + "\r\n");
-            erros.Append(stringValidator.ValidateRazaoSocial(fornecedor.RazaoSocial) + "\r\n");
+            erros.Append(stringValidator.ValidateNome(fornecedor.NomeResponsavel));
+            erros.Append(stringValidator.ValidateEmail(fornecedor.Email));
+            erros.Append(stringValidator.ValidateTelefone(fornecedor.Telefone));
+            if (!stringValidator.IsCnpj(fornecedor.CNPJ)) erros.Append("CNPJ Invalido");
+            erros.Append(stringValidator.ValidateRazaoSocial(fornecedor.RazaoSocial));
 
-            if (String.IsNullOrWhiteSpace(erros.ToString()))
+            if (!String.IsNullOrWhiteSpace(erros.ToString()))
             {
                 return new Response(erros.ToString(), false);
             }

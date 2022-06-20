@@ -8,6 +8,8 @@ namespace DataAccessLayer
 {
     public class ClienteDAL : ICRUD<Cliente>
     {
+        string DalDirectory = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\AdultMovieLocatorDb.mdf;Integrated Security=True;Connect Timeout=3";
+        
         public Response Insert(Cliente cliente)
         {
             //PARÂMETROS SQL - AUTOMATICAMENTE ADICIONA UMA "/" NA FRENTE DE NOMES COM ' EX SHAQQILE O'NEAL
@@ -15,7 +17,7 @@ namespace DataAccessLayer
             //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
             string sql = $"INSERT INTO CLIENTES (NOME,CPF,EMAIL,TELEFONE) VALUES (@NOME,@CPF,@EMAIL,@TELEFONE)";
 
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\AdultMovieLocatorDb.mdf;Integrated Security=True;Connect Timeout=3";
+            string connectionString = DalDirectory;
 
             //ADO.NET 
             SqlConnection connection = new SqlConnection(connectionString);
@@ -66,7 +68,7 @@ namespace DataAccessLayer
             //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
             string sql = $"UPDATE CLIENTES SET NOME = @NOME, EMAIL = @EMAIL, TELEFONE = @TELEFONE WHERE ID = @ID";
 
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\AdultMovieLocatorDb.mdf;Integrated Security=True;Connect Timeout=3";
+            string connectionString = DalDirectory;
 
             //ADO.NET 
             SqlConnection connection = new SqlConnection(connectionString);
@@ -113,7 +115,7 @@ namespace DataAccessLayer
         {
             string sql = "DELETE FROM CLIENTES WHERE ID = @ID";
 
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\AdultMovieLocatorDb.mdf;Integrated Security=True;Connect Timeout=3";
+            string connectionString = DalDirectory;
 
             //ADO.NET 
             SqlConnection connection = new SqlConnection(connectionString);
@@ -164,7 +166,7 @@ namespace DataAccessLayer
             //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
             string sql = $"SELECT ID,NOME,CPF,EMAIL,TELEFONE FROM CLIENTES";
 
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\AdultMovieLocatorDb.mdf;Integrated Security=True;Connect Timeout=3";
+            string connectionString = DalDirectory;
 
             //ADO.NET 
             SqlConnection connection = new SqlConnection(connectionString);
@@ -208,7 +210,7 @@ namespace DataAccessLayer
             //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
             string sql = $"SELECT ID,NOME,CPF,EMAIL,TELEFONE FROM CLIENTES WHERE ID = @ID";
 
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\AdultMovieLocatorDb.mdf;Integrated Security=True;Connect Timeout=3";
+            string connectionString = DalDirectory;
 
             //ADO.NET 
             SqlConnection connection = new SqlConnection(connectionString);

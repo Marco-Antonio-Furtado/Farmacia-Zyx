@@ -1,6 +1,6 @@
 ﻿namespace WfPresentationLayer
 {
-    partial class CadastroProduto
+    partial class FormCadastroProduto
     {
         /// <summary>
         /// Required designer variable.
@@ -35,6 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TxtBoxNomeProduto = new System.Windows.Forms.TextBox();
             this.BtnCadastrarProduto = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtBoxPrecoProduto = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label4
@@ -53,7 +55,7 @@
             this.TxtBoxDescrisaoProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxDescrisaoProduto.Name = "TxtBoxDescrisaoProduto";
             this.TxtBoxDescrisaoProduto.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxDescrisaoProduto.TabIndex = 14;
+            this.TxtBoxDescrisaoProduto.TabIndex = 2;
             // 
             // TxtBoxLaboratorio
             // 
@@ -62,7 +64,7 @@
             this.TxtBoxLaboratorio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxLaboratorio.Name = "TxtBoxLaboratorio";
             this.TxtBoxLaboratorio.Size = new System.Drawing.Size(193, 27);
-            this.TxtBoxLaboratorio.TabIndex = 13;
+            this.TxtBoxLaboratorio.TabIndex = 3;
             // 
             // Laboratorio
             // 
@@ -89,23 +91,45 @@
             this.TxtBoxNomeProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxNomeProduto.Name = "TxtBoxNomeProduto";
             this.TxtBoxNomeProduto.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxNomeProduto.TabIndex = 10;
+            this.TxtBoxNomeProduto.TabIndex = 1;
             // 
             // BtnCadastrarProduto
             // 
             this.BtnCadastrarProduto.Location = new System.Drawing.Point(259, 38);
             this.BtnCadastrarProduto.Name = "BtnCadastrarProduto";
             this.BtnCadastrarProduto.Size = new System.Drawing.Size(207, 155);
-            this.BtnCadastrarProduto.TabIndex = 17;
+            this.BtnCadastrarProduto.TabIndex = 10;
             this.BtnCadastrarProduto.Text = "Cadastrar Produto";
             this.BtnCadastrarProduto.UseVisualStyleBackColor = true;
             this.BtnCadastrarProduto.Click += new System.EventHandler(this.BtnCadastrarProduto_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 198);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 20);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Preço";
+            // 
+            // TxtBoxPrecoProduto
+            // 
+            this.TxtBoxPrecoProduto.BackColor = System.Drawing.SystemColors.Window;
+            this.TxtBoxPrecoProduto.Location = new System.Drawing.Point(12, 222);
+            this.TxtBoxPrecoProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxPrecoProduto.Mask = "000,00";
+            this.TxtBoxPrecoProduto.Name = "TxtBoxPrecoProduto";
+            this.TxtBoxPrecoProduto.Size = new System.Drawing.Size(193, 27);
+            this.TxtBoxPrecoProduto.TabIndex = 5;
+            this.TxtBoxPrecoProduto.ValidatingType = typeof(int);
             // 
             // CadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 272);
+            this.Controls.Add(this.TxtBoxPrecoProduto);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnCadastrarProduto);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TxtBoxDescrisaoProduto);
@@ -129,5 +153,7 @@
         private Label label1;
         private TextBox TxtBoxNomeProduto;
         private Button BtnCadastrarProduto;
+        private Label label2;
+        private MaskedTextBox TxtBoxPrecoProduto;
     }
 }

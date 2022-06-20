@@ -13,24 +13,30 @@ namespace BusinessLogicalLayer.BusinessLL
     public class ProdutoBll : ICRUD<Produto>
     {
         ProdutoDal produtoDAL = new ProdutoDal();
+        ProdutoValidator produtoValidator = new ProdutoValidator();
         public Response Insert(Produto item)
         {
-            ProdutoValidator produtoValidator = new ProdutoValidator();
+            
             Response resposta = produtoValidator.ValidateIten(item);
             if (resposta.HasSuccess)
             {
                 return produtoDAL.Insert(item);
             }
-            return resposta;
+            else { return resposta; }
         }
 
         public Response Update(Produto item)
         {
-            throw new NotImplementedException();
+            Response resposta = produtoValidator.ValidateIten(item);
+            if (resposta.HasSuccess)
+            {
+               return produtoDAL.Update(item);
+            }
+            else { return resposta; }
         }
         public Response Delete(int id)
         {
-            throw new NotImplementedException();
+            return produtoDAL.Delete(id);
         }
 
         public DataResponse<Produto> GetAll()

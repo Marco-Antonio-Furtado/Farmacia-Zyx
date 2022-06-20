@@ -21,7 +21,7 @@ namespace BusinessLogicalLayer
         {
             if (string.IsNullOrWhiteSpace(nome))
             {
-                return "Nome deve ser informado.";
+                return "Nome deve ser informado.\r\n";
             }
             //Trim -> Remove espaços em branco do começo e do fim da string (mas não do meio)
             nome = nome.Trim();
@@ -31,31 +31,31 @@ namespace BusinessLogicalLayer
 
             if (nome.Length < MINIMO_CARACTERES_NOME)
             {
-                return "Nome deve conter no mínimo 3 caracteres.";
+                return "Nome deve conter o minimo de caracteres.\r\n";
             }
             string[] nomes = nome.Split(" ");
             if (nomes.Length <= 1)
             {
-                return "Nome completo deve ser informado.";
+                return "Nome completo deve ser informado.\r\n";
             }
 
             for (int i = 0; i < nomes.Length; i++)
             {
                 if (nomes[i].Length < 2)
                 {
-                    return "Nome/Sobrenome deve possuir ao menos 2 caractere.";
+                    return "Nome/Sobrenome deve possuir ao menos 2 caractere.\r\n";
                 }
             }
             //Alfabeto romano e acentos gráficos
             string regex = @"^[a-zA-Záâãéêíïóõôüúç ÁÂÃÉÊÍÏÓÔÜÚÇ]+$";
             if (!Regex.IsMatch(nome,regex))
             {
-                return "Nome deve conter apenas caracteres do alfabeto romano.";
+                return "Nome deve conter apenas caracteres do alfabeto romano.\r\n";
             }
 
             if (nome.Length > MAXIMO_CARACTERES_NOME)
             {
-                return "Nome não pode conter mais que 100 caracteres.";
+                return "Nome não pode conter mais que o maximo de caracteres.\r\n";
             }
 
             //Se chegou aqui, o nome ta certinho e retornamos "";
@@ -71,7 +71,7 @@ namespace BusinessLogicalLayer
         {
             if (string.IsNullOrWhiteSpace(cpf))
             {
-                return "CPF deve ser informado.";
+                return "CPF deve ser informado.\r\n";
             }
 
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -83,7 +83,7 @@ namespace BusinessLogicalLayer
             cpf = cpf.Trim();
             cpf = cpf.Replace(".", "").Replace("-", "");
             if (cpf.Length != CARACTERES_CPF)
-                return "CPF deve conter 11 caracteres";
+                return "CPF com numeros de caracteres invalidos\r\n";
             tempCpf = cpf.Substring(0, 9);
             soma = 0;
 
@@ -108,7 +108,7 @@ namespace BusinessLogicalLayer
             bool ehValido = cpf.EndsWith(digito);
             if (!ehValido)
             {
-                return "CPF com formato inválido.";
+                return "CPF com formato inválido.\r\n";
             }
             return "";
         }
@@ -120,21 +120,21 @@ namespace BusinessLogicalLayer
             
             if (string.IsNullOrWhiteSpace(email))
             {
-                return "Email deve ser informado.";
+                return "Email deve ser informado.\r\n";
             }
             string pattern = @"^[^@\s]+@[^@\s]+.[^@\s]+$";
             if (!Regex.IsMatch(email, pattern))
             {
-                return "Email inválido.";
+                return "Email inválido.\r\n";
             }
             email = email.Trim();
             if (email.Length < MINIMO_CARACTERES_EMAIL)
             {
-                return "Email não pode conter menos que 5 caracteres.";
+                return "Email não pode conter menos que 5 caracteres.\r\n";
             }
             if (email.Length > MAXIMO_CARACTERES_EMAIL)
             {
-                return "Email não pode conter mais que 100 caracteres.";
+                return "Email não pode conter mais que 100 caracteres.\r\n";
             }
             return "";
         }
@@ -143,7 +143,7 @@ namespace BusinessLogicalLayer
         {
             if (string.IsNullOrWhiteSpace(cep))
             {
-                return "CEP deve ser informado.";
+                return "CEP deve ser informado.\r\n";
             }
             //Remove espaços em branco do inicio e fim da string
             cep = cep.Trim();
@@ -152,14 +152,14 @@ namespace BusinessLogicalLayer
 
             if (cep.Length != CARACTERES_CEP)
             {
-                return "CEP deve conter 8 dígitos (sem considerar hífen/ponto).";
+                return "CEP deve conter 8 dígitos (sem considerar hífen/ponto).\r\n";
             }
 
             int temp = 0;
             if(!int.TryParse(cep, out temp))
             {
                 //Se a conversão não funcionar
-                return "CEP em formato incorreto.";
+                return "CEP em formato incorreto.\r\n";
             }
 
             return "";
@@ -169,7 +169,7 @@ namespace BusinessLogicalLayer
         {
             if (string.IsNullOrWhiteSpace(telefone))
             {
-                return "Telefone deve ser informado.";
+                return "Telefone deve ser informado.\r\n";
             }
             telefone = telefone.Trim();
 
@@ -183,13 +183,13 @@ namespace BusinessLogicalLayer
             
             if (telefone.Length != 8 && telefone.Length != 9 && telefone.Length!= 11 && telefone.Length != 13)
             {
-                return "Telefone deve conter 8, 9, 11 ou 13 dígitos.";
+                return "Telefone deve conter 8, 9, 11 ou 13 dígitos.\r\n";
             }
 
             long temp;
             if(!long.TryParse(telefone, out temp))
             {
-                return "Telefone inválido.";
+                return "Telefone inválido.\r\n";
             }
             return "";
         }
@@ -197,7 +197,7 @@ namespace BusinessLogicalLayer
         {
             if (string.IsNullOrWhiteSpace(RG))
             {
-                return "RG tem que ser informado";
+                return "RG tem que ser informado\r\n";
             }
             return "";
         }
@@ -242,11 +242,11 @@ namespace BusinessLogicalLayer
         {
             if (string.IsNullOrWhiteSpace(Razao))
             {
-                return "Razao Social tem que ser informada";
+                return "Razao Social tem que ser informada\r\n";
             }
             else if (Razao.Length > 3)
             {
-                return "Razao Social invalida";
+                return "Razao Social invalida\r\n";
             }
             else { return ""; }
         }

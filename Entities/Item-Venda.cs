@@ -17,6 +17,6 @@ namespace Entities
         public FormaPagamento FormaPagamento { get; set; }
         public int Quantidade { get; set; }
         public double PrecoUnitario { get; set; }
-        public double ValorTotal;
+        public double ValorTotal { get; set; }
     }
 }

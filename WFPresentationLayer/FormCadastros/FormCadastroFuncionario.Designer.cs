@@ -109,7 +109,7 @@
             this.BtnCadastroEndereco.Location = new System.Drawing.Point(258, 24);
             this.BtnCadastroEndereco.Name = "BtnCadastroEndereco";
             this.BtnCadastroEndereco.Size = new System.Drawing.Size(198, 206);
-            this.BtnCadastroEndereco.TabIndex = 83;
+            this.BtnCadastroEndereco.TabIndex = 8;
             this.BtnCadastroEndereco.Text = "Cadastrar endereco";
             this.BtnCadastroEndereco.UseVisualStyleBackColor = true;
             this.BtnCadastroEndereco.Click += new System.EventHandler(this.BtnCadastroEndereco_Click);
@@ -130,7 +130,7 @@
             this.TxtBoxEnderecoFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxEnderecoFuncionario.Name = "TxtBoxEnderecoFuncionario";
             this.TxtBoxEnderecoFuncionario.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxEnderecoFuncionario.TabIndex = 81;
+            this.TxtBoxEnderecoFuncionario.TabIndex = 7;
             this.TxtBoxEnderecoFuncionario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TxtBoxSenhaFuncionario
@@ -140,7 +140,7 @@
             this.TxtBoxSenhaFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxSenhaFuncionario.Name = "TxtBoxSenhaFuncionario";
             this.TxtBoxSenhaFuncionario.Size = new System.Drawing.Size(193, 27);
-            this.TxtBoxSenhaFuncionario.TabIndex = 80;
+            this.TxtBoxSenhaFuncionario.TabIndex = 3;
             // 
             // label3
             // 
@@ -167,7 +167,7 @@
             this.TxtBoxRgFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxRgFuncionario.Name = "TxtBoxRgFuncionario";
             this.TxtBoxRgFuncionario.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxRgFuncionario.TabIndex = 77;
+            this.TxtBoxRgFuncionario.TabIndex = 6;
             this.TxtBoxRgFuncionario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TxtBoxTelefone1Funcionario
@@ -178,7 +178,7 @@
             this.TxtBoxTelefone1Funcionario.Mask = "+55 (99) 90000-0000";
             this.TxtBoxTelefone1Funcionario.Name = "TxtBoxTelefone1Funcionario";
             this.TxtBoxTelefone1Funcionario.Size = new System.Drawing.Size(193, 27);
-            this.TxtBoxTelefone1Funcionario.TabIndex = 76;
+            this.TxtBoxTelefone1Funcionario.TabIndex = 5;
             // 
             // label5
             // 
@@ -205,7 +205,7 @@
             this.txtBoxEmailFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBoxEmailFuncionario.Name = "txtBoxEmailFuncionario";
             this.txtBoxEmailFuncionario.Size = new System.Drawing.Size(203, 27);
-            this.txtBoxEmailFuncionario.TabIndex = 73;
+            this.txtBoxEmailFuncionario.TabIndex = 2;
             // 
             // TxtBoxCpfFuncionario
             // 
@@ -215,7 +215,7 @@
             this.TxtBoxCpfFuncionario.Mask = "000,000,000-00";
             this.TxtBoxCpfFuncionario.Name = "TxtBoxCpfFuncionario";
             this.TxtBoxCpfFuncionario.Size = new System.Drawing.Size(193, 27);
-            this.TxtBoxCpfFuncionario.TabIndex = 72;
+            this.TxtBoxCpfFuncionario.TabIndex = 4;
             // 
             // label2
             // 
@@ -242,7 +242,7 @@
             this.txtBoxNomeFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBoxNomeFuncionario.Name = "txtBoxNomeFuncionario";
             this.txtBoxNomeFuncionario.Size = new System.Drawing.Size(203, 27);
-            this.txtBoxNomeFuncionario.TabIndex = 69;
+            this.txtBoxNomeFuncionario.TabIndex = 1;
             // 
             // TabEndereco
             // 
@@ -297,7 +297,7 @@
             this.TxtBoxNumero.Mask = "0999";
             this.TxtBoxNumero.Name = "TxtBoxNumero";
             this.TxtBoxNumero.Size = new System.Drawing.Size(125, 27);
-            this.TxtBoxNumero.TabIndex = 63;
+            this.TxtBoxNumero.TabIndex = 18;
             // 
             // label14
             // 
@@ -315,7 +315,7 @@
             this.TxtBoxEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxEstado.Name = "TxtBoxEstado";
             this.TxtBoxEstado.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxEstado.TabIndex = 61;
+            this.TxtBoxEstado.TabIndex = 17;
             // 
             // label13
             // 
@@ -333,7 +333,7 @@
             this.TxtBoxCidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxCidade.Name = "TxtBoxCidade";
             this.TxtBoxCidade.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxCidade.TabIndex = 59;
+            this.TxtBoxCidade.TabIndex = 16;
             // 
             // label12
             // 
@@ -351,7 +351,7 @@
             this.TxtBoxPontoDeReferencia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxPontoDeReferencia.Name = "TxtBoxPontoDeReferencia";
             this.TxtBoxPontoDeReferencia.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxPontoDeReferencia.TabIndex = 57;
+            this.TxtBoxPontoDeReferencia.TabIndex = 13;
             // 
             // label11
             // 
@@ -369,7 +369,7 @@
             this.TxtBoxComplemento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxComplemento.Name = "TxtBoxComplemento";
             this.TxtBoxComplemento.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxComplemento.TabIndex = 55;
+            this.TxtBoxComplemento.TabIndex = 12;
             // 
             // label10
             // 
@@ -387,7 +387,7 @@
             this.TxtBoxBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxBairro.Name = "TxtBoxBairro";
             this.TxtBoxBairro.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxBairro.TabIndex = 53;
+            this.TxtBoxBairro.TabIndex = 15;
             // 
             // label9
             // 
@@ -405,7 +405,7 @@
             this.TxtBoxRua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxRua.Name = "TxtBoxRua";
             this.TxtBoxRua.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxRua.TabIndex = 51;
+            this.TxtBoxRua.TabIndex = 11;
             // 
             // label8
             // 
@@ -423,7 +423,7 @@
             this.TxtBoxCep.Mask = "00000-000";
             this.TxtBoxCep.Name = "TxtBoxCep";
             this.TxtBoxCep.Size = new System.Drawing.Size(125, 27);
-            this.TxtBoxCep.TabIndex = 49;
+            this.TxtBoxCep.TabIndex = 10;
             // 
             // FormCadastroFuncionario
             // 

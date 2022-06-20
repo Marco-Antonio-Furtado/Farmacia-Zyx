@@ -18,11 +18,11 @@ namespace BusinessLogicalLayer.Verificaçoes
             StringBuilder erros = new StringBuilder("");
             
 
-            erros.Append(ItensValidator.ValidateProdutoNome(produto.Nome) + "\r\n");
-            erros.Append(ItensValidator.ValidateDescrisaoProduto(produto.Descriscao) + "\r\n");
-            erros.Append(ItensValidator.ValidateLaboratorio(produto.Laboratorio) + "\r\n");
+            erros.Append(ItensValidator.ValidateProdutoNome(produto.Nome));
+            erros.Append(ItensValidator.ValidateDescrisaoProduto(produto.Descriscao));
+            erros.Append(ItensValidator.ValidateLaboratorio(produto.Laboratorio));
 
-            if (erros.ToString() != "\r\n\r\n\r\n")
+            if (!String.IsNullOrWhiteSpace(erros.ToString()))
             {
                 return new Response(erros.ToString(), false);
             }

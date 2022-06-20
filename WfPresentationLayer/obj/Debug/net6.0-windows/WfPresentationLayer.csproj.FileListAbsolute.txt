@@ -154,9 +154,15 @@ C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresen
 C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\ref\WfPresentationLayer.dll
 C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastroCliente.resources
 C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastroFuncionario.resources
-C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.CadastroProduto.resources
 C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastroEndereco.resources
 C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastros.FormCadastroFornecedor.resources
 C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormNovaVenda.resources
 C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormLogin.resources
 C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.MenuGeralAdmin.resources
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.Alteracao_Cliente.resources
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.Alteracao_Compra.resources
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.Alteracao_Fornecedor.resources
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.Alteracao_Funcionario.resources
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.Alteracao_Produto.resources
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.Alteracao_Venda.resources
+C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastroProduto.resources

@@ -48,7 +48,7 @@ namespace BusinessLogicalLayer
             }
             //Alfabeto romano e acentos gráficos
             string regex = @"^[a-zA-Záâãéêíïóõôüúç ÁÂÃÉÊÍÏÓÔÜÚÇ]+$";
-            if (!Regex.IsMatch(nome,regex))
+            if (!Regex.IsMatch(nome, regex))
             {
                 return "Nome deve conter apenas caracteres do alfabeto romano.\r\n";
             }
@@ -117,7 +117,7 @@ namespace BusinessLogicalLayer
         //Validação do email deve estar errada
         internal string ValidateEmail(string email)
         {
-            
+
             if (string.IsNullOrWhiteSpace(email))
             {
                 return "Email deve ser informado.\r\n";
@@ -156,7 +156,7 @@ namespace BusinessLogicalLayer
             }
 
             int temp = 0;
-            if(!int.TryParse(cep, out temp))
+            if (!int.TryParse(cep, out temp))
             {
                 //Se a conversão não funcionar
                 return "CEP em formato incorreto.\r\n";
@@ -180,14 +180,14 @@ namespace BusinessLogicalLayer
                         .Replace(" ", "")
                         .Replace(".", "")
                         .Replace("+", "");
-            
-            if (telefone.Length != 8 && telefone.Length != 9 && telefone.Length!= 11 && telefone.Length != 13)
+
+            if (telefone.Length != 8 && telefone.Length != 9 && telefone.Length != 11 && telefone.Length != 13)
             {
                 return "Telefone deve conter 8, 9, 11 ou 13 dígitos.\r\n";
             }
 
             long temp;
-            if(!long.TryParse(telefone, out temp))
+            if (!long.TryParse(telefone, out temp))
             {
                 return "Telefone inválido.\r\n";
             }
@@ -203,66 +203,51 @@ namespace BusinessLogicalLayer
         }
         internal bool IsCnpj(string cnpj)
         {
-
-
-            {
-                int[] multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
-                int[] multiplicador2 = new int[13] { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
-                int soma;
-                int resto;
-                string digito;
-                string tempCnpj;
-                cnpj = cnpj.Trim();
-                cnpj = cnpj.Replace(".", "").Replace("-", "").Replace("/", "");
-                if (cnpj.Length != 14)
-                    return false;
-                tempCnpj = cnpj.Substring(0, 12);
-                soma = 0;
-                for (int i = 0; i < 12; i++)
-                    soma += int.Parse(tempCnpj[i].ToString()) * multiplicador1[i];
-                resto = (soma % 11);
-                if (resto < 2)
-                    resto = 0;
-                else
-                    resto = 11 - resto;
-                digito = resto.ToString();
-                tempCnpj = tempCnpj + digito;
-                soma = 0;
-                for (int i = 0; i < 13; i++)
-                    soma += int.Parse(tempCnpj[i].ToString()) * multiplicador2[i];
-                resto = (soma % 11);
-                if (resto < 2)
-                    resto = 0;
-                else
-                    resto = 11 - resto;
-                digito = digito + resto.ToString();
-                return cnpj.EndsWith(digito);
-            }
-
-            internal string ValidateCNPJ(string cnpj)
-            {
-                if (string.IsNullOrWhiteSpace(cnpj))
-                {
-                    return "CNPJ deve ser informado.";
-                }
-                if (IsCnpj(cnpj))
-                {
-                    return "";
-                }
-                return "CNPJ invalido.";
-            }
-            internal string ValidateRazaoSocial(string Razao)
+            int[] multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador2 = new int[13] { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int soma;
+            int resto;
+            string digito;
+            string tempCnpj;
+            cnpj = cnpj.Trim();
+            cnpj = cnpj.Replace(".", "").Replace("-", "").Replace("/", "");
+            if (cnpj.Length != 14)
+                return false;
+            tempCnpj = cnpj.Substring(0, 12);
+            soma = 0;
+            for (int i = 0; i < 12; i++)
+                soma += int.Parse(tempCnpj[i].ToString()) * multiplicador1[i];
+            resto = (soma % 11);
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+            digito = resto.ToString();
+            tempCnpj = tempCnpj + digito;
+            soma = 0;
+            for (int i = 0; i < 13; i++)
+                soma += int.Parse(tempCnpj[i].ToString()) * multiplicador2[i];
+            resto = (soma % 11);
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+            digito = digito + resto.ToString();
+            return cnpj.EndsWith(digito);
+        }
+        internal string ValidateRazaoSocial(string RazaoSocial)
         {
-            if (string.IsNullOrWhiteSpace(Razao))
+            if (string.IsNullOrWhiteSpace(RazaoSocial))
             {
                 return "Razao Social tem que ser informada\r\n";
             }
-            else if (Razao.Length > 3)
+            else if (RazaoSocial.Length > 3)
             {
                 return "Razao Social invalida\r\n";
             }
-            else { return ""; }
+            return ""; 
         }
-       
     }
 }
+       
+

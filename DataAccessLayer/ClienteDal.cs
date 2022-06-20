@@ -8,14 +8,14 @@ namespace DataAccessLayer
 {
     public class ClienteDAL : ICRUD<Cliente>
     {
-        string DalDirectory = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\AdultMovieLocatorDb.mdf;Integrated Security=True;Connect Timeout=3";
+        internal const string DalDirectory = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\AdultMovieLocatorDb.mdf;Integrated Security=True;Connect Timeout=3";
         
         public Response Insert(Cliente cliente)
         {
             //PARÂMETROS SQL - AUTOMATICAMENTE ADICIONA UMA "/" NA FRENTE DE NOMES COM ' EX SHAQQILE O'NEAL
             //               - AUTOMATICAMENTE ADICIONAR '' EM DATAS, VARCHARS E CHARS
             //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
-            string sql = $"INSERT INTO CLIENTES (NOME,CPF,EMAIL,TELEFONE) VALUES (@NOME,@CPF,@EMAIL,@TELEFONE)";
+            string sql = $"INSERT INTO CLIENTES (NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2) VALUES                                 (@NOME,@CPF,@RG,@EMAIL,@TELEFONE1,@TELEFONE2)";
 
             string connectionString = DalDirectory;
 
@@ -25,8 +25,11 @@ namespace DataAccessLayer
             SqlCommand command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("@NOME", cliente.Nome);
             command.Parameters.AddWithValue("@CPF", cliente.CPF);
+            command.Parameters.AddWithValue("@RG", cliente.RG);
             command.Parameters.AddWithValue("@EMAIL", cliente.Email);
             command.Parameters.AddWithValue("@TELEFONE1", cliente.Telefone1);
+            command.Parameters.AddWithValue("@TELEFONE2", cliente.Telefone2);
+
 
             //Estamos conectados na base de dados
             //try catch
@@ -66,7 +69,7 @@ namespace DataAccessLayer
             //PARÂMETROS SQL - AUTOMATICAMENTE ADICIONA UMA "/" NA FRENTE DE NOMES COM ' EX SHAQQILE O'NEAL
             //               - AUTOMATICAMENTE ADICIONAR '' EM DATAS, VARCHARS E CHARS
             //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
-            string sql = $"UPDATE CLIENTES SET NOME = @NOME, EMAIL = @EMAIL, TELEFONE = @TELEFONE WHERE ID = @ID";
+            string sql = $"UPDATE CLIENTES SET NOME = @NOME, CPF = @CPF, RG = @RG, EMAIL = @EMAIL, TELEFONE1 = @TELEFONE1, TELEFONE2 = @TELEFONE2 WHERE ID = @ID";
 
             string connectionString = DalDirectory;
 
@@ -75,8 +78,11 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("@NOME", cliente.Nome);
+            command.Parameters.AddWithValue("@CPF", cliente.CPF);
+            command.Parameters.AddWithValue("@RG", cliente.RG);
             command.Parameters.AddWithValue("@EMAIL", cliente.Email);
             command.Parameters.AddWithValue("@TELEFONE1", cliente.Telefone1);
+            command.Parameters.AddWithValue("@TELEFONE2", cliente.Telefone2);
             command.Parameters.AddWithValue("@ID", cliente.ID);
 
             //Estamos conectados na base de dados
@@ -164,7 +170,7 @@ namespace DataAccessLayer
             //PARÂMETROS SQL - AUTOMATICAMENTE ADICIONA UMA "/" NA FRENTE DE NOMES COM ' EX SHAQQILE O'NEAL
             //               - AUTOMATICAMENTE ADICIONAR '' EM DATAS, VARCHARS E CHARS
             //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
-            string sql = $"SELECT ID,NOME,CPF,EMAIL,TELEFONE FROM CLIENTES";
+            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2 FROM CLIENTES";
 
             string connectionString = DalDirectory;
 
@@ -180,14 +186,13 @@ namespace DataAccessLayer
                 //Enquanto houver registros, o loop será executado!
                 while (reader.Read())
                 {
-                    Cliente cliente = new Cliente();
+                    Cliente cliente = new Cliente(nome : Convert.ToString(reader["NOME"]),
+                                                  cPF: Convert.ToString(reader["CPF"]),
+                                                  rG: Convert.ToString(reader["RG"]),
+                                                  email: Convert.ToString(reader["EMAIL"]),
+                                                  telefone1: Convert.ToString(reader["TELEFONE1"]),
+                                                  telefone2: Convert.ToString(reader["TELEFONE2"]));
                     cliente.ID = Convert.ToInt32(reader["ID"]);
-                    cliente.Nome = Convert.ToString(reader["NOME"]);
-                    cliente.CPF = Convert.ToString(reader["CPF"]);
-                    cliente.Telefone1 = Convert.ToString(reader["TELEFONE1"]);
-                    cliente.Telefone2 = Convert.ToString(reader["TELEFONE2"]);
-
-                    cliente.Email = Convert.ToString(reader["EMAIL"]);
                     clientes.Add(cliente);
                 }
                 return new DataResponse<Cliente>("Clientes selecionados com sucesso!", true, clientes);
@@ -208,7 +213,7 @@ namespace DataAccessLayer
             //PARÂMETROS SQL - AUTOMATICAMENTE ADICIONA UMA "/" NA FRENTE DE NOMES COM ' EX SHAQQILE O'NEAL
             //               - AUTOMATICAMENTE ADICIONAR '' EM DATAS, VARCHARS E CHARS
             //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
-            string sql = $"SELECT ID,NOME,CPF,EMAIL,TELEFONE FROM CLIENTES WHERE ID = @ID";
+            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2 FROM CLIENTES WHERE ID = @ID";
 
             string connectionString = DalDirectory;
 
@@ -224,12 +229,13 @@ namespace DataAccessLayer
                 //Enquanto houver registros, o loop será executado!
                 if (reader.Read())
                 {
-                    Cliente cliente = new Cliente();
+                    Cliente cliente = new Cliente(nome: Convert.ToString(reader["NOME"]),
+                                                  cPF: Convert.ToString(reader["CPF"]),
+                                                  rG: Convert.ToString(reader["RG"]),
+                                                  email: Convert.ToString(reader["EMAIL"]),
+                                                  telefone1: Convert.ToString(reader["TELEFONE1"]),
+                                                  telefone2: Convert.ToString(reader["TELEFONE2"]));
                     cliente.ID = Convert.ToInt32(reader["ID"]);
-                    cliente.Nome = Convert.ToString(reader["NOME"]);
-                    cliente.CPF = Convert.ToString(reader["CPF"]);
-                    cliente.Telefone1 = Convert.ToString(reader["TELEFONE1"]);
-                    cliente.Email = Convert.ToString(reader["EMAIL"]);
                     return new SingleResponse<Cliente>("Cliente selecionado com sucesso!", true, cliente);
                 }
                 return new SingleResponse<Cliente>("Cliente não encontrado!", false, null);
@@ -248,7 +254,46 @@ namespace DataAccessLayer
 
         public SingleResponse<Cliente> GetByEmail(string email)
         {
-            throw new NotImplementedException();
+            //PARÂMETROS SQL - AUTOMATICAMENTE ADICIONA UMA "/" NA FRENTE DE NOMES COM ' EX SHAQQILE O'NEAL
+            //               - AUTOMATICAMENTE ADICIONAR '' EM DATAS, VARCHARS E CHARS
+            //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
+            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2 FROM CLIENTES WHERE EMAIL = @EMAIL";
+
+            string connectionString = DalDirectory;
+
+            //ADO.NET 
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            SqlCommand command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@EMAIL", email);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                //Enquanto houver registros, o loop será executado!
+                if (reader.Read())
+                {
+                    Cliente cliente = new Cliente(nome: Convert.ToString(reader["NOME"]),
+                                                  cPF: Convert.ToString(reader["CPF"]),
+                                                  rG: Convert.ToString(reader["RG"]),
+                                                  email: Convert.ToString(reader["EMAIL"]),
+                                                  telefone1: Convert.ToString(reader["TELEFONE1"]),
+                                                  telefone2: Convert.ToString(reader["TELEFONE2"]));
+                    cliente.ID = Convert.ToInt32(reader["ID"]);
+                    return new SingleResponse<Cliente>("Cliente selecionado com sucesso!", true, cliente);
+                }
+                return new SingleResponse<Cliente>("Cliente não encontrado!", false, null);
+            }
+            catch (Exception ex)
+            {
+                return new SingleResponse<Cliente>("Erro no banco de dados, contate o administrador.", false, null);
+            }
+            //Instrução que SEMPRE será executada e "fecharão" a conexão caso ela esteja aberta
+            finally
+            {
+                //Fecha a conexão
+                connection.Dispose();
+            }
         }
     }
 }

@@ -203,8 +203,9 @@ namespace BusinessLogicalLayer
         }
         internal bool IsCnpj(string cnpj)
         {
-            
 
+
+            {
                 int[] multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
                 int[] multiplicador2 = new int[13] { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
                 int soma;
@@ -213,7 +214,7 @@ namespace BusinessLogicalLayer
                 string tempCnpj;
                 cnpj = cnpj.Trim();
                 cnpj = cnpj.Replace(".", "").Replace("-", "").Replace("/", "");
-                if (cnpj.Length != CARACTERES_CNPJ)
+                if (cnpj.Length != 14)
                     return false;
                 tempCnpj = cnpj.Substring(0, 12);
                 soma = 0;
@@ -236,9 +237,21 @@ namespace BusinessLogicalLayer
                     resto = 11 - resto;
                 digito = digito + resto.ToString();
                 return cnpj.EndsWith(digito);
-            
-        }
-        internal string ValidateRazaoSocial(string Razao)
+            }
+
+            internal string ValidateCNPJ(string cnpj)
+            {
+                if (string.IsNullOrWhiteSpace(cnpj))
+                {
+                    return "CNPJ deve ser informado.";
+                }
+                if (IsCnpj(cnpj))
+                {
+                    return "";
+                }
+                return "CNPJ invalido.";
+            }
+            internal string ValidateRazaoSocial(string Razao)
         {
             if (string.IsNullOrWhiteSpace(Razao))
             {

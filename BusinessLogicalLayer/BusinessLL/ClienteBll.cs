@@ -1,4 +1,5 @@
-﻿using DataAccessLayer;
+﻿using BusinessLogicalLayer.RegrasValidacao;
+using DataAccessLayer;
 using Entities;
 using Shared;
 using System;
@@ -9,7 +10,6 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer.BusinessLL
 {
-    
     public class ClienteBll : ICRUD<Cliente>
     {
         private ClienteValidator clienteValidator = new ClienteValidator();
@@ -41,16 +41,20 @@ namespace BusinessLogicalLayer.BusinessLL
 
         public DataResponse<Cliente> GetAll()
         {
-            throw new NotImplementedException();
+            return clienteDAL.GetAll(); 
         }
         public SingleResponse<Cliente> GetByID(int id)
         {
-            throw new NotImplementedException();
+            return clienteDAL.GetByID(id);
         }
 
         public SingleResponse<Cliente> GetByEmail(string email)
         {
-            throw new NotImplementedException();
+            return clienteDAL.GetByEmail(email);
+        }
+        public SingleResponse<Cliente> GetByCPF(string cpf)
+        {
+            return clienteDAL.GetByCPF(cpf);
         }
     }
 }

@@ -64,16 +64,14 @@ namespace DataAccessLayer
             }
         }
 
+
         public Response Update(Cliente cliente)
         {
-            //PARÂMETROS SQL - AUTOMATICAMENTE ADICIONA UMA "/" NA FRENTE DE NOMES COM ' EX SHAQQILE O'NEAL
-            //               - AUTOMATICAMENTE ADICIONAR '' EM DATAS, VARCHARS E CHARS
-            //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
+            
             string sql = $"UPDATE CLIENTES SET NOME = @NOME, CPF = @CPF, RG = @RG, EMAIL = @EMAIL, TELEFONE1 = @TELEFONE1, TELEFONE2 = @TELEFONE2 WHERE ID = @ID";
 
             string connectionString = DalDirectory;
 
-            //ADO.NET 
             SqlConnection connection = new SqlConnection(connectionString);
 
             SqlCommand command = new SqlCommand(sql, connection);
@@ -85,10 +83,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@TELEFONE2", cliente.Telefone2);
             command.Parameters.AddWithValue("@ID", cliente.ID);
 
-            //Estamos conectados na base de dados
-            //try catch
-            //try catch finally
-            //try finally
+            
             try
             {
                 connection.Open();
@@ -103,16 +98,12 @@ namespace DataAccessLayer
             {
                 if (ex.Message.Contains("UQ_CLIENTES_EMAIL"))
                 {
-                    //RETORNAR MENSAGEM QUE O EMAIL TA DUPLICADO
                     return new Response("Email já está em uso.", false);
                 }
-                //SE NAO ENTROU EM NENHUM IF DE CIMA, SÓ PODE SER UM ERRO DE INFRAESTRUTURA
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
-            //Instrução que SEMPRE será executada e "fecharão" a conexão caso ela esteja aberta
             finally
             {
-                //Fecha a conexão
                 connection.Dispose();
             }
         }
@@ -123,15 +114,11 @@ namespace DataAccessLayer
 
             string connectionString = DalDirectory;
 
-            //ADO.NET 
             SqlConnection connection = new SqlConnection(connectionString);
 
             SqlCommand command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("@ID", id);
-            //Estamos conectados na base de dados
-            //try catch
-            //try catch finally
-            //try finally
+            
             try
             {
                 connection.Open();
@@ -144,37 +131,21 @@ namespace DataAccessLayer
             }
             catch (Exception ex)
             {
-                if (ex.Message.Contains("UQ_CLIENTES_EMAIL"))
-                {
-                    //RETORNAR MENSAGEM QUE O EMAIL TA DUPLICADO
-                    return new Response("Email já está em uso.", false);
-                }
-                if (ex.Message.Contains("UQ_CLIENTES_CPF"))
-                {
-                    //RETORNAR MENSAGEM QUE O CPF TA DUPLICADO
-                    return new Response("CPF já está em uso.", false);
-                }
-                //SE NAO ENTROU EM NENHUM IF DE CIMA, SÓ PODE SER UM ERRO DE INFRAESTRUTURA
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
-            //Instrução que SEMPRE será executada e "fecharão" a conexão caso ela esteja aberta
             finally
             {
-                //Fecha a conexão
                 connection.Dispose();
             }
         }
 
         public DataResponse<Cliente> GetAll()
         {
-            //PARÂMETROS SQL - AUTOMATICAMENTE ADICIONA UMA "/" NA FRENTE DE NOMES COM ' EX SHAQQILE O'NEAL
-            //               - AUTOMATICAMENTE ADICIONAR '' EM DATAS, VARCHARS E CHARS
-            //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
+            
             string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2 FROM CLIENTES";
 
             string connectionString = DalDirectory;
 
-            //ADO.NET 
             SqlConnection connection = new SqlConnection(connectionString);
 
             SqlCommand command = new SqlCommand(sql, connection);
@@ -183,7 +154,6 @@ namespace DataAccessLayer
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 List<Cliente> clientes = new List<Cliente>();
-                //Enquanto houver registros, o loop será executado!
                 while (reader.Read())
                 {
                     Cliente cliente = new Cliente(nome : Convert.ToString(reader["NOME"]),
@@ -201,23 +171,18 @@ namespace DataAccessLayer
             {
                 return new DataResponse<Cliente>("Erro no banco de dados, contate o administrador.", false, null);
             }
-            //Instrução que SEMPRE será executada e "fecharão" a conexão caso ela esteja aberta
             finally
             {
-                //Fecha a conexão
                 connection.Dispose();
             }
         }
         public SingleResponse<Cliente> GetByID(int id)
         {
-            //PARÂMETROS SQL - AUTOMATICAMENTE ADICIONA UMA "/" NA FRENTE DE NOMES COM ' EX SHAQQILE O'NEAL
-            //               - AUTOMATICAMENTE ADICIONAR '' EM DATAS, VARCHARS E CHARS
-            //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
+            
             string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2 FROM CLIENTES WHERE ID = @ID";
 
             string connectionString = DalDirectory;
 
-            //ADO.NET 
             SqlConnection connection = new SqlConnection(connectionString);
 
             SqlCommand command = new SqlCommand(sql, connection);
@@ -226,7 +191,6 @@ namespace DataAccessLayer
             {
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                //Enquanto houver registros, o loop será executado!
                 if (reader.Read())
                 {
                     Cliente cliente = new Cliente(nome: Convert.ToString(reader["NOME"]),
@@ -244,20 +208,51 @@ namespace DataAccessLayer
             {
                 return new SingleResponse<Cliente>("Erro no banco de dados, contate o administrador.", false, null);
             }
-            //Instrução que SEMPRE será executada e "fecharão" a conexão caso ela esteja aberta
             finally
             {
-                //Fecha a conexão
                 connection.Dispose();
             }
         }
 
         public SingleResponse<Cliente> GetByEmail(string email)
         {
-            //PARÂMETROS SQL - AUTOMATICAMENTE ADICIONA UMA "/" NA FRENTE DE NOMES COM ' EX SHAQQILE O'NEAL
-            //               - AUTOMATICAMENTE ADICIONAR '' EM DATAS, VARCHARS E CHARS
-            //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
             string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2 FROM CLIENTES WHERE EMAIL = @EMAIL";
+
+            string connectionString = DalDirectory;
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            SqlCommand command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@EMAIL", email);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    Cliente cliente = new Cliente(nome: Convert.ToString(reader["NOME"]),
+                                                  cPF: Convert.ToString(reader["CPF"]),
+                                                  rG: Convert.ToString(reader["RG"]),
+                                                  email: Convert.ToString(reader["EMAIL"]),
+                                                  telefone1: Convert.ToString(reader["TELEFONE1"]),
+                                                  telefone2: Convert.ToString(reader["TELEFONE2"]));
+                    cliente.ID = Convert.ToInt32(reader["ID"]);
+                    return new SingleResponse<Cliente>("Cliente selecionado com sucesso!", true, cliente);
+                }
+                return new SingleResponse<Cliente>("Cliente não encontrado!", false, null);
+            }
+            catch (Exception ex)
+            {
+                return new SingleResponse<Cliente>("Erro no banco de dados, contate o administrador.", false, null);
+            }
+            finally
+            {
+                connection.Dispose();
+            }
+        }
+        public SingleResponse<Cliente> GetByCPF(string cpf)
+        {
+            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2 FROM CLIENTES WHERE CPF = @CPF";
 
             string connectionString = DalDirectory;
 
@@ -265,7 +260,7 @@ namespace DataAccessLayer
             SqlConnection connection = new SqlConnection(connectionString);
 
             SqlCommand command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@EMAIL", email);
+            command.Parameters.AddWithValue("@CPF", cpf);
             try
             {
                 connection.Open();
@@ -288,10 +283,9 @@ namespace DataAccessLayer
             {
                 return new SingleResponse<Cliente>("Erro no banco de dados, contate o administrador.", false, null);
             }
-            //Instrução que SEMPRE será executada e "fecharão" a conexão caso ela esteja aberta
             finally
             {
-                //Fecha a conexão
+                
                 connection.Dispose();
             }
         }

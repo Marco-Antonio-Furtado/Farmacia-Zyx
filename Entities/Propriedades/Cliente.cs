@@ -9,10 +9,6 @@ namespace Entities
 {
     public class Cliente
     {
-        public Cliente()
-        {
-        }
-
         public Cliente(string nome, string cPF, string rG, string email, string telefone1, string telefone2)
         {
             Nome = nome;
@@ -28,6 +24,7 @@ namespace Entities
         public string CPF { get; set; }
         public string RG { get; set; }  
         public string Email { get; set; }
+        public Endereco Endereco { get; set; }
         public string Telefone1 { get; set; }
         public string Telefone2 { get; set; }
         public int ProgramaFidelidade { get; set; }

@@ -29,6 +29,7 @@ namespace WfPresentationLayer
 
         private void BtnCadastroFuncionario_Click(object sender, EventArgs e)
         {
+            EnderecoBll enderecoBll = new EnderecoBll();
             FuncionarioBll funcionarioBll = new FuncionarioBll();
             Endereco EnderecoFuncionario = new Endereco(TxtBoxRua.Text, TxtBoxBairro.Text, TxtBoxCep.Text, 
                                                         TxtBoxNumero.Text,TxtBoxComplemento.Text, TxtBoxPontoDeReferencia.Text,
@@ -36,11 +37,12 @@ namespace WfPresentationLayer
             Funcionario funcionario = new Funcionario(txtBoxNomeFuncionario.Text, TxtBoxCpfFuncionario.Text,
                                                       TxtBoxRgFuncionario.Text, txtBoxEmailFuncionario.Text,
                                                       TxtBoxTelefone1Funcionario.Text, EnderecoFuncionario, TxtBoxSenhaFuncionario.Text);
-            Response resposta = funcionarioBll.Insert(funcionario);
+            Response respostaEndereco = enderecoBll.Insert(EnderecoFuncionario);
+            Response respostaFuncionario = funcionarioBll.Insert(funcionario);
 
 
-            MessageBox.Show(resposta.Message);
-            if (resposta.HasSuccess)
+            MessageBox.Show(respostaFuncionario.Message);
+            if (respostaFuncionario.HasSuccess)
             {
                 this.Close();
             }

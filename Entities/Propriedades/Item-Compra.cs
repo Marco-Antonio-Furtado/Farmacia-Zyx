@@ -8,11 +8,21 @@ namespace Entities
 {
     public class Item_Compra
     {
+        public Item_Compra(DateTime dataCompra, string produtoCompra, string fornecedor, int quantidade , int precoUnitario, double valorTotal)
+        {
+            DataCompra = dataCompra;
+            ProdutoCompra = produtoCompra;
+            Fornecedor = fornecedor;
+            Quantidade = quantidade;
+            PrecoUnitario = precoUnitario;
+            ValorTotal = valorTotal;
+        }
+
         public int ID { get; set; }
         public DateTime DataCompra { get; set; }
 
         public string ProdutoCompra { get; set; }
-        public string NomeEmpresa/*fornecedor*/ { get; set; }
+        public string Fornecedor { get; set; }
         public int Quantidade { get; set; }
         public int PrecoUnitario { get; set; }
 

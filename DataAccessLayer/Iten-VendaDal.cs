@@ -2,6 +2,7 @@
 using Shared;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,28 +11,186 @@ namespace DataAccessLayer
 {
     public class Iten_VendaDal : ICRUD<Item_Venda>
     {
+        internal string DalDirectory = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\AdultMovieLocatorDb.mdf;Integrated Security=True;Connect Timeout=3";
         public Response Insert(Item_Venda item)
         {
-            throw new NotImplementedException();
+            string sql = $"INSERT INTO ITEM_Venda (DATA_VENDA,PRODUTO_VENDA,NOME_CLIENTE,NOME_FUNCIONARIO,FORMA_PAGAMENTO,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL) VALUES(@DATA_VENDA,@PRODUTO_VENDA,@NOME_CLIENTE,@NOME_FUNCIONARIO,@FORMA_PAGAMENTO,@QUANTIDADE,@PRECO_UNITARIO,@VALOR_TOTAL)";
+            string connectionString = DalDirectory;
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            
+            SqlCommand command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@DATA_VENDA", item.DataVenda);
+            command.Parameters.AddWithValue("@PRODUTO_VENDA", item.ProdutoVenda);
+            command.Parameters.AddWithValue("@NOME_CLIENTE", item.NomeCliente);
+            command.Parameters.AddWithValue("@NOME_FUNCIONARIO", item.NomeFuncionario);
+            command.Parameters.AddWithValue("@FORMA_PAGAMENTO", item.FormaPagamento);
+            command.Parameters.AddWithValue("@QUANTIDADE", item.Quantidade);
+            command.Parameters.AddWithValue("@PRECO_UNITARIO", item.PrecoUnitario);
+            command.Parameters.AddWithValue("@VALOR_TOTAL", item.ValorTotal);
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+                return new Response("Venda cadastradada com sucesso.", true);
+            }
+            catch (Exception ex)
+            {
+                return new Response("Erro no banco de dados, contate o administrador.", false);
+            }
+            finally
+            {
+                connection.Dispose();
+            }
         }
 
         public Response Update(Item_Venda item)
         {
-            throw new NotImplementedException();
+            string sql = $"UPDATE ITEM_VENDA SET DATA_VENDA = @DATA_VENDA, PRODUTO_VENDA = @PRODUTO_VENDA, NOME_CLIENTE = @NOME_CLIENTE, NOME_FUNCIONARIO = @NOME_FUNCIONARIO, FORMA_PAGAMENTO = @FORMA_PAGAMENTO, QUANTIDADE = @QUANTIDADE, PRECO_UNITARIO = @PRECO_UNITARIO, VALOR_TOTAL = @VALOR_TOTAL WHERE ID = @ID";
+
+            string connectionString = DalDirectory;
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            SqlCommand command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@DATA_VENDA", item.DataVenda);
+            command.Parameters.AddWithValue("@PRODUTO_VENDA", item.ProdutoVenda);
+            command.Parameters.AddWithValue("@NOME_CLIENTE", item.NomeCliente);
+            command.Parameters.AddWithValue("@NOME_FUNCIONARIO", item.NomeFuncionario);
+            command.Parameters.AddWithValue("@FORMA_PAGAMENTO", item.FormaPagamento);
+            command.Parameters.AddWithValue("@QUANTIDADE", item.Quantidade);
+            command.Parameters.AddWithValue("@PRECO_UNITARIO", item.PrecoUnitario);
+            command.Parameters.AddWithValue("@VALOR_TOTAL", item.ValorTotal);
+            command.Parameters.AddWithValue("@ID", item.ID);
+            try
+            {
+                connection.Open();
+                int qtdRegistrosAlterados = command.ExecuteNonQuery();
+                if (qtdRegistrosAlterados != 1)
+                {
+                    return new Response("Venda excluido.", false);
+                }
+                return new Response("Venda alterado com sucesso.", true);
+            }
+            catch (Exception ex)
+            {
+
+                return new Response("Erro no banco de dados, contate o administrador.", false);
+            }
+            finally
+            {
+                connection.Dispose();
+            }
         }
         public Response Delete(int id)
         {
-            throw new NotImplementedException();
+            string sql = "DELETE FROM ITEM_VENDA WHERE ID = @ID";
+
+            string connectionString = DalDirectory;
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            SqlCommand command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@ID", id);
+
+            try
+            {
+                connection.Open();
+                int qtdLinhasExcluidas = command.ExecuteNonQuery();
+                if (qtdLinhasExcluidas == 1)
+                {
+                    return new Response("Venda excluída com sucesso.", true);
+                }
+                return new Response("Venda não excluído.", false);
+            }
+            catch (Exception ex)
+            {
+                return new Response("Erro no banco de dados, contate o administrador.", false);
+            }
+            finally
+            {
+                connection.Dispose();
+            }
         }
 
         public DataResponse<Item_Venda> GetAll()
         {
-            throw new NotImplementedException();
+            string sql = $"SELECT ID,DATA_VENDA,PRODUTO_VENDA,NOME_CLIENTE,NOME_FUNCIONARIO,FORMA_PAGAMENTO,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL";
+
+            string connectionString = DalDirectory;
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            SqlCommand command = new SqlCommand(sql, connection);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<Item_Venda> ListaVendas = new List<Item_Venda>();
+                while (reader.Read())
+                {
+                    Item_Venda Item_Venda = new Item_Venda(dataVenda: Convert.ToDateTime(reader["DATA_Venda"]),
+                                                           produtoVenda: Convert.ToString(reader["PRODUTO_Venda"]),
+                                                           nomeCliente: Convert.ToString(reader["NOME_CLIENTE"]),
+                                                           quantidade: Convert.ToInt32(reader["QUANTIDADE"]),
+                                                           precoUnitario: Convert.ToInt32(reader["PRECO_UNITARIO"]),
+                                                           valorTotal: Convert.ToDouble(reader["VALOR_TOTAL"]),
+                                                           formaPagamento: Convert.ToString(reader["FORMA_PAGAMENTO"]),
+                                                           nomeFuncionario: Convert.ToString(reader["NOME_CLIENTE"]));
+                                                           
+                    Item_Venda.ID = Convert.ToInt32(reader["ID"]);
+
+                    ListaVendas.Add(Item_Venda);
+                }
+                return new DataResponse<Item_Venda>("Vendas selecionadas com sucesso!", true, ListaVendas);
+            }
+            catch (Exception ex)
+            {
+                return new DataResponse<Item_Venda>("Erro no banco de dados, contate o administrador.", false, null);
+            }
+            finally
+            {
+                connection.Dispose();
+            }
         }
 
         public SingleResponse<Item_Venda> GetByID(int id)
         {
-            throw new NotImplementedException();
+            string sql = $"SELECT ID,DATA_VENDA,PRODUTO_VENDA,NOME_CLIENTE,NOME_FUNCIONARIO,FORMA_PAGAMENTO,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL WHERE ID = @ID";
+
+            string connectionString = DalDirectory;
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            SqlCommand command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@ID", id);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    Item_Venda Item_Venda = new Item_Venda(dataVenda: Convert.ToDateTime(reader["DATA_Venda"]),
+                                                            produtoVenda: Convert.ToString(reader["PRODUTO_Venda"]),
+                                                            nomeCliente: Convert.ToString(reader["NOME_CLIENTE"]),
+                                                            quantidade: Convert.ToInt32(reader["QUANTIDADE"]),
+                                                            precoUnitario: Convert.ToInt32(reader["PRECO_UNITARIO"]),
+                                                            valorTotal: Convert.ToDouble(reader["VALOR_TOTAL"]),
+                                                            formaPagamento: Convert.ToString(reader["FORMA_PAGAMENTO"]),
+                                                            nomeFuncionario: Convert.ToString(reader["NOME_CLIENTE"]));
+                    Item_Venda.ID = Convert.ToInt32(reader["ID"]);
+                    return new SingleResponse<Item_Venda>("Venda selecionado com sucesso!", true, Item_Venda);
+                }
+                return new SingleResponse<Item_Venda>("Venda não encontrado!", false, null);
+            }
+            catch (Exception ex)
+            {
+                return new SingleResponse<Item_Venda>("Erro no banco de dados, contate o administrador.", false, null);
+            }
+            finally
+            {
+                connection.Dispose();
+            }
         }
 
         public SingleResponse<Item_Venda> GetByEmail(string email)

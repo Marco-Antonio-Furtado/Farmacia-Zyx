@@ -41,12 +41,12 @@ namespace BusinessLogicalLayer.BusinessLL
 
         public DataResponse<Produto> GetAll()
         {
-            throw new NotImplementedException();
+            return produtoDAL.GetAll();
         }
 
         public SingleResponse<Produto> GetByID(int id)
         {
-            throw new NotImplementedException();
+            return produtoDAL.GetByID(id);
         }
 
         public SingleResponse<Produto> GetByEmail(string email)

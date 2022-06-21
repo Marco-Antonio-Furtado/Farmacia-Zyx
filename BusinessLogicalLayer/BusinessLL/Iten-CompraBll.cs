@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using DataAccessLayer;
+using Entities;
 using Shared;
 using System;
 using System.Collections.Generic;
@@ -10,23 +11,23 @@ namespace BusinessLogicalLayer.BusinessLL
 {
     public class Iten_CompraBll : ICRUD<Item_Compra>
     {
+        Iten_CompraDal compraDal = new Iten_CompraDal();
         public Response Insert(Item_Compra item)
         {
-            throw new NotImplementedException();
+            return compraDal.Insert(item);
         }
-
         public Response Update(Item_Compra item)
         {
-            throw new NotImplementedException();
+            return compraDal.Update(item);
         }
         public Response Delete(int id)
         {
-            throw new NotImplementedException();
+            return compraDal.Delete(id);
         }
 
         public DataResponse<Item_Compra> GetAll()
         {
-            throw new NotImplementedException();
+            return compraDal.GetAll();
         }
 
         public SingleResponse<Item_Compra> GetByEmail(string email)
@@ -36,7 +37,7 @@ namespace BusinessLogicalLayer.BusinessLL
 
         public SingleResponse<Item_Compra> GetByID(int id)
         {
-            throw new NotImplementedException();
+            return compraDal.GetByID(id);
         }
 
     }

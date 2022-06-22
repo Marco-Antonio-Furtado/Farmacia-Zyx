@@ -11,90 +11,77 @@ namespace DataAccessLayer
 {
     public class EnderecoDAL : ICRUD<Endereco>
     {
-        internal const string DalDirectory = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\AdultMovieLocatorDb.mdf;Integrated Security=True;Connect Timeout=3";
+        
         public Response Insert(Endereco item)
         {
-            string sql = $"INSERT INTO ENDERECO (RUA,BAIRRO,CEP,NUMERO,COMPLEMENTO,PONTO_REFERENCIA,CIDADE,ESTADO) VALUES (@RUA,@BAIRRO,@CEP,@NUMERO,@COMPLEMENTO,@PONTO_REFERENCIA,@CIDADE,@ESTADO)";
+            string sql = $"INSERT INTO ENDERECO (CEP, NOME_RUA, NUMERO_CASA, CIDADE_ID, ESTADO_ID) VALUES (@CEP, @NOME_RUA, @NUMERO_CASA, @CIDADE_ID, @ESTADO_ID)";
 
-            string connectionString = DalDirectory;
-          
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            SqlCommand command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@RUA", item.Rua);
-            command.Parameters.AddWithValue("@BAIRRO", item.Bairro);
+            SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@CEP", item.CEP);
-            command.Parameters.AddWithValue("@NUMERO", item.Numero);
-            command.Parameters.AddWithValue("@COMPLEMENTO", item.Complemento);
-            command.Parameters.AddWithValue("@PONTO_REFERENCIA", item.PontoReferencia);
-            command.Parameters.AddWithValue("@CIDADE", item.Cidade);
-            command.Parameters.AddWithValue("@ESTADO", item.Estado);
+            command.Parameters.AddWithValue("@NOME_RUA", item.NomeRua);
+            command.Parameters.AddWithValue("@NUMERO_CASA", item.NumeroCasa);
+            command.Parameters.AddWithValue("@CIDADE_ID", item.CidadeID);
+            command.Parameters.AddWithValue("@ESTADO_ID", item.EstadoID);
+
+
             try
             {
-                connection.Open();
-                command.ExecuteNonQuery();
-                return new Response("Endereço cadastrado com sucesso.", true);
+            DbExecuter dbExecuter = new DbExecuter();
+            dbExecuter.Execute(command);
             }
             catch (Exception ex)
             {
-                return new Response("Erro no banco de dados, contate o administrador.", false);
+                if (ex.Message.Contains("FK_ENDERECO_CIDADE"))
+                {
+                    return new Response("Cidade deve ser uma chave estrangeira", false);
+                }
+                else
+                {
+                    return new Response(ex.Message, false);
+                }  
             }
-            finally
-            {
-                connection.Dispose();
-            }
+            return new Response("Endereco cadastrado com sucesso", true);
         }
 
         public Response Update(Endereco item)
         {
 
-            string sql = $"UPDATE CLIENTES SET RUA = @RUA, BAIRRO = @BAIRRO, CEP = @CEP, NUMERO = @NUMERO, COMPLEMENTO = @COMPLEMENTO, PONTO_REFERENCIA, CIDADE = @CIDADE, ESTADO = @ESTADO WHERE ID = @ID";
-            string connectionString = DalDirectory;
-
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            SqlCommand command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@RUA", item.Rua);
-            command.Parameters.AddWithValue("@BAIRRO", item.Bairro);
+            string sql = $"UPDATE CLIENTES SET NOME_RUA = @NOME_RUA, CEP = @CEP, NUMERO_CASA = @NUMERO_CASA, CIDADE_ID = @CIDADE_ID, ESTADO_ID = @ESTADO_ID WHERE ID = @ID";
+           
+            SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@CEP", item.CEP);
-            command.Parameters.AddWithValue("@NUMERO", item.Numero);
-            command.Parameters.AddWithValue("@COMPLEMENTO", item.Complemento);
-            command.Parameters.AddWithValue("@PONTO_REFERENCIA", item.PontoReferencia);
-            command.Parameters.AddWithValue("@CIDADE", item.Cidade);
-            command.Parameters.AddWithValue("@ESTADO", item.Estado);
+            command.Parameters.AddWithValue("@NOME_RUA", item.NomeRua);
+            command.Parameters.AddWithValue("@NUMERO_CASA", item.NumeroCasa);
+            command.Parameters.AddWithValue("@CIDADE_ID", item.CidadeID);
+            command.Parameters.AddWithValue("@ESTADO_ID", item.EstadoID);
+
             try
             {
-                connection.Open();
-                int qtdRegistrosAlterados = command.ExecuteNonQuery();
-                if (qtdRegistrosAlterados != 1)
-                {
-                    return new Response("Endereco excluido.", false);
-                }
-                return new Response("Endereco alterado com sucesso.", true);
+                DbExecuter dbExecuter = new DbExecuter();
+                dbExecuter.Execute(command);
             }
             catch (Exception ex)
             {
-                return new Response("Erro no banco de dados, contate o administrador.", false);
+ 
+               return new Response(ex.Message, false);
+                
             }
-            finally
-            {
-                connection.Dispose();
-            }
+            return new Response("Endereco alterado com sucesso", true);
+
+
         }
         public Response Delete(int id)
         {
             string sql = "DELETE FROM ENDERECO WHERE ID = @ID";
 
-            string connectionString = DalDirectory;
-
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            SqlCommand command = new SqlCommand(sql, connection);
+            SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@ID", id);
 
             try
             {
-                connection.Open();
+                DbExecuter dbExecuter = new DbExecuter();
+                dbExecuter.Execute(command);
+
                 int qtdLinhasExcluidas = command.ExecuteNonQuery();
                 if (qtdLinhasExcluidas == 1)
                 {
@@ -108,49 +95,25 @@ namespace DataAccessLayer
             }
             finally
             {
-                connection.Dispose();
+                //connection.Dispose();
             }
         }
 
         public DataResponse<Endereco> GetAll()
         {
+            string query = $"SELECT * FROM ENDERECOS";
+            SqlCommand sql = new SqlCommand(query);
 
-            string sql = $"SELECT RUA,BAIRRO,CEP,NUMERO,COMPLEMENTO,PONTO_REFERENCIA,CIDADE,ESTADO FROM ENDERECO";
-
-            string connectionString = DalDirectory;
-
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            SqlCommand command = new SqlCommand(sql, connection);
             try
             {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                List<Endereco> Enderecos = new List<Endereco>();
-                while (reader.Read())
-                {
-                    Endereco Endereco = new Endereco(rua: Convert.ToString(reader["RUA"]),
-                                                     bairro: Convert.ToString(reader["BAIRRO"]),
-                                                     cEP: Convert.ToString(reader["CEP"]),
-                                                     numero: Convert.ToString(reader["NUMERO"]),
-                                                     cidade: Convert.ToString(reader["CIDADE"]),
-                                                     estado: Convert.ToString(reader["ESTADO"]),
-                                                     complemento: Convert.ToString(reader["COMPLEMENTO"]),
-                                                     pontoReferencia: Convert.ToString(reader["PONTO_REFERENCIA"]));
-                    Endereco.ID = Convert.ToInt32(reader["ID"]);
-                    Enderecos.Add(Endereco);
-                }
-                return new DataResponse<Endereco>("Enderecos selecionados com sucesso!", true, Enderecos);
+                return new DbExecuter().GetData<Endereco>(sql);
             }
             catch (Exception ex)
             {
-                return new DataResponse<Endereco>("Erro no banco de dados, contate o administrador.", false, null);
-            }
-            finally
-            {
-                connection.Dispose();
+                return new DataResponse<Endereco>("Erro no banco de dados, contate o administrador", false, null);
             }
         }
+         
 
         public SingleResponse<Endereco> GetByEmail(string email)
         {
@@ -162,7 +125,7 @@ namespace DataAccessLayer
 
             string sql = $"SELECT RUA,BAIRRO,CEP,NUMERO,COMPLEMENTO,PONTO_REFERENCIA,CIDADE,ESTADO FROM ENDERECO WHERE ID = @ID";
 
-            string connectionString = DalDirectory;
+            string connectionString = "teste"; 
 
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -172,7 +135,7 @@ namespace DataAccessLayer
             {
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read())
+                /*if (reader.Read())
                 {
                     Endereco Endereco = new Endereco(rua: Convert.ToString(reader["RUA"]),
                                                      bairro: Convert.ToString(reader["BAIRRO"]),
@@ -184,7 +147,7 @@ namespace DataAccessLayer
                                                      pontoReferencia: Convert.ToString(reader["PONTO_REFERENCIA"]));
                     Endereco.ID = Convert.ToInt32(reader["ID"]);
                     return new SingleResponse<Endereco>("Endereco selecionado com sucesso!", true, Endereco);
-                }
+                }*/
                 return new SingleResponse<Endereco>("Endereco não encontrado!", false, null);
             }
             catch (Exception ex)

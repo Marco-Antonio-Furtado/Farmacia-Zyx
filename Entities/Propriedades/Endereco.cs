@@ -8,37 +8,31 @@ namespace Entities
 {
     public class Endereco
     {
-        public Endereco(string rua, string bairro, string cEP, string numero, string complemento, string pontoReferencia, string cidade, string estado)
+        public Endereco( string cEP, string nomeRua, string numeroCasa, int estadoID, int cidadeID)
         {
-            Rua = rua;
-            Bairro = bairro;
+            
             CEP = cEP;
-            Numero = numero;
-            Complemento = complemento;
-            PontoReferencia = pontoReferencia;
-            Cidade = cidade;
-            Estado = estado;
+            NomeRua = nomeRua;
+            NumeroCasa = numeroCasa;
+            EstadoID = estadoID;
+            CidadeID = cidadeID;
         }
+
         public int ID { get; set; }
-        public string Rua { get; set; }
-        public string Bairro { get; set; }
         public string CEP { get; set; }
-        public string Numero { get; set; }
-        public string Complemento { get; set; }
-        public string PontoReferencia { get; set; }
-        public string Cidade { get; set; }
-        public string Estado { get; set; }
+        public string NomeRua { get; set; }
+        public string NumeroCasa { get; set; }
+        public int EstadoID { get; set; }
+        public int CidadeID { get; set; }
+
 
         public override string ToString()
         {
-            return this.Rua + "\r\n" +
-                   this.Bairro + "\r\n" +
-                   this.CEP + "\r\n" +
-                   this.Numero + "\r\n" +
-                   this.Complemento + "\r\n" +
-                   this.PontoReferencia + "\r\n" +
-                   this.Cidade + "\r\n" +
-                   this.Estado + "\r\n";
+            return this.NomeRua + "\r\n" +
+                   this.NumeroCasa + "\r\n" +
+                   this.CidadeID + "\r\n" +
+                   this.EstadoID + "\r\n" +
+                   this.CEP + "\r\n";
         } 
     }
 }

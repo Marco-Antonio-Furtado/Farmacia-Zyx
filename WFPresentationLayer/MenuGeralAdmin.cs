@@ -13,40 +13,99 @@ namespace WfPresentationLayer
 {
     public partial class MenuGeralAdmin : Form
     {
+        private Form _objForm;
         public MenuGeralAdmin()
         {
             InitializeComponent();
         }
-        
-       
 
-        private void NovaVendaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PctBtnClose_Click(object sender, EventArgs e)
         {
-            FormNovaVenda formNovaVenda = new FormNovaVenda();
-            formNovaVenda.ShowDialog();
-        }
-        private void MenuFornecedorCadastrar_Click(object sender, EventArgs e)
-        {
-            FormCadastroFornecedor formCadastroFornecedor = new FormCadastroFornecedor();
-            formCadastroFornecedor.ShowDialog();
+            this.Close();
+            
         }
 
-        private void MenuProdutoCadastrar_Click(object sender, EventArgs e)
+        private void BtnMenuVendas_Click(object sender, EventArgs e)
         {
-            FormCadastroProduto cadastroProduto = new FormCadastroProduto();
-            cadastroProduto.ShowDialog();
+            _objForm?.Close();
+            _objForm = new FormNovaVenda
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill,
+            };
+            MidlePanel.Controls.Add(_objForm);
+            _objForm.Show();
         }
 
-        private void MenuClienteCadastrar_Click(object sender, EventArgs e)
+        private void BtnMenuCompras_Click(object sender, EventArgs e)
         {
-            FormCadastroCliente formCadastroCliente = new FormCadastroCliente();
-            formCadastroCliente.ShowDialog();
+            _objForm?.Close();
+            _objForm = new FormCadastroFornecedor
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill,
+            };
+            MidlePanel.Controls.Add(_objForm);
+            _objForm.Show();
         }
 
-        private void MenuFuncionarioCadastrar_Click(object sender, EventArgs e)
+        private void BtnMenuClientes_Click(object sender, EventArgs e)
         {
-            FormCadastroFuncionario formCadastroFuncionario = new FormCadastroFuncionario();
-            formCadastroFuncionario.ShowDialog();
+            _objForm?.Close();
+            _objForm = new FormCadastroCliente
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill,
+            };
+            MidlePanel.Controls.Add(_objForm);
+            _objForm.Show();
+        }
+
+        private void BtnMenuProduto_Click(object sender, EventArgs e)
+        {
+            _objForm?.Close();
+            _objForm = new FormCadastroProduto
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill,
+            };
+            MidlePanel.Controls.Add(_objForm);
+            _objForm.Show();
+        }
+
+        private void BtnMenuFornecedor_Click(object sender, EventArgs e)
+        {
+            _objForm?.Close();
+            _objForm = new FormCadastroFornecedor
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill,
+            };
+            MidlePanel.Controls.Add(_objForm);
+            _objForm.Show();
+        }
+
+        private void BtnMenuFuncionario_Click(object sender, EventArgs e)
+        {
+            _objForm?.Close();
+            _objForm = new FormCadastroFuncionario
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill,
+            };
+            MidlePanel.Controls.Add(_objForm);
+            _objForm.Show();
+        }
+
+        private void PctBack_Click(object sender, EventArgs e)
+        {
+            _objForm?.Close();
         }
     }
 }

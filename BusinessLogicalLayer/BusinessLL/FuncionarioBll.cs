@@ -16,7 +16,6 @@ namespace BusinessLogicalLayer.BusinessLL
         FuncionarioValidator funcionarioValidator = new FuncionarioValidator();
         public Response Insert(Funcionario item)
         {
-            
             Response resposta = funcionarioValidator.Validate(item);
             if (resposta.HasSuccess)
             {

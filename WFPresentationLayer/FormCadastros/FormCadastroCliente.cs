@@ -20,8 +20,7 @@ namespace WfPresentationLayer
         {
             InitializeComponent();
         }
-
-        private void BtnCadastrarCliente_Click(object sender, EventArgs e)
+        private void BtnCadastrarCliente_Click_1(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente(txtBoxNomeCliente.Text, TxtBoxCpfCLiente.Text, TxtBoxRgCliente.Text,
                                           txtBoxEmailCliente.Text, TxtBoxTelefone1Cliente.Text
@@ -29,10 +28,8 @@ namespace WfPresentationLayer
             ClienteBll clientebll = new ClienteBll();
             Response resposta = clientebll.Insert(cliente);
             MessageBox.Show(resposta.Message);
-            //Nao sei se possso esse if
             if (resposta.HasSuccess)
-            { this.Close();  }
-
+            { this.Close(); }
         }
     }
 }

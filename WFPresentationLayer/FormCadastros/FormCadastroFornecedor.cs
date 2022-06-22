@@ -19,12 +19,11 @@ namespace WfPresentationLayer.FormCadastros
         {
             InitializeComponent();
         }
-
-        private void BtnCadastroFornecedor_Click(object sender, EventArgs e)
+        private void BtnCadastroFornecedor_Click_1(object sender, EventArgs e)
         {
             FornecedorBll fornecedorBll = new FornecedorBll();
-            Fornecedor fornecedor = new Fornecedor(txtBoxRazaoSocial.Text,TxtBoxCnpjFornecedor.Text
-                                                  ,TxtBoxNomeResponsavel.Text,txtBoxEmailFornecedor.Text,
+            Fornecedor fornecedor = new Fornecedor(txtBoxRazaoSocial.Text, TxtBoxCnpjFornecedor.Text
+                                                  , TxtBoxNomeResponsavel.Text, txtBoxEmailFornecedor.Text,
                                                   txtBoxEmailFornecedor.Text);
             Response resposta = fornecedorBll.Insert(fornecedor);
             MessageBox.Show(resposta.Message);
@@ -32,6 +31,7 @@ namespace WfPresentationLayer.FormCadastros
             {
                 this.Close();
             }
+
         }
     }
 }

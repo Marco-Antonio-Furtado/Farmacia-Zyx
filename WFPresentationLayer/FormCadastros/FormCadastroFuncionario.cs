@@ -20,19 +20,18 @@ namespace WfPresentationLayer
             InitializeComponent();
             ((Control)this.TabEndereco).Enabled = false;
         }
-
-        private void BtnCadastroEndereco_Click(object sender, EventArgs e)
+        private void BtnCadastroEndereco_Click_1(object sender, EventArgs e)
         {
             ((Control)this.TabEndereco).Enabled = true;
             this.TabGeral.SelectedIndex = 1;
         }
 
-        private void BtnCadastroFuncionario_Click(object sender, EventArgs e)
+        private void BtnCadastroFuncionario_Click_1(object sender, EventArgs e)
         {
             EnderecoBll enderecoBll = new EnderecoBll();
             FuncionarioBll funcionarioBll = new FuncionarioBll();
-            Endereco EnderecoFuncionario = new Endereco(TxtBoxRua.Text, TxtBoxBairro.Text, TxtBoxCep.Text, 
-                                                        TxtBoxNumero.Text,TxtBoxComplemento.Text, TxtBoxPontoDeReferencia.Text,
+            Endereco EnderecoFuncionario = new Endereco(TxtBoxRua.Text, TxtBoxBairro.Text, TxtBoxCep.Text,
+                                                        TxtBoxNumero.Text, TxtBoxComplemento.Text, TxtBoxPontoDeReferencia.Text,
                                                         TxtBoxCidade.Text, TxtBoxEstado.Text);
             Funcionario funcionario = new Funcionario(txtBoxNomeFuncionario.Text, TxtBoxCpfFuncionario.Text,
                                                       TxtBoxRgFuncionario.Text, txtBoxEmailFuncionario.Text,
@@ -46,7 +45,6 @@ namespace WfPresentationLayer
             {
                 this.Close();
             }
-
         }
     }
 }

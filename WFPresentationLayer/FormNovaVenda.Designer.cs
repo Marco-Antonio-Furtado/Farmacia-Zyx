@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelNomeCLiente = new System.Windows.Forms.Label();
             this.TxtBoxSelecionarCliente = new System.Windows.Forms.TextBox();
             this.GroupBoxVenda = new System.Windows.Forms.GroupBox();
@@ -55,6 +55,7 @@
             this.LabelCodigoProduto = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.BtnNovoCliente = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.GroupBoxVenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +63,7 @@
             // LabelNomeCLiente
             // 
             this.LabelNomeCLiente.AutoSize = true;
-            this.LabelNomeCLiente.Location = new System.Drawing.Point(258, 9);
+            this.LabelNomeCLiente.Location = new System.Drawing.Point(396, 16);
             this.LabelNomeCLiente.Name = "LabelNomeCLiente";
             this.LabelNomeCLiente.Size = new System.Drawing.Size(100, 20);
             this.LabelNomeCLiente.TabIndex = 13;
@@ -71,7 +72,7 @@
             // TxtBoxSelecionarCliente
             // 
             this.TxtBoxSelecionarCliente.BackColor = System.Drawing.SystemColors.Window;
-            this.TxtBoxSelecionarCliente.Location = new System.Drawing.Point(364, 6);
+            this.TxtBoxSelecionarCliente.Location = new System.Drawing.Point(502, 13);
             this.TxtBoxSelecionarCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxSelecionarCliente.Name = "TxtBoxSelecionarCliente";
             this.TxtBoxSelecionarCliente.Size = new System.Drawing.Size(203, 27);
@@ -79,6 +80,7 @@
             // 
             // GroupBoxVenda
             // 
+            this.GroupBoxVenda.Controls.Add(this.button1);
             this.GroupBoxVenda.Controls.Add(this.BtnNovaVenda);
             this.GroupBoxVenda.Controls.Add(this.BtnNovoProduto);
             this.GroupBoxVenda.Controls.Add(this.CmbFormaPagamento);
@@ -91,7 +93,7 @@
             this.GroupBoxVenda.Controls.Add(this.LabelQuantidade);
             this.GroupBoxVenda.Controls.Add(this.TxtBoxCodigoProdutoVenda);
             this.GroupBoxVenda.Controls.Add(this.LabelCodigoProduto);
-            this.GroupBoxVenda.Location = new System.Drawing.Point(1, 47);
+            this.GroupBoxVenda.Location = new System.Drawing.Point(139, 54);
             this.GroupBoxVenda.Name = "GroupBoxVenda";
             this.GroupBoxVenda.Size = new System.Drawing.Size(990, 614);
             this.GroupBoxVenda.TabIndex = 14;
@@ -162,8 +164,8 @@
             // 
             // CodigoProduto
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.CodigoProduto.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CodigoProduto.DefaultCellStyle = dataGridViewCellStyle1;
             this.CodigoProduto.HeaderText = "Codigo Produto";
             this.CodigoProduto.MinimumWidth = 6;
             this.CodigoProduto.Name = "CodigoProduto";
@@ -171,8 +173,8 @@
             // 
             // Quantidade
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Quantidade.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Quantidade.DefaultCellStyle = dataGridViewCellStyle2;
             this.Quantidade.HeaderText = "Quantidade";
             this.Quantidade.MinimumWidth = 6;
             this.Quantidade.Name = "Quantidade";
@@ -180,8 +182,8 @@
             // 
             // ValorUnitario
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ValorUnitario.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ValorUnitario.DefaultCellStyle = dataGridViewCellStyle3;
             this.ValorUnitario.HeaderText = "Valor Unitario";
             this.ValorUnitario.MinimumWidth = 6;
             this.ValorUnitario.Name = "ValorUnitario";
@@ -189,8 +191,8 @@
             // 
             // ValorTotal
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ValorTotal.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ValorTotal.DefaultCellStyle = dataGridViewCellStyle4;
             this.ValorTotal.HeaderText = "Forma Pagamento";
             this.ValorTotal.MinimumWidth = 6;
             this.ValorTotal.Name = "ValorTotal";
@@ -198,8 +200,8 @@
             // 
             // FormaPagamento
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.FormaPagamento.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.FormaPagamento.DefaultCellStyle = dataGridViewCellStyle5;
             this.FormaPagamento.HeaderText = "Valor Total";
             this.FormaPagamento.MinimumWidth = 6;
             this.FormaPagamento.Name = "FormaPagamento";
@@ -261,7 +263,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(585, 5);
+            this.button2.Location = new System.Drawing.Point(723, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 29);
             this.button2.TabIndex = 15;
@@ -270,7 +272,7 @@
             // 
             // BtnNovoCliente
             // 
-            this.BtnNovoCliente.Location = new System.Drawing.Point(122, 6);
+            this.BtnNovoCliente.Location = new System.Drawing.Point(260, 13);
             this.BtnNovoCliente.Name = "BtnNovoCliente";
             this.BtnNovoCliente.Size = new System.Drawing.Size(130, 29);
             this.BtnNovoCliente.TabIndex = 16;
@@ -278,17 +280,27 @@
             this.BtnNovoCliente.UseVisualStyleBackColor = true;
             this.BtnNovoCliente.Click += new System.EventHandler(this.BtnNovoCliente_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(668, 76);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(277, 79);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Cadastrar Venda";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FormNovaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 673);
+            this.ClientSize = new System.Drawing.Size(1204, 779);
             this.Controls.Add(this.BtnNovoCliente);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.GroupBoxVenda);
             this.Controls.Add(this.LabelNomeCLiente);
             this.Controls.Add(this.TxtBoxSelecionarCliente);
             this.Name = "FormNovaVenda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormNovaVenda";
             this.GroupBoxVenda.ResumeLayout(false);
             this.GroupBoxVenda.PerformLayout();
@@ -322,5 +334,6 @@
         private Button BtnNovoCliente;
         private Button BtnNovoProduto;
         private Button BtnNovaVenda;
+        private Button button1;
     }
 }

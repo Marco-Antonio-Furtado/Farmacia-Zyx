@@ -12,14 +12,11 @@ namespace DataAccessLayer
         
         public Response Insert(Cliente cliente)
         {
-            //PARÂMETROS SQL - AUTOMATICAMENTE ADICIONA UMA "/" NA FRENTE DE NOMES COM ' EX SHAQQILE O'NEAL
-            //               - AUTOMATICAMENTE ADICIONAR '' EM DATAS, VARCHARS E CHARS
-            //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
+            
             string sql = $"INSERT INTO CLIENTES (NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2) VALUES                                 (@NOME,@CPF,@RG,@EMAIL,@TELEFONE1,@TELEFONE2)";
 
             string connectionString = DalDirectory;
 
-            //ADO.NET 
             SqlConnection connection = new SqlConnection(connectionString);
 
             SqlCommand command = new SqlCommand(sql, connection);
@@ -31,10 +28,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@TELEFONE2", cliente.Telefone2);
 
 
-            //Estamos conectados na base de dados
-            //try catch
-            //try catch finally
-            //try finally
+            
             try
             {
                 connection.Open();
@@ -45,21 +39,16 @@ namespace DataAccessLayer
             {
                 if (ex.Message.Contains("UQ_CLIENTES_EMAIL"))
                 {
-                    //RETORNAR MENSAGEM QUE O EMAIL TA DUPLICADO
                     return new Response("Email já está em uso.", false);
                 }
                 if (ex.Message.Contains("UQ_CLIENTES_CPF"))
                 {
-                    //RETORNAR MENSAGEM QUE O CPF TA DUPLICADO
                     return new Response("CPF já está em uso.", false);
                 }
-                //SE NAO ENTROU EM NENHUM IF DE CIMA, SÓ PODE SER UM ERRO DE INFRAESTRUTURA
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
-            //Instrução que SEMPRE será executada e "fecharão" a conexão caso ela esteja aberta
             finally
             {
-                //Fecha a conexão
                 connection.Dispose();
             }
         }

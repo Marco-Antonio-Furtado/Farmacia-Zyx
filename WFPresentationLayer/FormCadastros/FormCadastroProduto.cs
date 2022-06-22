@@ -19,16 +19,15 @@ namespace WfPresentationLayer
         {
             InitializeComponent();
         }
-
-        private void BtnCadastrarProduto_Click(object sender, EventArgs e)
+        private void BtnCadastrarProduto_Click_1(object sender, EventArgs e)
         {
             string preco = TxtBoxPrecoProduto.Text;
-            if(TxtBoxPrecoProduto.Text == "   .")
+            if (TxtBoxPrecoProduto.Text == "   .")
             {
                 preco = "0";
             }
-            Produto produto = new Produto(TxtBoxNomeProduto.Text, TxtBoxDescrisaoProduto.Text
-                                                  , TxtBoxLaboratorio.Text,double.Parse(preco));
+            Produto produto = new Produto(TxtBoxNomeProduto.Text,TxtBoxDescrisaoProduto.Text
+                                         ,TxtBoxLaboratorio.Text, double.Parse(preco));
             ProdutoBll produtoBll = new ProdutoBll();
             Response resposta = produtoBll.Insert(produto);
             MessageBox.Show(resposta.Message);
@@ -36,8 +35,6 @@ namespace WfPresentationLayer
             {
                 this.Close();
             }
-
-
         }
     }
 }

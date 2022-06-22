@@ -183,7 +183,7 @@ namespace DataAccessLayer
                                                      complemento: Convert.ToString(reader["COMPLEMENTO"]),
                                                      pontoReferencia: Convert.ToString(reader["PONTO_REFERENCIA"]));
                     Endereco.ID = Convert.ToInt32(reader["ID"]);
-                    return new SingleResponse<Endereco>("Endereco selecionado com sucesso!", true, cliente);
+                    return new SingleResponse<Endereco>("Endereco selecionado com sucesso!", true, Endereco);
                 }
                 return new SingleResponse<Endereco>("Endereco não encontrado!", false, null);
             }

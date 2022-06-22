@@ -19,9 +19,10 @@ namespace BusinessLogicalLayer.BusinessLL
             Response resposta = clienteValidator.Validate(item);
             if (resposta.HasSuccess)
             {
-                clienteDAL.Insert(item);
+                return clienteDAL.Insert(item);
             }
-                return resposta;
+            else { return resposta; }
+
         }
 
         public Response Update(Cliente item)

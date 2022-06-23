@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Shared
+﻿namespace Shared
 {
     public class Response
     {
@@ -15,5 +9,6 @@ namespace Shared
         }
         public string Message { get; private set; }
         public bool HasSuccess { get; private set; }
+        
     }
 }

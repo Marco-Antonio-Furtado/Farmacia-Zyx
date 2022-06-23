@@ -37,8 +37,8 @@
             this.BtnMenuVendas = new System.Windows.Forms.Button();
             this.PctBtnClose = new System.Windows.Forms.PictureBox();
             this.TopPanel = new System.Windows.Forms.Panel();
-            this.PctBack = new System.Windows.Forms.PictureBox();
             this.LblFuncionarioLogado = new System.Windows.Forms.Label();
+            this.PctBack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PctBtnClose)).BeginInit();
             this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PctBack)).BeginInit();
@@ -134,7 +134,7 @@
             // PctBtnClose
             // 
             this.PctBtnClose.Image = global::WfPresentationLayer.Properties.Resources.delete_sign;
-            this.PctBtnClose.Location = new System.Drawing.Point(1115, 3);
+            this.PctBtnClose.Location = new System.Drawing.Point(1124, 3);
             this.PctBtnClose.Name = "PctBtnClose";
             this.PctBtnClose.Size = new System.Drawing.Size(91, 35);
             this.PctBtnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -159,6 +159,16 @@
             this.TopPanel.Size = new System.Drawing.Size(1218, 110);
             this.TopPanel.TabIndex = 7;
             // 
+            // LblFuncionarioLogado
+            // 
+            this.LblFuncionarioLogado.AutoSize = true;
+            this.LblFuncionarioLogado.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblFuncionarioLogado.Location = new System.Drawing.Point(478, 3);
+            this.LblFuncionarioLogado.Name = "LblFuncionarioLogado";
+            this.LblFuncionarioLogado.Size = new System.Drawing.Size(219, 31);
+            this.LblFuncionarioLogado.TabIndex = 7;
+            this.LblFuncionarioLogado.Text = "Bem Vindo Ademiro";
+            // 
             // PctBack
             // 
             this.PctBack.Image = global::WfPresentationLayer.Properties.Resources.external_Back_arrows_simple_solid_edt_graphics_3;
@@ -169,16 +179,6 @@
             this.PctBack.TabIndex = 0;
             this.PctBack.TabStop = false;
             this.PctBack.Click += new System.EventHandler(this.PctBack_Click);
-            // 
-            // LblFuncionarioLogado
-            // 
-            this.LblFuncionarioLogado.AutoSize = true;
-            this.LblFuncionarioLogado.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblFuncionarioLogado.Location = new System.Drawing.Point(478, 3);
-            this.LblFuncionarioLogado.Name = "LblFuncionarioLogado";
-            this.LblFuncionarioLogado.Size = new System.Drawing.Size(219, 31);
-            this.LblFuncionarioLogado.TabIndex = 7;
-            this.LblFuncionarioLogado.Text = "Bem Vindo Ademiro";
             // 
             // MenuGeralAdmin
             // 

@@ -1,12 +1,6 @@
-﻿using BusinessLogicalLayer.RegrasValidacao;
-using DataAccessLayer;
+﻿using DataAccessLayer;
 using Entities;
 using Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer.BusinessLL
 {
@@ -22,9 +16,7 @@ namespace BusinessLogicalLayer.BusinessLL
                 return clienteDAL.Insert(item);
             }
             else { return resposta; }
-
         }
-
         public Response Update(Cliente item)
         {
             Response resposta = clienteValidator.Validate(item);
@@ -33,7 +25,6 @@ namespace BusinessLogicalLayer.BusinessLL
                 return clienteDAL.Update(item);
             }
             else { return resposta; }
-           
         }
         public Response Delete(int id)
         {

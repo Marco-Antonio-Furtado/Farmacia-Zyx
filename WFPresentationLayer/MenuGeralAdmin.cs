@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WfPresentationLayer.FormCadastros;
+using WfPresentationLayer.Trancaçoes;
+
 
 namespace WfPresentationLayer
 {
@@ -41,7 +43,7 @@ namespace WfPresentationLayer
         private void BtnMenuCompras_Click(object sender, EventArgs e)
         {
             _objForm?.Close();
-            _objForm = new FormCadastroFornecedor
+            _objForm = new FormNovaCompra
             {
                 TopLevel = false,
                 FormBorderStyle = FormBorderStyle.None,

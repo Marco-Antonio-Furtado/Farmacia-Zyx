@@ -1,11 +1,6 @@
 ﻿using Entities;
 using Shared;
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
@@ -14,14 +9,14 @@ namespace DataAccessLayer
         internal string DalDirectory = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\AdultMovieLocatorDb.mdf;Integrated Security=True;Connect Timeout=3";
         public Response Insert(Item_Venda item)
         {
-            string sql = $"INSERT INTO ITEM_Venda (DATA_VENDA,PRODUTO_VENDA,NOME_CLIENTE,NOME_FUNCIONARIO,FORMA_PAGAMENTO,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL) VALUES(@DATA_VENDA,@PRODUTO_VENDA,@NOME_CLIENTE,@NOME_FUNCIONARIO,@FORMA_PAGAMENTO,@QUANTIDADE,@PRECO_UNITARIO,@VALOR_TOTAL)";
+            string sql = $"INSERT INTO ITEM_Venda (DATA,PRODUTO,NOME_CLIENTE,NOME_FUNCIONARIO,FORMA_PAGAMENTO,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL) VALUES(@DATA,@PRODUTO,@NOME_CLIENTE,@NOME_FUNCIONARIO,@FORMA_PAGAMENTO,@QUANTIDADE,@PRECO_UNITARIO,@VALOR_TOTAL)";
             string connectionString = DalDirectory;
 
             SqlConnection connection = new SqlConnection(connectionString);
             
             SqlCommand command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@DATA_VENDA", item.DataVenda);
-            command.Parameters.AddWithValue("@PRODUTO_VENDA", item.ProdutoVenda);
+            command.Parameters.AddWithValue("@DATA", item.Data);
+            command.Parameters.AddWithValue("@PRODUTO", item.Produto);
             command.Parameters.AddWithValue("@NOME_CLIENTE", item.NomeCliente);
             command.Parameters.AddWithValue("@NOME_FUNCIONARIO", item.NomeFuncionario);
             command.Parameters.AddWithValue("@FORMA_PAGAMENTO", item.FormaPagamento);
@@ -46,15 +41,15 @@ namespace DataAccessLayer
 
         public Response Update(Item_Venda item)
         {
-            string sql = $"UPDATE ITEM_VENDA SET DATA_VENDA = @DATA_VENDA, PRODUTO_VENDA = @PRODUTO_VENDA, NOME_CLIENTE = @NOME_CLIENTE, NOME_FUNCIONARIO = @NOME_FUNCIONARIO, FORMA_PAGAMENTO = @FORMA_PAGAMENTO, QUANTIDADE = @QUANTIDADE, PRECO_UNITARIO = @PRECO_UNITARIO, VALOR_TOTAL = @VALOR_TOTAL WHERE ID = @ID";
+            string sql = $"UPDATE ITEM_VENDA SET DATA = @DATA, PRODUTO = @PRODUTO, NOME_CLIENTE = @NOME_CLIENTE, NOME_FUNCIONARIO = @NOME_FUNCIONARIO, FORMA_PAGAMENTO = @FORMA_PAGAMENTO, QUANTIDADE = @QUANTIDADE, PRECO_UNITARIO = @PRECO_UNITARIO, VALOR_TOTAL = @VALOR_TOTAL WHERE ID = @ID";
 
             string connectionString = DalDirectory;
 
             SqlConnection connection = new SqlConnection(connectionString);
 
             SqlCommand command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@DATA_VENDA", item.DataVenda);
-            command.Parameters.AddWithValue("@PRODUTO_VENDA", item.ProdutoVenda);
+            command.Parameters.AddWithValue("@DATA", item.Data);
+            command.Parameters.AddWithValue("@PRODUTO", item.Produto);
             command.Parameters.AddWithValue("@NOME_CLIENTE", item.NomeCliente);
             command.Parameters.AddWithValue("@NOME_FUNCIONARIO", item.NomeFuncionario);
             command.Parameters.AddWithValue("@FORMA_PAGAMENTO", item.FormaPagamento);
@@ -115,7 +110,7 @@ namespace DataAccessLayer
 
         public DataResponse<Item_Venda> GetAll()
         {
-            string sql = $"SELECT ID,DATA_VENDA,PRODUTO_VENDA,NOME_CLIENTE,NOME_FUNCIONARIO,FORMA_PAGAMENTO,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL";
+            string sql = $"SELECT ID,DATA,PRODUTO,NOME_CLIENTE,NOME_FUNCIONARIO,FORMA_PAGAMENTO,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL";
 
             string connectionString = DalDirectory;
 
@@ -129,8 +124,8 @@ namespace DataAccessLayer
                 List<Item_Venda> ListaVendas = new List<Item_Venda>();
                 while (reader.Read())
                 {
-                    Item_Venda Item_Venda = new Item_Venda(dataVenda: Convert.ToDateTime(reader["DATA_Venda"]),
-                                                           produtoVenda: Convert.ToString(reader["PRODUTO_Venda"]),
+                    Item_Venda Item_Venda = new Item_Venda(data: Convert.ToDateTime(reader["DATA"]),
+                                                           produto: Convert.ToString(reader["PRODUTO"]),
                                                            nomeCliente: Convert.ToString(reader["NOME_CLIENTE"]),
                                                            quantidade: Convert.ToInt32(reader["QUANTIDADE"]),
                                                            precoUnitario: Convert.ToInt32(reader["PRECO_UNITARIO"]),
@@ -156,7 +151,7 @@ namespace DataAccessLayer
 
         public SingleResponse<Item_Venda> GetByID(int id)
         {
-            string sql = $"SELECT ID,DATA_VENDA,PRODUTO_VENDA,NOME_CLIENTE,NOME_FUNCIONARIO,FORMA_PAGAMENTO,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL WHERE ID = @ID";
+            string sql = $"SELECT ID,DATA,PRODUTO,NOME_CLIENTE,NOME_FUNCIONARIO,FORMA_PAGAMENTO,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL WHERE ID = @ID";
 
             string connectionString = DalDirectory;
 
@@ -170,8 +165,8 @@ namespace DataAccessLayer
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    Item_Venda Item_Venda = new Item_Venda(dataVenda: Convert.ToDateTime(reader["DATA_Venda"]),
-                                                            produtoVenda: Convert.ToString(reader["PRODUTO_Venda"]),
+                    Item_Venda Item_Venda = new Item_Venda(data: Convert.ToDateTime(reader["DATA"]),
+                                                            produto: Convert.ToString(reader["PRODUTO"]),
                                                             nomeCliente: Convert.ToString(reader["NOME_CLIENTE"]),
                                                             quantidade: Convert.ToInt32(reader["QUANTIDADE"]),
                                                             precoUnitario: Convert.ToInt32(reader["PRECO_UNITARIO"]),

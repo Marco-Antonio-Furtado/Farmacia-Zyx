@@ -1,23 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entities
+﻿namespace Entities
 {
     public class Endereco
     {
         public Endereco( string cEP, string nomeRua, string numeroCasa, int estadoID, int cidadeID)
         {
-            
             CEP = cEP;
             NomeRua = nomeRua;
             NumeroCasa = numeroCasa;
             EstadoID = estadoID;
             CidadeID = cidadeID;
         }
-
         public int ID { get; set; }
         public string CEP { get; set; }
         public string NomeRua { get; set; }

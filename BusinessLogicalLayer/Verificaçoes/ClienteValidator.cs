@@ -1,5 +1,4 @@
-﻿using DataAccessLayer;
-using Entities;
+﻿using Entities;
 using Shared;
 using System.Text;
 
@@ -9,8 +8,8 @@ namespace BusinessLogicalLayer
     {
         private RegraValidacaoString stringValidator = new RegraValidacaoString();
         private RegraNormatizacao normatization = new RegraNormatizacao();
-        
-        public Response Validate(Cliente cliente)
+
+        internal Response Validate(Cliente cliente)
         {
 
             StringBuilder erros = new StringBuilder("");

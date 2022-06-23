@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Entities;
 
 namespace BusinessLogicalLayer.RegrasValidacao
 {
@@ -12,15 +8,7 @@ namespace BusinessLogicalLayer.RegrasValidacao
         {
             if (string.IsNullOrWhiteSpace(rua))
             {
-                return "rua tem que ser informada";
-            }
-            else return "";
-        }
-        internal string ValidateBairro(string bairro)
-        {
-            if (string.IsNullOrWhiteSpace(bairro))
-            {
-                return "Bairro tem que ser informada";
+                return "rua tem que ser informada\r\n";
             }
             else return "";
         }
@@ -28,7 +16,7 @@ namespace BusinessLogicalLayer.RegrasValidacao
         {
             if (string.IsNullOrWhiteSpace(cep))
             {
-                return "Cep tem que ser informado";
+                return "Cep tem que ser informado\r\n";
             }
             else return "";
         }
@@ -36,34 +24,29 @@ namespace BusinessLogicalLayer.RegrasValidacao
         {
             if (string.IsNullOrWhiteSpace(numero))
             {
-                return "numero tem que ser informado";
+                return "numero tem que ser informado\r\n";
             }
             else return "";
         }
-        internal string ValidatePontoReferencia(string pontoReferencia)
+        internal string ValidateCidade(string Cidade)
         {
-            if (string.IsNullOrWhiteSpace(pontoReferencia))
+            if (string.IsNullOrWhiteSpace(Cidade))
             {
-                return "Ponto de Referencia tem que ser informado";
+                return "Cidade tem que ser informado\r\n";
             }
             else return "";
         }
-        internal string Validatecidade(string cidade)
+        internal string ValidateEstado(Estado Estado)
         {
-            if (string.IsNullOrWhiteSpace(cidade))
+            if (string.IsNullOrWhiteSpace(Estado.Nome))
             {
-                return "Bairro tem que ser informada";
+                return "Estado tem que ser informado\r\n";
+            }
+            if(Estado.UF.Length != 2)
+            {
+                return "Estado Com Formato Incorreto\r\n";
             }
             else return "";
         }
-        internal string ValidateEstado(string estado)
-        {
-            if (string.IsNullOrWhiteSpace(estado))
-            {
-                return "estado tem que ser informada";
-            }
-            else return "";
-        }
-
     }
 }

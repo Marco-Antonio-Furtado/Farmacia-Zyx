@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace BusinessLogicalLayer
 {
@@ -23,12 +18,8 @@ namespace BusinessLogicalLayer
             {
                 return "Nome deve ser informado.\r\n";
             }
-            //Trim -> Remove espaços em branco do começo e do fim da string (mas não do meio)
             nome = nome.Trim();
-
-            //Função que remove os espaços extra entre as strings (deixando apenas um)
             nome = Regex.Replace(nome, @"\s+", " ");
-
             if (nome.Length < MINIMO_CARACTERES_NOME)
             {
                 return "Nome deve conter o minimo de caracteres.\r\n";
@@ -38,7 +29,6 @@ namespace BusinessLogicalLayer
             {
                 return "Nome completo deve ser informado.\r\n";
             }
-
             for (int i = 0; i < nomes.Length; i++)
             {
                 if (nomes[i].Length < 2)
@@ -46,34 +36,23 @@ namespace BusinessLogicalLayer
                     return "Nome/Sobrenome deve possuir ao menos 2 caractere.\r\n";
                 }
             }
-            //Alfabeto romano e acentos gráficos
             string regex = @"^[a-zA-Záâãéêíïóõôüúç ÁÂÃÉÊÍÏÓÔÜÚÇ]+$";
             if (!Regex.IsMatch(nome, regex))
             {
                 return "Nome deve conter apenas caracteres do alfabeto romano.\r\n";
             }
-
             if (nome.Length > MAXIMO_CARACTERES_NOME)
             {
                 return "Nome não pode conter mais que o maximo de caracteres.\r\n";
             }
-
-            //Se chegou aqui, o nome ta certinho e retornamos "";
             return "";
         }
-
-        /// <summary>
-        /// Executa validação de CPF utilizando as regras disponibilizadas pela Receita Federal
-        /// </summary>
-        /// <param name="cpf">Cpf a ser validado</param>
-        /// <returns>Retorna "" se o CPF está válido, caso contrário retorna a mensagem de erro</returns>
         internal string ValidateCPF(string cpf)
         {
             if (string.IsNullOrWhiteSpace(cpf))
             {
                 return "CPF deve ser informado.\r\n";
             }
-
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             string tempCpf;
@@ -86,7 +65,6 @@ namespace BusinessLogicalLayer
                 return "CPF com numeros de caracteres invalidos\r\n";
             tempCpf = cpf.Substring(0, 9);
             soma = 0;
-
             for (int i = 0; i < 9; i++)
                 soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
             resto = soma % 11;
@@ -95,7 +73,7 @@ namespace BusinessLogicalLayer
             else
                 resto = 11 - resto;
             digito = resto.ToString();
-            tempCpf = tempCpf + digito;
+            tempCpf += digito;
             soma = 0;
             for (int i = 0; i < 10; i++)
                 soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
@@ -104,7 +82,7 @@ namespace BusinessLogicalLayer
                 resto = 0;
             else
                 resto = 11 - resto;
-            digito = digito + resto.ToString();
+            digito += resto.ToString();
             bool ehValido = cpf.EndsWith(digito);
             if (!ehValido)
             {
@@ -112,12 +90,8 @@ namespace BusinessLogicalLayer
             }
             return "";
         }
-
-
-        //Validação do email deve estar errada
         internal string ValidateEmail(string email)
         {
-
             if (string.IsNullOrWhiteSpace(email))
             {
                 return "Email deve ser informado.\r\n";
@@ -138,30 +112,24 @@ namespace BusinessLogicalLayer
             }
             return "";
         }
-
         internal string ValidateCEP(string cep)
         {
             if (string.IsNullOrWhiteSpace(cep))
             {
                 return "CEP deve ser informado.\r\n";
             }
-            //Remove espaços em branco do inicio e fim da string
             cep = cep.Trim();
-            //Substitui - e . por "" (vazio)
             cep = cep.Replace("-", "").Replace(".", "");
-
             if (cep.Length != CARACTERES_CEP)
             {
                 return "CEP deve conter 8 dígitos (sem considerar hífen/ponto).\r\n";
             }
-
             int temp = 0;
             if (!int.TryParse(cep, out temp))
             {
                 //Se a conversão não funcionar
                 return "CEP em formato incorreto.\r\n";
             }
-
             return "";
         }
 
@@ -180,7 +148,6 @@ namespace BusinessLogicalLayer
                         .Replace(" ", "")
                         .Replace(".", "")
                         .Replace("+", "");
-
             if (telefone.Length != 8 && telefone.Length != 9 && telefone.Length != 11 && telefone.Length != 13)
             {
                 return "Telefone deve conter 8, 9, 11 ou 13 dígitos.\r\n";
@@ -211,7 +178,7 @@ namespace BusinessLogicalLayer
             string tempCnpj;
             cnpj = cnpj.Trim();
             cnpj = cnpj.Replace(".", "").Replace("-", "").Replace("/", "");
-            if (cnpj.Length != 14)
+            if (cnpj.Length != CARACTERES_CNPJ)
                 return false;
             tempCnpj = cnpj.Substring(0, 12);
             soma = 0;
@@ -223,7 +190,7 @@ namespace BusinessLogicalLayer
             else
                 resto = 11 - resto;
             digito = resto.ToString();
-            tempCnpj = tempCnpj + digito;
+            tempCnpj += digito;
             soma = 0;
             for (int i = 0; i < 13; i++)
                 soma += int.Parse(tempCnpj[i].ToString()) * multiplicador2[i];
@@ -232,7 +199,7 @@ namespace BusinessLogicalLayer
                 resto = 0;
             else
                 resto = 11 - resto;
-            digito = digito + resto.ToString();
+            digito += resto.ToString();
             return cnpj.EndsWith(digito);
         }
         internal string ValidateRazaoSocial(string RazaoSocial)

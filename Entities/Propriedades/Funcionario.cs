@@ -1,15 +1,10 @@
 ﻿using Entities.enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entities
 {
     public class Funcionario
     {
-        public Funcionario(string nome, string cPF, string rG, string email, string telefone1, Endereco endereco,string senha)
+        public Funcionario(string nome, string cPF, string rG, string email, string telefone1, Endereco endereco, Hierarquia posicaoHierarquica, string senha)
         {
             Nome = nome;
             CPF = cPF;
@@ -17,9 +12,9 @@ namespace Entities
             Email = email;
             Telefone1 = telefone1;
             Endereco = endereco;
+            PosicaoHierarquica = posicaoHierarquica;
             Senha = senha;
         }
-
         public int ID { get; set; }
         public string Nome { get; set; }
         public string CPF { get; set; }

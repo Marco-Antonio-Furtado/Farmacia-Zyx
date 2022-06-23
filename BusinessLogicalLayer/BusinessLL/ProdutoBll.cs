@@ -2,17 +2,12 @@
 using DataAccessLayer;
 using Entities;
 using Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer.BusinessLL
 {
     public class ProdutoBll : ICRUD<Produto>
     {
-        ProdutoDal produtoDAL = new ProdutoDal();
+        readonly ProdutoDal produtoDAL = new ProdutoDal();
         ProdutoValidator produtoValidator = new ProdutoValidator();
         public Response Insert(Produto item)
         {

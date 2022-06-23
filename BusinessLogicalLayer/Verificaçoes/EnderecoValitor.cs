@@ -1,32 +1,45 @@
 ﻿using BusinessLogicalLayer.RegrasValidacao;
 using Entities;
+using Entities.Propriedades;
 using Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer.Verificaçoes
 {
     internal class EnderecoValitor
     {
-        RegraValidacaoEndereco validacaoEndereco = new RegraValidacaoEndereco();
+        private RegraValidacaoEndereco validacaoEndereco = new RegraValidacaoEndereco();
+         
         internal Response Validate(Endereco Endereco)
         {
 
             StringBuilder erros = new StringBuilder("");
 
 
-            erros.Append(validacaoEndereco.ValidateRua(Endereco.Rua));
-            erros.Append(validacaoEndereco.ValidateBairro(Endereco.Bairro));
+            erros.Append(validacaoEndereco.ValidateRua(Endereco.NomeRua));
             erros.Append(validacaoEndereco.ValidateCep(Endereco.CEP));
-            erros.Append(validacaoEndereco.ValidateNumero(Endereco.Numero));
-            erros.Append(validacaoEndereco.ValidatePontoReferencia(Endereco.PontoReferencia));
-            erros.Append(validacaoEndereco.Validatecidade(Endereco.Cidade));
-            erros.Append(validacaoEndereco.ValidateEstado(Endereco.Estado));
+            erros.Append(validacaoEndereco.ValidateNumero(Endereco.NumeroCasa));
 
-
+            if (!String.IsNullOrWhiteSpace(erros.ToString()))
+            {
+                return new Response(erros.ToString(), false);
+            }
+            return new Response("Daqui esta indo pro banco", true);
+        }
+        internal Response ValidateEstado(Estado estado)
+        {
+            StringBuilder erros = new StringBuilder("");
+            erros.Append(validacaoEndereco.ValidateEstado(estado));
+            if (!String.IsNullOrWhiteSpace(erros.ToString()))
+            {
+                return new Response(erros.ToString(), false);
+            }
+            return new Response("Daqui esta indo pro banco", true);
+        }
+        internal Response ValidateCidade(Cidade cidade)
+        {
+            StringBuilder erros = new StringBuilder("");
+            erros.Append(validacaoEndereco.ValidateCidade(cidade.Nome));
             if (!String.IsNullOrWhiteSpace(erros.ToString()))
             {
                 return new Response(erros.ToString(), false);

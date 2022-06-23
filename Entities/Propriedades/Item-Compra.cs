@@ -1,35 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Entities.Propriedades;
 
 namespace Entities
 {
-    public class Item_Compra
+    public class Item_Compra : Transacao
     {
-        public Item_Compra(DateTime dataCompra, string produtoCompra, string fornecedor, int quantidade , int precoUnitario, double valorTotal)
+        
+
+        public Item_Compra(DateTime data, string produto,string fornecedor, string nomeFuncionario, string formaPagamento, int quantidade, double precoUnitario, double valorTotal)
         {
-            DataCompra = dataCompra;
-            ProdutoCompra = produtoCompra;
+            Data = data;
+            Produto = produto;
             Fornecedor = fornecedor;
+            NomeFuncionario = nomeFuncionario;
+            FormaPagamento = formaPagamento;
             Quantidade = quantidade;
             PrecoUnitario = precoUnitario;
             ValorTotal = valorTotal;
         }
-
-        public int ID { get; set; }
-        public DateTime DataCompra { get; set; }
-
-        public string ProdutoCompra { get; set; }
-        public string Fornecedor { get; set; }
-        public int Quantidade { get; set; }
-        public int PrecoUnitario { get; set; }
-
-        //sendo que o valor total deve ser calculado automaticamente pelo sistema???
-        public double ValorTotal { get; set; }
-
-        //Em uma entrada deverá ser possível a inserção de vários produtos distintos.
-
     }
 }

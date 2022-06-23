@@ -1,11 +1,6 @@
 ﻿using Entities;
 using Shared;
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
@@ -14,17 +9,18 @@ namespace DataAccessLayer
         internal string DalDirectory = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\AdultMovieLocatorDb.mdf;Integrated Security=True;Connect Timeout=3";
         public Response Insert(Item_Compra item)
         {
-            string sql = $"INSERT INTO ITEM_COMPRA (DATA_COMPRA,PRODUTO_COMPRA,FORNECEDOR,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL) VALUES                                 (@DATA_COMPRA,@PRODUTO_COMPRA,@FORNECEDOR,@QUANTIDADE,@PRECO_UNITARIO,@VALOR_TOTAL)";
-
+            string sql = $"INSERT INTO ITEM_COMPRA (PRODUTO,DATA,FORNECEDOR,FORMA_PAGAMENTO,PRECO_UNITARIO,QUANTIDADE,VALOR_TOTAL,NOME_FUNCIONARIO) VALUES (@PRODUTO,@DATA,@FORNECEDOR,@FORMA_PAGAMENTO,@PRECO_UNITARIO,@QUANTIDADE,@VALOR_TOTAL,@NOME_FUNCIONARIO";
             string connectionString = DalDirectory;
 
             SqlConnection connection = new SqlConnection(connectionString);
 
             SqlCommand command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@DATA_COMPRA", item.DataCompra);
-            command.Parameters.AddWithValue("@PRODUTO_COMPRA", item.ProdutoCompra);
+            command.Parameters.AddWithValue("@DATA", item.Data);
+            command.Parameters.AddWithValue("@PRODUTO", item.Produto);
             command.Parameters.AddWithValue("@FORNECEDOR", item.Fornecedor);
             command.Parameters.AddWithValue("@QUANTIDADE", item.Quantidade);
+            command.Parameters.AddWithValue("@FORMA_PAGAMENTO", item.FormaPagamento);
+            command.Parameters.AddWithValue("@NOME_FUNCIONARIO", item.NomeFuncionario);
             command.Parameters.AddWithValue("@PRECO_UNITARIO", item.PrecoUnitario);
             command.Parameters.AddWithValue("@VALOR_TOTAL", item.ValorTotal);
             try
@@ -45,15 +41,15 @@ namespace DataAccessLayer
 
         public Response Update(Item_Compra item)
         {
-            string sql = $"UPDATE ITEM_COMPRA SET DATA_COMPRA = @DATA_COMPRA, PRODUTO_COMPRA = @PRODUTO_COMPRA, FORNECEDOR = @FORNECEDOR, QUANTIDADE = @QUANTIDADE, PRECO_UNITARIO = @PRECO_UNITARIO, VALOR_TOTAL = @VALOR_TOTAL WHERE ID = @ID";
+            string sql = $"UPDATE ITEM_COMPRA SET DATA = @DATA, PRODUTO = @PRODUTO, FORNECEDOR = @FORNECEDOR,FORMA_PAGAMENTO = @FORMA_PAGAMENTO, QUANTIDADE = @QUANTIDADE, PRECO_UNITARIO = @PRECO_UNITARIO, VALOR_TOTAL = @VALOR_TOTAL WHERE ID = @ID";
             
             string connectionString = DalDirectory;
             
             SqlConnection connection = new SqlConnection(connectionString);
 
             SqlCommand command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@NOME", item.DataCompra);
-            command.Parameters.AddWithValue("@CPF", item.ProdutoCompra);
+            command.Parameters.AddWithValue("@NOME", item.Data);
+            command.Parameters.AddWithValue("@CPF", item.Produto);
             command.Parameters.AddWithValue("@RG", item.Fornecedor);
             command.Parameters.AddWithValue("@EMAIL", item.Quantidade);
             command.Parameters.AddWithValue("@TELEFONE1", item.PrecoUnitario);
@@ -112,7 +108,7 @@ namespace DataAccessLayer
 
         public DataResponse<Item_Compra> GetAll()
         {
-            string sql = $"SELECT ID,DATA_COMPRA,PRODUTO_COMPRA,FORNECEDOR,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL FROM ITEM_COMPRA";
+            string sql = $"SELECT ID,PRODUTO,DATA,FORNECEDOR,FORMA_PAGAMENTO,PRECO_UNITARIO,QUANTIDADE,VALOR_TOTAL,NOME_FUNCIONARIO FROM ITEM_COMPRA";
 
             string connectionString = DalDirectory;
 
@@ -126,12 +122,14 @@ namespace DataAccessLayer
                 List<Item_Compra> ListaCompras = new List<Item_Compra>();
                 while (reader.Read())
                 {
-                    Item_Compra Item_Compra = new Item_Compra(dataCompra: Convert.ToDateTime(reader["DATA_COMPRA"]),
-                                                              produtoCompra : Convert.ToString(reader["PRODUTO_COMPRA"]),
-                                                              fornecedor : Convert.ToString(reader["FORNECEDOR"]),
-                                                              quantidade : Convert.ToInt32(reader["QUANTIDADE"]),
-                                                              precoUnitario : Convert.ToInt32(reader["PRECO_UNITARIO"]),
-                                                              valorTotal : Convert.ToDouble(reader["VALOR_TOTAL"]));
+                    Item_Compra Item_Compra = new Item_Compra(data: Convert.ToDateTime(reader["DATA"]),
+                                                              produto: Convert.ToString(reader["PRODUTO"]),
+                                                              nomeFuncionario: Convert.ToString(reader["NOME_FUNCIONARIO"]),
+                                                              formaPagamento: Convert.ToString(reader["FORMA_PAGAMENTO"]),
+                                                              fornecedor: Convert.ToString(reader["FORNECEDOR"]),
+                                                              quantidade: Convert.ToInt32(reader["QUANTIDADE"]),
+                                                              precoUnitario: Convert.ToInt32(reader["PRECO_UNITARIO"]),
+                                                              valorTotal: Convert.ToDouble(reader["VALOR_TOTAL"]));
                     Item_Compra.ID = Convert.ToInt32(reader["ID"]);
 
                     ListaCompras.Add(Item_Compra);
@@ -150,7 +148,7 @@ namespace DataAccessLayer
 
         public SingleResponse<Item_Compra> GetByID(int id)
         {
-            string sql = $"SELECT ID,DATA_COMPRA,PRODUTO_COMPRA,FORNECEDOR,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL FROM ITEM_COMPRA WHERE ID = @ID";
+            string sql = $"SELECT ID,DATA,PRODUTO,FORNECEDOR,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL FROM ITEM_COMPRA WHERE ID = @ID";
 
             string connectionString = DalDirectory;
 
@@ -164,8 +162,10 @@ namespace DataAccessLayer
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    Item_Compra Item_Compra = new Item_Compra(dataCompra: Convert.ToDateTime(reader["DATA_COMPRA"]),
-                                                              produtoCompra: Convert.ToString(reader["PRODUTO_COMPRA"]),
+                    Item_Compra Item_Compra = new Item_Compra(data: Convert.ToDateTime(reader["DATA"]),
+                                                              produto: Convert.ToString(reader["PRODUTO"]),
+                                                              nomeFuncionario: Convert.ToString(reader["NOME_FUNCIONARIO"]),
+                                                              formaPagamento: Convert.ToString(reader["FORMA_PAGAMENTO"]),
                                                               fornecedor: Convert.ToString(reader["FORNECEDOR"]),
                                                               quantidade: Convert.ToInt32(reader["QUANTIDADE"]),
                                                               precoUnitario: Convert.ToInt32(reader["PRECO_UNITARIO"]),
@@ -187,7 +187,7 @@ namespace DataAccessLayer
 
         public SingleResponse<Item_Compra> GetByEmail(string email)
         {
-            string sql = $"SELECT ID,DATA_COMPRA,PRODUTO_COMPRA,FORNECEDOR,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL FROM ITEM_COMPRA WHERE EMAIL = @EMAIL";
+            string sql = $"SELECT ID,DATA,PRODUTO,FORNECEDOR,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL FROM ITEM_COMPRA WHERE EMAIL = @EMAIL";
 
             string connectionString = DalDirectory;
 
@@ -201,8 +201,10 @@ namespace DataAccessLayer
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    Item_Compra Item_Compra = new Item_Compra(dataCompra: Convert.ToDateTime(reader["DATA_COMPRA"]),
-                                                              produtoCompra: Convert.ToString(reader["PRODUTO_COMPRA"]),
+                    Item_Compra Item_Compra = new Item_Compra(data: Convert.ToDateTime(reader["DATA"]),
+                                                              produto: Convert.ToString(reader["PRODUTO"]),
+                                                              nomeFuncionario: Convert.ToString(reader["NOME_FUNCIONARIO"]),
+                                                              formaPagamento: Convert.ToString(reader["FORMA_PAGAMENTO"]),
                                                               fornecedor: Convert.ToString(reader["FORNECEDOR"]),
                                                               quantidade: Convert.ToInt32(reader["QUANTIDADE"]),
                                                               precoUnitario: Convert.ToInt32(reader["PRECO_UNITARIO"]),

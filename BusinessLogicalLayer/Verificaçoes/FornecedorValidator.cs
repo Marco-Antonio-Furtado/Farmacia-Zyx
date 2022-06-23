@@ -1,11 +1,6 @@
-﻿using DataAccessLayer;
-using Entities;
+﻿using Entities;
 using Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer.Verificaçoes
 {
@@ -14,7 +9,7 @@ namespace BusinessLogicalLayer.Verificaçoes
         private RegraValidacaoString stringValidator = new RegraValidacaoString();
         private RegraNormatizacao normatization = new RegraNormatizacao();
 
-        public Response Validate(Fornecedor fornecedor)
+        internal Response Validate(Fornecedor fornecedor)
         {
             StringBuilder erros = new StringBuilder("");
 

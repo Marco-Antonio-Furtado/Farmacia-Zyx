@@ -1,11 +1,6 @@
 ﻿using Entities;
 using Shared;
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
@@ -18,9 +13,8 @@ namespace DataAccessLayer
             //               - AUTOMATICAMENTE ADICIONAR '' EM DATAS, VARCHARS E CHARS
             //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
             string sql = $"INSERT INTO PRODUTOS (NOME,DESCRISCAO,LABORATORIO,VALOR_UNITARIO) VALUES                                 (@NOME,@DESCRISCAO,@LABORATORIO,@VALOR_UNITARIO)";
-
             string connectionString = DalDirectory;
-
+            
             //ADO.NET 
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -30,10 +24,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@LABORATORIO", item.Laboratorio);
             command.Parameters.AddWithValue("@VALOR_UNITARIO", item.ValorUnitario);
 
-            //Estamos conectados na base de dados
-            //try catch
-            //try catch finally
-            //try finally
+           
             try
             {
                 connection.Open();

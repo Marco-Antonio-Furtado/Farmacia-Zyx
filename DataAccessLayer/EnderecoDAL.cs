@@ -1,11 +1,6 @@
 ﻿using Entities;
 using Shared;
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
@@ -76,7 +71,6 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@ID", id);
-
             try
             {
                 DbExecuter dbExecuter = new DbExecuter();
@@ -89,7 +83,7 @@ namespace DataAccessLayer
                 }
                 return new Response("Endereco não excluído.", false);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
@@ -103,12 +97,11 @@ namespace DataAccessLayer
         {
             string query = $"SELECT * FROM ENDERECOS";
             SqlCommand sql = new SqlCommand(query);
-
             try
             {
                 return new DbExecuter().GetData<Endereco>(sql);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new DataResponse<Endereco>("Erro no banco de dados, contate o administrador", false, null);
             }

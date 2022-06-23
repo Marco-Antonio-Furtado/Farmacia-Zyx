@@ -12,13 +12,9 @@ namespace DataAccessLayer
         
         public Response Insert(Cliente cliente)
         {
-            
-            string sql = $"INSERT INTO CLIENTES (NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2) VALUES                                 (@NOME,@CPF,@RG,@EMAIL,@TELEFONE1,@TELEFONE2)";
-
+            string sql = $"INSERT INTO CLIENTES (NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2) VALUES (@NOME,@CPF,@RG,@EMAIL,@TELEFONE1,@TELEFONE2)";
             string connectionString = DalDirectory;
-
             SqlConnection connection = new SqlConnection(connectionString);
-
             SqlCommand command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("@NOME", cliente.Nome);
             command.Parameters.AddWithValue("@CPF", cliente.CPF);
@@ -26,9 +22,6 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@EMAIL", cliente.Email);
             command.Parameters.AddWithValue("@TELEFONE1", cliente.Telefone1);
             command.Parameters.AddWithValue("@TELEFONE2", cliente.Telefone2);
-
-
-            
             try
             {
                 connection.Open();

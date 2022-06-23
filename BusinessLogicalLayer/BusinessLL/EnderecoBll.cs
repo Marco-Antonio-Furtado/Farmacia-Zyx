@@ -1,13 +1,7 @@
-﻿using BusinessLogicalLayer.RegrasValidacao;
-using BusinessLogicalLayer.Verificaçoes;
+﻿using BusinessLogicalLayer.Verificaçoes;
 using DataAccessLayer;
 using Entities;
 using Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer.BusinessLL
 {

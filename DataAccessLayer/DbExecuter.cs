@@ -1,12 +1,7 @@
 ﻿using Shared;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
@@ -48,11 +43,7 @@ namespace DataAccessLayer
 
             }
         }
-
-        
     }
-
-
     internal static class SqlExtensions
     {
         public static List<T> ToTable<T>(this DataTable dt)
@@ -75,9 +66,6 @@ namespace DataAccessLayer
             return items;
         }
     }
-
-
-
     internal class DbConnection
     {
         private SqlConnection conn;
@@ -86,7 +74,6 @@ namespace DataAccessLayer
         {
             conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\FarmaciaZyx.mdf;Integrated Security=True;Connect Timeout=30");
         }
-
         public void Open()
         {
             if (conn.State == ConnectionState.Closed)

@@ -4,7 +4,7 @@ namespace Entities
 {
     public class Item_Compra : Transacao
     {
-        
+        //Laboratorio
 
         public Item_Compra(DateTime data, string produto,string fornecedor, string nomeFuncionario, string formaPagamento, int quantidade, double precoUnitario, double valorTotal)
         {

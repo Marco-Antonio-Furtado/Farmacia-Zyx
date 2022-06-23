@@ -47,8 +47,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxNomeFuncionario = new System.Windows.Forms.TextBox();
             this.TabEndereco = new System.Windows.Forms.TabPage();
-            this.BtnCadastrarCidade = new System.Windows.Forms.Button();
-            this.BtnCadastrarEstado = new System.Windows.Forms.Button();
             this.BtnCadastroFuncionario = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.TxtBoxNumero = new System.Windows.Forms.MaskedTextBox();
@@ -60,7 +58,6 @@
             this.TxtBoxRua = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.TxtBoxCep = new System.Windows.Forms.MaskedTextBox();
-            this.PanelAddUF = new System.Windows.Forms.Panel();
             this.TabGeral.SuspendLayout();
             this.TabFuncionario.SuspendLayout();
             this.TabEndereco.SuspendLayout();
@@ -109,7 +106,7 @@
             this.CmbBoxAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.CmbBoxAdmin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbBoxAdmin.FormattingEnabled = true;
-            this.CmbBoxAdmin.Location = new System.Drawing.Point(260, 261);
+            this.CmbBoxAdmin.Location = new System.Drawing.Point(231, 261);
             this.CmbBoxAdmin.Name = "CmbBoxAdmin";
             this.CmbBoxAdmin.Size = new System.Drawing.Size(224, 28);
             this.CmbBoxAdmin.TabIndex = 84;
@@ -282,8 +279,6 @@
             // TabEndereco
             // 
             this.TabEndereco.BackColor = System.Drawing.Color.IndianRed;
-            this.TabEndereco.Controls.Add(this.BtnCadastrarCidade);
-            this.TabEndereco.Controls.Add(this.BtnCadastrarEstado);
             this.TabEndereco.Controls.Add(this.BtnCadastroFuncionario);
             this.TabEndereco.Controls.Add(this.label15);
             this.TabEndereco.Controls.Add(this.TxtBoxNumero);
@@ -304,41 +299,13 @@
             this.TabEndereco.TabIndex = 1;
             this.TabEndereco.Text = "Endereco";
             // 
-            // BtnCadastrarCidade
-            // 
-            this.BtnCadastrarCidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.BtnCadastrarCidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnCadastrarCidade.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnCadastrarCidade.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarCidade.Location = new System.Drawing.Point(251, 226);
-            this.BtnCadastrarCidade.Name = "BtnCadastrarCidade";
-            this.BtnCadastrarCidade.Size = new System.Drawing.Size(189, 59);
-            this.BtnCadastrarCidade.TabIndex = 87;
-            this.BtnCadastrarCidade.Text = "Cadastrar Cidade";
-            this.BtnCadastrarCidade.UseVisualStyleBackColor = false;
-            this.BtnCadastrarCidade.Click += new System.EventHandler(this.BtnCadastrarCidade_Click);
-            // 
-            // BtnCadastrarEstado
-            // 
-            this.BtnCadastrarEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.BtnCadastrarEstado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnCadastrarEstado.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnCadastrarEstado.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarEstado.Location = new System.Drawing.Point(20, 226);
-            this.BtnCadastrarEstado.Name = "BtnCadastrarEstado";
-            this.BtnCadastrarEstado.Size = new System.Drawing.Size(189, 59);
-            this.BtnCadastrarEstado.TabIndex = 86;
-            this.BtnCadastrarEstado.Text = "Cadastrar Estado";
-            this.BtnCadastrarEstado.UseVisualStyleBackColor = false;
-            this.BtnCadastrarEstado.Click += new System.EventHandler(this.BtnCadastrarEstado_Click);
-            // 
             // BtnCadastroFuncionario
             // 
             this.BtnCadastroFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.BtnCadastroFuncionario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnCadastroFuncionario.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastroFuncionario.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastroFuncionario.Location = new System.Drawing.Point(20, 314);
+            this.BtnCadastroFuncionario.Location = new System.Drawing.Point(18, 306);
             this.BtnCadastroFuncionario.Name = "BtnCadastroFuncionario";
             this.BtnCadastroFuncionario.Size = new System.Drawing.Size(434, 102);
             this.BtnCadastroFuncionario.TabIndex = 85;
@@ -451,21 +418,12 @@
             this.TxtBoxCep.Size = new System.Drawing.Size(125, 30);
             this.TxtBoxCep.TabIndex = 10;
             // 
-            // PanelAddUF
-            // 
-            this.PanelAddUF.BackColor = System.Drawing.Color.Black;
-            this.PanelAddUF.Location = new System.Drawing.Point(474, 32);
-            this.PanelAddUF.Name = "PanelAddUF";
-            this.PanelAddUF.Size = new System.Drawing.Size(273, 435);
-            this.PanelAddUF.TabIndex = 71;
-            // 
             // FormCadastroFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(759, 479);
-            this.Controls.Add(this.PanelAddUF);
+            this.ClientSize = new System.Drawing.Size(469, 464);
             this.Controls.Add(this.TabGeral);
             this.Name = "FormCadastroFuncionario";
             this.Text = "FormCadastroFuncionario";
@@ -510,8 +468,5 @@
         private Button BtnCadastroEndereco;
         private Button BtnCadastroFuncionario;
         private ComboBox CmbBoxAdmin;
-        private Panel PanelAddUF;
-        private Button BtnCadastrarCidade;
-        private Button BtnCadastrarEstado;
     }
 }

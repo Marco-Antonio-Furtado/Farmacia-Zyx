@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WfPresentationLayer.Alteraçoes
 {
-    public partial class Alteracao_Cliente : Form
+    public partial class FormMostarClientes : Form
     {
-        public Alteracao_Cliente()
+        public FormMostarClientes()
         {
             InitializeComponent();
         }

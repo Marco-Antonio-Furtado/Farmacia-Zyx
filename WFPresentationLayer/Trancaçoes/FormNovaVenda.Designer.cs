@@ -28,18 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelNomeCLiente = new System.Windows.Forms.Label();
             this.TxtBoxSelecionarCliente = new System.Windows.Forms.TextBox();
             this.GroupBoxVenda = new System.Windows.Forms.GroupBox();
+            this.BtnExcluir = new System.Windows.Forms.Button();
             this.CmbBoxLaboratorio = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DateTime = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.BtnNovoProduto = new System.Windows.Forms.Button();
+            this.BtnCadastrarNovaVenda = new System.Windows.Forms.Button();
             this.CmbFormaPagamento = new System.Windows.Forms.ComboBox();
             this.LabelFormaPagemento = new System.Windows.Forms.Label();
             this.BtnNovoIten = new System.Windows.Forms.Button();
             this.DataGrid = new System.Windows.Forms.DataGridView();
+            this.DataGridProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DatagridQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridLaboratorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridNomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TxtBoxValorUnitario = new System.Windows.Forms.TextBox();
             this.LabelValorUnitario = new System.Windows.Forms.Label();
             this.TxtBoxQuantidade = new System.Windows.Forms.TextBox();
@@ -74,11 +84,11 @@
             // 
             // GroupBoxVenda
             // 
+            this.GroupBoxVenda.Controls.Add(this.BtnExcluir);
             this.GroupBoxVenda.Controls.Add(this.CmbBoxLaboratorio);
             this.GroupBoxVenda.Controls.Add(this.label1);
             this.GroupBoxVenda.Controls.Add(this.DateTime);
-            this.GroupBoxVenda.Controls.Add(this.button1);
-            this.GroupBoxVenda.Controls.Add(this.BtnNovoProduto);
+            this.GroupBoxVenda.Controls.Add(this.BtnCadastrarNovaVenda);
             this.GroupBoxVenda.Controls.Add(this.CmbFormaPagamento);
             this.GroupBoxVenda.Controls.Add(this.LabelFormaPagemento);
             this.GroupBoxVenda.Controls.Add(this.BtnNovoIten);
@@ -97,6 +107,19 @@
             this.GroupBoxVenda.TabIndex = 14;
             this.GroupBoxVenda.TabStop = false;
             this.GroupBoxVenda.Text = "Nova venda";
+            // 
+            // BtnExcluir
+            // 
+            this.BtnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnExcluir.ForeColor = System.Drawing.Color.White;
+            this.BtnExcluir.Location = new System.Drawing.Point(711, 126);
+            this.BtnExcluir.Name = "BtnExcluir";
+            this.BtnExcluir.Size = new System.Drawing.Size(200, 79);
+            this.BtnExcluir.TabIndex = 28;
+            this.BtnExcluir.Text = "Excluir Linha";
+            this.BtnExcluir.UseVisualStyleBackColor = false;
+            this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // CmbBoxLaboratorio
             // 
@@ -122,35 +145,23 @@
             // DateTime
             // 
             this.DateTime.CalendarMonthBackground = System.Drawing.Color.IndianRed;
-            this.DateTime.Location = new System.Drawing.Point(9, 175);
+            this.DateTime.Location = new System.Drawing.Point(76, 175);
             this.DateTime.Name = "DateTime";
             this.DateTime.Size = new System.Drawing.Size(324, 30);
             this.DateTime.TabIndex = 25;
             // 
-            // button1
+            // BtnCadastrarNovaVenda
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(711, 126);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(277, 79);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Cadastrar Venda";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // BtnNovoProduto
-            // 
-            this.BtnNovoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.BtnNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnNovoProduto.ForeColor = System.Drawing.Color.White;
-            this.BtnNovoProduto.Location = new System.Drawing.Point(415, 21);
-            this.BtnNovoProduto.Name = "BtnNovoProduto";
-            this.BtnNovoProduto.Size = new System.Drawing.Size(158, 29);
-            this.BtnNovoProduto.TabIndex = 17;
-            this.BtnNovoProduto.Text = "Novo Produto";
-            this.BtnNovoProduto.UseVisualStyleBackColor = false;
-            this.BtnNovoProduto.Click += new System.EventHandler(this.BtnNovoProduto_Click);
+            this.BtnCadastrarNovaVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnCadastrarNovaVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnCadastrarNovaVenda.ForeColor = System.Drawing.Color.White;
+            this.BtnCadastrarNovaVenda.Location = new System.Drawing.Point(930, 126);
+            this.BtnCadastrarNovaVenda.Name = "BtnCadastrarNovaVenda";
+            this.BtnCadastrarNovaVenda.Size = new System.Drawing.Size(240, 79);
+            this.BtnCadastrarNovaVenda.TabIndex = 24;
+            this.BtnCadastrarNovaVenda.Text = "Cadastrar Venda";
+            this.BtnCadastrarNovaVenda.UseVisualStyleBackColor = false;
+            this.BtnCadastrarNovaVenda.Click += new System.EventHandler(this.BtnCadastrarNovaVenda_Click);
             // 
             // CmbFormaPagamento
             // 
@@ -189,13 +200,104 @@
             // DataGrid
             // 
             this.DataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataGridProduto,
+            this.DataGridValorUnitario,
+            this.DatagridQuantidade,
+            this.DataGridValorTotal,
+            this.DataGridLaboratorio,
+            this.DataGridNomeCliente,
+            this.DataGridFuncionario,
+            this.DataGridData});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGrid.Location = new System.Drawing.Point(18, 221);
             this.DataGrid.Name = "DataGrid";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DataGrid.RowHeadersWidth = 51;
             this.DataGrid.RowTemplate.Height = 29;
+            this.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGrid.Size = new System.Drawing.Size(1152, 476);
             this.DataGrid.TabIndex = 20;
+            // 
+            // DataGridProduto
+            // 
+            this.DataGridProduto.HeaderText = "Produto";
+            this.DataGridProduto.MinimumWidth = 6;
+            this.DataGridProduto.Name = "DataGridProduto";
+            this.DataGridProduto.ReadOnly = true;
+            this.DataGridProduto.Width = 125;
+            // 
+            // DataGridValorUnitario
+            // 
+            this.DataGridValorUnitario.HeaderText = "Valor Unitario";
+            this.DataGridValorUnitario.MinimumWidth = 50;
+            this.DataGridValorUnitario.Name = "DataGridValorUnitario";
+            this.DataGridValorUnitario.ReadOnly = true;
+            this.DataGridValorUnitario.Width = 150;
+            // 
+            // DatagridQuantidade
+            // 
+            this.DatagridQuantidade.HeaderText = "Quantidade";
+            this.DatagridQuantidade.MinimumWidth = 6;
+            this.DatagridQuantidade.Name = "DatagridQuantidade";
+            this.DatagridQuantidade.ReadOnly = true;
+            this.DatagridQuantidade.Width = 120;
+            // 
+            // DataGridValorTotal
+            // 
+            this.DataGridValorTotal.HeaderText = "Valor Total";
+            this.DataGridValorTotal.MinimumWidth = 6;
+            this.DataGridValorTotal.Name = "DataGridValorTotal";
+            this.DataGridValorTotal.ReadOnly = true;
+            this.DataGridValorTotal.Width = 125;
+            // 
+            // DataGridLaboratorio
+            // 
+            this.DataGridLaboratorio.HeaderText = "Laboratorio";
+            this.DataGridLaboratorio.MinimumWidth = 6;
+            this.DataGridLaboratorio.Name = "DataGridLaboratorio";
+            this.DataGridLaboratorio.ReadOnly = true;
+            this.DataGridLaboratorio.Width = 125;
+            // 
+            // DataGridNomeCliente
+            // 
+            this.DataGridNomeCliente.HeaderText = "Nome Cliente";
+            this.DataGridNomeCliente.MinimumWidth = 6;
+            this.DataGridNomeCliente.Name = "DataGridNomeCliente";
+            this.DataGridNomeCliente.ReadOnly = true;
+            this.DataGridNomeCliente.Width = 145;
+            // 
+            // DataGridFuncionario
+            // 
+            this.DataGridFuncionario.HeaderText = "Funcionario";
+            this.DataGridFuncionario.MinimumWidth = 6;
+            this.DataGridFuncionario.Name = "DataGridFuncionario";
+            this.DataGridFuncionario.ReadOnly = true;
+            this.DataGridFuncionario.Width = 125;
+            // 
+            // DataGridData
+            // 
+            this.DataGridData.HeaderText = "DIa";
+            this.DataGridData.MinimumWidth = 6;
+            this.DataGridData.Name = "DataGridData";
+            this.DataGridData.ReadOnly = true;
+            this.DataGridData.Width = 125;
             // 
             // TxtBoxValorUnitario
             // 
@@ -321,10 +423,18 @@
         private ComboBox CmbFormaPagamento;
         private Button button2;
         private Button BtnNovoCliente;
-        private Button BtnNovoProduto;
-        private Button button1;
+        private Button BtnCadastrarNovaVenda;
         private DateTimePicker DateTime;
         private ComboBox CmbBoxLaboratorio;
         private Label label1;
+        private Button BtnExcluir;
+        private DataGridViewTextBoxColumn DataGridProduto;
+        private DataGridViewTextBoxColumn DataGridValorUnitario;
+        private DataGridViewTextBoxColumn DatagridQuantidade;
+        private DataGridViewTextBoxColumn DataGridValorTotal;
+        private DataGridViewTextBoxColumn DataGridLaboratorio;
+        private DataGridViewTextBoxColumn DataGridNomeCliente;
+        private DataGridViewTextBoxColumn DataGridFuncionario;
+        private DataGridViewTextBoxColumn DataGridData;
     }
 }

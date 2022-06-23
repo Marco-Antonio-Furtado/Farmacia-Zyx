@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using BusinessLogicalLayer.BusinessLL;
+using Entities;
 using Entities.enums;
 using System;
 using System.Collections.Generic;
@@ -14,28 +15,22 @@ namespace WfPresentationLayer
 {
     public partial class FormNovaVenda : Form
     {
-        
-
         public FormNovaVenda()
         {
             InitializeComponent();
             CmbFormaPagamento.DataSource = Enum.GetNames(typeof(FormaPagamento));
         }
-
-
         List<Item_Venda> Vendas = new List<Item_Venda>();
         private void BtnNovoCliente_Click(object sender, EventArgs e)
         {
             FormCadastroCliente formCadastroCliente = new FormCadastroCliente();
             formCadastroCliente.ShowDialog();
         }
-
         private void BtnNovoProduto_Click(object sender, EventArgs e)
         {
             FormCadastroProduto formCadastroProduto = new FormCadastroProduto();
             formCadastroProduto.ShowDialog();
         }
-
         private void BtnNovoIten_Click(object sender, EventArgs e)
         {
             Item_Venda venda = new Item_Venda(produto: TxtBoxCodigoProdutoVenda.Text,
@@ -47,24 +42,34 @@ namespace WfPresentationLayer
                                               nomeCliente: TxtBoxSelecionarCliente.Text,
                                               data: DateTime.Value);
             Vendas.Add(venda);
-            SincronizarListaGrid();
+            SincronizarListaGrid(venda);
             LimparFormulario();
+            
         }
         private void LimparFormulario()
         {
             TxtBoxCodigoProdutoVenda.Clear();
-            CmbFormaPagamento.SelectedIndex = -1;
+            CmbFormaPagamento.SelectedIndex = -0;
             TxtBoxQuantidade.Clear();
             TxtBoxValorUnitario.Clear();
         }
-
-        private void SincronizarListaGrid()
+        private void SincronizarListaGrid(Item_Venda item)
         {
-            DataGrid.DataSource = null;
-            DataGrid.DataSource = Vendas;
+            DataGrid.Rows.Add(item.Produto, item.PrecoUnitario, item.Quantidade, item.ValorTotal, item.Laboratorio, item.NomeCliente, item.NomeFuncionario, item.Data);
+
+        }
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = this.DataGrid.SelectedRows[0];
+            Vendas.RemoveAt(row.Index);
+            DataGrid.Rows.RemoveAt(row.Index);
+
         }
 
-
-
+        private void BtnCadastrarNovaVenda_Click(object sender, EventArgs e)
+        {
+            Iten_VendaBll novavenda = new Iten_VendaBll();
+            /*ovavenda.Insert();*/
+        }
     }
 }

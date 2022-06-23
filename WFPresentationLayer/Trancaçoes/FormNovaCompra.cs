@@ -44,22 +44,32 @@ namespace WfPresentationLayer.Trancaçoes
                                                  nomeFuncionario: "admin",
                                                  data: DateTime.Value);
             compras.Add(compra);
-            SincronizarListaGrid();
+            SincronizarListaGrid(compra);
             LimparFormulario();
         }
         private void LimparFormulario()
         {
             TxtBoxCodigoProdutoVenda.Clear();
-            CmbFormaPagamento.SelectedIndex = -1;
+            CmbFormaPagamento.SelectedIndex = -0;
             TxtBoxQuantidade.Clear();
             TxtBoxValorUnitario.Clear();
         }
 
-        private void SincronizarListaGrid()
+        private void SincronizarListaGrid(Item_Compra item)
         {
-            DataGrid.DataSource = null;
-            DataGrid.DataSource = compras;
+            DataGrid.Rows.Add(item.Produto, item.PrecoUnitario, item.Quantidade, item.ValorTotal,item.FormaPagamento, item.NomeFuncionario,item.Fornecedor, item.Laboratorio, item.Data);
         }
 
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = this.DataGrid.SelectedRows[0];
+            compras.RemoveAt(row.Index);
+            DataGrid.Rows.RemoveAt(row.Index);
+        }
+
+        private void BtnCadastrarCompra_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

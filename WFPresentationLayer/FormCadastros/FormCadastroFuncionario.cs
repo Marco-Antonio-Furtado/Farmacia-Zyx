@@ -15,8 +15,7 @@ namespace WfPresentationLayer
             ((Control)this.TabEndereco).Enabled = false;
             CmbBoxAdmin.DataSource = Enum.GetNames(typeof(Hierarquia));
         }
-
-        private Form _objForm1;
+        
         private void BtnCadastroEndereco_Click_1(object sender, EventArgs e)
         {
             ((Control)this.TabEndereco).Enabled = true;
@@ -47,30 +46,6 @@ namespace WfPresentationLayer
             }
         }
 
-        private void BtnCadastrarEstado_Click(object sender, EventArgs e)
-        {
-            _objForm1?.Close();
-            _objForm1 = new FormCadastroEstado
-            {
-                TopLevel = false,
-                FormBorderStyle = FormBorderStyle.None,
-                Dock = DockStyle.Fill,
-            };
-            PanelAddUF.Controls.Add(_objForm1);
-            _objForm1.Show();
-        }            
-
-        private void BtnCadastrarCidade_Click(object sender, EventArgs e)
-        {
-            _objForm1?.Close();
-            _objForm1 = new FormCadastroCidade
-            {
-                TopLevel = false,
-                FormBorderStyle = FormBorderStyle.None,
-                Dock = DockStyle.Fill,
-            };
-            PanelAddUF.Controls.Add(_objForm1);
-            _objForm1.Show();
-        }
+        
     }
 }

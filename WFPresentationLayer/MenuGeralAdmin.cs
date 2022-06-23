@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WfPresentationLayer.Alteraçoes;
 using WfPresentationLayer.FormCadastros;
 using WfPresentationLayer.Trancaçoes;
 
@@ -56,7 +57,7 @@ namespace WfPresentationLayer
         private void BtnMenuClientes_Click(object sender, EventArgs e)
         {
             _objForm?.Close();
-            _objForm = new FormCadastroCliente
+            _objForm = new FormMostarClientes
             {
                 TopLevel = false,
                 FormBorderStyle = FormBorderStyle.None,

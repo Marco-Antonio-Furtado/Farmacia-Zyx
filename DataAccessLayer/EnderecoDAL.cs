@@ -113,22 +113,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@ID", id);
             try
             {
-                dbExecuter.GetData<Endereco>(command);
-
-
-
-                /* SqlDataReader reader = command.ExecuteReader();
-                 if (reader.Read())
-                 {
-                     Endereco Endereco = new Endereco(Convert.ToString(reader["CEP"]),
-                                                       Convert.ToString(reader["NOME_RUA"]),
-                                                       Convert.ToString(reader["NUMERO_CASA"]),
-                                                       Convert.ToInt32(reader["ESTADO_ID"]),
-                                                       Convert.ToInt32(reader["CIDADE_ID"]));
-                     Endereco.ID = Convert.ToInt32(reader["ID"]);
-                     return new SingleResponse<Endereco>("Endereco selecionado com sucesso!", true, Endereco);
-                 }*/
-                return new SingleResponse<Endereco>("Endereco não encontrado!", false, null);
+               return dbExecuter.GetItem<Endereco>(command);
             }
             catch (Exception ex)
             {

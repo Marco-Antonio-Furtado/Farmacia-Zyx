@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnNovoFornecedor = new System.Windows.Forms.Button();
             this.BtnProcurarFornecedor = new System.Windows.Forms.Button();
             this.GroupBoxCompra = new System.Windows.Forms.GroupBox();
+            this.CmbBoxProduto = new System.Windows.Forms.ComboBox();
+            this.TxtBoxUnitario = new System.Windows.Forms.TextBox();
+            this.TxtBoxQuantidade = new System.Windows.Forms.TextBox();
             this.BtnExcluir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.BtnNovoLaboratorio = new System.Windows.Forms.Button();
@@ -42,8 +45,6 @@
             this.DateTime = new System.Windows.Forms.DateTimePicker();
             this.BtnCadastrarCompra = new System.Windows.Forms.Button();
             this.BtnNovoProduto = new System.Windows.Forms.Button();
-            this.CmbFormaPagamento = new System.Windows.Forms.ComboBox();
-            this.LabelFormaPagemento = new System.Windows.Forms.Label();
             this.BtnNovoIten = new System.Windows.Forms.Button();
             this.DataGrid = new System.Windows.Forms.DataGridView();
             this.DataGridProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,12 +58,11 @@
             this.DatagridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LabelValorUnitario = new System.Windows.Forms.Label();
             this.LabelQuantidade = new System.Windows.Forms.Label();
-            this.TxtBoxCodigoProdutoVenda = new System.Windows.Forms.TextBox();
             this.LabelCodigoProduto = new System.Windows.Forms.Label();
             this.LabelNomeCLiente = new System.Windows.Forms.Label();
             this.TxtBoxSelecionarFornecedor = new System.Windows.Forms.TextBox();
-            this.TxtBoxQuantidade = new System.Windows.Forms.TextBox();
-            this.TxtBoxUnitario = new System.Windows.Forms.TextBox();
+            this.LabelFormaPagemento = new System.Windows.Forms.Label();
+            this.CmbFormaPagamento = new System.Windows.Forms.ComboBox();
             this.GroupBoxCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.SuspendLayout();
@@ -94,6 +94,7 @@
             // 
             // GroupBoxCompra
             // 
+            this.GroupBoxCompra.Controls.Add(this.CmbBoxProduto);
             this.GroupBoxCompra.Controls.Add(this.TxtBoxUnitario);
             this.GroupBoxCompra.Controls.Add(this.TxtBoxQuantidade);
             this.GroupBoxCompra.Controls.Add(this.BtnExcluir);
@@ -110,22 +111,50 @@
             this.GroupBoxCompra.Controls.Add(this.DataGrid);
             this.GroupBoxCompra.Controls.Add(this.LabelValorUnitario);
             this.GroupBoxCompra.Controls.Add(this.LabelQuantidade);
-            this.GroupBoxCompra.Controls.Add(this.TxtBoxCodigoProdutoVenda);
             this.GroupBoxCompra.Controls.Add(this.LabelCodigoProduto);
             this.GroupBoxCompra.ForeColor = System.Drawing.Color.White;
             this.GroupBoxCompra.Location = new System.Drawing.Point(13, 58);
             this.GroupBoxCompra.Name = "GroupBoxCompra";
-            this.GroupBoxCompra.Size = new System.Drawing.Size(1181, 730);
+            this.GroupBoxCompra.Size = new System.Drawing.Size(1289, 708);
             this.GroupBoxCompra.TabIndex = 19;
             this.GroupBoxCompra.TabStop = false;
             this.GroupBoxCompra.Text = "Nova Compra";
+            // 
+            // CmbBoxProduto
+            // 
+            this.CmbBoxProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbBoxProduto.FormattingEnabled = true;
+            this.CmbBoxProduto.Location = new System.Drawing.Point(173, 26);
+            this.CmbBoxProduto.Name = "CmbBoxProduto";
+            this.CmbBoxProduto.Size = new System.Drawing.Size(233, 28);
+            this.CmbBoxProduto.TabIndex = 33;
+            // 
+            // TxtBoxUnitario
+            // 
+            this.TxtBoxUnitario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxUnitario.Location = new System.Drawing.Point(1027, 80);
+            this.TxtBoxUnitario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxUnitario.Name = "TxtBoxUnitario";
+            this.TxtBoxUnitario.Size = new System.Drawing.Size(238, 27);
+            this.TxtBoxUnitario.TabIndex = 12;
+            this.TxtBoxUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxPreco_KeyPress);
+            // 
+            // TxtBoxQuantidade
+            // 
+            this.TxtBoxQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxQuantidade.Location = new System.Drawing.Point(1027, 26);
+            this.TxtBoxQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxQuantidade.Name = "TxtBoxQuantidade";
+            this.TxtBoxQuantidade.Size = new System.Drawing.Size(238, 27);
+            this.TxtBoxQuantidade.TabIndex = 10;
+            this.TxtBoxQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxQuantidade_KeyPress_1);
             // 
             // BtnExcluir
             // 
             this.BtnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnExcluir.ForeColor = System.Drawing.Color.White;
-            this.BtnExcluir.Location = new System.Drawing.Point(713, 120);
+            this.BtnExcluir.Location = new System.Drawing.Point(833, 120);
             this.BtnExcluir.Name = "BtnExcluir";
             this.BtnExcluir.Size = new System.Drawing.Size(233, 79);
             this.BtnExcluir.TabIndex = 32;
@@ -190,7 +219,7 @@
             this.BtnCadastrarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnCadastrarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastrarCompra.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarCompra.Location = new System.Drawing.Point(952, 120);
+            this.BtnCadastrarCompra.Location = new System.Drawing.Point(1072, 120);
             this.BtnCadastrarCompra.Name = "BtnCadastrarCompra";
             this.BtnCadastrarCompra.Size = new System.Drawing.Size(196, 79);
             this.BtnCadastrarCompra.TabIndex = 24;
@@ -211,33 +240,12 @@
             this.BtnNovoProduto.UseVisualStyleBackColor = false;
             this.BtnNovoProduto.Click += new System.EventHandler(this.BtnNovoProduto_Click);
             // 
-            // CmbFormaPagamento
-            // 
-            this.CmbFormaPagamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.CmbFormaPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbFormaPagamento.FormattingEnabled = true;
-            this.CmbFormaPagamento.Location = new System.Drawing.Point(173, 118);
-            this.CmbFormaPagamento.Name = "CmbFormaPagamento";
-            this.CmbFormaPagamento.Size = new System.Drawing.Size(233, 28);
-            this.CmbFormaPagamento.TabIndex = 23;
-            // 
-            // LabelFormaPagemento
-            // 
-            this.LabelFormaPagemento.AutoSize = true;
-            this.LabelFormaPagemento.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LabelFormaPagemento.ForeColor = System.Drawing.Color.White;
-            this.LabelFormaPagemento.Location = new System.Drawing.Point(15, 120);
-            this.LabelFormaPagemento.Name = "LabelFormaPagemento";
-            this.LabelFormaPagemento.Size = new System.Drawing.Size(152, 23);
-            this.LabelFormaPagemento.TabIndex = 22;
-            this.LabelFormaPagemento.Text = "Forma Pagamento";
-            // 
             // BtnNovoIten
             // 
             this.BtnNovoIten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnNovoIten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnNovoIten.ForeColor = System.Drawing.Color.White;
-            this.BtnNovoIten.Location = new System.Drawing.Point(430, 120);
+            this.BtnNovoIten.Location = new System.Drawing.Point(550, 120);
             this.BtnNovoIten.Name = "BtnNovoIten";
             this.BtnNovoIten.Size = new System.Drawing.Size(277, 79);
             this.BtnNovoIten.TabIndex = 21;
@@ -247,15 +255,17 @@
             // 
             // DataGrid
             // 
+            this.DataGrid.AllowUserToResizeColumns = false;
+            this.DataGrid.AllowUserToResizeRows = false;
             this.DataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DataGridProduto,
@@ -267,28 +277,28 @@
             this.DataGridFornecedor,
             this.DatagridLaboratorio,
             this.DatagridData});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.DataGrid.Location = new System.Drawing.Point(6, 217);
             this.DataGrid.Name = "DataGrid";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DataGrid.RowHeadersWidth = 51;
             this.DataGrid.RowTemplate.Height = 29;
             this.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGrid.Size = new System.Drawing.Size(1169, 501);
+            this.DataGrid.Size = new System.Drawing.Size(1259, 475);
             this.DataGrid.TabIndex = 20;
             // 
             // DataGridProduto
@@ -296,7 +306,7 @@
             this.DataGridProduto.HeaderText = "Produto";
             this.DataGridProduto.MinimumWidth = 6;
             this.DataGridProduto.Name = "DataGridProduto";
-            this.DataGridProduto.Width = 75;
+            this.DataGridProduto.Width = 125;
             // 
             // DataGridValorUnitario
             // 
@@ -312,7 +322,7 @@
             this.DataGridQuantidade.MinimumWidth = 6;
             this.DataGridQuantidade.Name = "DataGridQuantidade";
             this.DataGridQuantidade.ReadOnly = true;
-            this.DataGridQuantidade.Width = 125;
+            this.DataGridQuantidade.Width = 140;
             // 
             // DatagridValorTotal
             // 
@@ -352,7 +362,7 @@
             this.DatagridLaboratorio.MinimumWidth = 6;
             this.DatagridLaboratorio.Name = "DatagridLaboratorio";
             this.DatagridLaboratorio.ReadOnly = true;
-            this.DatagridLaboratorio.Width = 110;
+            this.DatagridLaboratorio.Width = 120;
             // 
             // DatagridData
             // 
@@ -360,14 +370,14 @@
             this.DatagridData.MinimumWidth = 6;
             this.DatagridData.Name = "DatagridData";
             this.DatagridData.ReadOnly = true;
-            this.DatagridData.Width = 75;
+            this.DatagridData.Width = 125;
             // 
             // LabelValorUnitario
             // 
             this.LabelValorUnitario.AutoSize = true;
             this.LabelValorUnitario.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LabelValorUnitario.ForeColor = System.Drawing.Color.White;
-            this.LabelValorUnitario.Location = new System.Drawing.Point(638, 83);
+            this.LabelValorUnitario.Location = new System.Drawing.Point(884, 84);
             this.LabelValorUnitario.Name = "LabelValorUnitario";
             this.LabelValorUnitario.Size = new System.Drawing.Size(115, 23);
             this.LabelValorUnitario.TabIndex = 18;
@@ -378,20 +388,11 @@
             this.LabelQuantidade.AutoSize = true;
             this.LabelQuantidade.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LabelQuantidade.ForeColor = System.Drawing.Color.White;
-            this.LabelQuantidade.Location = new System.Drawing.Point(638, 26);
+            this.LabelQuantidade.Location = new System.Drawing.Point(884, 27);
             this.LabelQuantidade.Name = "LabelQuantidade";
             this.LabelQuantidade.Size = new System.Drawing.Size(100, 23);
             this.LabelQuantidade.TabIndex = 16;
             this.LabelQuantidade.Text = "Quantidade";
-            // 
-            // TxtBoxCodigoProdutoVenda
-            // 
-            this.TxtBoxCodigoProdutoVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxCodigoProdutoVenda.Location = new System.Drawing.Point(173, 30);
-            this.TxtBoxCodigoProdutoVenda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxCodigoProdutoVenda.Name = "TxtBoxCodigoProdutoVenda";
-            this.TxtBoxCodigoProdutoVenda.Size = new System.Drawing.Size(238, 27);
-            this.TxtBoxCodigoProdutoVenda.TabIndex = 15;
             // 
             // LabelCodigoProduto
             // 
@@ -424,38 +425,40 @@
             this.TxtBoxSelecionarFornecedor.Size = new System.Drawing.Size(203, 27);
             this.TxtBoxSelecionarFornecedor.TabIndex = 17;
             // 
-            // TxtBoxQuantidade
+            // LabelFormaPagemento
             // 
-            this.TxtBoxQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxQuantidade.Location = new System.Drawing.Point(781, 25);
-            this.TxtBoxQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxQuantidade.Name = "TxtBoxQuantidade";
-            this.TxtBoxQuantidade.Size = new System.Drawing.Size(238, 27);
-            this.TxtBoxQuantidade.TabIndex = 10;
-            this.TxtBoxQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxQuantidade_KeyPress_1);
+            this.LabelFormaPagemento.AutoSize = true;
+            this.LabelFormaPagemento.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LabelFormaPagemento.ForeColor = System.Drawing.Color.White;
+            this.LabelFormaPagemento.Location = new System.Drawing.Point(15, 120);
+            this.LabelFormaPagemento.Name = "LabelFormaPagemento";
+            this.LabelFormaPagemento.Size = new System.Drawing.Size(152, 23);
+            this.LabelFormaPagemento.TabIndex = 22;
+            this.LabelFormaPagemento.Text = "Forma Pagamento";
             // 
-            // TxtBoxUnitario
+            // CmbFormaPagamento
             // 
-            this.TxtBoxUnitario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxUnitario.Location = new System.Drawing.Point(781, 79);
-            this.TxtBoxUnitario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxUnitario.Name = "TxtBoxUnitario";
-            this.TxtBoxUnitario.Size = new System.Drawing.Size(238, 27);
-            this.TxtBoxUnitario.TabIndex = 12;
-            this.TxtBoxUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxPreco_KeyPress);
+            this.CmbFormaPagamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.CmbFormaPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbFormaPagamento.FormattingEnabled = true;
+            this.CmbFormaPagamento.Location = new System.Drawing.Point(173, 118);
+            this.CmbFormaPagamento.Name = "CmbFormaPagamento";
+            this.CmbFormaPagamento.Size = new System.Drawing.Size(233, 28);
+            this.CmbFormaPagamento.TabIndex = 23;
             // 
             // FormNovaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(1206, 783);
+            this.ClientSize = new System.Drawing.Size(1311, 774);
             this.Controls.Add(this.BtnNovoFornecedor);
             this.Controls.Add(this.BtnProcurarFornecedor);
             this.Controls.Add(this.GroupBoxCompra);
             this.Controls.Add(this.LabelNomeCLiente);
             this.Controls.Add(this.TxtBoxSelecionarFornecedor);
             this.Name = "FormNovaCompra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormNovaCompra";
             this.GroupBoxCompra.ResumeLayout(false);
             this.GroupBoxCompra.PerformLayout();
@@ -473,13 +476,10 @@
         private DateTimePicker DateTime;
         private Button BtnCadastrarCompra;
         private Button BtnNovoProduto;
-        private ComboBox CmbFormaPagamento;
-        private Label LabelFormaPagemento;
         private Button BtnNovoIten;
         private DataGridView DataGrid;
         private Label LabelValorUnitario;
         private Label LabelQuantidade;
-        private TextBox TxtBoxCodigoProdutoVenda;
         private Label LabelCodigoProduto;
         private Label LabelNomeCLiente;
         private TextBox TxtBoxSelecionarFornecedor;
@@ -499,5 +499,8 @@
         private Button BtnExcluir;
         private TextBox TxtBoxUnitario;
         private TextBox TxtBoxQuantidade;
+        private ComboBox CmbBoxProduto;
+        private ComboBox CmbFormaPagamento;
+        private Label LabelFormaPagemento;
     }
 }

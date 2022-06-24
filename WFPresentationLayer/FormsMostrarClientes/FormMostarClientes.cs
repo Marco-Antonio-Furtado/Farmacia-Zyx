@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace WfPresentationLayer.Alteraçoes
+﻿namespace WfPresentationLayer.Alteraçoes
 {
     public partial class FormMostarClientes : Form
     {
+        private Form _objForm1;
         public FormMostarClientes()
         {
             InitializeComponent();
@@ -23,8 +14,16 @@ namespace WfPresentationLayer.Alteraçoes
         }
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
-            FormCadastroCliente form = new FormCadastroCliente();
-            form.ShowDialog();
+            _objForm1?.Close();
+            _objForm1 = new FormCadastroCliente
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill,
+            };
+            PnlCl.Controls.Add(_objForm1);
+            _objForm1.Show();
+            _objForm1.BringToFront();
         }
     }
 }

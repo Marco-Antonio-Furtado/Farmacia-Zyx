@@ -31,10 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GridFuncionario = new System.Windows.Forms.DataGridView();
-            this.BtnProcurarFornecedor = new System.Windows.Forms.Button();
-            this.BtnDeletarFornecedor = new System.Windows.Forms.Button();
-            this.BtnAlterarFornecedor = new System.Windows.Forms.Button();
-            this.BtnCadastrarFornecedor = new System.Windows.Forms.Button();
             this.GridID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridRg = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +39,11 @@
             this.GridEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnProcurarFuncionario = new System.Windows.Forms.Button();
+            this.BtnDeletarFuncionario = new System.Windows.Forms.Button();
+            this.BtnAlterarFuncionario = new System.Windows.Forms.Button();
+            this.BtnCadastrarFuncionario = new System.Windows.Forms.Button();
+            this.pnlFunc = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.GridFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,61 +76,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GridFuncionario.DefaultCellStyle = dataGridViewCellStyle2;
-            this.GridFuncionario.Location = new System.Drawing.Point(12, 21);
+            this.GridFuncionario.Location = new System.Drawing.Point(19, 12);
             this.GridFuncionario.Name = "GridFuncionario";
             this.GridFuncionario.RowHeadersWidth = 51;
             this.GridFuncionario.RowTemplate.Height = 29;
             this.GridFuncionario.Size = new System.Drawing.Size(1169, 521);
             this.GridFuncionario.TabIndex = 36;
-            // 
-            // BtnProcurarFornecedor
-            // 
-            this.BtnProcurarFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.BtnProcurarFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnProcurarFornecedor.ForeColor = System.Drawing.Color.White;
-            this.BtnProcurarFornecedor.Location = new System.Drawing.Point(607, 585);
-            this.BtnProcurarFornecedor.Name = "BtnProcurarFornecedor";
-            this.BtnProcurarFornecedor.Size = new System.Drawing.Size(277, 79);
-            this.BtnProcurarFornecedor.TabIndex = 35;
-            this.BtnProcurarFornecedor.Text = "Selecionar Fornecedor";
-            this.BtnProcurarFornecedor.UseVisualStyleBackColor = false;
-            // 
-            // BtnDeletarFornecedor
-            // 
-            this.BtnDeletarFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.BtnDeletarFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnDeletarFornecedor.ForeColor = System.Drawing.Color.White;
-            this.BtnDeletarFornecedor.Location = new System.Drawing.Point(904, 585);
-            this.BtnDeletarFornecedor.Name = "BtnDeletarFornecedor";
-            this.BtnDeletarFornecedor.Size = new System.Drawing.Size(277, 79);
-            this.BtnDeletarFornecedor.TabIndex = 34;
-            this.BtnDeletarFornecedor.Text = "Deletar Fornecedor";
-            this.BtnDeletarFornecedor.UseVisualStyleBackColor = false;
-            // 
-            // BtnAlterarFornecedor
-            // 
-            this.BtnAlterarFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.BtnAlterarFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnAlterarFornecedor.ForeColor = System.Drawing.Color.White;
-            this.BtnAlterarFornecedor.Location = new System.Drawing.Point(313, 585);
-            this.BtnAlterarFornecedor.Name = "BtnAlterarFornecedor";
-            this.BtnAlterarFornecedor.Size = new System.Drawing.Size(277, 79);
-            this.BtnAlterarFornecedor.TabIndex = 33;
-            this.BtnAlterarFornecedor.Text = "Alterar Fornecedor";
-            this.BtnAlterarFornecedor.UseVisualStyleBackColor = false;
-            // 
-            // BtnCadastrarFornecedor
-            // 
-            this.BtnCadastrarFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.BtnCadastrarFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnCadastrarFornecedor.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarFornecedor.Location = new System.Drawing.Point(12, 585);
-            this.BtnCadastrarFornecedor.Name = "BtnCadastrarFornecedor";
-            this.BtnCadastrarFornecedor.Size = new System.Drawing.Size(277, 79);
-            this.BtnCadastrarFornecedor.TabIndex = 32;
-            this.BtnCadastrarFornecedor.Text = "Cadastrar Fornecedor";
-            this.BtnCadastrarFornecedor.UseVisualStyleBackColor = false;
-            this.BtnCadastrarFornecedor.Click += new System.EventHandler(this.BtnCadastrarFornecedor_Click);
             // 
             // GridID
             // 
@@ -143,6 +95,7 @@
             this.GridNome.HeaderText = "Nome";
             this.GridNome.MinimumWidth = 6;
             this.GridNome.Name = "GridNome";
+            this.GridNome.Width = 125;
             // 
             // GridRg
             // 
@@ -156,6 +109,7 @@
             this.GridNomeResponsavel.HeaderText = "CPF";
             this.GridNomeResponsavel.MinimumWidth = 6;
             this.GridNomeResponsavel.Name = "GridNomeResponsavel";
+            this.GridNomeResponsavel.Width = 125;
             // 
             // GridTelefone
             // 
@@ -186,17 +140,75 @@
             this.GridCargo.Name = "GridCargo";
             this.GridCargo.Width = 125;
             // 
+            // BtnProcurarFuncionario
+            // 
+            this.BtnProcurarFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnProcurarFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnProcurarFuncionario.ForeColor = System.Drawing.Color.White;
+            this.BtnProcurarFuncionario.Location = new System.Drawing.Point(607, 585);
+            this.BtnProcurarFuncionario.Name = "BtnProcurarFuncionario";
+            this.BtnProcurarFuncionario.Size = new System.Drawing.Size(277, 79);
+            this.BtnProcurarFuncionario.TabIndex = 35;
+            this.BtnProcurarFuncionario.Text = "Selecionar Funcionario";
+            this.BtnProcurarFuncionario.UseVisualStyleBackColor = false;
+            // 
+            // BtnDeletarFuncionario
+            // 
+            this.BtnDeletarFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnDeletarFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnDeletarFuncionario.ForeColor = System.Drawing.Color.White;
+            this.BtnDeletarFuncionario.Location = new System.Drawing.Point(904, 585);
+            this.BtnDeletarFuncionario.Name = "BtnDeletarFuncionario";
+            this.BtnDeletarFuncionario.Size = new System.Drawing.Size(277, 79);
+            this.BtnDeletarFuncionario.TabIndex = 34;
+            this.BtnDeletarFuncionario.Text = "Deletar Funcionario";
+            this.BtnDeletarFuncionario.UseVisualStyleBackColor = false;
+            // 
+            // BtnAlterarFuncionario
+            // 
+            this.BtnAlterarFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnAlterarFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnAlterarFuncionario.ForeColor = System.Drawing.Color.White;
+            this.BtnAlterarFuncionario.Location = new System.Drawing.Point(313, 585);
+            this.BtnAlterarFuncionario.Name = "BtnAlterarFuncionario";
+            this.BtnAlterarFuncionario.Size = new System.Drawing.Size(277, 79);
+            this.BtnAlterarFuncionario.TabIndex = 33;
+            this.BtnAlterarFuncionario.Text = "Alterar Funcionario";
+            this.BtnAlterarFuncionario.UseVisualStyleBackColor = false;
+            // 
+            // BtnCadastrarFuncionario
+            // 
+            this.BtnCadastrarFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnCadastrarFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnCadastrarFuncionario.ForeColor = System.Drawing.Color.White;
+            this.BtnCadastrarFuncionario.Location = new System.Drawing.Point(12, 585);
+            this.BtnCadastrarFuncionario.Name = "BtnCadastrarFuncionario";
+            this.BtnCadastrarFuncionario.Size = new System.Drawing.Size(277, 79);
+            this.BtnCadastrarFuncionario.TabIndex = 32;
+            this.BtnCadastrarFuncionario.Text = "Cadastrar Funcionario";
+            this.BtnCadastrarFuncionario.UseVisualStyleBackColor = false;
+            this.BtnCadastrarFuncionario.Click += new System.EventHandler(this.BtnCadastrarFornecedor_Click);
+            // 
+            // pnlFunc
+            // 
+            this.pnlFunc.BackColor = System.Drawing.Color.DarkGray;
+            this.pnlFunc.Location = new System.Drawing.Point(19, 12);
+            this.pnlFunc.Name = "pnlFunc";
+            this.pnlFunc.Size = new System.Drawing.Size(1169, 521);
+            this.pnlFunc.TabIndex = 37;
+            // 
             // Alteracao_Funcionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1200, 751);
+            this.Controls.Add(this.pnlFunc);
             this.Controls.Add(this.GridFuncionario);
-            this.Controls.Add(this.BtnProcurarFornecedor);
-            this.Controls.Add(this.BtnDeletarFornecedor);
-            this.Controls.Add(this.BtnAlterarFornecedor);
-            this.Controls.Add(this.BtnCadastrarFornecedor);
+            this.Controls.Add(this.BtnProcurarFuncionario);
+            this.Controls.Add(this.BtnDeletarFuncionario);
+            this.Controls.Add(this.BtnAlterarFuncionario);
+            this.Controls.Add(this.BtnCadastrarFuncionario);
             this.ForeColor = System.Drawing.Color.IndianRed;
             this.Name = "Alteracao_Funcionario";
             this.Text = "Funcionarios";
@@ -208,10 +220,10 @@
         #endregion
 
         private DataGridView GridFuncionario;
-        private Button BtnProcurarFornecedor;
-        private Button BtnDeletarFornecedor;
-        private Button BtnAlterarFornecedor;
-        private Button BtnCadastrarFornecedor;
+        private Button BtnProcurarFuncionario;
+        private Button BtnDeletarFuncionario;
+        private Button BtnAlterarFuncionario;
+        private Button BtnCadastrarFuncionario;
         private DataGridViewTextBoxColumn GridID;
         private DataGridViewTextBoxColumn GridNome;
         private DataGridViewTextBoxColumn GridRg;
@@ -220,5 +232,6 @@
         private DataGridViewTextBoxColumn GridEmail;
         private DataGridViewTextBoxColumn GridCNPJ;
         private DataGridViewTextBoxColumn GridCargo;
+        private Panel pnlFunc;
     }
 }

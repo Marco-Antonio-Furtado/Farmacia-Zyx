@@ -20,6 +20,8 @@ namespace WfPresentationLayer
         {
             InitializeComponent();
         }
+
+
         private void BtnCadastrarCliente_Click_1(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente(txtBoxNomeCliente.Text, TxtBoxCpfCLiente.Text, TxtBoxRgCliente.Text,

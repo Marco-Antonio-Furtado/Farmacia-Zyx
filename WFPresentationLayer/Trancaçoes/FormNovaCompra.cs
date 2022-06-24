@@ -32,7 +32,7 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void BtnNovoIten_Click(object sender, EventArgs e)
         {
-            Item_Compra compra = new Item_Compra(produto: TxtBoxCodigoProdutoVenda.Text,
+            Item_Compra compra = new Item_Compra(produto: CmbBoxProduto.Text,
                                                  formaPagamento: CmbFormaPagamento.Text,
                                                  precoUnitario: double.Parse(TxtBoxUnitario.Text),
                                                  fornecedor: TxtBoxSelecionarFornecedor.Text,
@@ -46,8 +46,8 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void LimparFormulario()
         {
-            TxtBoxCodigoProdutoVenda.Clear();
-            CmbFormaPagamento.SelectedIndex = -0;
+            CmbBoxProduto.SelectedIndex = -1;
+            CmbFormaPagamento.SelectedIndex = -1;
             TxtBoxUnitario.Clear();
             TxtBoxQuantidade.Clear();
         }
@@ -63,11 +63,7 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void BtnCadastrarCompra_Click(object sender, EventArgs e)
         {
-            Iten_CompraBll novavenda = new Iten_CompraBll();
-            for (int i = 0; i < compras.Count; i++)
-            {
-                novavenda.Insert(compras[i]);
-            }
+            
         }
         private void TxtBoxQuantidade_KeyPress_1(object sender, KeyPressEventArgs e)
         {

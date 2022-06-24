@@ -19,6 +19,7 @@ namespace WfPresentationLayer
         {
             InitializeComponent();
             CmbFormaPagamento.DataSource = Enum.GetNames(typeof(FormaPagamento));
+            DataGrid.DataBindings.Add(nameof(DataGrid.BackgroundColor), this, nameof(Control.BackColor));
         }
         List<Item_Venda> Vendas = new List<Item_Venda>();
         private void BtnNovoCliente_Click(object sender, EventArgs e)
@@ -33,7 +34,7 @@ namespace WfPresentationLayer
         }
         private void BtnNovoIten_Click(object sender, EventArgs e)
         {
-            Item_Venda venda = new Item_Venda(produto: TxtBoxCodigoProdutoVenda.Text,
+            Item_Venda venda = new Item_Venda(produto: CmbBoxProduto.Text,
                                               formaPagamento: CmbFormaPagamento.Text,
                                               precoUnitario: double.Parse(TxtBoxUnitario.Text),
                                               quantidade: int.Parse(TxtBoxQuantidade.Text),
@@ -44,19 +45,17 @@ namespace WfPresentationLayer
             Vendas.Add(venda);
             SincronizarListaGrid(venda);
             LimparFormulario();
-            
         }
         private void LimparFormulario()
         {
-            TxtBoxCodigoProdutoVenda.Clear();
-            CmbFormaPagamento.SelectedIndex = -0;
+            CmbBoxProduto.SelectedIndex = -1;
+            CmbFormaPagamento.SelectedIndex = -1;
             TxtBoxQuantidade.Clear();
             TxtBoxUnitario.Clear();
         }
         private void SincronizarListaGrid(Item_Venda item)
         {
             DataGrid.Rows.Add(item.Produto, item.PrecoUnitario, item.Quantidade, item.ValorTotal, item.Laboratorio, item.NomeCliente, item.NomeFuncionario, item.Data);
-
         }
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
@@ -67,11 +66,7 @@ namespace WfPresentationLayer
         }
         private void BtnCadastrarNovaVenda_Click(object sender, EventArgs e)
         {
-            Iten_VendaBll novavenda = new Iten_VendaBll();
-            for (int i = 0; i < Vendas.Count; i++)
-            {
-                novavenda.Insert(Vendas[i]);
-            }
+            
         }
         private void TxtBoxUnitario_KeyPress(object sender, KeyPressEventArgs e)
         {

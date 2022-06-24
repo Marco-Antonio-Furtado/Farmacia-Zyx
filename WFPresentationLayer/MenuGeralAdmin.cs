@@ -90,7 +90,7 @@ namespace WfPresentationLayer
         }
         private void PctBack_Click(object sender, EventArgs e)
         {
-            _objForm?.Close();
+            _objForm.Close();
         }
     }
 }

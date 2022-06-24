@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WfPresentationLayer.Alteraçoes
 {
-    public partial class Alteracao_Venda : Form
+    public partial class Vendas : Form
     {
-        public Alteracao_Venda()
+        public Vendas()
         {
             InitializeComponent();
         }

@@ -31,39 +31,42 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.BtnCadastrar = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.BtnCadastrarCliente = new System.Windows.Forms.Button();
             this.BtnAlterarCliente = new System.Windows.Forms.Button();
             this.BtnDeletarClientes = new System.Windows.Forms.Button();
             this.BtnProcurarCliente = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.PnlCl = new System.Windows.Forms.Panel();
+            this.GridClientes = new System.Windows.Forms.DataGridView();
             this.Grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridRg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridTelefone1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridTelefone2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.PnlCl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridClientes)).BeginInit();
             this.SuspendLayout();
             // 
-            // BtnCadastrar
+            // BtnCadastrarCliente
             // 
-            this.BtnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.BtnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnCadastrar.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrar.Location = new System.Drawing.Point(12, 570);
-            this.BtnCadastrar.Name = "BtnCadastrar";
-            this.BtnCadastrar.Size = new System.Drawing.Size(277, 79);
-            this.BtnCadastrar.TabIndex = 22;
-            this.BtnCadastrar.Text = "Cadastrar Cliente";
-            this.BtnCadastrar.UseVisualStyleBackColor = false;
-            this.BtnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
+            this.BtnCadastrarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnCadastrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnCadastrarCliente.ForeColor = System.Drawing.Color.White;
+            this.BtnCadastrarCliente.Location = new System.Drawing.Point(35, 659);
+            this.BtnCadastrarCliente.Name = "BtnCadastrarCliente";
+            this.BtnCadastrarCliente.Size = new System.Drawing.Size(277, 79);
+            this.BtnCadastrarCliente.TabIndex = 22;
+            this.BtnCadastrarCliente.Text = "Cadastrar Cliente";
+            this.BtnCadastrarCliente.UseVisualStyleBackColor = false;
+            this.BtnCadastrarCliente.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
             // BtnAlterarCliente
             // 
             this.BtnAlterarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnAlterarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAlterarCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnAlterarCliente.Location = new System.Drawing.Point(313, 570);
+            this.BtnAlterarCliente.Location = new System.Drawing.Point(360, 659);
             this.BtnAlterarCliente.Name = "BtnAlterarCliente";
             this.BtnAlterarCliente.Size = new System.Drawing.Size(277, 79);
             this.BtnAlterarCliente.TabIndex = 23;
@@ -75,7 +78,7 @@
             this.BtnDeletarClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnDeletarClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDeletarClientes.ForeColor = System.Drawing.Color.White;
-            this.BtnDeletarClientes.Location = new System.Drawing.Point(904, 570);
+            this.BtnDeletarClientes.Location = new System.Drawing.Point(992, 659);
             this.BtnDeletarClientes.Name = "BtnDeletarClientes";
             this.BtnDeletarClientes.Size = new System.Drawing.Size(277, 79);
             this.BtnDeletarClientes.TabIndex = 24;
@@ -87,54 +90,69 @@
             this.BtnProcurarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnProcurarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnProcurarCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnProcurarCliente.Location = new System.Drawing.Point(607, 570);
+            this.BtnProcurarCliente.Location = new System.Drawing.Point(683, 659);
             this.BtnProcurarCliente.Name = "BtnProcurarCliente";
             this.BtnProcurarCliente.Size = new System.Drawing.Size(277, 79);
             this.BtnProcurarCliente.TabIndex = 25;
             this.BtnProcurarCliente.Text = "Selecionar Cliente";
             this.BtnProcurarCliente.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // PnlCl
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PnlCl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.PnlCl.Controls.Add(this.GridClientes);
+            this.PnlCl.Location = new System.Drawing.Point(11, 12);
+            this.PnlCl.Name = "PnlCl";
+            this.PnlCl.Size = new System.Drawing.Size(1292, 617);
+            this.PnlCl.TabIndex = 26;
+            // 
+            // GridClientes
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Transparent;
+            this.GridClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.GridClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.GridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Grid,
             this.GridEmail,
             this.GridRg,
             this.dataGridViewTextBoxColumn1,
             this.GridTelefone1,
             this.GridTelefone2});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 12);
-            this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1176, 521);
-            this.dataGridView1.TabIndex = 27;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridClientes.DefaultCellStyle = dataGridViewCellStyle3;
+            this.GridClientes.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.GridClientes.Location = new System.Drawing.Point(3, 3);
+            this.GridClientes.Name = "GridClientes";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.GridClientes.RowHeadersWidth = 51;
+            this.GridClientes.RowTemplate.Height = 29;
+            this.GridClientes.Size = new System.Drawing.Size(1289, 618);
+            this.GridClientes.TabIndex = 33;
             // 
             // Grid
             // 
@@ -183,25 +201,27 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(1193, 759);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1315, 764);
+            this.Controls.Add(this.PnlCl);
             this.Controls.Add(this.BtnProcurarCliente);
             this.Controls.Add(this.BtnDeletarClientes);
             this.Controls.Add(this.BtnAlterarCliente);
-            this.Controls.Add(this.BtnCadastrar);
+            this.Controls.Add(this.BtnCadastrarCliente);
             this.Name = "FormMostarClientes";
             this.Text = "Clientes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.PnlCl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridClientes)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Button BtnCadastrar;
+        private Button BtnCadastrarCliente;
         private Button BtnAlterarCliente;
         private Button BtnDeletarClientes;
         private Button BtnProcurarCliente;
-        private DataGridView dataGridView1;
+        private Panel PnlCl;
+        private DataGridView GridClientes;
         private DataGridViewTextBoxColumn Grid;
         private DataGridViewTextBoxColumn GridEmail;
         private DataGridViewTextBoxColumn GridRg;

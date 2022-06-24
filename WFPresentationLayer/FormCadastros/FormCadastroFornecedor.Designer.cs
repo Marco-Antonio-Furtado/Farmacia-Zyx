@@ -161,7 +161,7 @@
             this.BtnCadastroFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnCadastroFornecedor.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastroFornecedor.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastroFornecedor.Location = new System.Drawing.Point(252, 19);
+            this.BtnCadastroFornecedor.Location = new System.Drawing.Point(239, 19);
             this.BtnCadastroFornecedor.Name = "BtnCadastroFornecedor";
             this.BtnCadastroFornecedor.Size = new System.Drawing.Size(226, 147);
             this.BtnCadastroFornecedor.TabIndex = 86;
@@ -187,6 +187,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxRazaoSocial);
             this.Name = "FormCadastroFornecedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCadastroFornecedor";
             this.ResumeLayout(false);
             this.PerformLayout();

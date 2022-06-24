@@ -97,7 +97,7 @@ namespace DataAccessLayer
                 }
                 return new Response("Funcionario não excluído.", false);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }

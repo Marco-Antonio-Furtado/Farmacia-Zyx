@@ -185,7 +185,7 @@
             this.BtnCadastrarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnCadastrarCliente.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastrarCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarCliente.Location = new System.Drawing.Point(257, 33);
+            this.BtnCadastrarCliente.Location = new System.Drawing.Point(247, 33);
             this.BtnCadastrarCliente.Name = "BtnCadastrarCliente";
             this.BtnCadastrarCliente.Size = new System.Drawing.Size(226, 147);
             this.BtnCadastrarCliente.TabIndex = 87;
@@ -213,6 +213,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxNomeCliente);
             this.Name = "FormCadastroCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCadastroCliente";
             this.ResumeLayout(false);
             this.PerformLayout();

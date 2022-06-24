@@ -12,7 +12,7 @@ namespace BusinessLogicalLayer.BusinessLL
 
         public Response Insert(Fornecedor item)
         {
-            Response resposta = fornecedorValidate.Validate(item);
+            Response resposta = FornecedorValidator.Validate(item);
             if (resposta.HasSuccess)
             {
                 return fornecedorDAL.Insert(item);
@@ -22,7 +22,7 @@ namespace BusinessLogicalLayer.BusinessLL
 
         public Response Update(Fornecedor item)
         {
-            Response Resposta = fornecedorValidate.Validate(item);
+            Response Resposta = FornecedorValidator.Validate(item);
             if (Resposta.HasSuccess)
             {
                 return fornecedorDAL.Update(item);

@@ -35,9 +35,9 @@ namespace WfPresentationLayer
         {
             Item_Venda venda = new Item_Venda(produto: TxtBoxCodigoProdutoVenda.Text,
                                               formaPagamento: CmbFormaPagamento.Text,
-                                              precoUnitario: double.Parse(TxtBoxValorUnitario.Text),
+                                              precoUnitario: double.Parse(TxtBoxUnitario.Text),
                                               quantidade: int.Parse(TxtBoxQuantidade.Text),
-                                              valorTotal: int.Parse(TxtBoxQuantidade.Text) * double.Parse(TxtBoxValorUnitario.Text),
+                                              valorTotal: int.Parse(TxtBoxQuantidade.Text) * double.Parse(TxtBoxUnitario.Text),
                                               nomeFuncionario: "admin",
                                               nomeCliente: TxtBoxSelecionarCliente.Text,
                                               data: DateTime.Value);
@@ -51,7 +51,7 @@ namespace WfPresentationLayer
             TxtBoxCodigoProdutoVenda.Clear();
             CmbFormaPagamento.SelectedIndex = -0;
             TxtBoxQuantidade.Clear();
-            TxtBoxValorUnitario.Clear();
+            TxtBoxUnitario.Clear();
         }
         private void SincronizarListaGrid(Item_Venda item)
         {
@@ -65,11 +65,49 @@ namespace WfPresentationLayer
             DataGrid.Rows.RemoveAt(row.Index);
 
         }
-
         private void BtnCadastrarNovaVenda_Click(object sender, EventArgs e)
         {
             Iten_VendaBll novavenda = new Iten_VendaBll();
-            /*ovavenda.Insert();*/
+            for (int i = 0; i < Vendas.Count; i++)
+            {
+                novavenda.Insert(Vendas[i]);
+            }
+        }
+        private void TxtBoxUnitario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.' || e.KeyChar == ',')
+            {
+                //troca o . pela virgula
+                e.KeyChar = ',';
+                //Verifica se já existe alguma vírgula na string
+                if (TxtBoxUnitario.Text.Contains(","))
+                {
+                    e.Handled = true; // Caso exista, aborte 
+                }
+            }
+            //aceita apenas números, tecla backspace.
+            else if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+        private void TxtBoxQuantidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.' || e.KeyChar == ',')
+            {
+                //troca o . pela virgula
+                e.KeyChar = ',';
+                //Verifica se já existe alguma vírgula na string
+                if (TxtBoxQuantidade.Text.Contains(","))
+                {
+                    e.Handled = true; // Caso exista, aborte 
+                }
+            }
+            //aceita apenas números, tecla backspace.
+            else if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

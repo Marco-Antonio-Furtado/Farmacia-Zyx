@@ -4,7 +4,7 @@ namespace BusinessLogicalLayer.RegrasValidacao
 {
     internal class RegraValidacaoEndereco
     {
-        internal string ValidateRua(string rua)
+        internal static string ValidateRua(string rua)
         {
             if (string.IsNullOrWhiteSpace(rua))
             {
@@ -12,7 +12,7 @@ namespace BusinessLogicalLayer.RegrasValidacao
             }
             else return "";
         }
-        internal string ValidateCep(string cep)
+        internal static string ValidateCep(string cep)
         {
             if (string.IsNullOrWhiteSpace(cep))
             {
@@ -20,7 +20,7 @@ namespace BusinessLogicalLayer.RegrasValidacao
             }
             else return "";
         }
-        internal string ValidateNumero(string numero)
+        internal static string ValidateNumero(string numero)
         {
             if (string.IsNullOrWhiteSpace(numero))
             {
@@ -28,7 +28,7 @@ namespace BusinessLogicalLayer.RegrasValidacao
             }
             else return "";
         }
-        internal string ValidateCidade(string Cidade)
+        internal static string ValidateCidade(string Cidade)
         {
             if (string.IsNullOrWhiteSpace(Cidade))
             {
@@ -36,7 +36,7 @@ namespace BusinessLogicalLayer.RegrasValidacao
             }
             else return "";
         }
-        internal string ValidateEstado(Estado Estado)
+        internal static string ValidateEstado(Estado Estado)
         {
             if (string.IsNullOrWhiteSpace(Estado.Nome))
             {

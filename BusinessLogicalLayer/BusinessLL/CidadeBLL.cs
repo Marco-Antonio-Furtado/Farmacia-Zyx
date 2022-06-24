@@ -12,7 +12,7 @@ namespace BusinessLogicalLayer.BusinessLL
         private CidadeDAL cidadeDAL = new CidadeDAL();
         public Response Insert(Cidade item)
         {
-            Response resposta = enderecoValitor.ValidateCidade(item);
+            Response resposta = EnderecoValitor.ValidateCidade(item);
             if (resposta.HasSuccess)
             {
                 return cidadeDAL.Insert(item);
@@ -21,7 +21,7 @@ namespace BusinessLogicalLayer.BusinessLL
         }
         public Response Update(Cidade item)
         {
-            Response resposta = enderecoValitor.ValidateCidade(item);
+            Response resposta = EnderecoValitor.ValidateCidade(item);
             if (resposta.HasSuccess)
             {
                 return cidadeDAL.Update(item);

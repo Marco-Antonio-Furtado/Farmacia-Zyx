@@ -12,7 +12,7 @@ namespace BusinessLogicalLayer.BusinessLL
         public Response Insert(Produto item)
         {
             
-            Response resposta = produtoValidator.ValidateIten(item);
+            Response resposta = ProdutoValidator.ValidateIten(item);
             if (resposta.HasSuccess)
             {
                 return produtoDAL.Insert(item);
@@ -22,7 +22,7 @@ namespace BusinessLogicalLayer.BusinessLL
 
         public Response Update(Produto item)
         {
-            Response resposta = produtoValidator.ValidateIten(item);
+            Response resposta = ProdutoValidator.ValidateIten(item);
             if (resposta.HasSuccess)
             {
                return produtoDAL.Update(item);

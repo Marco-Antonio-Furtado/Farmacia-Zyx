@@ -6,27 +6,22 @@ namespace BusinessLogicalLayer
 {
     internal class ClienteValidator
     {
-        private RegraValidacaoString stringValidator = new RegraValidacaoString();
-        private RegraNormatizacao normatization = new RegraNormatizacao();
-
-        internal Response Validate(Cliente cliente)
+        internal static Response Validate(Cliente cliente)
         {
-
             StringBuilder erros = new StringBuilder("");
-
             
-            erros.Append(stringValidator.ValidateNome(cliente.Nome));
-            erros.Append(stringValidator.ValidateCPF(cliente.CPF));
-            erros.Append(stringValidator.ValidateEmail(cliente.Email));
-            erros.Append(stringValidator.ValidateTelefone(cliente.Telefone1));
-            erros.Append(stringValidator.ValidateTelefone(cliente.Telefone2));
-            erros.Append(stringValidator.ValidateRG(cliente.RG));
+            erros.Append(RegraValidacaoString.ValidateNome(cliente.Nome));
+            erros.Append(RegraValidacaoString.ValidateCPF(cliente.CPF));
+            erros.Append(RegraValidacaoString.ValidateEmail(cliente.Email));
+            erros.Append(RegraValidacaoString.ValidateTelefone(cliente.Telefone1));
+            erros.Append(RegraValidacaoString.ValidateTelefone(cliente.Telefone2));
+            erros.Append(RegraValidacaoString.ValidateRG(cliente.RG));
 
             if (!String.IsNullOrWhiteSpace(erros.ToString()))
             {
                 return new Response(erros.ToString(), false);
             }
-            cliente.Nome = normatization.NormatizeName(cliente.Nome);
+            cliente.Nome = RegraNormatizacao.NormatizeName(cliente.Nome);
             return new Response("Daqui esta indo pro banco", true);
         }
     }

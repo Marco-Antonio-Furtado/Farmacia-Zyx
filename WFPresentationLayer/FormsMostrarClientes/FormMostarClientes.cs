@@ -16,5 +16,15 @@ namespace WfPresentationLayer.Alteraçoes
         {
             InitializeComponent();
         }
+
+        private void PctBtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void BtnCadastrar_Click(object sender, EventArgs e)
+        {
+            FormCadastroCliente form = new FormCadastroCliente();
+            form.ShowDialog();
+        }
     }
 }

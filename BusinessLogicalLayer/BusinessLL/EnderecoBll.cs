@@ -11,7 +11,7 @@ namespace BusinessLogicalLayer.BusinessLL
         private EnderecoValitor enderecoValitor = new EnderecoValitor();
         public Response Insert(Endereco item)
         {
-            Response resposta = enderecoValitor.Validate(item);
+            Response resposta = EnderecoValitor.Validate(item);
             if (resposta.HasSuccess)
             {
                 EnderecoDAL.Insert(item);
@@ -21,7 +21,7 @@ namespace BusinessLogicalLayer.BusinessLL
 
         public Response Update(Endereco item)
         {
-            Response resposta = enderecoValitor.Validate(item);
+            Response resposta = EnderecoValitor.Validate(item);
             if (resposta.HasSuccess)
             {
                 return EnderecoDAL.Update(item);

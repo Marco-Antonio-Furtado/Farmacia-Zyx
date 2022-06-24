@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelNomeCLiente = new System.Windows.Forms.Label();
             this.TxtBoxSelecionarCliente = new System.Windows.Forms.TextBox();
             this.GroupBoxVenda = new System.Windows.Forms.GroupBox();
@@ -50,14 +50,14 @@
             this.DataGridNomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataGridFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataGridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TxtBoxValorUnitario = new System.Windows.Forms.TextBox();
             this.LabelValorUnitario = new System.Windows.Forms.Label();
-            this.TxtBoxQuantidade = new System.Windows.Forms.TextBox();
             this.LabelQuantidade = new System.Windows.Forms.Label();
             this.TxtBoxCodigoProdutoVenda = new System.Windows.Forms.TextBox();
             this.LabelCodigoProduto = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.BtnNovoCliente = new System.Windows.Forms.Button();
+            this.TxtBoxUnitario = new System.Windows.Forms.TextBox();
+            this.TxtBoxQuantidade = new System.Windows.Forms.TextBox();
             this.GroupBoxVenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.SuspendLayout();
@@ -80,10 +80,12 @@
             this.TxtBoxSelecionarCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxSelecionarCliente.Name = "TxtBoxSelecionarCliente";
             this.TxtBoxSelecionarCliente.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxSelecionarCliente.TabIndex = 12;
+            this.TxtBoxSelecionarCliente.TabIndex = 1;
             // 
             // GroupBoxVenda
             // 
+            this.GroupBoxVenda.Controls.Add(this.TxtBoxUnitario);
+            this.GroupBoxVenda.Controls.Add(this.TxtBoxQuantidade);
             this.GroupBoxVenda.Controls.Add(this.BtnExcluir);
             this.GroupBoxVenda.Controls.Add(this.CmbBoxLaboratorio);
             this.GroupBoxVenda.Controls.Add(this.label1);
@@ -93,9 +95,7 @@
             this.GroupBoxVenda.Controls.Add(this.LabelFormaPagemento);
             this.GroupBoxVenda.Controls.Add(this.BtnNovoIten);
             this.GroupBoxVenda.Controls.Add(this.DataGrid);
-            this.GroupBoxVenda.Controls.Add(this.TxtBoxValorUnitario);
             this.GroupBoxVenda.Controls.Add(this.LabelValorUnitario);
-            this.GroupBoxVenda.Controls.Add(this.TxtBoxQuantidade);
             this.GroupBoxVenda.Controls.Add(this.LabelQuantidade);
             this.GroupBoxVenda.Controls.Add(this.TxtBoxCodigoProdutoVenda);
             this.GroupBoxVenda.Controls.Add(this.LabelCodigoProduto);
@@ -129,7 +129,7 @@
             this.CmbBoxLaboratorio.Location = new System.Drawing.Point(167, 123);
             this.CmbBoxLaboratorio.Name = "CmbBoxLaboratorio";
             this.CmbBoxLaboratorio.Size = new System.Drawing.Size(233, 31);
-            this.CmbBoxLaboratorio.TabIndex = 27;
+            this.CmbBoxLaboratorio.TabIndex = 5;
             // 
             // label1
             // 
@@ -168,10 +168,10 @@
             this.CmbFormaPagamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.CmbFormaPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbFormaPagamento.FormattingEnabled = true;
-            this.CmbFormaPagamento.Location = new System.Drawing.Point(167, 69);
+            this.CmbFormaPagamento.Location = new System.Drawing.Point(167, 73);
             this.CmbFormaPagamento.Name = "CmbFormaPagamento";
             this.CmbFormaPagamento.Size = new System.Drawing.Size(233, 31);
-            this.CmbFormaPagamento.TabIndex = 23;
+            this.CmbFormaPagamento.TabIndex = 4;
             // 
             // LabelFormaPagemento
             // 
@@ -211,24 +211,24 @@
             this.DataGridNomeCliente,
             this.DataGridFuncionario,
             this.DataGridData});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle5;
             this.DataGrid.Location = new System.Drawing.Point(18, 221);
             this.DataGrid.Name = "DataGrid";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DataGrid.RowHeadersWidth = 51;
             this.DataGrid.RowTemplate.Height = 29;
             this.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -299,15 +299,6 @@
             this.DataGridData.ReadOnly = true;
             this.DataGridData.Width = 125;
             // 
-            // TxtBoxValorUnitario
-            // 
-            this.TxtBoxValorUnitario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxValorUnitario.Location = new System.Drawing.Point(785, 76);
-            this.TxtBoxValorUnitario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxValorUnitario.Name = "TxtBoxValorUnitario";
-            this.TxtBoxValorUnitario.Size = new System.Drawing.Size(203, 30);
-            this.TxtBoxValorUnitario.TabIndex = 19;
-            // 
             // LabelValorUnitario
             // 
             this.LabelValorUnitario.AutoSize = true;
@@ -318,15 +309,6 @@
             this.LabelValorUnitario.Size = new System.Drawing.Size(115, 23);
             this.LabelValorUnitario.TabIndex = 18;
             this.LabelValorUnitario.Text = "Valor Unitario";
-            // 
-            // TxtBoxQuantidade
-            // 
-            this.TxtBoxQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxQuantidade.Location = new System.Drawing.Point(785, 20);
-            this.TxtBoxQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxQuantidade.Name = "TxtBoxQuantidade";
-            this.TxtBoxQuantidade.Size = new System.Drawing.Size(203, 30);
-            this.TxtBoxQuantidade.TabIndex = 17;
             // 
             // LabelQuantidade
             // 
@@ -346,7 +328,7 @@
             this.TxtBoxCodigoProdutoVenda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxCodigoProdutoVenda.Name = "TxtBoxCodigoProdutoVenda";
             this.TxtBoxCodigoProdutoVenda.Size = new System.Drawing.Size(233, 30);
-            this.TxtBoxCodigoProdutoVenda.TabIndex = 15;
+            this.TxtBoxCodigoProdutoVenda.TabIndex = 3;
             // 
             // LabelCodigoProduto
             // 
@@ -384,6 +366,26 @@
             this.BtnNovoCliente.UseVisualStyleBackColor = false;
             this.BtnNovoCliente.Click += new System.EventHandler(this.BtnNovoCliente_Click);
             // 
+            // TxtBoxUnitario
+            // 
+            this.TxtBoxUnitario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxUnitario.Location = new System.Drawing.Point(794, 75);
+            this.TxtBoxUnitario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxUnitario.Name = "TxtBoxUnitario";
+            this.TxtBoxUnitario.Size = new System.Drawing.Size(238, 30);
+            this.TxtBoxUnitario.TabIndex = 30;
+            this.TxtBoxUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxUnitario_KeyPress);
+            // 
+            // TxtBoxQuantidade
+            // 
+            this.TxtBoxQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxQuantidade.Location = new System.Drawing.Point(794, 21);
+            this.TxtBoxQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxQuantidade.Name = "TxtBoxQuantidade";
+            this.TxtBoxQuantidade.Size = new System.Drawing.Size(238, 30);
+            this.TxtBoxQuantidade.TabIndex = 29;
+            this.TxtBoxQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxQuantidade_KeyPress);
+            // 
             // FormNovaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -412,9 +414,7 @@
         private TextBox TxtBoxSelecionarCliente;
         private GroupBox GroupBoxVenda;
         private DataGridView DataGrid;
-        private TextBox TxtBoxValorUnitario;
         private Label LabelValorUnitario;
-        private TextBox TxtBoxQuantidade;
         private Label LabelQuantidade;
         private TextBox TxtBoxCodigoProdutoVenda;
         private Label LabelCodigoProduto;
@@ -436,5 +436,7 @@
         private DataGridViewTextBoxColumn DataGridNomeCliente;
         private DataGridViewTextBoxColumn DataGridFuncionario;
         private DataGridViewTextBoxColumn DataGridData;
+        private TextBox TxtBoxUnitario;
+        private TextBox TxtBoxQuantidade;
     }
 }

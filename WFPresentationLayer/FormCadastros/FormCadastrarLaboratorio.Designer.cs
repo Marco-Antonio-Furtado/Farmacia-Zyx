@@ -78,6 +78,7 @@
             this.Controls.Add(this.LblNomeEstado);
             this.Controls.Add(this.textBox2);
             this.Name = "FormCadastrarLaboratorio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCadastrarLaboratorio";
             this.ResumeLayout(false);
             this.PerformLayout();

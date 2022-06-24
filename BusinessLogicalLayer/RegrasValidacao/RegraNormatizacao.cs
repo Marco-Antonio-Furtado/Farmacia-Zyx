@@ -5,10 +5,10 @@ namespace BusinessLogicalLayer
 {
     internal class RegraNormatizacao
     {
-        internal string NormatizeName(string nome)
+        internal static string NormatizeName(string nome)
         {
-            string nomeNormatizado = new CultureInfo("pt-br").TextInfo.ToTitleCase(nome);
-            nomeNormatizado = nomeNormatizado.Trim();
+            string NomePadrao = new CultureInfo("pt-br").TextInfo.ToTitleCase(nome);
+            NomePadrao = NomePadrao.Trim();
             return Regex.Replace(nome, @"\s+", " ");
         }
     }

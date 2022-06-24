@@ -7,6 +7,10 @@ namespace BusinessLogicalLayer.BusinessLL
     public class Iten_VendaBll : ICRUD<Item_Venda>
     {
         Iten_VendaDal iten_VendaDal = new Iten_VendaDal();
+        public Response InsertList(List<Item_Venda> item)
+        {
+            return iten_VendaDal.InsertList(item);
+        }
         public Response Insert(Item_Venda item)
         {
             return iten_VendaDal.Insert(item);

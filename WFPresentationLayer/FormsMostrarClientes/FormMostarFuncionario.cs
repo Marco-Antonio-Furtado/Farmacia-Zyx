@@ -16,5 +16,11 @@ namespace WfPresentationLayer.Alteraçoes
         {
             InitializeComponent();
         }
+
+        private void BtnCadastrarFornecedor_Click(object sender, EventArgs e)
+        {
+            FormCadastroFuncionario form = new FormCadastroFuncionario();
+            form.ShowDialog();
+        }
     }
 }

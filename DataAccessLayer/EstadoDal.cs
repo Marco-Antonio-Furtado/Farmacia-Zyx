@@ -23,7 +23,7 @@ namespace DataAccessLayer
                 command.ExecuteNonQuery();
                 return new Response("Estado cadastrado com sucesso.", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
@@ -55,7 +55,7 @@ namespace DataAccessLayer
                 }
                 return new Response("Estado alterado com sucesso.", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
@@ -85,7 +85,7 @@ namespace DataAccessLayer
                 }
                 return new Response("Estado não excluído.", false);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
@@ -119,7 +119,7 @@ namespace DataAccessLayer
                 }
                 return new DataResponse<Estado>("Estados selecionados com sucesso!", true, Estados);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new DataResponse<Estado>("Erro no banco de dados, contate o administrador.", false, null);
             }
@@ -155,7 +155,7 @@ namespace DataAccessLayer
                 }
                 return new SingleResponse<Estado>("Cliente não encontrado!", false, null);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new SingleResponse<Estado>("Erro no banco de dados, contate o administrador.", false, null);
             }

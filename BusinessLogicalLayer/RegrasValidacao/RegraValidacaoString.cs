@@ -11,8 +11,7 @@ namespace BusinessLogicalLayer
         private const int MINIMO_CARACTERES_EMAIL = 3;
         private const int CARACTERES_CEP = 8;
         private const int CARACTERES_CNPJ = 14;
-
-        internal string ValidateNome(string nome)
+        internal static string ValidateNome(string nome)
         {
             if (string.IsNullOrWhiteSpace(nome))
             {
@@ -47,7 +46,7 @@ namespace BusinessLogicalLayer
             }
             return "";
         }
-        internal string ValidateCPF(string cpf)
+        internal static string ValidateCPF(string cpf)
         {
             if (string.IsNullOrWhiteSpace(cpf))
             {
@@ -90,7 +89,7 @@ namespace BusinessLogicalLayer
             }
             return "";
         }
-        internal string ValidateEmail(string email)
+        internal static string ValidateEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
             {
@@ -112,7 +111,7 @@ namespace BusinessLogicalLayer
             }
             return "";
         }
-        internal string ValidateCEP(string cep)
+        internal static string ValidateCEP(string cep)
         {
             if (string.IsNullOrWhiteSpace(cep))
             {
@@ -132,15 +131,13 @@ namespace BusinessLogicalLayer
             }
             return "";
         }
-
-        internal string ValidateTelefone(string telefone)
+        internal static string ValidateTelefone(string telefone)
         {
             if (string.IsNullOrWhiteSpace(telefone))
             {
                 return "Telefone deve ser informado.\r\n";
             }
             telefone = telefone.Trim();
-
             telefone =
                 telefone.Replace("(", "")
                         .Replace(")", "")
@@ -152,7 +149,6 @@ namespace BusinessLogicalLayer
             {
                 return "Telefone deve conter 8, 9, 11 ou 13 dígitos.\r\n";
             }
-
             long temp;
             if (!long.TryParse(telefone, out temp))
             {
@@ -160,7 +156,7 @@ namespace BusinessLogicalLayer
             }
             return "";
         }
-        internal string ValidateRG(string RG)
+        internal static string ValidateRG(string RG)
         {
             if (string.IsNullOrWhiteSpace(RG))
             {
@@ -168,7 +164,7 @@ namespace BusinessLogicalLayer
             }
             return "";
         }
-        internal bool IsCnpj(string cnpj)
+        internal static bool IsCnpj(string cnpj)
         {
             int[] multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
             int[] multiplicador2 = new int[13] { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -202,7 +198,7 @@ namespace BusinessLogicalLayer
             digito += resto.ToString();
             return cnpj.EndsWith(digito);
         }
-        internal string ValidateRazaoSocial(string RazaoSocial)
+        internal static string ValidateRazaoSocial(string RazaoSocial)
         {
             if (string.IsNullOrWhiteSpace(RazaoSocial))
             {

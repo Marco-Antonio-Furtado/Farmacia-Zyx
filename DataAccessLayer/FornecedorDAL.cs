@@ -178,7 +178,7 @@ namespace DataAccessLayer
                 }
                 return new DataResponse<Fornecedor>("fornecedor selecionados com sucesso!", true, fornecedores);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new DataResponse<Fornecedor>("Erro no banco de dados, contate o administrador.", false, null);
             }
@@ -223,7 +223,7 @@ namespace DataAccessLayer
                 }
                 return new SingleResponse<Fornecedor>("fornecedor não encontrado!", false, null);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new SingleResponse<Fornecedor>("Erro no banco de dados, contate o administrador.", false, null);
             }
@@ -267,7 +267,7 @@ namespace DataAccessLayer
                 }
                 return new SingleResponse<Fornecedor>("fornecedor não encontrado!", false, null);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new SingleResponse<Fornecedor>("Erro no banco de dados, contate o administrador.", false, null);
             }

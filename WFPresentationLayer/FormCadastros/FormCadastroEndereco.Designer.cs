@@ -51,7 +51,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(351, 245);
+            this.label15.Location = new System.Drawing.Point(288, 245);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(73, 23);
             this.label15.TabIndex = 48;
@@ -61,7 +61,7 @@
             // 
             this.mtxtNumero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.mtxtNumero.ForeColor = System.Drawing.Color.White;
-            this.mtxtNumero.Location = new System.Drawing.Point(351, 268);
+            this.mtxtNumero.Location = new System.Drawing.Point(288, 268);
             this.mtxtNumero.Mask = "0999";
             this.mtxtNumero.Name = "mtxtNumero";
             this.mtxtNumero.Size = new System.Drawing.Size(125, 27);
@@ -72,7 +72,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(351, 170);
+            this.label14.Location = new System.Drawing.Point(288, 170);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(61, 23);
             this.label14.TabIndex = 46;
@@ -82,7 +82,7 @@
             // 
             this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.txtEstado.ForeColor = System.Drawing.Color.White;
-            this.txtEstado.Location = new System.Drawing.Point(351, 194);
+            this.txtEstado.Location = new System.Drawing.Point(288, 194);
             this.txtEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(203, 27);
@@ -93,7 +93,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(349, 94);
+            this.label13.Location = new System.Drawing.Point(286, 94);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 23);
             this.label13.TabIndex = 44;
@@ -103,7 +103,7 @@
             // 
             this.txtCidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.txtCidade.ForeColor = System.Drawing.Color.White;
-            this.txtCidade.Location = new System.Drawing.Point(351, 121);
+            this.txtCidade.Location = new System.Drawing.Point(288, 121);
             this.txtCidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(203, 27);
@@ -156,7 +156,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(349, 21);
+            this.label10.Location = new System.Drawing.Point(286, 21);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 23);
             this.label10.TabIndex = 38;
@@ -166,7 +166,7 @@
             // 
             this.txtBairro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.txtBairro.ForeColor = System.Drawing.Color.White;
-            this.txtBairro.Location = new System.Drawing.Point(351, 48);
+            this.txtBairro.Location = new System.Drawing.Point(288, 48);
             this.txtBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(203, 27);
@@ -237,6 +237,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.mtxtCep);
             this.Name = "FormCadastroEndereco";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Endereco";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -7,6 +7,38 @@ namespace DataAccessLayer
     public class Iten_VendaDal : ICRUD<Item_Venda>
     {
         internal string DalDirectory = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\AdultMovieLocatorDb.mdf;Integrated Security=True;Connect Timeout=3";
+        public Response InsertList(List<Item_Venda> item)
+        {
+            return new Response("nao imprementado", true);
+            //string sql = $"INSERT INTO ITEM_Venda (DATA,PRODUTO,NOME_CLIENTE,NOME_FUNCIONARIO,FORMA_PAGAMENTO,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL) VALUES(@DATA,@PRODUTO,@NOME_CLIENTE,@NOME_FUNCIONARIO,@FORMA_PAGAMENTO,@QUANTIDADE,@PRECO_UNITARIO,@VALOR_TOTAL)";
+            //string connectionString = DalDirectory;
+
+            //SqlConnection connection = new SqlConnection(connectionString);
+
+            //SqlCommand command = new SqlCommand(sql, connection);
+            //command.Parameters.AddWithValue("@DATA", item.Data);
+            //command.Parameters.AddWithValue("@PRODUTO", item.Produto);
+            //command.Parameters.AddWithValue("@NOME_CLIENTE", item.NomeCliente);
+            //command.Parameters.AddWithValue("@NOME_FUNCIONARIO", item.NomeFuncionario);
+            //command.Parameters.AddWithValue("@FORMA_PAGAMENTO", item.FormaPagamento);
+            //command.Parameters.AddWithValue("@QUANTIDADE", item.Quantidade);
+            //command.Parameters.AddWithValue("@PRECO_UNITARIO", item.PrecoUnitario);
+            //command.Parameters.AddWithValue("@VALOR_TOTAL", item.ValorTotal);
+            //try
+            //{
+            //    connection.Open();
+            //    command.ExecuteNonQuery();
+            //    return new Response("Venda cadastradada com sucesso.", true);
+            //}
+            //catch (Exception)
+            //{
+            //    return new Response("Erro no banco de dados, contate o administrador.", false);
+            //}
+            //finally
+            //{
+            //    connection.Dispose();
+            //}
+        }
         public Response Insert(Item_Venda item)
         {
             string sql = $"INSERT INTO ITEM_Venda (DATA,PRODUTO,NOME_CLIENTE,NOME_FUNCIONARIO,FORMA_PAGAMENTO,QUANTIDADE,PRECO_UNITARIO,VALOR_TOTAL) VALUES(@DATA,@PRODUTO,@NOME_CLIENTE,@NOME_FUNCIONARIO,@FORMA_PAGAMENTO,@QUANTIDADE,@PRECO_UNITARIO,@VALOR_TOTAL)";
@@ -29,7 +61,7 @@ namespace DataAccessLayer
                 command.ExecuteNonQuery();
                 return new Response("Venda cadastradada com sucesso.", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
@@ -38,7 +70,6 @@ namespace DataAccessLayer
                 connection.Dispose();
             }
         }
-
         public Response Update(Item_Venda item)
         {
             string sql = $"UPDATE ITEM_VENDA SET DATA = @DATA, PRODUTO = @PRODUTO, NOME_CLIENTE = @NOME_CLIENTE, NOME_FUNCIONARIO = @NOME_FUNCIONARIO, FORMA_PAGAMENTO = @FORMA_PAGAMENTO, QUANTIDADE = @QUANTIDADE, PRECO_UNITARIO = @PRECO_UNITARIO, VALOR_TOTAL = @VALOR_TOTAL WHERE ID = @ID";
@@ -67,7 +98,7 @@ namespace DataAccessLayer
                 }
                 return new Response("Venda alterado com sucesso.", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 return new Response("Erro no banco de dados, contate o administrador.", false);
@@ -98,7 +129,7 @@ namespace DataAccessLayer
                 }
                 return new Response("Venda não excluído.", false);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
@@ -139,7 +170,7 @@ namespace DataAccessLayer
                 }
                 return new DataResponse<Item_Venda>("Vendas selecionadas com sucesso!", true, ListaVendas);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new DataResponse<Item_Venda>("Erro no banco de dados, contate o administrador.", false, null);
             }
@@ -178,7 +209,7 @@ namespace DataAccessLayer
                 }
                 return new SingleResponse<Item_Venda>("Venda não encontrado!", false, null);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new SingleResponse<Item_Venda>("Erro no banco de dados, contate o administrador.", false, null);
             }

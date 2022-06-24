@@ -10,7 +10,7 @@ namespace BusinessLogicalLayer.BusinessLL
         private ClienteDAL clienteDAL = new ClienteDAL();
         public Response Insert(Cliente item)
         {
-            Response resposta = clienteValidator.Validate(item);
+            Response resposta = ClienteValidator.Validate(item);
             if (resposta.HasSuccess)
             {
                 return clienteDAL.Insert(item);
@@ -19,7 +19,7 @@ namespace BusinessLogicalLayer.BusinessLL
         }
         public Response Update(Cliente item)
         {
-            Response resposta = clienteValidator.Validate(item);
+            Response resposta = ClienteValidator.Validate(item);
             if(resposta.HasSuccess)
             {
                 return clienteDAL.Update(item);

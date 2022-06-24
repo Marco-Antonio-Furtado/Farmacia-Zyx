@@ -124,7 +124,7 @@ namespace DataAccessLayer
                 }
                 return new Response("Produto não excluído.", false);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //SE NAO ENTROU EM NENHUM IF DE CIMA, SÓ PODE SER UM ERRO DE INFRAESTRUTURA
                 return new Response("Erro no banco de dados, contate o administrador.", false);
@@ -167,7 +167,7 @@ namespace DataAccessLayer
                 }
                 return new DataResponse<Produto>("Produtos selecionados com sucesso!", true, produtos);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new DataResponse<Produto>("Erro no banco de dados, contate o administrador.", false, null);
             }
@@ -209,7 +209,7 @@ namespace DataAccessLayer
                 }
                 return new SingleResponse<Produto>("Produto não encontrado!", false, null);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new SingleResponse<Produto>("Erro no banco de dados, contate o administrador.", false, null);
             }
@@ -251,7 +251,7 @@ namespace DataAccessLayer
                 }
                 return new SingleResponse<Produto>("Produto não encontrado!", false, null);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new SingleResponse<Produto>("Erro no banco de dados, contate o administrador.", false, null);
             }

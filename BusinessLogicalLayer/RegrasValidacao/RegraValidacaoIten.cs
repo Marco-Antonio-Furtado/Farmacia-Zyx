@@ -1,9 +1,10 @@
-﻿namespace BusinessLogicalLayer.Verificaçoes
+﻿using Shared;
+
+namespace BusinessLogicalLayer.Verificaçoes
 {
     internal class RegraValidacaoIten
     {
-
-        internal string ValidateProdutoNome(string nome)
+        internal static string ValidateProdutoNome(string nome)
         {
             if (String.IsNullOrWhiteSpace(nome))
             {
@@ -15,9 +16,8 @@
                 return "nome insuficiente\r\n";
             }
             return "";
-
         }
-        internal string ValidateDescrisaoProduto(string descrisao)
+        internal static string ValidateDescrisaoProduto(string descrisao)
         {
             if (String.IsNullOrWhiteSpace(descrisao))
             {
@@ -28,23 +28,19 @@
                 return "descrisao insuficiente\r\n";
             }
             return "";
-
         }
-        internal string ValidateLaboratorio(string laboratorio)
+        internal static Response ValidateLaboratorio(string laboratorio)
         {
             if (String.IsNullOrWhiteSpace(laboratorio))
             {
-                return "laboratorio nao informado\r\n";
+                return new Response("laboratorio nao informado\r\n",false);
             }
             if (laboratorio.Length <= 2)
             {
-                return "laboratorio insuficiente\r\n";
+                return new Response("laboratorio insuficiente\r\n",false);
             }
-            return "";
-
+            return new Response("validado",true);
         }
-
-
     }
 }
 

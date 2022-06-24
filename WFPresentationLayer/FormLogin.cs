@@ -16,19 +16,17 @@ namespace WfPresentationLayer
             
             if (metodoLogin.IsLoggedIn(metodoLogin))
             {
+                this.Hide();
                 LabelResposta.Text = "Bem vindo";
                 MenuGeralAdmin menuGeralAdmin = new MenuGeralAdmin();
                     menuGeralAdmin.ShowDialog();
             }else { LabelResposta.Text = "Email ou Senha Invalidos"; }
-
-               
         }
         private void TxtBoxLogin_TextChanged(object sender, EventArgs e)
         {
             if(TxtBoxLogin.Text == "Digite Seu Email")
             {
                 TxtBoxLogin.Text = "";
-                
             }
             else if(TxtBoxLogin.Text == "")
             {
@@ -50,7 +48,6 @@ namespace WfPresentationLayer
         {
              this.TxtBoxSenha.PasswordChar = '*'; 
         }
-
         private void ImageBtnFechar_Click(object sender, EventArgs e)
         {
             this.Close();

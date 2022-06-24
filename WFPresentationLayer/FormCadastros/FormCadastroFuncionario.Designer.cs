@@ -106,7 +106,7 @@
             this.CmbBoxAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.CmbBoxAdmin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbBoxAdmin.FormattingEnabled = true;
-            this.CmbBoxAdmin.Location = new System.Drawing.Point(231, 261);
+            this.CmbBoxAdmin.Location = new System.Drawing.Point(227, 261);
             this.CmbBoxAdmin.Name = "CmbBoxAdmin";
             this.CmbBoxAdmin.Size = new System.Drawing.Size(224, 28);
             this.CmbBoxAdmin.TabIndex = 84;
@@ -117,7 +117,7 @@
             this.BtnCadastroEndereco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnCadastroEndereco.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastroEndereco.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastroEndereco.Location = new System.Drawing.Point(260, 24);
+            this.BtnCadastroEndereco.Location = new System.Drawing.Point(227, 30);
             this.BtnCadastroEndereco.Name = "BtnCadastroEndereco";
             this.BtnCadastroEndereco.Size = new System.Drawing.Size(224, 199);
             this.BtnCadastroEndereco.TabIndex = 83;
@@ -426,6 +426,7 @@
             this.ClientSize = new System.Drawing.Size(469, 464);
             this.Controls.Add(this.TabGeral);
             this.Name = "FormCadastroFuncionario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCadastroFuncionario";
             this.TabGeral.ResumeLayout(false);
             this.TabFuncionario.ResumeLayout(false);

@@ -8,17 +8,13 @@ namespace BusinessLogicalLayer.Verificaçoes
 {
     internal class EnderecoValitor
     {
-        private RegraValidacaoEndereco validacaoEndereco = new RegraValidacaoEndereco();
-         
-        internal Response Validate(Endereco Endereco)
+        internal static Response Validate(Endereco Endereco)
         {
-
             StringBuilder erros = new StringBuilder("");
 
-
-            erros.Append(validacaoEndereco.ValidateRua(Endereco.NomeRua));
-            erros.Append(validacaoEndereco.ValidateCep(Endereco.CEP));
-            erros.Append(validacaoEndereco.ValidateNumero(Endereco.NumeroCasa));
+            erros.Append(RegraValidacaoEndereco.ValidateRua(Endereco.NomeRua));
+            erros.Append(RegraValidacaoEndereco.ValidateCep(Endereco.CEP));
+            erros.Append(RegraValidacaoEndereco.ValidateNumero(Endereco.NumeroCasa));
 
             if (!String.IsNullOrWhiteSpace(erros.ToString()))
             {
@@ -26,20 +22,20 @@ namespace BusinessLogicalLayer.Verificaçoes
             }
             return new Response("Daqui esta indo pro banco", true);
         }
-        internal Response ValidateEstado(Estado estado)
+        internal static Response ValidateEstado(Estado estado)
         {
             StringBuilder erros = new StringBuilder("");
-            erros.Append(validacaoEndereco.ValidateEstado(estado));
+            erros.Append(RegraValidacaoEndereco.ValidateEstado(estado));
             if (!String.IsNullOrWhiteSpace(erros.ToString()))
             {
                 return new Response(erros.ToString(), false);
             }
             return new Response("Daqui esta indo pro banco", true);
         }
-        internal Response ValidateCidade(Cidade cidade)
+        internal static Response ValidateCidade(Cidade cidade)
         {
             StringBuilder erros = new StringBuilder("");
-            erros.Append(validacaoEndereco.ValidateCidade(cidade.Nome));
+            erros.Append(RegraValidacaoEndereco.ValidateCidade(cidade.Nome));
             if (!String.IsNullOrWhiteSpace(erros.ToString()))
             {
                 return new Response(erros.ToString(), false);

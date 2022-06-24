@@ -22,7 +22,7 @@ namespace DataAccessLayer
                 command.ExecuteNonQuery();
                 return new Response("Cidade cadastrado com sucesso.", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
@@ -52,7 +52,7 @@ namespace DataAccessLayer
                 }
                 return new Response("Cidade alterado com sucesso.", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
@@ -82,7 +82,7 @@ namespace DataAccessLayer
                 }
                 return new Response("Cidade não excluído.", false);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
@@ -114,7 +114,7 @@ namespace DataAccessLayer
                 }
                 return new DataResponse<Cidade>("Cidades selecionados com sucesso!", true, Cidades);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new DataResponse<Cidade>("Erro no banco de dados, contate o administrador.", false, null);
             }
@@ -150,7 +150,7 @@ namespace DataAccessLayer
                 }
                 return new SingleResponse<Cidade>("Cliente não encontrado!", false, null);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new SingleResponse<Cidade>("Erro no banco de dados, contate o administrador.", false, null);
             }

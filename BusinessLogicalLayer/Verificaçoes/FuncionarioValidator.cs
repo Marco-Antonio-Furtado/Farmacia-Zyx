@@ -6,20 +6,17 @@ namespace BusinessLogicalLayer.Verificaçoes
 {
     internal class FuncionarioValidator
     {
-        private RegraValidacaoString stringValidator = new RegraValidacaoString();
-        private RegraNormatizacao normatization = new RegraNormatizacao();
-
         internal Response Validate(Funcionario funcionario)
         {
             StringBuilder erros = new StringBuilder("");
 
 
-            erros.Append(stringValidator.ValidateNome(funcionario.Nome));
-            erros.Append(stringValidator.ValidateCPF(funcionario.CPF));
-            erros.Append(stringValidator.ValidateEmail(funcionario.Email));
-            erros.Append(stringValidator.ValidateTelefone(funcionario.Telefone1));
-            erros.Append(stringValidator.ValidateRG(funcionario.RG));
-            erros.Append(stringValidator.ValidateCEP(funcionario.Endereco?.CEP));
+            erros.Append(RegraValidacaoString.ValidateNome(funcionario.Nome));
+            erros.Append(RegraValidacaoString.ValidateCPF(funcionario.CPF));
+            erros.Append(RegraValidacaoString.ValidateEmail(funcionario.Email));
+            erros.Append(RegraValidacaoString.ValidateTelefone(funcionario.Telefone));
+            erros.Append(RegraValidacaoString.ValidateRG(funcionario.RG));
+            erros.Append(RegraValidacaoString.ValidateCEP(funcionario.Endereco?.CEP));
 
 
             ////CPF do cliente deve ser único
@@ -34,7 +31,7 @@ namespace BusinessLogicalLayer.Verificaçoes
                 return new Response(erros.ToString(), false);
             }
 
-            funcionario.Nome = normatization.NormatizeName(funcionario.Nome);
+            funcionario.Nome = RegraNormatizacao.NormatizeName(funcionario.Nome);
             return new Response("Daqui esta indo pro banco", true);
             
         }

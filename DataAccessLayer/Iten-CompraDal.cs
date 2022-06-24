@@ -29,7 +29,7 @@ namespace DataAccessLayer
                 command.ExecuteNonQuery();
                 return new Response("Compra cadastradada com sucesso.", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
@@ -65,7 +65,7 @@ namespace DataAccessLayer
                 }
                 return new Response("Compra alterado com sucesso.", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 return new Response("Erro no banco de dados, contate o administrador.", false);
@@ -96,7 +96,7 @@ namespace DataAccessLayer
                 }
                 return new Response("Compra não excluído.", false);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
@@ -136,7 +136,7 @@ namespace DataAccessLayer
                 }
                 return new DataResponse<Item_Compra>("Compras selecionadas com sucesso!", true, ListaCompras);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new DataResponse<Item_Compra>("Erro no banco de dados, contate o administrador.", false, null);
             }
@@ -175,7 +175,7 @@ namespace DataAccessLayer
                 }
                 return new SingleResponse<Item_Compra>("Compra não encontrado!", false, null);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new SingleResponse<Item_Compra>("Erro no banco de dados, contate o administrador.", false, null);
             }
@@ -214,7 +214,7 @@ namespace DataAccessLayer
                 }
                 return new SingleResponse<Item_Compra>("Compra não encontrado!", false, null);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new SingleResponse<Item_Compra>("Erro no banco de dados, contate o administrador.", false, null);
             }

@@ -55,14 +55,14 @@
             this.DataGridFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatagridLaboratorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatagridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TxtBoxValorUnitario = new System.Windows.Forms.TextBox();
             this.LabelValorUnitario = new System.Windows.Forms.Label();
-            this.TxtBoxQuantidade = new System.Windows.Forms.TextBox();
             this.LabelQuantidade = new System.Windows.Forms.Label();
             this.TxtBoxCodigoProdutoVenda = new System.Windows.Forms.TextBox();
             this.LabelCodigoProduto = new System.Windows.Forms.Label();
             this.LabelNomeCLiente = new System.Windows.Forms.Label();
             this.TxtBoxSelecionarFornecedor = new System.Windows.Forms.TextBox();
+            this.TxtBoxQuantidade = new System.Windows.Forms.TextBox();
+            this.TxtBoxUnitario = new System.Windows.Forms.TextBox();
             this.GroupBoxCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.SuspendLayout();
@@ -94,6 +94,8 @@
             // 
             // GroupBoxCompra
             // 
+            this.GroupBoxCompra.Controls.Add(this.TxtBoxUnitario);
+            this.GroupBoxCompra.Controls.Add(this.TxtBoxQuantidade);
             this.GroupBoxCompra.Controls.Add(this.BtnExcluir);
             this.GroupBoxCompra.Controls.Add(this.label2);
             this.GroupBoxCompra.Controls.Add(this.BtnNovoLaboratorio);
@@ -106,9 +108,7 @@
             this.GroupBoxCompra.Controls.Add(this.LabelFormaPagemento);
             this.GroupBoxCompra.Controls.Add(this.BtnNovoIten);
             this.GroupBoxCompra.Controls.Add(this.DataGrid);
-            this.GroupBoxCompra.Controls.Add(this.TxtBoxValorUnitario);
             this.GroupBoxCompra.Controls.Add(this.LabelValorUnitario);
-            this.GroupBoxCompra.Controls.Add(this.TxtBoxQuantidade);
             this.GroupBoxCompra.Controls.Add(this.LabelQuantidade);
             this.GroupBoxCompra.Controls.Add(this.TxtBoxCodigoProdutoVenda);
             this.GroupBoxCompra.Controls.Add(this.LabelCodigoProduto);
@@ -125,7 +125,7 @@
             this.BtnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnExcluir.ForeColor = System.Drawing.Color.White;
-            this.BtnExcluir.Location = new System.Drawing.Point(740, 168);
+            this.BtnExcluir.Location = new System.Drawing.Point(713, 120);
             this.BtnExcluir.Name = "BtnExcluir";
             this.BtnExcluir.Size = new System.Drawing.Size(233, 79);
             this.BtnExcluir.TabIndex = 32;
@@ -190,7 +190,7 @@
             this.BtnCadastrarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnCadastrarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastrarCompra.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarCompra.Location = new System.Drawing.Point(979, 168);
+            this.BtnCadastrarCompra.Location = new System.Drawing.Point(952, 120);
             this.BtnCadastrarCompra.Name = "BtnCadastrarCompra";
             this.BtnCadastrarCompra.Size = new System.Drawing.Size(196, 79);
             this.BtnCadastrarCompra.TabIndex = 24;
@@ -237,7 +237,7 @@
             this.BtnNovoIten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnNovoIten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnNovoIten.ForeColor = System.Drawing.Color.White;
-            this.BtnNovoIten.Location = new System.Drawing.Point(457, 168);
+            this.BtnNovoIten.Location = new System.Drawing.Point(430, 120);
             this.BtnNovoIten.Name = "BtnNovoIten";
             this.BtnNovoIten.Size = new System.Drawing.Size(277, 79);
             this.BtnNovoIten.TabIndex = 21;
@@ -275,7 +275,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGrid.DefaultCellStyle = dataGridViewCellStyle5;
-            this.DataGrid.Location = new System.Drawing.Point(6, 257);
+            this.DataGrid.Location = new System.Drawing.Point(6, 217);
             this.DataGrid.Name = "DataGrid";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -288,7 +288,7 @@
             this.DataGrid.RowHeadersWidth = 51;
             this.DataGrid.RowTemplate.Height = 29;
             this.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGrid.Size = new System.Drawing.Size(1169, 461);
+            this.DataGrid.Size = new System.Drawing.Size(1169, 501);
             this.DataGrid.TabIndex = 20;
             // 
             // DataGridProduto
@@ -362,41 +362,23 @@
             this.DatagridData.ReadOnly = true;
             this.DatagridData.Width = 75;
             // 
-            // TxtBoxValorUnitario
-            // 
-            this.TxtBoxValorUnitario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxValorUnitario.Location = new System.Drawing.Point(759, 26);
-            this.TxtBoxValorUnitario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxValorUnitario.Name = "TxtBoxValorUnitario";
-            this.TxtBoxValorUnitario.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxValorUnitario.TabIndex = 19;
-            // 
             // LabelValorUnitario
             // 
             this.LabelValorUnitario.AutoSize = true;
             this.LabelValorUnitario.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LabelValorUnitario.ForeColor = System.Drawing.Color.White;
-            this.LabelValorUnitario.Location = new System.Drawing.Point(638, 29);
+            this.LabelValorUnitario.Location = new System.Drawing.Point(638, 83);
             this.LabelValorUnitario.Name = "LabelValorUnitario";
             this.LabelValorUnitario.Size = new System.Drawing.Size(115, 23);
             this.LabelValorUnitario.TabIndex = 18;
             this.LabelValorUnitario.Text = "Valor Unitario";
-            // 
-            // TxtBoxQuantidade
-            // 
-            this.TxtBoxQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxQuantidade.Location = new System.Drawing.Point(759, 72);
-            this.TxtBoxQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxQuantidade.Name = "TxtBoxQuantidade";
-            this.TxtBoxQuantidade.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxQuantidade.TabIndex = 17;
             // 
             // LabelQuantidade
             // 
             this.LabelQuantidade.AutoSize = true;
             this.LabelQuantidade.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LabelQuantidade.ForeColor = System.Drawing.Color.White;
-            this.LabelQuantidade.Location = new System.Drawing.Point(638, 73);
+            this.LabelQuantidade.Location = new System.Drawing.Point(638, 26);
             this.LabelQuantidade.Name = "LabelQuantidade";
             this.LabelQuantidade.Size = new System.Drawing.Size(100, 23);
             this.LabelQuantidade.TabIndex = 16;
@@ -442,6 +424,26 @@
             this.TxtBoxSelecionarFornecedor.Size = new System.Drawing.Size(203, 27);
             this.TxtBoxSelecionarFornecedor.TabIndex = 17;
             // 
+            // TxtBoxQuantidade
+            // 
+            this.TxtBoxQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxQuantidade.Location = new System.Drawing.Point(781, 25);
+            this.TxtBoxQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxQuantidade.Name = "TxtBoxQuantidade";
+            this.TxtBoxQuantidade.Size = new System.Drawing.Size(238, 27);
+            this.TxtBoxQuantidade.TabIndex = 10;
+            this.TxtBoxQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxQuantidade_KeyPress_1);
+            // 
+            // TxtBoxUnitario
+            // 
+            this.TxtBoxUnitario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxUnitario.Location = new System.Drawing.Point(781, 79);
+            this.TxtBoxUnitario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxUnitario.Name = "TxtBoxUnitario";
+            this.TxtBoxUnitario.Size = new System.Drawing.Size(238, 27);
+            this.TxtBoxUnitario.TabIndex = 12;
+            this.TxtBoxUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxPreco_KeyPress);
+            // 
             // FormNovaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -475,9 +477,7 @@
         private Label LabelFormaPagemento;
         private Button BtnNovoIten;
         private DataGridView DataGrid;
-        private TextBox TxtBoxValorUnitario;
         private Label LabelValorUnitario;
-        private TextBox TxtBoxQuantidade;
         private Label LabelQuantidade;
         private TextBox TxtBoxCodigoProdutoVenda;
         private Label LabelCodigoProduto;
@@ -497,5 +497,7 @@
         private DataGridViewTextBoxColumn DatagridLaboratorio;
         private DataGridViewTextBoxColumn DatagridData;
         private Button BtnExcluir;
+        private TextBox TxtBoxUnitario;
+        private TextBox TxtBoxQuantidade;
     }
 }

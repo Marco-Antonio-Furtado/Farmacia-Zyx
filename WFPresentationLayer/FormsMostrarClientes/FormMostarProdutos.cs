@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace WfPresentationLayer.Alteraçoes
 {
-    public partial class Alteracao_Produto : Form
+    public partial class Produtos : Form
     {
-        public Alteracao_Produto()
+        public Produtos()
         {
             InitializeComponent();
+        }
+
+        private void BtnCadastrarFornecedor_Click(object sender, EventArgs e)
+        {
+            FormCadastroProduto Form = new FormCadastroProduto();   
+            Form.ShowDialog();
         }
     }
 }

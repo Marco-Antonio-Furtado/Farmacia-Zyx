@@ -11,7 +11,7 @@ namespace BusinessLogicalLayer.BusinessLL
         EstadoDAL EstadoDal = new EstadoDAL();  
         public Response Insert(Estado item)
         {
-            Response resposta = enderecoValitor.ValidateEstado(item);
+            Response resposta = EnderecoValitor.ValidateEstado(item);
             if (resposta.HasSuccess)
             {
                 return EstadoDal.Insert(item);
@@ -20,7 +20,7 @@ namespace BusinessLogicalLayer.BusinessLL
         }
         public Response Update(Estado item)
         {
-            Response resposta = enderecoValitor.ValidateEstado(item);
+            Response resposta = EnderecoValitor.ValidateEstado(item);
             if (resposta.HasSuccess)
             {
                 return EstadoDal.Update(item);

@@ -14,7 +14,7 @@ namespace DataAccessLayer
             //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
             string sql = $"INSERT INTO PRODUTOS (NOME,DESCRISCAO,LABORATORIO,VALOR_UNITARIO) VALUES                                 (@NOME,@DESCRISCAO,@LABORATORIO,@VALOR_UNITARIO)";
             string connectionString = DalDirectory;
-            
+
             //ADO.NET 
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -24,7 +24,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@LABORATORIO", item.Laboratorio);
             command.Parameters.AddWithValue("@VALOR_UNITARIO", item.ValorUnitario);
 
-           
+
             try
             {
                 connection.Open();
@@ -33,7 +33,7 @@ namespace DataAccessLayer
             }
             catch (Exception ex)
             {
-                
+
                 if (ex.Message.Contains("UQ_Produto_NOME"))
                 {
                     //RETORNAR MENSAGEM QUE O CPF TA DUPLICADO

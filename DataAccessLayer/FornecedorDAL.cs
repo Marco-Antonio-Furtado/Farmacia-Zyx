@@ -21,7 +21,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@CNPJ", fornecedor.CNPJ);
             command.Parameters.AddWithValue("@EMAIL", fornecedor.Email);
             command.Parameters.AddWithValue("@TELEFONE", fornecedor.Telefone);
-            
+
             try
             {
                 connection.Open();
@@ -45,19 +45,19 @@ namespace DataAccessLayer
                 connection.Dispose();
             }
         }
-    
+
 
         public Response Update(Fornecedor fornecedor)
-    {
-        //PARÂMETROS SQL - AUTOMATICAMENTE ADICIONA UMA "/" NA FRENTE DE NOMES COM ' EX SHAQQILE O'NEAL
-        //               - AUTOMATICAMENTE ADICIONAR '' EM DATAS, VARCHARS E CHARS
-        //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
-        string sql = $"UPDATE FORNECEDOR SET RAZAOSOCIAL = @RAZAOSOCIAL,NOMERESPONSAVEL = @NOMERESPONSAVEL,CNPJ = @CNPJ,EMAIL = @EMAIL, TELEFONE = @TELEFONE WHERE ID = @ID";
+        {
+            //PARÂMETROS SQL - AUTOMATICAMENTE ADICIONA UMA "/" NA FRENTE DE NOMES COM ' EX SHAQQILE O'NEAL
+            //               - AUTOMATICAMENTE ADICIONAR '' EM DATAS, VARCHARS E CHARS
+            //               - AUTOMATICAMENTE VALIDA SQL INJECTIONS BÁSICOS
+            string sql = $"UPDATE FORNECEDOR SET RAZAOSOCIAL = @RAZAOSOCIAL,NOMERESPONSAVEL = @NOMERESPONSAVEL,CNPJ = @CNPJ,EMAIL = @EMAIL, TELEFONE = @TELEFONE WHERE ID = @ID";
 
-        string connectionString = DalDirectory;
+            string connectionString = DalDirectory;
 
-        //ADO.NET 
-        SqlConnection connection = new SqlConnection(connectionString);
+            //ADO.NET 
+            SqlConnection connection = new SqlConnection(connectionString);
 
             SqlCommand command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("@RAZAOSOCIAL", fornecedor.RazaoSocial);
@@ -71,32 +71,32 @@ namespace DataAccessLayer
             //try catch finally
             //try finally
             try
-        {
-            connection.Open();
-            int qtdRegistrosAlterados = command.ExecuteNonQuery();
-            if (qtdRegistrosAlterados != 1)
             {
-                return new Response("Cliente excluido.", false);
+                connection.Open();
+                int qtdRegistrosAlterados = command.ExecuteNonQuery();
+                if (qtdRegistrosAlterados != 1)
+                {
+                    return new Response("Cliente excluido.", false);
+                }
+                return new Response("Cliente alterado com sucesso.", true);
             }
-            return new Response("Cliente alterado com sucesso.", true);
-        }
-        catch (Exception ex)
-        {
-            if (ex.Message.Contains("UQ_FORNECEDOR_EMAIL"))
+            catch (Exception ex)
             {
-                //RETORNAR MENSAGEM QUE O EMAIL TA DUPLICADO
-                return new Response("Email já está em uso.", false);
+                if (ex.Message.Contains("UQ_FORNECEDOR_EMAIL"))
+                {
+                    //RETORNAR MENSAGEM QUE O EMAIL TA DUPLICADO
+                    return new Response("Email já está em uso.", false);
+                }
+                //SE NAO ENTROU EM NENHUM IF DE CIMA, SÓ PODE SER UM ERRO DE INFRAESTRUTURA
+                return new Response("Erro no banco de dados, contate o administrador.", false);
             }
-            //SE NAO ENTROU EM NENHUM IF DE CIMA, SÓ PODE SER UM ERRO DE INFRAESTRUTURA
-            return new Response("Erro no banco de dados, contate o administrador.", false);
+            //Instrução que SEMPRE será executada e "fecharão" a conexão caso ela esteja aberta
+            finally
+            {
+                //Fecha a conexão
+                connection.Dispose();
+            }
         }
-        //Instrução que SEMPRE será executada e "fecharão" a conexão caso ela esteja aberta
-        finally
-        {
-            //Fecha a conexão
-            connection.Dispose();
-        }
-    }
         public Response Delete(int id)
         {
             string sql = "DELETE FROM FORNECEDOR WHERE ID = @ID";
@@ -173,7 +173,7 @@ namespace DataAccessLayer
                                                            razaoSocial: Convert.ToString(reader["RAZAO_SOCIAL"]),
                                                            email: Convert.ToString(reader["EMAIL"]));
                     fornecedor.ID = Convert.ToInt32(reader["ID"]);
-                    
+
                     fornecedores.Add(fornecedor);
                 }
                 return new DataResponse<Fornecedor>("fornecedor selecionados com sucesso!", true, fornecedores);
@@ -218,7 +218,7 @@ namespace DataAccessLayer
 
 
                     fornecedor.ID = Convert.ToInt32(reader["ID"]);
-                    
+
                     return new SingleResponse<Fornecedor>("fornecedor selecionado com sucesso!", true, fornecedor);
                 }
                 return new SingleResponse<Fornecedor>("fornecedor não encontrado!", false, null);

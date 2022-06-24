@@ -9,7 +9,7 @@
             {
                 return "string nao pode ser vazia\r\n";
             }
-            
+
             if (nome.Length <= 2)
             {
                 return "nome insuficiente\r\n";
@@ -36,7 +36,7 @@
             {
                 return "laboratorio nao informado\r\n";
             }
-            if(laboratorio.Length <= 2)
+            if (laboratorio.Length <= 2)
             {
                 return "laboratorio insuficiente\r\n";
             }

@@ -6,7 +6,7 @@ namespace DataAccessLayer
 {
     public class EnderecoDAL : ICRUD<Endereco>
     {
-        
+
         public Response Insert(Endereco item)
         {
             string sql = $"INSERT INTO ENDERECO (CEP, NOME_RUA, NUMERO_CASA, CIDADE_ID, ESTADO_ID) VALUES (@CEP, @NOME_RUA, @NUMERO_CASA, @CIDADE_ID, @ESTADO_ID)";
@@ -21,8 +21,8 @@ namespace DataAccessLayer
 
             try
             {
-            DbExecuter dbExecuter = new DbExecuter();
-            dbExecuter.Execute(command);
+                DbExecuter dbExecuter = new DbExecuter();
+                dbExecuter.Execute(command);
             }
             catch (Exception ex)
             {
@@ -33,7 +33,7 @@ namespace DataAccessLayer
                 else
                 {
                     return new Response(ex.Message, false);
-                }  
+                }
             }
             return new Response("Endereco cadastrado com sucesso", true);
         }
@@ -42,7 +42,7 @@ namespace DataAccessLayer
         {
 
             string sql = $"UPDATE CLIENTES SET NOME_RUA = @NOME_RUA, CEP = @CEP, NUMERO_CASA = @NUMERO_CASA, CIDADE_ID = @CIDADE_ID, ESTADO_ID = @ESTADO_ID WHERE ID = @ID";
-           
+
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@CEP", item.CEP);
             command.Parameters.AddWithValue("@NOME_RUA", item.NomeRua);
@@ -57,9 +57,9 @@ namespace DataAccessLayer
             }
             catch (Exception ex)
             {
- 
-               return new Response(ex.Message, false);
-                
+
+                return new Response(ex.Message, false);
+
             }
             return new Response("Endereco alterado com sucesso", true);
 
@@ -87,10 +87,6 @@ namespace DataAccessLayer
             {
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
-            finally
-            {
-                //connection.Dispose();
-            }
         }
 
         public DataResponse<Endereco> GetAll()
@@ -106,50 +102,37 @@ namespace DataAccessLayer
                 return new DataResponse<Endereco>("Erro no banco de dados, contate o administrador", false, null);
             }
         }
-         
-
-        public SingleResponse<Endereco> GetByEmail(string email)
-        {
-            throw new NotImplementedException();
-        }
 
         public SingleResponse<Endereco> GetByID(int id)
         {
 
-            string sql = $"SELECT RUA,BAIRRO,CEP,NUMERO,COMPLEMENTO,PONTO_REFERENCIA,CIDADE,ESTADO FROM ENDERECO WHERE ID = @ID";
+            string query = $"SELECT * FROM ENDERECO WHERE ID = @ID";
+            SqlCommand command = new SqlCommand(query);
 
-            string connectionString = "teste"; 
-
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            SqlCommand command = new SqlCommand(sql, connection);
+            DbExecuter dbExecuter = new DbExecuter();
             command.Parameters.AddWithValue("@ID", id);
             try
             {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                /*if (reader.Read())
-                {
-                    Endereco Endereco = new Endereco(rua: Convert.ToString(reader["RUA"]),
-                                                     bairro: Convert.ToString(reader["BAIRRO"]),
-                                                     cEP: Convert.ToString(reader["CEP"]),
-                                                     numero: Convert.ToString(reader["NUMERO"]),
-                                                     cidade: Convert.ToString(reader["CIDADE"]),
-                                                     estado: Convert.ToString(reader["ESTADO"]),
-                                                     complemento: Convert.ToString(reader["COMPLEMENTO"]),
-                                                     pontoReferencia: Convert.ToString(reader["PONTO_REFERENCIA"]));
-                    Endereco.ID = Convert.ToInt32(reader["ID"]);
-                    return new SingleResponse<Endereco>("Endereco selecionado com sucesso!", true, Endereco);
-                }*/
+                dbExecuter.GetData<Endereco>(command);
+
+
+
+                /* SqlDataReader reader = command.ExecuteReader();
+                 if (reader.Read())
+                 {
+                     Endereco Endereco = new Endereco(Convert.ToString(reader["CEP"]),
+                                                       Convert.ToString(reader["NOME_RUA"]),
+                                                       Convert.ToString(reader["NUMERO_CASA"]),
+                                                       Convert.ToInt32(reader["ESTADO_ID"]),
+                                                       Convert.ToInt32(reader["CIDADE_ID"]));
+                     Endereco.ID = Convert.ToInt32(reader["ID"]);
+                     return new SingleResponse<Endereco>("Endereco selecionado com sucesso!", true, Endereco);
+                 }*/
                 return new SingleResponse<Endereco>("Endereco não encontrado!", false, null);
             }
             catch (Exception ex)
             {
-                return new SingleResponse<Endereco>("Erro no banco de dados, contate o administrador.", false, null);
-            }
-            finally
-            {
-                connection.Dispose();
+                return new SingleResponse<Endereco>("Erro no banco de dados, contate o administrador. \r\n" + ex.Message, false, null);
             }
         }
 

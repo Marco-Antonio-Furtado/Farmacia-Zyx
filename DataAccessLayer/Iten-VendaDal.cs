@@ -13,7 +13,7 @@ namespace DataAccessLayer
             string connectionString = DalDirectory;
 
             SqlConnection connection = new SqlConnection(connectionString);
-            
+
             SqlCommand command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("@DATA", item.Data);
             command.Parameters.AddWithValue("@PRODUTO", item.Produto);
@@ -132,7 +132,7 @@ namespace DataAccessLayer
                                                            valorTotal: Convert.ToDouble(reader["VALOR_TOTAL"]),
                                                            formaPagamento: Convert.ToString(reader["FORMA_PAGAMENTO"]),
                                                            nomeFuncionario: Convert.ToString(reader["NOME_CLIENTE"]));
-                                                           
+
                     Item_Venda.ID = Convert.ToInt32(reader["ID"]);
 
                     ListaVendas.Add(Item_Venda);

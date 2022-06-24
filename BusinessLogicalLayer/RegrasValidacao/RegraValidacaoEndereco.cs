@@ -42,7 +42,7 @@ namespace BusinessLogicalLayer.RegrasValidacao
             {
                 return "Estado tem que ser informado\r\n";
             }
-            if(Estado.UF.Length != 2)
+            if (Estado.UF.Length != 2)
             {
                 return "Estado Com Formato Incorreto\r\n";
             }

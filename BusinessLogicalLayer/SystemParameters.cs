@@ -1,5 +1,6 @@
 ﻿using Entities;
 using Entities.enums;
+using Shared;
 
 namespace BusinessLogicalLayer
 {
@@ -22,9 +23,9 @@ namespace BusinessLogicalLayer
             return UsuarioLogado != null;
         }
 
-        public static Hierarquia GetPermissao()
+        public static Cargo GetPermissao()
         {
-            return UsuarioLogado.PosicaoHierarquica;
+            return UsuarioLogado.Cargo;
         }
     }
 

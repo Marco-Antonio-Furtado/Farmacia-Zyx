@@ -42,9 +42,9 @@ namespace DataAccessLayer
         public Response Update(Item_Compra item)
         {
             string sql = $"UPDATE ITEM_COMPRA SET DATA = @DATA, PRODUTO = @PRODUTO, FORNECEDOR = @FORNECEDOR,FORMA_PAGAMENTO = @FORMA_PAGAMENTO, QUANTIDADE = @QUANTIDADE, PRECO_UNITARIO = @PRECO_UNITARIO, VALOR_TOTAL = @VALOR_TOTAL WHERE ID = @ID";
-            
+
             string connectionString = DalDirectory;
-            
+
             SqlConnection connection = new SqlConnection(connectionString);
 
             SqlCommand command = new SqlCommand(sql, connection);
@@ -67,7 +67,7 @@ namespace DataAccessLayer
             }
             catch (Exception ex)
             {
-                
+
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
             finally

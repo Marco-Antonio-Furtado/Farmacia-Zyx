@@ -9,7 +9,7 @@ namespace DataAccessLayer
     public class ClienteDAL : ICRUD<Cliente>
     {
         internal const string DalDirectory = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\AdultMovieLocatorDb.mdf;Integrated Security=True;Connect Timeout=3";
-        
+
         public Response Insert(Cliente cliente)
         {
             string sql = $"INSERT INTO CLIENTES (NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2) VALUES (@NOME,@CPF,@RG,@EMAIL,@TELEFONE1,@TELEFONE2)";
@@ -49,7 +49,7 @@ namespace DataAccessLayer
 
         public Response Update(Cliente cliente)
         {
-            
+
             string sql = $"UPDATE CLIENTES SET NOME = @NOME, CPF = @CPF, RG = @RG, EMAIL = @EMAIL, TELEFONE1 = @TELEFONE1, TELEFONE2 = @TELEFONE2 WHERE ID = @ID";
 
             string connectionString = DalDirectory;
@@ -65,7 +65,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@TELEFONE2", cliente.Telefone2);
             command.Parameters.AddWithValue("@ID", cliente.ID);
 
-            
+
             try
             {
                 connection.Open();
@@ -100,7 +100,7 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("@ID", id);
-            
+
             try
             {
                 connection.Open();
@@ -123,7 +123,7 @@ namespace DataAccessLayer
 
         public DataResponse<Cliente> GetAll()
         {
-            
+
             string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2 FROM CLIENTES";
 
             string connectionString = DalDirectory;
@@ -138,7 +138,7 @@ namespace DataAccessLayer
                 List<Cliente> clientes = new List<Cliente>();
                 while (reader.Read())
                 {
-                    Cliente cliente = new Cliente(nome : Convert.ToString(reader["NOME"]),
+                    Cliente cliente = new Cliente(nome: Convert.ToString(reader["NOME"]),
                                                   cPF: Convert.ToString(reader["CPF"]),
                                                   rG: Convert.ToString(reader["RG"]),
                                                   email: Convert.ToString(reader["EMAIL"]),
@@ -160,7 +160,7 @@ namespace DataAccessLayer
         }
         public SingleResponse<Cliente> GetByID(int id)
         {
-            
+
             string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2 FROM CLIENTES WHERE ID = @ID";
 
             string connectionString = DalDirectory;
@@ -267,7 +267,7 @@ namespace DataAccessLayer
             }
             finally
             {
-                
+
                 connection.Dispose();
             }
         }

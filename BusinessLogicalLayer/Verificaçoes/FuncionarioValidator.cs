@@ -34,9 +34,7 @@ namespace BusinessLogicalLayer.Verificaçoes
                 return new Response(erros.ToString(), false);
             }
 
-            //Se chegou aqui, validamos com sucesso!
             funcionario.Nome = normatization.NormatizeName(funcionario.Nome);
-            //return clienteDAL.Create(funcionario);
             return new Response("Daqui esta indo pro banco", true);
             
         }

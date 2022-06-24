@@ -43,9 +43,43 @@ namespace DataAccessLayer
 
             }
         }
+
+        public SingleResponse<T> GetItem<T>(SqlCommand command)
+        {
+            DbConnection conn = new DbConnection();
+
+            try
+            {
+                conn.AttachCommand(command);
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                SingleResponse<T> response = new SingleResponse<T>("Comando executado com sucesso", true, dt.Rows[0].ToItem<T>());
+                return response;
+            }
+            finally
+            {
+                conn.Close();
+
+            }
+        }
+
     }
     internal static class SqlExtensions
     {
+        public static T ToItem<T>(this DataRow item)
+        {
+            PropertyInfo[] propriedades = typeof(T).GetProperties();
+            T t = Activator.CreateInstance<T>();
+
+            foreach (var prop in propriedades)
+            {
+                prop.SetValue(t, item[prop.Name]);
+            }
+            return t;
+        }
+
         public static List<T> ToTable<T>(this DataTable dt)
         {
             List<T> items = new List<T>();
@@ -66,34 +100,35 @@ namespace DataAccessLayer
             return items;
         }
     }
-    internal class DbConnection
-    {
-        private SqlConnection conn;
-
-        public DbConnection()
-        {
-            conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\FarmaciaZyx.mdf;Integrated Security=True;Connect Timeout=30");
-        }
-        public void Open()
-        {
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-        }
-
-        public void Close()
-        {
-            conn.Dispose();
-        }
-
-        public void AttachCommand(SqlCommand command)
-        {
-            command.Connection = this.conn;
-        }
-
-    }
 }
+internal class DbConnection
+{
+    private SqlConnection conn;
+
+    public DbConnection()
+    {
+        conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\FarmaciaZyx.mdf;Integrated Security=True;Connect Timeout=30");
+    }
+    public void Open()
+    {
+        if (conn.State == ConnectionState.Closed)
+        {
+            conn.Open();
+        }
+    }
+
+    public void Close()
+    {
+        conn.Dispose();
+    }
+
+    public void AttachCommand(SqlCommand command)
+    {
+        command.Connection = this.conn;
+    }
+
+}
+
 //-------------------------------------------------------------------------------------------------
 //Exemplo de uso:
 //public DataResponse<Cliente> GetAll()

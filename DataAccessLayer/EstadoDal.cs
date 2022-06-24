@@ -111,9 +111,9 @@ namespace DataAccessLayer
                 List<Estado> Estados = new List<Estado>();
                 while (reader.Read())
                 {
-                    Estado Estado = new Estado(nome: Convert.ToString(reader["NOME"]),  
+                    Estado Estado = new Estado(nome: Convert.ToString(reader["NOME"]),
                                                uF: Convert.ToString(reader["UF"]));
-                    
+
                     Estado.ID = Convert.ToInt32(reader["ID"]);
                     Estados.Add(Estado);
                 }

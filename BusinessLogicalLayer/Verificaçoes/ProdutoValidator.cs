@@ -11,8 +11,7 @@ namespace BusinessLogicalLayer.Verificaçoes
             StringBuilder erros = new StringBuilder("");
 
             erros.Append(RegraValidacaoIten.ValidateProdutoNome(produto.Nome));
-            erros.Append(RegraValidacaoIten.ValidateDescrisaoProduto(produto.Descriscao));
-            erros.Append(RegraValidacaoIten.ValidateLaboratorio(produto.Laboratorio));
+            erros.Append(RegraValidacaoIten.ValidateDescrisaoProduto(produto.Descricao));
 
             if (!String.IsNullOrWhiteSpace(erros.ToString()))
             {

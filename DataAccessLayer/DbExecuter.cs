@@ -32,7 +32,7 @@ namespace DataAccessLayer
                 conn.AttachCommand(command);
                 conn.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                DataTable dt = new DataTable();
+                DataTable dt = new();
                 dt.Load(reader);
                 DataResponse<T> response = new DataResponse<T>("Comando executado com sucesso", true, dt.ToTable<T>());
                 return response;

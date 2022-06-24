@@ -102,7 +102,6 @@ namespace DataAccessLayer
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
         }
-        //FALTA DOS COMMAND.ADDWITHVALUE.....
         public DataResponse<Funcionario> GetAll()
         {
             string query = $"SELECT * FROM FUNCIONARIOS";
@@ -114,8 +113,12 @@ namespace DataAccessLayer
         public SingleResponse<Funcionario> GetByID(int id)
         {
             string query = $"SELECT * FROM FUNCIONARIOS WHERE ID = @ID";
+            
             SqlCommand command = new SqlCommand(query);
+            command.Parameters.AddWithValue("@ID", id);
+
             DbExecuter dbExecuter = new DbExecuter();
+
             return dbExecuter.GetItem<Funcionario>(command);
 
         }
@@ -123,7 +126,11 @@ namespace DataAccessLayer
         public SingleResponse<Funcionario> GetByEmail(string email)
         {
             string query = $"SELECT * FROM FUNCIONARIO WHERE EMAIL = @EMAIL";
+            
             SqlCommand command = new SqlCommand(query);
+            command.Parameters.AddWithValue("@EMAIL", email);
+
+
             DbExecuter dbExecuter = new DbExecuter();
             return dbExecuter.GetItem<Funcionario>(command);
 

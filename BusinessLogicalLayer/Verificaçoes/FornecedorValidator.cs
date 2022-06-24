@@ -10,7 +10,7 @@ namespace BusinessLogicalLayer.Verificaçoes
         {
             StringBuilder erros = new StringBuilder("");
 
-            erros.Append(RegraValidacaoString.ValidateNome(fornecedor.NomeResponsavel));
+            erros.Append(RegraValidacaoString.ValidateNome(fornecedor.NomeContato));
             erros.Append(RegraValidacaoString.ValidateEmail(fornecedor.Email));
             erros.Append(RegraValidacaoString.ValidateTelefone(fornecedor.Telefone));
             if (!RegraValidacaoString.IsCnpj(fornecedor.CNPJ)) erros.Append("CNPJ Invalido");
@@ -22,7 +22,7 @@ namespace BusinessLogicalLayer.Verificaçoes
             }
 
             //Se chegou aqui, validamos com sucesso!
-            fornecedor.NomeResponsavel = RegraNormatizacao.NormatizeName(fornecedor.NomeResponsavel);
+            fornecedor.NomeContato = RegraNormatizacao.NormatizeName(fornecedor.NomeContato);
             // tem que ser fornecedorDAL ao invés de clienteDAL
             //return clienteDAL.Insert(fornecedor);
             return new Response("Daqui esta indo pro banco", true);

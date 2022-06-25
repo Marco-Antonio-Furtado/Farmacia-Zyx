@@ -25,7 +25,7 @@ namespace BusinessLogicalLayer.Verificaçoes
         internal static Response ValidateEstado(Estado estado)
         {
             StringBuilder erros = new StringBuilder("");
-            erros.Append(RegraValidacaoEndereco.ValidateEstado(estado));
+            erros.Append(RegraValidacaoEndereco.ValidateEstado(estado.ID));
             if (!String.IsNullOrWhiteSpace(erros.ToString()))
             {
                 return new Response(erros.ToString(), false);
@@ -35,7 +35,7 @@ namespace BusinessLogicalLayer.Verificaçoes
         internal static Response ValidateCidade(Cidade cidade)
         {
             StringBuilder erros = new StringBuilder("");
-            erros.Append(RegraValidacaoEndereco.ValidateCidade(cidade.Nome));
+            erros.Append(RegraValidacaoEndereco.ValidateCidade(cidade.ID));
             if (!String.IsNullOrWhiteSpace(erros.ToString()))
             {
                 return new Response(erros.ToString(), false);

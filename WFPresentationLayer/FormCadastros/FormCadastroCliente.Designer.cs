@@ -231,9 +231,9 @@
         private MaskedTextBox TxtBoxCpfCLiente;
         private Label label2;
         private Label label1;
-        private TextBox txtBoxNomeCliente;
         private MaskedTextBox TxtBoxTelefone2Cliente;
         private Label label3;
         private Button BtnCadastrarCliente;
+        public TextBox txtBoxNomeCliente;
     }
 }

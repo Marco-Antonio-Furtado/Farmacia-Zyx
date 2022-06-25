@@ -47,13 +47,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxNomeFuncionario = new System.Windows.Forms.TextBox();
             this.TabEndereco = new System.Windows.Forms.TabPage();
+            this.CmbBoxEstado = new System.Windows.Forms.ComboBox();
+            this.CmbBoxCidade = new System.Windows.Forms.ComboBox();
+            this.TxtBoxNumero = new System.Windows.Forms.TextBox();
             this.BtnCadastroFuncionario = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.TxtBoxNumero = new System.Windows.Forms.MaskedTextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.TxtBoxEstado = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.TxtBoxCidade = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.TxtBoxRua = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -279,13 +279,13 @@
             // TabEndereco
             // 
             this.TabEndereco.BackColor = System.Drawing.Color.IndianRed;
+            this.TabEndereco.Controls.Add(this.CmbBoxEstado);
+            this.TabEndereco.Controls.Add(this.CmbBoxCidade);
+            this.TabEndereco.Controls.Add(this.TxtBoxNumero);
             this.TabEndereco.Controls.Add(this.BtnCadastroFuncionario);
             this.TabEndereco.Controls.Add(this.label15);
-            this.TabEndereco.Controls.Add(this.TxtBoxNumero);
             this.TabEndereco.Controls.Add(this.label14);
-            this.TabEndereco.Controls.Add(this.TxtBoxEstado);
             this.TabEndereco.Controls.Add(this.label13);
-            this.TabEndereco.Controls.Add(this.TxtBoxCidade);
             this.TabEndereco.Controls.Add(this.label9);
             this.TabEndereco.Controls.Add(this.TxtBoxRua);
             this.TabEndereco.Controls.Add(this.label8);
@@ -298,6 +298,40 @@
             this.TabEndereco.Size = new System.Drawing.Size(458, 431);
             this.TabEndereco.TabIndex = 1;
             this.TabEndereco.Text = "Endereco";
+            // 
+            // CmbBoxEstado
+            // 
+            this.CmbBoxEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.CmbBoxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbBoxEstado.FormattingEnabled = true;
+            this.CmbBoxEstado.Location = new System.Drawing.Point(251, 49);
+            this.CmbBoxEstado.Name = "CmbBoxEstado";
+            this.CmbBoxEstado.Size = new System.Drawing.Size(200, 31);
+            this.CmbBoxEstado.Sorted = true;
+            this.CmbBoxEstado.TabIndex = 87;
+            this.CmbBoxEstado.SelectedIndexChanged += new System.EventHandler(this.CmbBoxEstado_SelectedIndexChanged_1);
+            // 
+            // CmbBoxCidade
+            // 
+            this.CmbBoxCidade.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.CmbBoxCidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.CmbBoxCidade.Enabled = false;
+            this.CmbBoxCidade.FormattingEnabled = true;
+            this.CmbBoxCidade.Location = new System.Drawing.Point(251, 139);
+            this.CmbBoxCidade.Name = "CmbBoxCidade";
+            this.CmbBoxCidade.Size = new System.Drawing.Size(200, 31);
+            this.CmbBoxCidade.TabIndex = 85;
+            this.CmbBoxCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbBoxCidade_KeyPress);
+            // 
+            // TxtBoxNumero
+            // 
+            this.TxtBoxNumero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxNumero.ForeColor = System.Drawing.Color.White;
+            this.TxtBoxNumero.Location = new System.Drawing.Point(18, 235);
+            this.TxtBoxNumero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxNumero.Name = "TxtBoxNumero";
+            this.TxtBoxNumero.Size = new System.Drawing.Size(203, 30);
+            this.TxtBoxNumero.TabIndex = 86;
             // 
             // BtnCadastroFuncionario
             // 
@@ -318,70 +352,40 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(6, 148);
+            this.label15.Location = new System.Drawing.Point(18, 208);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(73, 23);
             this.label15.TabIndex = 64;
             this.label15.Text = "Número";
-            // 
-            // TxtBoxNumero
-            // 
-            this.TxtBoxNumero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxNumero.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxNumero.Location = new System.Drawing.Point(6, 171);
-            this.TxtBoxNumero.Mask = "0999";
-            this.TxtBoxNumero.Name = "TxtBoxNumero";
-            this.TxtBoxNumero.Size = new System.Drawing.Size(125, 30);
-            this.TxtBoxNumero.TabIndex = 18;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(251, 89);
+            this.label14.Location = new System.Drawing.Point(251, 10);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(61, 23);
             this.label14.TabIndex = 62;
             this.label14.Text = "Estado";
-            // 
-            // TxtBoxEstado
-            // 
-            this.TxtBoxEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxEstado.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxEstado.Location = new System.Drawing.Point(251, 113);
-            this.TxtBoxEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxEstado.Name = "TxtBoxEstado";
-            this.TxtBoxEstado.Size = new System.Drawing.Size(203, 30);
-            this.TxtBoxEstado.TabIndex = 17;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(251, 16);
+            this.label13.Location = new System.Drawing.Point(251, 113);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 23);
             this.label13.TabIndex = 60;
             this.label13.Text = "Cidade";
-            // 
-            // TxtBoxCidade
-            // 
-            this.TxtBoxCidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxCidade.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxCidade.Location = new System.Drawing.Point(251, 40);
-            this.TxtBoxCidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxCidade.Name = "TxtBoxCidade";
-            this.TxtBoxCidade.Size = new System.Drawing.Size(203, 30);
-            this.TxtBoxCidade.TabIndex = 16;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(6, 78);
+            this.label9.Location = new System.Drawing.Point(18, 116);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 23);
             this.label9.TabIndex = 52;
@@ -391,7 +395,7 @@
             // 
             this.TxtBoxRua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.TxtBoxRua.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxRua.Location = new System.Drawing.Point(6, 102);
+            this.TxtBoxRua.Location = new System.Drawing.Point(18, 140);
             this.TxtBoxRua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxRua.Name = "TxtBoxRua";
             this.TxtBoxRua.Size = new System.Drawing.Size(203, 30);
@@ -402,7 +406,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(6, 7);
+            this.label8.Location = new System.Drawing.Point(18, 13);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 23);
             this.label8.TabIndex = 50;
@@ -412,7 +416,7 @@
             // 
             this.TxtBoxCep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.TxtBoxCep.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxCep.Location = new System.Drawing.Point(6, 29);
+            this.TxtBoxCep.Location = new System.Drawing.Point(18, 49);
             this.TxtBoxCep.Mask = "00000-000";
             this.TxtBoxCep.Name = "TxtBoxCep";
             this.TxtBoxCep.Size = new System.Drawing.Size(125, 30);
@@ -457,7 +461,6 @@
         private TextBox txtBoxNomeFuncionario;
         private TabPage TabEndereco;
         private Label label15;
-        private MaskedTextBox TxtBoxNumero;
         private Label label14;
         private TextBox TxtBoxEstado;
         private Label label13;
@@ -469,5 +472,8 @@
         private Button BtnCadastroEndereco;
         private Button BtnCadastroFuncionario;
         private ComboBox CmbBoxAdmin;
+        private TextBox TxtBoxNumero;
+        private ComboBox CmbBoxEstado;
+        private ComboBox CmbBoxCidade;
     }
 }

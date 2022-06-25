@@ -79,7 +79,7 @@ namespace WfPresentationLayer
         private void BtnMenuFuncionario_Click(object sender, EventArgs e)
         {
             _objForm?.Close();
-            _objForm = new FormCadastroFuncionario
+            _objForm = new Alteracao_Funcionario
             {
                 TopLevel = false,
                 FormBorderStyle = FormBorderStyle.None,

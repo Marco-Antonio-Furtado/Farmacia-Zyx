@@ -9,6 +9,7 @@ namespace BusinessLogicalLayer.BusinessLL
     {
         FuncionarioDAL funcionarioDAL = new FuncionarioDAL();
         FuncionarioValidator funcionarioValidator = new FuncionarioValidator();
+
         public Response Insert(Funcionario item)
         {
             Response resposta = funcionarioValidator.Validate(item);

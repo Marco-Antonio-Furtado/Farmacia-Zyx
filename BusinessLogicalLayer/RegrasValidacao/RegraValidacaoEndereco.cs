@@ -28,24 +28,21 @@ namespace BusinessLogicalLayer.RegrasValidacao
             }
             else return "";
         }
-        internal static string ValidateCidade(string Cidade)
+        internal static string ValidateCidade(int Cidade)
         {
-            if (string.IsNullOrWhiteSpace(Cidade))
+            if (string.IsNullOrWhiteSpace(Cidade.ToString()))
             {
                 return "Cidade tem que ser informado\r\n";
             }
             else return "";
         }
-        internal static string ValidateEstado(Estado Estado)
+        internal static string ValidateEstado(int Estado)
         {
-            if (string.IsNullOrWhiteSpace(Estado.Nome))
+            if (string.IsNullOrWhiteSpace(Estado.ToString()))
             {
                 return "Estado tem que ser informado\r\n";
             }
-            if (Estado.UF.Length != 2)
-            {
-                return "Estado Com Formato Incorreto\r\n";
-            }
+           
             else return "";
         }
     }

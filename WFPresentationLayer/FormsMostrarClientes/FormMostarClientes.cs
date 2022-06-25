@@ -17,10 +17,12 @@
             _objForm1?.Close();
             _objForm1 = new FormCadastroCliente
             {
+                
                 TopLevel = false,
                 FormBorderStyle = FormBorderStyle.None,
                 Dock = DockStyle.Fill,
             };
+            
             PnlCl.Controls.Add(_objForm1);
             _objForm1.Show();
             _objForm1.BringToFront();

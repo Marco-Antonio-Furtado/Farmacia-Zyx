@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WfPresentationLayer.FormCadastros;
 
 namespace WfPresentationLayer.Alteraçoes
 {
     public partial class Alteracao_Funcionario : Form
     {
+        private Form _objForm2;
         public Alteracao_Funcionario()
         {
             InitializeComponent();
@@ -19,8 +21,16 @@ namespace WfPresentationLayer.Alteraçoes
 
         private void BtnCadastrarFornecedor_Click(object sender, EventArgs e)
         {
-            FormCadastroFuncionario form = new FormCadastroFuncionario();
-            form.ShowDialog();
+            _objForm2?.Close();
+            _objForm2 = new FormCadastroFuncionario
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill,
+            };
+            pnlFunc.Controls.Add(_objForm2);
+            _objForm2.Show();
+            _objForm2.BringToFront();
         }
     }
 }

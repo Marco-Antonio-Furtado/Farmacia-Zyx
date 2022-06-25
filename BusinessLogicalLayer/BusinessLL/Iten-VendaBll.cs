@@ -4,7 +4,7 @@ using Shared;
 
 namespace BusinessLogicalLayer.BusinessLL
 {
-    public class Iten_VendaBll : ICRUD<Item_Venda>
+    public class Iten_VendaBll 
     {
         Iten_VendaDal iten_VendaDal = new Iten_VendaDal();
         public Response InsertList(List<Item_Venda> item)

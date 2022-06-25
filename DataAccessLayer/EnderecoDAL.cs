@@ -13,7 +13,7 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@CEP", item.CEP);
-            command.Parameters.AddWithValue("@NOME_RUA", item.NomeRua);
+            command.Parameters.AddWithValue("@", item.NomeRua);
             command.Parameters.AddWithValue("@NUMERO_CASA", item.NumeroCasa);
             command.Parameters.AddWithValue("@CIDADE_ID", item.CidadeID);
             command.Parameters.AddWithValue("@ESTADO_ID", item.EstadoID);

@@ -9,8 +9,6 @@ namespace BusinessLogicalLayer
         private const int CARACTERES_CPF = 11;
         private const int MAXIMO_CARACTERES_EMAIL = 100;
         private const int MINIMO_CARACTERES_EMAIL = 3;
-        private const int CARACTERES_CEP = 8;
-        private const int CARACTERES_CNPJ = 14;
         internal static string ValidateNome(string nome)
         {
             if (string.IsNullOrWhiteSpace(nome))
@@ -111,26 +109,6 @@ namespace BusinessLogicalLayer
             }
             return "";
         }
-        internal static string ValidateCEP(string cep)
-        {
-            if (string.IsNullOrWhiteSpace(cep))
-            {
-                return "CEP deve ser informado.\r\n";
-            }
-            cep = cep.Trim();
-            cep = cep.Replace("-", "").Replace(".", "");
-            if (cep.Length != CARACTERES_CEP)
-            {
-                return "CEP deve conter 8 dígitos (sem considerar hífen/ponto).\r\n";
-            }
-            int temp = 0;
-            if (!int.TryParse(cep, out temp))
-            {
-                //Se a conversão não funcionar
-                return "CEP em formato incorreto.\r\n";
-            }
-            return "";
-        }
         internal static string ValidateTelefone(string telefone)
         {
             if (string.IsNullOrWhiteSpace(telefone))
@@ -163,52 +141,6 @@ namespace BusinessLogicalLayer
                 return "RG tem que ser informado\r\n";
             }
             return "";
-        }
-        internal static bool IsCnpj(string cnpj)
-        {
-            int[] multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
-            int[] multiplicador2 = new int[13] { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
-            int soma;
-            int resto;
-            string digito;
-            string tempCnpj;
-            cnpj = cnpj.Trim();
-            cnpj = cnpj.Replace(".", "").Replace("-", "").Replace("/", "");
-            if (cnpj.Length != CARACTERES_CNPJ)
-                return false;
-            tempCnpj = cnpj.Substring(0, 12);
-            soma = 0;
-            for (int i = 0; i < 12; i++)
-                soma += int.Parse(tempCnpj[i].ToString()) * multiplicador1[i];
-            resto = (soma % 11);
-            if (resto < 2)
-                resto = 0;
-            else
-                resto = 11 - resto;
-            digito = resto.ToString();
-            tempCnpj += digito;
-            soma = 0;
-            for (int i = 0; i < 13; i++)
-                soma += int.Parse(tempCnpj[i].ToString()) * multiplicador2[i];
-            resto = (soma % 11);
-            if (resto < 2)
-                resto = 0;
-            else
-                resto = 11 - resto;
-            digito += resto.ToString();
-            return cnpj.EndsWith(digito);
-        }
-        internal static string ValidateRazaoSocial(string RazaoSocial)
-        {
-            if (string.IsNullOrWhiteSpace(RazaoSocial))
-            {
-                return "Razao Social tem que ser informada\r\n";
-            }
-            else if (RazaoSocial.Length > 3)
-            {
-                return "Razao Social invalida\r\n";
-            }
-            return ""; 
         }
     }
 }

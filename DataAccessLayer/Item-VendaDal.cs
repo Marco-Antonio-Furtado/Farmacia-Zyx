@@ -48,9 +48,9 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("@DATA", item.Data);
-            command.Parameters.AddWithValue("@PRODUTO", item.Produto);
-            command.Parameters.AddWithValue("@NOME_CLIENTE", item.NomeCliente);
-            command.Parameters.AddWithValue("@NOME_FUNCIONARIO", item.NomeFuncionario);
+            command.Parameters.AddWithValue("@PRODUTO", item.IDProduto);
+            command.Parameters.AddWithValue("@NOME_CLIENTE", item.IDNomeCliente);
+            command.Parameters.AddWithValue("@NOME_FUNCIONARIO", item.IDNomeFuncionario);
             command.Parameters.AddWithValue("@FORMA_PAGAMENTO", item.FormaPagamento);
             command.Parameters.AddWithValue("@QUANTIDADE", item.Quantidade);
             command.Parameters.AddWithValue("@PRECO_UNITARIO", item.PrecoUnitario);
@@ -80,9 +80,9 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("@DATA", item.Data);
-            command.Parameters.AddWithValue("@PRODUTO", item.Produto);
-            command.Parameters.AddWithValue("@NOME_CLIENTE", item.NomeCliente);
-            command.Parameters.AddWithValue("@NOME_FUNCIONARIO", item.NomeFuncionario);
+            command.Parameters.AddWithValue("@PRODUTO", item.IDProduto);
+            command.Parameters.AddWithValue("@NOME_CLIENTE", item.IDNomeCliente);
+            command.Parameters.AddWithValue("@NOME_FUNCIONARIO", item.IDNomeFuncionario);
             command.Parameters.AddWithValue("@FORMA_PAGAMENTO", item.FormaPagamento);
             command.Parameters.AddWithValue("@QUANTIDADE", item.Quantidade);
             command.Parameters.AddWithValue("@PRECO_UNITARIO", item.PrecoUnitario);

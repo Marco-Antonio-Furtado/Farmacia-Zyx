@@ -1,15 +1,5 @@
-﻿using BusinessLogicalLayer.BusinessLL;
-using Entities;
+﻿using Entities;
 using Entities.enums;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace WfPresentationLayer
 {
@@ -55,7 +45,7 @@ namespace WfPresentationLayer
         }
         private void SincronizarListaGrid(Item_Venda item)
         {
-            DataGrid.Rows.Add(item.Produto, item.PrecoUnitario, item.Quantidade, item.ValorTotal, item.Laboratorio, item.NomeCliente, item.NomeFuncionario, item.Data);
+            DataGrid.Rows.Add(item.IDProduto, item.PrecoUnitario, item.Quantidade, item.ValorTotal, item.IDLaboratorio, item.IDNomeCliente, item.IDNomeFuncionario, item.Data);
         }
         private void BtnExcluir_Click(object sender, EventArgs e)
         {

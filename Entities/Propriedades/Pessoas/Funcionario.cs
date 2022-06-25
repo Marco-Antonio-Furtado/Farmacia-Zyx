@@ -1,8 +1,9 @@
-﻿using Shared;
+﻿using Entities.Propriedades.Pessoas;
+using Shared;
 
 namespace Entities
 {
-    public class Funcionario
+    public class Funcionario : Pessoa
     {
         public Funcionario(string nome, string cPF, string rG, string email, string telefone, Endereco endereco, Cargo cargo, string senha)
         {
@@ -15,15 +16,23 @@ namespace Entities
             Cargo = cargo;
             Senha = senha;
         }
-        public int ID { get; set; }
-        public string Nome { get; set; }
-        public string CPF { get; set; }
-        public string RG { get; set; }
-        public string Email { get; set; }
-        public string Telefone { get; set; }
         public Endereco Endereco { get; set; }
         public Cargo Cargo { get; set; }
         public string Senha { get; set; }
+
+        public override string ToString()
+        {
+            return this.Nome + "\r\n" +
+                   this.CPF + "\r\n" +
+                   this.Email + "\r\n" +
+                   this.Telefone + "\r\n" +
+                   this.Ativo + "\r\n" +
+                   this.Endereco.ToString() + "\r\n" +
+                   this.Cargo.ToString();
+        }
+
+
+
 
 
     }

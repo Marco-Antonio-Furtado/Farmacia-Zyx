@@ -29,18 +29,6 @@ namespace BusinessLogicalLayer.Verificaçoes
             }
             return "";
         }
-        internal static Response ValidateLaboratorio(string laboratorio)
-        {
-            if (String.IsNullOrWhiteSpace(laboratorio))
-            {
-                return new Response("laboratorio nao informado\r\n",false);
-            }
-            if (laboratorio.Length <= 2)
-            {
-                return new Response("laboratorio insuficiente\r\n",false);
-            }
-            return new Response("validado",true);
-        }
     }
 }
 

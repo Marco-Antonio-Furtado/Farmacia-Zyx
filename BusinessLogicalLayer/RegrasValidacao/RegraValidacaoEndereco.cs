@@ -2,21 +2,16 @@
 
 namespace BusinessLogicalLayer.RegrasValidacao
 {
+
     internal class RegraValidacaoEndereco
     {
+        private const int CARACTERES_CEP = 8;
+
         internal static string ValidateRua(string rua)
         {
             if (string.IsNullOrWhiteSpace(rua))
             {
                 return "rua tem que ser informada\r\n";
-            }
-            else return "";
-        }
-        internal static string ValidateCep(string cep)
-        {
-            if (string.IsNullOrWhiteSpace(cep))
-            {
-                return "Cep tem que ser informado\r\n";
             }
             else return "";
         }
@@ -28,22 +23,25 @@ namespace BusinessLogicalLayer.RegrasValidacao
             }
             else return "";
         }
-        internal static string ValidateCidade(int Cidade)
+        internal static string ValidateCEP(string cep)
         {
-            if (string.IsNullOrWhiteSpace(Cidade.ToString()))
+            if (string.IsNullOrWhiteSpace(cep))
             {
-                return "Cidade tem que ser informado\r\n";
+                return "CEP deve ser informado.\r\n";
             }
-            else return "";
-        }
-        internal static string ValidateEstado(int Estado)
-        {
-            if (string.IsNullOrWhiteSpace(Estado.ToString()))
+            cep = cep.Trim();
+            cep = cep.Replace("-", "").Replace(".", "");
+            if (cep.Length != CARACTERES_CEP)
             {
-                return "Estado tem que ser informado\r\n";
+                return "CEP deve conter 8 dígitos (sem considerar hífen/ponto).\r\n";
             }
-           
-            else return "";
+            int temp = 0;
+            if (!int.TryParse(cep, out temp))
+            {
+                //Se a conversão não funcionar
+                return "CEP em formato incorreto.\r\n";
+            }
+            return "";
         }
     }
 }

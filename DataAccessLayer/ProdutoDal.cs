@@ -14,7 +14,7 @@ namespace DataAccessLayer
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@NOME", item.Nome);
             command.Parameters.AddWithValue("@DESCRICAO", item.Descricao);
-            command.Parameters.AddWithValue("@LABORATORIO", item.Laboratorio);
+            command.Parameters.AddWithValue("@LABORATORIO", item.IDLaboratorio);
             command.Parameters.AddWithValue("@VALOR_UNITARIO", item.ValorUnitario);
 
 
@@ -45,7 +45,7 @@ namespace DataAccessLayer
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@NOME", item.Nome);
             command.Parameters.AddWithValue("@DESCRICAO", item.Descricao);
-            command.Parameters.AddWithValue("@LABORATORIO", item.Laboratorio);
+            command.Parameters.AddWithValue("@LABORATORIO", item.IDLaboratorio);
             command.Parameters.AddWithValue("@VALOR_UNITARIO", item.ValorUnitario);
 
             try

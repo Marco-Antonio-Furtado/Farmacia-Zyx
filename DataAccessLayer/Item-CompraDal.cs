@@ -16,11 +16,11 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("@DATA", item.Data);
-            command.Parameters.AddWithValue("@PRODUTO", item.Produto);
-            command.Parameters.AddWithValue("@FORNECEDOR", item.Fornecedor);
+            command.Parameters.AddWithValue("@PRODUTO", item.IDProduto);
+            command.Parameters.AddWithValue("@FORNECEDOR", item.IDFornecedor);
             command.Parameters.AddWithValue("@QUANTIDADE", item.Quantidade);
             command.Parameters.AddWithValue("@FORMA_PAGAMENTO", item.FormaPagamento);
-            command.Parameters.AddWithValue("@NOME_FUNCIONARIO", item.NomeFuncionario);
+            command.Parameters.AddWithValue("@NOME_FUNCIONARIO", item.IDNomeFuncionario);
             command.Parameters.AddWithValue("@PRECO_UNITARIO", item.PrecoUnitario);
             command.Parameters.AddWithValue("@VALOR_TOTAL", item.ValorTotal);
             try
@@ -49,8 +49,8 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("@NOME", item.Data);
-            command.Parameters.AddWithValue("@CPF", item.Produto);
-            command.Parameters.AddWithValue("@RG", item.Fornecedor);
+            command.Parameters.AddWithValue("@CPF", item.IDProduto);
+            command.Parameters.AddWithValue("@RG", item.IDFornecedor);
             command.Parameters.AddWithValue("@EMAIL", item.Quantidade);
             command.Parameters.AddWithValue("@TELEFONE1", item.PrecoUnitario);
             command.Parameters.AddWithValue("@TELEFONE2", item.ValorTotal);

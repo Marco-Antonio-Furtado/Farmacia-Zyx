@@ -16,9 +16,11 @@ namespace BusinessLogicalLayer.Verificaçoes
             erros.Append(RegraValidacaoString.ValidateEmail(funcionario.Email));
             erros.Append(RegraValidacaoString.ValidateTelefone(funcionario.Telefone));
             erros.Append(RegraValidacaoString.ValidateRG(funcionario.RG));
-            erros.Append(RegraValidacaoString.ValidateCEP(funcionario.Endereco?.CEP));
-            erros.Append(RegraValidacaoEndereco.ValidateEstado(funcionario.Endereco.EstadoID));
-            erros.Append(RegraValidacaoEndereco.ValidateCidade(funcionario.Endereco.CidadeID));
+
+            erros.Append(EnderecoValitor.Validate(funcionario.Endereco).Message);
+            
+
+
 
             ////CPF do cliente deve ser único
             //if (clienteDAL.Exists(cliente.CPF).HasSuccess)

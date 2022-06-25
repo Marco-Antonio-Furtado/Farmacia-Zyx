@@ -27,18 +27,17 @@ namespace WfPresentationLayer
                 preco = "0";
             }
 
-            //EU CRIEI UM LABORATORIO ALEAQTORIO SO PRA TESTAR, ESTÁ ERRADO, ARRUMA AI FRONT-END!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            //EU CRIEI UM LABORATORIO ALEAQTORIO SO PRA TESTAR, ESTÁ ERRADO, ARRUMA AI FRONT-END!
 
-            Laboratorio lab = new Laboratorio(1, "Nome do lab", "123456");
-            Produto produto = new Produto(TxtBoxNomeProduto.Text,TxtBoxDescrisaoProduto.Text,
-                                         lab, double.Parse(preco));
-            ProdutoBll produtoBll = new ProdutoBll();
-            Response resposta = produtoBll.Insert(produto);
-            MessageBox.Show(resposta.Message);
-            if (resposta.HasSuccess)
-            {
-                this.Close();
-            }
+            //Produto produto = new Produto(TxtBoxNomeProduto.Text,TxtBoxDescrisaoProduto.Text,
+            //                             lab, double.Parse(preco));
+            //ProdutoBll produtoBll = new ProdutoBll();
+            //Response resposta = produtoBll.Insert(produto);
+            //MessageBox.Show(resposta.Message);
+            //if (resposta.HasSuccess)
+            //{
+            //    this.Close();
+            //}
         }
     }
 }

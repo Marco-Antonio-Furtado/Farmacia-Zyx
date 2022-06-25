@@ -6,7 +6,6 @@ namespace BusinessLogicalLayer.BusinessLL
 {
     public class ClienteBll : ICRUD<Cliente>
     {
-        private ClienteValidator clienteValidator = new ClienteValidator();
         private ClienteDAL clienteDAL = new ClienteDAL();
         public Response Insert(Cliente item)
         {

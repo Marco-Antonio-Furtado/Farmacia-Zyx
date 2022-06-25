@@ -12,7 +12,7 @@ namespace DataAccessLayer
 
         public Response Insert(Cliente cliente)
         {
-            string sql = $"INSERT INTO CLIENTES (NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2) VALUES (@NOME,@CPF,@RG,@EMAIL,@TELEFONE1,@TELEFONE2)";
+            string sql = $"INSERT INTO CLIENTES (NOME,CPF,RG,EMAIL,TELEFONE,TELEFONE2) VALUES (@NOME,@CPF,@RG,@EMAIL,@TELEFONE,@TELEFONE2)";
             string connectionString = DalDirectory;
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(sql, connection);
@@ -20,7 +20,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@CPF", cliente.CPF);
             command.Parameters.AddWithValue("@RG", cliente.RG);
             command.Parameters.AddWithValue("@EMAIL", cliente.Email);
-            command.Parameters.AddWithValue("@TELEFONE1", cliente.Telefone1);
+            command.Parameters.AddWithValue("@TELEFONE", cliente.Telefone);
             command.Parameters.AddWithValue("@TELEFONE2", cliente.Telefone2);
             try
             {
@@ -50,7 +50,7 @@ namespace DataAccessLayer
         public Response Update(Cliente cliente)
         {
 
-            string sql = $"UPDATE CLIENTES SET NOME = @NOME, CPF = @CPF, RG = @RG, EMAIL = @EMAIL, TELEFONE1 = @TELEFONE1, TELEFONE2 = @TELEFONE2 WHERE ID = @ID";
+            string sql = $"UPDATE CLIENTES SET NOME = @NOME, CPF = @CPF, RG = @RG, EMAIL = @EMAIL, TELEFONE = @TELEFONE, TELEFONE2 = @TELEFONE2 WHERE ID = @ID";
 
             string connectionString = DalDirectory;
 
@@ -61,7 +61,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@CPF", cliente.CPF);
             command.Parameters.AddWithValue("@RG", cliente.RG);
             command.Parameters.AddWithValue("@EMAIL", cliente.Email);
-            command.Parameters.AddWithValue("@TELEFONE1", cliente.Telefone1);
+            command.Parameters.AddWithValue("@TELEFONE", cliente.Telefone);
             command.Parameters.AddWithValue("@TELEFONE2", cliente.Telefone2);
             command.Parameters.AddWithValue("@ID", cliente.ID);
 
@@ -81,6 +81,10 @@ namespace DataAccessLayer
                 if (ex.Message.Contains("UQ_CLIENTES_EMAIL"))
                 {
                     return new Response("Email já está em uso.", false);
+                }
+                if (ex.Message.Contains("UQ_CLIENTES_CPF"))
+                {
+                    return new Response("Cpf já está em uso.", false);
                 }
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
@@ -124,7 +128,7 @@ namespace DataAccessLayer
         public DataResponse<Cliente> GetAll()
         {
 
-            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2 FROM CLIENTES";
+            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,TELEFONE2 FROM CLIENTES";
 
             string connectionString = DalDirectory;
 
@@ -142,7 +146,7 @@ namespace DataAccessLayer
                                                   cPF: Convert.ToString(reader["CPF"]),
                                                   rG: Convert.ToString(reader["RG"]),
                                                   email: Convert.ToString(reader["EMAIL"]),
-                                                  telefone1: Convert.ToString(reader["TELEFONE1"]),
+                                                  telefone: Convert.ToString(reader["TELEFONE"]),
                                                   telefone2: Convert.ToString(reader["TELEFONE2"]));
                     cliente.ID = Convert.ToInt32(reader["ID"]);
                     clientes.Add(cliente);
@@ -161,7 +165,7 @@ namespace DataAccessLayer
         public SingleResponse<Cliente> GetByID(int id)
         {
 
-            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2 FROM CLIENTES WHERE ID = @ID";
+            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,TELEFONE2 FROM CLIENTES WHERE ID = @ID";
 
             string connectionString = DalDirectory;
 
@@ -179,7 +183,7 @@ namespace DataAccessLayer
                                                   cPF: Convert.ToString(reader["CPF"]),
                                                   rG: Convert.ToString(reader["RG"]),
                                                   email: Convert.ToString(reader["EMAIL"]),
-                                                  telefone1: Convert.ToString(reader["TELEFONE1"]),
+                                                  telefone: Convert.ToString(reader["TELEFONE"]),
                                                   telefone2: Convert.ToString(reader["TELEFONE2"]));
                     cliente.ID = Convert.ToInt32(reader["ID"]);
                     return new SingleResponse<Cliente>("Cliente selecionado com sucesso!", true, cliente);
@@ -198,7 +202,7 @@ namespace DataAccessLayer
 
         public SingleResponse<Cliente> GetByEmail(string email)
         {
-            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2 FROM CLIENTES WHERE EMAIL = @EMAIL";
+            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,TELEFONE2 FROM CLIENTES WHERE EMAIL = @EMAIL";
 
             string connectionString = DalDirectory;
 
@@ -216,7 +220,7 @@ namespace DataAccessLayer
                                                   cPF: Convert.ToString(reader["CPF"]),
                                                   rG: Convert.ToString(reader["RG"]),
                                                   email: Convert.ToString(reader["EMAIL"]),
-                                                  telefone1: Convert.ToString(reader["TELEFONE1"]),
+                                                  telefone: Convert.ToString(reader["TELEFONE"]),
                                                   telefone2: Convert.ToString(reader["TELEFONE2"]));
                     cliente.ID = Convert.ToInt32(reader["ID"]);
                     return new SingleResponse<Cliente>("Cliente selecionado com sucesso!", true, cliente);
@@ -234,7 +238,7 @@ namespace DataAccessLayer
         }
         public SingleResponse<Cliente> GetByCPF(string cpf)
         {
-            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE1,TELEFONE2 FROM CLIENTES WHERE CPF = @CPF";
+            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,TELEFONE2 FROM CLIENTES WHERE CPF = @CPF";
 
             string connectionString = DalDirectory;
 
@@ -254,7 +258,7 @@ namespace DataAccessLayer
                                                   cPF: Convert.ToString(reader["CPF"]),
                                                   rG: Convert.ToString(reader["RG"]),
                                                   email: Convert.ToString(reader["EMAIL"]),
-                                                  telefone1: Convert.ToString(reader["TELEFONE1"]),
+                                                  telefone: Convert.ToString(reader["TELEFONE"]),
                                                   telefone2: Convert.ToString(reader["TELEFONE2"]));
                     cliente.ID = Convert.ToInt32(reader["ID"]);
                     return new SingleResponse<Cliente>("Cliente selecionado com sucesso!", true, cliente);

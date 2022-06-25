@@ -10,7 +10,7 @@ namespace BusinessLogicalLayer.BusinessLL
         LaboratorioDAL labdal = new LaboratorioDAL();
         public Response Insert(Laboratorio item)
         {
-            Response resposta = RegraValidacaoIten.ValidateLaboratorio(item.Nome);
+            Response resposta = LaboratorioValidator.Validate(item);
             if (resposta.HasSuccess)
             {
                 return labdal.Insert(item);
@@ -20,7 +20,7 @@ namespace BusinessLogicalLayer.BusinessLL
 
         public Response Update(Laboratorio item)
         {
-            Response resposta = RegraValidacaoIten.ValidateLaboratorio(item.Nome);
+            Response resposta = LaboratorioValidator.Validate(item);
             if (resposta.HasSuccess)
             {
                 return labdal.Update(item);
@@ -41,6 +41,5 @@ namespace BusinessLogicalLayer.BusinessLL
         {
             return labdal.GetByID(id);
         }
-
     }
 }

@@ -13,7 +13,7 @@ namespace BusinessLogicalLayer
             erros.Append(RegraValidacaoString.ValidateNome(cliente.Nome));
             erros.Append(RegraValidacaoString.ValidateCPF(cliente.CPF));
             erros.Append(RegraValidacaoString.ValidateEmail(cliente.Email));
-            erros.Append(RegraValidacaoString.ValidateTelefone(cliente.Telefone1));
+            erros.Append(RegraValidacaoString.ValidateTelefone(cliente.Telefone));
             erros.Append(RegraValidacaoString.ValidateTelefone(cliente.Telefone2));
             erros.Append(RegraValidacaoString.ValidateRG(cliente.RG));
 

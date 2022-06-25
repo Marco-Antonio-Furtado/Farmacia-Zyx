@@ -53,7 +53,7 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void SincronizarListaGrid(Item_Compra item)
         {
-            DataGrid.Rows.Add(item.Produto, item.PrecoUnitario, item.Quantidade, item.ValorTotal,item.FormaPagamento, item.NomeFuncionario,item.Fornecedor, item.Laboratorio, item.Data);
+            DataGrid.Rows.Add(item.IDProduto, item.PrecoUnitario, item.Quantidade, item.ValorTotal,item.FormaPagamento, item.IDNomeFuncionario,item.IDFornecedor, item.IDLaboratorio, item.Data);
         }
         private void BtnExcluir_Click(object sender, EventArgs e)
         {

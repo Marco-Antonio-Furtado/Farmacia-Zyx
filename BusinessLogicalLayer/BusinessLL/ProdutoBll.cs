@@ -8,7 +8,6 @@ namespace BusinessLogicalLayer.BusinessLL
     public class ProdutoBll : ICRUD<Produto>
     {
         readonly ProdutoDal produtoDAL = new ProdutoDal();
-        ProdutoValidator produtoValidator = new ProdutoValidator();
         public Response Insert(Produto item)
         {
             

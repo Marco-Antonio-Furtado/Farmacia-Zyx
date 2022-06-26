@@ -8,14 +8,14 @@ namespace DataAccessLayer
 {
     public class ClienteDAL : ICRUD<Cliente>
     {
-        internal const string DalDirectory = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\AdultMovieLocatorDb.mdf;Integrated Security=True;Connect Timeout=3";
+        internal const string DalDirectory = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\SAMSUNG\Documents\banco\BancoFarmaciaZYX.mdf;Integrated Security=True;Connect Timeout=30";
 
         public Response Insert(Cliente cliente)
         {
             string sql = $"INSERT INTO CLIENTES (NOME,CPF,RG,EMAIL,TELEFONE,TELEFONE2) VALUES (@NOME,@CPF,@RG,@EMAIL,@TELEFONE,@TELEFONE2)";
-            string connectionString = DalDirectory;
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(sql, connection);
+
+            SqlCommand command = new SqlCommand(sql);
+
             command.Parameters.AddWithValue("@NOME", cliente.Nome);
             command.Parameters.AddWithValue("@CPF", cliente.CPF);
             command.Parameters.AddWithValue("@RG", cliente.RG);
@@ -24,8 +24,8 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@TELEFONE2", cliente.Telefone2);
             try
             {
-                connection.Open();
-                command.ExecuteNonQuery();
+                DbExecuter dbexecutor = new DbExecuter();
+                dbexecutor.Execute(command);
                 return new Response("Cliente cadastrado com sucesso.", true);
             }
             catch (Exception ex)
@@ -38,15 +38,9 @@ namespace DataAccessLayer
                 {
                     return new Response("CPF já está em uso.", false);
                 }
-                return new Response("Erro no banco de dados, contate o administrador.", false);
-            }
-            finally
-            {
-                connection.Dispose();
+                return new Response(ex.Message, false);
             }
         }
-
-
         public Response Update(Cliente cliente)
         {
 
@@ -128,7 +122,7 @@ namespace DataAccessLayer
         public DataResponse<Cliente> GetAll()
         {
 
-            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,TELEFONE2 FROM CLIENTES";
+            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,TELEFONE2,ATIVO FROM CLIENTES";
 
             string connectionString = DalDirectory;
 
@@ -148,6 +142,7 @@ namespace DataAccessLayer
                                                   email: Convert.ToString(reader["EMAIL"]),
                                                   telefone: Convert.ToString(reader["TELEFONE"]),
                                                   telefone2: Convert.ToString(reader["TELEFONE2"]));
+                    cliente.Ativo = Convert.ToBoolean(reader["ATIVO"]);
                     cliente.ID = Convert.ToInt32(reader["ID"]);
                     clientes.Add(cliente);
                 }

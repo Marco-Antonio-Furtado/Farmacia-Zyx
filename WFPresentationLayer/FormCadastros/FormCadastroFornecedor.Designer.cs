@@ -33,7 +33,7 @@
             this.TxtBoxTelefoneFornecedor = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtBoxEmailFornecedor = new System.Windows.Forms.TextBox();
+            this.txtBoxEmail = new System.Windows.Forms.TextBox();
             this.TxtBoxCnpjFornecedor = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,11 +47,11 @@
             this.label6.BackColor = System.Drawing.Color.IndianRed;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(12, 247);
+            this.label6.Location = new System.Drawing.Point(12, 244);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 23);
+            this.label6.Size = new System.Drawing.Size(124, 23);
             this.label6.TabIndex = 64;
-            this.label6.Text = "Nome Responsavel";
+            this.label6.Text = "Nome Contato";
             // 
             // TxtBoxNomeResponsavel
             // 
@@ -99,15 +99,15 @@
             this.label4.TabIndex = 59;
             this.label4.Text = "Email";
             // 
-            // txtBoxEmailFornecedor
+            // txtBoxEmail
             // 
-            this.txtBoxEmailFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.txtBoxEmailFornecedor.ForeColor = System.Drawing.Color.White;
-            this.txtBoxEmailFornecedor.Location = new System.Drawing.Point(12, 98);
-            this.txtBoxEmailFornecedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBoxEmailFornecedor.Name = "txtBoxEmailFornecedor";
-            this.txtBoxEmailFornecedor.Size = new System.Drawing.Size(203, 27);
-            this.txtBoxEmailFornecedor.TabIndex = 2;
+            this.txtBoxEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.txtBoxEmail.ForeColor = System.Drawing.Color.White;
+            this.txtBoxEmail.Location = new System.Drawing.Point(12, 98);
+            this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBoxEmail.Name = "txtBoxEmail";
+            this.txtBoxEmail.Size = new System.Drawing.Size(203, 27);
+            this.txtBoxEmail.TabIndex = 2;
             // 
             // TxtBoxCnpjFornecedor
             // 
@@ -181,14 +181,14 @@
             this.Controls.Add(this.TxtBoxTelefoneFornecedor);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtBoxEmailFornecedor);
+            this.Controls.Add(this.txtBoxEmail);
             this.Controls.Add(this.TxtBoxCnpjFornecedor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxRazaoSocial);
             this.Name = "FormCadastroFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormCadastroFornecedor";
+            this.Text = "Cadastrar Funcionario";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,7 +200,7 @@
         private MaskedTextBox TxtBoxTelefoneFornecedor;
         private Label label5;
         private Label label4;
-        private TextBox txtBoxEmailFornecedor;
+        private TextBox txtBoxEmail;
         private MaskedTextBox TxtBoxCnpjFornecedor;
         private Label label2;
         private Label label1;

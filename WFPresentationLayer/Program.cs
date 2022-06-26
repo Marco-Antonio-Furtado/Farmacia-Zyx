@@ -1,4 +1,6 @@
 using System.Globalization;
+using WfPresentationLayer.Alteraçoes;
+using WfPresentationLayer.FormCadastros;
 
 namespace WfPresentationLayer
 {
@@ -14,7 +16,7 @@ namespace WfPresentationLayer
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormCadastroFuncionario());
+            Application.Run(new FormLogin());
         }
     }
 }

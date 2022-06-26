@@ -1,4 +1,5 @@
-﻿using WfPresentationLayer.Alteraçoes;
+﻿using BusinessLogicalLayer.BusinessLL;
+using WfPresentationLayer.Alteraçoes;
 using WfPresentationLayer.FormCadastros;
 using WfPresentationLayer.Trancaçoes;
 
@@ -8,6 +9,7 @@ namespace WfPresentationLayer
     public partial class MenuGeralAdmin : Form
     {
         private Form _objForm;
+        
         public MenuGeralAdmin()
         {
             InitializeComponent();
@@ -42,6 +44,7 @@ namespace WfPresentationLayer
         }
         private void BtnMenuClientes_Click(object sender, EventArgs e)
         {
+            
             _objForm?.Close();
             _objForm = new FormMostarClientes
             {
@@ -55,7 +58,7 @@ namespace WfPresentationLayer
         private void BtnMenuProduto_Click(object sender, EventArgs e)
         {
             _objForm?.Close();
-            _objForm = new FormCadastroProduto
+            _objForm = new FormMostrarProdutos
             {
                 TopLevel = false,
                 FormBorderStyle = FormBorderStyle.None,

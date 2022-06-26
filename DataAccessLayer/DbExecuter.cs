@@ -22,7 +22,6 @@ namespace DataAccessLayer
                 conn.Close();
             }
         }
-
         public DataResponse<T> GetData<T>(SqlCommand command)
         {
             DbConnection conn = new DbConnection();
@@ -36,6 +35,7 @@ namespace DataAccessLayer
                 dt.Load(reader);
                 DataResponse<T> response = new DataResponse<T>("Comando executado com sucesso", true, dt.ToTable<T>());
                 return response;
+                
             }
             finally
             {
@@ -90,7 +90,7 @@ namespace DataAccessLayer
             {
                 DataRow registro = dt.Rows[i];
                 T t = Activator.CreateInstance<T>();
-
+                //
                 foreach (PropertyInfo propriedade in propriedades)
                 {
                     propriedade.SetValue(t, dt.Rows[i][propriedade.Name]);
@@ -107,7 +107,7 @@ internal class DbConnection
 
     public DbConnection()
     {
-        conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\FarmaciaZyx.mdf;Integrated Security=True;Connect Timeout=30");
+        conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\SAMSUNG\Documents\banco\BancoFarmaciaZYX.mdf;Integrated Security=True;Connect Timeout=5");
     }
     public void Open()
     {
@@ -116,17 +116,14 @@ internal class DbConnection
             conn.Open();
         }
     }
-
     public void Close()
     {
         conn.Dispose();
     }
-
     public void AttachCommand(SqlCommand command)
     {
         command.Connection = this.conn;
     }
-
 }
 
 //-------------------------------------------------------------------------------------------------

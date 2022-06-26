@@ -30,13 +30,13 @@
         {
             this.label4 = new System.Windows.Forms.Label();
             this.TxtBoxDescrisaoProduto = new System.Windows.Forms.TextBox();
-            this.TxtBoxLaboratorio = new System.Windows.Forms.MaskedTextBox();
             this.Laboratorio = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtBoxNomeProduto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtBoxPrecoProduto = new System.Windows.Forms.MaskedTextBox();
             this.BtnCadastrarProduto = new System.Windows.Forms.Button();
+            this.CmbBoxLaboratorio = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label4
@@ -59,16 +59,6 @@
             this.TxtBoxDescrisaoProduto.Name = "TxtBoxDescrisaoProduto";
             this.TxtBoxDescrisaoProduto.Size = new System.Drawing.Size(203, 27);
             this.TxtBoxDescrisaoProduto.TabIndex = 2;
-            // 
-            // TxtBoxLaboratorio
-            // 
-            this.TxtBoxLaboratorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxLaboratorio.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxLaboratorio.Location = new System.Drawing.Point(12, 166);
-            this.TxtBoxLaboratorio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxLaboratorio.Name = "TxtBoxLaboratorio";
-            this.TxtBoxLaboratorio.Size = new System.Drawing.Size(193, 27);
-            this.TxtBoxLaboratorio.TabIndex = 3;
             // 
             // Laboratorio
             // 
@@ -117,13 +107,13 @@
             // 
             this.TxtBoxPrecoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.TxtBoxPrecoProduto.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxPrecoProduto.Location = new System.Drawing.Point(12, 222);
+            this.TxtBoxPrecoProduto.Location = new System.Drawing.Point(12, 225);
             this.TxtBoxPrecoProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxPrecoProduto.Mask = "000,00";
             this.TxtBoxPrecoProduto.Name = "TxtBoxPrecoProduto";
-            this.TxtBoxPrecoProduto.Size = new System.Drawing.Size(193, 27);
+            this.TxtBoxPrecoProduto.Size = new System.Drawing.Size(203, 27);
             this.TxtBoxPrecoProduto.TabIndex = 5;
             this.TxtBoxPrecoProduto.ValidatingType = typeof(int);
+            this.TxtBoxPrecoProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxPrecoProduto_KeyPress);
             // 
             // BtnCadastrarProduto
             // 
@@ -139,18 +129,26 @@
             this.BtnCadastrarProduto.UseVisualStyleBackColor = false;
             this.BtnCadastrarProduto.Click += new System.EventHandler(this.BtnCadastrarProduto_Click_1);
             // 
+            // CmbBoxLaboratorio
+            // 
+            this.CmbBoxLaboratorio.FormattingEnabled = true;
+            this.CmbBoxLaboratorio.Location = new System.Drawing.Point(12, 167);
+            this.CmbBoxLaboratorio.Name = "CmbBoxLaboratorio";
+            this.CmbBoxLaboratorio.Size = new System.Drawing.Size(203, 28);
+            this.CmbBoxLaboratorio.TabIndex = 19;
+            // 
             // FormCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(517, 272);
+            this.Controls.Add(this.CmbBoxLaboratorio);
             this.Controls.Add(this.BtnCadastrarProduto);
             this.Controls.Add(this.TxtBoxPrecoProduto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TxtBoxDescrisaoProduto);
-            this.Controls.Add(this.TxtBoxLaboratorio);
             this.Controls.Add(this.Laboratorio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtBoxNomeProduto);
@@ -166,12 +164,12 @@
 
         private Label label4;
         private TextBox TxtBoxDescrisaoProduto;
-        private MaskedTextBox TxtBoxLaboratorio;
         private Label Laboratorio;
         private Label label1;
         private TextBox TxtBoxNomeProduto;
         private Label label2;
         private MaskedTextBox TxtBoxPrecoProduto;
         private Button BtnCadastrarProduto;
+        private ComboBox CmbBoxLaboratorio;
     }
 }

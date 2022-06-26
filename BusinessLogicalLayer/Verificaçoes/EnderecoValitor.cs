@@ -20,7 +20,7 @@ namespace BusinessLogicalLayer.Verificaçoes
             {
                 return new Response(erros.ToString(), false);
             }
-            return new Response("Daqui esta indo pro banco", true);
+            return new Response("", true);
         }
     }
 }

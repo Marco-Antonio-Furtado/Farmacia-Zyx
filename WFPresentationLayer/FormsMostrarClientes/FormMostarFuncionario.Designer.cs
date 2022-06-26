@@ -52,10 +52,10 @@
             // 
             // GridFuncionario
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.GridFuncionario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GridFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -84,6 +84,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GridFuncionario.DefaultCellStyle = dataGridViewCellStyle3;
+            this.GridFuncionario.Enabled = false;
             this.GridFuncionario.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.GridFuncionario.Location = new System.Drawing.Point(0, 3);
             this.GridFuncionario.Name = "GridFuncionario";
@@ -97,7 +98,8 @@
             this.GridFuncionario.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GridFuncionario.RowHeadersWidth = 51;
             this.GridFuncionario.RowTemplate.Height = 29;
-            this.GridFuncionario.Size = new System.Drawing.Size(1277, 622);
+            this.GridFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridFuncionario.Size = new System.Drawing.Size(1261, 622);
             this.GridFuncionario.TabIndex = 36;
             // 
             // GridID

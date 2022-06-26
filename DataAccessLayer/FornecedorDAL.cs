@@ -8,11 +8,11 @@ namespace DataAccessLayer
     {
         public Response Insert(Fornecedor fornecedor)
         {
-            string sql = $"INSERT INTO FORNECEDOR (RAZAO_SOCIAL,CNPJ,EMAIL,TELEFONE,NOME_CONTATO) VALUES (@RAZAO_SOCIAL,@NOME_CONTATO,@CNPJ,@EMAIL,,@TELEFONE)";
+            string sql = $"INSERT INTO FORNECEDORES (RAZAO_SOCIAL,CNPJ,EMAIL,TELEFONE,NOME_CONTATO) VALUES (@RAZAO_SOCIAL,@CNPJ,@EMAIL,@TELEFONE,@NOME_CONTATO)";
 
             SqlCommand command = new SqlCommand(sql);
-            command.Parameters.AddWithValue("@NOME", fornecedor.RazaoSocial);
-            command.Parameters.AddWithValue("@NOME_CONTATO", fornecedor.NomeContato);
+            command.Parameters.AddWithValue("@RAZAO_SOCIAL", fornecedor.Razao_Social);
+            command.Parameters.AddWithValue("@NOME_CONTATO", fornecedor.Nome_Contato);
             command.Parameters.AddWithValue("@CNPJ", fornecedor.CNPJ);
             command.Parameters.AddWithValue("@EMAIL", fornecedor.Email);
             command.Parameters.AddWithValue("@TELEFONE", fornecedor.Telefone);
@@ -33,19 +33,17 @@ namespace DataAccessLayer
                 {
                     return new Response("CPF já está em uso.", false);
                 }
-                return new Response("Erro no banco de dados, contate o administrador.", false);
+                return new Response("Erro no Sistema contate o administrados", false);
             }
         }
-
-
         public Response Update(Fornecedor fornecedor)
         {
             string sql = $"UPDATE FORNECEDOR SET RAZAO_SOCIAL = @RAZAO_SOCIAL,NOME_CONTATO = @NOME_CONTATO,CNPJ = @CNPJ,EMAIL = @EMAIL, TELEFONE = @TELEFONE WHERE ID = @ID";
 
 
             SqlCommand command = new SqlCommand(sql);
-            command.Parameters.AddWithValue("@RAZAO_SOCIAL", fornecedor.RazaoSocial);
-            command.Parameters.AddWithValue("@NOME_CONTATO", fornecedor.NomeContato);
+            command.Parameters.AddWithValue("@RAZAO_SOCIAL", fornecedor.Razao_Social);
+            command.Parameters.AddWithValue("@NOME_CONTATO", fornecedor.Nome_Contato);
             command.Parameters.AddWithValue("@CNPJ", fornecedor.CNPJ);
             command.Parameters.AddWithValue("@EMAIL", fornecedor.Email);
             command.Parameters.AddWithValue("@TELEFONE", fornecedor.Telefone);
@@ -110,7 +108,7 @@ namespace DataAccessLayer
 
         public DataResponse<Fornecedor> GetAll()
         {
-            string sql = $"SELECT * FROM FORNECEDOR";
+            string sql = $"SELECT ID,RAZAO_SOCIAL,CNPJ,NOME_CONTATO,TELEFONE,EMAIL,ATIVO FROM FORNECEDORES";
 
             SqlCommand command = new SqlCommand(sql);
             try
@@ -118,9 +116,9 @@ namespace DataAccessLayer
                 DbExecuter dbExecuter = new DbExecuter();
                 return dbExecuter.GetData<Fornecedor>(command);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return new DataResponse<Fornecedor>("Erro no banco de dados, contate o administrador.", false, null);
+                return new DataResponse<Fornecedor>("Erro Contato o administrador", false, null);
             }
 
         }

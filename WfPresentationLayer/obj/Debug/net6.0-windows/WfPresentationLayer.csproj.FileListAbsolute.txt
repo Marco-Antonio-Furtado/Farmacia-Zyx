@@ -218,5 +218,6 @@ C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresen
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\ref\WfPresentationLayer.dll
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormNovaVenda.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.FormMostarClientes.resources
-C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.Produtos.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.Vendas.resources
+C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.FormMostrarProdutos.resources
+C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormsMostrarClientes.FormMostarLaboratorio.resources

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BusinessLogicalLayer.BusinessLL;
+using Entities;
+using Shared;
 
 namespace WfPresentationLayer.FormCadastros
 {
@@ -15,6 +9,24 @@ namespace WfPresentationLayer.FormCadastros
         public FormCadastrarLaboratorio()
         {
             InitializeComponent();
+        }
+
+        private void BtnCadastroLaboratorio_Click(object sender, EventArgs e)
+        {
+            Laboratorio lab = new Laboratorio(razaoSocial: txtBoxRazaoSocial.Text,
+                                              cNPJ: TxtBoxCnpjFornecedor.Text,
+                                              nomeContato: TxtBoxNomeResponsavel.Text,
+                                              email: txtBoxEmail.Text,
+                                              telefone: TxtBoxTelefone.Text);
+            LaboratorioBLL labbll = new LaboratorioBLL();
+            Response resposta = labbll.Insert(lab);
+            MessageBox.Show(resposta.Message,"Titulo do message");
+            if (resposta.HasSuccess)
+            {
+                this.Close();
+            }
+
+
         }
     }
 }

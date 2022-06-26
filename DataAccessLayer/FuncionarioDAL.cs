@@ -9,7 +9,7 @@ namespace DataAccessLayer
     {
         public Response Insert(Funcionario item)
         {
-            string sql = $"INSERT INTO FUNCIONARIOS (NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO, CARGO_ID, SENHA) VALUES (@NOME,@CPF,@RG,@EMAIL,@TELEFONE,@ENDERECO,@CARGO,@SENHA)";
+            string sql = $"INSERT INTO FUNCIONARIOS (NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO, CARGO_ID, SENHA) VALUES (@NOME,@CPF,@RG,@EMAIL,@TELEFONE,@ENDERECO,@CARGO_ID,@SENHA)";
 
             SqlCommand command = new SqlCommand(sql);
 
@@ -18,7 +18,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@RG", item.RG);
             command.Parameters.AddWithValue("@EMAIL", item.Email);
             command.Parameters.AddWithValue("@TELEFONE", item.Telefone);
-            command.Parameters.AddWithValue("@ENDERECO", item.Endereco);
+            command.Parameters.AddWithValue("@ENDERECO", item.Endereco.ID);
             command.Parameters.AddWithValue("@CARGO_ID", item.Cargo.ID);
             command.Parameters.AddWithValue("@SENHA", item.Senha);
 
@@ -39,7 +39,7 @@ namespace DataAccessLayer
                 {
                     return new Response("CPF já está em uso.", false);
                 }
-                return new Response("Erro no banco de dados, contate o administrador.", false);
+                return new Response(ex.Message, false);
             }
         }
 

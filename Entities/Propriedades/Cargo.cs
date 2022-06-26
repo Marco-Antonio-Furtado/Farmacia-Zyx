@@ -2,6 +2,10 @@
 {
     public class Cargo
     {
+        public Cargo()
+        {
+        }
+
         public Cargo(int iD, string nome)
         {
             ID = iD;

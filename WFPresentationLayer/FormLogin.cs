@@ -16,11 +16,13 @@ namespace WfPresentationLayer
             
             if (metodoLogin.IsLoggedIn(metodoLogin))
             {
-                this.Hide();
+                
                 LabelResposta.Text = "Bem vindo";
                 MenuGeralAdmin menuGeralAdmin = new MenuGeralAdmin();
                     menuGeralAdmin.ShowDialog();
-            }else { LabelResposta.Text = "Email ou Senha Invalidos"; }
+                this.Close();
+            }
+            else { LabelResposta.Text = "Email ou Senha Invalidos"; }
         }
         private void TxtBoxLogin_TextChanged(object sender, EventArgs e)
         {

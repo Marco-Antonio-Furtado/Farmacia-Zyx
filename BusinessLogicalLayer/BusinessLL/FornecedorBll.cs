@@ -8,8 +8,6 @@ namespace BusinessLogicalLayer.BusinessLL
     public class FornecedorBll : ICRUD<Fornecedor>
     {
         FornecedorDAL fornecedorDAL = new FornecedorDAL();
-        FornecedorValidator fornecedorValidate = new FornecedorValidator();
-
         public Response Insert(Fornecedor item)
         {
             Response resposta = FornecedorValidator.Validate(item);
@@ -19,7 +17,6 @@ namespace BusinessLogicalLayer.BusinessLL
             }
             else { return resposta; }
         }
-
         public Response Update(Fornecedor item)
         {
             Response Resposta = FornecedorValidator.Validate(item);

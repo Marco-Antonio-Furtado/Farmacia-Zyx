@@ -17,7 +17,7 @@ namespace BusinessLogicalLayer.Verificaçoes
 
             erros.Append(RegraValidacaoString.ValidateEmail(item.Email));
             erros.Append(RegraValidacaoString.ValidateTelefone(item.Telefone));
-            erros.Append(EmpresaValidator.Validate(item));
+            erros.Append(EmpresaValidator.Validate(item).Message);
 
             if (!String.IsNullOrWhiteSpace(erros.ToString()))
             {

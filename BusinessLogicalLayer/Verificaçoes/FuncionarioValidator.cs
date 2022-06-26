@@ -7,7 +7,7 @@ namespace BusinessLogicalLayer.Verificaçoes
 {
     internal class FuncionarioValidator
     {
-        internal Response Validate(Funcionario funcionario)
+        internal static Response Validate(Funcionario funcionario)
         {
             StringBuilder erros = new StringBuilder("");
 

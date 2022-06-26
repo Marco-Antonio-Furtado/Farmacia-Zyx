@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,13 +15,16 @@ namespace WfPresentationLayer.Alteraçoes
     public partial class Alteracao_Funcionario : Form
     {
         private Form _objForm2;
+       //List<Funcionario> funcionarios = new List<Funcionario>;
         public Alteracao_Funcionario()
         {
             InitializeComponent();
+
         }
 
         private void BtnCadastrarFornecedor_Click(object sender, EventArgs e)
         {
+            
             _objForm2?.Close();
             _objForm2 = new FormCadastroFuncionario
             {

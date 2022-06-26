@@ -116,7 +116,7 @@ namespace BusinessLogicalLayer
                 return "Telefone deve ser informado.\r\n";
             }
             telefone = telefone.Trim();
-            telefone =
+            telefone = 
                 telefone.Replace("(", "")
                         .Replace(")", "")
                         .Replace("-", "")

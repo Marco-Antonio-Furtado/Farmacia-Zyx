@@ -38,6 +38,7 @@
             this.BtnProcurarCliente = new System.Windows.Forms.Button();
             this.PnlCl = new System.Windows.Forms.Panel();
             this.GridClientes = new System.Windows.Forms.DataGridView();
+            this.GRIDID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridRg = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,13 +109,14 @@
             // 
             // GridClientes
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.GridClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GridClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
@@ -124,6 +126,7 @@
             this.GridClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GRIDID,
             this.Grid,
             this.GridEmail,
             this.GridRg,
@@ -132,7 +135,7 @@
             this.GridTelefone2});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 5.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
@@ -141,7 +144,7 @@
             this.GridClientes.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.GridClientes.Location = new System.Drawing.Point(3, 3);
             this.GridClientes.Name = "GridClientes";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
@@ -151,8 +154,17 @@
             this.GridClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GridClientes.RowHeadersWidth = 51;
             this.GridClientes.RowTemplate.Height = 29;
-            this.GridClientes.Size = new System.Drawing.Size(1289, 618);
+            this.GridClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridClientes.Size = new System.Drawing.Size(1286, 618);
             this.GridClientes.TabIndex = 33;
+            // 
+            // GRIDID
+            // 
+            this.GRIDID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.GRIDID.HeaderText = "ID";
+            this.GRIDID.MinimumWidth = 6;
+            this.GRIDID.Name = "GRIDID";
+            this.GRIDID.Width = 56;
             // 
             // Grid
             // 
@@ -166,7 +178,7 @@
             this.GridEmail.HeaderText = "Email";
             this.GridEmail.MinimumWidth = 6;
             this.GridEmail.Name = "GridEmail";
-            this.GridEmail.Width = 125;
+            this.GridEmail.Width = 200;
             // 
             // GridRg
             // 
@@ -180,21 +192,21 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "CPF";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
+            this.dataGridViewTextBoxColumn1.Width = 150;
             // 
             // GridTelefone1
             // 
             this.GridTelefone1.HeaderText = "Telefone1";
             this.GridTelefone1.MinimumWidth = 6;
             this.GridTelefone1.Name = "GridTelefone1";
-            this.GridTelefone1.Width = 125;
+            this.GridTelefone1.Width = 200;
             // 
             // GridTelefone2
             // 
             this.GridTelefone2.HeaderText = "Telefone2";
             this.GridTelefone2.MinimumWidth = 6;
             this.GridTelefone2.Name = "GridTelefone2";
-            this.GridTelefone2.Width = 125;
+            this.GridTelefone2.Width = 200;
             // 
             // FormMostarClientes
             // 
@@ -222,6 +234,7 @@
         private Button BtnProcurarCliente;
         private Panel PnlCl;
         private DataGridView GridClientes;
+        private DataGridViewTextBoxColumn GRIDID;
         private DataGridViewTextBoxColumn Grid;
         private DataGridViewTextBoxColumn GridEmail;
         private DataGridViewTextBoxColumn GridRg;

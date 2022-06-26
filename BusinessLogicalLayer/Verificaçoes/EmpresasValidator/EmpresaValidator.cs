@@ -15,15 +15,15 @@ namespace BusinessLogicalLayer.Verificaçoes
             {
                 erros.Append("Cnpj invalido");
             }
-            erros.Append(RegraValidacaoEmpresa.ValidateRazaoSocial(item.RazaoSocial));
-            erros.Append(RegraValidacaoString.ValidateNome(item.NomeContato));
+            erros.Append(RegraValidacaoEmpresa.ValidateRazaoSocial(item.Razao_Social));
+            erros.Append(RegraValidacaoString.ValidateNome(item.Nome_Contato));
 
             if (!String.IsNullOrWhiteSpace(erros.ToString()))
             {
                 return new Response(erros.ToString(), false);
             }
-            item.NomeContato = RegraNormatizacao.NormatizeName(item.NomeContato);
-            return new Response("Daqui esta indo pro banco", true);
+            item.Nome_Contato = RegraNormatizacao.NormatizeName(item.Nome_Contato);
+            return new Response("", true);
         }
     }
 }

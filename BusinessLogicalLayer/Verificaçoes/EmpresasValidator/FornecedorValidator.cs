@@ -13,13 +13,13 @@ namespace BusinessLogicalLayer.Verificaçoes
 
             erros.Append(RegraValidacaoString.ValidateEmail(fornecedor.Email));
             erros.Append(RegraValidacaoString.ValidateTelefone(fornecedor.Telefone));
-            erros.Append(EmpresaValidator.Validate(fornecedor));
+            erros.Append(EmpresaValidator.Validate(fornecedor).Message);
 
             if (!String.IsNullOrWhiteSpace(erros.ToString()))
             {
                 return new Response(erros.ToString(), false);
             }
-            return new Response("Daqui esta indo pro banco", true);
+            return new Response("Verificacao feita", true);
         }
     }
 }

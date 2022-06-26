@@ -8,14 +8,13 @@ namespace DataAccessLayer
     {
         public Response Insert(Produto item)
         {
-
-            string sql = $"INSERT INTO PRODUTOS (NOME,DESCRICAO,LABORATORIO,VALOR_UNITARIO) VALUES (@NOME,@DESCRICAO,@LABORATORIO,@VALOR_UNITARIO)";
+            string sql = $"INSERT INTO PRODUTOS (NOME,DESCRICAO,ID_LABORATORIO,VALOR_UNITARIO) VALUES (@NOME,@DESCRICAO,@ID_LABORATORIO,@VALOR_UNITARIO)";
 
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@NOME", item.Nome);
             command.Parameters.AddWithValue("@DESCRICAO", item.Descricao);
-            command.Parameters.AddWithValue("@LABORATORIO", item.IDLaboratorio);
-            command.Parameters.AddWithValue("@VALOR_UNITARIO", item.ValorUnitario);
+            command.Parameters.AddWithValue("@ID_LABORATORIO", item.ID_Laboratorio);
+            command.Parameters.AddWithValue("@VALOR_UNITARIO", item.Valor_Unitario);
 
 
             try
@@ -26,13 +25,12 @@ namespace DataAccessLayer
             }
             catch (Exception ex)
             {
-                // VERIFIQUE A CONSTRAINT ABAIXO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-                if (ex.Message.Contains("UQ_Produto_NOME"))
+                if (ex.Message.Contains("UQ_PRODUTO_NOME"))
                 {
                     return new Response("NOME já está em uso.", false);
                 }
-                return new Response("Erro no banco de dados, contate o administrador.", false);
+                return new Response(ex.Message.ToString(), false);
             }
         }
 
@@ -45,8 +43,8 @@ namespace DataAccessLayer
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@NOME", item.Nome);
             command.Parameters.AddWithValue("@DESCRICAO", item.Descricao);
-            command.Parameters.AddWithValue("@LABORATORIO", item.IDLaboratorio);
-            command.Parameters.AddWithValue("@VALOR_UNITARIO", item.ValorUnitario);
+            command.Parameters.AddWithValue("@LABORATORIO", item.ID_Laboratorio);
+            command.Parameters.AddWithValue("@VALOR_UNITARIO", item.Valor_Unitario);
 
             try
             {
@@ -96,8 +94,7 @@ namespace DataAccessLayer
 
         public DataResponse<Produto> GetAll()
         {
-
-            string sql = $"SELECT * FROM PRODUTOS";
+            string sql = $"SELECT ID,NOME,DESCRICAO,VALOR_UNITARIO,ID_LABORATORIO,QUANTIA_ESTOQUE,ATIVO FROM PRODUTOS";
 
             SqlCommand command = new SqlCommand(sql);
             try
@@ -105,9 +102,9 @@ namespace DataAccessLayer
                 DbExecuter dbexecutor = new DbExecuter();
                 return dbexecutor.GetData<Produto>(command);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return new DataResponse<Produto>("Erro no banco de dados, contate o administrador.", false, null);
+                return new DataResponse<Produto>(ex.Message, false, null);
             }
         }
 

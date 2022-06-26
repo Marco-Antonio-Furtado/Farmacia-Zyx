@@ -32,8 +32,6 @@
             this.TabFuncionario = new System.Windows.Forms.TabPage();
             this.CmbBoxAdmin = new System.Windows.Forms.ComboBox();
             this.BtnCadastroEndereco = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TxtBoxEnderecoFuncionario = new System.Windows.Forms.TextBox();
             this.TxtBoxSenhaFuncionario = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -79,8 +77,6 @@
             this.TabFuncionario.BackColor = System.Drawing.Color.IndianRed;
             this.TabFuncionario.Controls.Add(this.CmbBoxAdmin);
             this.TabFuncionario.Controls.Add(this.BtnCadastroEndereco);
-            this.TabFuncionario.Controls.Add(this.label7);
-            this.TabFuncionario.Controls.Add(this.TxtBoxEnderecoFuncionario);
             this.TabFuncionario.Controls.Add(this.TxtBoxSenhaFuncionario);
             this.TabFuncionario.Controls.Add(this.label3);
             this.TabFuncionario.Controls.Add(this.label6);
@@ -125,28 +121,6 @@
             this.BtnCadastroEndereco.UseVisualStyleBackColor = false;
             this.BtnCadastroEndereco.Click += new System.EventHandler(this.BtnCadastroEndereco_Click_1);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(18, 351);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 23);
-            this.label7.TabIndex = 82;
-            this.label7.Text = "Endereco";
-            // 
-            // TxtBoxEnderecoFuncionario
-            // 
-            this.TxtBoxEnderecoFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxEnderecoFuncionario.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxEnderecoFuncionario.Location = new System.Drawing.Point(18, 378);
-            this.TxtBoxEnderecoFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxEnderecoFuncionario.Name = "TxtBoxEnderecoFuncionario";
-            this.TxtBoxEnderecoFuncionario.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxEnderecoFuncionario.TabIndex = 7;
-            this.TxtBoxEnderecoFuncionario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // TxtBoxSenhaFuncionario
             // 
             this.TxtBoxSenhaFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -154,6 +128,7 @@
             this.TxtBoxSenhaFuncionario.Location = new System.Drawing.Point(18, 146);
             this.TxtBoxSenhaFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxSenhaFuncionario.Name = "TxtBoxSenhaFuncionario";
+            this.TxtBoxSenhaFuncionario.PasswordChar = '*';
             this.TxtBoxSenhaFuncionario.Size = new System.Drawing.Size(193, 27);
             this.TxtBoxSenhaFuncionario.TabIndex = 3;
             // 
@@ -445,8 +420,6 @@
 
         private TabControl TabGeral;
         private TabPage TabFuncionario;
-        private Label label7;
-        private TextBox TxtBoxEnderecoFuncionario;
         private MaskedTextBox TxtBoxSenhaFuncionario;
         private Label label3;
         private Label label6;

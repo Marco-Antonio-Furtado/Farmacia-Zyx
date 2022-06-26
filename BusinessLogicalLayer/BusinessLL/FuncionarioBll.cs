@@ -2,27 +2,41 @@
 using DataAccessLayer;
 using Entities;
 using Shared;
+using System.Transactions;
 
 namespace BusinessLogicalLayer.BusinessLL
 {
     public class FuncionarioBll : ICRUD<Funcionario>
     {
         FuncionarioDAL funcionarioDAL = new FuncionarioDAL();
-        FuncionarioValidator funcionarioValidator = new FuncionarioValidator();
 
-        public Response Insert(Funcionario item)
+        public Response Insert(Funcionario funcionario)
         {
-            Response resposta = funcionarioValidator.Validate(item);
-            if (resposta.HasSuccess)
+            Response response = FuncionarioValidator.Validate(funcionario);
+            if (response.HasSuccess)
             {
-                return funcionarioDAL.Insert(item);
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    FuncionarioDAL funcionarioDAL = new FuncionarioDAL();
+                    EnderecoDAL enderecoDAL = new EnderecoDAL();
+
+                    response = enderecoDAL.Insert(funcionario.Endereco);
+                    response = funcionarioDAL.Insert(funcionario);
+                    if (!response.HasSuccess)
+                    {
+                        return response;
+                    }
+                    scope.Complete();
+                }//scope.Dispose();
             }
-            else { return resposta; }
+            return response;
+
+
         }
 
         public Response Update(Funcionario item)
         {
-            Response resposta = funcionarioValidator.Validate(item);
+            Response resposta = FuncionarioValidator.Validate(item);
             if (resposta.HasSuccess)
             {
                 return funcionarioDAL.Update(item);

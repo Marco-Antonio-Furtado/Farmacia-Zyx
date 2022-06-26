@@ -9,11 +9,11 @@ namespace DataAccessLayer
 
         public Response Insert(Endereco item)
         {
-            string sql = $"INSERT INTO ENDERECO (CEP, NOME_RUA, NUMERO_CASA, CIDADE_ID, ESTADO_ID) VALUES (@CEP, @NOME_RUA, @NUMERO_CASA, @CIDADE_ID, @ESTADO_ID)";
+            string sql = $"INSERT INTO ENDERECOS (CEP, NOME_RUA, NUMERO_CASA, CIDADE_ID, ESTADO_ID) VALUES (@CEP, @NOME_RUA, @NUMERO_CASA, @CIDADE_ID, @ESTADO_ID); SELECT SCOPE_IDENTITY()";
 
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@CEP", item.CEP);
-            command.Parameters.AddWithValue("@", item.NomeRua);
+            command.Parameters.AddWithValue("@NOME_RUA", item.NomeRua);
             command.Parameters.AddWithValue("@NUMERO_CASA", item.NumeroCasa);
             command.Parameters.AddWithValue("@CIDADE_ID", item.CidadeID);
             command.Parameters.AddWithValue("@ESTADO_ID", item.EstadoID);
@@ -35,7 +35,7 @@ namespace DataAccessLayer
                     return new Response(ex.Message, false);
                 }
             }
-            return new Response("Endereco cadastrado com sucesso", true);
+            return new Response("Daqui esta indo pro banco", true);
         }
 
         public Response Update(Endereco item)

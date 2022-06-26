@@ -10,11 +10,16 @@ namespace WfPresentationLayer
     {
         wFPhelperDAL wf = new wFPhelperDAL();
         int IdEstado;
+        CargoBLL cargo = new CargoBLL();
         public FormCadastroFuncionario()
         {
             InitializeComponent();
             ((Control)this.TabEndereco).Enabled = false;
             ((Control)this.CmbBoxCidade).Enabled = false;
+
+            CmbBoxAdmin.DataSource = cargo.GetAll().Dados;
+            CmbBoxAdmin.DisplayMember = "Nome";
+            CmbBoxAdmin.ValueMember = "ID";
         }
         
         private void BtnCadastroEndereco_Click_1(object sender, EventArgs e)
@@ -33,9 +38,10 @@ namespace WfPresentationLayer
             {
                 cep = "";
             }
-            Cargo c = new Cargo(1,"sei la o que o marco quer");
+            
             
             FuncionarioBll funcionarioBll = new FuncionarioBll();
+            Cargo cargo = new Cargo(iD: CmbBoxAdmin.SelectedIndex + 1, nome: CmbBoxAdmin.Text);
             Endereco endereco = new Endereco(nomeRua: TxtBoxRua.Text,
                                                         cEP: cep,
                                                         numeroCasa: TxtBoxNumero.Text,
@@ -46,11 +52,10 @@ namespace WfPresentationLayer
                                                       rG: TxtBoxRgFuncionario.Text,
                                                       email: txtBoxEmailFuncionario.Text,
                                                       telefone: TxtBoxTelefone1Funcionario.Text,
-                                                      cargo : c,
+                                                      cargo: cargo,
                                                       endereco: endereco,
                                                       senha: TxtBoxSenhaFuncionario.Text
-                                                      
-                                                      /*posicaoHierarquica: (Hierarquia)CmbBoxAdmin.SelectedIndex*/);
+                                                      ) ;
             Response respostaFuncionario = funcionarioBll.Insert(funcionario);
             MessageBox.Show(respostaFuncionario.Message);
             if (respostaFuncionario.HasSuccess)

@@ -5,37 +5,35 @@ namespace DataAccessLayer
 {
     public class LaboratorioDAL : ICRUD<Laboratorio>
     {
-        internal const string DalInfo = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\SAMSUNG\Desktop\BancoFarmaciaZYX\BancoDeDadosFarmaciaZYX\BancoFarmaciaZYX.mdf;Integrated Security=True;Connect Timeout=30";
-        
+        internal const string DalInfo = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\SAMSUNG\Documents\banco\BancoFarmaciaZYX.mdf;Integrated Security=True;Connect Timeout=30";
+
         public Response Insert(Laboratorio item)
         {
-            string sql = $"INSERT INTO LABORATORIOS (RAZAO_SOCIAL,CNPJ,EMAIL,TELEFONE,NOME_CONTATO) VALUES (@RAZAO_SOCIAL,@NOME_CONTATO,@CNPJ,@EMAIL,@TELEFONE)";
-
-            string connectionString = DalInfo;
+            string sql = $"INSERT INTO LABORATORIOS (RAZAO_SOCIAL,CNPJ,EMAIL,TELEFONE,NOME_CONTATO) VALUES (@RAZAO_SOCIAL,@CNPJ,@EMAIL,@TELEFONE,@NOME_CONTATO)";
 
             SqlCommand command = new SqlCommand(sql);
-            command.Parameters.AddWithValue("@RAZAO_SOCIAL", item.RazaoSocial);
+            command.Parameters.AddWithValue("@RAZAO_SOCIAL", item.Razao_Social);
+            command.Parameters.AddWithValue("@NOME_CONTATO", item.Nome_Contato);
             command.Parameters.AddWithValue("@CNPJ", item.CNPJ);
             command.Parameters.AddWithValue("@EMAIL", item.Email);
             command.Parameters.AddWithValue("@TELEFONE", item.Telefone);
-            command.Parameters.AddWithValue("@NOME_CONTATO", item.NomeContato);
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
                 dbexecutor.Execute(command);
-                return new Response("Laboratório cadastrado com sucesso.", true);
+                return new Response("Laboratorio cadastrado com sucesso.", true);
             }
             catch (Exception ex)
             {
                 if (ex.Message.Contains("UQ_LABORATORIOS_EMAIL"))
                 {
-                    return new Response("Email informado já está em uso.", false);
+                    return new Response("Email já está em uso.", false);
                 }
                 if (ex.Message.Contains("UQ_LABORATORIOS_CNPJ"))
                 {
-                    return new Response("CNPJ informado já está em uso.", false);
+                    return new Response("CNPJ já está em uso.", false);
                 }
-                return new Response("Erro no banco de dados, contate o administrador.", false);
+                return new Response("Erro no Sistema contate o administrados", false);
             }
         }
         public Response Update(Laboratorio item)
@@ -46,8 +44,8 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@ID", item.ID);
-            command.Parameters.AddWithValue("@RAZAO_SOCIAL", item.RazaoSocial);
-            command.Parameters.AddWithValue("@NOME_CONTATO", item.NomeContato);
+            command.Parameters.AddWithValue("@RAZAO_SOCIAL", item.Razao_Social);
+            command.Parameters.AddWithValue("@NOME_CONTATO", item.Nome_Contato);
             command.Parameters.AddWithValue("@CNPJ", item.CNPJ);
             command.Parameters.AddWithValue("@EMAIL", item.Email);
             command.Parameters.AddWithValue("@TELEFONE", item.Telefone);

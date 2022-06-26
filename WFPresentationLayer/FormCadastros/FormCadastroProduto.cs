@@ -1,43 +1,54 @@
 ﻿using BusinessLogicalLayer.BusinessLL;
 using Entities;
 using Shared;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace WfPresentationLayer
 {
     public partial class FormCadastroProduto : Form
     {
+        LaboratorioBLL LB = new LaboratorioBLL();
         public FormCadastroProduto()
         {
             InitializeComponent();
+            CmbBoxLaboratorio.DataSource = LB.GetAll().Dados;
+            CmbBoxLaboratorio.DisplayMember = "razaoSocial";
         }
         private void BtnCadastrarProduto_Click_1(object sender, EventArgs e)
         {
-            string preco = TxtBoxPrecoProduto.Text;
-            if (TxtBoxPrecoProduto.Text == "   .")
+            
+            CmbBoxLaboratorio.ValueMember = "ID";
+
+            Produto produto = new Produto(nome: TxtBoxNomeProduto.Text,
+                                          descricao: TxtBoxDescrisaoProduto.Text,
+                                          laboratorio: CmbBoxLaboratorio.SelectedIndex + 1,
+                                          valorunitario: double.Parse(TxtBoxPrecoProduto.Text));
+                
+            ProdutoBll produtoBll = new ProdutoBll();
+            Response resposta = produtoBll.Insert(produto);
+            MessageBox.Show(resposta.Message);
+            if (resposta.HasSuccess)
             {
-                preco = "0";
+                this.Close();
             }
+        }
 
-            //EU CRIEI UM LABORATORIO ALEAQTORIO SO PRA TESTAR, ESTÁ ERRADO, ARRUMA AI FRONT-END!
-
-            //Produto produto = new Produto(TxtBoxNomeProduto.Text,TxtBoxDescrisaoProduto.Text,
-            //                             lab, double.Parse(preco));
-            //ProdutoBll produtoBll = new ProdutoBll();
-            //Response resposta = produtoBll.Insert(produto);
-            //MessageBox.Show(resposta.Message);
-            //if (resposta.HasSuccess)
-            //{
-            //    this.Close();
-            //}
+        private void TxtBoxPrecoProduto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.' || e.KeyChar == ',')
+            {
+                //troca o . pela virgula
+                e.KeyChar = ',';
+                //Verifica se já existe alguma vírgula na string
+                if (TxtBoxPrecoProduto.Text.Contains(","))
+                {
+                    e.Handled = true; // Caso exista, aborte 
+                }
+            }
+            //aceita apenas números, tecla backspace.
+            else if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

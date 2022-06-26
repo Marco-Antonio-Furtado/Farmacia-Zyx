@@ -12,7 +12,7 @@
             string digito;
             string tempCnpj;
             cnpj = cnpj.Trim();
-            cnpj = cnpj.Replace(".", "").Replace("-", "").Replace("/", "");
+            cnpj = cnpj.Replace(".", "").Replace("-", "").Replace("/", "").Replace(",", "");
             if (cnpj.Length != CARACTERES_CNPJ)
                 return false;
             tempCnpj = cnpj.Substring(0, 12);
@@ -43,7 +43,7 @@
             {
                 return "Razao Social tem que ser informada\r\n";
             }
-            else if (RazaoSocial.Length > 3)
+            else if (RazaoSocial.Length < 3)
             {
                 return "Razao Social invalida\r\n";
             }

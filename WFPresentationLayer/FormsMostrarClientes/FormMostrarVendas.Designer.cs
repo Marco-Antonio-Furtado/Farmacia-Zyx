@@ -31,10 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GridFuncionario = new System.Windows.Forms.DataGridView();
-            this.BtnProcurarCompra = new System.Windows.Forms.Button();
-            this.BtnDeletarCompra = new System.Windows.Forms.Button();
-            this.BtnAlterarCompra = new System.Windows.Forms.Button();
-            this.BtnCadastrarCompra = new System.Windows.Forms.Button();
             this.GridID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gridproduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,12 +40,16 @@
             this.GridValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValorCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnProcurarCompra = new System.Windows.Forms.Button();
+            this.BtnDeletarCompra = new System.Windows.Forms.Button();
+            this.BtnAlterarCompra = new System.Windows.Forms.Button();
+            this.BtnCadastrarCompra = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
             // GridFuncionario
             // 
-            this.GridFuncionario.BackgroundColor = System.Drawing.Color.IndianRed;
+            this.GridFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -81,57 +81,9 @@
             this.GridFuncionario.Name = "GridFuncionario";
             this.GridFuncionario.RowHeadersWidth = 51;
             this.GridFuncionario.RowTemplate.Height = 29;
-            this.GridFuncionario.Size = new System.Drawing.Size(1169, 521);
+            this.GridFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridFuncionario.Size = new System.Drawing.Size(1169, 622);
             this.GridFuncionario.TabIndex = 51;
-            // 
-            // BtnProcurarCompra
-            // 
-            this.BtnProcurarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.BtnProcurarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnProcurarCompra.ForeColor = System.Drawing.Color.White;
-            this.BtnProcurarCompra.Location = new System.Drawing.Point(612, 595);
-            this.BtnProcurarCompra.Name = "BtnProcurarCompra";
-            this.BtnProcurarCompra.Size = new System.Drawing.Size(277, 79);
-            this.BtnProcurarCompra.TabIndex = 50;
-            this.BtnProcurarCompra.Text = "Selecionar Compra";
-            this.BtnProcurarCompra.UseVisualStyleBackColor = false;
-            // 
-            // BtnDeletarCompra
-            // 
-            this.BtnDeletarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.BtnDeletarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnDeletarCompra.ForeColor = System.Drawing.Color.White;
-            this.BtnDeletarCompra.Location = new System.Drawing.Point(909, 595);
-            this.BtnDeletarCompra.Name = "BtnDeletarCompra";
-            this.BtnDeletarCompra.Size = new System.Drawing.Size(277, 79);
-            this.BtnDeletarCompra.TabIndex = 49;
-            this.BtnDeletarCompra.TabStop = false;
-            this.BtnDeletarCompra.Text = "Deletar Compra";
-            this.BtnDeletarCompra.UseVisualStyleBackColor = false;
-            // 
-            // BtnAlterarCompra
-            // 
-            this.BtnAlterarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.BtnAlterarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnAlterarCompra.ForeColor = System.Drawing.Color.White;
-            this.BtnAlterarCompra.Location = new System.Drawing.Point(318, 595);
-            this.BtnAlterarCompra.Name = "BtnAlterarCompra";
-            this.BtnAlterarCompra.Size = new System.Drawing.Size(277, 79);
-            this.BtnAlterarCompra.TabIndex = 48;
-            this.BtnAlterarCompra.Text = "Alterar Compra";
-            this.BtnAlterarCompra.UseVisualStyleBackColor = false;
-            // 
-            // BtnCadastrarCompra
-            // 
-            this.BtnCadastrarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.BtnCadastrarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnCadastrarCompra.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarCompra.Location = new System.Drawing.Point(17, 595);
-            this.BtnCadastrarCompra.Name = "BtnCadastrarCompra";
-            this.BtnCadastrarCompra.Size = new System.Drawing.Size(277, 79);
-            this.BtnCadastrarCompra.TabIndex = 47;
-            this.BtnCadastrarCompra.Text = "Cadastrar Compra";
-            this.BtnCadastrarCompra.UseVisualStyleBackColor = false;
             // 
             // GridID
             // 
@@ -195,6 +147,55 @@
             this.GridData.MinimumWidth = 6;
             this.GridData.Name = "GridData";
             this.GridData.Width = 125;
+            // 
+            // BtnProcurarCompra
+            // 
+            this.BtnProcurarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnProcurarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnProcurarCompra.ForeColor = System.Drawing.Color.White;
+            this.BtnProcurarCompra.Location = new System.Drawing.Point(608, 640);
+            this.BtnProcurarCompra.Name = "BtnProcurarCompra";
+            this.BtnProcurarCompra.Size = new System.Drawing.Size(277, 79);
+            this.BtnProcurarCompra.TabIndex = 50;
+            this.BtnProcurarCompra.Text = "Selecionar Compra";
+            this.BtnProcurarCompra.UseVisualStyleBackColor = false;
+            // 
+            // BtnDeletarCompra
+            // 
+            this.BtnDeletarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnDeletarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnDeletarCompra.ForeColor = System.Drawing.Color.White;
+            this.BtnDeletarCompra.Location = new System.Drawing.Point(905, 640);
+            this.BtnDeletarCompra.Name = "BtnDeletarCompra";
+            this.BtnDeletarCompra.Size = new System.Drawing.Size(277, 79);
+            this.BtnDeletarCompra.TabIndex = 49;
+            this.BtnDeletarCompra.TabStop = false;
+            this.BtnDeletarCompra.Text = "Deletar Compra";
+            this.BtnDeletarCompra.UseVisualStyleBackColor = false;
+            // 
+            // BtnAlterarCompra
+            // 
+            this.BtnAlterarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnAlterarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnAlterarCompra.ForeColor = System.Drawing.Color.White;
+            this.BtnAlterarCompra.Location = new System.Drawing.Point(314, 640);
+            this.BtnAlterarCompra.Name = "BtnAlterarCompra";
+            this.BtnAlterarCompra.Size = new System.Drawing.Size(277, 79);
+            this.BtnAlterarCompra.TabIndex = 48;
+            this.BtnAlterarCompra.Text = "Alterar Compra";
+            this.BtnAlterarCompra.UseVisualStyleBackColor = false;
+            // 
+            // BtnCadastrarCompra
+            // 
+            this.BtnCadastrarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnCadastrarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnCadastrarCompra.ForeColor = System.Drawing.Color.White;
+            this.BtnCadastrarCompra.Location = new System.Drawing.Point(13, 640);
+            this.BtnCadastrarCompra.Name = "BtnCadastrarCompra";
+            this.BtnCadastrarCompra.Size = new System.Drawing.Size(277, 79);
+            this.BtnCadastrarCompra.TabIndex = 47;
+            this.BtnCadastrarCompra.Text = "Cadastrar Compra";
+            this.BtnCadastrarCompra.UseVisualStyleBackColor = false;
             // 
             // Vendas
             // 

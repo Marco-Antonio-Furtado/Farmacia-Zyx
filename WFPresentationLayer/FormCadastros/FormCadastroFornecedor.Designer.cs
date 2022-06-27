@@ -39,6 +39,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxRazaoSocial = new System.Windows.Forms.TextBox();
             this.BtnCadastroFornecedor = new System.Windows.Forms.Button();
+            this.LblIdAlteracao = new System.Windows.Forms.Label();
+            this.TxtBoxID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label6
@@ -169,12 +171,39 @@
             this.BtnCadastroFornecedor.UseVisualStyleBackColor = false;
             this.BtnCadastroFornecedor.Click += new System.EventHandler(this.BtnCadastroFornecedor_Click_1);
             // 
+            // LblIdAlteracao
+            // 
+            this.LblIdAlteracao.AutoSize = true;
+            this.LblIdAlteracao.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LblIdAlteracao.ForeColor = System.Drawing.Color.White;
+            this.LblIdAlteracao.Location = new System.Drawing.Point(240, 179);
+            this.LblIdAlteracao.Name = "LblIdAlteracao";
+            this.LblIdAlteracao.Size = new System.Drawing.Size(126, 23);
+            this.LblIdAlteracao.TabIndex = 93;
+            this.LblIdAlteracao.Text = "ID da alteracao";
+            this.LblIdAlteracao.Visible = false;
+            // 
+            // TxtBoxID
+            // 
+            this.TxtBoxID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxID.Enabled = false;
+            this.TxtBoxID.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TxtBoxID.ForeColor = System.Drawing.Color.White;
+            this.TxtBoxID.Location = new System.Drawing.Point(239, 206);
+            this.TxtBoxID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxID.Name = "TxtBoxID";
+            this.TxtBoxID.Size = new System.Drawing.Size(226, 30);
+            this.TxtBoxID.TabIndex = 92;
+            this.TxtBoxID.Visible = false;
+            // 
             // FormCadastroFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(499, 326);
+            this.Controls.Add(this.LblIdAlteracao);
+            this.Controls.Add(this.TxtBoxID);
             this.Controls.Add(this.BtnCadastroFornecedor);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.TxtBoxNomeResponsavel);
@@ -206,5 +235,7 @@
         private Label label1;
         private TextBox txtBoxRazaoSocial;
         private Button BtnCadastroFornecedor;
+        private Label LblIdAlteracao;
+        private TextBox TxtBoxID;
     }
 }

@@ -12,6 +12,7 @@ namespace WfPresentationLayer
             DataGrid.DataBindings.Add(nameof(DataGrid.BackgroundColor), this, nameof(Control.BackColor));
         }
         List<Item_Venda> Vendas = new List<Item_Venda>();
+        
         private void BtnNovoCliente_Click(object sender, EventArgs e)
         {
             FormCadastroCliente formCadastroCliente = new FormCadastroCliente();
@@ -65,7 +66,7 @@ namespace WfPresentationLayer
                 //troca o . pela virgula
                 e.KeyChar = ',';
                 //Verifica se já existe alguma vírgula na string
-                if (TxtBoxUnitario.Text.Contains(","))
+                if (TxtBoxUnitario.Text.Contains(','))
                 {
                     e.Handled = true; // Caso exista, aborte 
                 }

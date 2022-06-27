@@ -182,6 +182,7 @@
             this.BtnDeletarFuncionario.TabIndex = 34;
             this.BtnDeletarFuncionario.Text = "Deletar Funcionario";
             this.BtnDeletarFuncionario.UseVisualStyleBackColor = false;
+            this.BtnDeletarFuncionario.Click += new System.EventHandler(this.BtnDeletarFuncionario_Click);
             // 
             // BtnAlterarFuncionario
             // 
@@ -194,6 +195,7 @@
             this.BtnAlterarFuncionario.TabIndex = 33;
             this.BtnAlterarFuncionario.Text = "Alterar Funcionario";
             this.BtnAlterarFuncionario.UseVisualStyleBackColor = false;
+            this.BtnAlterarFuncionario.Click += new System.EventHandler(this.BtnAlterarFuncionario_Click);
             // 
             // BtnCadastrarFuncionario
             // 

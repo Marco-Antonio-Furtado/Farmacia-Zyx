@@ -120,7 +120,7 @@ namespace DataAccessLayer
         }
         public DataResponse<Funcionario> GetAll()
         {
-            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO,CARGO_ID,ATIVO,SENHA FROM FUNCIONARIOS";
+            string sql = $"SELECT F.ID,F.NOME,F.CPF,F.RG,F.EMAIL,F.TELEFONE,F.ENDERECO,CARGO_ID,ATIVO,SENHA FROM FUNCIONARIOS F";
             SqlCommand command = new SqlCommand(sql);
             try
             {
@@ -165,6 +165,11 @@ namespace DataAccessLayer
             {
                 return new SingleResponse<Funcionario>(ex.Message, false, null);
             }
+        }
+
+        public Response Disable(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

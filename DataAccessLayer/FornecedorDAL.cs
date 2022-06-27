@@ -36,6 +36,26 @@ namespace DataAccessLayer
                 return new Response("Erro no Sistema contate o administrados", false);
             }
         }
+
+        public Response Disable(int iDCLiente)
+        {
+            string sql = $"UPDATE FORNECEDORES SET ATIVO = 0 WHERE ID = @ID";
+
+            SqlCommand command = new SqlCommand(sql);
+
+            command.Parameters.AddWithValue("@ID", iDCLiente);
+            try
+            {
+                DbExecuter dbexecutor = new DbExecuter();
+                dbexecutor.Execute(command);
+                return new Response("Fornecedor Alterado com sucesso.", true);
+            }
+            catch (Exception ex)
+            {
+                return new Response("Erro no banco de dados" + "\r\n" + "contate o administrador", false);
+            }
+        }
+
         public Response Update(Fornecedor fornecedor)
         {
             string sql = $"UPDATE FORNECEDOR SET RAZAO_SOCIAL = @RAZAO_SOCIAL,NOME_CONTATO = @NOME_CONTATO,CNPJ = @CNPJ,EMAIL = @EMAIL, TELEFONE = @TELEFONE WHERE ID = @ID";

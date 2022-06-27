@@ -7,6 +7,7 @@ namespace Entities
         Response Insert(T item);
         Response Update(T item);
         Response Delete(int id);
+        Response Disable(int id);
         DataResponse<T> GetAll();
         SingleResponse<T> GetByID(int id);
         

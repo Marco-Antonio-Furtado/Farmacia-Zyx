@@ -81,28 +81,34 @@ namespace WfPresentationLayer.Alteraçoes
             int IDCLiente = Convert.ToInt32(GridClientes.CurrentRow.Cells[0].Value.ToString());
             string nome = Convert.ToString(GridClientes.CurrentRow.Cells[1].Value.ToString());
 
-            DialogResult r = MeuMessageBox.Show("Deseja Apagar o " + nome + " Da tabela Ou do banco " + "\r\n" + "X Para Voltar","Deletar do banco","Deletar Da Tabela");
+            DialogResult r = MeuMessageBox.Show("Deseja Apagar o " + nome + " Da tabela Ou do banco " + "\r\n" + "X Para Voltar","Escolha","Deletar Do banco","deletar da tabela");
             if (r == DialogResult.Yes)
             {
-                DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja deletar o usuario " + nome + " Tem Certeza?","Sim","Nao");
+                DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja deletar o usuario " + nome ," Tem Certeza?","Sim","Nao");
                 if (re == DialogResult.Yes)
                 {
                     Response resposta = clienteBLL.Delete(IDCLiente);
                     if (resposta.HasSuccess)
                     {
-                        MeuMessageBox.Show(resposta.Message, "Deu Certo");
+                        MeuMessageBox.Show(resposta.Message, "Deu Certo","OK");
                     }
                     else MeuMessageBox.Show(resposta.Message);
                 }
+                else { }
             }
             else if(r == DialogResult.No)
             {
-                Response resposta = clienteBLL.Disable(IDCLiente);
-                if (resposta.HasSuccess)
+                DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja Apagar o usuario " + nome, " Tem Certeza?", "Sim", "Nao");
+                if (re == DialogResult.Yes)
                 {
-                    MeuMessageBox.Show(resposta.Message, "Deu Certo");
+                    Response resposta = clienteBLL.Disable(IDCLiente);
+                    if (resposta.HasSuccess)
+                    {
+                        MeuMessageBox.Show(resposta.Message, "Deu Certo", "OK");
+                    }
+                    else MeuMessageBox.Show(resposta.Message);
                 }
-                else MeuMessageBox.Show(resposta.Message);
+                else { }
             }
             
         }

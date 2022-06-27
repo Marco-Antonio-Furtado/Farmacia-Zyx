@@ -44,5 +44,10 @@ namespace BusinessLogicalLayer.BusinessLL
         {
             return fornecedorDAL.GetByEmail(email);
         }
+
+        public Response Disable(int iDCLiente)
+        {
+            return fornecedorDAL.Disable(iDCLiente);
+        }
     }
 }

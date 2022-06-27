@@ -1,5 +1,6 @@
 ﻿using BusinessLogicalLayer.BusinessLL;
 using Entities;
+using Shared;
 
 namespace WfPresentationLayer.Alteraçoes
 {
@@ -34,6 +35,71 @@ namespace WfPresentationLayer.Alteraçoes
         private void SincronizarListaGrid(Produto item)
         {
             Gridprodutos.Rows.Add(item.ID, item.Nome,item.ID_Laboratorio, item.Descricao, item.Valor_Unitario, item.Valor_Unitario);
+        }
+
+        private void BtnAlterarProdutos_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = this.Gridprodutos.SelectedRows[0];
+            if (Gridprodutos.CurrentRow.Cells[0].Value == null)
+            {
+                MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");
+            }
+            else
+            {
+                int IDPRoduto = Convert.ToInt32(Gridprodutos.CurrentRow.Cells[0].Value.ToString());
+                string nome = Convert.ToString(Gridprodutos.CurrentRow.Cells[1].Value.ToString());
+                string laboratorio = Convert.ToString(Gridprodutos.CurrentRow.Cells[2].Value.ToString());
+                string descrisao = Convert.ToString(Gridprodutos.CurrentRow.Cells[3].Value.ToString());
+                string valorcompra = Convert.ToString(Gridprodutos.CurrentRow.Cells[4].Value.ToString());
+                string valorvenda = Convert.ToString(Gridprodutos.CurrentRow.Cells[5].Value.ToString());
+                _objForm3?.Close();
+                _objForm3 = new FormCadastroProduto(IDPRoduto, nome, laboratorio, descrisao, valorcompra, valorvenda)
+                {
+                    TopLevel = false,
+                    FormBorderStyle = FormBorderStyle.None,
+                    Dock = DockStyle.Fill,
+                };
+                pnlProduto.Controls.Add(_objForm3);
+                _objForm3.Show();
+                _objForm3.BringToFront();
+            }
+        }
+
+        private void BtnDeletarProdutos_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = this.Gridprodutos.SelectedRows[0];
+            int IDCLiente = Convert.ToInt32(Gridprodutos.CurrentRow.Cells[0].Value.ToString());
+            string nome = Convert.ToString(Gridprodutos.CurrentRow.Cells[1].Value.ToString());
+
+            DialogResult r = MeuMessageBox.Show("Deseja Apagar o " + nome + " Da tabela Ou do banco " + "\r\n" + "X Para Voltar", "Escolha", "Deletar Do banco", "deletar da tabela");
+            if (r == DialogResult.Yes)
+            {
+                DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja deletar o usuario " + nome, " Tem Certeza?", "Sim", "Nao");
+                if (re == DialogResult.Yes)
+                {
+                    Response resposta = ProdutoBll.Delete(IDCLiente);
+                    if (resposta.HasSuccess)
+                    {
+                        MeuMessageBox.Show(resposta.Message, "Deu Certo", "OK");
+                    }
+                    else MeuMessageBox.Show(resposta.Message);
+                }
+                else { }
+            }
+            else if (r == DialogResult.No)
+            {
+                DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja Apagar o Produto " + nome, " Tem Certeza?", "Sim", "Nao");
+                if (re == DialogResult.Yes)
+                {
+                    Response resposta = ProdutoBll.Disable(IDCLiente);
+                    if (resposta.HasSuccess)
+                    {
+                        MeuMessageBox.Show(resposta.Message, "Deu Certo", "OK");
+                    }
+                    else MeuMessageBox.Show(resposta.Message);
+                }
+                else { }
+            }
         }
     }
 }

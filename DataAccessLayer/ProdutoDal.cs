@@ -67,6 +67,26 @@ namespace DataAccessLayer
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
         }
+
+        public Response Disable(int iDCLiente)
+        {
+            string sql = $"UPDATE PRODUTOS SET ATIVO = 0 WHERE ID = @ID";
+
+            SqlCommand command = new SqlCommand(sql);
+
+            command.Parameters.AddWithValue("@ID", iDCLiente);
+            try
+            {
+                DbExecuter dbexecutor = new DbExecuter();
+                dbexecutor.Execute(command);
+                return new Response("Produto Alterado com sucesso.", true);
+            }
+            catch (Exception ex)
+            {
+                return new Response("Erro no banco de dados" + "\r\n" + "contate o administrador", false);
+            }
+        }
+
         public Response Delete(int id)
         {
             string sql = "DELETE FROM PRODUTO WHERE ID = @ID";

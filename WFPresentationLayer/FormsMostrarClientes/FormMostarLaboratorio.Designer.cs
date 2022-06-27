@@ -156,6 +156,7 @@
             this.BtnDeletarLaboratorio.TabIndex = 29;
             this.BtnDeletarLaboratorio.Text = "Deletar Laboratorio";
             this.BtnDeletarLaboratorio.UseVisualStyleBackColor = false;
+            this.BtnDeletarLaboratorio.Click += new System.EventHandler(this.BtnDeletarLaboratorio_Click);
             // 
             // BtnAlterarLaboratorio
             // 

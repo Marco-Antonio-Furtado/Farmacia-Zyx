@@ -48,5 +48,9 @@ namespace BusinessLogicalLayer.BusinessLL
             throw new NotImplementedException();
         }
 
+        public Response Disable(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

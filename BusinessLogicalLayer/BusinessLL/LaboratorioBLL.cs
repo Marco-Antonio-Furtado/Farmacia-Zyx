@@ -41,5 +41,10 @@ namespace BusinessLogicalLayer.BusinessLL
         {
             return labdal.GetByID(id);
         }
+
+        public Response Disable(int iDCLiente)
+        {
+            return labdal.Disable(iDCLiente);
+        }
     }
 }

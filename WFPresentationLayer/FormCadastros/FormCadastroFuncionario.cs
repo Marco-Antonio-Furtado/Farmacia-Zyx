@@ -21,7 +21,25 @@ namespace WfPresentationLayer
             CmbBoxAdmin.DisplayMember = "Nome";
             CmbBoxAdmin.ValueMember = "ID";
         }
-        
+
+        public FormCadastroFuncionario(int iDCLiente, string nome, string email, string rg, string cpf, string telefone, string cargo1)
+        {
+            InitializeComponent();
+            ((Control)this.TabEndereco).Enabled = false;
+            ((Control)this.CmbBoxCidade).Enabled = false;
+
+            CmbBoxAdmin.DataSource = cargo.GetAll().Dados;
+            CmbBoxAdmin.DisplayMember = "Nome";
+            CmbBoxAdmin.ValueMember = "ID";
+            txtBoxNomeFuncionario.Text = nome;
+            txtBoxEmailFuncionario.Text = email;
+            TxtBoxRgFuncionario.Text =rg;
+            TxtBoxTelefone1Funcionario.Text = telefone;
+            TxtBoxCpfFuncionario.Text = cpf;
+            LblIdAlteracao.Visible = true;
+            TxtBoxID.Visible = true;
+        }
+
         private void BtnCadastroEndereco_Click_1(object sender, EventArgs e)
         {
             ((Control)this.TabEndereco).Enabled = true;
@@ -38,8 +56,6 @@ namespace WfPresentationLayer
             {
                 cep = "";
             }
-            
-            
             FuncionarioBll funcionarioBll = new FuncionarioBll();
             Cargo cargo = new Cargo(iD: CmbBoxAdmin.SelectedIndex + 1, nome: CmbBoxAdmin.Text);
             Endereco endereco = new Endereco(nomeRua: TxtBoxRua.Text,
@@ -63,7 +79,6 @@ namespace WfPresentationLayer
                 this.Close();
             }
         }
-
         private void TxtBoxNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '.' || e.KeyChar == ',')

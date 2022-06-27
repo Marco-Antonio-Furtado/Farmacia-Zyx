@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnProcurarProdutos = new System.Windows.Forms.Button();
             this.BtnDeletarProdutos = new System.Windows.Forms.Button();
             this.BtnAlterarProdutos = new System.Windows.Forms.Button();
             this.BtnCadastrarProduto = new System.Windows.Forms.Button();
             this.Gridprodutos = new System.Windows.Forms.DataGridView();
-            this.pnlProduto = new System.Windows.Forms.Panel();
             this.GridID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridLaboratorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridDescrisao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridValorCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridValorVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlProduto = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.Gridprodutos)).BeginInit();
             this.pnlProduto.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +71,7 @@
             this.BtnDeletarProdutos.TabIndex = 39;
             this.BtnDeletarProdutos.Text = "Deletar Produtos";
             this.BtnDeletarProdutos.UseVisualStyleBackColor = false;
+            this.BtnDeletarProdutos.Click += new System.EventHandler(this.BtnDeletarProdutos_Click);
             // 
             // BtnAlterarProdutos
             // 
@@ -83,6 +84,7 @@
             this.BtnAlterarProdutos.TabIndex = 38;
             this.BtnAlterarProdutos.Text = "Alterar Produtos";
             this.BtnAlterarProdutos.UseVisualStyleBackColor = false;
+            this.BtnAlterarProdutos.Click += new System.EventHandler(this.BtnAlterarProdutos_Click);
             // 
             // BtnCadastrarProduto
             // 
@@ -99,21 +101,21 @@
             // 
             // Gridprodutos
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Gridprodutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.Gridprodutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.Gridprodutos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Gridprodutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Gridprodutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.Gridprodutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Gridprodutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GridID,
@@ -122,38 +124,30 @@
             this.GridDescrisao,
             this.GridValorCompra,
             this.GridValorVenda});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Gridprodutos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Gridprodutos.DefaultCellStyle = dataGridViewCellStyle7;
             this.Gridprodutos.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.Gridprodutos.Location = new System.Drawing.Point(0, 0);
             this.Gridprodutos.Name = "Gridprodutos";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Gridprodutos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Gridprodutos.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.Gridprodutos.RowHeadersWidth = 51;
             this.Gridprodutos.RowTemplate.Height = 29;
             this.Gridprodutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Gridprodutos.Size = new System.Drawing.Size(1286, 629);
             this.Gridprodutos.TabIndex = 43;
-            // 
-            // pnlProduto
-            // 
-            this.pnlProduto.Controls.Add(this.Gridprodutos);
-            this.pnlProduto.Location = new System.Drawing.Point(12, 12);
-            this.pnlProduto.Name = "pnlProduto";
-            this.pnlProduto.Size = new System.Drawing.Size(1295, 629);
-            this.pnlProduto.TabIndex = 44;
             // 
             // GridID
             // 
@@ -196,6 +190,14 @@
             this.GridValorVenda.MinimumWidth = 6;
             this.GridValorVenda.Name = "GridValorVenda";
             this.GridValorVenda.Width = 175;
+            // 
+            // pnlProduto
+            // 
+            this.pnlProduto.Controls.Add(this.Gridprodutos);
+            this.pnlProduto.Location = new System.Drawing.Point(12, 12);
+            this.pnlProduto.Name = "pnlProduto";
+            this.pnlProduto.Size = new System.Drawing.Size(1295, 629);
+            this.pnlProduto.TabIndex = 44;
             // 
             // FormMostrarProdutos
             // 

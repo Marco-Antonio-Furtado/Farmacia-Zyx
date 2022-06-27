@@ -3,7 +3,7 @@ using Shared;
 using System.Data.SqlClient;
 
 namespace DataAccessLayer
-{
+{   
     public class CargoDAL : ICRUD<Cargo>
     {
         public Response Delete(int id)
@@ -14,7 +14,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@ID", id);
             try
             {
-                DbExecuter dbexecutor = new DbExecuter();
+                DbExecuter dbexecutor = new();
                 dbexecutor.Execute(command);
                 return new Response("Cargo Excluido com sucesso.", true);
             }
@@ -23,6 +23,11 @@ namespace DataAccessLayer
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
         }
+        public Response Disable(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public DataResponse<Cargo> GetAll()
         {
             string sql = $"SELECT ID,NOME FROM CARGOS";

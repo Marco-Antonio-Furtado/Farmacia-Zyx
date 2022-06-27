@@ -117,5 +117,9 @@ namespace DataAccessLayer
             }
         }
 
+        public Response Disable(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

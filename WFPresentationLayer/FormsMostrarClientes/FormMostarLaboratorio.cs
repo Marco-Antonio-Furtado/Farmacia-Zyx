@@ -1,5 +1,7 @@
 ﻿using BusinessLogicalLayer.BusinessLL;
+using DataAccessLayer;
 using Entities;
+using Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,7 +54,6 @@ namespace WfPresentationLayer.FormsMostrarClientes
         private void BtnAlterarLaboratorio_Click(object sender, EventArgs e)
         {
           DataGridViewRow row = this.GridLaboratorio.SelectedRows[0];
-          int i = 32;
           if (GridLaboratorio.CurrentRow.Cells[0].Value == null)
           {
               MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");
@@ -79,6 +80,43 @@ namespace WfPresentationLayer.FormsMostrarClientes
             }
             
 
+        }
+
+        private void BtnDeletarLaboratorio_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = this.GridLaboratorio.SelectedRows[0];
+            int IDCLiente = Convert.ToInt32(GridLaboratorio.CurrentRow.Cells[0].Value.ToString());
+            string nome = Convert.ToString(GridLaboratorio.CurrentRow.Cells[1].Value.ToString());
+
+            DialogResult r = MeuMessageBox.Show("Deseja Apagar o Laboratorio" + nome + " Da tabela Ou do banco " + "\r\n" + "X Para Voltar", "Escolha", "Deletar Do banco", "deletar da tabela");
+            if (r == DialogResult.Yes)
+            {
+                DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja deletar o Laboratorio " + nome, " Tem Certeza?", "Sim", "Nao");
+                if (re == DialogResult.Yes)
+                {
+                    Response resposta = laboratorioBLL.Delete(IDCLiente);
+                    if (resposta.HasSuccess)
+                    {
+                        MeuMessageBox.Show(resposta.Message, "Deu Certo", "OK");
+                    }
+                    else MeuMessageBox.Show(resposta.Message);
+                }
+                else { }
+            }
+            else if (r == DialogResult.No)
+            {
+                DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja Apagar o Laboratorio " + nome, " Tem Certeza?", "Sim", "Nao");
+                if (re == DialogResult.Yes)
+                {
+                    Response resposta = laboratorioBLL.Disable(IDCLiente);
+                    if (resposta.HasSuccess)
+                    {
+                        MeuMessageBox.Show(resposta.Message, "Deu Certo", "OK");
+                    }
+                    else MeuMessageBox.Show(resposta.Message);
+                }
+                else { }
+            }
         }
     }
 }

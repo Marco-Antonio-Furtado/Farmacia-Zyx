@@ -72,6 +72,9 @@ namespace BusinessLogicalLayer.BusinessLL
             else return new Response("login errado", false);
         }
 
-        
+        public Response Disable(int iDCLiente)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

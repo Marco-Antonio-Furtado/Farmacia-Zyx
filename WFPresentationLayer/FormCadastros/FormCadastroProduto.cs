@@ -7,12 +7,34 @@ namespace WfPresentationLayer
     public partial class FormCadastroProduto : Form
     {
         LaboratorioBLL LB = new LaboratorioBLL();
+        private int iDPRoduto;
+        private string? nome;
+        private string? laboratorio;
+        private string? descrisao;
+        private string? valorcompra;
+        private string? valorvenda;
+
         public FormCadastroProduto()
         {
             InitializeComponent();
             CmbBoxLaboratorio.DataSource = LB.GetAll().Dados;
             CmbBoxLaboratorio.DisplayMember = "razaoSocial";
         }
+
+        public FormCadastroProduto(int iDPRoduto, string nome, string laboratorio, string descrisao, string valorcompra, string valorvenda)
+        {
+            InitializeComponent();
+            CmbBoxLaboratorio.DataSource = LB.GetAll().Dados;
+            CmbBoxLaboratorio.DisplayMember = "razaoSocial";
+            TxtBoxId.Visible = true;
+            TxtBoxId.Enabled = false;
+            LblIDPRoduto.Visible = true;
+            TxtBoxId.Text = iDPRoduto.ToString();
+            TxtBoxNomeProduto.Text = nome;
+            TxtBoxDescrisaoProduto.Text = laboratorio;
+            TxtBoxPrecoProduto.Text = valorvenda;
+        }
+
         private void BtnCadastrarProduto_Click_1(object sender, EventArgs e)
         {
             CmbBoxLaboratorio.ValueMember = "ID";

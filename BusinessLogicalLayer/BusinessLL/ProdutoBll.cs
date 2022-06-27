@@ -47,5 +47,10 @@ namespace BusinessLogicalLayer.BusinessLL
         {
             throw new NotImplementedException();
         }
+
+        public Response Disable(int iDCLiente)
+        {
+            return produtoDAL.Disable(iDCLiente);
+        }
     }
 }

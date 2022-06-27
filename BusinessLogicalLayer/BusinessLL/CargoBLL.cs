@@ -31,5 +31,9 @@ namespace BusinessLogicalLayer.BusinessLL
             return cargoDAL.GetByID(id);
         }
 
+        public Response Disable(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

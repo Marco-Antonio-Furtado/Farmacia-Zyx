@@ -223,5 +223,10 @@ namespace DataAccessLayer
                 connection.Dispose();
             }
         }
+
+        public Response Disable(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

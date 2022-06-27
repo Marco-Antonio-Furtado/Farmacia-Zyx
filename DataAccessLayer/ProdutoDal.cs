@@ -94,13 +94,36 @@ namespace DataAccessLayer
 
         public DataResponse<Produto> GetAll()
         {
-            string sql = $"SELECT ID,NOME,DESCRICAO,VALOR_UNITARIO,VALOR_VENDA,ID_LABORATORIO,QUANTIA_ESTOQUE,ATIVO FROM PRODUTOS";
+            string sql = $"SELECT P.ID,P.NOME,P.DESCRICAO,P.VALOR_UNITARIO,P.VALOR_VENDA,P.QUANTIA_ESTOQUE,P.ATIVO, L.NOME " +
+                         $"FROM PRODUTOS P INNER JOIN LABORATORIOS L ON P.ID_LABORATORIO = L.ID";
 
+            DbConnection db = new DbConnection();
             SqlCommand command = new SqlCommand(sql);
+            db.AttachCommand(command);
+            command.CommandText = sql;
             try
             {
-                DbExecuter dbexecutor = new DbExecuter();
-                return dbexecutor.GetData<Produto>(command);
+                db.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<Produto> produtos = new List<Produto>();
+                while (reader.Read())
+                {
+                    Produto p = new Produto()
+                    {
+                        Nome = (string)reader["P.NOME"],
+                        Descricao = (string)reader["P.DESCRICAO"],
+                        ValorUnitario = (double)reader["VALOR_UNITARIO"],
+                        ValorVenda = (double)reader["VALOR_VENDA"],
+                        Laboratorio = (Laboratorio)reader["L.NOME"],
+                        QuantiaEstoque = (int)reader["P.QUANTIA_ESTOQUE"],
+                        Ativo = (bool)reader["P.ATIVO"]
+
+                    };
+
+                    produtos.Add(p);
+                }
+                DataResponse<Produto> response = new DataResponse<Produto>("DADOS SELECIONADOS COM SUCESSO", true, produtos);
+                return response;
             }
             catch (Exception ex)
             {

@@ -118,53 +118,85 @@ namespace DataAccessLayer
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
         }
+
         public DataResponse<Funcionario> GetAll()
         {
-            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO,CARGO_ID,ATIVO,SENHA FROM FUNCIONARIOS";
+            string sql = $"SELECT F.ID,F.NOME,F.CPF,F.RG,F.EMAIL,F.TELEFONE,CAR.NOME,F.ATIVO,E.NOME_RUA,CID.NOME " +
+                $"        FROM FUNCIONARIOS F INNER JOIN CARGOS CAR ON F.CARGO_ID = CAR.ID " +
+                $"                            INNER JOIN ENDERECOS E ON F.ENDERECO = E.ID" +
+                $"                            INNER JOIN CIDADES CID ON E.CIDADE_ID = CID.ID";
+
+            DbConnection db = new DbConnection();
             SqlCommand command = new SqlCommand(sql);
+            db.AttachCommand(command);
+            command.CommandText = sql;
             try
             {
-                DbExecuter dbexecutor = new DbExecuter();
-                return dbexecutor.GetData<Funcionario>(command);
+                db.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<Funcionario> funcionarios = new List<Funcionario>();
+                while (reader.Read())
+                {
+                    Funcionario f = new Funcionario()
+                    {
+                        Ativo = (bool)reader["F.ATIVO"],
+                        Cargo = new Cargo() { Nome = (string)reader["CAR.NOME"] },
+                        CPF = (string)reader["F.CPF"],
+                        Email = (string)reader["F.EMAIL"],
+                        Endereco = new Endereco(null, (string)reader["E.NOME_RUA"], null, 0, 0),
+                        Nome = (string)reader["F.NOME"],
+                        RG = (string)reader["F.RG"],
+                        Telefone = (string)reader["F.TELEFONE"]
+                    };
+                    f.Endereco.Cidade = new Entities.Propriedades.Cidade((string)reader["CID.NOME"]);
+                    funcionarios.Add(f);
+                }
+                DataResponse<Funcionario> response = new DataResponse<Funcionario>("DADOS SELECIONADOS COM SUCESSO", true, funcionarios);
+                return response;
             }
+
             catch (Exception ex)
             {
                 return new DataResponse<Funcionario>(ex.Message, false, null);
             }
+            finally
+            {
+                db.Close();
+            }
         }
 
         public SingleResponse<Funcionario> GetByID(int id)
-        {
-            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO,CARGO_ID,ATIVO,SENHA FROM FUNCIONARIOS WHERE ID = @ID";
-            
-            SqlCommand command = new SqlCommand(sql);
-            command.Parameters.AddWithValue("@ID", id);
-            try
-            {
-                DbExecuter dbexecutor = new DbExecuter();
-                return dbexecutor.GetItem<Funcionario>(command);
-            }
-            catch (Exception ex)
-            {
-                return new SingleResponse<Funcionario>(ex.Message, false, null);
-            }
-        }
+{
+    string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO,CARGO_ID,ATIVO,SENHA FROM FUNCIONARIOS WHERE ID = @ID";
 
-        public SingleResponse<Funcionario> GetByEmail(string email)
-        {
-            string query = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO,CARGO_ID,ATIVO,SENHA FROM FUNCIONARIO WHERE EMAIL = @EMAIL";
-            
-            SqlCommand command = new SqlCommand(query);
-            command.Parameters.AddWithValue("@EMAIL", email);
-            try
-            {
-                DbExecuter dbexecutor = new DbExecuter();
-                return dbexecutor.GetItem<Funcionario>(command);
-            }
-            catch (Exception ex)
-            {
-                return new SingleResponse<Funcionario>(ex.Message, false, null);
-            }
-        }
+    SqlCommand command = new SqlCommand(sql);
+    command.Parameters.AddWithValue("@ID", id);
+    try
+    {
+        DbExecuter dbexecutor = new DbExecuter();
+        return dbexecutor.GetItem<Funcionario>(command);
+    }
+    catch (Exception ex)
+    {
+        return new SingleResponse<Funcionario>(ex.Message, false, null);
+    }
+}
+
+public SingleResponse<Funcionario> GetByEmail(string email)
+{
+    string query = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO,CARGO_ID,ATIVO,SENHA FROM FUNCIONARIO WHERE EMAIL = @EMAIL";
+
+    SqlCommand command = new SqlCommand(query);
+    command.Parameters.AddWithValue("@EMAIL", email);
+    try
+    {
+        DbExecuter dbexecutor = new DbExecuter();
+        return dbexecutor.GetItem<Funcionario>(command);
+    }
+    catch (Exception ex)
+    {
+        return new SingleResponse<Funcionario>(ex.Message, false, null);
+    }
+}
     }
 }

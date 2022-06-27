@@ -1,7 +1,13 @@
-﻿namespace Entities
+﻿using Entities.Propriedades;
+
+namespace Entities
 {
     public class Endereco
     {
+        public Endereco()
+        {
+
+        }
         public Endereco( string cEP, string nomeRua, string numeroCasa, int estadoID, int cidadeID)
         {
             CEP = cEP;
@@ -16,6 +22,8 @@
         public string NumeroCasa { get; set; }
         public int EstadoID { get; set; }
         public int CidadeID { get; set; }
+        public Cidade Cidade { get; set; }
+        public Estado Estado { get; set; }
 
 
         public override string ToString()

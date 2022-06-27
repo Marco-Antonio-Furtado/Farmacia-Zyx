@@ -103,13 +103,7 @@ namespace DataAccessLayer
                 conn.Close();
             }
             return "nao deu";
-        }
-
-
-
-
-
-        
+        } 
 
 }
     internal static class SqlExtensions

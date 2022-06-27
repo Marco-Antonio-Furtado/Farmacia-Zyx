@@ -39,6 +39,7 @@
             this.TopPanel = new System.Windows.Forms.Panel();
             this.LblFuncionarioLogado = new System.Windows.Forms.Label();
             this.PctBack = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PctBtnClose)).BeginInit();
             this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PctBack)).BeginInit();
@@ -57,7 +58,7 @@
             this.BtnMenuFornecedor.BackColor = System.Drawing.Color.IndianRed;
             this.BtnMenuFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMenuFornecedor.ForeColor = System.Drawing.Color.White;
-            this.BtnMenuFornecedor.Location = new System.Drawing.Point(922, 41);
+            this.BtnMenuFornecedor.Location = new System.Drawing.Point(761, 41);
             this.BtnMenuFornecedor.Name = "BtnMenuFornecedor";
             this.BtnMenuFornecedor.Size = new System.Drawing.Size(189, 46);
             this.BtnMenuFornecedor.TabIndex = 5;
@@ -70,7 +71,7 @@
             this.BtnMenuFuncionario.BackColor = System.Drawing.Color.IndianRed;
             this.BtnMenuFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMenuFuncionario.ForeColor = System.Drawing.Color.White;
-            this.BtnMenuFuncionario.Location = new System.Drawing.Point(1173, 41);
+            this.BtnMenuFuncionario.Location = new System.Drawing.Point(1197, 41);
             this.BtnMenuFuncionario.Name = "BtnMenuFuncionario";
             this.BtnMenuFuncionario.Size = new System.Drawing.Size(109, 46);
             this.BtnMenuFuncionario.TabIndex = 4;
@@ -83,7 +84,7 @@
             this.BtnMenuClientes.BackColor = System.Drawing.Color.IndianRed;
             this.BtnMenuClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMenuClientes.ForeColor = System.Drawing.Color.White;
-            this.BtnMenuClientes.Location = new System.Drawing.Point(468, 41);
+            this.BtnMenuClientes.Location = new System.Drawing.Point(386, 41);
             this.BtnMenuClientes.Name = "BtnMenuClientes";
             this.BtnMenuClientes.Size = new System.Drawing.Size(160, 46);
             this.BtnMenuClientes.TabIndex = 3;
@@ -96,7 +97,7 @@
             this.BtnMenuProduto.BackColor = System.Drawing.Color.IndianRed;
             this.BtnMenuProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMenuProduto.ForeColor = System.Drawing.Color.White;
-            this.BtnMenuProduto.Location = new System.Drawing.Point(684, 41);
+            this.BtnMenuProduto.Location = new System.Drawing.Point(572, 41);
             this.BtnMenuProduto.Name = "BtnMenuProduto";
             this.BtnMenuProduto.Size = new System.Drawing.Size(159, 46);
             this.BtnMenuProduto.TabIndex = 2;
@@ -109,7 +110,7 @@
             this.BtnMenuCompras.BackColor = System.Drawing.Color.IndianRed;
             this.BtnMenuCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMenuCompras.ForeColor = System.Drawing.Color.White;
-            this.BtnMenuCompras.Location = new System.Drawing.Point(226, 41);
+            this.BtnMenuCompras.Location = new System.Drawing.Point(188, 41);
             this.BtnMenuCompras.Name = "BtnMenuCompras";
             this.BtnMenuCompras.Size = new System.Drawing.Size(175, 46);
             this.BtnMenuCompras.TabIndex = 1;
@@ -144,6 +145,7 @@
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.LightCoral;
+            this.TopPanel.Controls.Add(this.button1);
             this.TopPanel.Controls.Add(this.LblFuncionarioLogado);
             this.TopPanel.Controls.Add(this.PctBtnClose);
             this.TopPanel.Controls.Add(this.PctBack);
@@ -179,6 +181,19 @@
             this.PctBack.TabStop = false;
             this.PctBack.Click += new System.EventHandler(this.PctBack_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.IndianRed;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(973, 41);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(189, 46);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Menu De Laboratorios";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MenuGeralAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -211,5 +226,6 @@
         private Panel TopPanel;
         private PictureBox PctBack;
         private Label LblFuncionarioLogado;
+        private Button button1;
     }
 }

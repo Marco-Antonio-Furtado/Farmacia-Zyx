@@ -18,9 +18,9 @@
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public double Valor_Unitario { get; set; }
+        public double Valor_Venda { get; set; }
         public int ID_Laboratorio { get; set; }
         public int Quantia_Estoque { get; set; }
-        public double Valor_Venda { get; set; }
         public bool Ativo { get; set; }
 
         public override string ToString()

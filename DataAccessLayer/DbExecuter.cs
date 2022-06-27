@@ -7,6 +7,21 @@ namespace DataAccessLayer
 {
     internal class DbExecuter
     {
+        public int ExecuteScalar(SqlCommand command)
+        {
+            DbConnection conn = new DbConnection();
+            try
+            {
+                conn.AttachCommand(command);
+                conn.Open();
+                int ID = Convert.ToInt32(command.ExecuteScalar());
+                return ID;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         public Response Execute(SqlCommand command)
         {
             DbConnection conn = new DbConnection();
@@ -65,7 +80,38 @@ namespace DataAccessLayer
             }
         }
 
-    }
+        public string lOGIN(SqlCommand command)
+        {
+            DbConnection conn = new DbConnection();
+            try
+            {
+                conn.AttachCommand(command);
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    string senha = Convert.ToString(reader["SENHA"]);
+                    return senha;
+                }
+            }
+            catch (Exception)
+            {
+                return "nao deu";
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return "nao deu";
+        }
+
+
+
+
+
+        
+
+}
     internal static class SqlExtensions
     {
         public static T ToItem<T>(this DataRow item)

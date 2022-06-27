@@ -17,12 +17,11 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@NUMERO_CASA", item.NumeroCasa);
             command.Parameters.AddWithValue("@CIDADE_ID", item.CidadeID);
             command.Parameters.AddWithValue("@ESTADO_ID", item.EstadoID);
-
-
             try
             {
-                DbExecuter dbExecuter = new DbExecuter();
-                dbExecuter.Execute(command);
+                DbExecuter dbexecutor = new DbExecuter();
+                item.ID = dbexecutor.ExecuteScalar(command);
+                return new Response("Endereco cadastrado com sucesso.", true);
             }
             catch (Exception ex)
             {
@@ -30,17 +29,14 @@ namespace DataAccessLayer
                 {
                     return new Response("Cidade deve ser uma chave estrangeira", false);
                 }
-                else
-                {
-                    return new Response(ex.Message, false);
-                }
+                return new Response("Erro no banco de dados" + "\r\n" + "contate o administrador", false);
             }
-            return new Response("Daqui esta indo pro banco", true);
+
         }
 
+               
         public Response Update(Endereco item)
         {
-
             string sql = $"UPDATE CLIENTES SET NOME_RUA = @NOME_RUA, CEP = @CEP, NUMERO_CASA = @NUMERO_CASA, CIDADE_ID = @CIDADE_ID, ESTADO_ID = @ESTADO_ID WHERE ID = @ID";
 
             SqlCommand command = new SqlCommand(sql);
@@ -49,7 +45,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@NUMERO_CASA", item.NumeroCasa);
             command.Parameters.AddWithValue("@CIDADE_ID", item.CidadeID);
             command.Parameters.AddWithValue("@ESTADO_ID", item.EstadoID);
-
+            command.Parameters.AddWithValue("@ID", item.ID);
             try
             {
                 DbExecuter dbExecuter = new DbExecuter();
@@ -91,7 +87,7 @@ namespace DataAccessLayer
 
         public DataResponse<Endereco> GetAll()
         {
-            string query = $"SELECT * FROM ENDERECOS";
+            string query = $"SELECT CEP,NOME_RUA,NUMERO_CASA,CIDADE_ID,ESTADO_ID FROM ENDERECOS";
             SqlCommand sql = new SqlCommand(query);
             try
             {
@@ -106,7 +102,7 @@ namespace DataAccessLayer
         public SingleResponse<Endereco> GetByID(int id)
         {
 
-            string query = $"SELECT * FROM ENDERECO WHERE ID = @ID";
+            string query = $"SELECT CEP,NOME_RUA,NUMERO_CASA,CIDADE_ID,ESTADO_ID FROM ENDERECO WHERE ID = @ID";
             SqlCommand command = new SqlCommand(query);
 
             DbExecuter dbExecuter = new DbExecuter();

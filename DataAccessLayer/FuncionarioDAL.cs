@@ -9,7 +9,7 @@ namespace DataAccessLayer
     {
         public Response Insert(Funcionario item)
         {
-            string sql = $"INSERT INTO FUNCIONARIOS (NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO, CARGO_ID, SENHA) VALUES (@NOME,@CPF,@RG,@EMAIL,@TELEFONE,@ENDERECO,@CARGO_ID,@SENHA)";
+            string sql = $"INSERT INTO FUNCIONARIOS (NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO,CARGO_ID,SENHA) VALUES (@NOME,@CPF,@RG,@EMAIL,@TELEFONE,@ENDERECO,@CARGO_ID,@SENHA)";
 
             SqlCommand command = new SqlCommand(sql);
 
@@ -21,7 +21,6 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@ENDERECO", item.Endereco.ID);
             command.Parameters.AddWithValue("@CARGO_ID", item.Cargo.ID);
             command.Parameters.AddWithValue("@SENHA", item.Senha);
-
 
             try
             {
@@ -45,8 +44,8 @@ namespace DataAccessLayer
 
         public Response Update(Funcionario item)
         {
-            string query = "UPDATE FUNCIONARIOS SET NOME = @NOME, CPF = @CPF, RG = @RG, EMAIL = @EMAIL, TELEFONE = @TELEFONE, ENDERECO = @ENDERECO, CARGO_ID = @CARGO_ID, SENHA = @SENHA";
-            SqlCommand command = new SqlCommand(query);
+            string sql = "UPDATE FUNCIONARIOS SET NOME = @NOME, CPF = @CPF, RG = @RG, EMAIL = @EMAIL, TELEFONE = @TELEFONE, ENDERECO = @ENDERECO, CARGO_ID = @CARGO_ID, SENHA = @SENHA";
+            SqlCommand command = new SqlCommand(sql);
 
             command.Parameters.AddWithValue("@NOME", item.Nome);
             command.Parameters.AddWithValue("@CPF", item.CPF);
@@ -79,12 +78,29 @@ namespace DataAccessLayer
 
 
         }
+
+        public string LoginDAL(string email, string senha)
+        {
+            string sql = $"SELECT SENHA FROM FUNCIONARIOS WHERE EMAIL = @EMAIL";
+            SqlCommand command = new SqlCommand(sql);
+            command.Parameters.AddWithValue("@EMAIL", email);
+            command.Parameters.AddWithValue("@SENHA", senha);
+            try
+            {
+                DbExecuter dbexecutor = new DbExecuter();
+                return dbexecutor.lOGIN(command);
+            }
+            catch (Exception)
+            {
+                return "deu ruim";
+            }
+        }
         public Response Delete(int id)
         {
-            string query = "DELETE FROM FUNCIONARIOS WHERE ID = @ID";
+            string sql = "DELETE FROM FUNCIONARIOS WHERE ID = @ID";
             DbExecuter dbexecuter = new DbExecuter();
 
-            SqlCommand command = new SqlCommand(query);
+            SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@ID", id);
 
             try
@@ -104,38 +120,51 @@ namespace DataAccessLayer
         }
         public DataResponse<Funcionario> GetAll()
         {
-            string query = $"SELECT * FROM FUNCIONARIOS";
-            SqlCommand command = new SqlCommand(query);
-            DbExecuter dbExecuter = new DbExecuter();
-            return dbExecuter.GetData<Funcionario>(command);
+            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO,CARGO_ID,ATIVO,SENHA FROM FUNCIONARIOS";
+            SqlCommand command = new SqlCommand(sql);
+            try
+            {
+                DbExecuter dbexecutor = new DbExecuter();
+                return dbexecutor.GetData<Funcionario>(command);
+            }
+            catch (Exception ex)
+            {
+                return new DataResponse<Funcionario>(ex.Message, false, null);
+            }
         }
 
         public SingleResponse<Funcionario> GetByID(int id)
         {
-            string query = $"SELECT * FROM FUNCIONARIOS WHERE ID = @ID";
+            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO,CARGO_ID,ATIVO,SENHA FROM FUNCIONARIOS WHERE ID = @ID";
             
-            SqlCommand command = new SqlCommand(query);
+            SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@ID", id);
-
-            DbExecuter dbExecuter = new DbExecuter();
-
-            return dbExecuter.GetItem<Funcionario>(command);
-
+            try
+            {
+                DbExecuter dbexecutor = new DbExecuter();
+                return dbexecutor.GetItem<Funcionario>(command);
+            }
+            catch (Exception ex)
+            {
+                return new SingleResponse<Funcionario>(ex.Message, false, null);
+            }
         }
 
         public SingleResponse<Funcionario> GetByEmail(string email)
         {
-            string query = $"SELECT * FROM FUNCIONARIO WHERE EMAIL = @EMAIL";
+            string query = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO,CARGO_ID,ATIVO,SENHA FROM FUNCIONARIO WHERE EMAIL = @EMAIL";
             
             SqlCommand command = new SqlCommand(query);
             command.Parameters.AddWithValue("@EMAIL", email);
-
-
-            DbExecuter dbExecuter = new DbExecuter();
-            return dbExecuter.GetItem<Funcionario>(command);
-
+            try
+            {
+                DbExecuter dbexecutor = new DbExecuter();
+                return dbexecutor.GetItem<Funcionario>(command);
+            }
+            catch (Exception ex)
+            {
+                return new SingleResponse<Funcionario>(ex.Message, false, null);
+            }
         }
-
     }
-
 }

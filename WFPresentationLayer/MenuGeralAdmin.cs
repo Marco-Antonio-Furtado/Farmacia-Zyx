@@ -1,6 +1,7 @@
 ﻿using BusinessLogicalLayer.BusinessLL;
 using WfPresentationLayer.Alteraçoes;
 using WfPresentationLayer.FormCadastros;
+using WfPresentationLayer.FormsMostrarClientes;
 using WfPresentationLayer.Trancaçoes;
 
 
@@ -94,6 +95,19 @@ namespace WfPresentationLayer
         private void PctBack_Click(object sender, EventArgs e)
         {
             _objForm.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _objForm?.Close();
+            _objForm = new FormMostarLaboratorio
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill,
+            };
+            MidlePanel.Controls.Add(_objForm);
+            _objForm.Show();
         }
     }
 }

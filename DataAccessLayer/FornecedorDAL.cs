@@ -125,12 +125,10 @@ namespace DataAccessLayer
 
         public SingleResponse<Fornecedor> GetByID(int id)
         {
-            string sql = $"SELECT * FROM FORNECEDOR WHERE ID = @ID";
-
+            string sql = $"SELECT ID,RAZAO_SOCIAL,CNPJ,NOME_CONTATO,TELEFONE,EMAIL,ATIVO FROM FORNECEDOR WHERE ID = @ID";
           
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@ID", id);
-            
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
@@ -144,7 +142,7 @@ namespace DataAccessLayer
 
         public SingleResponse<Fornecedor> GetByEmail(string email)
         {
-            string sql = $"SELECT * FROM FORNECEDOR WHERE EMAIL = @EMAIL";
+            string sql = $"SELECT ID,RAZAO_SOCIAL,CNPJ,NOME_CONTATO,TELEFONE,EMAIL,ATIVO FROM FORNECEDOR WHERE EMAIL = @EMAIL";
 
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@EMAIL", email);

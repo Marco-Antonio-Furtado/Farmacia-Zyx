@@ -168,6 +168,7 @@
             this.BtnAlterarLaboratorio.TabIndex = 28;
             this.BtnAlterarLaboratorio.Text = "Alterar Laboratorio";
             this.BtnAlterarLaboratorio.UseVisualStyleBackColor = false;
+            this.BtnAlterarLaboratorio.Click += new System.EventHandler(this.BtnAlterarLaboratorio_Click);
             // 
             // BtnCadastrarlaboratorio
             // 
@@ -195,6 +196,7 @@
             this.Controls.Add(this.BtnCadastrarlaboratorio);
             this.Name = "FormMostarLaboratorio";
             this.Text = "FormMostarLaboratorio";
+            this.Load += new System.EventHandler(this.FormMostarLaboratorio_Load);
             this.PNLLaboratorio.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridLaboratorio)).EndInit();
             this.ResumeLayout(false);

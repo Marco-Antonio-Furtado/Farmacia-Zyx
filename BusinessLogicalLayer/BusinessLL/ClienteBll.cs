@@ -47,5 +47,10 @@ namespace BusinessLogicalLayer.BusinessLL
         {
             return clienteDAL.GetByCPF(cpf);
         }
+
+        public Response Disable(int iDCLiente)
+        {
+            return clienteDAL.Disable(iDCLiente);
+        }
     }
 }

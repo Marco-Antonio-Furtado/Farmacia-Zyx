@@ -4,6 +4,10 @@ namespace Entities
 {
     public class Laboratorio : Empresa
     {
+        public Laboratorio()
+        {
+        }
+
         public Laboratorio(string razaoSocial, string cNPJ, string nomeContato, string email, string telefone)
         {
             Razao_Social = razaoSocial;

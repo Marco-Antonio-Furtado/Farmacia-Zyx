@@ -94,7 +94,7 @@ namespace DataAccessLayer
 
         public DataResponse<Produto> GetAll()
         {
-            string sql = $"SELECT ID,NOME,DESCRICAO,VALOR_UNITARIO,ID_LABORATORIO,QUANTIA_ESTOQUE,ATIVO FROM PRODUTOS";
+            string sql = $"SELECT ID,NOME,DESCRICAO,VALOR_UNITARIO,VALOR_VENDA,ID_LABORATORIO,QUANTIA_ESTOQUE,ATIVO FROM PRODUTOS";
 
             SqlCommand command = new SqlCommand(sql);
             try

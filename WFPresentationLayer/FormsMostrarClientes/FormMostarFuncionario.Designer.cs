@@ -231,6 +231,7 @@
             this.ForeColor = System.Drawing.Color.IndianRed;
             this.Name = "Alteracao_Funcionario";
             this.Text = "Funcionarios";
+            this.Load += new System.EventHandler(this.Alteracao_Funcionario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridFuncionario)).EndInit();
             this.pnlFunc.ResumeLayout(false);
             this.ResumeLayout(false);

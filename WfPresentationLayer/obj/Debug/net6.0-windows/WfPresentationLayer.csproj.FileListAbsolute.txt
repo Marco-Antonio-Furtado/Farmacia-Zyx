@@ -221,3 +221,5 @@ C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresen
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.Vendas.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.FormMostrarProdutos.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormsMostrarClientes.FormMostarLaboratorio.resources
+C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Form1.resources
+C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.MeuMessageBox.resources

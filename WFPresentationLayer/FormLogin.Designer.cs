@@ -42,6 +42,7 @@
             this.ImageBtnFechar = new System.Windows.Forms.PictureBox();
             this.ImagePessoa = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImagePessoa)).BeginInit();
@@ -195,6 +196,16 @@
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(503, 431);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormLogin
             // 
             this.AcceptButton = this.BtnLogar;
@@ -203,6 +214,7 @@
             this.BackColor = System.Drawing.Color.IndianRed;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(617, 576);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.ImagePessoa);
             this.Controls.Add(this.ImageBtnFechar);
@@ -247,5 +259,6 @@
         private PictureBox ImageBtnFechar;
         private PictureBox ImagePessoa;
         private PictureBox pictureBox2;
+        private Button button1;
     }
 }

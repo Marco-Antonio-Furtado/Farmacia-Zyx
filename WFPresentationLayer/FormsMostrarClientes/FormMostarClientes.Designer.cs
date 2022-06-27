@@ -73,6 +73,7 @@
             this.BtnAlterarCliente.TabIndex = 23;
             this.BtnAlterarCliente.Text = "Alterar Cliente";
             this.BtnAlterarCliente.UseVisualStyleBackColor = false;
+            this.BtnAlterarCliente.Click += new System.EventHandler(this.BtnAlterarCliente_Click);
             // 
             // BtnDeletarClientes
             // 
@@ -85,6 +86,7 @@
             this.BtnDeletarClientes.TabIndex = 24;
             this.BtnDeletarClientes.Text = "Deletar Cliente";
             this.BtnDeletarClientes.UseVisualStyleBackColor = false;
+            this.BtnDeletarClientes.Click += new System.EventHandler(this.BtnDeletarClientes_Click);
             // 
             // BtnProcurarCliente
             // 
@@ -144,6 +146,7 @@
             this.GridClientes.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.GridClientes.Location = new System.Drawing.Point(3, 3);
             this.GridClientes.Name = "GridClientes";
+            this.GridClientes.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -164,6 +167,7 @@
             this.GRIDID.HeaderText = "ID";
             this.GRIDID.MinimumWidth = 6;
             this.GRIDID.Name = "GRIDID";
+            this.GRIDID.ReadOnly = true;
             this.GRIDID.Width = 56;
             // 
             // Grid
@@ -171,6 +175,7 @@
             this.Grid.HeaderText = "Nome";
             this.Grid.MinimumWidth = 6;
             this.Grid.Name = "Grid";
+            this.Grid.ReadOnly = true;
             this.Grid.Width = 125;
             // 
             // GridEmail
@@ -178,6 +183,7 @@
             this.GridEmail.HeaderText = "Email";
             this.GridEmail.MinimumWidth = 6;
             this.GridEmail.Name = "GridEmail";
+            this.GridEmail.ReadOnly = true;
             this.GridEmail.Width = 200;
             // 
             // GridRg
@@ -185,6 +191,7 @@
             this.GridRg.HeaderText = "RG";
             this.GridRg.MinimumWidth = 6;
             this.GridRg.Name = "GridRg";
+            this.GridRg.ReadOnly = true;
             this.GridRg.Width = 125;
             // 
             // dataGridViewTextBoxColumn1
@@ -192,6 +199,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "CPF";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 150;
             // 
             // GridTelefone1
@@ -199,6 +207,7 @@
             this.GridTelefone1.HeaderText = "Telefone1";
             this.GridTelefone1.MinimumWidth = 6;
             this.GridTelefone1.Name = "GridTelefone1";
+            this.GridTelefone1.ReadOnly = true;
             this.GridTelefone1.Width = 200;
             // 
             // GridTelefone2
@@ -206,6 +215,7 @@
             this.GridTelefone2.HeaderText = "Telefone2";
             this.GridTelefone2.MinimumWidth = 6;
             this.GridTelefone2.Name = "GridTelefone2";
+            this.GridTelefone2.ReadOnly = true;
             this.GridTelefone2.Width = 200;
             // 
             // FormMostarClientes
@@ -221,6 +231,7 @@
             this.Controls.Add(this.BtnCadastrarCliente);
             this.Name = "FormMostarClientes";
             this.Text = "Clientes";
+            this.Load += new System.EventHandler(this.FormMostarClientes_Load);
             this.PnlCl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridClientes)).EndInit();
             this.ResumeLayout(false);

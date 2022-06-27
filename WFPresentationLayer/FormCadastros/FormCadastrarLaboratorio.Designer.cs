@@ -39,6 +39,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxRazaoSocial = new System.Windows.Forms.TextBox();
+            this.TxtBoxId = new System.Windows.Forms.TextBox();
+            this.LblIdAlteracao = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnCadastroLaboratorio
@@ -51,7 +53,7 @@
             this.BtnCadastroLaboratorio.Name = "BtnCadastroLaboratorio";
             this.BtnCadastroLaboratorio.Size = new System.Drawing.Size(226, 147);
             this.BtnCadastroLaboratorio.TabIndex = 97;
-            this.BtnCadastroLaboratorio.Text = "Cadastrar Laboratorio";
+            this.BtnCadastroLaboratorio.Text = "Cadastrar/Alterar Laboratorio";
             this.BtnCadastroLaboratorio.UseVisualStyleBackColor = false;
             this.BtnCadastroLaboratorio.Click += new System.EventHandler(this.BtnCadastroLaboratorio_Click);
             // 
@@ -169,12 +171,38 @@
             this.txtBoxRazaoSocial.Size = new System.Drawing.Size(203, 27);
             this.txtBoxRazaoSocial.TabIndex = 87;
             // 
+            // TxtBoxId
+            // 
+            this.TxtBoxId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxId.ForeColor = System.Drawing.Color.White;
+            this.TxtBoxId.Location = new System.Drawing.Point(262, 208);
+            this.TxtBoxId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxId.Name = "TxtBoxId";
+            this.TxtBoxId.Size = new System.Drawing.Size(203, 27);
+            this.TxtBoxId.TabIndex = 98;
+            this.TxtBoxId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtBoxId.Visible = false;
+            // 
+            // LblIdAlteracao
+            // 
+            this.LblIdAlteracao.AutoSize = true;
+            this.LblIdAlteracao.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LblIdAlteracao.ForeColor = System.Drawing.Color.White;
+            this.LblIdAlteracao.Location = new System.Drawing.Point(349, 175);
+            this.LblIdAlteracao.Name = "LblIdAlteracao";
+            this.LblIdAlteracao.Size = new System.Drawing.Size(126, 23);
+            this.LblIdAlteracao.TabIndex = 99;
+            this.LblIdAlteracao.Text = "ID da alteracao";
+            this.LblIdAlteracao.Visible = false;
+            // 
             // FormCadastrarLaboratorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(491, 323);
+            this.Controls.Add(this.LblIdAlteracao);
+            this.Controls.Add(this.TxtBoxId);
             this.Controls.Add(this.BtnCadastroLaboratorio);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.TxtBoxNomeResponsavel);
@@ -207,5 +235,7 @@
         private Label label2;
         private Label label1;
         private TextBox txtBoxRazaoSocial;
+        private TextBox TxtBoxId;
+        private Label LblIdAlteracao;
     }
 }

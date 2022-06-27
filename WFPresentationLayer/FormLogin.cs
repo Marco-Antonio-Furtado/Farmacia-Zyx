@@ -1,6 +1,8 @@
 ﻿
 using BusinessLogicalLayer;
+using BusinessLogicalLayer.BusinessLL;
 using Entities;
+using Shared;
 
 namespace WfPresentationLayer
 {
@@ -20,7 +22,8 @@ namespace WfPresentationLayer
                 LabelResposta.Text = "Bem vindo";
                 MenuGeralAdmin menuGeralAdmin = new MenuGeralAdmin();
                     menuGeralAdmin.ShowDialog();
-                this.Close();
+                
+
             }
             else { LabelResposta.Text = "Email ou Senha Invalidos"; }
         }
@@ -53,6 +56,26 @@ namespace WfPresentationLayer
         private void ImageBtnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        private void Logar(string Email,string Senha)
+        {
+            FuncionarioBll funcionario = new FuncionarioBll();
+            Response Funci = funcionario.LoginBLL(Email, Senha);
+            if (Funci.HasSuccess)
+            {
+                MeuMessageBox.Show("Login Bem Sucedido", "Farmacia ZYX","Bem Vindo");
+            }
+            else
+            {
+                MeuMessageBox.Show("Login Falhou", "Farmacia ZYX", "tente de novo");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           Logar(TxtBoxLogin.Text, TxtBoxSenha.Text);
         }
     }
 }

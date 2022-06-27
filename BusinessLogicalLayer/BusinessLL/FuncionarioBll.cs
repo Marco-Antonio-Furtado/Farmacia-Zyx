@@ -30,8 +30,6 @@ namespace BusinessLogicalLayer.BusinessLL
                 }//scope.Dispose();
             }
             return response;
-
-
         }
 
         public Response Update(Funcionario item)
@@ -64,5 +62,16 @@ namespace BusinessLogicalLayer.BusinessLL
 
         }
 
+        public Response LoginBLL(string email, string senha)
+        {
+            string SenhaCerta = funcionarioDAL.LoginDAL(email,senha);
+            if (SenhaCerta == senha)
+            {
+                return new Response("login Certo", true);
+            }
+            else return new Response("login errado", false);
+        }
+
+        
     }
 }

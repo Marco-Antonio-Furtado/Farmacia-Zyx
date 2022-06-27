@@ -41,6 +41,8 @@
             this.TxtBoxTelefone2Cliente = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.BtnCadastrarCliente = new System.Windows.Forms.Button();
+            this.TxtBoxID = new System.Windows.Forms.TextBox();
+            this.LblIdAlteracao = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label6
@@ -189,9 +191,33 @@
             this.BtnCadastrarCliente.Name = "BtnCadastrarCliente";
             this.BtnCadastrarCliente.Size = new System.Drawing.Size(226, 147);
             this.BtnCadastrarCliente.TabIndex = 87;
-            this.BtnCadastrarCliente.Text = "Cadastrar Cliente";
+            this.BtnCadastrarCliente.Text = "Cadastrar / Alterar Cliente";
             this.BtnCadastrarCliente.UseVisualStyleBackColor = false;
             this.BtnCadastrarCliente.Click += new System.EventHandler(this.BtnCadastrarCliente_Click_1);
+            // 
+            // TxtBoxID
+            // 
+            this.TxtBoxID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxID.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TxtBoxID.ForeColor = System.Drawing.Color.White;
+            this.TxtBoxID.Location = new System.Drawing.Point(247, 238);
+            this.TxtBoxID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxID.Name = "TxtBoxID";
+            this.TxtBoxID.Size = new System.Drawing.Size(226, 30);
+            this.TxtBoxID.TabIndex = 88;
+            this.TxtBoxID.Visible = false;
+            // 
+            // LblIdAlteracao
+            // 
+            this.LblIdAlteracao.AutoSize = true;
+            this.LblIdAlteracao.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LblIdAlteracao.ForeColor = System.Drawing.Color.White;
+            this.LblIdAlteracao.Location = new System.Drawing.Point(347, 211);
+            this.LblIdAlteracao.Name = "LblIdAlteracao";
+            this.LblIdAlteracao.Size = new System.Drawing.Size(126, 23);
+            this.LblIdAlteracao.TabIndex = 89;
+            this.LblIdAlteracao.Text = "ID da alteracao";
+            this.LblIdAlteracao.Visible = false;
             // 
             // FormCadastroCliente
             // 
@@ -199,6 +225,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(505, 389);
+            this.Controls.Add(this.LblIdAlteracao);
+            this.Controls.Add(this.TxtBoxID);
             this.Controls.Add(this.BtnCadastrarCliente);
             this.Controls.Add(this.TxtBoxTelefone2Cliente);
             this.Controls.Add(this.label3);
@@ -219,9 +247,6 @@
             this.PerformLayout();
 
         }
-
-        #endregion
-
         private Label label6;
         private TextBox TxtBoxRgCliente;
         private MaskedTextBox TxtBoxTelefone1Cliente;
@@ -235,5 +260,9 @@
         private Label label3;
         private Button BtnCadastrarCliente;
         public TextBox txtBoxNomeCliente;
+        #endregion
+
+        private TextBox TxtBoxID;
+        private Label LblIdAlteracao;
     }
 }

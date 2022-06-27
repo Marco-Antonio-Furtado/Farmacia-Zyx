@@ -5,6 +5,10 @@ namespace Entities
 {
     public class Funcionario : Pessoa
     {
+        public Funcionario()
+        {
+        }
+
         public Funcionario(string nome, string cPF, string rG, string email, string telefone, Endereco endereco, Cargo cargo, string senha)
         {
             Nome = nome;

@@ -10,20 +10,20 @@ namespace Entities
 
         public Laboratorio(string razaoSocial, string cNPJ, string nomeContato, string email, string telefone)
         {
-            Razao_Social = razaoSocial;
+            RazaoSocial = razaoSocial;
             CNPJ = cNPJ;
-            Nome_Contato = nomeContato;
+            NomeContato = nomeContato;
             Email = email;
             Telefone = telefone;
         }
         public override string ToString()
         {
-            return this.Razao_Social + "\r\n" +
+            return this.RazaoSocial + "\r\n" +
                    this.CNPJ + "\r\n" +
                    this.Email + "\r\n" +
                    this.Telefone + "\r\n" +
                    this.Ativo + "\r\n" +
-                   this.Nome_Contato + "\r\n";
+                   this.NomeContato + "\r\n";
         }
     }
 }

@@ -6,18 +6,18 @@
         {
         }
 
-        public Cargo(int iD, string nome)
+        public Cargo(string nome)
         {
-            ID = iD;
-            Nome = nome;
+           
+            Nome_Cargo = nome;
         }
 
         public int ID { get; set; }
-        public string Nome { get; set; }
+        public string Nome_Cargo { get; set; }
 
         public override string ToString()
         {
-            return this.Nome + "\r\n";
+            return this.Nome_Cargo + "\r\n";
                  
         }
 

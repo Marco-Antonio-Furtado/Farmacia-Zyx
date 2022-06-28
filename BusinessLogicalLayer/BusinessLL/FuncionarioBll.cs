@@ -62,11 +62,15 @@ namespace BusinessLogicalLayer.BusinessLL
 
         }
 
-        public Response LoginBLL(string email, string senha)
+        public Response LoginBLL(string email,string senha)
         {
-            string SenhaCerta = funcionarioDAL.LoginDAL(email,senha);
-            if (SenhaCerta == senha)
+            SingleResponse<Funcionario> response = funcionarioDAL.LoginDAL(email);
+            
+
+            string SenhaCerta = senha;
+            if (response.Item.Senha == senha)
             {
+                SystemParameters.Logar(response.Item);
                 return new Response("login Certo", true);
             }
             else return new Response("login errado", false);

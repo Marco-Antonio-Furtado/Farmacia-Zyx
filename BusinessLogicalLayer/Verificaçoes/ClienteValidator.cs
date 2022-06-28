@@ -10,7 +10,7 @@ namespace BusinessLogicalLayer
         {
             StringBuilder erros = new StringBuilder("");
             
-            erros.Append(RegraValidacaoString.ValidateNome(cliente.Nome));
+            erros.Append(RegraValidacaoString.ValidateNome(cliente.Nome_Cliente));
             erros.Append(RegraValidacaoString.ValidateCPF(cliente.CPF));
             erros.Append(RegraValidacaoString.ValidateEmail(cliente.Email));
             erros.Append(RegraValidacaoString.ValidateTelefone(cliente.Telefone));
@@ -21,7 +21,7 @@ namespace BusinessLogicalLayer
             {
                 return new Response(erros.ToString(), false);
             }
-            cliente.Nome = RegraNormatizacao.NormatizeName(cliente.Nome);
+            cliente.Nome_Cliente = RegraNormatizacao.NormatizeName(cliente.Nome_Cliente);
             return new Response("Daqui esta indo pro banco", true);
         }
     }

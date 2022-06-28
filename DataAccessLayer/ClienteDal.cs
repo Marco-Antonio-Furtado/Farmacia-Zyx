@@ -10,11 +10,11 @@ namespace DataAccessLayer
     {
         public Response Insert(Cliente cliente)
         {
-            string sql = $"INSERT INTO CLIENTES (NOME,CPF,RG,EMAIL,TELEFONE,TELEFONE2) VALUES (@NOME,@CPF,@RG,@EMAIL,@TELEFONE,@TELEFONE2)";
+            string sql = $"INSERT INTO CLIENTES (NOME_CLIENTE,CPF,RG,EMAIL,TELEFONE,TELEFONE2) VALUES (@NOME_CLIENTE,@CPF,@RG,@EMAIL,@TELEFONE,@TELEFONE2)";
 
             SqlCommand command = new SqlCommand(sql);
 
-            command.Parameters.AddWithValue("@NOME", cliente.Nome);
+            command.Parameters.AddWithValue("@NOME_CLIENTE", cliente.Nome_Cliente);
             command.Parameters.AddWithValue("@CPF", cliente.CPF);
             command.Parameters.AddWithValue("@RG", cliente.RG);
             command.Parameters.AddWithValue("@EMAIL", cliente.Email);
@@ -69,10 +69,10 @@ namespace DataAccessLayer
 
         public Response Update(Cliente cliente)
         {
-            string sql = $"UPDATE CLIENTES SET NOME = @NOME, CPF = @CPF, RG = @RG, EMAIL = @EMAIL, TELEFONE = @TELEFONE, TELEFONE2 = @TELEFONE2 WHERE ID = @ID";
+            string sql = $"UPDATE CLIENTES SET NOME_CLIENTE = @NOME_CLIENTE, CPF = @CPF, RG = @RG, EMAIL = @EMAIL, TELEFONE = @TELEFONE, TELEFONE2 = @TELEFONE2 WHERE ID = @ID";
 
             SqlCommand command = new SqlCommand(sql);
-            command.Parameters.AddWithValue("@NOME", cliente.Nome);
+            command.Parameters.AddWithValue("@NOME_CLIENTE", cliente.Nome_Cliente);
             command.Parameters.AddWithValue("@CPF", cliente.CPF);
             command.Parameters.AddWithValue("@RG", cliente.RG);
             command.Parameters.AddWithValue("@EMAIL", cliente.Email);
@@ -118,7 +118,7 @@ namespace DataAccessLayer
         }
         public DataResponse<Cliente> GetAll()
         {
-            string sql = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,TELEFONE2,ATIVO,PROGRAMA_FIDELIDADE FROM CLIENTES";
+            string sql = $"SELECT ID,NOME_CLIENTE,CPF,RG,EMAIL,TELEFONE,TELEFONE2,ATIVO,PROGRAMA_FIDELIDADE FROM CLIENTES";
 
             SqlCommand command = new SqlCommand(sql);
             try

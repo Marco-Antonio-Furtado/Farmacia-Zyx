@@ -1,4 +1,5 @@
-﻿using Shared;
+﻿using Entities;
+using Shared;
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
@@ -55,10 +56,8 @@ namespace DataAccessLayer
             finally
             {
                 conn.Close();
-
             }
         }
-
         public SingleResponse<T> GetItem<T>(SqlCommand command)
         {
             DbConnection conn = new DbConnection();
@@ -80,7 +79,7 @@ namespace DataAccessLayer
             }
         }
 
-        public string lOGIN(SqlCommand command)
+        public SingleResponse<Funcionario> lOGIN(SqlCommand command)
         {
             DbConnection conn = new DbConnection();
             try
@@ -88,23 +87,22 @@ namespace DataAccessLayer
                 conn.AttachCommand(command);
                 conn.Open();
                 SqlDataReader reader = command.ExecuteReader();
+                Funcionario f = new Funcionario();
+                Cargo C = new Cargo();  
                 if (reader.Read())
                 {
-                    string senha = Convert.ToString(reader["SENHA"]);
-                    return senha;
+                    C.Nome_Cargo = Convert.ToString(reader["NOME_CARGO"]);
+                    f.Cargo = C;
+                    f.Senha = Convert.ToString(reader["SENHA"]);
+                     f.Nome_Funcionario = Convert.ToString(reader["NOME_FUNCIONARIO"]);
                 }
-            }
-            catch (Exception)
-            {
-                return "nao deu";
+                return new SingleResponse<Funcionario>("Login Valido", true, f);
             }
             finally
             {
                 conn.Close();
             }
-            return "nao deu";
         } 
-
 }
     internal static class SqlExtensions
     {

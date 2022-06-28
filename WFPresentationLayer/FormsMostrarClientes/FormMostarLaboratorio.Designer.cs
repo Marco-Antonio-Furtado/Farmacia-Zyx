@@ -84,6 +84,7 @@
             this.GridLaboratorio.DefaultCellStyle = dataGridViewCellStyle2;
             this.GridLaboratorio.Location = new System.Drawing.Point(-6, 0);
             this.GridLaboratorio.Name = "GridLaboratorio";
+            this.GridLaboratorio.ReadOnly = true;
             this.GridLaboratorio.RowHeadersWidth = 51;
             this.GridLaboratorio.RowTemplate.Height = 29;
             this.GridLaboratorio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -95,6 +96,7 @@
             this.GridID.HeaderText = "ID";
             this.GridID.MinimumWidth = 6;
             this.GridID.Name = "GridID";
+            this.GridID.ReadOnly = true;
             this.GridID.Width = 75;
             // 
             // GridRazaosocial
@@ -102,6 +104,7 @@
             this.GridRazaosocial.HeaderText = "Razão Social";
             this.GridRazaosocial.MinimumWidth = 6;
             this.GridRazaosocial.Name = "GridRazaosocial";
+            this.GridRazaosocial.ReadOnly = true;
             this.GridRazaosocial.Width = 175;
             // 
             // GridTelefone
@@ -109,6 +112,7 @@
             this.GridTelefone.HeaderText = "Telefone";
             this.GridTelefone.MinimumWidth = 6;
             this.GridTelefone.Name = "GridTelefone";
+            this.GridTelefone.ReadOnly = true;
             this.GridTelefone.Width = 125;
             // 
             // GridNomeResponsavel
@@ -116,6 +120,7 @@
             this.GridNomeResponsavel.HeaderText = "Nome Responsavel";
             this.GridNomeResponsavel.MinimumWidth = 6;
             this.GridNomeResponsavel.Name = "GridNomeResponsavel";
+            this.GridNomeResponsavel.ReadOnly = true;
             this.GridNomeResponsavel.Width = 200;
             // 
             // GridEmail
@@ -123,6 +128,7 @@
             this.GridEmail.HeaderText = "Email";
             this.GridEmail.MinimumWidth = 6;
             this.GridEmail.Name = "GridEmail";
+            this.GridEmail.ReadOnly = true;
             this.GridEmail.Width = 125;
             // 
             // GridCNPJ

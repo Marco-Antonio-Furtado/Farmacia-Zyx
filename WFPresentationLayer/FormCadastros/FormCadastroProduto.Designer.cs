@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TxtBoxNomeProduto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.TxtBoxPrecoProduto = new System.Windows.Forms.MaskedTextBox();
+            this.TxtBoxPrecoUnitario = new System.Windows.Forms.MaskedTextBox();
             this.BtnCadastrarProduto = new System.Windows.Forms.Button();
             this.CmbBoxLaboratorio = new System.Windows.Forms.ComboBox();
             this.TxtBoxId = new System.Windows.Forms.MaskedTextBox();
@@ -105,17 +105,17 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Preço";
             // 
-            // TxtBoxPrecoProduto
+            // TxtBoxPrecoUnitario
             // 
-            this.TxtBoxPrecoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxPrecoProduto.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxPrecoProduto.Location = new System.Drawing.Point(12, 225);
-            this.TxtBoxPrecoProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxPrecoProduto.Name = "TxtBoxPrecoProduto";
-            this.TxtBoxPrecoProduto.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxPrecoProduto.TabIndex = 5;
-            this.TxtBoxPrecoProduto.ValidatingType = typeof(int);
-            this.TxtBoxPrecoProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxPrecoProduto_KeyPress);
+            this.TxtBoxPrecoUnitario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxPrecoUnitario.ForeColor = System.Drawing.Color.White;
+            this.TxtBoxPrecoUnitario.Location = new System.Drawing.Point(12, 225);
+            this.TxtBoxPrecoUnitario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxPrecoUnitario.Name = "TxtBoxPrecoUnitario";
+            this.TxtBoxPrecoUnitario.Size = new System.Drawing.Size(203, 27);
+            this.TxtBoxPrecoUnitario.TabIndex = 5;
+            this.TxtBoxPrecoUnitario.ValidatingType = typeof(int);
+            this.TxtBoxPrecoUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxPrecoUnitario_KeyPress);
             // 
             // BtnCadastrarProduto
             // 
@@ -173,7 +173,7 @@
             this.Controls.Add(this.LblIDPRoduto);
             this.Controls.Add(this.CmbBoxLaboratorio);
             this.Controls.Add(this.BtnCadastrarProduto);
-            this.Controls.Add(this.TxtBoxPrecoProduto);
+            this.Controls.Add(this.TxtBoxPrecoUnitario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TxtBoxDescrisaoProduto);
@@ -201,5 +201,6 @@
         private ComboBox CmbBoxLaboratorio;
         private MaskedTextBox TxtBoxId;
         private Label LblIDPRoduto;
+        private MaskedTextBox TxtBoxPrecoUnitario;
     }
 }

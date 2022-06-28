@@ -39,12 +39,11 @@
             this.TxtBoxQuantidade = new System.Windows.Forms.TextBox();
             this.BtnExcluir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.BtnNovoLaboratorio = new System.Windows.Forms.Button();
-            this.CmbBoxLaboratorio = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.DateTime = new System.Windows.Forms.DateTimePicker();
             this.BtnCadastrarCompra = new System.Windows.Forms.Button();
             this.BtnNovoProduto = new System.Windows.Forms.Button();
+            this.CmbFormaPagamento = new System.Windows.Forms.ComboBox();
+            this.LabelFormaPagemento = new System.Windows.Forms.Label();
             this.BtnNovoIten = new System.Windows.Forms.Button();
             this.DataGrid = new System.Windows.Forms.DataGridView();
             this.DataGridProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,8 +60,6 @@
             this.LabelCodigoProduto = new System.Windows.Forms.Label();
             this.LabelNomeCLiente = new System.Windows.Forms.Label();
             this.TxtBoxSelecionarFornecedor = new System.Windows.Forms.TextBox();
-            this.LabelFormaPagemento = new System.Windows.Forms.Label();
-            this.CmbFormaPagamento = new System.Windows.Forms.ComboBox();
             this.GroupBoxCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +69,7 @@
             this.BtnNovoFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnNovoFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnNovoFornecedor.ForeColor = System.Drawing.Color.White;
-            this.BtnNovoFornecedor.Location = new System.Drawing.Point(221, 11);
+            this.BtnNovoFornecedor.Location = new System.Drawing.Point(221, 16);
             this.BtnNovoFornecedor.Name = "BtnNovoFornecedor";
             this.BtnNovoFornecedor.Size = new System.Drawing.Size(172, 29);
             this.BtnNovoFornecedor.TabIndex = 21;
@@ -85,7 +82,7 @@
             this.BtnProcurarFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnProcurarFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnProcurarFornecedor.ForeColor = System.Drawing.Color.White;
-            this.BtnProcurarFornecedor.Location = new System.Drawing.Point(794, 12);
+            this.BtnProcurarFornecedor.Location = new System.Drawing.Point(818, 11);
             this.BtnProcurarFornecedor.Name = "BtnProcurarFornecedor";
             this.BtnProcurarFornecedor.Size = new System.Drawing.Size(125, 29);
             this.BtnProcurarFornecedor.TabIndex = 20;
@@ -99,9 +96,6 @@
             this.GroupBoxCompra.Controls.Add(this.TxtBoxQuantidade);
             this.GroupBoxCompra.Controls.Add(this.BtnExcluir);
             this.GroupBoxCompra.Controls.Add(this.label2);
-            this.GroupBoxCompra.Controls.Add(this.BtnNovoLaboratorio);
-            this.GroupBoxCompra.Controls.Add(this.CmbBoxLaboratorio);
-            this.GroupBoxCompra.Controls.Add(this.label1);
             this.GroupBoxCompra.Controls.Add(this.DateTime);
             this.GroupBoxCompra.Controls.Add(this.BtnCadastrarCompra);
             this.GroupBoxCompra.Controls.Add(this.BtnNovoProduto);
@@ -167,49 +161,16 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(17, 172);
+            this.label2.Location = new System.Drawing.Point(17, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 23);
             this.label2.TabIndex = 31;
             this.label2.Text = "Inserir Data";
             // 
-            // BtnNovoLaboratorio
-            // 
-            this.BtnNovoLaboratorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.BtnNovoLaboratorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnNovoLaboratorio.ForeColor = System.Drawing.Color.White;
-            this.BtnNovoLaboratorio.Location = new System.Drawing.Point(429, 72);
-            this.BtnNovoLaboratorio.Name = "BtnNovoLaboratorio";
-            this.BtnNovoLaboratorio.Size = new System.Drawing.Size(158, 29);
-            this.BtnNovoLaboratorio.TabIndex = 30;
-            this.BtnNovoLaboratorio.Text = "Novo Laboratorio";
-            this.BtnNovoLaboratorio.UseVisualStyleBackColor = false;
-            // 
-            // CmbBoxLaboratorio
-            // 
-            this.CmbBoxLaboratorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.CmbBoxLaboratorio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbBoxLaboratorio.FormattingEnabled = true;
-            this.CmbBoxLaboratorio.Location = new System.Drawing.Point(173, 73);
-            this.CmbBoxLaboratorio.Name = "CmbBoxLaboratorio";
-            this.CmbBoxLaboratorio.Size = new System.Drawing.Size(233, 28);
-            this.CmbBoxLaboratorio.TabIndex = 29;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(15, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 23);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Laboratorio";
-            // 
             // DateTime
             // 
             this.DateTime.CalendarMonthBackground = System.Drawing.Color.IndianRed;
-            this.DateTime.Location = new System.Drawing.Point(173, 168);
+            this.DateTime.Location = new System.Drawing.Point(173, 130);
             this.DateTime.Name = "DateTime";
             this.DateTime.Size = new System.Drawing.Size(233, 27);
             this.DateTime.TabIndex = 25;
@@ -239,6 +200,27 @@
             this.BtnNovoProduto.Text = "Novo Produto";
             this.BtnNovoProduto.UseVisualStyleBackColor = false;
             this.BtnNovoProduto.Click += new System.EventHandler(this.BtnNovoProduto_Click);
+            // 
+            // CmbFormaPagamento
+            // 
+            this.CmbFormaPagamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.CmbFormaPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbFormaPagamento.FormattingEnabled = true;
+            this.CmbFormaPagamento.Location = new System.Drawing.Point(173, 80);
+            this.CmbFormaPagamento.Name = "CmbFormaPagamento";
+            this.CmbFormaPagamento.Size = new System.Drawing.Size(233, 28);
+            this.CmbFormaPagamento.TabIndex = 23;
+            // 
+            // LabelFormaPagemento
+            // 
+            this.LabelFormaPagemento.AutoSize = true;
+            this.LabelFormaPagemento.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LabelFormaPagemento.ForeColor = System.Drawing.Color.White;
+            this.LabelFormaPagemento.Location = new System.Drawing.Point(15, 82);
+            this.LabelFormaPagemento.Name = "LabelFormaPagemento";
+            this.LabelFormaPagemento.Size = new System.Drawing.Size(152, 23);
+            this.LabelFormaPagemento.TabIndex = 22;
+            this.LabelFormaPagemento.Text = "Forma Pagamento";
             // 
             // BtnNovoIten
             // 
@@ -410,7 +392,7 @@
             this.LabelNomeCLiente.AutoSize = true;
             this.LabelNomeCLiente.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LabelNomeCLiente.ForeColor = System.Drawing.Color.White;
-            this.LabelNomeCLiente.Location = new System.Drawing.Point(399, 17);
+            this.LabelNomeCLiente.Location = new System.Drawing.Point(423, 16);
             this.LabelNomeCLiente.Name = "LabelNomeCLiente";
             this.LabelNomeCLiente.Size = new System.Drawing.Size(149, 23);
             this.LabelNomeCLiente.TabIndex = 18;
@@ -419,32 +401,11 @@
             // TxtBoxSelecionarFornecedor
             // 
             this.TxtBoxSelecionarFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxSelecionarFornecedor.Location = new System.Drawing.Point(563, 13);
+            this.TxtBoxSelecionarFornecedor.Location = new System.Drawing.Point(587, 12);
             this.TxtBoxSelecionarFornecedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxSelecionarFornecedor.Name = "TxtBoxSelecionarFornecedor";
             this.TxtBoxSelecionarFornecedor.Size = new System.Drawing.Size(203, 27);
             this.TxtBoxSelecionarFornecedor.TabIndex = 17;
-            // 
-            // LabelFormaPagemento
-            // 
-            this.LabelFormaPagemento.AutoSize = true;
-            this.LabelFormaPagemento.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LabelFormaPagemento.ForeColor = System.Drawing.Color.White;
-            this.LabelFormaPagemento.Location = new System.Drawing.Point(15, 120);
-            this.LabelFormaPagemento.Name = "LabelFormaPagemento";
-            this.LabelFormaPagemento.Size = new System.Drawing.Size(152, 23);
-            this.LabelFormaPagemento.TabIndex = 22;
-            this.LabelFormaPagemento.Text = "Forma Pagamento";
-            // 
-            // CmbFormaPagamento
-            // 
-            this.CmbFormaPagamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.CmbFormaPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbFormaPagamento.FormattingEnabled = true;
-            this.CmbFormaPagamento.Location = new System.Drawing.Point(173, 118);
-            this.CmbFormaPagamento.Name = "CmbFormaPagamento";
-            this.CmbFormaPagamento.Size = new System.Drawing.Size(233, 28);
-            this.CmbFormaPagamento.TabIndex = 23;
             // 
             // FormNovaCompra
             // 
@@ -483,9 +444,6 @@
         private Label LabelCodigoProduto;
         private Label LabelNomeCLiente;
         private TextBox TxtBoxSelecionarFornecedor;
-        private Button BtnNovoLaboratorio;
-        private ComboBox CmbBoxLaboratorio;
-        private Label label1;
         private Label label2;
         private DataGridViewTextBoxColumn DataGridProduto;
         private DataGridViewTextBoxColumn DataGridValorUnitario;

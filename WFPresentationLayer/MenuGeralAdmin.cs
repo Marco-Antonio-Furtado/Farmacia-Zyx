@@ -1,4 +1,6 @@
-﻿using BusinessLogicalLayer.BusinessLL;
+﻿using BusinessLogicalLayer;
+using BusinessLogicalLayer.BusinessLL;
+using Shared;
 using WfPresentationLayer.Alteraçoes;
 using WfPresentationLayer.FormCadastros;
 using WfPresentationLayer.FormsMostrarClientes;
@@ -14,6 +16,10 @@ namespace WfPresentationLayer
         public MenuGeralAdmin()
         {
             InitializeComponent();
+            LblFuncionarioLogado.Text = "Bem vindo Senhor " + SystemParameters.UsuarioLogado.Nome_Funcionario;
+            Cargo ca = SystemParameters.GetPermissao();
+            if(ca.Nome_Cargo != "Administrador") { BtnMenuFuncionario.Visible = false; }
+
         }
         private void PctBtnClose_Click(object sender, EventArgs e)
         {
@@ -94,7 +100,7 @@ namespace WfPresentationLayer
         }
         private void PctBack_Click(object sender, EventArgs e)
         {
-            _objForm.Close();
+            _objForm?.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)

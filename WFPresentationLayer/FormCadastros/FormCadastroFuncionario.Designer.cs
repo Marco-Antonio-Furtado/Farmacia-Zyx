@@ -30,7 +30,9 @@
         {
             this.TabGeral = new System.Windows.Forms.TabControl();
             this.TabFuncionario = new System.Windows.Forms.TabPage();
-            this.CmbBoxAdmin = new System.Windows.Forms.ComboBox();
+            this.LblIdAlteracao = new System.Windows.Forms.Label();
+            this.TxtBoxID = new System.Windows.Forms.TextBox();
+            this.CmbBoxCargos = new System.Windows.Forms.ComboBox();
             this.BtnCadastroEndereco = new System.Windows.Forms.Button();
             this.TxtBoxSenhaFuncionario = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,8 +58,6 @@
             this.TxtBoxRua = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.TxtBoxCep = new System.Windows.Forms.MaskedTextBox();
-            this.LblIdAlteracao = new System.Windows.Forms.Label();
-            this.TxtBoxID = new System.Windows.Forms.TextBox();
             this.TabGeral.SuspendLayout();
             this.TabFuncionario.SuspendLayout();
             this.TabEndereco.SuspendLayout();
@@ -79,7 +79,7 @@
             this.TabFuncionario.BackColor = System.Drawing.Color.IndianRed;
             this.TabFuncionario.Controls.Add(this.LblIdAlteracao);
             this.TabFuncionario.Controls.Add(this.TxtBoxID);
-            this.TabFuncionario.Controls.Add(this.CmbBoxAdmin);
+            this.TabFuncionario.Controls.Add(this.CmbBoxCargos);
             this.TabFuncionario.Controls.Add(this.BtnCadastroEndereco);
             this.TabFuncionario.Controls.Add(this.TxtBoxSenhaFuncionario);
             this.TabFuncionario.Controls.Add(this.label3);
@@ -101,15 +101,40 @@
             this.TabFuncionario.TabIndex = 0;
             this.TabFuncionario.Text = "Funcionario";
             // 
-            // CmbBoxAdmin
+            // LblIdAlteracao
             // 
-            this.CmbBoxAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.CmbBoxAdmin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbBoxAdmin.FormattingEnabled = true;
-            this.CmbBoxAdmin.Location = new System.Drawing.Point(226, 247);
-            this.CmbBoxAdmin.Name = "CmbBoxAdmin";
-            this.CmbBoxAdmin.Size = new System.Drawing.Size(224, 28);
-            this.CmbBoxAdmin.TabIndex = 84;
+            this.LblIdAlteracao.AutoSize = true;
+            this.LblIdAlteracao.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LblIdAlteracao.ForeColor = System.Drawing.Color.White;
+            this.LblIdAlteracao.Location = new System.Drawing.Point(227, 293);
+            this.LblIdAlteracao.Name = "LblIdAlteracao";
+            this.LblIdAlteracao.Size = new System.Drawing.Size(126, 23);
+            this.LblIdAlteracao.TabIndex = 91;
+            this.LblIdAlteracao.Text = "ID da alteracao";
+            this.LblIdAlteracao.Visible = false;
+            // 
+            // TxtBoxID
+            // 
+            this.TxtBoxID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxID.Enabled = false;
+            this.TxtBoxID.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TxtBoxID.ForeColor = System.Drawing.Color.White;
+            this.TxtBoxID.Location = new System.Drawing.Point(226, 320);
+            this.TxtBoxID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxID.Name = "TxtBoxID";
+            this.TxtBoxID.Size = new System.Drawing.Size(226, 30);
+            this.TxtBoxID.TabIndex = 90;
+            this.TxtBoxID.Visible = false;
+            // 
+            // CmbBoxCargos
+            // 
+            this.CmbBoxCargos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.CmbBoxCargos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbBoxCargos.FormattingEnabled = true;
+            this.CmbBoxCargos.Location = new System.Drawing.Point(226, 247);
+            this.CmbBoxCargos.Name = "CmbBoxCargos";
+            this.CmbBoxCargos.Size = new System.Drawing.Size(224, 28);
+            this.CmbBoxCargos.TabIndex = 84;
             // 
             // BtnCadastroEndereco
             // 
@@ -401,29 +426,6 @@
             this.TxtBoxCep.Size = new System.Drawing.Size(125, 30);
             this.TxtBoxCep.TabIndex = 10;
             // 
-            // LblIdAlteracao
-            // 
-            this.LblIdAlteracao.AutoSize = true;
-            this.LblIdAlteracao.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblIdAlteracao.ForeColor = System.Drawing.Color.White;
-            this.LblIdAlteracao.Location = new System.Drawing.Point(227, 293);
-            this.LblIdAlteracao.Name = "LblIdAlteracao";
-            this.LblIdAlteracao.Size = new System.Drawing.Size(126, 23);
-            this.LblIdAlteracao.TabIndex = 91;
-            this.LblIdAlteracao.Text = "ID da alteracao";
-            // 
-            // TxtBoxID
-            // 
-            this.TxtBoxID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxID.Enabled = false;
-            this.TxtBoxID.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxID.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxID.Location = new System.Drawing.Point(226, 320);
-            this.TxtBoxID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxID.Name = "TxtBoxID";
-            this.TxtBoxID.Size = new System.Drawing.Size(226, 30);
-            this.TxtBoxID.TabIndex = 90;
-            // 
             // FormCadastroFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -471,7 +473,7 @@
         private MaskedTextBox TxtBoxCep;
         private Button BtnCadastroEndereco;
         private Button BtnCadastroFuncionario;
-        private ComboBox CmbBoxAdmin;
+        private ComboBox CmbBoxCargos;
         private TextBox TxtBoxNumero;
         private ComboBox CmbBoxEstado;
         private ComboBox CmbBoxCidade;

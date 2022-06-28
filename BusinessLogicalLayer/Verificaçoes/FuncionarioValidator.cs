@@ -11,7 +11,7 @@ namespace BusinessLogicalLayer.Verificaçoes
         {
             StringBuilder erros = new StringBuilder("");
 
-            erros.Append(RegraValidacaoString.ValidateNome(funcionario.Nome));
+            erros.Append(RegraValidacaoString.ValidateNome(funcionario.Nome_Funcionario));
             erros.Append(RegraValidacaoString.ValidateCPF(funcionario.CPF));
             erros.Append(RegraValidacaoString.ValidateEmail(funcionario.Email));
             erros.Append(RegraValidacaoString.ValidateTelefone(funcionario.Telefone));
@@ -32,7 +32,7 @@ namespace BusinessLogicalLayer.Verificaçoes
                 return new Response(erros.ToString(), false);
             }
 
-            funcionario.Nome = RegraNormatizacao.NormatizeName(funcionario.Nome);
+            funcionario.Nome_Funcionario = RegraNormatizacao.NormatizeName(funcionario.Nome_Funcionario);
             return new Response("Daqui esta indo pro banco", true);
             
         }

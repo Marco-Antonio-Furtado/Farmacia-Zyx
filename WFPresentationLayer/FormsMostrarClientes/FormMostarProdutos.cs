@@ -11,13 +11,8 @@ namespace WfPresentationLayer.Alteraçoes
         public FormMostrarProdutos()
         {
             InitializeComponent();
-            List<Produto> Produtos = ProdutoBll.GetAll().Dados;
-            foreach (Produto Produto in Produtos)
-            {
-                SincronizarListaGrid(Produto);
-            }
         }
-
+        List<Produto> Produtos = new List<Produto>();
         private void BtnCadastrarProduto_Click(object sender, EventArgs e)
         {
             _objForm3?.Close();
@@ -31,12 +26,10 @@ namespace WfPresentationLayer.Alteraçoes
             _objForm3.Show();
             _objForm3.BringToFront();
         }
-
         private void SincronizarListaGrid(Produto item)
         {
-            Gridprodutos.Rows.Add(item.ID, item.Nome,item.ID_Laboratorio, item.Descricao, item.Valor_Unitario, item.Valor_Unitario);
+            Gridprodutos.Rows.Add(item.ID, item.Nome, item.ID_Laboratorio.Razao_Social, item.Descricao, item.Quantia_Estoque, item.Valor_Unitario,item.Valor_Venda);
         }
-
         private void BtnAlterarProdutos_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = this.Gridprodutos.SelectedRows[0];
@@ -50,10 +43,9 @@ namespace WfPresentationLayer.Alteraçoes
                 string nome = Convert.ToString(Gridprodutos.CurrentRow.Cells[1].Value.ToString());
                 string laboratorio = Convert.ToString(Gridprodutos.CurrentRow.Cells[2].Value.ToString());
                 string descrisao = Convert.ToString(Gridprodutos.CurrentRow.Cells[3].Value.ToString());
-                string valorcompra = Convert.ToString(Gridprodutos.CurrentRow.Cells[4].Value.ToString());
-                string valorvenda = Convert.ToString(Gridprodutos.CurrentRow.Cells[5].Value.ToString());
+                string valorcompra = Convert.ToString(Gridprodutos.CurrentRow.Cells[5].Value.ToString());
                 _objForm3?.Close();
-                _objForm3 = new FormCadastroProduto(IDPRoduto, nome, laboratorio, descrisao, valorcompra, valorvenda)
+                _objForm3 = new FormCadastroProduto(IDPRoduto, nome, laboratorio, descrisao, valorcompra)
                 {
                     TopLevel = false,
                     FormBorderStyle = FormBorderStyle.None,
@@ -64,7 +56,6 @@ namespace WfPresentationLayer.Alteraçoes
                 _objForm3.BringToFront();
             }
         }
-
         private void BtnDeletarProdutos_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = this.Gridprodutos.SelectedRows[0];
@@ -99,6 +90,14 @@ namespace WfPresentationLayer.Alteraçoes
                     else MeuMessageBox.Show(resposta.Message);
                 }
                 else { }
+            }
+        }
+        private void FormMostrarProdutos_Load(object sender, EventArgs e)
+        {
+            Produtos = ProdutoBll.GetAll().Dados;
+            foreach (Produto Produto in Produtos)
+            {
+                SincronizarListaGrid(Produto);
             }
         }
     }

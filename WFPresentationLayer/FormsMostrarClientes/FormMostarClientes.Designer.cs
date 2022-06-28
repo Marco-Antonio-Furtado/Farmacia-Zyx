@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnCadastrarCliente = new System.Windows.Forms.Button();
             this.BtnAlterarCliente = new System.Windows.Forms.Button();
             this.BtnDeletarClientes = new System.Windows.Forms.Button();
@@ -54,9 +53,9 @@
             this.BtnCadastrarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnCadastrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastrarCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarCliente.Location = new System.Drawing.Point(35, 659);
+            this.BtnCadastrarCliente.Location = new System.Drawing.Point(39, 659);
             this.BtnCadastrarCliente.Name = "BtnCadastrarCliente";
-            this.BtnCadastrarCliente.Size = new System.Drawing.Size(277, 79);
+            this.BtnCadastrarCliente.Size = new System.Drawing.Size(312, 79);
             this.BtnCadastrarCliente.TabIndex = 22;
             this.BtnCadastrarCliente.Text = "Cadastrar Cliente";
             this.BtnCadastrarCliente.UseVisualStyleBackColor = false;
@@ -67,9 +66,9 @@
             this.BtnAlterarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnAlterarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAlterarCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnAlterarCliente.Location = new System.Drawing.Point(360, 659);
+            this.BtnAlterarCliente.Location = new System.Drawing.Point(405, 659);
             this.BtnAlterarCliente.Name = "BtnAlterarCliente";
-            this.BtnAlterarCliente.Size = new System.Drawing.Size(277, 79);
+            this.BtnAlterarCliente.Size = new System.Drawing.Size(312, 79);
             this.BtnAlterarCliente.TabIndex = 23;
             this.BtnAlterarCliente.Text = "Alterar Cliente";
             this.BtnAlterarCliente.UseVisualStyleBackColor = false;
@@ -80,9 +79,9 @@
             this.BtnDeletarClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnDeletarClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDeletarClientes.ForeColor = System.Drawing.Color.White;
-            this.BtnDeletarClientes.Location = new System.Drawing.Point(992, 659);
+            this.BtnDeletarClientes.Location = new System.Drawing.Point(1116, 659);
             this.BtnDeletarClientes.Name = "BtnDeletarClientes";
-            this.BtnDeletarClientes.Size = new System.Drawing.Size(277, 79);
+            this.BtnDeletarClientes.Size = new System.Drawing.Size(312, 79);
             this.BtnDeletarClientes.TabIndex = 24;
             this.BtnDeletarClientes.Text = "Deletar Cliente";
             this.BtnDeletarClientes.UseVisualStyleBackColor = false;
@@ -93,9 +92,9 @@
             this.BtnProcurarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnProcurarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnProcurarCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnProcurarCliente.Location = new System.Drawing.Point(683, 659);
+            this.BtnProcurarCliente.Location = new System.Drawing.Point(768, 659);
             this.BtnProcurarCliente.Name = "BtnProcurarCliente";
-            this.BtnProcurarCliente.Size = new System.Drawing.Size(277, 79);
+            this.BtnProcurarCliente.Size = new System.Drawing.Size(312, 79);
             this.BtnProcurarCliente.TabIndex = 25;
             this.BtnProcurarCliente.Text = "Selecionar Cliente";
             this.BtnProcurarCliente.UseVisualStyleBackColor = false;
@@ -104,28 +103,22 @@
             // 
             this.PnlCl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.PnlCl.Controls.Add(this.GridClientes);
-            this.PnlCl.Location = new System.Drawing.Point(11, 12);
+            this.PnlCl.Location = new System.Drawing.Point(12, 12);
             this.PnlCl.Name = "PnlCl";
-            this.PnlCl.Size = new System.Drawing.Size(1292, 617);
+            this.PnlCl.Size = new System.Drawing.Size(1454, 617);
             this.PnlCl.TabIndex = 26;
             // 
             // GridClientes
             // 
+            this.GridClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.GridClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.GridClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GRIDID,
@@ -135,30 +128,30 @@
             this.dataGridViewTextBoxColumn1,
             this.GridTelefone1,
             this.GridTelefone2});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 5.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridClientes.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridClientes.DefaultCellStyle = dataGridViewCellStyle2;
             this.GridClientes.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.GridClientes.Location = new System.Drawing.Point(3, 3);
             this.GridClientes.Name = "GridClientes";
             this.GridClientes.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.GridClientes.RowHeadersWidth = 51;
             this.GridClientes.RowTemplate.Height = 29;
             this.GridClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridClientes.Size = new System.Drawing.Size(1286, 618);
+            this.GridClientes.Size = new System.Drawing.Size(1447, 618);
             this.GridClientes.TabIndex = 33;
             // 
             // GRIDID
@@ -220,15 +213,17 @@
             // 
             // FormMostarClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(1315, 764);
+            this.ClientSize = new System.Drawing.Size(1479, 764);
             this.Controls.Add(this.PnlCl);
             this.Controls.Add(this.BtnProcurarCliente);
             this.Controls.Add(this.BtnDeletarClientes);
             this.Controls.Add(this.BtnAlterarCliente);
             this.Controls.Add(this.BtnCadastrarCliente);
+            this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "FormMostarClientes";
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.FormMostarClientes_Load);

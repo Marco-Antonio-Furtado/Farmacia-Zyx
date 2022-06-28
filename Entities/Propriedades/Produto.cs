@@ -6,32 +6,30 @@
         {
         }
 
-        public Produto(string nome, string descricao,double valorunitario)
+        public Produto(string nome, string descricao,double valor_unitario, Laboratorio laboratorio)
         {
             Nome = nome;
             Descricao = descricao;
-            ValorUnitario = valorunitario;
-            
+            Valor_Unitario = valor_unitario;
+            Laboratorio Laboratorio;
         }
         public int ID { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
-        public double ValorUnitario { get; set; }
-        public double ValorVenda { get; set; }
-        public Laboratorio Laboratorio { get; set; }
-        public int QuantiaEstoque { get; set; }
+        public double Valor_Unitario { get; set; }
+        public double Valor_Venda { get; set; }
+        public Laboratorio ID_Laboratorio { get; set; }
+        public int Quantia_Estoque { get; set; }
         public bool Ativo { get; set; }
 
         public override string ToString()
         {
             return this.Nome + "\r\n" +
                    this.Descricao + "\r\n" +
-                   this.ValorUnitario + "\r\n" +
-                   this.Laboratorio.RazaoSocial.ToString()+ "\r\n" +
-                   this.QuantiaEstoque + "\r\n" +
+                   this.Valor_Unitario + "\r\n" +
+                   this.ID_Laboratorio.Razao_Social.ToString()+ "\r\n" +
+                   this.Quantia_Estoque + "\r\n" +
                    this.Ativo.ToString();
-
-
         }
 
 

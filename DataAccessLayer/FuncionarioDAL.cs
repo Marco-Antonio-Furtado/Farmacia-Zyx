@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Entities.Propriedades;
 using Shared;
 using System.Data.SqlClient;
 using System.Text;
@@ -9,11 +10,11 @@ namespace DataAccessLayer
     {
         public Response Insert(Funcionario item)
         {
-            string sql = $"INSERT INTO FUNCIONARIOS (NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO,CARGO_ID,SENHA) VALUES (@NOME,@CPF,@RG,@EMAIL,@TELEFONE,@ENDERECO,@CARGO_ID,@SENHA)";
+            string sql = $"INSERT INTO FUNCIONARIOS (NOME_FUNCIONARIO,CPF,RG,EMAIL,TELEFONE,ENDERECO,CARGO_ID,SENHA) VALUES (@NOME,@CPF,@RG,@EMAIL,@TELEFONE,@ENDERECO,@CARGO_ID,@SENHA)";
 
             SqlCommand command = new SqlCommand(sql);
 
-            command.Parameters.AddWithValue("@NOME", item.Nome);
+            command.Parameters.AddWithValue("@NOME", item.Nome_Funcionario);
             command.Parameters.AddWithValue("@CPF", item.CPF);
             command.Parameters.AddWithValue("@RG", item.RG);
             command.Parameters.AddWithValue("@EMAIL", item.Email);
@@ -44,10 +45,10 @@ namespace DataAccessLayer
 
         public Response Update(Funcionario item)
         {
-            string sql = "UPDATE FUNCIONARIOS SET NOME = @NOME, CPF = @CPF, RG = @RG, EMAIL = @EMAIL, TELEFONE = @TELEFONE, ENDERECO = @ENDERECO, CARGO_ID = @CARGO_ID, SENHA = @SENHA";
+            string sql = "UPDATE FUNCIONARIOS SET NOME_FUNCIONARIO = @NOME, CPF = @CPF, RG = @RG, EMAIL = @EMAIL, TELEFONE = @TELEFONE, ENDERECO = @ENDERECO, CARGO_ID = @CARGO_ID, SENHA = @SENHA";
             SqlCommand command = new SqlCommand(sql);
 
-            command.Parameters.AddWithValue("@NOME", item.Nome);
+            command.Parameters.AddWithValue("@NOME", item.Nome_Funcionario);
             command.Parameters.AddWithValue("@CPF", item.CPF);
             command.Parameters.AddWithValue("@RG", item.RG);
             command.Parameters.AddWithValue("@EMAIL", item.Email);
@@ -79,20 +80,19 @@ namespace DataAccessLayer
 
         }
 
-        public string LoginDAL(string email, string senha)
+        public SingleResponse<Funcionario> LoginDAL(string email)
         {
-            string sql = $"SELECT SENHA FROM FUNCIONARIOS WHERE EMAIL = @EMAIL";
+            string sql = $"SELECT F.SENHA,F.NOME_FUNCIONARIO,CAR.NOME_CARGO FROM FUNCIONARIOS F INNER JOIN CARGOS CAR ON F.CARGO_ID = CAR.ID WHERE EMAIL = @EMAIL";
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@EMAIL", email);
-            command.Parameters.AddWithValue("@SENHA", senha);
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
                 return dbexecutor.lOGIN(command);
             }
-            catch (Exception)
+            catch (Exception ex )
             {
-                return "deu ruim";
+                return new SingleResponse<Funcionario>(ex.Message, false, null);
             }
         }
         public Response Delete(int id)
@@ -121,10 +121,7 @@ namespace DataAccessLayer
 
         public DataResponse<Funcionario> GetAll()
         {
-            string sql = $"SELECT F.ID,F.NOME,F.CPF,F.RG,F.EMAIL,F.TELEFONE,CAR.NOME,F.ATIVO,E.NOME_RUA,CID.NOME " +
-                $"        FROM FUNCIONARIOS F INNER JOIN CARGOS CAR ON F.CARGO_ID = CAR.ID " +
-                $"                            INNER JOIN ENDERECOS E ON F.ENDERECO = E.ID" +
-                $"                            INNER JOIN CIDADES CID ON E.CIDADE_ID = CID.ID";
+            string sql = $"SELECT F.ID,F.NOME_FUNCIONARIO,F.CPF,F.RG,F.EMAIL,F.TELEFONE,CAR.NOME_CARGO,F.ATIVO,E.NOME_RUA,CID.NOME_CIDADE FROM FUNCIONARIOS F INNER JOIN CARGOS CAR ON F.CARGO_ID = CAR.ID INNER JOIN ENDERECOS E ON F.ENDERECO = E.ID INNER JOIN CIDADES CID ON E.CIDADE_ID = CID.ID";
 
             DbConnection db = new DbConnection();
             SqlCommand command = new SqlCommand(sql);
@@ -137,19 +134,30 @@ namespace DataAccessLayer
                 List<Funcionario> funcionarios = new List<Funcionario>();
                 while (reader.Read())
                 {
-                    Funcionario f = new Funcionario()
-                    {
-                        Ativo = (bool)reader["F.ATIVO"],
-                        Cargo = new Cargo() { Nome = (string)reader["CAR.NOME"] },
-                        CPF = (string)reader["F.CPF"],
-                        Email = (string)reader["F.EMAIL"],
-                        Endereco = new Endereco(null, (string)reader["E.NOME_RUA"], null, 0, 0),
-                        Nome = (string)reader["F.NOME"],
-                        RG = (string)reader["F.RG"],
-                        Telefone = (string)reader["F.TELEFONE"]
-                    };
-                    f.Endereco.Cidade = new Entities.Propriedades.Cidade((string)reader["CID.NOME"]);
-                    funcionarios.Add(f);
+                    Cidade c = new Cidade();
+                    Funcionario F = new Funcionario();
+                    Cargo cargo = new Cargo();
+                    Endereco e = new Endereco();
+
+                    F.ID = (int)reader["ID"];
+                    F.Nome_Funcionario = (string)reader["NOME_FUNCIONARIO"];
+                    F.CPF = (string)reader["CPF"];
+                    F.RG = (string)reader["RG"];
+                    F.Email = (string)reader["EMAIL"];
+                    F.Telefone = (string)reader["TELEFONE"];
+                    F.Ativo = (bool)reader["ATIVO"];
+                    
+                    cargo.Nome_Cargo = (string)reader["NOME_CARGO"];
+                    
+                    e.NomeRua = (string)reader["NOME_RUA"];
+                    
+                    c.Nome_Cidade = (string)reader["NOME_CIDADE"];
+                    F.Cargo = cargo;
+                    F.Endereco = e;
+
+                    F.Endereco.Cidade = c;
+
+                    funcionarios.Add(F);
                 }
                 DataResponse<Funcionario> response = new DataResponse<Funcionario>("DADOS SELECIONADOS COM SUCESSO", true, funcionarios);
                 return response;
@@ -197,6 +205,11 @@ namespace DataAccessLayer
             {
                 return new SingleResponse<Funcionario>(ex.Message, false, null);
             }
+        }
+
+        public Response Disable(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

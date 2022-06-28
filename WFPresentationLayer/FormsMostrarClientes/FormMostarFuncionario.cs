@@ -47,7 +47,7 @@ namespace WfPresentationLayer.Alteraçoes
         }
         private void SincronizarListaGrid(Funcionario item)
         {
-            GridFuncionario.Rows.Add(item.ID, item.Nome, item.RG, item.CPF,item.Telefone, item.Email,item.Endereco.CidadeID.ToString(),item.Cargo.Nome);
+            GridFuncionario.Rows.Add(item.ID, item.Nome_Funcionario, item.RG, item.CPF,item.Telefone, item.Email,item.Endereco.Cidade.Nome_Cidade,item.Cargo.Nome_Cargo);
         }
         private void BtnDeletarFuncionario_Click(object sender, EventArgs e)
         {

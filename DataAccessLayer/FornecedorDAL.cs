@@ -58,8 +58,7 @@ namespace DataAccessLayer
 
         public Response Update(Fornecedor fornecedor)
         {
-            string sql = $"UPDATE FORNECEDOR SET RAZAO_SOCIAL = @RAZAO_SOCIAL,NOME_CONTATO = @NOME_CONTATO,CNPJ = @CNPJ,EMAIL = @EMAIL, TELEFONE = @TELEFONE WHERE ID = @ID";
-
+            string sql = $"UPDATE FORNECEDORES SET RAZAO_SOCIAL = @RAZAO_SOCIAL,NOME_CONTATO = @NOME_CONTATO,CNPJ = @CNPJ,EMAIL = @EMAIL, TELEFONE = @TELEFONE WHERE ID = @ID";
 
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@RAZAO_SOCIAL", fornecedor.Razao_Social);
@@ -67,21 +66,13 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@CNPJ", fornecedor.CNPJ);
             command.Parameters.AddWithValue("@EMAIL", fornecedor.Email);
             command.Parameters.AddWithValue("@TELEFONE", fornecedor.Telefone);
-
+            command.Parameters.AddWithValue("@ID", fornecedor.ID);
 
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
                 dbexecutor.Execute(command);
-
-                //O QUE Q TA ACONTECENDO AQUI??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
-
-                int qtdRegistrosAlterados = command.ExecuteNonQuery();
-                if (qtdRegistrosAlterados != 1)
-                {
-                    return new Response("Cliente excluido.", false);
-                }
-                return new Response("Cliente alterado com sucesso.", true);
+                return new Response("Cliente Alterado com sucesso.", true);
             }
             catch (Exception ex)
             {
@@ -94,23 +85,15 @@ namespace DataAccessLayer
         }
         public Response Delete(int id)
         {
-            string sql = "DELETE FROM FORNECEDOR WHERE ID = @ID";
+            string sql = "DELETE FROM FORNECEDORES WHERE ID = @ID";
 
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@ID", id);
-            
-
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
                 dbexecutor.Execute(command);
-
-                int qtdLinhasExcluidas = command.ExecuteNonQuery();
-                if (qtdLinhasExcluidas == 1)
-                {
-                    return new Response("Fornecedor excluído com sucesso.", true);
-                }
-                return new Response("Fornecedor não excluído.", false);
+                return new Response("Cliente Excluido com sucesso.", true);
             }
             catch (Exception ex)
             {

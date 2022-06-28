@@ -6,58 +6,74 @@ namespace WfPresentationLayer
 {
     public partial class FormCadastroProduto : Form
     {
-        LaboratorioBLL LB = new LaboratorioBLL();
-        private int iDPRoduto;
-        private string? nome;
-        private string? laboratorio;
-        private string? descrisao;
-        private string? valorcompra;
-        private string? valorvenda;
+        LaboratorioBLL LB = new();
+
+        ProdutoBll produtoBll = new();
 
         public FormCadastroProduto()
         {
             InitializeComponent();
             CmbBoxLaboratorio.DataSource = LB.GetAll().Dados;
-            CmbBoxLaboratorio.DisplayMember = "razaoSocial";
+            CmbBoxLaboratorio.ValueMember = "ID";
+            CmbBoxLaboratorio.DisplayMember = "Razao_Social";
         }
 
-        public FormCadastroProduto(int iDPRoduto, string nome, string laboratorio, string descrisao, string valorcompra, string valorvenda)
+        public FormCadastroProduto(int iDPRoduto, string nome, string laboratorio, string descrisao, string valorcompra)
         {
             InitializeComponent();
+
             CmbBoxLaboratorio.DataSource = LB.GetAll().Dados;
-            CmbBoxLaboratorio.DisplayMember = "razaoSocial";
+            CmbBoxLaboratorio.ValueMember = "ID";
+            CmbBoxLaboratorio.DisplayMember = "Razao_Social";
             TxtBoxId.Visible = true;
             TxtBoxId.Enabled = false;
             LblIDPRoduto.Visible = true;
+
+            TxtBoxDescrisaoProduto.Text = descrisao;
             TxtBoxId.Text = iDPRoduto.ToString();
             TxtBoxNomeProduto.Text = nome;
             TxtBoxDescrisaoProduto.Text = laboratorio;
-            TxtBoxPrecoProduto.Text = valorvenda;
+            TxtBoxPrecoUnitario.Text = valorcompra;
         }
 
         private void BtnCadastrarProduto_Click_1(object sender, EventArgs e)
         {
-            CmbBoxLaboratorio.ValueMember = "ID";
-            Produto produto = new Produto(nome: TxtBoxNomeProduto.Text,
-                                          descricao: TxtBoxDescrisaoProduto.Text,
-                                          laboratorio: CmbBoxLaboratorio.SelectedIndex + 1,
-                                          valorunitario: double.Parse(TxtBoxPrecoProduto.Text));
-            ProdutoBll produtoBll = new ProdutoBll();
-            Response resposta = produtoBll.Insert(produto);
-            MessageBox.Show(resposta.Message);
-            if (resposta.HasSuccess)
+            Laboratorio lab = new Laboratorio();
+            lab.ID = Convert.ToInt32(CmbBoxLaboratorio.SelectedValue.ToString());
+
+            Produto produto = new Produto();
+            produto.Nome = TxtBoxNomeProduto.Text;
+            produto.Descricao = TxtBoxDescrisaoProduto.Text;
+            produto.ID_Laboratorio = lab;
+            produto.Valor_Unitario = double.Parse(TxtBoxPrecoUnitario.Text);
+            if (TxtBoxId.Visible == true)
             {
-                this.Close();
+                produto.ID = int.Parse(TxtBoxId.Text);
+                Response resposta = produtoBll.Update(produto);
+                MeuMessageBox.Show(resposta.Message);
+                if (resposta.HasSuccess)
+                { this.Close(); }
+            }
+            else
+            {
+                Response resposta = produtoBll.Insert(produto);
+                MeuMessageBox.Show(resposta.Message);
+                if (resposta.HasSuccess)
+                {
+                    this.Close();
+                }
             }
         }
-        private void TxtBoxPrecoProduto_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void TxtBoxPrecoUnitario_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '.' || e.KeyChar == ',')
             {
                 //troca o . pela virgula
                 e.KeyChar = ',';
+
                 //Verifica se já existe alguma vírgula na string
-                if (TxtBoxPrecoProduto.Text.Contains(","))
+                if (TxtBoxPrecoUnitario.Text.Contains(","))
                 {
                     e.Handled = true; // Caso exista, aborte 
                 }
@@ -67,6 +83,7 @@ namespace WfPresentationLayer
             {
                 e.Handled = true;
             }
+
         }
     }
 }

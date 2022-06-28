@@ -1,4 +1,5 @@
-﻿using BusinessLogicalLayer.Verificaçoes;
+﻿using BusinessLogicalLayer.RegraDePreco;
+using BusinessLogicalLayer.Verificaçoes;
 using DataAccessLayer;
 using Entities;
 using Shared;
@@ -11,7 +12,7 @@ namespace BusinessLogicalLayer.BusinessLL
         public Response Insert(Produto item)
         {
             
-            Response resposta = ProdutoValidator.ValidateIten(item);
+            Response resposta = ProdutoValidator.ValidateIten(RegraPrecoProduto.CalcularPrecoBase(item).Item);
             if (resposta.HasSuccess)
             {
                 return produtoDAL.Insert(item);
@@ -21,7 +22,7 @@ namespace BusinessLogicalLayer.BusinessLL
 
         public Response Update(Produto item)
         {
-            Response resposta = ProdutoValidator.ValidateIten(item);
+            Response resposta = ProdutoValidator.ValidateIten(RegraPrecoProduto.CalcularPrecoBase(item).Item);
             if (resposta.HasSuccess)
             {
                return produtoDAL.Update(item);

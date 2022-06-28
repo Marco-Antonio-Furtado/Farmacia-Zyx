@@ -16,7 +16,6 @@ namespace WfPresentationLayer
         {
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             MeuMessageBox.Show("algo", "titulo");

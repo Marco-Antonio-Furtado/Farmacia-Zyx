@@ -11,7 +11,7 @@ namespace Entities
 
         public Funcionario(string nome, string cPF, string rG, string email, string telefone, Endereco endereco, Cargo cargo, string senha)
         {
-            Nome = nome;
+            Nome_Funcionario = nome;
             CPF = cPF;
             RG = rG;
             Email = email;
@@ -20,13 +20,14 @@ namespace Entities
             Cargo = cargo;
             Senha = senha;
         }
+        public string Nome_Funcionario { get; set; }
         public Endereco Endereco { get; set; }
         public Cargo Cargo { get; set; }
         public string Senha { get; set; }
 
         public override string ToString()
         {
-            return this.Nome + "\r\n" +
+            return this.Nome_Funcionario + "\r\n" +
                    this.CPF + "\r\n" +
                    this.Email + "\r\n" +
                    this.Telefone + "\r\n" +

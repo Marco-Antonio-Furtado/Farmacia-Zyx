@@ -37,9 +37,9 @@
             this.BtnMenuVendas = new System.Windows.Forms.Button();
             this.PctBtnClose = new System.Windows.Forms.PictureBox();
             this.TopPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.LblFuncionarioLogado = new System.Windows.Forms.Label();
             this.PctBack = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PctBtnClose)).BeginInit();
             this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PctBack)).BeginInit();
@@ -160,6 +160,19 @@
             this.TopPanel.Size = new System.Drawing.Size(1318, 110);
             this.TopPanel.TabIndex = 7;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.IndianRed;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(973, 41);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(189, 46);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Menu De Laboratorios";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // LblFuncionarioLogado
             // 
             this.LblFuncionarioLogado.AutoSize = true;
@@ -180,19 +193,6 @@
             this.PctBack.TabIndex = 0;
             this.PctBack.TabStop = false;
             this.PctBack.Click += new System.EventHandler(this.PctBack_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.IndianRed;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(973, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 46);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Menu De Laboratorios";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MenuGeralAdmin
             // 

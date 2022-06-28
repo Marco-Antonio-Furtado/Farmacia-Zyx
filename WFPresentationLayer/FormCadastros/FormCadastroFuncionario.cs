@@ -8,18 +8,20 @@ namespace WfPresentationLayer
 {
     public partial class FormCadastroFuncionario : Form
     {
-        wFPhelperDAL wf = new wFPhelperDAL();
+        WfHelperDal wf = new();
         int IdEstado;
-        CargoBLL cargo = new CargoBLL();
+        CargoBLL cargo = new();
+        FuncionarioBll funcionarioBll = new();
+
         public FormCadastroFuncionario()
         {
             InitializeComponent();
             ((Control)this.TabEndereco).Enabled = false;
             ((Control)this.CmbBoxCidade).Enabled = false;
 
-            CmbBoxAdmin.DataSource = cargo.GetAll().Dados;
-            CmbBoxAdmin.DisplayMember = "Nome";
-            CmbBoxAdmin.ValueMember = "ID";
+            CmbBoxCargos.DataSource = cargo.GetAll().Dados;
+            CmbBoxCargos.DisplayMember = "Nome_Cargo";
+            CmbBoxCargos.ValueMember = "ID";
         }
 
         public FormCadastroFuncionario(int iDCLiente, string nome, string email, string rg, string cpf, string telefone, string cargo1)
@@ -28,9 +30,12 @@ namespace WfPresentationLayer
             ((Control)this.TabEndereco).Enabled = false;
             ((Control)this.CmbBoxCidade).Enabled = false;
 
-            CmbBoxAdmin.DataSource = cargo.GetAll().Dados;
-            CmbBoxAdmin.DisplayMember = "Nome";
-            CmbBoxAdmin.ValueMember = "ID";
+            CmbBoxCargos.DataSource = cargo.GetAll().Dados;
+            CmbBoxCargos.DisplayMember = "Nome_Cargo";
+            CmbBoxCargos.ValueMember = "ID";
+
+            CmbBoxCargos.DisplayMember = "Nome";
+            CmbBoxCargos.ValueMember = "ID";
             txtBoxNomeFuncionario.Text = nome;
             txtBoxEmailFuncionario.Text = email;
             TxtBoxRgFuncionario.Text =rg;
@@ -38,6 +43,7 @@ namespace WfPresentationLayer
             TxtBoxCpfFuncionario.Text = cpf;
             LblIdAlteracao.Visible = true;
             TxtBoxID.Visible = true;
+            
         }
 
         private void BtnCadastroEndereco_Click_1(object sender, EventArgs e)
@@ -46,7 +52,7 @@ namespace WfPresentationLayer
             this.TabGeral.SelectedIndex = 1;
             CmbBoxEstado.DataSource = wf.GetAllEstado().Dados;
             CmbBoxEstado.ValueMember = "Id";
-            CmbBoxEstado.DisplayMember = "Nome";
+            CmbBoxEstado.DisplayMember = "Nome_Estado";
         }
         private void BtnCadastroFuncionario_Click_1(object sender, EventArgs e)
         {
@@ -56,8 +62,8 @@ namespace WfPresentationLayer
             {
                 cep = "";
             }
-            FuncionarioBll funcionarioBll = new FuncionarioBll();
-            Cargo cargo = new Cargo(iD: CmbBoxAdmin.SelectedIndex + 1, nome: CmbBoxAdmin.Text);
+            Cargo cargo = new Cargo(nome: CmbBoxCargos.Text);
+            cargo.ID = CmbBoxCargos.SelectedIndex + 1;
             Endereco endereco = new Endereco(nomeRua: TxtBoxRua.Text,
                                                         cEP: cep,
                                                         numeroCasa: TxtBoxNumero.Text,
@@ -72,26 +78,33 @@ namespace WfPresentationLayer
                                                       endereco: endereco,
                                                       senha: TxtBoxSenhaFuncionario.Text
                                                       ) ;
-            Response respostaFuncionario = funcionarioBll.Insert(funcionario);
-            MessageBox.Show(respostaFuncionario.Message);
-            if (respostaFuncionario.HasSuccess)
+            if (TxtBoxID.Visible == true)
             {
-                this.Close();
+                funcionario.ID = int.Parse(TxtBoxID.Text);
+                Response resposta = funcionarioBll.Update(funcionario);
+                MeuMessageBox.Show(resposta.Message);
+                if (resposta.HasSuccess)
+                { this.Close(); }
+            }
+            else
+            {
+                Response resposta = funcionarioBll.Insert(funcionario);
+                MeuMessageBox.Show(resposta.Message);
+                if (resposta.HasSuccess)
+                {
+                    this.Close();
+                }
             }
         }
         private void TxtBoxNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '.' || e.KeyChar == ',')
             {
-                //troca o . pela virgula
                 e.KeyChar = ',';
-                //Verifica se já existe alguma vírgula na string
                 if (TxtBoxNumero.Text.Contains(","))
                 {
-                    e.Handled = true; // Caso exista, aborte 
                 }
             }
-            //aceita apenas números, tecla backspace.
             else if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
             {
                 e.Handled = true;
@@ -101,11 +114,10 @@ namespace WfPresentationLayer
         {
             IdEstado = CmbBoxEstado.SelectedIndex + 1;
             CmbBoxCidade.DataSource = wf.GetAllCidade(IdEstado).Dados;
-            CmbBoxCidade.DisplayMember = "nome";
+            CmbBoxCidade.DisplayMember = "Nome_Cidade";
             CmbBoxCidade.Enabled = true;
             CmbBoxCidade.ValueMember = "Id";
         }
-
         private void CmbBoxCidade_KeyPress(object sender, KeyPressEventArgs e)
         {
             CmbBoxCidade.DroppedDown = true;

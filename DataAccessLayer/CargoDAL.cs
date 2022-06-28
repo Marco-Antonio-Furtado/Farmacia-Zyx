@@ -30,7 +30,7 @@ namespace DataAccessLayer
 
         public DataResponse<Cargo> GetAll()
         {
-            string sql = $"SELECT ID,NOME FROM CARGOS";
+            string sql = $"SELECT ID,NOME_CARGO FROM CARGOS";
 
             SqlCommand command = new SqlCommand(sql);
             try
@@ -65,7 +65,7 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand(sql);
 
-            command.Parameters.AddWithValue("@NOME", item.Nome);
+            command.Parameters.AddWithValue("@NOME", item.Nome_Cargo);
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
@@ -87,7 +87,7 @@ namespace DataAccessLayer
             string sql = $"UPDATE CARGO SET NOME = @NOME WHERE ID = @ID";
 
             SqlCommand command = new SqlCommand(sql);
-            command.Parameters.AddWithValue("@NOME", item.Nome);
+            command.Parameters.AddWithValue("@NOME", item.Nome_Cargo);
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();

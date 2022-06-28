@@ -10,7 +10,7 @@ namespace Entities
 
         public Cliente(string nome, string cPF, string rG, string email, string telefone, string telefone2)
         {
-            Nome = nome;
+            Nome_Cliente = nome;
             CPF = cPF;
             RG = rG;
             Email = email;
@@ -21,9 +21,10 @@ namespace Entities
         //public Endereco ?Endereco { get; set; }
         public string Telefone2 { get; set; }
         public int Programa_Fidelidade { get; set; }
+        public string Nome_Cliente { get; set; }
         public override string ToString()
         {
-            return this.Nome + "\r\n" +
+            return this.Nome_Cliente + "\r\n" +
                    this.CPF + "\r\n" +
                    this.Email + "\r\n" +
                    this.Telefone + "\r\n" +

@@ -79,15 +79,15 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GridFuncionario.DefaultCellStyle = dataGridViewCellStyle3;
-            this.GridFuncionario.Enabled = false;
             this.GridFuncionario.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.GridFuncionario.Location = new System.Drawing.Point(0, 3);
             this.GridFuncionario.Name = "GridFuncionario";
+            this.GridFuncionario.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -107,6 +107,7 @@
             this.GridID.HeaderText = "ID";
             this.GridID.MinimumWidth = 6;
             this.GridID.Name = "GridID";
+            this.GridID.ReadOnly = true;
             this.GridID.Width = 50;
             // 
             // GridNome
@@ -114,6 +115,7 @@
             this.GridNome.HeaderText = "Nome";
             this.GridNome.MinimumWidth = 6;
             this.GridNome.Name = "GridNome";
+            this.GridNome.ReadOnly = true;
             this.GridNome.Width = 125;
             // 
             // GridRg
@@ -121,6 +123,7 @@
             this.GridRg.HeaderText = "RG";
             this.GridRg.MinimumWidth = 6;
             this.GridRg.Name = "GridRg";
+            this.GridRg.ReadOnly = true;
             this.GridRg.Width = 95;
             // 
             // GridNomeResponsavel
@@ -128,6 +131,7 @@
             this.GridNomeResponsavel.HeaderText = "CPF";
             this.GridNomeResponsavel.MinimumWidth = 6;
             this.GridNomeResponsavel.Name = "GridNomeResponsavel";
+            this.GridNomeResponsavel.ReadOnly = true;
             this.GridNomeResponsavel.Width = 125;
             // 
             // GridTelefone
@@ -135,6 +139,7 @@
             this.GridTelefone.HeaderText = "Telefone";
             this.GridTelefone.MinimumWidth = 6;
             this.GridTelefone.Name = "GridTelefone";
+            this.GridTelefone.ReadOnly = true;
             this.GridTelefone.Width = 125;
             // 
             // GridEmail
@@ -142,6 +147,7 @@
             this.GridEmail.HeaderText = "Email";
             this.GridEmail.MinimumWidth = 6;
             this.GridEmail.Name = "GridEmail";
+            this.GridEmail.ReadOnly = true;
             this.GridEmail.Width = 125;
             // 
             // GridCNPJ
@@ -157,6 +163,7 @@
             this.GridCargo.HeaderText = "Cargo";
             this.GridCargo.MinimumWidth = 6;
             this.GridCargo.Name = "GridCargo";
+            this.GridCargo.ReadOnly = true;
             this.GridCargo.Width = 125;
             // 
             // BtnProcurarFuncionario
@@ -230,7 +237,7 @@
             this.Controls.Add(this.BtnAlterarFuncionario);
             this.Controls.Add(this.BtnCadastrarFuncionario);
             this.Controls.Add(this.pnlFunc);
-            this.ForeColor = System.Drawing.Color.IndianRed;
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "Alteracao_Funcionario";
             this.Text = "Funcionarios";
             this.Load += new System.EventHandler(this.Alteracao_Funcionario_Load);

@@ -5,8 +5,6 @@ namespace DataAccessLayer
 {
     public class LaboratorioDAL : ICRUD<Laboratorio>
     {
-        internal const string DalInfo = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\SAMSUNG\Documents\banco\BancoFarmaciaZYX.mdf;Integrated Security=True;Connect Timeout=30";
-
         public Response Insert(Laboratorio item)
         {
             string sql = $"INSERT INTO LABORATORIOS (RAZAO_SOCIAL,CNPJ,EMAIL,TELEFONE,NOME_CONTATO) VALUES (@RAZAO_SOCIAL,@CNPJ,@EMAIL,@TELEFONE,@NOME_CONTATO)";
@@ -36,7 +34,6 @@ namespace DataAccessLayer
                 return new Response("Erro no Sistema contate o administrados", false);
             }
         }
-
         public Response Disable(int iDCLiente)
         {
             string sql = $"UPDATE LABORATORIOS SET ATIVO = 0 WHERE ID = @ID";
@@ -55,7 +52,6 @@ namespace DataAccessLayer
                 return new Response("Erro no banco de dados" + "\r\n" + "contate o administrador", false);
             }
         }
-
         public Response Update(Laboratorio item)
         {
             string sql = $"UPDATE LABORATORIOS SET RAZAO_SOCIAL = @RAZAO_SOCIAL,NOME_CONTATO = @NOME_CONTATO,CNPJ = @CNPJ,EMAIL = @EMAIL, TELEFONE = @TELEFONE WHERE ID = @ID";
@@ -84,72 +80,40 @@ namespace DataAccessLayer
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
         }
-
         public Response Delete(int id)
         {
             string sql = "DELETE FROM LABORATORIOS WHERE ID = @ID";
 
-            string connectionString = DalInfo;
-
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            SqlCommand command = new SqlCommand(sql, connection);
+            SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@ID", id);
             try
             {
-                connection.Open();
-                int qtdLinhasExcluidas = command.ExecuteNonQuery();
-                if (qtdLinhasExcluidas == 1)
+                DbExecuter dbexecutor = new DbExecuter();
+                dbexecutor.Execute(command);
+                return new Response("Laboratorio Excluido com sucesso.", true);
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("FK_PRODUTO_LABORATORIO"))
                 {
-                    return new Response("Laboratorio excluído com sucesso.", true);
+                    return new Response("Voce nao pode Apagar um Laborario vinculado a um produto", false);
                 }
-                return new Response("Laboratorio não excluído.", false);
-            }
-            catch (Exception)
-            {
-                return new Response("Erro no banco de dados, contate o administrador.", false);
-            }
-            finally
-            {
-                connection.Dispose();
+                return new Response("Erro no Sistema contate o administrados", false);
             }
         }
-
         public DataResponse<Laboratorio> GetAll()
         {
-
             string sql = $"SELECT ID,RAZAO_SOCIAL,CNPJ,EMAIL,TELEFONE,NOME_CONTATO,ATIVO FROM LABORATORIOS";
 
-            string connectionString = DalInfo;
-
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            SqlCommand command = new SqlCommand(sql, connection);
+            SqlCommand command = new SqlCommand(sql);
             try
             {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                List<Laboratorio> Laboratorios = new List<Laboratorio>();
-                while (reader.Read())
-                {
-                    Laboratorio Laboratorio = new Laboratorio(razaoSocial: Convert.ToString(reader["RAZAO_SOCIAL"]),
-                                                              cNPJ: Convert.ToString(reader["CNPJ"]),
-                                                              email: Convert.ToString(reader["EMAIL"]),
-                                                              telefone: Convert.ToString(reader["TELEFONE"]),
-                                                              nomeContato: Convert.ToString(reader["NOME_CONTATO"]));
-                    Laboratorio.ID = Convert.ToInt32(reader["ID"]);
-                    Laboratorio.Ativo = Convert.ToBoolean(reader["ATIVO"]);
-                    Laboratorios.Add(Laboratorio);
-                }
-                return new DataResponse<Laboratorio>("Laboratorios selecionados com sucesso!", true, Laboratorios);
+                DbExecuter dbexecutor = new DbExecuter();
+                return dbexecutor.GetData<Laboratorio>(command);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return new DataResponse<Laboratorio>("Erro no banco de dados, contate o administrador.", false, null);
-            }
-            finally
-            {
-                connection.Dispose();
+                return new DataResponse<Laboratorio>(ex.Message, false, null);
             }
         }
 

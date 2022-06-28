@@ -8,24 +8,23 @@ namespace WfPresentationLayer
 {
     public partial class FormLogin : Form
     {
+        FuncionarioBll funcionario = new FuncionarioBll();
         public FormLogin()
         {
             InitializeComponent();
         }
         private void BtnLogar_Click(object sender, EventArgs e)
         {
-            MetodoLogin metodoLogin = new MetodoLogin(TxtBoxLogin.Text, TxtBoxSenha.Text);
-            
-            if (metodoLogin.IsLoggedIn(metodoLogin))
+            Response r = Logar(TxtBoxLogin.Text, TxtBoxSenha.Text);
+
+            if (r.HasSuccess)
             {
-                
                 LabelResposta.Text = "Bem vindo";
                 MenuGeralAdmin menuGeralAdmin = new MenuGeralAdmin();
-                    menuGeralAdmin.ShowDialog();
-                
-
+                menuGeralAdmin.ShowDialog();
             }
             else { LabelResposta.Text = "Email ou Senha Invalidos"; }
+           
         }
         private void TxtBoxLogin_TextChanged(object sender, EventArgs e)
         {
@@ -59,23 +58,16 @@ namespace WfPresentationLayer
         }
 
 
-        private void Logar(string Email,string Senha)
+        private Response Logar(string Email,string Senha)
         {
-            FuncionarioBll funcionario = new FuncionarioBll();
-            Response Funci = funcionario.LoginBLL(Email, Senha);
-            if (Funci.HasSuccess)
-            {
-                MeuMessageBox.Show("Login Bem Sucedido", "Farmacia ZYX","Bem Vindo");
-            }
-            else
-            {
-                MeuMessageBox.Show("Login Falhou", "Farmacia ZYX", "tente de novo");
-            }
+            
+           return funcionario.LoginBLL(Email, Senha);
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           Logar(TxtBoxLogin.Text, TxtBoxSenha.Text);
+           
         }
     }
 }

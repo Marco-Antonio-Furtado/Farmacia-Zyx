@@ -31,11 +31,11 @@ namespace Entities
         }
         public  SingleResponse<T> CreateSingleSuccessResponse<T>(T item)
         {
-            return new SingleResponse<T>("Dado Coletado de " + typeof(T) + " com sucesso", true, item);
+            return new SingleResponse<T>("Dado Coletado de " + typeof(T).Name + " com sucesso", true, item);
         }
         public DataResponse<T> CreateDataSuccessResponse<T>(List<T> item)
         {
-            return new DataResponse<T>("Dados Coletados de " + typeof(T) + " com sucesso", true, item);
+            return new DataResponse<T>("Dados Coletados de " + typeof(T).Name + " com sucesso", true, item);
         }
         public Response CreateFailedResponse()
         {
@@ -43,11 +43,11 @@ namespace Entities
         }
         public SingleResponse<T> CreateSingleFailedResponse<T>(T item)
         {
-            return new SingleResponse<T>("Impossivel Pegar O dado de " + typeof(T) + " contate administrador", false, item);
+            return new SingleResponse<T>("Impossivel Pegar O dado de " + typeof(T).Name + " contate administrador", false, item);
         }
         public DataResponse<T> CreateDataFailedResponse<T>()
         {
-            return new DataResponse<T>("Impossivel Pegar Os dados de " + typeof(T) +"contate administrador", false, null);
+            return new DataResponse<T>("Impossivel Pegar Os dados de " + typeof(T).Name +" contate administrador", false, null);
         }
         public Response CreateFailedUniqueEmail()
         {
@@ -65,7 +65,5 @@ namespace Entities
         {
             return new Response("Nome Ja cadastrado", false);
         }
-
-
     }
 }

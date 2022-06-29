@@ -38,9 +38,9 @@ namespace WfPresentationLayer
                     CmbBoxLaboratorio.Items.Add(Laboratorio);
                 }
             }
-            CmbBoxLaboratorio.DataSource = LB.GetAll().Dados;
             CmbBoxLaboratorio.ValueMember = "ID";
             CmbBoxLaboratorio.DisplayMember = "Razao_Social";
+
             TxtBoxId.Visible = true;
             TxtBoxId.Enabled = false;
             LblIDPRoduto.Visible = true;

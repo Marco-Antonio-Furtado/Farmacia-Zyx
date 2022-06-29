@@ -4,9 +4,13 @@ namespace Entities
 {
     public class Item_Compra : Transacao
     {
+        public Item_Compra()
+        {
+        }
+
         //Laboratorio
 
-        public Item_Compra(DateTime data, string produto,string fornecedor, string nomeFuncionario, string formaPagamento, int quantidade, double precoUnitario, double valorTotal)
+        public Item_Compra(DateTime data, int produto,string fornecedor, string nomeFuncionario, string formaPagamento, int quantidade, double precoUnitario, double valorTotal)
         {
             Data = data;
             IDProduto = produto;
@@ -17,6 +21,8 @@ namespace Entities
             PrecoUnitario = precoUnitario;
             ValorTotal = valorTotal;
         }
+        
+        public string NomeProduto { get; set; }
         public override string ToString()
         {
             return this.IDProduto + "\r\n" +

@@ -35,7 +35,6 @@
             this.BtnProcurarFornecedor = new System.Windows.Forms.Button();
             this.GroupBoxCompra = new System.Windows.Forms.GroupBox();
             this.CmbBoxProduto = new System.Windows.Forms.ComboBox();
-            this.TxtBoxUnitario = new System.Windows.Forms.TextBox();
             this.TxtBoxQuantidade = new System.Windows.Forms.TextBox();
             this.BtnExcluir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,6 +45,10 @@
             this.LabelFormaPagemento = new System.Windows.Forms.Label();
             this.BtnNovoIten = new System.Windows.Forms.Button();
             this.DataGrid = new System.Windows.Forms.DataGridView();
+            this.LabelQuantidade = new System.Windows.Forms.Label();
+            this.LabelCodigoProduto = new System.Windows.Forms.Label();
+            this.LabelNomeCLiente = new System.Windows.Forms.Label();
+            this.CmbBoxFornecedores = new System.Windows.Forms.ComboBox();
             this.DataGridProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataGridValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataGridQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,11 +58,6 @@
             this.DataGridFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatagridLaboratorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatagridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LabelValorUnitario = new System.Windows.Forms.Label();
-            this.LabelQuantidade = new System.Windows.Forms.Label();
-            this.LabelCodigoProduto = new System.Windows.Forms.Label();
-            this.LabelNomeCLiente = new System.Windows.Forms.Label();
-            this.CmbBoxFornecedores = new System.Windows.Forms.ComboBox();
             this.GroupBoxCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +67,7 @@
             this.BtnNovoFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnNovoFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnNovoFornecedor.ForeColor = System.Drawing.Color.White;
-            this.BtnNovoFornecedor.Location = new System.Drawing.Point(44, 14);
+            this.BtnNovoFornecedor.Location = new System.Drawing.Point(54, 14);
             this.BtnNovoFornecedor.Name = "BtnNovoFornecedor";
             this.BtnNovoFornecedor.Size = new System.Drawing.Size(172, 29);
             this.BtnNovoFornecedor.TabIndex = 21;
@@ -92,7 +90,6 @@
             // GroupBoxCompra
             // 
             this.GroupBoxCompra.Controls.Add(this.CmbBoxProduto);
-            this.GroupBoxCompra.Controls.Add(this.TxtBoxUnitario);
             this.GroupBoxCompra.Controls.Add(this.TxtBoxQuantidade);
             this.GroupBoxCompra.Controls.Add(this.BtnExcluir);
             this.GroupBoxCompra.Controls.Add(this.label2);
@@ -103,7 +100,6 @@
             this.GroupBoxCompra.Controls.Add(this.LabelFormaPagemento);
             this.GroupBoxCompra.Controls.Add(this.BtnNovoIten);
             this.GroupBoxCompra.Controls.Add(this.DataGrid);
-            this.GroupBoxCompra.Controls.Add(this.LabelValorUnitario);
             this.GroupBoxCompra.Controls.Add(this.LabelQuantidade);
             this.GroupBoxCompra.Controls.Add(this.LabelCodigoProduto);
             this.GroupBoxCompra.ForeColor = System.Drawing.Color.White;
@@ -123,20 +119,10 @@
             this.CmbBoxProduto.Size = new System.Drawing.Size(233, 28);
             this.CmbBoxProduto.TabIndex = 33;
             // 
-            // TxtBoxUnitario
-            // 
-            this.TxtBoxUnitario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxUnitario.Location = new System.Drawing.Point(1027, 80);
-            this.TxtBoxUnitario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxUnitario.Name = "TxtBoxUnitario";
-            this.TxtBoxUnitario.Size = new System.Drawing.Size(238, 27);
-            this.TxtBoxUnitario.TabIndex = 12;
-            this.TxtBoxUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxPreco_KeyPress);
-            // 
             // TxtBoxQuantidade
             // 
             this.TxtBoxQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxQuantidade.Location = new System.Drawing.Point(1027, 26);
+            this.TxtBoxQuantidade.Location = new System.Drawing.Point(755, 30);
             this.TxtBoxQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxQuantidade.Name = "TxtBoxQuantidade";
             this.TxtBoxQuantidade.Size = new System.Drawing.Size(238, 27);
@@ -283,6 +269,48 @@
             this.DataGrid.Size = new System.Drawing.Size(1259, 475);
             this.DataGrid.TabIndex = 20;
             // 
+            // LabelQuantidade
+            // 
+            this.LabelQuantidade.AutoSize = true;
+            this.LabelQuantidade.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LabelQuantidade.ForeColor = System.Drawing.Color.White;
+            this.LabelQuantidade.Location = new System.Drawing.Point(612, 31);
+            this.LabelQuantidade.Name = "LabelQuantidade";
+            this.LabelQuantidade.Size = new System.Drawing.Size(100, 23);
+            this.LabelQuantidade.TabIndex = 16;
+            this.LabelQuantidade.Text = "Quantidade";
+            // 
+            // LabelCodigoProduto
+            // 
+            this.LabelCodigoProduto.AutoSize = true;
+            this.LabelCodigoProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LabelCodigoProduto.ForeColor = System.Drawing.Color.White;
+            this.LabelCodigoProduto.Location = new System.Drawing.Point(17, 30);
+            this.LabelCodigoProduto.Name = "LabelCodigoProduto";
+            this.LabelCodigoProduto.Size = new System.Drawing.Size(132, 23);
+            this.LabelCodigoProduto.TabIndex = 14;
+            this.LabelCodigoProduto.Text = "Codigo Produto";
+            // 
+            // LabelNomeCLiente
+            // 
+            this.LabelNomeCLiente.AutoSize = true;
+            this.LabelNomeCLiente.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LabelNomeCLiente.ForeColor = System.Drawing.Color.White;
+            this.LabelNomeCLiente.Location = new System.Drawing.Point(243, 16);
+            this.LabelNomeCLiente.Name = "LabelNomeCLiente";
+            this.LabelNomeCLiente.Size = new System.Drawing.Size(149, 23);
+            this.LabelNomeCLiente.TabIndex = 18;
+            this.LabelNomeCLiente.Text = "Nome Fornecedor";
+            // 
+            // CmbBoxFornecedores
+            // 
+            this.CmbBoxFornecedores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbBoxFornecedores.FormattingEnabled = true;
+            this.CmbBoxFornecedores.Location = new System.Drawing.Point(417, 16);
+            this.CmbBoxFornecedores.Name = "CmbBoxFornecedores";
+            this.CmbBoxFornecedores.Size = new System.Drawing.Size(233, 28);
+            this.CmbBoxFornecedores.TabIndex = 34;
+            // 
             // DataGridProduto
             // 
             this.DataGridProduto.HeaderText = "Produto";
@@ -292,7 +320,7 @@
             // 
             // DataGridValorUnitario
             // 
-            this.DataGridValorUnitario.HeaderText = "Valor Unitario";
+            this.DataGridValorUnitario.HeaderText = "Valor ";
             this.DataGridValorUnitario.MinimumWidth = 6;
             this.DataGridValorUnitario.Name = "DataGridValorUnitario";
             this.DataGridValorUnitario.ReadOnly = true;
@@ -354,59 +382,6 @@
             this.DatagridData.ReadOnly = true;
             this.DatagridData.Width = 125;
             // 
-            // LabelValorUnitario
-            // 
-            this.LabelValorUnitario.AutoSize = true;
-            this.LabelValorUnitario.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LabelValorUnitario.ForeColor = System.Drawing.Color.White;
-            this.LabelValorUnitario.Location = new System.Drawing.Point(884, 84);
-            this.LabelValorUnitario.Name = "LabelValorUnitario";
-            this.LabelValorUnitario.Size = new System.Drawing.Size(115, 23);
-            this.LabelValorUnitario.TabIndex = 18;
-            this.LabelValorUnitario.Text = "Valor Unitario";
-            // 
-            // LabelQuantidade
-            // 
-            this.LabelQuantidade.AutoSize = true;
-            this.LabelQuantidade.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LabelQuantidade.ForeColor = System.Drawing.Color.White;
-            this.LabelQuantidade.Location = new System.Drawing.Point(884, 27);
-            this.LabelQuantidade.Name = "LabelQuantidade";
-            this.LabelQuantidade.Size = new System.Drawing.Size(100, 23);
-            this.LabelQuantidade.TabIndex = 16;
-            this.LabelQuantidade.Text = "Quantidade";
-            // 
-            // LabelCodigoProduto
-            // 
-            this.LabelCodigoProduto.AutoSize = true;
-            this.LabelCodigoProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LabelCodigoProduto.ForeColor = System.Drawing.Color.White;
-            this.LabelCodigoProduto.Location = new System.Drawing.Point(17, 30);
-            this.LabelCodigoProduto.Name = "LabelCodigoProduto";
-            this.LabelCodigoProduto.Size = new System.Drawing.Size(132, 23);
-            this.LabelCodigoProduto.TabIndex = 14;
-            this.LabelCodigoProduto.Text = "Codigo Produto";
-            // 
-            // LabelNomeCLiente
-            // 
-            this.LabelNomeCLiente.AutoSize = true;
-            this.LabelNomeCLiente.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LabelNomeCLiente.ForeColor = System.Drawing.Color.White;
-            this.LabelNomeCLiente.Location = new System.Drawing.Point(243, 16);
-            this.LabelNomeCLiente.Name = "LabelNomeCLiente";
-            this.LabelNomeCLiente.Size = new System.Drawing.Size(149, 23);
-            this.LabelNomeCLiente.TabIndex = 18;
-            this.LabelNomeCLiente.Text = "Nome Fornecedor";
-            // 
-            // CmbBoxFornecedores
-            // 
-            this.CmbBoxFornecedores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbBoxFornecedores.FormattingEnabled = true;
-            this.CmbBoxFornecedores.Location = new System.Drawing.Point(417, 16);
-            this.CmbBoxFornecedores.Name = "CmbBoxFornecedores";
-            this.CmbBoxFornecedores.Size = new System.Drawing.Size(233, 28);
-            this.CmbBoxFornecedores.TabIndex = 34;
-            // 
             // FormNovaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -440,11 +415,16 @@
         private Button BtnNovoProduto;
         private Button BtnNovoIten;
         private DataGridView DataGrid;
-        private Label LabelValorUnitario;
         private Label LabelQuantidade;
         private Label LabelCodigoProduto;
         private Label LabelNomeCLiente;
         private Label label2;
+        private Button BtnExcluir;
+        private TextBox TxtBoxQuantidade;
+        private ComboBox CmbBoxProduto;
+        private ComboBox CmbFormaPagamento;
+        private Label LabelFormaPagemento;
+        private ComboBox CmbBoxFornecedores;
         private DataGridViewTextBoxColumn DataGridProduto;
         private DataGridViewTextBoxColumn DataGridValorUnitario;
         private DataGridViewTextBoxColumn DataGridQuantidade;
@@ -454,12 +434,5 @@
         private DataGridViewTextBoxColumn DataGridFornecedor;
         private DataGridViewTextBoxColumn DatagridLaboratorio;
         private DataGridViewTextBoxColumn DatagridData;
-        private Button BtnExcluir;
-        private TextBox TxtBoxUnitario;
-        private TextBox TxtBoxQuantidade;
-        private ComboBox CmbBoxProduto;
-        private ComboBox CmbFormaPagamento;
-        private Label LabelFormaPagemento;
-        private ComboBox CmbBoxFornecedores;
     }
 }

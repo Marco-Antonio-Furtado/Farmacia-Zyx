@@ -25,17 +25,17 @@ namespace WfPresentationLayer
         }
         private void BtnNovoIten_Click(object sender, EventArgs e)
         {
-            Item_Venda venda = new Item_Venda(produto: CmbBoxProduto.Text,
-                                              formaPagamento: CmbFormaPagamento.Text,
-                                              precoUnitario: double.Parse(TxtBoxUnitario.Text),
-                                              quantidade: int.Parse(TxtBoxQuantidade.Text),
-                                              valorTotal: int.Parse(TxtBoxQuantidade.Text) * double.Parse(TxtBoxUnitario.Text),
-                                              nomeFuncionario: "admin",
-                                              nomeCliente: TxtBoxSelecionarCliente.Text,
-                                              data: DateTime.Value);
-            Vendas.Add(venda);
-            SincronizarListaGrid(venda);
-            LimparFormulario();
+            //Item_Venda venda = new Item_Venda(produto: CmbBoxProduto.Text,
+            //                                  formaPagamento: CmbFormaPagamento.Text,
+            //                                  precoUnitario: double.Parse(TxtBoxUnitario.Text),
+            //                                  quantidade: int.Parse(TxtBoxQuantidade.Text),
+            //                                  valorTotal: int.Parse(TxtBoxQuantidade.Text) * double.Parse(TxtBoxUnitario.Text),
+            //                                  nomeFuncionario: "admin",
+            //                                  nomeCliente: TxtBoxSelecionarCliente.Text,
+            //                                  data: DateTime.Value);
+            //Vendas.Add(venda);
+            //SincronizarListaGrid(venda);
+            //LimparFormulario();
         }
         private void LimparFormulario()
         {

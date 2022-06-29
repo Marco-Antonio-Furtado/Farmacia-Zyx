@@ -4,7 +4,7 @@ namespace Entities
 {
     public class Item_Venda : Transacao
     {
-        public Item_Venda(DateTime data, string produto, string nomeCliente, string nomeFuncionario, string formaPagamento,int quantidade, double precoUnitario, double valorTotal)
+        public Item_Venda(DateTime data, int produto, string nomeCliente, string nomeFuncionario, string formaPagamento,int quantidade, double precoUnitario, double valorTotal)
         {
             Data = data;
             IDProduto = produto;

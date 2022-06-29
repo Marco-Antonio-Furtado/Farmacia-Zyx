@@ -8,7 +8,7 @@ namespace DataAccessLayer
 {
     internal class DbExecuter
     {
-        public static int ExecuteScalar(SqlCommand command)
+        internal static int ExecuteScalar(SqlCommand command)
         {
             DbConnection conn = new DbConnection();
             try
@@ -23,7 +23,7 @@ namespace DataAccessLayer
                 conn.Close();
             }
         }
-        public static Response Execute(SqlCommand command)
+        internal static Response Execute(SqlCommand command)
         {
             DbConnection conn = new DbConnection();
             try
@@ -38,7 +38,7 @@ namespace DataAccessLayer
                 conn.Close();
             }
         }
-        public static DataResponse<T> GetData<T>(SqlCommand command)
+        internal static DataResponse<T> GetData<T>(SqlCommand command)
         {
             DbConnection conn = new DbConnection();
 
@@ -57,7 +57,7 @@ namespace DataAccessLayer
                 conn.Close();
             }
         }
-        public static SingleResponse<T> GetItem<T>(SqlCommand command)
+        internal static SingleResponse<T> GetItem<T>(SqlCommand command)
         {
             DbConnection conn = new DbConnection();
 
@@ -77,7 +77,7 @@ namespace DataAccessLayer
             }
         }
 
-        public static SingleResponse<Funcionario> Login(SqlCommand command)
+        internal static SingleResponse<Funcionario> Login(SqlCommand command)
         {
             DbConnection conn = new DbConnection();
             try

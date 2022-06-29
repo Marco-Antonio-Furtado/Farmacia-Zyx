@@ -48,8 +48,9 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@ID", item.ID);
             try
             {
-                DbExecuter dbExecuter = new DbExecuter();
-                DbExecuter.Execute(command);
+
+                DbExecuter dbexecutor = new DbExecuter();
+                return DbExecuter.GetData<Endereco>(command);
             }
             catch (Exception ex)
             {
@@ -87,11 +88,12 @@ namespace DataAccessLayer
 
         public DataResponse<Endereco> GetAll()
         {
-            string query = $"SELECT CEP,NOME_RUA,NUMERO_CASA,CIDADE_ID,ESTADO_ID FROM ENDERECOS";
-            SqlCommand sql = new SqlCommand(query);
+            string sql = $"SELECT CEP,NOME_RUA,NUMERO_CASA,CIDADE_ID,ESTADO_ID FROM ENDERECOS";
+            SqlCommand command = new SqlCommand(sql);
             try
             {
-                return new DbExecuter().GetData<Endereco>(sql);
+                DbExecuter dbExecuter = new DbExecuter();
+                return DbExecuter.GetData<Endereco>(command);
             }
             catch (Exception)
             {

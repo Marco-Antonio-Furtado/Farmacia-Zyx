@@ -8,7 +8,7 @@ namespace DataAccessLayer
 {
     internal class DbExecuter
     {
-        public int ExecuteScalar(SqlCommand command)
+        public static int ExecuteScalar(SqlCommand command)
         {
             DbConnection conn = new DbConnection();
             try
@@ -23,7 +23,7 @@ namespace DataAccessLayer
                 conn.Close();
             }
         }
-        public Response Execute(SqlCommand command)
+        public static Response Execute(SqlCommand command)
         {
             DbConnection conn = new DbConnection();
             try
@@ -31,14 +31,14 @@ namespace DataAccessLayer
                 conn.AttachCommand(command);
                 conn.Open();
                 command.ExecuteNonQuery();
-                return new Response("Comando executado com sucesso", true);
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             finally
             {
                 conn.Close();
             }
         }
-        public DataResponse<T> GetData<T>(SqlCommand command)
+        public static DataResponse<T> GetData<T>(SqlCommand command)
         {
             DbConnection conn = new DbConnection();
 
@@ -49,16 +49,15 @@ namespace DataAccessLayer
                 SqlDataReader reader = command.ExecuteReader();
                 DataTable dt = new();
                 dt.Load(reader);
-                DataResponse<T> response = new DataResponse<T>("Comando executado com sucesso", true, dt.ToTable<T>());
-                return response;
-                
+                return ResponseFactory.CreateInstance().CreateDataSuccessResponse(dt.ToTable<T>());
+
             }
             finally
             {
                 conn.Close();
             }
         }
-        public SingleResponse<T> GetItem<T>(SqlCommand command)
+        public static SingleResponse<T> GetItem<T>(SqlCommand command)
         {
             DbConnection conn = new DbConnection();
 
@@ -69,8 +68,7 @@ namespace DataAccessLayer
                 SqlDataReader reader = command.ExecuteReader();
                 DataTable dt = new DataTable();
                 dt.Load(reader);
-                SingleResponse<T> response = new SingleResponse<T>("Comando executado com sucesso", true, dt.Rows[0].ToItem<T>());
-                return response;
+                return ResponseFactory.CreateInstance().CreateSingleSuccessResponse(dt.Rows[0].ToItem<T>());
             }
             finally
             {
@@ -79,7 +77,7 @@ namespace DataAccessLayer
             }
         }
 
-        public SingleResponse<Funcionario> lOGIN(SqlCommand command)
+        public static SingleResponse<Funcionario> Login(SqlCommand command)
         {
             DbConnection conn = new DbConnection();
             try
@@ -94,9 +92,10 @@ namespace DataAccessLayer
                     C.Nome_Cargo = Convert.ToString(reader["NOME_CARGO"]);
                     f.Cargo = C;
                     f.Senha = Convert.ToString(reader["SENHA"]);
-                     f.Nome_Funcionario = Convert.ToString(reader["NOME_FUNCIONARIO"]);
+                    f.Nome_Funcionario = Convert.ToString(reader["NOME_FUNCIONARIO"]);
+                    f.Ativo = Convert.ToBoolean(reader["ATIVO"]);
                 }
-                return new SingleResponse<Funcionario>("Login Valido", true, f);
+                return ResponseFactory.CreateInstance().CreateSingleSuccessResponse<Funcionario>(f);
             }
             finally
             {

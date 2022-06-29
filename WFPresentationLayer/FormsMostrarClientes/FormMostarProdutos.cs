@@ -32,29 +32,33 @@ namespace WfPresentationLayer.Alteraçoes
         }
         private void BtnAlterarProdutos_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = this.Gridprodutos.SelectedRows[0];
-            if (Gridprodutos.CurrentRow.Cells[0].Value == null)
-            {
-                MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");
-            }
-            else
-            {
-                int IDPRoduto = Convert.ToInt32(Gridprodutos.CurrentRow.Cells[0].Value.ToString());
-                string nome = Convert.ToString(Gridprodutos.CurrentRow.Cells[1].Value.ToString());
-                string laboratorio = Convert.ToString(Gridprodutos.CurrentRow.Cells[2].Value.ToString());
-                string descrisao = Convert.ToString(Gridprodutos.CurrentRow.Cells[3].Value.ToString());
-                string valorcompra = Convert.ToString(Gridprodutos.CurrentRow.Cells[5].Value.ToString());
-                _objForm3?.Close();
-                _objForm3 = new FormCadastroProduto(IDPRoduto, nome, laboratorio, descrisao, valorcompra)
+                DataGridViewRow row = this.Gridprodutos.SelectedRows[0];
+                if (Gridprodutos.CurrentRow.Cells[0].Value == null)
                 {
-                    TopLevel = false,
-                    FormBorderStyle = FormBorderStyle.None,
-                    Dock = DockStyle.Fill,
-                };
-                pnlProduto.Controls.Add(_objForm3);
-                _objForm3.Show();
-                _objForm3.BringToFront();
-            }
+                    MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");
+                }
+                if (Gridprodutos.CurrentRow.Cells[0].Value == null)
+                {
+                    MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");
+                }
+                else
+                {
+                    int IDPRoduto = Convert.ToInt32(Gridprodutos.CurrentRow.Cells[0].Value.ToString());
+                    string nome = Convert.ToString(Gridprodutos.CurrentRow.Cells[1].Value.ToString());
+                    string laboratorio = Convert.ToString(Gridprodutos.CurrentRow.Cells[2].Value.ToString());
+                    string descrisao = Convert.ToString(Gridprodutos.CurrentRow.Cells[3].Value.ToString());
+                    string valorcompra = Convert.ToString(Gridprodutos.CurrentRow.Cells[5].Value.ToString());
+                    _objForm3?.Close();
+                    _objForm3 = new FormCadastroProduto(IDPRoduto, nome, laboratorio, descrisao, valorcompra)
+                    {
+                        TopLevel = false,
+                        FormBorderStyle = FormBorderStyle.None,
+                        Dock = DockStyle.Fill,
+                    };
+                    pnlProduto.Controls.Add(_objForm3);
+                    _objForm3.Show();
+                    _objForm3.BringToFront();
+                }
         }
         private void BtnDeletarProdutos_Click(object sender, EventArgs e)
         {
@@ -97,7 +101,35 @@ namespace WfPresentationLayer.Alteraçoes
             Produtos = ProdutoBll.GetAll().Dados;
             foreach (Produto Produto in Produtos)
             {
-                SincronizarListaGrid(Produto);
+                if (Produto.Ativo == true)
+                {
+                    SincronizarListaGrid(Produto);
+                }
+            }
+        }
+        private void LimparGrid()
+        {
+            Gridprodutos.Rows.Clear();
+            Gridprodutos.Refresh();
+            Gridprodutos.DataSource = null;
+            
+        }
+
+        private void BtnDesabilitados_Click(object sender, EventArgs e)
+        {
+            LimparGrid();
+            Produtos = ProdutoBll.GetAll().Dados;
+            foreach (Produto Produto in Produtos)
+            {
+                if (Produto.Ativo == false)
+                {
+                    SincronizarListaGrid(Produto);
+                }
+            }
+            if (Gridprodutos.DataSource == null)
+            {
+                MeuMessageBox.Show("Nao a Produtos Desabilitados");
+                LimparGrid();
             }
         }
     }

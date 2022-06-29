@@ -32,6 +32,7 @@ namespace WfPresentationLayer.FormCadastros
                                                    nomeContato: TxtBoxNomeResponsavel.Text,
                                                    email: txtBoxEmail.Text,
                                                    telefone: TxtBoxTelefoneFornecedor.Text);
+            fornecedor.Ativo = true;
             if (TxtBoxID.Visible == true)
             {
                 fornecedor.ID = int.Parse(TxtBoxID.Text);

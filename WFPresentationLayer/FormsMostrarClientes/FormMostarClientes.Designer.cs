@@ -34,7 +34,7 @@
             this.BtnCadastrarCliente = new System.Windows.Forms.Button();
             this.BtnAlterarCliente = new System.Windows.Forms.Button();
             this.BtnDeletarClientes = new System.Windows.Forms.Button();
-            this.BtnProcurarCliente = new System.Windows.Forms.Button();
+            this.BtnClienteDesabilitado = new System.Windows.Forms.Button();
             this.PnlCl = new System.Windows.Forms.Panel();
             this.GridClientes = new System.Windows.Forms.DataGridView();
             this.GRIDID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +53,7 @@
             this.BtnCadastrarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnCadastrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastrarCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarCliente.Location = new System.Drawing.Point(39, 659);
+            this.BtnCadastrarCliente.Location = new System.Drawing.Point(12, 648);
             this.BtnCadastrarCliente.Name = "BtnCadastrarCliente";
             this.BtnCadastrarCliente.Size = new System.Drawing.Size(312, 79);
             this.BtnCadastrarCliente.TabIndex = 22;
@@ -66,11 +66,11 @@
             this.BtnAlterarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnAlterarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAlterarCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnAlterarCliente.Location = new System.Drawing.Point(405, 659);
+            this.BtnAlterarCliente.Location = new System.Drawing.Point(341, 648);
             this.BtnAlterarCliente.Name = "BtnAlterarCliente";
             this.BtnAlterarCliente.Size = new System.Drawing.Size(312, 79);
             this.BtnAlterarCliente.TabIndex = 23;
-            this.BtnAlterarCliente.Text = "Alterar Cliente";
+            this.BtnAlterarCliente.Text = "Alterar / Habilitar   Cliente";
             this.BtnAlterarCliente.UseVisualStyleBackColor = false;
             this.BtnAlterarCliente.Click += new System.EventHandler(this.BtnAlterarCliente_Click);
             // 
@@ -79,25 +79,26 @@
             this.BtnDeletarClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnDeletarClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDeletarClientes.ForeColor = System.Drawing.Color.White;
-            this.BtnDeletarClientes.Location = new System.Drawing.Point(1116, 659);
+            this.BtnDeletarClientes.Location = new System.Drawing.Point(1000, 648);
             this.BtnDeletarClientes.Name = "BtnDeletarClientes";
             this.BtnDeletarClientes.Size = new System.Drawing.Size(312, 79);
             this.BtnDeletarClientes.TabIndex = 24;
-            this.BtnDeletarClientes.Text = "Deletar Cliente";
+            this.BtnDeletarClientes.Text = "Deletar / Desabilitar  Cliente";
             this.BtnDeletarClientes.UseVisualStyleBackColor = false;
             this.BtnDeletarClientes.Click += new System.EventHandler(this.BtnDeletarClientes_Click);
             // 
-            // BtnProcurarCliente
+            // BtnClienteDesabilitado
             // 
-            this.BtnProcurarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.BtnProcurarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnProcurarCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnProcurarCliente.Location = new System.Drawing.Point(768, 659);
-            this.BtnProcurarCliente.Name = "BtnProcurarCliente";
-            this.BtnProcurarCliente.Size = new System.Drawing.Size(312, 79);
-            this.BtnProcurarCliente.TabIndex = 25;
-            this.BtnProcurarCliente.Text = "Selecionar Cliente";
-            this.BtnProcurarCliente.UseVisualStyleBackColor = false;
+            this.BtnClienteDesabilitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnClienteDesabilitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnClienteDesabilitado.ForeColor = System.Drawing.Color.White;
+            this.BtnClienteDesabilitado.Location = new System.Drawing.Point(668, 648);
+            this.BtnClienteDesabilitado.Name = "BtnClienteDesabilitado";
+            this.BtnClienteDesabilitado.Size = new System.Drawing.Size(312, 79);
+            this.BtnClienteDesabilitado.TabIndex = 25;
+            this.BtnClienteDesabilitado.Text = "Mostrar Clientes       Desabilitados";
+            this.BtnClienteDesabilitado.UseVisualStyleBackColor = false;
+            this.BtnClienteDesabilitado.Click += new System.EventHandler(this.BtnClienteDesabilitado_Click);
             // 
             // PnlCl
             // 
@@ -105,7 +106,7 @@
             this.PnlCl.Controls.Add(this.GridClientes);
             this.PnlCl.Location = new System.Drawing.Point(12, 12);
             this.PnlCl.Name = "PnlCl";
-            this.PnlCl.Size = new System.Drawing.Size(1454, 617);
+            this.PnlCl.Size = new System.Drawing.Size(1300, 617);
             this.PnlCl.TabIndex = 26;
             // 
             // GridClientes
@@ -151,7 +152,7 @@
             this.GridClientes.RowHeadersWidth = 51;
             this.GridClientes.RowTemplate.Height = 29;
             this.GridClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridClientes.Size = new System.Drawing.Size(1447, 618);
+            this.GridClientes.Size = new System.Drawing.Size(1294, 618);
             this.GridClientes.TabIndex = 33;
             // 
             // GRIDID
@@ -216,9 +217,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(1479, 764);
+            this.ClientSize = new System.Drawing.Size(1324, 750);
             this.Controls.Add(this.PnlCl);
-            this.Controls.Add(this.BtnProcurarCliente);
+            this.Controls.Add(this.BtnClienteDesabilitado);
             this.Controls.Add(this.BtnDeletarClientes);
             this.Controls.Add(this.BtnAlterarCliente);
             this.Controls.Add(this.BtnCadastrarCliente);
@@ -237,7 +238,7 @@
         private Button BtnCadastrarCliente;
         private Button BtnAlterarCliente;
         private Button BtnDeletarClientes;
-        private Button BtnProcurarCliente;
+        private Button BtnClienteDesabilitado;
         private Panel PnlCl;
         private DataGridView GridClientes;
         private DataGridViewTextBoxColumn GRIDID;

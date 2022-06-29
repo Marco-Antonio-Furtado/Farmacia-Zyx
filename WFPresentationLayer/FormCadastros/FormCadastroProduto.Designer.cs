@@ -39,6 +39,7 @@
             this.CmbBoxLaboratorio = new System.Windows.Forms.ComboBox();
             this.TxtBoxId = new System.Windows.Forms.MaskedTextBox();
             this.LblIDPRoduto = new System.Windows.Forms.Label();
+            this.BtnCadastrarLab = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label4
@@ -133,6 +134,7 @@
             // 
             // CmbBoxLaboratorio
             // 
+            this.CmbBoxLaboratorio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbBoxLaboratorio.FormattingEnabled = true;
             this.CmbBoxLaboratorio.Location = new System.Drawing.Point(12, 167);
             this.CmbBoxLaboratorio.Name = "CmbBoxLaboratorio";
@@ -143,7 +145,7 @@
             // 
             this.TxtBoxId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.TxtBoxId.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxId.Location = new System.Drawing.Point(281, 244);
+            this.TxtBoxId.Location = new System.Drawing.Point(12, 289);
             this.TxtBoxId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxId.Name = "TxtBoxId";
             this.TxtBoxId.Size = new System.Drawing.Size(203, 27);
@@ -156,19 +158,34 @@
             this.LblIDPRoduto.AutoSize = true;
             this.LblIDPRoduto.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LblIDPRoduto.ForeColor = System.Drawing.Color.White;
-            this.LblIDPRoduto.Location = new System.Drawing.Point(281, 217);
+            this.LblIDPRoduto.Location = new System.Drawing.Point(12, 262);
             this.LblIDPRoduto.Name = "LblIDPRoduto";
             this.LblIDPRoduto.Size = new System.Drawing.Size(27, 23);
             this.LblIDPRoduto.TabIndex = 21;
             this.LblIDPRoduto.Text = "ID";
             this.LblIDPRoduto.Visible = false;
             // 
+            // BtnCadastrarLab
+            // 
+            this.BtnCadastrarLab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.BtnCadastrarLab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnCadastrarLab.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnCadastrarLab.ForeColor = System.Drawing.Color.White;
+            this.BtnCadastrarLab.Location = new System.Drawing.Point(349, 250);
+            this.BtnCadastrarLab.Name = "BtnCadastrarLab";
+            this.BtnCadastrarLab.Size = new System.Drawing.Size(156, 75);
+            this.BtnCadastrarLab.TabIndex = 22;
+            this.BtnCadastrarLab.Text = "Cadastrar Laboratorio";
+            this.BtnCadastrarLab.UseVisualStyleBackColor = false;
+            this.BtnCadastrarLab.Click += new System.EventHandler(this.BtnCadastrarLab_Click);
+            // 
             // FormCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(545, 307);
+            this.ClientSize = new System.Drawing.Size(545, 353);
+            this.Controls.Add(this.BtnCadastrarLab);
             this.Controls.Add(this.TxtBoxId);
             this.Controls.Add(this.LblIDPRoduto);
             this.Controls.Add(this.CmbBoxLaboratorio);
@@ -202,5 +219,6 @@
         private MaskedTextBox TxtBoxId;
         private Label LblIDPRoduto;
         private MaskedTextBox TxtBoxPrecoUnitario;
+        private Button BtnCadastrarLab;
     }
 }

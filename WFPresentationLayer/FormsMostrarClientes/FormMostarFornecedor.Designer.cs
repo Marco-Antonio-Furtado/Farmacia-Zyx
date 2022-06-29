@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.BtnProcurarFornecedor = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.BtnDesabilitados = new System.Windows.Forms.Button();
             this.BtnDeletarFornecedor = new System.Windows.Forms.Button();
             this.BtnAlterarFornecedor = new System.Windows.Forms.Button();
             this.BtnCadastrarFornecedor = new System.Windows.Forms.Button();
@@ -47,17 +47,18 @@
             this.PnlFornecedores.SuspendLayout();
             this.SuspendLayout();
             // 
-            // BtnProcurarFornecedor
+            // BtnDesabilitados
             // 
-            this.BtnProcurarFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.BtnProcurarFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnProcurarFornecedor.ForeColor = System.Drawing.Color.White;
-            this.BtnProcurarFornecedor.Location = new System.Drawing.Point(665, 654);
-            this.BtnProcurarFornecedor.Name = "BtnProcurarFornecedor";
-            this.BtnProcurarFornecedor.Size = new System.Drawing.Size(277, 79);
-            this.BtnProcurarFornecedor.TabIndex = 30;
-            this.BtnProcurarFornecedor.Text = "Selecionar Fornecedor";
-            this.BtnProcurarFornecedor.UseVisualStyleBackColor = false;
+            this.BtnDesabilitados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnDesabilitados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnDesabilitados.ForeColor = System.Drawing.Color.White;
+            this.BtnDesabilitados.Location = new System.Drawing.Point(665, 654);
+            this.BtnDesabilitados.Name = "BtnDesabilitados";
+            this.BtnDesabilitados.Size = new System.Drawing.Size(277, 79);
+            this.BtnDesabilitados.TabIndex = 30;
+            this.BtnDesabilitados.Text = "Mostrar Fornecedores Desabilitados";
+            this.BtnDesabilitados.UseVisualStyleBackColor = false;
+            this.BtnDesabilitados.Click += new System.EventHandler(this.BtnDesabilitados_Click);
             // 
             // BtnDeletarFornecedor
             // 
@@ -68,7 +69,7 @@
             this.BtnDeletarFornecedor.Name = "BtnDeletarFornecedor";
             this.BtnDeletarFornecedor.Size = new System.Drawing.Size(277, 79);
             this.BtnDeletarFornecedor.TabIndex = 29;
-            this.BtnDeletarFornecedor.Text = "Deletar Fornecedor";
+            this.BtnDeletarFornecedor.Text = "Deletar/Desabilitar  Fornecedor";
             this.BtnDeletarFornecedor.UseVisualStyleBackColor = false;
             this.BtnDeletarFornecedor.Click += new System.EventHandler(this.BtnDeletarFornecedor_Click);
             // 
@@ -81,7 +82,7 @@
             this.BtnAlterarFornecedor.Name = "BtnAlterarFornecedor";
             this.BtnAlterarFornecedor.Size = new System.Drawing.Size(277, 79);
             this.BtnAlterarFornecedor.TabIndex = 28;
-            this.BtnAlterarFornecedor.Text = "Alterar Fornecedor";
+            this.BtnAlterarFornecedor.Text = "Alterar / Habilitar   Fornecedor";
             this.BtnAlterarFornecedor.UseVisualStyleBackColor = false;
             this.BtnAlterarFornecedor.Click += new System.EventHandler(this.BtnAlterarFornecedor_Click);
             // 
@@ -101,14 +102,14 @@
             // GridFornecedor
             // 
             this.GridFornecedor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridFornecedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridFornecedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GridFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridFornecedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GridID,
@@ -117,25 +118,25 @@
             this.GridNomeResponsavel,
             this.GridEmail,
             this.GridCNPJ});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridFornecedor.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridFornecedor.DefaultCellStyle = dataGridViewCellStyle5;
             this.GridFornecedor.Location = new System.Drawing.Point(0, 3);
             this.GridFornecedor.Name = "GridFornecedor";
             this.GridFornecedor.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridFornecedor.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridFornecedor.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.GridFornecedor.RowHeadersWidth = 51;
             this.GridFornecedor.RowTemplate.Height = 29;
             this.GridFornecedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -206,7 +207,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1334, 754);
-            this.Controls.Add(this.BtnProcurarFornecedor);
+            this.Controls.Add(this.BtnDesabilitados);
             this.Controls.Add(this.BtnDeletarFornecedor);
             this.Controls.Add(this.BtnAlterarFornecedor);
             this.Controls.Add(this.BtnCadastrarFornecedor);
@@ -225,7 +226,7 @@
 
         #endregion
 
-        private Button BtnProcurarFornecedor;
+        private Button BtnDesabilitados;
         private Button BtnDeletarFornecedor;
         private Button BtnAlterarFornecedor;
         private Button BtnCadastrarFornecedor;

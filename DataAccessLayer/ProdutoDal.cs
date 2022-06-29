@@ -19,23 +19,23 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                dbexecutor.Execute(command);
-                return new Response("Produto cadastrado com sucesso.", true);
+                DbExecuter.Execute(command);
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
 
                 if (ex.Message.Contains("UQ_PRODUTO_NOME"))
                 {
-                    return new Response("NOME já está em uso.", false);
+                    return ResponseFactory.CreateInstance().CreateFailedUniqueName();
                 }
-                return new Response(ex.Message.ToString(), false);
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
 
         public Response Update(Produto item)
         {
-            string sql = $"UPDATE PRODUTOS SET NOME_PRODUTO = @NOME_PRODUTO, DESCRICAO = @DESCRICAO, ID_LABORATORIO = @ID_LABORATORIO, VALOR_UNITARIO = @VALOR_UNITARIO,VALOR_VENDA = @VALOR_VENDA WHERE ID = @ID";
+            string sql = $"UPDATE PRODUTOS SET NOME_PRODUTO = @NOME_PRODUTO, DESCRICAO = @DESCRICAO, ID_LABORATORIO = @ID_LABORATORIO, VALOR_UNITARIO = @VALOR_UNITARIO,VALOR_VENDA = @VALOR_VENDA,ATIVO = @ATIVO WHERE ID = @ID";
 
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@NOME_PRODUTO", item.Nome);
@@ -44,20 +44,20 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@VALOR_UNITARIO", item.Valor_Unitario);
             command.Parameters.AddWithValue("@VALOR_VENDA", item.Valor_Venda);
             command.Parameters.AddWithValue("@ID", item.ID);
-
+            command.Parameters.AddWithValue("@ATIVO", item.Ativo);
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                dbexecutor.Execute(command);
-                return new Response("Produto Alterado com sucesso.", true);
+                DbExecuter.Execute(command);
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
                 if (ex.Message.Contains("UQ_PRODUTO_NOME"))
                 {
-                    return new Response("NOME já está em uso.", false);
+                    return ResponseFactory.CreateInstance().CreateFailedUniqueName();
                 }
-                return new Response("Erro no banco de dados, contate o administrador.", false);
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
 
@@ -71,12 +71,12 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                dbexecutor.Execute(command);
-                return new Response("Produto Alterado com sucesso.", true);
+                DbExecuter.Execute(command);
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return new Response("Erro no banco de dados" + "\r\n" + "contate o administrador", false);
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
 
@@ -89,12 +89,12 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                dbexecutor.Execute(command);
-                return new Response("Produto Excluido com sucesso.", true);
+                DbExecuter.Execute(command);
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return new Response("Erro no banco de dados, contate o administrador.", false);
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
 
@@ -128,12 +128,13 @@ namespace DataAccessLayer
                         p.ID_Laboratorio = l;
                     produtos.Add(p);
                 }
-                DataResponse<Produto> response = new DataResponse<Produto>("DADOS SELECIONADOS COM SUCESSO", true, produtos);
-                return response;
+                return ResponseFactory.CreateInstance().CreateDataSuccessResponse(produtos);
+
+
             }
             catch (Exception ex)
             {
-                return new DataResponse<Produto>(ex.Message, false, null);
+                return ResponseFactory.CreateInstance().CreateDataFailedResponse<Produto>();
             }
         }
 
@@ -163,12 +164,11 @@ namespace DataAccessLayer
                     l.Razao_Social = (string)reader["RAZAO_SOCIAL"];
                     p.ID_Laboratorio = l;
                 }
-                SingleResponse<Produto> response = new SingleResponse<Produto>("DADOS SELECIONADOS COM SUCESSO", true, p);
-                return response;
+                return ResponseFactory.CreateInstance().CreateSingleSuccessResponse(p);
             }
             catch (Exception ex)
             {
-                return new SingleResponse<Produto>(ex.Message, false, null);
+                return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Produto>(null);
             }
         }
     }

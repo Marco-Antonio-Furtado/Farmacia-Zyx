@@ -84,7 +84,7 @@
             Close();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PctBoxClose(object sender, EventArgs e)
         {
             this.Close();
         }

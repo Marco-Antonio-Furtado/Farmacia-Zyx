@@ -15,12 +15,11 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new();
-                dbexecutor.Execute(command);
-                return new Response("Cargo Excluido com sucesso.", true);
+                return DbExecuter.Execute(command);
             }
             catch (Exception)
             {
-                return new Response("Erro no banco de dados, contate o administrador.", false);
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
         public Response Disable(int id)
@@ -36,27 +35,29 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbExecuter = new DbExecuter();
-                return dbExecuter.GetData<Cargo>(command);
+                return DbExecuter.GetData<Cargo>(command);
             }
             catch (Exception ex)
             {
-                return new DataResponse<Cargo>(ex.Message, false, null);
+                return ResponseFactory.CreateInstance().CreateDataFailedResponse<Cargo>();
+
             }
         }
         public SingleResponse<Cargo> GetByID(int id)
         {
-            string sql = $"SELECT ID,NOME FROM CARGOS WHERE ID = @ID";
+            string sql = $"SELECT ID,NOME_CARGO FROM CARGOS WHERE ID = @ID";
 
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@ID", id);
             try
             {
                 DbExecuter dbExecuter = new DbExecuter();
-                return dbExecuter.GetItem<Cargo>(command);
+                return DbExecuter.GetItem<Cargo>(command);
             }
             catch (Exception ex)
             {
-                return new SingleResponse<Cargo>("Erro no banco de dados" + "\r\n" + "contate o administrador", false, null);
+                return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Cargo>(null);
+
             }
         }
         public Response Insert(Cargo item)
@@ -69,16 +70,15 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                dbexecutor.Execute(command);
-                return new Response("Cargo cadastrado com sucesso.", true);
+                return DbExecuter.Execute(command);
             }
             catch (Exception ex)
             {
                 if (ex.Message.Contains("UQ_CARGOS_NOME"))
                 {
-                    return new Response("Nome Esta em uso", false);
+                    return ResponseFactory.CreateInstance().CreateFailedUniqueName();
                 }
-                return new Response("Erro no banco de dados" + "\r\n" + "contate o administrador", false);
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
 
@@ -91,16 +91,17 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                dbexecutor.Execute(command);
-                return new Response("Cargo Alterado com sucesso.", true);
+                return DbExecuter.Execute(command);
             }
             catch (Exception ex)
             {
                 if (ex.Message.Contains("UQ_CARGOS_NOME"))
                 {
-                    return new Response("Nome Esta em uso", false);
+                    return ResponseFactory.CreateInstance().CreateFailedUniqueName();
+
                 }
-                return new Response("Erro no banco de dados" + "\r\n" + "contate o administrador", false);
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
+
             }
         }
     }

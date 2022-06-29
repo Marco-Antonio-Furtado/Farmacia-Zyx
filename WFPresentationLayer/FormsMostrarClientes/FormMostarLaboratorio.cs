@@ -43,7 +43,10 @@ namespace WfPresentationLayer.FormsMostrarClientes
             Laboratorios = laboratorioBLL.GetAll().Dados;
             foreach (Laboratorio laboratorio in Laboratorios)
             {
-                SincronizarListaGrid(laboratorio);
+                if (laboratorio.Ativo == true)
+                {
+                    SincronizarListaGrid(laboratorio);
+                }
             }
         }
         private void SincronizarListaGrid(Laboratorio item)
@@ -117,6 +120,30 @@ namespace WfPresentationLayer.FormsMostrarClientes
                 }
                 else { }
             }
+        }
+
+        private void BtnDesabilitados_Click(object sender, EventArgs e)
+        {
+            LimparGrid();
+            List<Laboratorio> LaboratoriosOFF = laboratorioBLL.GetAll().Dados;
+            foreach (Laboratorio laboratorio in LaboratoriosOFF)
+            {
+                if (laboratorio.Ativo == false)
+                {
+                    SincronizarListaGrid(laboratorio);
+                }
+            }
+            if (GridLaboratorio.DataSource == null)
+            {
+                MeuMessageBox.Show("Nao a Funcionarios Desabilitados");
+            }
+
+        }
+        private void LimparGrid()
+        {
+            GridLaboratorio.Rows.Clear();
+            GridLaboratorio.Refresh();
+            GridLaboratorio.DataSource = null;
         }
     }
 }

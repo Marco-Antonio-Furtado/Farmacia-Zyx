@@ -31,8 +31,10 @@ namespace WfPresentationLayer
             Cliente cliente = new Cliente(txtBoxNomeCliente.Text, TxtBoxCpfCLiente.Text, TxtBoxRgCliente.Text,
                                           txtBoxEmailCliente.Text, TxtBoxTelefone1Cliente.Text
                                           , TxtBoxTelefone2Cliente.Text);
+            cliente.Ativo = true;
             if (TxtBoxID.Visible == true)
             {
+                
                 cliente.ID = int.Parse(TxtBoxID.Text);
                 Response resposta = clientebll.Update(cliente);
                 MeuMessageBox.Show(resposta.Message);

@@ -42,7 +42,10 @@ namespace WfPresentationLayer.Alteraçoes
             funcionarios = funcionarioBll.GetAll().Dados;
             foreach (Funcionario Funcionario in funcionarios)
             {
-                SincronizarListaGrid(Funcionario);
+                if (Funcionario.Ativo == true)
+                {
+                    SincronizarListaGrid(Funcionario);
+                }
             }
         }
         private void SincronizarListaGrid(Funcionario item)
@@ -116,6 +119,29 @@ namespace WfPresentationLayer.Alteraçoes
                 _objForm2.Show();
                 _objForm2.BringToFront();
             }
+        }
+
+        private void BtnDesabilitados_Click(object sender, EventArgs e)
+        {
+            LimparGrid();
+            funcionarios = funcionarioBll.GetAll().Dados;
+            foreach (Funcionario Funcionario in funcionarios)
+            {
+                if (Funcionario.Ativo == false)
+                {
+                    SincronizarListaGrid(Funcionario);
+                }
+            }
+            if (GridFuncionario.DataSource == null)
+            {
+                MeuMessageBox.Show("Nao a Funcionarios Desabilitados");
+            }
+        }
+        private void LimparGrid()
+        {
+            GridFuncionario.Rows.Clear();
+            GridFuncionario.Refresh();
+            GridFuncionario.DataSource = null;
         }
     }
 }

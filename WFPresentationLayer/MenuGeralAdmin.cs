@@ -103,7 +103,7 @@ namespace WfPresentationLayer
             _objForm?.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnMostraLab(object sender, EventArgs e)
         {
             _objForm?.Close();
             _objForm = new FormMostarLaboratorio

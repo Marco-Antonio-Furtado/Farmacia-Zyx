@@ -221,7 +221,6 @@ C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresen
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.Vendas.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.FormMostrarProdutos.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormsMostrarClientes.FormMostarLaboratorio.resources
-C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Form1.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.MeuMessageBox.resources
 C:\Users\entra21\Source\Repos\Farmacia-Zyx\WfPresentationLayer\bin\Debug\net6.0-windows\WfPresentationLayer.exe
 C:\Users\entra21\Source\Repos\Farmacia-Zyx\WfPresentationLayer\bin\Debug\net6.0-windows\WfPresentationLayer.deps.json
@@ -280,3 +279,4 @@ C:\Users\entra21\Source\Repos\Farmacia-Zyx\WfPresentationLayer\obj\Debug\net6.0-
 C:\Users\entra21\Source\Repos\Farmacia-Zyx\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.pdb
 C:\Users\entra21\Source\Repos\Farmacia-Zyx\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.genruntimeconfig.cache
 C:\Users\entra21\Source\Repos\Farmacia-Zyx\WfPresentationLayer\obj\Debug\net6.0-windows\ref\WfPresentationLayer.dll
+C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastros.FormCadastroCargo.resources

@@ -8,7 +8,7 @@ namespace DataAccessLayer
     {
         public Response Insert(Fornecedor fornecedor)
         {
-            string sql = $"INSERT INTO FORNECEDORES (RAZAO_SOCIAL,CNPJ,EMAIL,TELEFONE,NOME_CONTATO) VALUES (@RAZAO_SOCIAL,@CNPJ,@EMAIL,@TELEFONE,@NOME_CONTATO)";
+            string sql = $"INSERT INTO FORNECEDORES (RAZAO_SOCIAL,CNPJ,EMAIL,TELEFONE,NOME_CONTATO,ATIVO) VALUES (@RAZAO_SOCIAL,@CNPJ,@EMAIL,@TELEFONE,@NOME_CONTATO,@ATIVO)";
 
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@RAZAO_SOCIAL", fornecedor.Razao_Social);
@@ -16,24 +16,23 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@CNPJ", fornecedor.CNPJ);
             command.Parameters.AddWithValue("@EMAIL", fornecedor.Email);
             command.Parameters.AddWithValue("@TELEFONE", fornecedor.Telefone);
-
+            command.Parameters.AddWithValue("@ATIVO", fornecedor.Ativo);
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                dbexecutor.Execute(command);
-                return new Response("Fornecedor cadastrado com sucesso.", true);
+                return DbExecuter.Execute(command);
             }
             catch (Exception ex)
             {
                 if (ex.Message.Contains("UQ_FORNECEDOR_EMAIL"))
                 {
-                    return new Response("Email já está em uso.", false);
+                    ResponseFactory.CreateInstance().CreateFailedUniqueEmail();
                 }
                 if (ex.Message.Contains("UQ_FORNECEDOR_CNPJ"))
                 {
-                    return new Response("CPF já está em uso.", false);
+                    ResponseFactory.CreateInstance().CreateFailedUniqueCnpj();
                 }
-                return new Response("Erro no Sistema contate o administrados", false);
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
 
@@ -42,23 +41,21 @@ namespace DataAccessLayer
             string sql = $"UPDATE FORNECEDORES SET ATIVO = 0 WHERE ID = @ID";
 
             SqlCommand command = new SqlCommand(sql);
-
             command.Parameters.AddWithValue("@ID", iDCLiente);
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                dbexecutor.Execute(command);
-                return new Response("Fornecedor Alterado com sucesso.", true);
+                return DbExecuter.Execute(command);
             }
             catch (Exception ex)
             {
-                return new Response("Erro no banco de dados" + "\r\n" + "contate o administrador", false);
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
 
         public Response Update(Fornecedor fornecedor)
         {
-            string sql = $"UPDATE FORNECEDORES SET RAZAO_SOCIAL = @RAZAO_SOCIAL,NOME_CONTATO = @NOME_CONTATO,CNPJ = @CNPJ,EMAIL = @EMAIL, TELEFONE = @TELEFONE WHERE ID = @ID";
+            string sql = $"UPDATE FORNECEDORES SET RAZAO_SOCIAL = @RAZAO_SOCIAL,NOME_CONTATO = @NOME_CONTATO,CNPJ = @CNPJ,EMAIL = @EMAIL, TELEFONE = @TELEFONE,ATIVO = @ATIVO WHERE ID = @ID";
 
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@RAZAO_SOCIAL", fornecedor.Razao_Social);
@@ -67,20 +64,23 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@EMAIL", fornecedor.Email);
             command.Parameters.AddWithValue("@TELEFONE", fornecedor.Telefone);
             command.Parameters.AddWithValue("@ID", fornecedor.ID);
-
+            command.Parameters.AddWithValue("@ATIVO", fornecedor.Ativo);
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                dbexecutor.Execute(command);
-                return new Response("Cliente Alterado com sucesso.", true);
+                return DbExecuter.Execute(command);
             }
             catch (Exception ex)
             {
                 if (ex.Message.Contains("UQ_FORNECEDOR_EMAIL"))
                 {
-                    return new Response("Email já está em uso.", false);
+                    ResponseFactory.CreateInstance().CreateFailedUniqueEmail();
                 }
-                return new Response("Erro no banco de dados, contate o administrador.", false);
+                if (ex.Message.Contains("UQ_FORNECEDOR_CNPJ"))
+                {
+                    ResponseFactory.CreateInstance().CreateFailedUniqueCnpj();
+                }
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
         public Response Delete(int id)
@@ -92,20 +92,11 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                dbexecutor.Execute(command);
-                return new Response("Cliente Excluido com sucesso.", true);
+                return DbExecuter.Execute(command);
             }
             catch (Exception ex)
             {
-                if (ex.Message.Contains("UQ_FORNECEDOR_EMAIL"))
-                {
-                    return new Response("Email já está em uso.", false);
-                }
-                if (ex.Message.Contains("UQ_FORNECEDOR_CNPJ"))
-                {
-                    return new Response("CPF já está em uso.", false);
-                }
-                return new Response("Erro no banco de dados, contate o administrador.", false);
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
 
@@ -117,11 +108,11 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbExecuter = new DbExecuter();
-                return dbExecuter.GetData<Fornecedor>(command);
+                return DbExecuter.GetData<Fornecedor>(command);
             }
             catch (Exception ex)
             {
-                return new DataResponse<Fornecedor>("Erro Contato o administrador", false, null);
+                return ResponseFactory.CreateInstance().CreateDataFailedResponse<Fornecedor>();
             }
 
         }
@@ -135,11 +126,11 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                return dbexecutor.GetItem<Fornecedor>(command);
+                return DbExecuter.GetItem<Fornecedor>(command);
             }
             catch (Exception ex)
             {
-                return new SingleResponse<Fornecedor>("Erro no banco de dados, contate o administrador. \r\n" + ex.Message, false, null);
+                return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Fornecedor>(null);
             }
         }
 
@@ -152,11 +143,12 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                return dbexecutor.GetItem<Fornecedor>(command);
+                return DbExecuter.GetItem<Fornecedor>(command);
             }
             catch (Exception)
             {
-                return new SingleResponse<Fornecedor>("Erro no banco de dados, contate o administrador.", false, null);
+                return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Fornecedor>(null);
+
             }
         }
     }

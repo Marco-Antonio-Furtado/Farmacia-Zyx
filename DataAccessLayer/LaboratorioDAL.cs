@@ -18,20 +18,19 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                dbexecutor.Execute(command);
-                return new Response("Laboratorio cadastrado com sucesso.", true);
+                return DbExecuter.Execute(command);
             }
             catch (Exception ex)
             {
                 if (ex.Message.Contains("UQ_LABORATORIOS_EMAIL"))
                 {
-                    return new Response("Email já está em uso.", false);
+                    return ResponseFactory.CreateInstance().CreateFailedUniqueEmail();
                 }
                 if (ex.Message.Contains("UQ_LABORATORIOS_CNPJ"))
                 {
-                    return new Response("CNPJ já está em uso.", false);
+                    return ResponseFactory.CreateInstance().CreateFailedUniqueCnpj();
                 }
-                return new Response("Erro no Sistema contate o administrados", false);
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
         public Response Disable(int iDCLiente)
@@ -44,19 +43,16 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                dbexecutor.Execute(command);
-                return new Response("Laboratorio Alterado com sucesso.", true);
+                return DbExecuter.Execute(command);
             }
             catch (Exception ex)
             {
-                return new Response("Erro no banco de dados" + "\r\n" + "contate o administrador", false);
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
         public Response Update(Laboratorio item)
         {
-            string sql = $"UPDATE LABORATORIOS SET RAZAO_SOCIAL = @RAZAO_SOCIAL,NOME_CONTATO = @NOME_CONTATO,CNPJ = @CNPJ,EMAIL = @EMAIL, TELEFONE = @TELEFONE WHERE ID = @ID";
-
-            
+            string sql = $"UPDATE LABORATORIOS SET RAZAO_SOCIAL = @RAZAO_SOCIAL,NOME_CONTATO = @NOME_CONTATO,CNPJ = @CNPJ,EMAIL = @EMAIL, TELEFONE = @TELEFONE, ATIVO = @ATIVO WHERE ID = @ID";
 
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@ID", item.ID);
@@ -65,19 +61,24 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@CNPJ", item.CNPJ);
             command.Parameters.AddWithValue("@EMAIL", item.Email);
             command.Parameters.AddWithValue("@TELEFONE", item.Telefone);
+            command.Parameters.AddWithValue("@ATIVO", item.Ativo);
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                dbexecutor.Execute(command);
-                return new Response("Cliente Alterado com sucesso.", true);
+                DbExecuter.Execute(command);
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                if (ex.Message.Contains("UQ_FORNECEDOR_EMAIL"))
+                if (ex.Message.Contains("UQ_LABORATORIOS_EMAIL"))
                 {
-                    return new Response("Email já está em uso.", false);
+                    ResponseFactory.CreateInstance().CreateFailedUniqueEmail();
                 }
-                return new Response("Erro no banco de dados, contate o administrador.", false);
+                if (ex.Message.Contains("UQ_LABORATORIOS_CNPJ"))
+                {
+                    ResponseFactory.CreateInstance().CreateFailedUniqueCnpj();
+                }
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
         public Response Delete(int id)
@@ -89,8 +90,8 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                dbexecutor.Execute(command);
-                return new Response("Laboratorio Excluido com sucesso.", true);
+                DbExecuter.Execute(command);
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
@@ -98,7 +99,7 @@ namespace DataAccessLayer
                 {
                     return new Response("Voce nao pode Apagar um Laborario vinculado a um produto", false);
                 }
-                return new Response("Erro no Sistema contate o administrados", false);
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
         public DataResponse<Laboratorio> GetAll()
@@ -109,11 +110,11 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                return dbexecutor.GetData<Laboratorio>(command);
+                return DbExecuter.GetData<Laboratorio>(command);
             }
             catch (Exception ex)
             {
-                return new DataResponse<Laboratorio>(ex.Message, false, null);
+                return ResponseFactory.CreateInstance().CreateDataFailedResponse<Laboratorio>();
             }
         }
 
@@ -126,11 +127,11 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                return dbexecutor.GetItem<Laboratorio>(command);
+                return DbExecuter.GetItem<Laboratorio>(command);
             }
             catch (Exception)
             {
-                return new SingleResponse<Laboratorio>("Erro no banco de dados, contate o administrador.", false, null);
+                return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Laboratorio>(null);
             }
         }
     }

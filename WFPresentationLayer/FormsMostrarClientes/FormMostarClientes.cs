@@ -19,7 +19,10 @@ namespace WfPresentationLayer.Alteraçoes
             Clientes = clienteBLL.GetAll().Dados;
             foreach (Cliente cliente in Clientes)
             {
-                SincronizarListaGrid(cliente);
+                if (cliente.Ativo == true)
+                {
+                    SincronizarListaGrid(cliente);
+                }
             }
         }
         private void PctBtnClose_Click(object sender, EventArgs e)
@@ -75,6 +78,12 @@ namespace WfPresentationLayer.Alteraçoes
             }
         }
 
+        private void LimparGrid()
+        {
+            GridClientes.Rows.Clear();
+            GridClientes.Refresh();
+            GridClientes.DataSource = null;
+        }
         private void BtnDeletarClientes_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = this.GridClientes.SelectedRows[0];
@@ -111,6 +120,24 @@ namespace WfPresentationLayer.Alteraçoes
                 else { }
             }
             
+        }
+
+        private void BtnClienteDesabilitado_Click(object sender, EventArgs e)
+        {
+            LimparGrid();
+            Clientes = clienteBLL.GetAll().Dados;
+            foreach (Cliente cliente in Clientes)
+            {
+                
+                if (cliente.Ativo == false)
+                {
+                    SincronizarListaGrid(cliente);
+                }
+            }
+            if (GridClientes.DataSource == null)
+            {
+                MeuMessageBox.Show("Nao a clientes Desabilitados");
+            }
         }
     }
 }

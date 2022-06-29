@@ -27,6 +27,10 @@ namespace BusinessLogicalLayer
         {
             return UsuarioLogado.Cargo;
         }
+        public static string GetNome()
+        {
+            return UsuarioLogado.Nome_Funcionario;
+        } 
     }
 
 }

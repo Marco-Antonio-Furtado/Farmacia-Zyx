@@ -20,7 +20,7 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                item.ID = dbexecutor.ExecuteScalar(command);
+                item.ID = DbExecuter.ExecuteScalar(command);
                 return new Response("Endereco cadastrado com sucesso.", true);
             }
             catch (Exception ex)
@@ -49,7 +49,7 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbExecuter = new DbExecuter();
-                dbExecuter.Execute(command);
+                DbExecuter.Execute(command);
             }
             catch (Exception ex)
             {
@@ -70,7 +70,7 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbExecuter = new DbExecuter();
-                dbExecuter.Execute(command);
+                DbExecuter.Execute(command);
 
                 int qtdLinhasExcluidas = command.ExecuteNonQuery();
                 if (qtdLinhasExcluidas == 1)
@@ -109,7 +109,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@ID", id);
             try
             {
-               return dbExecuter.GetItem<Endereco>(command);
+               return DbExecuter.GetItem<Endereco>(command);
             }
             catch (Exception ex)
             {

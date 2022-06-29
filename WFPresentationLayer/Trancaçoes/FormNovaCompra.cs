@@ -1,4 +1,7 @@
-﻿using Entities;
+﻿using BusinessLogicalLayer;
+using BusinessLogicalLayer.BusinessLL;
+using Entities;
+using Entities.enums;
 using WfPresentationLayer.FormCadastros;
 
 namespace WfPresentationLayer.Trancaçoes
@@ -8,7 +11,9 @@ namespace WfPresentationLayer.Trancaçoes
         public FormNovaCompra()
         {
             InitializeComponent();
-        }   
+        }
+        FornecedorBll fornecedorBLL = new FornecedorBll();
+        ProdutoBll produtoBLL = new ProdutoBll();
         List<Item_Compra> compras = new List<Item_Compra>();
         private void BtnNovoFornecedor_Click(object sender, EventArgs e)
         {
@@ -22,14 +27,14 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void BtnNovoIten_Click(object sender, EventArgs e)
         {
-            Item_Compra compra = new Item_Compra(produto: CmbBoxProduto.Text,
+            Item_Compra compra = new Item_Compra(produto: CmbBoxProduto.ValueMember,
                                                  formaPagamento: CmbFormaPagamento.Text,
                                                  precoUnitario: double.Parse(TxtBoxUnitario.Text),
-                                                 fornecedor: TxtBoxSelecionarFornecedor.Text,
+                                                 fornecedor: CmbBoxFornecedores.ValueMember,
                                                  quantidade: int.Parse(TxtBoxQuantidade.Text),
                                                  valorTotal: int.Parse(TxtBoxQuantidade.Text) * double.Parse(TxtBoxUnitario.Text),
-                                                 nomeFuncionario: "admin",
-                                                 data: DateTime.Value);
+                                                 nomeFuncionario: SystemParameters.GetNome(),
+                                                 data: DateTime.Value) ;
             compras.Add(compra);
             SincronizarListaGrid(compra);
             LimparFormulario();
@@ -57,18 +62,8 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void TxtBoxQuantidade_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == '.' || e.KeyChar == ',')
-            {
-                //troca o . pela virgula
-                e.KeyChar = ',';
-                //Verifica se já existe alguma vírgula na string
-                if (TxtBoxQuantidade.Text.Contains(","))
-                {
-                    e.Handled = true; // Caso exista, aborte 
-                }
-            }
             //aceita apenas números, tecla backspace.
-            else if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
+            if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
             {
                 e.Handled = true;
             }
@@ -80,7 +75,7 @@ namespace WfPresentationLayer.Trancaçoes
                 //troca o . pela virgula
                 e.KeyChar = ',';
                 //Verifica se já existe alguma vírgula na string
-                if (TxtBoxUnitario.Text.Contains(","))
+                if (TxtBoxUnitario.Text.Contains(','))
                 {
                     e.Handled = true; // Caso exista, aborte 
                 }
@@ -90,6 +85,33 @@ namespace WfPresentationLayer.Trancaçoes
             {
                 e.Handled = true;
             }
+        }
+
+        private void FormNovaCompra_Load(object sender, EventArgs e)
+        {
+            List<Fornecedor> fornecedors = fornecedorBLL.GetAll().Dados;
+            foreach (Fornecedor fornecedor in fornecedors)
+            {
+                if (fornecedor.Ativo == true)
+                {
+                    CmbBoxFornecedores.Items.Add(fornecedor);
+                } 
+            }
+            CmbBoxFornecedores.DisplayMember = "Razao_Social";
+            CmbBoxFornecedores.ValueMember = "ID";
+
+            List<Produto> produtos = produtoBLL.GetAll().Dados;
+            foreach (Produto Produto in produtos)
+            {
+                if (Produto.Ativo == true)
+                {
+                    CmbBoxProduto.Items.Add(Produto);
+                }
+            }
+            CmbBoxProduto.DisplayMember = "Nome";
+            CmbBoxProduto.ValueMember = "ID";
+
+            CmbFormaPagamento.DataSource = Enum.GetNames(typeof(FormaPagamento));
         }
     }
 }

@@ -16,7 +16,7 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                return dbexecutor.GetData<Cidade>(command);
+                return DbExecuter.GetData<Cidade>(command);
             }
             catch (Exception ex)
             {
@@ -31,7 +31,7 @@ namespace DataAccessLayer
             try
             {
                 DbExecuter dbexecutor = new DbExecuter();
-                return dbexecutor.GetData<Estado>(command);
+                return DbExecuter.GetData<Estado>(command);
             }
             catch (Exception ex)
             {

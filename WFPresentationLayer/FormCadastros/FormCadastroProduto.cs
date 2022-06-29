@@ -1,6 +1,8 @@
 ﻿using BusinessLogicalLayer.BusinessLL;
 using Entities;
 using Shared;
+using System.Collections.Generic;
+using WfPresentationLayer.FormCadastros;
 
 namespace WfPresentationLayer
 {
@@ -13,7 +15,14 @@ namespace WfPresentationLayer
         public FormCadastroProduto()
         {
             InitializeComponent();
-            CmbBoxLaboratorio.DataSource = LB.GetAll().Dados;
+            List<Laboratorio> Labs = LB.GetAll().Dados;
+            foreach (Laboratorio Laboratorio in Labs)
+            {
+                if (Laboratorio.Ativo == true)
+                {
+                    CmbBoxLaboratorio.Items.Add(Laboratorio);
+                }
+            }
             CmbBoxLaboratorio.ValueMember = "ID";
             CmbBoxLaboratorio.DisplayMember = "Razao_Social";
         }
@@ -21,7 +30,14 @@ namespace WfPresentationLayer
         public FormCadastroProduto(int iDPRoduto, string nome, string laboratorio, string descrisao, string valorcompra)
         {
             InitializeComponent();
-
+            List<Laboratorio> Labs = LB.GetAll().Dados;
+            foreach (Laboratorio Laboratorio in Labs)
+            {
+                if (Laboratorio.Ativo == true)
+                {
+                    CmbBoxLaboratorio.Items.Add(Laboratorio);
+                }
+            }
             CmbBoxLaboratorio.DataSource = LB.GetAll().Dados;
             CmbBoxLaboratorio.ValueMember = "ID";
             CmbBoxLaboratorio.DisplayMember = "Razao_Social";
@@ -42,12 +58,14 @@ namespace WfPresentationLayer
             lab.ID = Convert.ToInt32(CmbBoxLaboratorio.SelectedValue.ToString());
 
             Produto produto = new Produto();
+            
             produto.Nome = TxtBoxNomeProduto.Text;
             produto.Descricao = TxtBoxDescrisaoProduto.Text;
             produto.ID_Laboratorio = lab;
             produto.Valor_Unitario = double.Parse(TxtBoxPrecoUnitario.Text);
             if (TxtBoxId.Visible == true)
             {
+                produto.Ativo = true;
                 produto.ID = int.Parse(TxtBoxId.Text);
                 Response resposta = produtoBll.Update(produto);
                 MeuMessageBox.Show(resposta.Message);
@@ -84,6 +102,12 @@ namespace WfPresentationLayer
                 e.Handled = true;
             }
 
+        }
+
+        private void BtnCadastrarLab_Click(object sender, EventArgs e)
+        {
+            FormCadastrarLaboratorio formCadastrarLaboratorio = new FormCadastrarLaboratorio();
+            formCadastrarLaboratorio.ShowDialog();
         }
     }
 }

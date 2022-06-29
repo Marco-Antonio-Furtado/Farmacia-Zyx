@@ -23,7 +23,11 @@ namespace WfPresentationLayer
                 MenuGeralAdmin menuGeralAdmin = new MenuGeralAdmin();
                 menuGeralAdmin.ShowDialog();
             }
-            else { LabelResposta.Text = "Email ou Senha Invalidos"; }
+            else 
+            { 
+                LabelResposta.Text = "Email ou Senha Invalidos";
+                MeuMessageBox.Show(r.Message);
+            }
            
         }
         private void TxtBoxLogin_TextChanged(object sender, EventArgs e)
@@ -56,18 +60,11 @@ namespace WfPresentationLayer
         {
             this.Close();
         }
-
-
         private Response Logar(string Email,string Senha)
         {
             
            return funcionario.LoginBLL(Email, Senha);
             
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
         }
     }
 }

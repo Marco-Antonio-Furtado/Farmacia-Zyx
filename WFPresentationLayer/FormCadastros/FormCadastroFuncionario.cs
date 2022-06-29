@@ -3,6 +3,7 @@ using DataAccessLayer;
 using Entities;
 using Entities.Propriedades;
 using Shared;
+using WfPresentationLayer.FormCadastros;
 
 namespace WfPresentationLayer
 {
@@ -19,7 +20,14 @@ namespace WfPresentationLayer
             ((Control)this.TabEndereco).Enabled = false;
             ((Control)this.CmbBoxCidade).Enabled = false;
 
-            CmbBoxCargos.DataSource = cargo.GetAll().Dados;
+            List<Cargo> Cargos = cargo.GetAll().Dados;
+            foreach (Cargo cargo in Cargos)
+            {
+                if(cargo.Ativo = true)
+                {
+                    CmbBoxCargos.Items.Add(cargo);
+                }
+            }
             CmbBoxCargos.DisplayMember = "Nome_Cargo";
             CmbBoxCargos.ValueMember = "ID";
         }
@@ -30,7 +38,14 @@ namespace WfPresentationLayer
             ((Control)this.TabEndereco).Enabled = false;
             ((Control)this.CmbBoxCidade).Enabled = false;
 
-            CmbBoxCargos.DataSource = cargo.GetAll().Dados;
+            List<Cargo> Cargos = cargo.GetAll().Dados;
+            foreach (Cargo cargo in Cargos)
+            {
+                if (cargo.Ativo = true)
+                {
+                    CmbBoxCargos.Items.Add(cargo);
+                }
+            }
             CmbBoxCargos.DisplayMember = "Nome_Cargo";
             CmbBoxCargos.ValueMember = "ID";
 
@@ -63,7 +78,7 @@ namespace WfPresentationLayer
                 cep = "";
             }
             Cargo cargo = new Cargo(nome: CmbBoxCargos.Text);
-            cargo.ID = CmbBoxCargos.SelectedIndex + 1;
+            cargo.ID = (int)CmbBoxCargos.SelectedValue;
             Endereco endereco = new Endereco(nomeRua: TxtBoxRua.Text,
                                                         cEP: cep,
                                                         numeroCasa: TxtBoxNumero.Text,
@@ -78,6 +93,7 @@ namespace WfPresentationLayer
                                                       endereco: endereco,
                                                       senha: TxtBoxSenhaFuncionario.Text
                                                       ) ;
+            funcionario.Ativo = true;
             if (TxtBoxID.Visible == true)
             {
                 funcionario.ID = int.Parse(TxtBoxID.Text);
@@ -121,6 +137,12 @@ namespace WfPresentationLayer
         private void CmbBoxCidade_KeyPress(object sender, KeyPressEventArgs e)
         {
             CmbBoxCidade.DroppedDown = true;
+        }
+
+        private void BtnCadastrarCargo_Click(object sender, EventArgs e)
+        {
+            FormCadastroCargo formCadastroCargo = new FormCadastroCargo();
+            formCadastroCargo.Show();
         }
     }
 }

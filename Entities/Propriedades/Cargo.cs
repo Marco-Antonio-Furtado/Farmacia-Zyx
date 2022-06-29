@@ -14,6 +14,7 @@
 
         public int ID { get; set; }
         public string Nome_Cargo { get; set; }
+        public bool Ativo { get; set; }
 
         public override string ToString()
         {

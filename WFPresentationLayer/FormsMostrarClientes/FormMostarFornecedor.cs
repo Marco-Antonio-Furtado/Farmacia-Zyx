@@ -69,7 +69,10 @@ namespace WfPresentationLayer.Alteraçoes
             List<Fornecedor> fornecedores = fornecedorBll.GetAll().Dados;
             foreach (Fornecedor Fornecedor in fornecedores)
             {
-                SincronizarListaGrid(Fornecedor);
+                if (Fornecedor.Ativo == true)
+                {
+                    SincronizarListaGrid(Fornecedor);
+                }
             }
         }
 
@@ -108,6 +111,30 @@ namespace WfPresentationLayer.Alteraçoes
                 }
                 else { }
             }
+        }
+
+        private void BtnDesabilitados_Click(object sender, EventArgs e)
+        {
+            LimparGrid();
+            List<Fornecedor> fornecedoresOFF = fornecedorBll.GetAll().Dados;
+            foreach (Fornecedor fornecedor in fornecedoresOFF)
+            {
+                if (fornecedor.Ativo == true)
+                {
+                    SincronizarListaGrid(fornecedor);
+                }
+            }
+            if (GridFornecedor.DataSource == null)
+            {
+                MeuMessageBox.Show("Nao a Funcionarios Desabilitados");
+            }
+            
+        }
+        private void LimparGrid()
+        {
+            GridFornecedor.Rows.Clear();
+            GridFornecedor.Refresh();
+            GridFornecedor.DataSource = null;
         }
     }
     

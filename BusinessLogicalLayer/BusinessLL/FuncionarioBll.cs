@@ -64,9 +64,11 @@ namespace BusinessLogicalLayer.BusinessLL
 
         public Response LoginBLL(string email,string senha)
         {
-            SingleResponse<Funcionario> response = funcionarioDAL.LoginDAL(email);
-            
-
+            SingleResponse<Funcionario> response = FuncionarioDAL.LoginDAL(email);
+            if(response.Item.Ativo == false)
+            {
+                return new Response("Funcionario Desabilitado", false);
+            }
             string SenhaCerta = senha;
             if (response.Item.Senha == senha)
             {
@@ -78,7 +80,7 @@ namespace BusinessLogicalLayer.BusinessLL
 
         public Response Disable(int iDCLiente)
         {
-            throw new NotImplementedException();
+            return funcionarioDAL.Disable(iDCLiente);
         }
     }
 }

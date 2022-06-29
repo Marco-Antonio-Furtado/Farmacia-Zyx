@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PNLLaboratorio = new System.Windows.Forms.Panel();
             this.GridLaboratorio = new System.Windows.Forms.DataGridView();
             this.GridID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,7 +38,7 @@
             this.GridNomeResponsavel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnProcurarLaboratorio = new System.Windows.Forms.Button();
+            this.BtnDesabilitados = new System.Windows.Forms.Button();
             this.BtnDeletarLaboratorio = new System.Windows.Forms.Button();
             this.BtnAlterarLaboratorio = new System.Windows.Forms.Button();
             this.BtnCadastrarlaboratorio = new System.Windows.Forms.Button();
@@ -58,14 +58,14 @@
             // GridLaboratorio
             // 
             this.GridLaboratorio.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridLaboratorio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridLaboratorio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.GridLaboratorio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridLaboratorio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GridID,
@@ -74,14 +74,14 @@
             this.GridNomeResponsavel,
             this.GridEmail,
             this.GridCNPJ});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridLaboratorio.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridLaboratorio.DefaultCellStyle = dataGridViewCellStyle4;
             this.GridLaboratorio.Location = new System.Drawing.Point(-6, 0);
             this.GridLaboratorio.Name = "GridLaboratorio";
             this.GridLaboratorio.ReadOnly = true;
@@ -139,17 +139,18 @@
             this.GridCNPJ.ReadOnly = true;
             this.GridCNPJ.Width = 125;
             // 
-            // BtnProcurarLaboratorio
+            // BtnDesabilitados
             // 
-            this.BtnProcurarLaboratorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.BtnProcurarLaboratorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnProcurarLaboratorio.ForeColor = System.Drawing.Color.White;
-            this.BtnProcurarLaboratorio.Location = new System.Drawing.Point(708, 674);
-            this.BtnProcurarLaboratorio.Name = "BtnProcurarLaboratorio";
-            this.BtnProcurarLaboratorio.Size = new System.Drawing.Size(277, 79);
-            this.BtnProcurarLaboratorio.TabIndex = 30;
-            this.BtnProcurarLaboratorio.Text = "Selecionar Laboratorio";
-            this.BtnProcurarLaboratorio.UseVisualStyleBackColor = false;
+            this.BtnDesabilitados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnDesabilitados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnDesabilitados.ForeColor = System.Drawing.Color.White;
+            this.BtnDesabilitados.Location = new System.Drawing.Point(708, 674);
+            this.BtnDesabilitados.Name = "BtnDesabilitados";
+            this.BtnDesabilitados.Size = new System.Drawing.Size(277, 79);
+            this.BtnDesabilitados.TabIndex = 30;
+            this.BtnDesabilitados.Text = "Mostrar Laboratorios Desabilitados";
+            this.BtnDesabilitados.UseVisualStyleBackColor = false;
+            this.BtnDesabilitados.Click += new System.EventHandler(this.BtnDesabilitados_Click);
             // 
             // BtnDeletarLaboratorio
             // 
@@ -160,7 +161,7 @@
             this.BtnDeletarLaboratorio.Name = "BtnDeletarLaboratorio";
             this.BtnDeletarLaboratorio.Size = new System.Drawing.Size(277, 79);
             this.BtnDeletarLaboratorio.TabIndex = 29;
-            this.BtnDeletarLaboratorio.Text = "Deletar Laboratorio";
+            this.BtnDeletarLaboratorio.Text = "Deletar/Desabilitar Laboratorio";
             this.BtnDeletarLaboratorio.UseVisualStyleBackColor = false;
             this.BtnDeletarLaboratorio.Click += new System.EventHandler(this.BtnDeletarLaboratorio_Click);
             // 
@@ -173,7 +174,7 @@
             this.BtnAlterarLaboratorio.Name = "BtnAlterarLaboratorio";
             this.BtnAlterarLaboratorio.Size = new System.Drawing.Size(277, 79);
             this.BtnAlterarLaboratorio.TabIndex = 28;
-            this.BtnAlterarLaboratorio.Text = "Alterar Laboratorio";
+            this.BtnAlterarLaboratorio.Text = "Alterar / Habilitar   Laboratorio";
             this.BtnAlterarLaboratorio.UseVisualStyleBackColor = false;
             this.BtnAlterarLaboratorio.Click += new System.EventHandler(this.BtnAlterarLaboratorio_Click);
             // 
@@ -197,7 +198,7 @@
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1338, 765);
             this.Controls.Add(this.PNLLaboratorio);
-            this.Controls.Add(this.BtnProcurarLaboratorio);
+            this.Controls.Add(this.BtnDesabilitados);
             this.Controls.Add(this.BtnDeletarLaboratorio);
             this.Controls.Add(this.BtnAlterarLaboratorio);
             this.Controls.Add(this.BtnCadastrarlaboratorio);
@@ -213,7 +214,7 @@
         #endregion
 
         private Panel PNLLaboratorio;
-        private Button BtnProcurarLaboratorio;
+        private Button BtnDesabilitados;
         private Button BtnDeletarLaboratorio;
         private Button BtnAlterarLaboratorio;
         private Button BtnCadastrarlaboratorio;

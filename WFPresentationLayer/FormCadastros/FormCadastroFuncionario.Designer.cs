@@ -58,6 +58,7 @@
             this.TxtBoxRua = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.TxtBoxCep = new System.Windows.Forms.MaskedTextBox();
+            this.BtnCadastrarCargo = new System.Windows.Forms.Button();
             this.TabGeral.SuspendLayout();
             this.TabFuncionario.SuspendLayout();
             this.TabEndereco.SuspendLayout();
@@ -71,12 +72,13 @@
             this.TabGeral.Location = new System.Drawing.Point(2, 0);
             this.TabGeral.Name = "TabGeral";
             this.TabGeral.SelectedIndex = 0;
-            this.TabGeral.Size = new System.Drawing.Size(466, 416);
+            this.TabGeral.Size = new System.Drawing.Size(488, 485);
             this.TabGeral.TabIndex = 70;
             // 
             // TabFuncionario
             // 
             this.TabFuncionario.BackColor = System.Drawing.Color.IndianRed;
+            this.TabFuncionario.Controls.Add(this.BtnCadastrarCargo);
             this.TabFuncionario.Controls.Add(this.LblIdAlteracao);
             this.TabFuncionario.Controls.Add(this.TxtBoxID);
             this.TabFuncionario.Controls.Add(this.CmbBoxCargos);
@@ -97,7 +99,7 @@
             this.TabFuncionario.Location = new System.Drawing.Point(4, 29);
             this.TabFuncionario.Name = "TabFuncionario";
             this.TabFuncionario.Padding = new System.Windows.Forms.Padding(3);
-            this.TabFuncionario.Size = new System.Drawing.Size(458, 383);
+            this.TabFuncionario.Size = new System.Drawing.Size(480, 452);
             this.TabFuncionario.TabIndex = 0;
             this.TabFuncionario.Text = "Funcionario";
             // 
@@ -106,7 +108,7 @@
             this.LblIdAlteracao.AutoSize = true;
             this.LblIdAlteracao.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LblIdAlteracao.ForeColor = System.Drawing.Color.White;
-            this.LblIdAlteracao.Location = new System.Drawing.Point(227, 293);
+            this.LblIdAlteracao.Location = new System.Drawing.Point(13, 354);
             this.LblIdAlteracao.Name = "LblIdAlteracao";
             this.LblIdAlteracao.Size = new System.Drawing.Size(126, 23);
             this.LblIdAlteracao.TabIndex = 91;
@@ -119,10 +121,10 @@
             this.TxtBoxID.Enabled = false;
             this.TxtBoxID.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TxtBoxID.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxID.Location = new System.Drawing.Point(226, 320);
+            this.TxtBoxID.Location = new System.Drawing.Point(13, 381);
             this.TxtBoxID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxID.Name = "TxtBoxID";
-            this.TxtBoxID.Size = new System.Drawing.Size(226, 30);
+            this.TxtBoxID.Size = new System.Drawing.Size(203, 30);
             this.TxtBoxID.TabIndex = 90;
             this.TxtBoxID.Visible = false;
             // 
@@ -154,11 +156,11 @@
             // 
             this.TxtBoxSenhaFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.TxtBoxSenhaFuncionario.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxSenhaFuncionario.Location = new System.Drawing.Point(18, 146);
+            this.TxtBoxSenhaFuncionario.Location = new System.Drawing.Point(13, 146);
             this.TxtBoxSenhaFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxSenhaFuncionario.Name = "TxtBoxSenhaFuncionario";
             this.TxtBoxSenhaFuncionario.PasswordChar = '*';
-            this.TxtBoxSenhaFuncionario.Size = new System.Drawing.Size(193, 27);
+            this.TxtBoxSenhaFuncionario.Size = new System.Drawing.Size(203, 27);
             this.TxtBoxSenhaFuncionario.TabIndex = 3;
             // 
             // label3
@@ -166,7 +168,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(18, 119);
+            this.label3.Location = new System.Drawing.Point(13, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 23);
             this.label3.TabIndex = 79;
@@ -177,7 +179,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(18, 293);
+            this.label6.Location = new System.Drawing.Point(14, 293);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 23);
             this.label6.TabIndex = 78;
@@ -187,7 +189,7 @@
             // 
             this.TxtBoxRgFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.TxtBoxRgFuncionario.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxRgFuncionario.Location = new System.Drawing.Point(18, 320);
+            this.TxtBoxRgFuncionario.Location = new System.Drawing.Point(13, 320);
             this.TxtBoxRgFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxRgFuncionario.Name = "TxtBoxRgFuncionario";
             this.TxtBoxRgFuncionario.Size = new System.Drawing.Size(203, 27);
@@ -198,11 +200,11 @@
             // 
             this.TxtBoxTelefone1Funcionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.TxtBoxTelefone1Funcionario.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxTelefone1Funcionario.Location = new System.Drawing.Point(18, 262);
+            this.TxtBoxTelefone1Funcionario.Location = new System.Drawing.Point(13, 262);
             this.TxtBoxTelefone1Funcionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxTelefone1Funcionario.Mask = "+55 (99) 90000-0000";
             this.TxtBoxTelefone1Funcionario.Name = "TxtBoxTelefone1Funcionario";
-            this.TxtBoxTelefone1Funcionario.Size = new System.Drawing.Size(193, 27);
+            this.TxtBoxTelefone1Funcionario.Size = new System.Drawing.Size(203, 27);
             this.TxtBoxTelefone1Funcionario.TabIndex = 5;
             // 
             // label5
@@ -221,7 +223,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(18, 61);
+            this.label4.Location = new System.Drawing.Point(14, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 23);
             this.label4.TabIndex = 74;
@@ -231,7 +233,7 @@
             // 
             this.txtBoxEmailFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.txtBoxEmailFuncionario.ForeColor = System.Drawing.Color.White;
-            this.txtBoxEmailFuncionario.Location = new System.Drawing.Point(18, 88);
+            this.txtBoxEmailFuncionario.Location = new System.Drawing.Point(13, 88);
             this.txtBoxEmailFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBoxEmailFuncionario.Name = "txtBoxEmailFuncionario";
             this.txtBoxEmailFuncionario.Size = new System.Drawing.Size(203, 27);
@@ -241,11 +243,11 @@
             // 
             this.TxtBoxCpfFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.TxtBoxCpfFuncionario.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxCpfFuncionario.Location = new System.Drawing.Point(18, 204);
+            this.TxtBoxCpfFuncionario.Location = new System.Drawing.Point(13, 204);
             this.TxtBoxCpfFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxCpfFuncionario.Mask = "000,000,000-00";
             this.TxtBoxCpfFuncionario.Name = "TxtBoxCpfFuncionario";
-            this.TxtBoxCpfFuncionario.Size = new System.Drawing.Size(193, 27);
+            this.TxtBoxCpfFuncionario.Size = new System.Drawing.Size(203, 27);
             this.TxtBoxCpfFuncionario.TabIndex = 4;
             // 
             // label2
@@ -253,7 +255,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(18, 177);
+            this.label2.Location = new System.Drawing.Point(14, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 23);
             this.label2.TabIndex = 71;
@@ -264,7 +266,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(18, 3);
+            this.label1.Location = new System.Drawing.Point(13, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 23);
             this.label1.TabIndex = 70;
@@ -274,7 +276,7 @@
             // 
             this.txtBoxNomeFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.txtBoxNomeFuncionario.ForeColor = System.Drawing.Color.White;
-            this.txtBoxNomeFuncionario.Location = new System.Drawing.Point(18, 30);
+            this.txtBoxNomeFuncionario.Location = new System.Drawing.Point(13, 30);
             this.txtBoxNomeFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBoxNomeFuncionario.Name = "txtBoxNomeFuncionario";
             this.txtBoxNomeFuncionario.Size = new System.Drawing.Size(203, 27);
@@ -426,12 +428,26 @@
             this.TxtBoxCep.Size = new System.Drawing.Size(125, 30);
             this.TxtBoxCep.TabIndex = 10;
             // 
+            // BtnCadastrarCargo
+            // 
+            this.BtnCadastrarCargo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.BtnCadastrarCargo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnCadastrarCargo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnCadastrarCargo.ForeColor = System.Drawing.Color.White;
+            this.BtnCadastrarCargo.Location = new System.Drawing.Point(227, 293);
+            this.BtnCadastrarCargo.Name = "BtnCadastrarCargo";
+            this.BtnCadastrarCargo.Size = new System.Drawing.Size(224, 60);
+            this.BtnCadastrarCargo.TabIndex = 92;
+            this.BtnCadastrarCargo.Text = "Cadastrar Cargo";
+            this.BtnCadastrarCargo.UseVisualStyleBackColor = false;
+            this.BtnCadastrarCargo.Click += new System.EventHandler(this.BtnCadastrarCargo_Click);
+            // 
             // FormCadastroFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(469, 410);
+            this.ClientSize = new System.Drawing.Size(490, 484);
             this.Controls.Add(this.TabGeral);
             this.Name = "FormCadastroFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -479,5 +495,6 @@
         private ComboBox CmbBoxCidade;
         private Label LblIdAlteracao;
         private TextBox TxtBoxID;
+        private Button BtnCadastrarCargo;
     }
 }

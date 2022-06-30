@@ -11,7 +11,7 @@ namespace BusinessLogicalLayer.BusinessLL
         RegraControleEstoque Regra = new RegraControleEstoque();
         public Response Insert(Entrada item)
         {
-            SingleResponse<Entrada> single = entradaDal.EfetuarEntrada(item);
+            SingleResponse<Entrada> single = entradaDal.EfetuarTransacao(item);
             if (single.HasSuccess)
             {
                 Regra.EstoqueProduto(single.Item);
@@ -20,7 +20,7 @@ namespace BusinessLogicalLayer.BusinessLL
         }
         public DataResponse<Entrada> GetAll(DateTime inicio, DateTime fim)
         {
-            return entradaDal.LerEntradas( inicio,  fim);
+            return entradaDal.LerTransacoes( inicio,  fim);
         }
         
         public SingleResponse<Entrada> GetByID(int id)

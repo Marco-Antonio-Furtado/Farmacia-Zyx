@@ -21,7 +21,7 @@ namespace WfPresentationLayer
             CmbBoxProduto.SelectedIndex = -1;
             CmbFormaPagamento.SelectedIndex = -1;
         }
-        List<Items> ItemsSaida = new List<Items>();
+        List<Item> ItemsSaida = new List<Item>();
 
         private void BtnNovoCliente_Click(object sender, EventArgs e)
         {
@@ -46,7 +46,7 @@ namespace WfPresentationLayer
             else if (TxtBoxQuantidade.Text == "") { MeuMessageBox.Show("voce nao colocou a Quantidade"); }
             else
             {
-                Items item = new Items();
+                Item item = new Item();
 
                 item.IDProduto = (int)CmbBoxProduto.SelectedValue;
                 Produto proselcionado = produtoBLL.GetByID(item.IDProduto).Item;
@@ -74,7 +74,7 @@ namespace WfPresentationLayer
             DateTime.Enabled = false;
             TxtBoxQuantidade.Clear();
         }
-        private void SincronizarListaGrid(Items item)
+        private void SincronizarListaGrid(Item item)
         {
             DataGrid.Rows.Add(CmbBoxProduto.Text, item.Preco, item.Qtd, (item.Preco * item.Qtd), CmbBoxClientes.Text,SystemParameters.GetNome(), DateTime.Value); ;
         }
@@ -88,15 +88,15 @@ namespace WfPresentationLayer
         {
                 Saida saida = new Saida();
             double soma = 0;
-            foreach (Items item in ItemsSaida)
+            foreach (Item item in ItemsSaida)
             {
                 soma += (item.Preco * item.Qtd);
             }
             saida.ValorTotal = soma;
-            saida.IDNomeCliente = (int)CmbBoxClientes.SelectedValue;
+            saida.IDCliente = (int)CmbBoxClientes.SelectedValue;
             saida.Items = ItemsSaida;
             saida.Data = DateTime.Value;
-            saida.IDNomeFuncionario = (int)SystemParameters.GetID();
+            saida.IDFuncionario = (int)SystemParameters.GetID();
 
             Response resposta = SaidaBLL.Insert(saida);
             if (resposta.HasSuccess)
@@ -116,7 +116,7 @@ namespace WfPresentationLayer
             //    public DateTime Data { get; set; }
             //    public int IDNomeFuncionario { get; set; }
             //    public double ValorTotal { get; set; }
-            //    public List<Items> Items { get; set; }
+            //    public List<item> Items { get; set; }
 
             //    public Transacao()
             //    {

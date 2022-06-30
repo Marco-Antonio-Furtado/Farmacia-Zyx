@@ -18,9 +18,8 @@ namespace WfPresentationLayer
         public FormCadastroFuncionario()
         {
             InitializeComponent();
+            TabGeral.TabPages.Remove(TabEndereco);
 
-            ((Control)this.TabEndereco).Visible = false;
-            ((Control)this.CmbBoxCidade).Visible = false;
             List<Cargo> Cargos = cargo.GetAll().Dados;
 
             foreach (Cargo cargo in Cargos)
@@ -38,9 +37,7 @@ namespace WfPresentationLayer
         public FormCadastroFuncionario(int iDCLiente, string nome, string email, string rg, string cpf, string telefone, string cargo1)
         {
             InitializeComponent();
-            ((Control)this.TabEndereco).Visible = false;
-            ((Control)this.CmbBoxCidade).Visible = false;
-
+            TabGeral.TabPages.Remove(TabEndereco);
             List<Cargo> Cargos = cargo.GetAll().Dados;
             foreach (Cargo cargo in Cargos)
             {
@@ -65,12 +62,18 @@ namespace WfPresentationLayer
 
         private void BtnCadastroEndereco_Click_1(object sender, EventArgs e)
         {
-            
-            ((Control)this.TabEndereco).Visible = true;
-            this.TabGeral.SelectedIndex = 1;
-            CmbBoxEstado.ValueMember = "ID";
-            CmbBoxEstado.DisplayMember = "Nome_Estado";
-            CmbBoxEstado.DataSource = wf.GetAllEstado().Dados;
+            if (txtBoxNomeFuncionario.Text == "" || txtBoxEmailFuncionario.Text == "" || TxtBoxCpfFuncionario.Text == "" || TxtBoxTelefone1Funcionario.Text == "" || TxtBoxSenhaFuncionario.Text == "" || TxtBoxRgFuncionario.Text == "")
+            {
+                MeuMessageBox.Show("Voce nao inseriu todos os campos");
+            }
+            else 
+            {
+                TabGeral.TabPages.Add(TabEndereco);
+                this.TabGeral.SelectedIndex = 1;
+                CmbBoxEstado.ValueMember = "ID";
+                CmbBoxEstado.DisplayMember = "Nome_Estado";
+                CmbBoxEstado.DataSource = wf.GetAllEstado().Dados;
+            }
         }
         private void BtnCadastroFuncionario_Click_1(object sender, EventArgs e)
         {

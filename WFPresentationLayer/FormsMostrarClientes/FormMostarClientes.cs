@@ -49,7 +49,10 @@ namespace WfPresentationLayer.Alteraçoes
 
         private void BtnAlterarCliente_Click(object sender, EventArgs e)
         {
-            
+            if (this.GridClientes.SelectedRows.Count == 0)
+            {
+                return;
+            }
             DataGridViewRow row = this.GridClientes.SelectedRows[0];
             int i = 32;
             if (GridClientes.CurrentRow.Cells[0].Value == null)

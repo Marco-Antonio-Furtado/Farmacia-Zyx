@@ -34,7 +34,7 @@
             this.BtnMenuClientes = new System.Windows.Forms.Button();
             this.BtnMenuProduto = new System.Windows.Forms.Button();
             this.BtnMenuCompras = new System.Windows.Forms.Button();
-            this.BtnMenuVendas = new System.Windows.Forms.Button();
+            this.BtnMostrarVendas = new System.Windows.Forms.Button();
             this.PctBtnClose = new System.Windows.Forms.PictureBox();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -118,18 +118,18 @@
             this.BtnMenuCompras.UseVisualStyleBackColor = false;
             this.BtnMenuCompras.Click += new System.EventHandler(this.BtnMenuCompras_Click);
             // 
-            // BtnMenuVendas
+            // BtnMostrarVendas
             // 
-            this.BtnMenuVendas.BackColor = System.Drawing.Color.IndianRed;
-            this.BtnMenuVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMenuVendas.ForeColor = System.Drawing.Color.White;
-            this.BtnMenuVendas.Location = new System.Drawing.Point(12, 41);
-            this.BtnMenuVendas.Name = "BtnMenuVendas";
-            this.BtnMenuVendas.Size = new System.Drawing.Size(155, 46);
-            this.BtnMenuVendas.TabIndex = 0;
-            this.BtnMenuVendas.Text = "Menu De Vendas";
-            this.BtnMenuVendas.UseVisualStyleBackColor = false;
-            this.BtnMenuVendas.Click += new System.EventHandler(this.BtnMenuVendas_Click);
+            this.BtnMostrarVendas.BackColor = System.Drawing.Color.IndianRed;
+            this.BtnMostrarVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMostrarVendas.ForeColor = System.Drawing.Color.White;
+            this.BtnMostrarVendas.Location = new System.Drawing.Point(12, 41);
+            this.BtnMostrarVendas.Name = "BtnMostrarVendas";
+            this.BtnMostrarVendas.Size = new System.Drawing.Size(155, 46);
+            this.BtnMostrarVendas.TabIndex = 0;
+            this.BtnMostrarVendas.Text = "Menu De Vendas";
+            this.BtnMostrarVendas.UseVisualStyleBackColor = false;
+            this.BtnMostrarVendas.Click += new System.EventHandler(this.BtnMenuVendas_Click);
             // 
             // PctBtnClose
             // 
@@ -152,7 +152,7 @@
             this.TopPanel.Controls.Add(this.BtnMenuFuncionario);
             this.TopPanel.Controls.Add(this.BtnMenuFornecedor);
             this.TopPanel.Controls.Add(this.BtnMenuCompras);
-            this.TopPanel.Controls.Add(this.BtnMenuVendas);
+            this.TopPanel.Controls.Add(this.BtnMostrarVendas);
             this.TopPanel.Controls.Add(this.BtnMenuClientes);
             this.TopPanel.Controls.Add(this.BtnMenuProduto);
             this.TopPanel.Location = new System.Drawing.Point(0, 0);
@@ -221,7 +221,7 @@
         private Button BtnMenuClientes;
         private Button BtnMenuProduto;
         private Button BtnMenuCompras;
-        private Button BtnMenuVendas;
+        private Button BtnMostrarVendas;
         private PictureBox PctBtnClose;
         private Panel TopPanel;
         private PictureBox PctBack;

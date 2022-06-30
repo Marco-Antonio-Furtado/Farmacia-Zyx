@@ -1,16 +1,6 @@
 ﻿using BusinessLogicalLayer.BusinessLL;
 using Entities;
 using Shared;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using WfPresentationLayer.FormCadastros;
 
 namespace WfPresentationLayer.Alteraçoes
 {
@@ -91,6 +81,10 @@ namespace WfPresentationLayer.Alteraçoes
 
         private void BtnAlterarFuncionario_Click(object sender, EventArgs e)
         {
+            if (this.GridFuncionario.SelectedRows.Count == 0)
+            {
+                return;
+            }
             DataGridViewRow row = this.GridFuncionario.SelectedRows[0];
             int i = 32;
             if (GridFuncionario.CurrentRow.Cells[0].Value == null)

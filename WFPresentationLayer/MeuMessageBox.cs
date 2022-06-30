@@ -7,7 +7,7 @@
             InitializeComponent();
             
         }
-
+        
         public DialogResult Resultado { get; private set; }
         public static DialogResult Show(string mensagem, string Titulo)
         {
@@ -88,7 +88,17 @@
         {
             this.Close();
         }
-
        
+
+
+    }
+
+    public struct ParametrosDatas
+    {
+
+        public DateTime Inicio { get; set; }
+        public DateTime Fim{ get; set; }
+
+
     }
 }

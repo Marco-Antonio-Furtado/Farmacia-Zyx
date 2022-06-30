@@ -12,8 +12,6 @@ namespace WfPresentationLayer.Alteraçoes
         public Alteracao_Fornecedor()
         {
             InitializeComponent();
-
-           
         }
 
         private void BtnCadastrarFornecedor_Click(object sender, EventArgs e)

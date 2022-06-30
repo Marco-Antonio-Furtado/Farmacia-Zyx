@@ -187,7 +187,8 @@ namespace DataAccessLayer
 
         public SingleResponse<Produto> GetByID(int id)
         {
-            string sql = $"SELECT P.ID AS P_ID,P.NOME_PRODUTO,P.DESCRICAO,P.VALOR_UNITARIO,P.VALOR_VENDA,P.QUANTIA_ESTOQUE,P.ATIVO, L.RAZAO_SOCIAL,L.ID AS L_ID FROM PRODUTOS P INNER JOIN LABORATORIOS L ON P.ID_LABORATORIO = L.ID WHERE P.ID = @ID";
+            string sql = $"SELECT P.ID AS P_ID," +
+                $"                P.NOME_PRODUTO,P.DESCRICAO,P.VALOR_UNITARIO,P.VALOR_VENDA,P.QUANTIA_ESTOQUE,P.ATIVO, L.RAZAO_SOCIAL,L.ID AS L_ID FROM PRODUTOS P INNER JOIN LABORATORIOS L ON P.ID_LABORATORIO = L.ID WHERE P.ID = @ID";
 
             DbConnection db = new DbConnection();
             SqlCommand command = new SqlCommand(sql);

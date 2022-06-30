@@ -1,6 +1,6 @@
 ﻿namespace WfPresentationLayer.Alteraçoes
 {
-    partial class Vendas
+    partial class FormMostrarEntradas
     {
         /// <summary>
         /// Required designer variable.
@@ -30,26 +30,27 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GridFuncionario = new System.Windows.Forms.DataGridView();
-            this.GridID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gridproduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GridValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GridQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GridFormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GridCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GridValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnProcurarCompra = new System.Windows.Forms.Button();
             this.BtnDeletarCompra = new System.Windows.Forms.Button();
             this.BtnAlterarCompra = new System.Windows.Forms.Button();
             this.BtnCadastrarCompra = new System.Windows.Forms.Button();
+            this.GridID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridValorCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridFormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridDescrisao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
             // GridFuncionario
             // 
-            this.GridFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.GridFuncionario.BackgroundColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -61,14 +62,14 @@
             this.GridFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GridID,
-            this.Gridproduto,
-            this.GridValorUnitario,
+            this.GridProduto,
+            this.GridValorCompra,
             this.GridQuantidade,
             this.GridFormaPagamento,
-            this.GridCliente,
-            this.GridValorTotal,
-            this.ValorCompra,
-            this.GridData});
+            this.GridFornecedor,
+            this.GridData,
+            this.GridDescrisao,
+            this.dataGridViewTextBoxColumn1});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -77,86 +78,30 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GridFuncionario.DefaultCellStyle = dataGridViewCellStyle2;
-            this.GridFuncionario.Location = new System.Drawing.Point(13, 12);
+            this.GridFuncionario.Location = new System.Drawing.Point(12, 12);
             this.GridFuncionario.Name = "GridFuncionario";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridFuncionario.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.GridFuncionario.RowHeadersWidth = 51;
             this.GridFuncionario.RowTemplate.Height = 29;
-            this.GridFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridFuncionario.Size = new System.Drawing.Size(1169, 622);
-            this.GridFuncionario.TabIndex = 51;
-            // 
-            // GridID
-            // 
-            this.GridID.HeaderText = "ID";
-            this.GridID.MinimumWidth = 6;
-            this.GridID.Name = "GridID";
-            this.GridID.Width = 50;
-            // 
-            // Gridproduto
-            // 
-            this.Gridproduto.HeaderText = "Produto";
-            this.Gridproduto.MinimumWidth = 6;
-            this.Gridproduto.Name = "Gridproduto";
-            this.Gridproduto.Width = 125;
-            // 
-            // GridValorUnitario
-            // 
-            this.GridValorUnitario.HeaderText = "Valor Unitario";
-            this.GridValorUnitario.MinimumWidth = 6;
-            this.GridValorUnitario.Name = "GridValorUnitario";
-            this.GridValorUnitario.Width = 125;
-            // 
-            // GridQuantidade
-            // 
-            this.GridQuantidade.HeaderText = "Quantidade";
-            this.GridQuantidade.MinimumWidth = 6;
-            this.GridQuantidade.Name = "GridQuantidade";
-            this.GridQuantidade.Width = 125;
-            // 
-            // GridFormaPagamento
-            // 
-            this.GridFormaPagamento.HeaderText = "Forma Pagamento";
-            this.GridFormaPagamento.MinimumWidth = 6;
-            this.GridFormaPagamento.Name = "GridFormaPagamento";
-            this.GridFormaPagamento.Width = 125;
-            // 
-            // GridCliente
-            // 
-            this.GridCliente.HeaderText = "Nome CLiente";
-            this.GridCliente.MinimumWidth = 6;
-            this.GridCliente.Name = "GridCliente";
-            this.GridCliente.Width = 125;
-            // 
-            // GridValorTotal
-            // 
-            this.GridValorTotal.HeaderText = "ValorTotal";
-            this.GridValorTotal.MinimumWidth = 6;
-            this.GridValorTotal.Name = "GridValorTotal";
-            this.GridValorTotal.Width = 125;
-            // 
-            // ValorCompra
-            // 
-            this.ValorCompra.HeaderText = "Valor Compra";
-            this.ValorCompra.MinimumWidth = 6;
-            this.ValorCompra.Name = "ValorCompra";
-            this.ValorCompra.Width = 125;
-            // 
-            // GridData
-            // 
-            this.GridData.HeaderText = "Data";
-            this.GridData.MinimumWidth = 6;
-            this.GridData.Name = "GridData";
-            this.GridData.Width = 125;
+            this.GridFuncionario.Size = new System.Drawing.Size(1315, 645);
+            this.GridFuncionario.TabIndex = 46;
             // 
             // BtnProcurarCompra
             // 
             this.BtnProcurarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnProcurarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnProcurarCompra.ForeColor = System.Drawing.Color.White;
-            this.BtnProcurarCompra.Location = new System.Drawing.Point(608, 640);
+            this.BtnProcurarCompra.Location = new System.Drawing.Point(667, 676);
             this.BtnProcurarCompra.Name = "BtnProcurarCompra";
             this.BtnProcurarCompra.Size = new System.Drawing.Size(277, 79);
-            this.BtnProcurarCompra.TabIndex = 50;
+            this.BtnProcurarCompra.TabIndex = 45;
             this.BtnProcurarCompra.Text = "Selecionar Compra";
             this.BtnProcurarCompra.UseVisualStyleBackColor = false;
             // 
@@ -165,10 +110,10 @@
             this.BtnDeletarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnDeletarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDeletarCompra.ForeColor = System.Drawing.Color.White;
-            this.BtnDeletarCompra.Location = new System.Drawing.Point(905, 640);
+            this.BtnDeletarCompra.Location = new System.Drawing.Point(964, 676);
             this.BtnDeletarCompra.Name = "BtnDeletarCompra";
             this.BtnDeletarCompra.Size = new System.Drawing.Size(277, 79);
-            this.BtnDeletarCompra.TabIndex = 49;
+            this.BtnDeletarCompra.TabIndex = 44;
             this.BtnDeletarCompra.TabStop = false;
             this.BtnDeletarCompra.Text = "Deletar Compra";
             this.BtnDeletarCompra.UseVisualStyleBackColor = false;
@@ -178,10 +123,10 @@
             this.BtnAlterarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnAlterarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAlterarCompra.ForeColor = System.Drawing.Color.White;
-            this.BtnAlterarCompra.Location = new System.Drawing.Point(314, 640);
+            this.BtnAlterarCompra.Location = new System.Drawing.Point(373, 676);
             this.BtnAlterarCompra.Name = "BtnAlterarCompra";
             this.BtnAlterarCompra.Size = new System.Drawing.Size(277, 79);
-            this.BtnAlterarCompra.TabIndex = 48;
+            this.BtnAlterarCompra.TabIndex = 43;
             this.BtnAlterarCompra.Text = "Alterar Compra";
             this.BtnAlterarCompra.UseVisualStyleBackColor = false;
             // 
@@ -190,27 +135,90 @@
             this.BtnCadastrarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnCadastrarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastrarCompra.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarCompra.Location = new System.Drawing.Point(13, 640);
+            this.BtnCadastrarCompra.Location = new System.Drawing.Point(72, 676);
             this.BtnCadastrarCompra.Name = "BtnCadastrarCompra";
             this.BtnCadastrarCompra.Size = new System.Drawing.Size(277, 79);
-            this.BtnCadastrarCompra.TabIndex = 47;
+            this.BtnCadastrarCompra.TabIndex = 42;
             this.BtnCadastrarCompra.Text = "Cadastrar Compra";
             this.BtnCadastrarCompra.UseVisualStyleBackColor = false;
             // 
-            // Vendas
+            // GridID
+            // 
+            this.GridID.HeaderText = "ID";
+            this.GridID.MinimumWidth = 6;
+            this.GridID.Name = "GridID";
+            this.GridID.Width = 50;
+            // 
+            // GridProduto
+            // 
+            this.GridProduto.HeaderText = "Produtos";
+            this.GridProduto.MinimumWidth = 6;
+            this.GridProduto.Name = "GridProduto";
+            this.GridProduto.Width = 125;
+            // 
+            // GridValorCompra
+            // 
+            this.GridValorCompra.HeaderText = "Valor Total";
+            this.GridValorCompra.MinimumWidth = 6;
+            this.GridValorCompra.Name = "GridValorCompra";
+            this.GridValorCompra.Width = 125;
+            // 
+            // GridQuantidade
+            // 
+            this.GridQuantidade.HeaderText = "Quantidade";
+            this.GridQuantidade.MinimumWidth = 6;
+            this.GridQuantidade.Name = "GridQuantidade";
+            this.GridQuantidade.Width = 120;
+            // 
+            // GridFormaPagamento
+            // 
+            this.GridFormaPagamento.HeaderText = "Forma Pagamento";
+            this.GridFormaPagamento.MinimumWidth = 6;
+            this.GridFormaPagamento.Name = "GridFormaPagamento";
+            this.GridFormaPagamento.Width = 125;
+            // 
+            // GridFornecedor
+            // 
+            this.GridFornecedor.HeaderText = "Fornecedor";
+            this.GridFornecedor.MinimumWidth = 6;
+            this.GridFornecedor.Name = "GridFornecedor";
+            this.GridFornecedor.Width = 120;
+            // 
+            // GridData
+            // 
+            this.GridData.HeaderText = "Data";
+            this.GridData.MinimumWidth = 6;
+            this.GridData.Name = "GridData";
+            this.GridData.Width = 125;
+            // 
+            // GridDescrisao
+            // 
+            this.GridDescrisao.HeaderText = "Descrisao";
+            this.GridDescrisao.MinimumWidth = 6;
+            this.GridDescrisao.Name = "GridDescrisao";
+            this.GridDescrisao.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Funcionario";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // FormMostrarEntradas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(1194, 731);
+            this.ClientSize = new System.Drawing.Size(1339, 767);
             this.Controls.Add(this.GridFuncionario);
             this.Controls.Add(this.BtnProcurarCompra);
             this.Controls.Add(this.BtnDeletarCompra);
             this.Controls.Add(this.BtnAlterarCompra);
             this.Controls.Add(this.BtnCadastrarCompra);
-            this.ForeColor = System.Drawing.Color.White;
-            this.Name = "Vendas";
-            this.Text = "Vendas";
+            this.Name = "FormMostrarEntradas";
+            this.Text = "Compras";
+            this.Load += new System.EventHandler(this.FormMostrarEntradas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridFuncionario)).EndInit();
             this.ResumeLayout(false);
 
@@ -224,13 +232,13 @@
         private Button BtnAlterarCompra;
         private Button BtnCadastrarCompra;
         private DataGridViewTextBoxColumn GridID;
-        private DataGridViewTextBoxColumn Gridproduto;
-        private DataGridViewTextBoxColumn GridValorUnitario;
+        private DataGridViewTextBoxColumn GridProduto;
+        private DataGridViewTextBoxColumn GridValorCompra;
         private DataGridViewTextBoxColumn GridQuantidade;
         private DataGridViewTextBoxColumn GridFormaPagamento;
-        private DataGridViewTextBoxColumn GridCliente;
-        private DataGridViewTextBoxColumn GridValorTotal;
-        private DataGridViewTextBoxColumn ValorCompra;
+        private DataGridViewTextBoxColumn GridFornecedor;
         private DataGridViewTextBoxColumn GridData;
+        private DataGridViewTextBoxColumn GridDescrisao;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

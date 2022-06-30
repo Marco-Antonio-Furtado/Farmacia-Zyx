@@ -56,12 +56,17 @@ namespace WfPresentationLayer.FormsMostrarClientes
 
         private void BtnAlterarLaboratorio_Click(object sender, EventArgs e)
         {
-          DataGridViewRow row = this.GridLaboratorio.SelectedRows[0];
-          if (GridLaboratorio.CurrentRow.Cells[0].Value == null)
-          {
-              MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");
-          }
-          else
+            if (this.GridLaboratorio.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            DataGridViewRow row = this.GridLaboratorio.SelectedRows[0];
+            int i = 32;
+            if (GridLaboratorio.CurrentRow.Cells[0].Value == null)
+            {
+                MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");
+            }
+            else
           {
               int IDLab = Convert.ToInt32(GridLaboratorio.CurrentRow.Cells[0].Value.ToString());
               string razao = Convert.ToString(GridLaboratorio.CurrentRow.Cells[1].Value.ToString());

@@ -167,7 +167,6 @@ C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresen
 C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.Alteracao_Venda.resources
 C:\Users\SAMSUNG\Desktop\2\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastroProduto.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.csproj.AssemblyReference.cache
-C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.Alteracao_Compra.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.Alteracao_Fornecedor.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastroCliente.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastroEndereco.resources
@@ -217,7 +216,6 @@ C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresen
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\ref\WfPresentationLayer.dll
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormNovaVenda.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.FormMostarClientes.resources
-C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.Vendas.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.FormMostrarProdutos.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormsMostrarClientes.FormMostarLaboratorio.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.MeuMessageBox.resources
@@ -280,3 +278,6 @@ C:\Users\entra21\Source\Repos\Farmacia-Zyx\WfPresentationLayer\obj\Debug\net6.0-
 C:\Users\entra21\Source\Repos\Farmacia-Zyx\WfPresentationLayer\obj\Debug\net6.0-windows\ref\WfPresentationLayer.dll
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastros.FormCadastroCargo.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.Alteracao_Funcionario.resources
+C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.FormMostrarEntradas.resources
+C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.Alteraçoes.FormMostrarSaidas.resources
+C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.MeumsgBoxWithDates.resources

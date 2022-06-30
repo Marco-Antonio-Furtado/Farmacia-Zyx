@@ -13,7 +13,7 @@
     <Compile Update="FormsMostrarClientes\FormMostarLaboratorio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormsMostrarClientes\FormMostrarCompras.cs">
+    <Compile Update="FormsMostrarClientes\FormMostrarEntradas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormsMostrarClientes\FormMostarFornecedor.cs">
@@ -22,7 +22,7 @@
     <Compile Update="FormsMostrarClientes\FormMostarProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormsMostrarClientes\FormMostrarVendas.cs">
+    <Compile Update="FormsMostrarClientes\FormMostrarSaidas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormCadastros\FormCadastrarLaboratorio.cs">
@@ -47,6 +47,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="MeuMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MeumsgBoxWithDates.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Trancaçoes\FormNovaCompra.cs">

@@ -20,7 +20,7 @@ namespace WfPresentationLayer.Trancaçoes
         ProdutoBll produtoBLL = new ProdutoBll();
         EntradaBll entradaBLL = new EntradaBll();
         
-        List<Items> ItemsEntrada = new List<Items>();
+        List<Item> ItemsEntrada = new List<Item>();
         private void BtnNovoFornecedor_Click(object sender, EventArgs e)
         {
             FormCadastroFornecedor form = new FormCadastroFornecedor();
@@ -46,7 +46,7 @@ namespace WfPresentationLayer.Trancaçoes
             else
             {
                 
-                Items item = new Items();
+                Item item = new Item();
 
                 item.IDProduto = (int)CmbBoxProduto.SelectedValue;
                 Produto proselcionado = produtoBLL.GetByID(item.IDProduto).Item;
@@ -66,7 +66,7 @@ namespace WfPresentationLayer.Trancaçoes
             CmbBoxProduto.SelectedIndex = -1;
             TxtBoxQuantidade.Clear();
         }
-        private void SincronizarListaGrid(Items item)
+        private void SincronizarListaGrid(Item item)
         {
             DataGrid.Rows.Add(CmbBoxProduto.Text, item.Preco, item.Qtd,(item.Preco * item.Qtd), CmbFormaPagamento.Text, SystemParameters.GetNome(), CmbBoxFornecedores.Text,DateTime.Value);
         }
@@ -80,7 +80,7 @@ namespace WfPresentationLayer.Trancaçoes
         {
             Entrada entrada = new Entrada();
             double soma = 0;
-            foreach (Items item in ItemsEntrada)
+            foreach (Item item in ItemsEntrada)
             {
                  soma += (item.Preco * item.Qtd);
             }
@@ -88,7 +88,7 @@ namespace WfPresentationLayer.Trancaçoes
             entrada.IDFornecedor = (int)CmbBoxFornecedores.SelectedValue;
             entrada.Items = ItemsEntrada;
             entrada.Data = DateTime.Value;
-            entrada.IDNomeFuncionario = (int)SystemParameters.GetID();
+            entrada.IDFuncionario = (int)SystemParameters.GetID();
             
             Response resposta = entradaBLL.Insert(entrada);
             if (resposta.HasSuccess)

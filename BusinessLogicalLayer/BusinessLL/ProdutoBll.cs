@@ -44,11 +44,6 @@ namespace BusinessLogicalLayer.BusinessLL
             return produtoDAL.GetByID(id);
         }
 
-        public SingleResponse<Produto> GetByEmail(string email)
-        {
-            throw new NotImplementedException();
-        }
-
         public Response Disable(int iDCLiente)
         {
             return produtoDAL.Disable(iDCLiente);

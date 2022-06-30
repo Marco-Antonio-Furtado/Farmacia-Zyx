@@ -79,7 +79,7 @@ namespace DataAccessLayer
         }
         public static SingleResponse<Funcionario> LoginDAL(string email)
         {
-            string sql = $"SELECT F.SENHA,F.NOME_FUNCIONARIO,CAR.NOME_CARGO,F.ATIVO FROM FUNCIONARIOS F INNER JOIN CARGOS CAR ON F.CARGO_ID = CAR.ID WHERE EMAIL = @EMAIL";
+            string sql = $"SELECT F.ID,F.SENHA,F.NOME_FUNCIONARIO,CAR.NOME_CARGO,F.ATIVO FROM FUNCIONARIOS F INNER JOIN CARGOS CAR ON F.CARGO_ID = CAR.ID WHERE EMAIL = @EMAIL";
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@EMAIL", email);
             try
@@ -87,7 +87,7 @@ namespace DataAccessLayer
                 DbExecuter dbexecutor = new DbExecuter();
                 return DbExecuter.Login(command);
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
                 return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Funcionario>(null);
             }

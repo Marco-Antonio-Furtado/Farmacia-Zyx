@@ -1,6 +1,7 @@
 using System.Globalization;
 using WfPresentationLayer.Alteraçoes;
 using WfPresentationLayer.FormCadastros;
+using WfPresentationLayer.FormsMostrarClientes;
 using WfPresentationLayer.Trancaçoes;
 
 namespace WfPresentationLayer

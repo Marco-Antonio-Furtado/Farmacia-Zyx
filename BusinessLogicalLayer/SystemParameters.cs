@@ -31,6 +31,8 @@ namespace BusinessLogicalLayer
         {
             return UsuarioLogado.Nome_Funcionario;
         } 
+        public static int GetID()
+            { return UsuarioLogado.ID; }
     }
 
 }

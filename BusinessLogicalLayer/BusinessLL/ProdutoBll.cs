@@ -53,5 +53,9 @@ namespace BusinessLogicalLayer.BusinessLL
         {
             return produtoDAL.Disable(iDCLiente);
         }
+        public Response Estoque(int a,int qtd)
+        {
+            return produtoDAL.SetEstoque(qtd ,a);
+        }
     }
 }

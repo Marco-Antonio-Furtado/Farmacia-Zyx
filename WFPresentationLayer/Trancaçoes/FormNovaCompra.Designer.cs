@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnNovoFornecedor = new System.Windows.Forms.Button();
             this.BtnProcurarFornecedor = new System.Windows.Forms.Button();
             this.GroupBoxCompra = new System.Windows.Forms.GroupBox();
@@ -45,10 +45,6 @@
             this.LabelFormaPagemento = new System.Windows.Forms.Label();
             this.BtnNovoIten = new System.Windows.Forms.Button();
             this.DataGrid = new System.Windows.Forms.DataGridView();
-            this.LabelQuantidade = new System.Windows.Forms.Label();
-            this.LabelCodigoProduto = new System.Windows.Forms.Label();
-            this.LabelNomeCLiente = new System.Windows.Forms.Label();
-            this.CmbBoxFornecedores = new System.Windows.Forms.ComboBox();
             this.DataGridProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataGridValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataGridQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,8 +52,11 @@
             this.DataGridFormaPAgamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataGridFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataGridFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DatagridLaboratorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatagridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LabelQuantidade = new System.Windows.Forms.Label();
+            this.LabelCodigoProduto = new System.Windows.Forms.Label();
+            this.LabelNomeCLiente = new System.Windows.Forms.Label();
+            this.CmbBoxFornecedores = new System.Windows.Forms.ComboBox();
             this.GroupBoxCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.SuspendLayout();
@@ -226,14 +225,14 @@
             this.DataGrid.AllowUserToResizeColumns = false;
             this.DataGrid.AllowUserToResizeRows = false;
             this.DataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DataGridProduto,
@@ -243,79 +242,38 @@
             this.DataGridFormaPAgamento,
             this.DataGridFuncionario,
             this.DataGridFornecedor,
-            this.DatagridLaboratorio,
             this.DatagridData});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.DataGrid.Location = new System.Drawing.Point(6, 217);
             this.DataGrid.Name = "DataGrid";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.DataGrid.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DataGrid.RowHeadersWidth = 51;
             this.DataGrid.RowTemplate.Height = 29;
             this.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGrid.Size = new System.Drawing.Size(1259, 475);
             this.DataGrid.TabIndex = 20;
             // 
-            // LabelQuantidade
-            // 
-            this.LabelQuantidade.AutoSize = true;
-            this.LabelQuantidade.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LabelQuantidade.ForeColor = System.Drawing.Color.White;
-            this.LabelQuantidade.Location = new System.Drawing.Point(612, 31);
-            this.LabelQuantidade.Name = "LabelQuantidade";
-            this.LabelQuantidade.Size = new System.Drawing.Size(100, 23);
-            this.LabelQuantidade.TabIndex = 16;
-            this.LabelQuantidade.Text = "Quantidade";
-            // 
-            // LabelCodigoProduto
-            // 
-            this.LabelCodigoProduto.AutoSize = true;
-            this.LabelCodigoProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LabelCodigoProduto.ForeColor = System.Drawing.Color.White;
-            this.LabelCodigoProduto.Location = new System.Drawing.Point(17, 30);
-            this.LabelCodigoProduto.Name = "LabelCodigoProduto";
-            this.LabelCodigoProduto.Size = new System.Drawing.Size(132, 23);
-            this.LabelCodigoProduto.TabIndex = 14;
-            this.LabelCodigoProduto.Text = "Codigo Produto";
-            // 
-            // LabelNomeCLiente
-            // 
-            this.LabelNomeCLiente.AutoSize = true;
-            this.LabelNomeCLiente.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LabelNomeCLiente.ForeColor = System.Drawing.Color.White;
-            this.LabelNomeCLiente.Location = new System.Drawing.Point(243, 16);
-            this.LabelNomeCLiente.Name = "LabelNomeCLiente";
-            this.LabelNomeCLiente.Size = new System.Drawing.Size(149, 23);
-            this.LabelNomeCLiente.TabIndex = 18;
-            this.LabelNomeCLiente.Text = "Nome Fornecedor";
-            // 
-            // CmbBoxFornecedores
-            // 
-            this.CmbBoxFornecedores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbBoxFornecedores.FormattingEnabled = true;
-            this.CmbBoxFornecedores.Location = new System.Drawing.Point(417, 16);
-            this.CmbBoxFornecedores.Name = "CmbBoxFornecedores";
-            this.CmbBoxFornecedores.Size = new System.Drawing.Size(233, 28);
-            this.CmbBoxFornecedores.TabIndex = 34;
-            // 
             // DataGridProduto
             // 
             this.DataGridProduto.HeaderText = "Produto";
             this.DataGridProduto.MinimumWidth = 6;
             this.DataGridProduto.Name = "DataGridProduto";
+            this.DataGridProduto.ReadOnly = true;
             this.DataGridProduto.Width = 125;
             // 
             // DataGridValorUnitario
@@ -366,14 +324,6 @@
             this.DataGridFornecedor.ReadOnly = true;
             this.DataGridFornecedor.Width = 125;
             // 
-            // DatagridLaboratorio
-            // 
-            this.DatagridLaboratorio.HeaderText = "Laboratorio";
-            this.DatagridLaboratorio.MinimumWidth = 6;
-            this.DatagridLaboratorio.Name = "DatagridLaboratorio";
-            this.DatagridLaboratorio.ReadOnly = true;
-            this.DatagridLaboratorio.Width = 120;
-            // 
             // DatagridData
             // 
             this.DatagridData.HeaderText = "Data";
@@ -381,6 +331,48 @@
             this.DatagridData.Name = "DatagridData";
             this.DatagridData.ReadOnly = true;
             this.DatagridData.Width = 125;
+            // 
+            // LabelQuantidade
+            // 
+            this.LabelQuantidade.AutoSize = true;
+            this.LabelQuantidade.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LabelQuantidade.ForeColor = System.Drawing.Color.White;
+            this.LabelQuantidade.Location = new System.Drawing.Point(612, 31);
+            this.LabelQuantidade.Name = "LabelQuantidade";
+            this.LabelQuantidade.Size = new System.Drawing.Size(100, 23);
+            this.LabelQuantidade.TabIndex = 16;
+            this.LabelQuantidade.Text = "Quantidade";
+            // 
+            // LabelCodigoProduto
+            // 
+            this.LabelCodigoProduto.AutoSize = true;
+            this.LabelCodigoProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LabelCodigoProduto.ForeColor = System.Drawing.Color.White;
+            this.LabelCodigoProduto.Location = new System.Drawing.Point(17, 30);
+            this.LabelCodigoProduto.Name = "LabelCodigoProduto";
+            this.LabelCodigoProduto.Size = new System.Drawing.Size(132, 23);
+            this.LabelCodigoProduto.TabIndex = 14;
+            this.LabelCodigoProduto.Text = "Codigo Produto";
+            // 
+            // LabelNomeCLiente
+            // 
+            this.LabelNomeCLiente.AutoSize = true;
+            this.LabelNomeCLiente.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LabelNomeCLiente.ForeColor = System.Drawing.Color.White;
+            this.LabelNomeCLiente.Location = new System.Drawing.Point(243, 16);
+            this.LabelNomeCLiente.Name = "LabelNomeCLiente";
+            this.LabelNomeCLiente.Size = new System.Drawing.Size(149, 23);
+            this.LabelNomeCLiente.TabIndex = 18;
+            this.LabelNomeCLiente.Text = "Nome Fornecedor";
+            // 
+            // CmbBoxFornecedores
+            // 
+            this.CmbBoxFornecedores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbBoxFornecedores.FormattingEnabled = true;
+            this.CmbBoxFornecedores.Location = new System.Drawing.Point(417, 16);
+            this.CmbBoxFornecedores.Name = "CmbBoxFornecedores";
+            this.CmbBoxFornecedores.Size = new System.Drawing.Size(233, 28);
+            this.CmbBoxFornecedores.TabIndex = 34;
             // 
             // FormNovaCompra
             // 
@@ -432,7 +424,6 @@
         private DataGridViewTextBoxColumn DataGridFormaPAgamento;
         private DataGridViewTextBoxColumn DataGridFuncionario;
         private DataGridViewTextBoxColumn DataGridFornecedor;
-        private DataGridViewTextBoxColumn DatagridLaboratorio;
         private DataGridViewTextBoxColumn DatagridData;
     }
 }

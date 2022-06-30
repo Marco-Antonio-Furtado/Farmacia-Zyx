@@ -69,7 +69,6 @@ namespace BusinessLogicalLayer.BusinessLL
             {
                 return new Response("Funcionario Desabilitado", false);
             }
-            string SenhaCerta = senha;
             if (response.Item.Senha == senha)
             {
                 SystemParameters.Logar(response.Item);

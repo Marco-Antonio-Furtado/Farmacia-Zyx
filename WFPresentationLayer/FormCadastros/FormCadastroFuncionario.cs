@@ -13,44 +13,46 @@ namespace WfPresentationLayer
         int IdEstado;
         CargoBLL cargo = new();
         FuncionarioBll funcionarioBll = new();
+        List<Cargo> listaAtiva = new List<Cargo>();
 
         public FormCadastroFuncionario()
         {
             InitializeComponent();
-            ((Control)this.TabEndereco).Enabled = false;
-            ((Control)this.CmbBoxCidade).Enabled = false;
 
+            ((Control)this.TabEndereco).Visible = false;
+            ((Control)this.CmbBoxCidade).Visible = false;
             List<Cargo> Cargos = cargo.GetAll().Dados;
+
             foreach (Cargo cargo in Cargos)
             {
                 if(cargo.Ativo = true)
                 {
-                    CmbBoxCargos.Items.Add(cargo);
+                    listaAtiva.Add(cargo);
                 }
             }
             CmbBoxCargos.DisplayMember = "Nome_Cargo";
             CmbBoxCargos.ValueMember = "ID";
+            CmbBoxCargos.DataSource = listaAtiva;   
         }
 
         public FormCadastroFuncionario(int iDCLiente, string nome, string email, string rg, string cpf, string telefone, string cargo1)
         {
             InitializeComponent();
-            ((Control)this.TabEndereco).Enabled = false;
-            ((Control)this.CmbBoxCidade).Enabled = false;
+            ((Control)this.TabEndereco).Visible = false;
+            ((Control)this.CmbBoxCidade).Visible = false;
 
             List<Cargo> Cargos = cargo.GetAll().Dados;
             foreach (Cargo cargo in Cargos)
             {
                 if (cargo.Ativo = true)
                 {
-                    CmbBoxCargos.Items.Add(cargo);
+                    listaAtiva.Add(cargo);
                 }
             }
             CmbBoxCargos.DisplayMember = "Nome_Cargo";
             CmbBoxCargos.ValueMember = "ID";
+            CmbBoxCargos.DataSource = listaAtiva;
 
-            CmbBoxCargos.DisplayMember = "Nome";
-            CmbBoxCargos.ValueMember = "ID";
             txtBoxNomeFuncionario.Text = nome;
             txtBoxEmailFuncionario.Text = email;
             TxtBoxRgFuncionario.Text =rg;
@@ -63,11 +65,12 @@ namespace WfPresentationLayer
 
         private void BtnCadastroEndereco_Click_1(object sender, EventArgs e)
         {
-            ((Control)this.TabEndereco).Enabled = true;
+            
+            ((Control)this.TabEndereco).Visible = true;
             this.TabGeral.SelectedIndex = 1;
-            CmbBoxEstado.DataSource = wf.GetAllEstado().Dados;
-            CmbBoxEstado.ValueMember = "Id";
+            CmbBoxEstado.ValueMember = "ID";
             CmbBoxEstado.DisplayMember = "Nome_Estado";
+            CmbBoxEstado.DataSource = wf.GetAllEstado().Dados;
         }
         private void BtnCadastroFuncionario_Click_1(object sender, EventArgs e)
         {
@@ -83,7 +86,7 @@ namespace WfPresentationLayer
                                                         cEP: cep,
                                                         numeroCasa: TxtBoxNumero.Text,
                                                         estadoID: (int)CmbBoxEstado.SelectedValue,
-                                                        cidadeID: (int)CmbBoxCidade.SelectedValue);
+                                                        cidadeID: (int)CmbBoxCidade.SelectedValue); 
             Funcionario funcionario = new Funcionario(nome: txtBoxNomeFuncionario.Text,
                                                       cPF: TxtBoxCpfFuncionario.Text,
                                                       rG: TxtBoxRgFuncionario.Text,

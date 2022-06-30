@@ -133,9 +133,10 @@ namespace WfPresentationLayer.FormsMostrarClientes
                     SincronizarListaGrid(laboratorio);
                 }
             }
-            if (GridLaboratorio.DataSource == null)
+            if (GridLaboratorio.RowCount == 1)
             {
-                MeuMessageBox.Show("Nao a Funcionarios Desabilitados");
+                MeuMessageBox.Show("Nao a Laboratorios Desabilitados");
+                LimparGrid();
             }
 
         }

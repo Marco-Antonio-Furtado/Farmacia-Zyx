@@ -134,9 +134,10 @@ namespace WfPresentationLayer.Alteraçoes
                     SincronizarListaGrid(cliente);
                 }
             }
-            if (GridClientes.DataSource == null)
+            if (GridClientes.RowCount == 1)
             {
-                MeuMessageBox.Show("Nao a clientes Desabilitados");
+                MeuMessageBox.Show("Nao a Clientes Desabilitados");
+                LimparGrid();
             }
         }
     }

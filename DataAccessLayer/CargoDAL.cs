@@ -29,7 +29,7 @@ namespace DataAccessLayer
 
         public DataResponse<Cargo> GetAll()
         {
-            string sql = $"SELECT ID,NOME_CARGO FROM CARGOS";
+            string sql = $"SELECT ID,NOME_CARGO,ATIVO FROM CARGOS";
 
             SqlCommand command = new SqlCommand(sql);
             try

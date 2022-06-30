@@ -19,7 +19,7 @@
         public double Valor_Unitario { get; set; }
         public double Valor_Venda { get; set; }
         public Laboratorio ID_Laboratorio { get; set; }
-        public int Quantia_Estoque { get; set; }
+        public double Quantia_Estoque { get; set; }
         public bool Ativo { get; set; }
 
         public override string ToString()

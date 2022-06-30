@@ -116,19 +116,21 @@ namespace WfPresentationLayer.Alteraçoes
         private void BtnDesabilitados_Click(object sender, EventArgs e)
         {
             LimparGrid();
+
             List<Fornecedor> fornecedoresOFF = fornecedorBll.GetAll().Dados;
             foreach (Fornecedor fornecedor in fornecedoresOFF)
             {
-                if (fornecedor.Ativo == true)
+                if (fornecedor.Ativo == false)
                 {
                     SincronizarListaGrid(fornecedor);
                 }
             }
-            if (GridFornecedor.DataSource == null)
+            if (GridFornecedor.RowCount == 1)
             {
-                MeuMessageBox.Show("Nao a Funcionarios Desabilitados");
+                MeuMessageBox.Show("Nao a Fornecedores Desabilitados");
+                LimparGrid();
             }
-            
+
         }
         private void LimparGrid()
         {

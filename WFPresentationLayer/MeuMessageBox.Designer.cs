@@ -57,9 +57,9 @@
             this.BtnOk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnOk.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnOk.ForeColor = System.Drawing.Color.White;
-            this.BtnOk.Location = new System.Drawing.Point(96, 150);
+            this.BtnOk.Location = new System.Drawing.Point(96, 174);
             this.BtnOk.Name = "BtnOk";
-            this.BtnOk.Size = new System.Drawing.Size(201, 85);
+            this.BtnOk.Size = new System.Drawing.Size(201, 61);
             this.BtnOk.TabIndex = 88;
             this.BtnOk.Text = "Ok";
             this.BtnOk.UseVisualStyleBackColor = false;
@@ -71,9 +71,9 @@
             this.BtnSim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnSim.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnSim.ForeColor = System.Drawing.Color.White;
-            this.BtnSim.Location = new System.Drawing.Point(12, 150);
+            this.BtnSim.Location = new System.Drawing.Point(12, 174);
             this.BtnSim.Name = "BtnSim";
-            this.BtnSim.Size = new System.Drawing.Size(178, 85);
+            this.BtnSim.Size = new System.Drawing.Size(178, 61);
             this.BtnSim.TabIndex = 89;
             this.BtnSim.Text = "Sim";
             this.BtnSim.UseVisualStyleBackColor = false;
@@ -85,9 +85,9 @@
             this.BtnNao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnNao.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnNao.ForeColor = System.Drawing.Color.White;
-            this.BtnNao.Location = new System.Drawing.Point(214, 150);
+            this.BtnNao.Location = new System.Drawing.Point(216, 174);
             this.BtnNao.Name = "BtnNao";
-            this.BtnNao.Size = new System.Drawing.Size(174, 85);
+            this.BtnNao.Size = new System.Drawing.Size(174, 61);
             this.BtnNao.TabIndex = 90;
             this.BtnNao.Text = "Nao";
             this.BtnNao.UseVisualStyleBackColor = false;
@@ -118,7 +118,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::WfPresentationLayer.Properties.Resources._7483870576_6ab43f2e_d6eb_46e1_a824_b7a61aaf6a32;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 30);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 40);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(106, 114);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

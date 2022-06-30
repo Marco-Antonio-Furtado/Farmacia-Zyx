@@ -30,6 +30,7 @@
         {
             this.TabGeral = new System.Windows.Forms.TabControl();
             this.TabFuncionario = new System.Windows.Forms.TabPage();
+            this.BtnCadastrarCargo = new System.Windows.Forms.Button();
             this.LblIdAlteracao = new System.Windows.Forms.Label();
             this.TxtBoxID = new System.Windows.Forms.TextBox();
             this.CmbBoxCargos = new System.Windows.Forms.ComboBox();
@@ -58,7 +59,6 @@
             this.TxtBoxRua = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.TxtBoxCep = new System.Windows.Forms.MaskedTextBox();
-            this.BtnCadastrarCargo = new System.Windows.Forms.Button();
             this.TabGeral.SuspendLayout();
             this.TabFuncionario.SuspendLayout();
             this.TabEndereco.SuspendLayout();
@@ -102,6 +102,20 @@
             this.TabFuncionario.Size = new System.Drawing.Size(480, 452);
             this.TabFuncionario.TabIndex = 0;
             this.TabFuncionario.Text = "Funcionario";
+            // 
+            // BtnCadastrarCargo
+            // 
+            this.BtnCadastrarCargo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.BtnCadastrarCargo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnCadastrarCargo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnCadastrarCargo.ForeColor = System.Drawing.Color.White;
+            this.BtnCadastrarCargo.Location = new System.Drawing.Point(227, 293);
+            this.BtnCadastrarCargo.Name = "BtnCadastrarCargo";
+            this.BtnCadastrarCargo.Size = new System.Drawing.Size(224, 60);
+            this.BtnCadastrarCargo.TabIndex = 92;
+            this.BtnCadastrarCargo.Text = "Cadastrar Cargo";
+            this.BtnCadastrarCargo.UseVisualStyleBackColor = false;
+            this.BtnCadastrarCargo.Click += new System.EventHandler(this.BtnCadastrarCargo_Click);
             // 
             // LblIdAlteracao
             // 
@@ -301,7 +315,7 @@
             this.TabEndereco.Location = new System.Drawing.Point(4, 29);
             this.TabEndereco.Name = "TabEndereco";
             this.TabEndereco.Padding = new System.Windows.Forms.Padding(3);
-            this.TabEndereco.Size = new System.Drawing.Size(458, 383);
+            this.TabEndereco.Size = new System.Drawing.Size(480, 452);
             this.TabEndereco.TabIndex = 1;
             this.TabEndereco.Text = "Endereco";
             // 
@@ -427,20 +441,6 @@
             this.TxtBoxCep.Name = "TxtBoxCep";
             this.TxtBoxCep.Size = new System.Drawing.Size(125, 30);
             this.TxtBoxCep.TabIndex = 10;
-            // 
-            // BtnCadastrarCargo
-            // 
-            this.BtnCadastrarCargo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.BtnCadastrarCargo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnCadastrarCargo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnCadastrarCargo.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarCargo.Location = new System.Drawing.Point(227, 293);
-            this.BtnCadastrarCargo.Name = "BtnCadastrarCargo";
-            this.BtnCadastrarCargo.Size = new System.Drawing.Size(224, 60);
-            this.BtnCadastrarCargo.TabIndex = 92;
-            this.BtnCadastrarCargo.Text = "Cadastrar Cargo";
-            this.BtnCadastrarCargo.UseVisualStyleBackColor = false;
-            this.BtnCadastrarCargo.Click += new System.EventHandler(this.BtnCadastrarCargo_Click);
             // 
             // FormCadastroFuncionario
             // 

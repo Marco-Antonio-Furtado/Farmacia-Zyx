@@ -9,37 +9,42 @@ namespace WfPresentationLayer
     public partial class FormCadastroProduto : Form
     {
         LaboratorioBLL LB = new();
-
         ProdutoBll produtoBll = new();
 
+
+        List<Laboratorio> listaAtiva = new List<Laboratorio>();
         public FormCadastroProduto()
         {
             InitializeComponent();
+            CmbBoxLaboratorio.ValueMember = "ID";
+            CmbBoxLaboratorio.DisplayMember = "Razao_Social";
             List<Laboratorio> Labs = LB.GetAll().Dados;
             foreach (Laboratorio Laboratorio in Labs)
             {
                 if (Laboratorio.Ativo == true)
                 {
-                    CmbBoxLaboratorio.Items.Add(Laboratorio);
+                    listaAtiva.Add(Laboratorio);
                 }
             }
-            CmbBoxLaboratorio.ValueMember = "ID";
-            CmbBoxLaboratorio.DisplayMember = "Razao_Social";
+            CmbBoxLaboratorio.DataSource = listaAtiva;
         }
 
         public FormCadastroProduto(int iDPRoduto, string nome, string laboratorio, string descrisao, string valorcompra)
         {
             InitializeComponent();
+
             List<Laboratorio> Labs = LB.GetAll().Dados;
+            CmbBoxLaboratorio.ValueMember = "ID";
+            CmbBoxLaboratorio.DisplayMember = "Razao_Social";
             foreach (Laboratorio Laboratorio in Labs)
             {
                 if (Laboratorio.Ativo == true)
                 {
-                    CmbBoxLaboratorio.Items.Add(Laboratorio);
+                    listaAtiva.Add(Laboratorio);
                 }
             }
-            CmbBoxLaboratorio.ValueMember = "ID";
-            CmbBoxLaboratorio.DisplayMember = "Razao_Social";
+            CmbBoxLaboratorio.DataSource = listaAtiva;
+
 
             TxtBoxId.Visible = true;
             TxtBoxId.Enabled = false;
@@ -63,9 +68,9 @@ namespace WfPresentationLayer
             produto.Descricao = TxtBoxDescrisaoProduto.Text;
             produto.ID_Laboratorio = lab;
             produto.Valor_Unitario = double.Parse(TxtBoxPrecoUnitario.Text);
+            produto.Ativo = true;
             if (TxtBoxId.Visible == true)
             {
-                produto.Ativo = true;
                 produto.ID = int.Parse(TxtBoxId.Text);
                 Response resposta = produtoBll.Update(produto);
                 MeuMessageBox.Show(resposta.Message);

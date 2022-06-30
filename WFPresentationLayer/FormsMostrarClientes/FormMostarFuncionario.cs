@@ -132,9 +132,10 @@ namespace WfPresentationLayer.Alteraçoes
                     SincronizarListaGrid(Funcionario);
                 }
             }
-            if (GridFuncionario.DataSource == null)
+            if (GridFuncionario.RowCount == 1)
             {
                 MeuMessageBox.Show("Nao a Funcionarios Desabilitados");
+                LimparGrid();
             }
         }
         private void LimparGrid()

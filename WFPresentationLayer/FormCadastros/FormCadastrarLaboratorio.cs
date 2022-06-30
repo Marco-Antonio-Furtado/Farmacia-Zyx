@@ -34,9 +34,10 @@ namespace WfPresentationLayer.FormCadastros
                                               nomeContato: TxtBoxNomeResponsavel.Text,
                                               email: txtBoxEmail.Text,
                                               telefone: TxtBoxTelefone.Text);
+            lab.ID = int.Parse(TxtBoxId.Text);
+            lab.Ativo = true;
             if (TxtBoxId.Visible == true)
             {
-                lab.ID = int.Parse(TxtBoxId.Text);
                 Response resposta = labbll.Update(lab);
                 MeuMessageBox.Show(resposta.Message);
                 if (resposta.HasSuccess)

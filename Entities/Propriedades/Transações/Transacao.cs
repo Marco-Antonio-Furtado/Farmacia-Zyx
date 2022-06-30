@@ -1,16 +1,23 @@
 ﻿namespace Entities.Propriedades
 {
-    public class Transacao
+    public abstract class Transacao
     {
         public int ID { get; set; }
-        public string IDLaboratorio { get; set; }
         public DateTime Data { get; set; }
-        public int IDProduto { get; set; }
-        public string IDNomeFuncionario { get; set; }
-        public string IDFornecedor { get; set; }
-        public string FormaPagamento { get; set; }
-        public int Quantidade { get; set; }
-        public double PrecoUnitario { get; set; }
+        public int IDNomeFuncionario { get; set; }
         public double ValorTotal { get; set; }
+        public List<Items> Items { get; set; }
+
+        public Transacao()
+        {
+            this.Items = new List<Items>();
+        }
+    }
+
+    public class Items
+    {
+        public int IDProduto { get; set; }
+        public double Preco { get; set; }
+        public Double Qtd { get; set; }
     }
 }

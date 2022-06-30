@@ -33,16 +33,7 @@ namespace WfPresentationLayer.Alteraçoes
         private void BtnAlterarProdutos_Click(object sender, EventArgs e)
         {
                 DataGridViewRow row = this.Gridprodutos.SelectedRows[0];
-                if (Gridprodutos.CurrentRow.Cells[0].Value == null)
-                {
-                    MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");
-                }
-                if (Gridprodutos.CurrentRow.Cells[0].Value == null)
-                {
-                    MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");
-                }
-                else
-                {
+             
                     int IDPRoduto = Convert.ToInt32(Gridprodutos.CurrentRow.Cells[0].Value.ToString());
                     string nome = Convert.ToString(Gridprodutos.CurrentRow.Cells[1].Value.ToString());
                     string laboratorio = Convert.ToString(Gridprodutos.CurrentRow.Cells[2].Value.ToString());
@@ -58,7 +49,7 @@ namespace WfPresentationLayer.Alteraçoes
                     pnlProduto.Controls.Add(_objForm3);
                     _objForm3.Show();
                     _objForm3.BringToFront();
-                }
+                //}
         }
         private void BtnDeletarProdutos_Click(object sender, EventArgs e)
         {
@@ -126,7 +117,7 @@ namespace WfPresentationLayer.Alteraçoes
                     SincronizarListaGrid(Produto);
                 }
             }
-            if (Gridprodutos.DataSource == null)
+            if (Gridprodutos.RowCount == 1)
             {
                 MeuMessageBox.Show("Nao a Produtos Desabilitados");
                 LimparGrid();

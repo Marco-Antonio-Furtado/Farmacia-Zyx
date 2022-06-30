@@ -2,6 +2,8 @@
 using BusinessLogicalLayer.BusinessLL;
 using Entities;
 using Entities.enums;
+using Entities.Propriedades;
+using Shared;
 using WfPresentationLayer.FormCadastros;
 
 namespace WfPresentationLayer.Trancaçoes
@@ -11,14 +13,14 @@ namespace WfPresentationLayer.Trancaçoes
         public FormNovaCompra()
         {
             InitializeComponent();
-            CmbBoxProduto.DisplayMember = "Nome";
-            CmbBoxProduto.ValueMember = "ID";
-            CmbBoxFornecedores.DisplayMember = "Razao_Social";
-            CmbBoxFornecedores.ValueMember = "ID";
+            
+            
         }
         FornecedorBll fornecedorBLL = new FornecedorBll();
         ProdutoBll produtoBLL = new ProdutoBll();
-        List<Item_Compra> compras = new List<Item_Compra>();
+        EntradaBll entradaBLL = new EntradaBll();
+        
+        List<Items> ItemsEntrada = new List<Items>();
         private void BtnNovoFornecedor_Click(object sender, EventArgs e)
         {
             FormCadastroFornecedor form = new FormCadastroFornecedor();
@@ -31,62 +33,76 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void BtnNovoIten_Click(object sender, EventArgs e)
         {
-            
-            string nome = "kkkkkk";
-            
-            int IdProduto = (int)CmbBoxProduto.SelectedValue;
-            int IdFornecedor = (int)CmbBoxFornecedores.SelectedValue;
-            
-            Produto proCompra = produtoBLL.GetByID(IdProduto).Item;
-            Fornecedor forneCompra = fornecedorBLL.GetByID(IdFornecedor).Item;
+            if (CmbBoxProduto.Text == "")
+            {
+                MeuMessageBox.Show("Voce nao selecionou Produto");
+            }
+            else if (CmbFormaPagamento.Text == "")
+            {
+                MeuMessageBox.Show("voce nao colocou a opcao de forma de pagamento");
+            }
+            else if (TxtBoxQuantidade.Text == "") { MeuMessageBox.Show("voce nao colocou a Quantidade");  }
+            else if(CmbBoxFornecedores.Text == "") { MeuMessageBox.Show("voce nao colocou o fornecedor"); }
+            else
+            {
+                
+                Items item = new Items();
 
-            Item_Compra compraTela = new Item_Compra();
-            compraTela.NomeProduto = Convert.ToString(proCompra.Nome);
-            compraTela.PrecoUnitario = proCompra.Valor_Venda;
-            compraTela.Quantidade = int.Parse(TxtBoxQuantidade.Text);
-            compraTela.IDFornecedor = forneCompra.Razao_Social;
-            compraTela.FormaPagamento = CmbFormaPagamento.Text;
-            compraTela.IDNomeFuncionario = SystemParameters.GetNome();
-            compraTela.IDLaboratorio = proCompra.ID_Laboratorio.Razao_Social.ToString();    
-            compraTela.Data = DateTime.Value;
-            compraTela.ValorTotal = int.Parse(TxtBoxQuantidade.Text) * proCompra.Valor_Venda;
-            compraTela.FormaPagamento = CmbFormaPagamento.Text;
+                item.IDProduto = (int)CmbBoxProduto.SelectedValue;
+                Produto proselcionado = produtoBLL.GetByID(item.IDProduto).Item;
+                item.Preco = proselcionado.Valor_Venda;
+                item.Qtd = int.Parse(TxtBoxQuantidade.Text);
 
-            //Item_Compra compraBanco = new Item_Compra();
-            //compraBanco.IDProduto = proCompra.ID;
-            //compraBanco.IDFornecedor = forneCompra.Razao_Social;
-            //compraBanco.PrecoUnitario = proCompra.Valor_Venda;
-            //compraBanco.FormaPagamento = CmbFormaPagamento.Text;
-            //compraBanco.Quantidade = int.Parse(TxtBoxQuantidade.Text);
-            //compraBanco.IDNomeFuncionario = SystemParameters.GetNome();
-            //compraBanco.IDLaboratorio = proCompra.ID_Laboratorio.Razao_Social.ToString();
-            //compraBanco.Data = DateTime.Value;
-            //compraBanco.ValorTotal = int.Parse(TxtBoxQuantidade.Text) * proCompra.Valor_Venda;
-            //compraBanco.FormaPagamento = CmbFormaPagamento.Text;
-
-            compras.Add(compraTela);
-            SincronizarListaGrid(compraTela);
-            LimparFormulario();
+                ItemsEntrada.Add(item);
+                SincronizarListaGrid(item);
+                LimparFormulario();
+            }
         }
         private void LimparFormulario()
         {
+            CmbBoxFornecedores.Enabled = false;
+            CmbFormaPagamento.Enabled = false;
+            DateTime.Enabled = false;
             CmbBoxProduto.SelectedIndex = -1;
-            CmbFormaPagamento.SelectedIndex = -1;
             TxtBoxQuantidade.Clear();
         }
-        private void SincronizarListaGrid(Item_Compra item)
+        private void SincronizarListaGrid(Items item)
         {
-            DataGrid.Rows.Add(item.IDProduto, item.PrecoUnitario, item.Quantidade, item.ValorTotal,item.FormaPagamento, item.IDNomeFuncionario,item.IDFornecedor, item.IDLaboratorio, item.Data);
+            DataGrid.Rows.Add(CmbBoxProduto.Text, item.Preco, item.Qtd,(item.Preco * item.Qtd), CmbFormaPagamento.Text, SystemParameters.GetNome(), CmbBoxFornecedores.Text,DateTime.Value);
         }
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = this.DataGrid.SelectedRows[0];
-            compras.RemoveAt(row.Index);
+            ItemsEntrada.RemoveAt(row.Index);
             DataGrid.Rows.RemoveAt(row.Index);
         }
         private void BtnCadastrarCompra_Click(object sender, EventArgs e)
         {
+            Entrada entrada = new Entrada();
+            double soma = 0;
+            foreach (Items item in ItemsEntrada)
+            {
+                 soma += (item.Preco * item.Qtd);
+            }
+            entrada.ValorTotal = soma; 
+            entrada.IDFornecedor = (int)CmbBoxFornecedores.SelectedValue;
+            entrada.Items = ItemsEntrada;
+            entrada.Data = DateTime.Value;
+            entrada.IDNomeFuncionario = (int)SystemParameters.GetID();
             
+            Response resposta = entradaBLL.Insert(entrada);
+            if (resposta.HasSuccess)
+            {
+                MeuMessageBox.Show("Venda Cadastrada");
+            }
+            else
+            {
+                MeuMessageBox.Show(resposta.Message);
+            }
+
+
+
+
         }
         private void TxtBoxQuantidade_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -98,27 +114,32 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void FormNovaCompra_Load(object sender, EventArgs e)
         {
+            List<Fornecedor> ForneAtivo = new();
             List<Fornecedor> fornecedors = fornecedorBLL.GetAll().Dados;
             foreach (Fornecedor fornecedor in fornecedors)
             {
                 if (fornecedor.Ativo == true)
                 {
-                    CmbBoxFornecedores.Items.Add(fornecedor);
+                    ForneAtivo.Add(fornecedor);
                 } 
             }
             CmbBoxFornecedores.DisplayMember = "Razao_Social";
             CmbBoxFornecedores.ValueMember = "ID";
+            CmbBoxFornecedores.DataSource = ForneAtivo;
 
+            List<Produto> produtosAtivos = new();
             List<Produto> produtos = produtoBLL.GetAll().Dados;
             foreach (Produto Produto in produtos)
             {
                 if (Produto.Ativo == true)
                 {
-                    CmbBoxProduto.Items.Add(Produto);
+                    produtosAtivos.Add(Produto);
                     
                 }
             }
-            
+            CmbBoxProduto.DisplayMember = "Nome";
+            CmbBoxProduto.ValueMember = "ID";
+            CmbBoxProduto.DataSource = produtosAtivos;
 
             CmbFormaPagamento.DataSource = Enum.GetNames(typeof(FormaPagamento));
         }

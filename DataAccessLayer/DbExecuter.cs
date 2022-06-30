@@ -89,6 +89,7 @@ namespace DataAccessLayer
                 Cargo C = new Cargo();  
                 if (reader.Read())
                 {
+                    f.ID = Convert.ToInt32(reader["ID"]);
                     C.Nome_Cargo = Convert.ToString(reader["NOME_CARGO"]);
                     f.Cargo = C;
                     f.Senha = Convert.ToString(reader["SENHA"]);

@@ -1,18 +1,28 @@
-﻿using Entities;
+﻿using BusinessLogicalLayer;
+using BusinessLogicalLayer.BusinessLL;
+using Entities;
 using Entities.enums;
+using Entities.Propriedades;
+using Shared;
 
 namespace WfPresentationLayer
 {
     public partial class FormNovaVenda : Form
     {
+        ClienteBll clienteBll = new ClienteBll();
+        ProdutoBll produtoBLL = new ProdutoBll();
+        SaidaBll SaidaBLL = new SaidaBll();
         public FormNovaVenda()
         {
             InitializeComponent();
             CmbFormaPagamento.DataSource = Enum.GetNames(typeof(FormaPagamento));
             DataGrid.DataBindings.Add(nameof(DataGrid.BackgroundColor), this, nameof(Control.BackColor));
+            CmbBoxClientes.SelectedIndex = -1;
+            CmbBoxProduto.SelectedIndex = -1;
+            CmbFormaPagamento.SelectedIndex = -1;
         }
-        List<Item_Venda> Vendas = new List<Item_Venda>();
-        
+        List<Items> ItemsSaida = new List<Items>();
+
         private void BtnNovoCliente_Click(object sender, EventArgs e)
         {
             FormCadastroCliente formCadastroCliente = new FormCadastroCliente();
@@ -25,75 +35,130 @@ namespace WfPresentationLayer
         }
         private void BtnNovoIten_Click(object sender, EventArgs e)
         {
-            //Item_Venda venda = new Item_Venda(produto: CmbBoxProduto.Text,
-            //                                  formaPagamento: CmbFormaPagamento.Text,
-            //                                  precoUnitario: double.Parse(TxtBoxUnitario.Text),
-            //                                  quantidade: int.Parse(TxtBoxQuantidade.Text),
-            //                                  valorTotal: int.Parse(TxtBoxQuantidade.Text) * double.Parse(TxtBoxUnitario.Text),
-            //                                  nomeFuncionario: "admin",
-            //                                  nomeCliente: TxtBoxSelecionarCliente.Text,
-            //                                  data: DateTime.Value);
-            //Vendas.Add(venda);
-            //SincronizarListaGrid(venda);
-            //LimparFormulario();
+            if (CmbBoxProduto.Text == "")
+            {
+                MeuMessageBox.Show("Voce nao selecionou Produto");
+            }
+            else if (CmbFormaPagamento.Text == "")
+            {
+                MeuMessageBox.Show("voce nao colocou a opcao de forma de pagamento");
+            }
+            else if (TxtBoxQuantidade.Text == "") { MeuMessageBox.Show("voce nao colocou a Quantidade"); }
+            else
+            {
+                Items item = new Items();
+
+                item.IDProduto = (int)CmbBoxProduto.SelectedValue;
+                Produto proselcionado = produtoBLL.GetByID(item.IDProduto).Item;
+                item.Preco = proselcionado.Valor_Venda;
+                item.Qtd = int.Parse(TxtBoxQuantidade.Text);
+
+               
+
+
+               
+
+                
+
+
+                ItemsSaida.Add(item);
+                SincronizarListaGrid(item);
+                LimparFormulario();
+            }
         }
         private void LimparFormulario()
         {
+            CmbBoxClientes.Enabled = false;
             CmbBoxProduto.SelectedIndex = -1;
-            CmbFormaPagamento.SelectedIndex = -1;
+            CmbFormaPagamento.Enabled = false;
+            DateTime.Enabled = false;
             TxtBoxQuantidade.Clear();
-            TxtBoxUnitario.Clear();
         }
-        private void SincronizarListaGrid(Item_Venda item)
+        private void SincronizarListaGrid(Items item)
         {
-            DataGrid.Rows.Add(item.IDProduto, item.PrecoUnitario, item.Quantidade, item.ValorTotal, item.IDLaboratorio, item.IDNomeCliente, item.IDNomeFuncionario, item.Data);
+            DataGrid.Rows.Add(CmbBoxProduto.Text, item.Preco, item.Qtd, (item.Preco * item.Qtd), CmbBoxClientes.Text,SystemParameters.GetNome(), DateTime.Value); ;
         }
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = this.DataGrid.SelectedRows[0];
-            Vendas.RemoveAt(row.Index);
+            ItemsSaida.RemoveAt(row.Index);
             DataGrid.Rows.RemoveAt(row.Index);
-
         }
         private void BtnCadastrarNovaVenda_Click(object sender, EventArgs e)
         {
-            
-        }
-        private void TxtBoxUnitario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '.' || e.KeyChar == ',')
+                Saida saida = new Saida();
+            double soma = 0;
+            foreach (Items item in ItemsSaida)
             {
-                //troca o . pela virgula
-                e.KeyChar = ',';
-                //Verifica se já existe alguma vírgula na string
-                if (TxtBoxUnitario.Text.Contains(','))
-                {
-                    e.Handled = true; // Caso exista, aborte 
-                }
+                soma += (item.Preco * item.Qtd);
             }
-            //aceita apenas números, tecla backspace.
-            else if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
+            saida.ValorTotal = soma;
+            saida.IDNomeCliente = (int)CmbBoxClientes.SelectedValue;
+            saida.Items = ItemsSaida;
+            saida.Data = DateTime.Value;
+            saida.IDNomeFuncionario = (int)SystemParameters.GetID();
+
+            Response resposta = SaidaBLL.Insert(saida);
+            if (resposta.HasSuccess)
             {
-                e.Handled = true;
+                MeuMessageBox.Show("Venda Cadastrada");
             }
+            else
+            {
+                MeuMessageBox.Show(resposta.Message);
+            }
+
+
+
+            //public abstract class Transacao
+            //{
+            //    public int ID { get; set; }
+            //    public DateTime Data { get; set; }
+            //    public int IDNomeFuncionario { get; set; }
+            //    public double ValorTotal { get; set; }
+            //    public List<Items> Items { get; set; }
+
+            //    public Transacao()
+            //    {
+            //        this.Items = new List<Items>();
+            //    }
+            //}
+
         }
         private void TxtBoxQuantidade_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == '.' || e.KeyChar == ',')
-            {
-                //troca o . pela virgula
-                e.KeyChar = ',';
-                //Verifica se já existe alguma vírgula na string
-                if (TxtBoxQuantidade.Text.Contains(","))
-                {
-                    e.Handled = true; // Caso exista, aborte 
-                }
-            }
-            //aceita apenas números, tecla backspace.
-            else if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
+            if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
             {
                 e.Handled = true;
             }
+        }
+        private void FormNovaVenda_Load(object sender, EventArgs e)
+        {
+            List<Cliente> ClienteAtivo = new();
+            List<Cliente> Clientes = clienteBll.GetAll().Dados;
+            foreach (Cliente cl in Clientes)
+            {
+                if (cl.Ativo == true)
+                {
+                    ClienteAtivo.Add(cl);
+                }
+            }
+            CmbBoxClientes.DisplayMember = "Nome_Cliente";
+            CmbBoxClientes.ValueMember = "ID";
+            CmbBoxClientes.DataSource = ClienteAtivo;
+
+            List<Produto> produtosAtivos = new();
+            List<Produto> produtos = produtoBLL.GetAll().Dados;
+            foreach (Produto Produto in produtos)
+            {
+                if (Produto.Ativo == true)
+                {
+                    produtosAtivos.Add(Produto);
+                }
+            }
+            CmbBoxProduto.DisplayMember = "Nome";
+            CmbBoxProduto.ValueMember = "ID";
+            CmbBoxProduto.DataSource = produtosAtivos;
         }
     }
 }

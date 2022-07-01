@@ -145,7 +145,7 @@ internal class DbConnection
 
     public DbConnection()
     {
-        conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\SAMSUNG\Documents\banco\BancoFarmaciaZYX.mdf;Integrated Security=True;Connect Timeout=30");
+        conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\BancoFarmaciaZYX.mdf;Integrated Security=True;Connect Timeout=30");
     }
     public void Open()
     {

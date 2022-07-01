@@ -37,7 +37,6 @@ namespace DataAccessLayer
         {
             string sql = $"SELECT QUANTIA_ESTOQUE FROM PRODUTOS WHERE ID = @ID";
 
-
             DbConnection db = new DbConnection();
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@ID", iDProduto);

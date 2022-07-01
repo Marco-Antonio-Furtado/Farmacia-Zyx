@@ -7,13 +7,12 @@ namespace BusinessLogicalLayer.BusinessLL
     public class SaidaBll
     {
         SaidaDAL saidaDAL = new SaidaDAL();
+        ProdutoBll produtoBll = new ProdutoBll();
         public Response Insert(Saida transacao)
         {
-            ProdutoBll produtoBll = new ProdutoBll();
-
             foreach (var item in transacao.Items)
             {
-                SingleResponse<Produto> response = produtoBll.GetByID(item.IDProduto);
+                SingleResponse<Produto> response = produtoBll.GetByID(item.IDProduto.ID);
                 if (response.HasSuccess)
                 {
                     if (response.Item.Quantia_Estoque < item.Qtd)

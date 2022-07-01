@@ -45,11 +45,11 @@ namespace WfPresentationLayer.Trancaçoes
             else if(CmbBoxFornecedores.Text == "") { MeuMessageBox.Show("voce nao colocou o fornecedor"); }
             else
             {
-                
+                Produto produto = new();
                 Item item = new Item();
-
-                item.IDProduto = (int)CmbBoxProduto.SelectedValue;
-                Produto proselcionado = produtoBLL.GetByID(item.IDProduto).Item;
+                produto.ID = (int)CmbBoxProduto.SelectedValue;
+                item.IDProduto = produto;
+                Produto proselcionado = produtoBLL.GetByID(produto.ID).Item;
                 item.Preco = proselcionado.Valor_Venda;
                 item.Qtd = int.Parse(TxtBoxQuantidade.Text);
 
@@ -84,16 +84,21 @@ namespace WfPresentationLayer.Trancaçoes
             {
                  soma += (item.Preco * item.Qtd);
             }
-            entrada.ValorTotal = soma; 
-            entrada.IDFornecedor = (int)CmbBoxFornecedores.SelectedValue;
+            Fornecedor fornecedor = new();
+            Funcionario funcionario = new();
+            fornecedor.ID = (int)CmbBoxFornecedores.SelectedValue;
+            entrada.Forma_Pagamento = CmbFormaPagamento.Text;
+            entrada.ValorTotal = soma;
+            entrada.IDFornecedor = fornecedor;
             entrada.Items = ItemsEntrada;
             entrada.Data = DateTime.Value;
-            entrada.IDFuncionario = (int)SystemParameters.GetID();
+            funcionario.ID = (int)SystemParameters.GetID();
+            entrada.IDFuncionario = funcionario;
             
             Response resposta = entradaBLL.Insert(entrada);
             if (resposta.HasSuccess)
             {
-                MeuMessageBox.Show("Venda Cadastrada");
+                MeuMessageBox.Show("Entrada Cadastrada");
             }
             else
             {

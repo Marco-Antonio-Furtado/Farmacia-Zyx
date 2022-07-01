@@ -12,10 +12,10 @@ namespace BusinessLogicalLayer.RegraDePreco
         {
             foreach (Item item in Entradas.Items)
             {
-                Produto produto = produtoDal.GetByIDEstoque(item.IDProduto).Item;
+                Produto produto = produtoDal.GetByIDEstoque(item.IDProduto.ID).Item;
                 double Quantiavelha = produto.Quantia_Estoque;
                 double QuantiaNova = item.Qtd + Quantiavelha;
-                produtoDal.SetEstoque(QuantiaNova, item.IDProduto);
+                produtoDal.SetEstoque(QuantiaNova, item.IDProduto.ID);
             }
 
             return new Response("", false);

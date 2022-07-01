@@ -16,6 +16,7 @@ namespace WfPresentationLayer.Alteraçoes
     public partial class FormMostrarSaidas : Form
     {
         SaidaBll saidaBll = new SaidaBll();
+        private Form _objForm6;
         public FormMostrarSaidas()
         {
             InitializeComponent();
@@ -37,6 +38,23 @@ namespace WfPresentationLayer.Alteraçoes
         private void SincronizarListaGrid(Cliente item)
         {
             //GridClientes.Rows.Add(item.ID, item.Nome_Cliente, item.Email, item.RG, item.CPF, item.Telefone, item.Telefone2);
+        }
+
+        private void BtnCadastrarCompra_Click(object sender, EventArgs e)
+        {
+            FormNovaVenda form = new FormNovaVenda();
+            form.ShowDialog();
+
+            //_objForm6?.Close();
+            //_objForm6 = new FormNovaVenda()
+            //{
+            //    TopLevel = false,
+            //    FormBorderStyle = FormBorderStyle.None,
+            //    Dock = DockStyle.Fill,
+            //};
+            //PnlVendas.Controls.Add(_objForm6);
+            //_objForm6.Show();
+            //_objForm6.BringToFront();
         }
     }
 }

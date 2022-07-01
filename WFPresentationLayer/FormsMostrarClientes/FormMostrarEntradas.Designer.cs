@@ -31,11 +31,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.GridFuncionario = new System.Windows.Forms.DataGridView();
+            this.GridEntrada = new System.Windows.Forms.DataGridView();
             this.BtnProcurarCompra = new System.Windows.Forms.Button();
             this.BtnDeletarCompra = new System.Windows.Forms.Button();
             this.BtnAlterarCompra = new System.Windows.Forms.Button();
             this.BtnCadastrarCompra = new System.Windows.Forms.Button();
+            this.PnlCompras = new System.Windows.Forms.Panel();
             this.GridID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridValorCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,14 +44,13 @@
             this.GridFormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GridDescrisao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.GridFuncionario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridEntrada)).BeginInit();
             this.SuspendLayout();
             // 
-            // GridFuncionario
+            // GridEntrada
             // 
-            this.GridFuncionario.BackgroundColor = System.Drawing.Color.IndianRed;
+            this.GridEntrada.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -58,9 +58,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridFuncionario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.GridFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GridEntrada.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.GridEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridEntrada.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GridID,
             this.GridProduto,
             this.GridValorCompra,
@@ -68,7 +68,6 @@
             this.GridFormaPagamento,
             this.GridFornecedor,
             this.GridData,
-            this.GridDescrisao,
             this.dataGridViewTextBoxColumn1});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
@@ -77,9 +76,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridFuncionario.DefaultCellStyle = dataGridViewCellStyle2;
-            this.GridFuncionario.Location = new System.Drawing.Point(12, 12);
-            this.GridFuncionario.Name = "GridFuncionario";
+            this.GridEntrada.DefaultCellStyle = dataGridViewCellStyle2;
+            this.GridEntrada.Location = new System.Drawing.Point(12, 12);
+            this.GridEntrada.Name = "GridEntrada";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -87,11 +86,11 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridFuncionario.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.GridFuncionario.RowHeadersWidth = 51;
-            this.GridFuncionario.RowTemplate.Height = 29;
-            this.GridFuncionario.Size = new System.Drawing.Size(1315, 645);
-            this.GridFuncionario.TabIndex = 46;
+            this.GridEntrada.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.GridEntrada.RowHeadersWidth = 51;
+            this.GridEntrada.RowTemplate.Height = 29;
+            this.GridEntrada.Size = new System.Drawing.Size(1267, 645);
+            this.GridEntrada.TabIndex = 46;
             // 
             // BtnProcurarCompra
             // 
@@ -135,12 +134,21 @@
             this.BtnCadastrarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnCadastrarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastrarCompra.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarCompra.Location = new System.Drawing.Point(72, 676);
+            this.BtnCadastrarCompra.Location = new System.Drawing.Point(22, 676);
             this.BtnCadastrarCompra.Name = "BtnCadastrarCompra";
             this.BtnCadastrarCompra.Size = new System.Drawing.Size(277, 79);
             this.BtnCadastrarCompra.TabIndex = 42;
             this.BtnCadastrarCompra.Text = "Cadastrar Compra";
             this.BtnCadastrarCompra.UseVisualStyleBackColor = false;
+            this.BtnCadastrarCompra.Click += new System.EventHandler(this.BtnCadastrarCompra_Click);
+            // 
+            // PnlCompras
+            // 
+            this.PnlCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.PnlCompras.Location = new System.Drawing.Point(12, 12);
+            this.PnlCompras.Name = "PnlCompras";
+            this.PnlCompras.Size = new System.Drawing.Size(1274, 658);
+            this.PnlCompras.TabIndex = 47;
             // 
             // GridID
             // 
@@ -191,13 +199,6 @@
             this.GridData.Name = "GridData";
             this.GridData.Width = 125;
             // 
-            // GridDescrisao
-            // 
-            this.GridDescrisao.HeaderText = "Descrisao";
-            this.GridDescrisao.MinimumWidth = 6;
-            this.GridDescrisao.Name = "GridDescrisao";
-            this.GridDescrisao.Width = 120;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Funcionario";
@@ -210,27 +211,29 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(1339, 767);
-            this.Controls.Add(this.GridFuncionario);
+            this.ClientSize = new System.Drawing.Size(1298, 767);
             this.Controls.Add(this.BtnProcurarCompra);
             this.Controls.Add(this.BtnDeletarCompra);
             this.Controls.Add(this.BtnAlterarCompra);
             this.Controls.Add(this.BtnCadastrarCompra);
+            this.Controls.Add(this.GridEntrada);
+            this.Controls.Add(this.PnlCompras);
             this.Name = "FormMostrarEntradas";
             this.Text = "Compras";
             this.Load += new System.EventHandler(this.FormMostrarEntradas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.GridFuncionario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridEntrada)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DataGridView GridFuncionario;
+        private DataGridView GridEntrada;
         private Button BtnProcurarCompra;
         private Button BtnDeletarCompra;
         private Button BtnAlterarCompra;
         private Button BtnCadastrarCompra;
+        private Panel PnlCompras;
         private DataGridViewTextBoxColumn GridID;
         private DataGridViewTextBoxColumn GridProduto;
         private DataGridViewTextBoxColumn GridValorCompra;
@@ -238,7 +241,6 @@
         private DataGridViewTextBoxColumn GridFormaPagamento;
         private DataGridViewTextBoxColumn GridFornecedor;
         private DataGridViewTextBoxColumn GridData;
-        private DataGridViewTextBoxColumn GridDescrisao;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

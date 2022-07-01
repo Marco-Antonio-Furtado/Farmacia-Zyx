@@ -104,7 +104,7 @@
             this.GroupBoxCompra.ForeColor = System.Drawing.Color.White;
             this.GroupBoxCompra.Location = new System.Drawing.Point(13, 58);
             this.GroupBoxCompra.Name = "GroupBoxCompra";
-            this.GroupBoxCompra.Size = new System.Drawing.Size(1289, 708);
+            this.GroupBoxCompra.Size = new System.Drawing.Size(1262, 675);
             this.GroupBoxCompra.TabIndex = 19;
             this.GroupBoxCompra.TabStop = false;
             this.GroupBoxCompra.Text = "Nova Compra";
@@ -133,7 +133,7 @@
             this.BtnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnExcluir.ForeColor = System.Drawing.Color.White;
-            this.BtnExcluir.Location = new System.Drawing.Point(833, 120);
+            this.BtnExcluir.Location = new System.Drawing.Point(755, 118);
             this.BtnExcluir.Name = "BtnExcluir";
             this.BtnExcluir.Size = new System.Drawing.Size(233, 79);
             this.BtnExcluir.TabIndex = 32;
@@ -165,7 +165,7 @@
             this.BtnCadastrarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnCadastrarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastrarCompra.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarCompra.Location = new System.Drawing.Point(1072, 120);
+            this.BtnCadastrarCompra.Location = new System.Drawing.Point(1046, 118);
             this.BtnCadastrarCompra.Name = "BtnCadastrarCompra";
             this.BtnCadastrarCompra.Size = new System.Drawing.Size(196, 79);
             this.BtnCadastrarCompra.TabIndex = 24;
@@ -212,7 +212,7 @@
             this.BtnNovoIten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnNovoIten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnNovoIten.ForeColor = System.Drawing.Color.White;
-            this.BtnNovoIten.Location = new System.Drawing.Point(550, 120);
+            this.BtnNovoIten.Location = new System.Drawing.Point(435, 118);
             this.BtnNovoIten.Name = "BtnNovoIten";
             this.BtnNovoIten.Size = new System.Drawing.Size(277, 79);
             this.BtnNovoIten.TabIndex = 21;
@@ -265,7 +265,7 @@
             this.DataGrid.RowHeadersWidth = 51;
             this.DataGrid.RowTemplate.Height = 29;
             this.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGrid.Size = new System.Drawing.Size(1259, 475);
+            this.DataGrid.Size = new System.Drawing.Size(1250, 452);
             this.DataGrid.TabIndex = 20;
             // 
             // DataGridProduto
@@ -379,7 +379,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(1311, 774);
+            this.ClientSize = new System.Drawing.Size(1287, 745);
             this.Controls.Add(this.CmbBoxFornecedores);
             this.Controls.Add(this.BtnNovoFornecedor);
             this.Controls.Add(this.BtnProcurarFornecedor);

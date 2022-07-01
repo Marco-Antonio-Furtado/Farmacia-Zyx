@@ -44,6 +44,7 @@ namespace WfPresentationLayer
                 Fim = DataFim.Value,
             };
             this.ParametrosDatas = parametros;
+            this.Close();
         }
     }
 

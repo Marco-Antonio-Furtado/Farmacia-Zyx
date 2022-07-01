@@ -14,14 +14,16 @@ namespace DataAccessLayer
         {
 
 
-            string sql = $"INSERT INTO SAIDAS (DATA_SAIDA,CLIENTES_ID,VALOR,FUNCIONARIOS_ID)" +
-                      $" VALUES (@DATA,@FORNECEDORES_ID,@PRECO,@FUNCIONARIOS_ID); SELECT SCOPE_IDENTITY()";
+            string sql = $"INSERT INTO SAIDAS (DATA_SAIDA,CLIENTES_ID,VALOR,FUNCIONARIOS_ID,FORMA_PAGAMENTO)" +
+                      $" VALUES (@DATA,@CLIENTES_ID,@PRECO,@FUNCIONARIOS_ID,@FORMA_PAGAMENTO); SELECT SCOPE_IDENTITY()";
 
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@DATA", transacao.Data);
-            command.Parameters.AddWithValue("@FORNECEDORES_ID", transacao.IDCliente);
-            command.Parameters.AddWithValue("@FUNCIONARIOS_ID", transacao.IDFuncionario);
+            command.Parameters.AddWithValue("@CLIENTES_ID", transacao.IDCliente.ID);
+            command.Parameters.AddWithValue("@FUNCIONARIOS_ID", transacao.IDFuncionario.ID);
             command.Parameters.AddWithValue("@PRECO", transacao.ValorTotal);
+            command.Parameters.AddWithValue("@FORMA_PAGAMENTO", transacao.Forma_Pagamento);
+
             using (TransactionScope scope = new TransactionScope())
             {
                 try
@@ -35,7 +37,7 @@ namespace DataAccessLayer
 
                         SqlCommand command1 = new SqlCommand(sql1);
                         command1.Parameters.AddWithValue("@ENTRADA_ID", transacao.ID);
-                        command1.Parameters.AddWithValue("@PRODUTOS_ID", item.IDProduto);
+                        command1.Parameters.AddWithValue("@PRODUTOS_ID", item.IDProduto.ID);
                         command1.Parameters.AddWithValue("@QUANTIDADE", item.Qtd);
                         command1.Parameters.AddWithValue("@VALOR_UNITARIO", item.Preco);
                         Response response = DbExecuter.Execute(command1);

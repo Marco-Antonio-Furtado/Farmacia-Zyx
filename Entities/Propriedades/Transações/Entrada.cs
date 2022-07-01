@@ -8,7 +8,7 @@ namespace Entities
         {
         }
 
-        public int IDFornecedor { get; set; }
+        public Fornecedor IDFornecedor { get; set; }
        
     }
 }

@@ -9,10 +9,10 @@ namespace Entities.Propriedades
 {
     public interface ITransacaoProdutos<T>
     {
-     
-            public SingleResponse<T> EfetuarTransacao(T transacao);
-            public DataResponse<T> LerTransacoes(DateTime inicio, DateTime fim);
-            public SingleResponse<T> GetByID(int id);
-        
+
+        public SingleResponse<T> EfetuarTransacao(T transacao);
+        public DataResponse<T> LerTransacoes(DateTime inicio, DateTime fim);
+        public SingleResponse<T> GetByID(int id);
+
     }
 }

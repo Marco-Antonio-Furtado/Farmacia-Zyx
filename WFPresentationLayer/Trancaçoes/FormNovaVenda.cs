@@ -46,19 +46,13 @@ namespace WfPresentationLayer
             else if (TxtBoxQuantidade.Text == "") { MeuMessageBox.Show("voce nao colocou a Quantidade"); }
             else
             {
+                Produto produto = new();
                 Item item = new Item();
-
-                item.IDProduto = (int)CmbBoxProduto.SelectedValue;
-                Produto proselcionado = produtoBLL.GetByID(item.IDProduto).Item;
+                produto.ID = (int)CmbBoxProduto.SelectedValue;
+                item.IDProduto = produto;
+                Produto proselcionado = produtoBLL.GetByID(produto.ID).Item;
                 item.Preco = proselcionado.Valor_Venda;
                 item.Qtd = int.Parse(TxtBoxQuantidade.Text);
-
-               
-
-
-               
-
-                
 
 
                 ItemsSaida.Add(item);
@@ -86,18 +80,23 @@ namespace WfPresentationLayer
         }
         private void BtnCadastrarNovaVenda_Click(object sender, EventArgs e)
         {
+            Cliente cliente = new Cliente();
                 Saida saida = new Saida();
+            Funcionario funcionario = new();
             double soma = 0;
             foreach (Item item in ItemsSaida)
             {
                 soma += (item.Preco * item.Qtd);
             }
+            saida.Forma_Pagamento = CmbFormaPagamento.Text;
             saida.ValorTotal = soma;
-            saida.IDCliente = (int)CmbBoxClientes.SelectedValue;
+
+            cliente.ID = (int)CmbBoxClientes.SelectedValue;
+            saida.IDCliente = cliente;
             saida.Items = ItemsSaida;
             saida.Data = DateTime.Value;
-            saida.IDFuncionario = (int)SystemParameters.GetID();
-
+            funcionario.ID = (int)SystemParameters.GetID();
+            saida.IDFuncionario = funcionario;
             Response resposta = SaidaBLL.Insert(saida);
             if (resposta.HasSuccess)
             {
@@ -107,23 +106,6 @@ namespace WfPresentationLayer
             {
                 MeuMessageBox.Show(resposta.Message);
             }
-
-
-
-            //public abstract class Transacao
-            //{
-            //    public int ID { get; set; }
-            //    public DateTime Data { get; set; }
-            //    public int IDNomeFuncionario { get; set; }
-            //    public double ValorTotal { get; set; }
-            //    public List<item> Items { get; set; }
-
-            //    public Transacao()
-            //    {
-            //        this.Items = new List<Items>();
-            //    }
-            //}
-
         }
         private void TxtBoxQuantidade_KeyPress(object sender, KeyPressEventArgs e)
         {

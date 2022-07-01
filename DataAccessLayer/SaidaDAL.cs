@@ -74,13 +74,7 @@ namespace DataAccessLayer
 
         public DataResponse<SaidaViewModel> LerTransacoes(DateTime inicio, DateTime fim)
         {
-            string sql = $"SELECT PS.SAIDA_ID, P.NOME_PRODUTO, P.VALOR_UNITARIO, PS.QUANTIDADE, " +
-                $"S.FORMA_PAGAMENTO, C.NOME_CLIENTE, S.VALOR, S.DATA_SAIDA FROM PRODUTOS_SAIDAS PS " +
-                $"INNER JOIN SAIDAS S ON PS.SAIDA_ID = S.ID INNER JOIN PRODUTOS P ON PS.PRODUTOS_ID = P.ID " +
-                $"INNER JOIN CLIENTES C ON S.CLIENTES_ID = C.ID " +
-                $"WHERE DATA_SAIDA BETWEEN @inicio AND @fim";
-
-
+            string sql = $"SELECT PS.SAIDA_ID, P.NOME_PRODUTO, P.VALOR_UNITARIO, PS.QUANTIDADE,S.FORMA_PAGAMENTO, C.NOME_CLIENTE, S.VALOR, S.DATA_SAIDA, F.NOME_FUNCIONARIO FROM PRODUTOS_SAIDAS PS INNER JOIN SAIDAS S ON PS.SAIDA_ID = S.ID INNER JOIN PRODUTOS P ON PS.PRODUTOS_ID = P.ID INNER JOIN CLIENTES C ON S.CLIENTES_ID = C.ID INNER JOIN FUNCIONARIOS F ON S.FUNCIONARIOS_ID = F.ID WHERE DATA_SAIDA BETWEEN @inicio AND @fim";
 
             DbConnection db = new DbConnection();
             SqlCommand command = new SqlCommand(sql);
@@ -97,25 +91,24 @@ namespace DataAccessLayer
                 {
                     SaidaViewModel svm = new SaidaViewModel()
                     {
-                        TransacaoID = Convert.ToInt32(reader["PS.SAIDA_ID"]),
-                        ProdutoNome = Convert.ToString(reader["P.NOME_PRODUTO"]),
-                        ValorUnitario = Convert.ToDouble(reader["P.VALOR_UNITARIO"]),
-                        Quantidade = Convert.ToDouble(reader["PS.QUANTIDADE"]),
-                        FormaPagamento = Convert.ToString(reader["S.FORMA_PAGAMENTO"]),
-                        ClienteNome = Convert.ToString(reader["C.NOME_CLIENTE"]),
-                        ValorTotal = Convert.ToDouble(reader["S.VALOR"]),
-                        Data = Convert.ToDateTime(reader["S.DATA_SAIDA"])
+                        
+                        funcionario = Convert.ToString(reader["NOME_FUNCIONARIO"]),
+                        TransacaoID = Convert.ToInt32(reader["SAIDA_ID"]),
+                        ProdutoNome = Convert.ToString(reader["NOME_PRODUTO"]),
+                        ValorUnitario = Convert.ToDouble(reader["VALOR_UNITARIO"]),
+                        Quantidade = Convert.ToDouble(reader["QUANTIDADE"]),
+                        FormaPagamento = Convert.ToString(reader["FORMA_PAGAMENTO"]),
+                        ClienteNome = Convert.ToString(reader["NOME_CLIENTE"]),
+                        ValorTotal = Convert.ToDouble(reader["VALOR"]),
+                        Data = Convert.ToDateTime(reader["DATA_SAIDA"])
                     };
-                    
                     saidas.Add(svm);
-
                 }
                 return ResponseFactory.CreateInstance().CreateDataSuccessResponse(saidas);
-
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return new DataResponse<SaidaViewModel>("Erro no banco de dados, contate o administrador.", false, null);
+                return ResponseFactory.CreateInstance().CreateDataFailedResponse<SaidaViewModel>();
             }
         }
     }

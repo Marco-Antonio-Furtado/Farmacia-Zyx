@@ -1,15 +1,7 @@
 ﻿using BusinessLogicalLayer.BusinessLL;
 using Entities;
+using Entities.viewmodel;
 using Shared;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace WfPresentationLayer.Alteraçoes
 {
@@ -24,23 +16,19 @@ namespace WfPresentationLayer.Alteraçoes
         public FormMostrarSaidas(ParametrosDatas datas)
         {
             InitializeComponent();
-            DataResponse<Saida> Dados = saidaBll.GetAll(datas.Inicio, datas.Fim);
+            DataResponse<SaidaViewModel> Dados = saidaBll.GetAll(datas.Inicio, datas.Fim);
 
-
-            foreach (var item in Dados.Dados)
+            foreach (SaidaViewModel item in Dados.Dados)
             {
-
+                SincronizarListaGrid(item);
             }
-
-
-
         }
-        private void SincronizarListaGrid(Cliente item)
+        private void SincronizarListaGrid(SaidaViewModel item)
         {
-            //GridClientes.Rows.Add(item.ID, item.Nome_Cliente, item.Email, item.RG, item.CPF, item.Telefone, item.Telefone2);
+            GridSaidas.Rows.Add(item.TransacaoID, item.ProdutoNome, item.ValorUnitario, item.Quantidade, item.FormaPagamento, item.ClienteNome, item.ValorTotal,item.Data,item.funcionario);
         }
 
-        private void BtnCadastrarCompra_Click(object sender, EventArgs e)
+        private void BtnCadastrarVendas_Click(object sender, EventArgs e)
         {
             FormNovaVenda form = new FormNovaVenda();
             form.ShowDialog();

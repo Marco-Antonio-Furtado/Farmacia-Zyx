@@ -1,6 +1,7 @@
 ﻿using BusinessLogicalLayer.RegraDePreco;
 using DataAccessLayer;
 using Entities;
+using Entities.viewmodel;
 using Shared;
 
 namespace BusinessLogicalLayer.BusinessLL
@@ -18,7 +19,7 @@ namespace BusinessLogicalLayer.BusinessLL
             }
             return new Response("chato", false);
         }
-        public DataResponse<Entrada> GetAll(DateTime inicio, DateTime fim)
+        public DataResponse<EntradaViewModel> GetAll(DateTime inicio, DateTime fim)
         {
             return entradaDal.LerTransacoes( inicio,  fim);
         }

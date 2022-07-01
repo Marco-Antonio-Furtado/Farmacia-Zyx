@@ -39,8 +39,9 @@
             this.PnlCompras = new System.Windows.Forms.Panel();
             this.GridID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GridValorCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridValorCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridFormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,8 +64,9 @@
             this.GridEntrada.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GridID,
             this.GridProduto,
-            this.GridValorCompra,
+            this.GridValorUnitario,
             this.GridQuantidade,
+            this.GridValorCompra,
             this.GridFormaPagamento,
             this.GridFornecedor,
             this.GridData,
@@ -164,12 +166,12 @@
             this.GridProduto.Name = "GridProduto";
             this.GridProduto.Width = 125;
             // 
-            // GridValorCompra
+            // GridValorUnitario
             // 
-            this.GridValorCompra.HeaderText = "Valor Total";
-            this.GridValorCompra.MinimumWidth = 6;
-            this.GridValorCompra.Name = "GridValorCompra";
-            this.GridValorCompra.Width = 125;
+            this.GridValorUnitario.HeaderText = "Valor Unitario";
+            this.GridValorUnitario.MinimumWidth = 6;
+            this.GridValorUnitario.Name = "GridValorUnitario";
+            this.GridValorUnitario.Width = 125;
             // 
             // GridQuantidade
             // 
@@ -177,6 +179,13 @@
             this.GridQuantidade.MinimumWidth = 6;
             this.GridQuantidade.Name = "GridQuantidade";
             this.GridQuantidade.Width = 120;
+            // 
+            // GridValorCompra
+            // 
+            this.GridValorCompra.HeaderText = "Valor Total";
+            this.GridValorCompra.MinimumWidth = 6;
+            this.GridValorCompra.Name = "GridValorCompra";
+            this.GridValorCompra.Width = 125;
             // 
             // GridFormaPagamento
             // 
@@ -242,5 +251,6 @@
         private DataGridViewTextBoxColumn GridFornecedor;
         private DataGridViewTextBoxColumn GridData;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn GridValorUnitario;
     }
 }

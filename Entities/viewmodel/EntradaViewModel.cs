@@ -8,6 +8,7 @@ namespace Entities.viewmodel
 {
     public class EntradaViewModel
     {
+        public double ValorUnitario { get; set; }   
         public int TransacaoID { get; set; }
         public string ProdutoNome { get; set; }
         public double ValorTotal { get; set; }

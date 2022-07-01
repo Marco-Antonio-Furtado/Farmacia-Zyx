@@ -1,6 +1,7 @@
 ﻿using BusinessLogicalLayer.BusinessLL;
 using Entities;
 using Entities.Propriedades;
+using Entities.viewmodel;
 using Shared;
 using WfPresentationLayer.Trancaçoes;
 
@@ -17,12 +18,21 @@ namespace WfPresentationLayer.Alteraçoes
         public FormMostrarEntradas(ParametrosDatas Datas)
         {
             InitializeComponent();
-            DataResponse<Entrada> data = entradaBll.GetAll(Datas.Inicio,Datas.Fim);
+            DataResponse<EntradaViewModel> data = entradaBll.GetAll(Datas.Inicio,Datas.Fim);
 
-            foreach (Entrada item in data.Dados)
+            foreach (EntradaViewModel item in data.Dados)
             {
                 SincronizarListaGrid(item);
             }
+            //ValorUnitario = Convert.ToDouble(reader["VALOR_UNITARIO"]),
+            //            Funcionario = Convert.ToString(reader["NOME_FUNCIONARIO"]),
+            //            TransacaoID = Convert.ToInt32(reader["ENTRADA_ID"]),
+            //            ProdutoNome = Convert.ToString(reader["NOME_PRODUTO"]),
+            //            Quantidade = Convert.ToDouble(reader["QUANTIDADE"]),
+            //            FormaPagamento = Convert.ToString(reader["FORMA_PAGAMENTO"]),
+            //            Fornecedor = Convert.ToString(reader["RAZAO_SOCIAL"]),
+            //            ValorTotal = Convert.ToDouble(reader["PRECO"]),
+            //            Data = Convert.ToDateTime(reader["DATA_ENTRADA"])
 
 
         }
@@ -33,18 +43,9 @@ namespace WfPresentationLayer.Alteraçoes
         }
 
 
-        private void SincronizarListaGrid(Entrada item)
+        private void SincronizarListaGrid(EntradaViewModel item)
         {
-            string prod = "";
-            double quan = 0;
-            foreach (Item ite in item.Items)
-            {
-                quan = ite.Qtd;
-                prod = ite.IDProduto.Nome;
-                break;
-            }
-
-            GridEntrada.Rows.Add(item.ID,item.Items, item.ValorTotal, quan, item.Forma_Pagamento, item.IDFornecedor.Razao_Social, item.Data, item.IDFuncionario.Nome_Funcionario);
+            GridEntrada.Rows.Add(item.TransacaoID, item.ProdutoNome, item.ValorUnitario, item.Quantidade, item.ValorTotal, item.FormaPagamento,item.Fornecedor, item.Data, item.Funcionario);
         }
 
         private void BtnCadastrarCompra_Click(object sender, EventArgs e)

@@ -13,6 +13,7 @@ namespace Entities.viewmodel
         public double ValorUnitario { get; set; }
         public double Quantidade { get; set; }
         public string FormaPagamento { get; set; }
+        public string funcionario { get; set; }
         public string ClienteNome { get; set; }
         public double ValorTotal { get; set; }
         public DateTime Data { get; set; }

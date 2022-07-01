@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer;
 using Entities;
+using Entities.viewmodel;
 using Shared;
 
 namespace BusinessLogicalLayer.BusinessLL
@@ -25,7 +26,7 @@ namespace BusinessLogicalLayer.BusinessLL
             return saidaDAL.EfetuarTransacao(transacao);
 
         }
-        public DataResponse<Saida> GetAll(DateTime inicio, DateTime fim)
+        public DataResponse<SaidaViewModel> GetAll(DateTime inicio, DateTime fim)
         {
             return saidaDAL.LerTransacoes(inicio,fim);
         }

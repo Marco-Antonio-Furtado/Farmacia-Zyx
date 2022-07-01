@@ -167,87 +167,86 @@ namespace DataAccessLayer
                 db.Close();
             }
         }
-        public SingleResponse<Funcionario> GetByID(int id) 
+        public SingleResponse<Funcionario> GetByID(int id)
         {
-                string sql = $"SELECT F.ID,F.NOME_FUNCIONARIO,F.CPF,F.RG,F.EMAIL,F.TELEFONE,CAR.NOME_CARGO,F.ATIVO,E.NOME_RUA,E.ID AS E_ID,CID.NOME_CIDADE FROM FUNCIONARIOS F INNER JOIN CARGOS CAR ON F.CARGO_ID = CAR.ID INNER JOIN ENDERECOS E ON F.ENDERECO = E.ID INNER JOIN CIDADES CID ON E.CIDADE_ID = CID.ID WHERE ID = @ID";
+            string sql = $"SELECT F.NOME_FUNCIONARIO,F.CPF,F.RG,F.EMAIL,F.TELEFONE,CAR.NOME_CARGO,F.ATIVO,E.NOME_RUA,E.ID AS E_ID,CID.NOME_CIDADE FROM FUNCIONARIOS F INNER JOIN CARGOS CAR ON F.CARGO_ID = CAR.ID INNER JOIN ENDERECOS E ON F.ENDERECO = E.ID INNER JOIN CIDADES CID ON E.CIDADE_ID = CID.ID WHERE ID = @ID";
 
-                DbConnection db = new DbConnection();
+            DbConnection db = new DbConnection();
 
-                SqlCommand command = new SqlCommand(sql);
-                command.Parameters.AddWithValue("@ID", id);
-                db.AttachCommand(command);
-                command.CommandText = sql;
-                try
+            SqlCommand command = new SqlCommand(sql);
+            command.Parameters.AddWithValue("@ID", id);
+            db.AttachCommand(command);
+            command.CommandText = sql;
+            try
+            {
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                Funcionario funcionarios = new();
+                while (reader.Read())
                 {
-                    db.Open();
+                    Cidade c = new Cidade();
+                    Funcionario F = new Funcionario();
+                    Cargo cargo = new Cargo();
+                    Endereco e = new Endereco();
 
-                    SqlDataReader reader = command.ExecuteReader();
-                    Funcionario funcionarios = new();
-                    while (reader.Read())
-                    {
-                        Cidade c = new Cidade();
-                        Funcionario F = new Funcionario();
-                        Cargo cargo = new Cargo();
-                        Endereco e = new Endereco();
+                    F.Nome_Funcionario = (string)reader["NOME_FUNCIONARIO"];
+                    F.CPF = (string)reader["CPF"];
+                    F.RG = (string)reader["RG"];
+                    F.Email = (string)reader["EMAIL"];
+                    F.Telefone = (string)reader["TELEFONE"];
+                    F.Ativo = (bool)reader["ATIVO"];
 
-                        F.ID = (int)reader["ID"];
-                        F.Nome_Funcionario = (string)reader["NOME_FUNCIONARIO"];
-                        F.CPF = (string)reader["CPF"];
-                        F.RG = (string)reader["RG"];
-                        F.Email = (string)reader["EMAIL"];
-                        F.Telefone = (string)reader["TELEFONE"];
-                        F.Ativo = (bool)reader["ATIVO"];
+                    cargo.Nome_Cargo = (string)reader["NOME_CARGO"];
 
-                        cargo.Nome_Cargo = (string)reader["NOME_CARGO"];
+                    e.ID = (int)reader["E_ID"];
+                    e.NomeRua = (string)reader["NOME_RUA"];
 
-                        e.ID = (int)reader["E_ID"];
-                        e.NomeRua = (string)reader["NOME_RUA"];
+                    c.Nome_Cidade = (string)reader["NOME_CIDADE"];
+                    F.Cargo = cargo;
+                    F.Endereco = e;
 
-                        c.Nome_Cidade = (string)reader["NOME_CIDADE"];
-                        F.Cargo = cargo;
-                        F.Endereco = e;
+                    F.Endereco.Cidade = c;
 
-                        F.Endereco.Cidade = c;
-
-                    }
-                    return ResponseFactory.CreateInstance().CreateSingleSuccessResponse(funcionarios);
                 }
-                catch (Exception ex)
-                {
-                    return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Funcionario>(null);
-                }
+                return ResponseFactory.CreateInstance().CreateSingleSuccessResponse(funcionarios);
             }
+            catch (Exception ex)
+            {
+                return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Funcionario>(null);
+            }
+        }
         public SingleResponse<Funcionario> GetByEmail(string email)
         {
-                string query = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO,CARGO_ID,ATIVO,SENHA FROM FUNCIONARIO WHERE EMAIL = @EMAIL";
+            string query = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO,CARGO_ID,ATIVO,SENHA FROM FUNCIONARIO WHERE EMAIL = @EMAIL";
 
-                SqlCommand command = new SqlCommand(query);
-                command.Parameters.AddWithValue("@EMAIL", email);
-                try
-                {
-                    DbExecuter dbexecutor = new DbExecuter();
-                    return DbExecuter.GetItem<Funcionario>(command);
-                }
-                catch (Exception ex)
-                {
-                    return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Funcionario>(null);
-                }
+            SqlCommand command = new SqlCommand(query);
+            command.Parameters.AddWithValue("@EMAIL", email);
+            try
+            {
+                DbExecuter dbexecutor = new DbExecuter();
+                return DbExecuter.GetItem<Funcionario>(command);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Funcionario>(null);
+            }
         }
         public Response Disable(int id)
         {
-                string sql = $"UPDATE FUNCIONARIO SET ATIVO = 0 WHERE ID = @ID";
+            string sql = $"UPDATE FUNCIONARIO SET ATIVO = 0 WHERE ID = @ID";
 
-                SqlCommand command = new SqlCommand(sql);
-                command.Parameters.AddWithValue("@ID", id);
-                try
-                {
-                    DbExecuter dbexecutor = new DbExecuter();
-                    return DbExecuter.Execute(command);
-                }
-                catch (Exception ex)
-                {
-                    return ResponseFactory.CreateInstance().CreateFailedResponse();
-                }
+            SqlCommand command = new SqlCommand(sql);
+            command.Parameters.AddWithValue("@ID", id);
+            try
+            {
+                DbExecuter dbexecutor = new DbExecuter();
+                return DbExecuter.Execute(command);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
+            }
         }
     }
 }

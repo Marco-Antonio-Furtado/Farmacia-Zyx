@@ -68,15 +68,16 @@ namespace WfPresentationLayer.FormsMostrarClientes
             }
             else
           {
-              int IDLab = Convert.ToInt32(GridLaboratorio.CurrentRow.Cells[0].Value.ToString());
-              string razao = Convert.ToString(GridLaboratorio.CurrentRow.Cells[1].Value.ToString());
-              string telefone = Convert.ToString(GridLaboratorio.CurrentRow.Cells[2].Value.ToString());
-              string nomeRes = Convert.ToString(GridLaboratorio.CurrentRow.Cells[3].Value.ToString());
-              string email = Convert.ToString(GridLaboratorio.CurrentRow.Cells[4].Value.ToString());
-              string cnpj = Convert.ToString(GridLaboratorio.CurrentRow.Cells[5].Value.ToString());
+                Laboratorio lab = new Laboratorio();
+              lab.ID = Convert.ToInt32(GridLaboratorio.CurrentRow.Cells[0].Value.ToString());
+              lab.Razao_Social = Convert.ToString(GridLaboratorio.CurrentRow.Cells[1].Value.ToString());
+              lab.Telefone = Convert.ToString(GridLaboratorio.CurrentRow.Cells[2].Value.ToString());
+              lab.Nome_Contato = Convert.ToString(GridLaboratorio.CurrentRow.Cells[3].Value.ToString());
+              lab.Email = Convert.ToString(GridLaboratorio.CurrentRow.Cells[4].Value.ToString());
+              lab.CNPJ = Convert.ToString(GridLaboratorio.CurrentRow.Cells[5].Value.ToString());
 
                 _objForm5?.Close();
-              _objForm5 = new FormCadastrarLaboratorio(IDLab, razao, email, telefone, cnpj, nomeRes)
+              _objForm5 = new FormCadastrarLaboratorio(lab)
               {
                   TopLevel = false,
                   FormBorderStyle = FormBorderStyle.None,

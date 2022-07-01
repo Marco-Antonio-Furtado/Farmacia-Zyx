@@ -13,15 +13,16 @@ namespace WfPresentationLayer.FormCadastros
             TxtBoxId.Visible = false;
             LblIdAlteracao.Visible = false;
         }
-        public FormCadastrarLaboratorio(int IDLab,string razao,string email,string telefone,string cnpj,string nomeRes) 
+        public FormCadastrarLaboratorio(Laboratorio lab) 
         {
             InitializeComponent();
-            txtBoxRazaoSocial.Text = razao;
-            TxtBoxCnpjFornecedor.Text = cnpj;
-            TxtBoxNomeResponsavel.Text = nomeRes;
-            txtBoxEmail.Text = email;
-            TxtBoxTelefone.Text = telefone;
-            TxtBoxId.Text = IDLab.ToString();
+            LblText.Text = "Alterar Laboratorio";
+            txtBoxRazaoSocial.Text = lab.Razao_Social;
+            TxtBoxCnpjFornecedor.Text = lab.CNPJ;
+            TxtBoxNomeResponsavel.Text = lab.Nome_Contato;
+            txtBoxEmail.Text = lab.Email;
+            TxtBoxTelefone.Text = lab.Telefone;
+            TxtBoxId.Text = lab.ID.ToString();
             TxtBoxId.Enabled = false;
             TxtBoxId.Visible = true;
             LblIdAlteracao.Visible = true;
@@ -54,6 +55,11 @@ namespace WfPresentationLayer.FormCadastros
             }
 
 
+        }
+
+        private void ImageBtnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -37,7 +37,7 @@ namespace DataAccessLayer
                
         public Response Update(Endereco item)
         {
-            string sql = $"UPDATE CLIENTES SET NOME_RUA = @NOME_RUA, CEP = @CEP, NUMERO_CASA = @NUMERO_CASA, CIDADE_ID = @CIDADE_ID, ESTADO_ID = @ESTADO_ID WHERE ID = @ID";
+            string sql = $"UPDATE ENDERECOS SET NOME_RUA = @NOME_RUA, CEP = @CEP, NUMERO_CASA = @NUMERO_CASA, CIDADE_ID = @CIDADE_ID, ESTADO_ID = @ESTADO_ID WHERE ID = @ID";
 
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@CEP", item.CEP);
@@ -50,7 +50,8 @@ namespace DataAccessLayer
             {
 
                 DbExecuter dbexecutor = new DbExecuter();
-                return DbExecuter.GetData<Endereco>(command);
+                item.ID = DbExecuter.ExecuteScalar(command);
+                return new Response("Endereco cadastrado com sucesso.", true);
             }
             catch (Exception ex)
             {

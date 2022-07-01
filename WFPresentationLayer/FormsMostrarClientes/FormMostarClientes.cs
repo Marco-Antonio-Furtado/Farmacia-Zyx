@@ -54,22 +54,23 @@ namespace WfPresentationLayer.Alteraçoes
                 return;
             }
             DataGridViewRow row = this.GridClientes.SelectedRows[0];
-            int i = 32;
             if (GridClientes.CurrentRow.Cells[0].Value == null)
             {
                 MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");
             }
             else
             {
-                int IDCLiente = Convert.ToInt32(GridClientes.CurrentRow.Cells[0].Value.ToString());
-                string nome = Convert.ToString(GridClientes.CurrentRow.Cells[1].Value.ToString());
-                string email = Convert.ToString(GridClientes.CurrentRow.Cells[2].Value.ToString());
-                string Rg = Convert.ToString(GridClientes.CurrentRow.Cells[3].Value.ToString());
-                string cpf = Convert.ToString(GridClientes.CurrentRow.Cells[4].Value.ToString());
-                string telefone = Convert.ToString(GridClientes.CurrentRow.Cells[5].Value.ToString());
-                string telefone2 = Convert.ToString(GridClientes.CurrentRow.Cells[6].Value.ToString());
+                Cliente c = new();
+
+                c.ID = Convert.ToInt32(GridClientes.CurrentRow.Cells[0].Value.ToString());
+                c.Nome_Cliente = Convert.ToString(GridClientes.CurrentRow.Cells[1].Value.ToString());
+                c.Email = Convert.ToString(GridClientes.CurrentRow.Cells[2].Value.ToString());
+                c.RG = Convert.ToString(GridClientes.CurrentRow.Cells[3].Value.ToString());
+                c.CPF = Convert.ToString(GridClientes.CurrentRow.Cells[4].Value.ToString());
+                c.Telefone = Convert.ToString(GridClientes.CurrentRow.Cells[5].Value.ToString());
+                c.Telefone2 = Convert.ToString(GridClientes.CurrentRow.Cells[6].Value.ToString());
                 _objForm1?.Close();
-                _objForm1 = new FormCadastroCliente(IDCLiente, nome, email, Rg, cpf, telefone, telefone2)
+                _objForm1 = new FormCadastroCliente(c)
                 {
                     TopLevel = false,
                     FormBorderStyle = FormBorderStyle.None,

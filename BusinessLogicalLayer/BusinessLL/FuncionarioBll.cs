@@ -9,6 +9,7 @@ namespace BusinessLogicalLayer.BusinessLL
     public class FuncionarioBll : ICRUD<Funcionario>
     {
         FuncionarioDAL funcionarioDAL = new FuncionarioDAL();
+        EnderecoDAL enderecoDAL = new EnderecoDAL();
 
         public Response Insert(Funcionario funcionario)
         {
@@ -17,9 +18,6 @@ namespace BusinessLogicalLayer.BusinessLL
             {
                 using (TransactionScope scope = new TransactionScope())
                 {
-                    FuncionarioDAL funcionarioDAL = new FuncionarioDAL();
-                    EnderecoDAL enderecoDAL = new EnderecoDAL();
-
                     response = enderecoDAL.Insert(funcionario.Endereco);
                     response = funcionarioDAL.Insert(funcionario);
                     if (!response.HasSuccess)
@@ -34,12 +32,26 @@ namespace BusinessLogicalLayer.BusinessLL
 
         public Response Update(Funcionario item)
         {
-            Response resposta = FuncionarioValidator.Validate(item);
-            if (resposta.HasSuccess)
+            Response response = FuncionarioValidator.Validate(item);
+            if (response.HasSuccess)
             {
-                return funcionarioDAL.Update(item);
+                {
+                    using (TransactionScope scope = new TransactionScope())
+                    {
+                        EnderecoDAL enderecoDAL = new EnderecoDAL();
+
+                        response = enderecoDAL.Update(item.Endereco);
+                        response = funcionarioDAL.Update(item);
+                        if (!response.HasSuccess)
+                        {
+                            return response;
+                        }
+                        scope.Complete();
+                    }//scope.Dispose();
+                }
+                return response;
             }
-            else { return resposta; }
+            else { return response; }
         }
         public Response Delete(int id)
         {

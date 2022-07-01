@@ -21,6 +21,10 @@ namespace WfPresentationLayer
             TabGeral.TabPages.Remove(TabEndereco);
 
             List<Cargo> Cargos = cargo.GetAll().Dados;
+            LblIdAlteracao.Visible = false;
+            TxtBoxID.Visible = false;
+            LblIdEndereco.Visible = false;
+            TxtBoxIDEndereco.Visible = false;
 
             foreach (Cargo cargo in Cargos)
             {
@@ -34,10 +38,11 @@ namespace WfPresentationLayer
             CmbBoxCargos.DataSource = listaAtiva;   
         }
 
-        public FormCadastroFuncionario(int iDCLiente, string nome, string email, string rg, string cpf, string telefone, string cargo1)
+        public FormCadastroFuncionario(Funcionario fun)
         {
             InitializeComponent();
             TabGeral.TabPages.Remove(TabEndereco);
+            LblTitulo.Text = "Alterar Funcionario";
             List<Cargo> Cargos = cargo.GetAll().Dados;
             foreach (Cargo cargo in Cargos)
             {
@@ -50,14 +55,15 @@ namespace WfPresentationLayer
             CmbBoxCargos.ValueMember = "ID";
             CmbBoxCargos.DataSource = listaAtiva;
 
-            txtBoxNomeFuncionario.Text = nome;
-            txtBoxEmailFuncionario.Text = email;
-            TxtBoxRgFuncionario.Text =rg;
-            TxtBoxTelefone1Funcionario.Text = telefone;
-            TxtBoxCpfFuncionario.Text = cpf;
-            LblIdAlteracao.Visible = true;
-            TxtBoxID.Visible = true;
-            
+            TxtBoxID.Text = fun.ID.ToString();
+            txtBoxNomeFuncionario.Text = fun.Nome_Funcionario;
+            txtBoxEmailFuncionario.Text = fun.Email;
+            TxtBoxRgFuncionario.Text =fun.RG;
+            TxtBoxTelefone1Funcionario.Text = fun.Telefone;
+            TxtBoxCpfFuncionario.Text = fun.CPF;
+            //LblIdAlteracao.Visible = true;
+            //TxtBoxID.Visible = true;
+
         }
 
         private void BtnCadastroEndereco_Click_1(object sender, EventArgs e)
@@ -78,11 +84,12 @@ namespace WfPresentationLayer
         private void BtnCadastroFuncionario_Click_1(object sender, EventArgs e)
         {
             string cep = TxtBoxCep.Text;
-       
+       int idfunc = int.Parse(TxtBoxID.Text);
             if (cep == "     -")
             {
                 cep = "";
             }
+            
             Cargo cargo = new Cargo(nome: CmbBoxCargos.Text);
             cargo.ID = (int)CmbBoxCargos.SelectedValue;
             Endereco endereco = new Endereco(nomeRua: TxtBoxRua.Text,
@@ -100,8 +107,11 @@ namespace WfPresentationLayer
                                                       senha: TxtBoxSenhaFuncionario.Text
                                                       ) ;
             funcionario.Ativo = true;
-            if (TxtBoxID.Visible == true)
+            if (LblTitulo.Visible == true)
             {
+            Funcionario PegarEndereco = funcionarioBll.GetByID(idfunc).Item;
+
+                funcionario.Endereco.ID = PegarEndereco.Endereco.ID;
                 funcionario.ID = int.Parse(TxtBoxID.Text);
                 Response resposta = funcionarioBll.Update(funcionario);
                 MeuMessageBox.Show(resposta.Message);
@@ -149,6 +159,11 @@ namespace WfPresentationLayer
         {
             FormCadastroCargo formCadastroCargo = new FormCadastroCargo();
             formCadastroCargo.Show();
+        }
+
+        private void ImageBtnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

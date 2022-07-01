@@ -42,15 +42,16 @@ namespace WfPresentationLayer.Alteraçoes
             }
             else
             {
-                int IDLab = Convert.ToInt32(GridFornecedor.CurrentRow.Cells[0].Value.ToString());
-                string razao = Convert.ToString(GridFornecedor.CurrentRow.Cells[1].Value.ToString());
-                string telefone = Convert.ToString(GridFornecedor.CurrentRow.Cells[2].Value.ToString());
-                string nomeRes = Convert.ToString(GridFornecedor.CurrentRow.Cells[3].Value.ToString());
-                string email = Convert.ToString(GridFornecedor.CurrentRow.Cells[4].Value.ToString());
-                string cnpj = Convert.ToString(GridFornecedor.CurrentRow.Cells[5].Value.ToString());
+                Fornecedor forne = new Fornecedor();
+                forne.ID = Convert.ToInt32(GridFornecedor.CurrentRow.Cells[0].Value.ToString());
+                forne.Razao_Social = Convert.ToString(GridFornecedor.CurrentRow.Cells[1].Value.ToString());
+                forne.Telefone = Convert.ToString(GridFornecedor.CurrentRow.Cells[2].Value.ToString());
+                forne.Nome_Contato = Convert.ToString(GridFornecedor.CurrentRow.Cells[3].Value.ToString());
+                forne.Email = Convert.ToString(GridFornecedor.CurrentRow.Cells[4].Value.ToString());
+                forne.CNPJ = Convert.ToString(GridFornecedor.CurrentRow.Cells[5].Value.ToString());
 
                 _objForm5?.Close();
-                _objForm5 = new FormCadastroFornecedor(IDLab, razao, email, telefone, cnpj, nomeRes)
+                _objForm5 = new FormCadastroFornecedor(forne)
                 {
                     TopLevel = false,
                     FormBorderStyle = FormBorderStyle.None,

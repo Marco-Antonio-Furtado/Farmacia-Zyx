@@ -41,22 +41,27 @@ namespace WfPresentationLayer.Alteraçoes
             {
                 MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");
             }
-                    int IDPRoduto = Convert.ToInt32(Gridprodutos.CurrentRow.Cells[0].Value.ToString());
-                    string nome = Convert.ToString(Gridprodutos.CurrentRow.Cells[1].Value.ToString());
-                    string laboratorio = Convert.ToString(Gridprodutos.CurrentRow.Cells[2].Value.ToString());
-                    string descrisao = Convert.ToString(Gridprodutos.CurrentRow.Cells[3].Value.ToString());
-                    string valorcompra = Convert.ToString(Gridprodutos.CurrentRow.Cells[5].Value.ToString());
-                    _objForm3?.Close();
-                    _objForm3 = new FormCadastroProduto(IDPRoduto, nome, laboratorio, descrisao, valorcompra)
-                    {
-                        TopLevel = false,
-                        FormBorderStyle = FormBorderStyle.None,
-                        Dock = DockStyle.Fill,
-                    };
-                    pnlProduto.Controls.Add(_objForm3);
-                    _objForm3.Show();
-                    _objForm3.BringToFront();
-               
+            else
+            {
+                Produto p = new();
+                Laboratorio lab = new Laboratorio();
+                p.ID = Convert.ToInt32(Gridprodutos.CurrentRow.Cells[0].Value.ToString());
+                p.Nome = Convert.ToString(Gridprodutos.CurrentRow.Cells[1].Value.ToString());
+                lab.Razao_Social = Convert.ToString(Gridprodutos.CurrentRow.Cells[2].Value.ToString());
+                p.Descricao = Convert.ToString(Gridprodutos.CurrentRow.Cells[3].Value.ToString());
+                p.Valor_Venda = Convert.ToInt32(Gridprodutos.CurrentRow.Cells[5].Value.ToString());
+                p.ID_Laboratorio = lab;
+                _objForm3?.Close();
+                _objForm3 = new FormCadastroProduto(p)
+                {
+                    TopLevel = false,
+                    FormBorderStyle = FormBorderStyle.None,
+                    Dock = DockStyle.Fill,
+                };
+                pnlProduto.Controls.Add(_objForm3);
+                _objForm3.Show();
+                _objForm3.BringToFront();
+            }
         }
         private void BtnDeletarProdutos_Click(object sender, EventArgs e)
         {

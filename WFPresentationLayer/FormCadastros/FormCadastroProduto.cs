@@ -29,10 +29,10 @@ namespace WfPresentationLayer
             CmbBoxLaboratorio.DataSource = listaAtiva;
         }
 
-        public FormCadastroProduto(int iDPRoduto, string nome, string laboratorio, string descrisao, string valorcompra)
+        public FormCadastroProduto(Produto p)
         {
             InitializeComponent();
-
+            LblText.Text = "Alterar Produto";
             List<Laboratorio> Labs = LB.GetAll().Dados;
             CmbBoxLaboratorio.ValueMember = "ID";
             CmbBoxLaboratorio.DisplayMember = "Razao_Social";
@@ -44,17 +44,17 @@ namespace WfPresentationLayer
                 }
             }
             CmbBoxLaboratorio.DataSource = listaAtiva;
-
+            LblText.Text = "Alterar Produto";
 
             TxtBoxId.Visible = true;
             TxtBoxId.Enabled = false;
             LblIDPRoduto.Visible = true;
 
-            TxtBoxDescrisaoProduto.Text = descrisao;
-            TxtBoxId.Text = iDPRoduto.ToString();
-            TxtBoxNomeProduto.Text = nome;
-            TxtBoxDescrisaoProduto.Text = laboratorio;
-            TxtBoxPrecoUnitario.Text = valorcompra;
+            TxtBoxDescrisaoProduto.Text = p.Descricao;
+            TxtBoxId.Text = p.ID.ToString();
+            TxtBoxNomeProduto.Text = p.Nome;
+            TxtBoxDescrisaoProduto.Text = p.ID_Laboratorio.Razao_Social;
+            TxtBoxPrecoUnitario.Text = p.Valor_Unitario.ToString();
         }
 
         private void BtnCadastrarProduto_Click_1(object sender, EventArgs e)
@@ -113,6 +113,11 @@ namespace WfPresentationLayer
         {
             FormCadastrarLaboratorio formCadastrarLaboratorio = new FormCadastrarLaboratorio();
             formCadastrarLaboratorio.ShowDialog();
+        }
+
+        private void ImageBtnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

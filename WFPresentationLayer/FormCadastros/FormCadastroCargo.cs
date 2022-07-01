@@ -27,5 +27,10 @@ namespace WfPresentationLayer.FormCadastros
             CargoBLL cargo = new CargoBLL();
             cargo.Insert(c);
         }
+
+        private void ImageBtnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

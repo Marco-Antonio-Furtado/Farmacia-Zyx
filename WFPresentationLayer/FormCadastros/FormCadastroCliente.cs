@@ -12,16 +12,17 @@ namespace WfPresentationLayer
             InitializeComponent();
         }
 
-        public FormCadastroCliente(int IDCLiente,string nome,string email,string Rg,string cpf,string telefone,string telefone2)
+        public FormCadastroCliente(Cliente cli)
         {
             InitializeComponent();
-            TxtBoxID.Text = IDCLiente.ToString();
-            txtBoxNomeCliente.Text = nome;
-            TxtBoxCpfCLiente.Text = cpf;
-            txtBoxEmailCliente.Text = email;
-            TxtBoxRgCliente.Text= Rg;
-            TxtBoxTelefone1Cliente.Text = telefone;
-            TxtBoxTelefone2Cliente.Text = telefone2;
+            LblTitulo.Text = "Alterar Cliente";
+            TxtBoxID.Text = cli.ID.ToString();
+            txtBoxNomeCliente.Text = cli.Nome_Cliente;
+            TxtBoxCpfCLiente.Text = cli.CPF;
+            txtBoxEmailCliente.Text = cli.Email;
+            TxtBoxRgCliente.Text= cli.RG;
+            TxtBoxTelefone1Cliente.Text = cli.Telefone;
+            TxtBoxTelefone2Cliente.Text = cli.Telefone2;
             LblIdAlteracao.Visible = true;
             TxtBoxID.Visible = true;
             TxtBoxID.Enabled = false;
@@ -50,6 +51,11 @@ namespace WfPresentationLayer
                     this.Close();
                 }
             }
+        }
+
+        private void ImageBtnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

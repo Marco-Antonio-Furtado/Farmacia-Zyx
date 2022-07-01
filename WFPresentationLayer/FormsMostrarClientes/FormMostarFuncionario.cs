@@ -93,17 +93,18 @@ namespace WfPresentationLayer.Alteraçoes
             }
             else
             {
-                int IDCLiente = Convert.ToInt32(GridFuncionario.CurrentRow.Cells[0].Value.ToString());
-                string nome = Convert.ToString(GridFuncionario.CurrentRow.Cells[1].Value.ToString());
-                string Rg = Convert.ToString(GridFuncionario.CurrentRow.Cells[2].Value.ToString());
-                string cpf = Convert.ToString(GridFuncionario.CurrentRow.Cells[3].Value.ToString());
-                string telefone = Convert.ToString(GridFuncionario.CurrentRow.Cells[4].Value.ToString());
-                string email = Convert.ToString(GridFuncionario.CurrentRow.Cells[5].Value.ToString());
-                string Endereco = Convert.ToString(GridFuncionario.CurrentRow.Cells[6].Value.ToString());
-                string Cargo = Convert.ToString(GridFuncionario.CurrentRow.Cells[7].Value.ToString());
-
+                Funcionario fun = new();
+                Cargo c = new();
+                fun.ID = Convert.ToInt32(GridFuncionario.CurrentRow.Cells[0].Value.ToString());
+                fun.Nome_Funcionario = Convert.ToString(GridFuncionario.CurrentRow.Cells[1].Value.ToString());
+                fun.RG = Convert.ToString(GridFuncionario.CurrentRow.Cells[2].Value.ToString());
+                fun.CPF = Convert.ToString(GridFuncionario.CurrentRow.Cells[3].Value.ToString());
+                fun.Telefone = Convert.ToString(GridFuncionario.CurrentRow.Cells[4].Value.ToString());
+                fun.Email = Convert.ToString(GridFuncionario.CurrentRow.Cells[5].Value.ToString());
+                c.Nome_Cargo = Convert.ToString(GridFuncionario.CurrentRow.Cells[7].Value.ToString());
+                fun.Cargo = c;
                 _objForm2?.Close();
-                _objForm2 = new FormCadastroFuncionario(IDCLiente, nome, email, Rg, cpf, telefone, Cargo)
+                _objForm2 = new FormCadastroFuncionario(fun)
                 {
                     TopLevel = false,
                     FormBorderStyle = FormBorderStyle.None,

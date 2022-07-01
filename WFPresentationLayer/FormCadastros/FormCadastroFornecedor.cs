@@ -11,15 +11,16 @@ namespace WfPresentationLayer.FormCadastros
             InitializeComponent();
         }
         FornecedorBll fornecedorBll = new FornecedorBll();
-        public FormCadastroFornecedor(int iDLab, string? razao, string? email, string? telefone, string? cnpj, string? nomeRes)
+        public FormCadastroFornecedor(Fornecedor forne)
         {
             InitializeComponent();
-            txtBoxRazaoSocial.Text = razao;
-            TxtBoxCnpjFornecedor.Text = cnpj;
-            TxtBoxNomeResponsavel.Text = nomeRes;
-            txtBoxEmail.Text = email;
-            TxtBoxTelefoneFornecedor.Text = telefone;
-            TxtBoxID.Text = iDLab.ToString();
+            LblTitulo.Text = "Alterar Fornecedor";
+            txtBoxRazaoSocial.Text = forne.Razao_Social;
+            TxtBoxCnpjFornecedor.Text = forne.CNPJ;
+            TxtBoxNomeResponsavel.Text = forne.Nome_Contato;
+            txtBoxEmail.Text = forne.Email;
+            TxtBoxTelefoneFornecedor.Text = forne.Telefone;
+            TxtBoxID.Text = forne.ID.ToString();
             TxtBoxID.Enabled = false;
             TxtBoxID.Visible = true;
             LblIdAlteracao.Visible = true;
@@ -50,6 +51,11 @@ namespace WfPresentationLayer.FormCadastros
                     this.Close();
                 }
             }
+        }
+
+        private void ImageBtnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

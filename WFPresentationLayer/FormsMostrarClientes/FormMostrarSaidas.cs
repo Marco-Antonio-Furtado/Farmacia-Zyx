@@ -27,10 +27,10 @@ namespace WfPresentationLayer.Alteraçoes
             DataResponse<Saida> Dados = saidaBll.GetAll(datas.Inicio, datas.Fim);
 
 
-            //foreach (var item in collection)
-            //{
+            foreach (var item in Dados.Dados)
+            {
 
-            //}
+            }
 
 
 

@@ -1,15 +1,14 @@
 ﻿using Entities;
 using Entities.Propriedades;
+using Entities.viewmodel;
 using Shared;
 using System.Data.SqlClient;
 using System.Transactions;
 
 namespace DataAccessLayer
 {
-    public class SaidaDAL : ITransacaoProdutos<Saida>
+    public class SaidaDAL : ITransacaoProdutos<Saida, SaidaViewModel>
     {
-        private ProdutoDal produtoDAL = new ProdutoDal();
-
         public SingleResponse<Saida> EfetuarTransacao(Saida transacao)
         {
 
@@ -49,7 +48,7 @@ namespace DataAccessLayer
                     scope.Complete();
                     return ResponseFactory.CreateInstance().CreateSingleSuccessResponse(transacao);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Saida>(null);
                 }
@@ -73,21 +72,50 @@ namespace DataAccessLayer
             }
         }
 
-        public DataResponse<Saida> LerTransacoes(DateTime inicio, DateTime fim)
+        public DataResponse<SaidaViewModel> LerTransacoes(DateTime inicio, DateTime fim)
         {
-            string sql = $"SELECT ID,PRODUTO,DATA,FORNECEDOR,FORMA_PAGAMENTO,PRECO_UNITARIO,QUANTIDADE,VALOR_TOTAL,NOME_FUNCIONARIO FROM Entrada where data between @inicio and @fim";
+            string sql = $"SELECT PS.SAIDA_ID, P.NOME_PRODUTO, P.VALOR_UNITARIO, PS.QUANTIDADE, " +
+                $"S.FORMA_PAGAMENTO, C.NOME_CLIENTE, S.VALOR, S.DATA_SAIDA FROM PRODUTOS_SAIDAS PS " +
+                $"INNER JOIN SAIDAS S ON PS.SAIDA_ID = S.ID INNER JOIN PRODUTOS P ON PS.PRODUTOS_ID = P.ID " +
+                $"INNER JOIN CLIENTES C ON S.CLIENTES_ID = C.ID " +
+                $"WHERE DATA_SAIDA BETWEEN @inicio AND @fim";
 
+
+
+            DbConnection db = new DbConnection();
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@inicio", inicio);
             command.Parameters.AddWithValue("@fim", fim);
+            db.AttachCommand(command);
+            command.CommandText = sql;
             try
             {
-                DbExecuter dbExecuter = new DbExecuter();
-                return DbExecuter.GetData<Saida>(command);
+                db.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<SaidaViewModel> saidas = new List<SaidaViewModel>();
+                while (reader.Read())
+                {
+                    SaidaViewModel svm = new SaidaViewModel()
+                    {
+                        TransacaoID = Convert.ToInt32(reader["PS.SAIDA_ID"]),
+                        ProdutoNome = Convert.ToString(reader["P.NOME_PRODUTO"]),
+                        ValorUnitario = Convert.ToDouble(reader["P.VALOR_UNITARIO"]),
+                        Quantidade = Convert.ToDouble(reader["PS.QUANTIDADE"]),
+                        FormaPagamento = Convert.ToString(reader["S.FORMA_PAGAMENTO"]),
+                        ClienteNome = Convert.ToString(reader["C.NOME_CLIENTE"]),
+                        ValorTotal = Convert.ToDouble(reader["S.VALOR"]),
+                        Data = Convert.ToDateTime(reader["S.DATA_SAIDA"])
+                    };
+                    
+                    saidas.Add(svm);
+
+                }
+                return ResponseFactory.CreateInstance().CreateDataSuccessResponse(saidas);
+
             }
             catch (Exception)
             {
-                return new DataResponse<Saida>("Erro no banco de dados, contate o administrador.", false, null);
+                return new DataResponse<SaidaViewModel>("Erro no banco de dados, contate o administrador.", false, null);
             }
         }
     }

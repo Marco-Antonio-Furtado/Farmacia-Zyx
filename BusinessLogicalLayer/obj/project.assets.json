@@ -850,19 +850,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SAMSUNG\\.nuget\\packages\\": {}
+    "C:\\Users\\entra21\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SAMSUNG\\Desktop\\3\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
+      "projectUniqueName": "C:\\Users\\entra21\\Source\\Repos\\Farmacia-Zyx-01-07\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
       "projectName": "BusinessLogicalLayer",
-      "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
-      "packagesPath": "C:\\Users\\SAMSUNG\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\BusinessLogicalLayer\\obj\\",
+      "projectPath": "C:\\Users\\entra21\\Source\\Repos\\Farmacia-Zyx-01-07\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
+      "packagesPath": "C:\\Users\\entra21\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\entra21\\Source\\Repos\\Farmacia-Zyx-01-07\\BusinessLogicalLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\SAMSUNG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\entra21\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -876,14 +876,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\SAMSUNG\\Desktop\\3\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\DataAccessLayer\\DataAccessLayer.csproj"
+            "C:\\Users\\entra21\\Source\\Repos\\Farmacia-Zyx-01-07\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\entra21\\Source\\Repos\\Farmacia-Zyx-01-07\\DataAccessLayer\\DataAccessLayer.csproj"
             },
-            "C:\\Users\\SAMSUNG\\Desktop\\3\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Entities\\Entities.csproj"
+            "C:\\Users\\entra21\\Source\\Repos\\Farmacia-Zyx-01-07\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\entra21\\Source\\Repos\\Farmacia-Zyx-01-07\\Entities\\Entities.csproj"
             },
-            "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj"
+            "C:\\Users\\entra21\\Source\\Repos\\Farmacia-Zyx-01-07\\Shared\\Shared.csproj": {
+              "projectPath": "C:\\Users\\entra21\\Source\\Repos\\Farmacia-Zyx-01-07\\Shared\\Shared.csproj"
             }
           }
         }

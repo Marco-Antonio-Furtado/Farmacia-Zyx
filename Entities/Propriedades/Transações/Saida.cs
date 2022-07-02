@@ -5,7 +5,7 @@ namespace Entities
     public class Saida : Transacao
     {
        
-        public Cliente IDCliente { get; set; }
+        public Cliente Cliente { get; set; }
 
         
     }

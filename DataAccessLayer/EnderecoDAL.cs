@@ -71,7 +71,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@ID", id);
             try
             {
-                DbExecuter dbExecuter = new DbExecuter();
+                
                 DbExecuter.Execute(command);
 
                 int qtdLinhasExcluidas = command.ExecuteNonQuery();
@@ -81,8 +81,12 @@ namespace DataAccessLayer
                 }
                 return new Response("Endereco não excluído.", false);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                if(ex.Message.Contains("FK_ENDERECOS_FUNCIONARIOS"))
+                {
+                    return ResponseFactory.CreateInstance().CreateFailedForeignEndereco();
+                }
                 return new Response("Erro no banco de dados, contate o administrador.", false);
             }
         }

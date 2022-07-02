@@ -12,34 +12,39 @@ namespace DataAccessLayer
         public SingleResponse<Saida> EfetuarTransacao(Saida transacao)
         {
 
+            string sql1 = $"INSERT INTO SAIDAS (DATA_SAIDA,CLIENTES_ID,VALOR,FUNCIONARIOS_ID,FORMA_PAGAMENTO)" +
+                       $" VALUES (@DATA,@CLIENTES_ID,@PRECO,@FUNCIONARIOS_ID,@FORMA_PAGAMENTO); SELECT SCOPE_IDENTITY()";
 
-            string sql = $"INSERT INTO SAIDAS (DATA_SAIDA,CLIENTES_ID,VALOR,FUNCIONARIOS_ID,FORMA_PAGAMENTO)" +
-                      $" VALUES (@DATA,@CLIENTES_ID,@PRECO,@FUNCIONARIOS_ID,@FORMA_PAGAMENTO); SELECT SCOPE_IDENTITY()";
+            SqlCommand commInsertSaida = new SqlCommand(sql1);
+            commInsertSaida.Parameters.AddWithValue("@DATA", transacao.Data);
+            commInsertSaida.Parameters.AddWithValue("@CLIENTES_ID", transacao.Cliente.ID);
+            commInsertSaida.Parameters.AddWithValue("@FUNCIONARIOS_ID", transacao.IDFuncionario.ID);
+            commInsertSaida.Parameters.AddWithValue("@PRECO", transacao.ValorTotal);
+            commInsertSaida.Parameters.AddWithValue("@FORMA_PAGAMENTO", transacao.Forma_Pagamento);
 
-            SqlCommand command = new SqlCommand(sql);
-            command.Parameters.AddWithValue("@DATA", transacao.Data);
-            command.Parameters.AddWithValue("@CLIENTES_ID", transacao.IDCliente.ID);
-            command.Parameters.AddWithValue("@FUNCIONARIOS_ID", transacao.IDFuncionario.ID);
-            command.Parameters.AddWithValue("@PRECO", transacao.ValorTotal);
-            command.Parameters.AddWithValue("@FORMA_PAGAMENTO", transacao.Forma_Pagamento);
+            string sql2 = $"UPDATE CLIENTES SET PROGRAMA_FIDELIDADE = @PROGRAMA_FIDELIDADE WHERE ID = @CLIENTE_ID";
+            //admin@gmail.com
+
+            SqlCommand commUpdateProgramaFidelidade = new SqlCommand(sql2);
+            commUpdateProgramaFidelidade.Parameters.AddWithValue("@PROGRAMA_FIDELIDADE", transacao.Cliente.Programa_Fidelidade);
+            commUpdateProgramaFidelidade.Parameters.AddWithValue("@CLIENTE_ID", transacao.Cliente.ID);
 
             using (TransactionScope scope = new TransactionScope())
             {
                 try
                 {
-                    DbExecuter dbExecuter = new DbExecuter();
-                    transacao.ID = DbExecuter.ExecuteScalar(command);
-
+                    transacao.ID = DbExecuter.ExecuteScalar(commInsertSaida);
+                    DbExecuter.Execute(commUpdateProgramaFidelidade);
                     foreach (var item in transacao.Items)
                     {
-                        string sql1 = "INSERT INTO PRODUTOS_SAIDAS (SAIDA_ID,PRODUTOS_ID,QUANTIDADE,VALOR_UNITARIO) VALUES (@ENTRADA_ID,@PRODUTOS_ID,@QUANTIDADE,@VALOR_UNITARIO)";
+                        string sql3 = "INSERT INTO PRODUTOS_SAIDAS (SAIDA_ID,PRODUTOS_ID,QUANTIDADE,VALOR_UNITARIO) VALUES (@ENTRADA_ID,@PRODUTOS_ID,@QUANTIDADE,@VALOR_UNITARIO)";
 
-                        SqlCommand command1 = new SqlCommand(sql1);
-                        command1.Parameters.AddWithValue("@ENTRADA_ID", transacao.ID);
-                        command1.Parameters.AddWithValue("@PRODUTOS_ID", item.IDProduto.ID);
-                        command1.Parameters.AddWithValue("@QUANTIDADE", item.Qtd);
-                        command1.Parameters.AddWithValue("@VALOR_UNITARIO", item.Preco);
-                        Response response = DbExecuter.Execute(command1);
+                        SqlCommand commInsertProdutosSaida = new SqlCommand(sql3);
+                        commInsertProdutosSaida.Parameters.AddWithValue("@ENTRADA_ID", transacao.ID);
+                        commInsertProdutosSaida.Parameters.AddWithValue("@PRODUTOS_ID", item.IDProduto.ID);
+                        commInsertProdutosSaida.Parameters.AddWithValue("@QUANTIDADE", item.Qtd);
+                        commInsertProdutosSaida.Parameters.AddWithValue("@VALOR_UNITARIO", item.Preco);
+                        Response response = DbExecuter.Execute(commInsertProdutosSaida);
                         if (!response.HasSuccess)
                         {
                             return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Saida>(null);
@@ -48,7 +53,7 @@ namespace DataAccessLayer
                     scope.Complete();
                     return ResponseFactory.CreateInstance().CreateSingleSuccessResponse(transacao);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Saida>(null);
                 }

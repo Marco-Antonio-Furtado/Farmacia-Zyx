@@ -92,7 +92,7 @@ namespace WfPresentationLayer
             saida.ValorTotal = soma;
 
             cliente.ID = (int)CmbBoxClientes.SelectedValue;
-            saida.IDCliente = cliente;
+            saida.Cliente = cliente;
             saida.Items = ItemsSaida;
             saida.Data = DateTime.Value;
             funcionario.ID = (int)SystemParameters.GetID();

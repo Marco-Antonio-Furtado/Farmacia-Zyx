@@ -89,7 +89,6 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@ID", id);
             try
             {
-                DbExecuter dbexecutor = new DbExecuter();
                 DbExecuter.Execute(command);
                 return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
@@ -97,7 +96,7 @@ namespace DataAccessLayer
             {
                 if (ex.Message.Contains("FK_PRODUTO_LABORATORIO"))
                 {
-                    return new Response("Voce nao pode Apagar um Laborario vinculado a um produto", false);
+                    return ResponseFactory.CreateInstance().CreateFailedForeignProdutoLab();
                 }
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }

@@ -50,8 +50,8 @@ namespace DataAccessLayer
             {
 
                 DbExecuter dbexecutor = new DbExecuter();
-                item.ID = DbExecuter.ExecuteScalar(command);
-                return new Response("Endereco cadastrado com sucesso.", true);
+                DbExecuter.Execute(command);
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {

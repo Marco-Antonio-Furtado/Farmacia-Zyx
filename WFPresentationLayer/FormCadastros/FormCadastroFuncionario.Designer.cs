@@ -61,8 +61,6 @@
             this.TxtBoxCep = new System.Windows.Forms.MaskedTextBox();
             this.ImageBtnFechar = new System.Windows.Forms.PictureBox();
             this.LblTitulo = new System.Windows.Forms.Label();
-            this.LblIdEndereco = new System.Windows.Forms.Label();
-            this.TxtBoxIDEndereco = new System.Windows.Forms.TextBox();
             this.TabGeral.SuspendLayout();
             this.TabFuncionario.SuspendLayout();
             this.TabEndereco.SuspendLayout();
@@ -111,6 +109,7 @@
             // TxtBoxID
             // 
             this.TxtBoxID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxID.Enabled = false;
             this.TxtBoxID.ForeColor = System.Drawing.Color.White;
             this.TxtBoxID.Location = new System.Drawing.Point(15, 392);
             this.TxtBoxID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -135,6 +134,7 @@
             // LblIdAlteracao
             // 
             this.LblIdAlteracao.AutoSize = true;
+            this.LblIdAlteracao.Enabled = false;
             this.LblIdAlteracao.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LblIdAlteracao.ForeColor = System.Drawing.Color.White;
             this.LblIdAlteracao.Location = new System.Drawing.Point(15, 365);
@@ -300,8 +300,6 @@
             // TabEndereco
             // 
             this.TabEndereco.BackColor = System.Drawing.Color.IndianRed;
-            this.TabEndereco.Controls.Add(this.LblIdEndereco);
-            this.TabEndereco.Controls.Add(this.TxtBoxIDEndereco);
             this.TabEndereco.Controls.Add(this.CmbBoxEstado);
             this.TabEndereco.Controls.Add(this.CmbBoxCidade);
             this.TabEndereco.Controls.Add(this.TxtBoxNumero);
@@ -466,28 +464,6 @@
             this.LblTitulo.Size = new System.Drawing.Size(173, 23);
             this.LblTitulo.TabIndex = 94;
             this.LblTitulo.Text = "Cadastro Funcionario";
-            // 
-            // LblIdEndereco
-            // 
-            this.LblIdEndereco.AutoSize = true;
-            this.LblIdEndereco.Enabled = false;
-            this.LblIdEndereco.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblIdEndereco.ForeColor = System.Drawing.Color.White;
-            this.LblIdEndereco.Location = new System.Drawing.Point(250, 201);
-            this.LblIdEndereco.Name = "LblIdEndereco";
-            this.LblIdEndereco.Size = new System.Drawing.Size(103, 23);
-            this.LblIdEndereco.TabIndex = 89;
-            this.LblIdEndereco.Text = "ID endereco";
-            // 
-            // TxtBoxIDEndereco
-            // 
-            this.TxtBoxIDEndereco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxIDEndereco.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxIDEndereco.Location = new System.Drawing.Point(251, 227);
-            this.TxtBoxIDEndereco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxIDEndereco.Name = "TxtBoxIDEndereco";
-            this.TxtBoxIDEndereco.Size = new System.Drawing.Size(203, 30);
-            this.TxtBoxIDEndereco.TabIndex = 88;
             // 
             // FormCadastroFuncionario
             // 

@@ -110,7 +110,7 @@ namespace WfPresentationLayer
             if (LblTitulo.Visible == true)
             {
             Funcionario PegarEndereco = funcionarioBll.GetByID(idfunc).Item;
-
+                string s = "";
                 funcionario.Endereco.ID = PegarEndereco.Endereco.ID;
                 funcionario.ID = int.Parse(TxtBoxID.Text);
                 Response resposta = funcionarioBll.Update(funcionario);

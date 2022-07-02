@@ -43,13 +43,11 @@ namespace DataAccessLayer
         }
         public Response Update(Funcionario item)
         {
-            string sql = "UPDATE FUNCIONARIOS SET NOME_FUNCIONARIO = @NOME, CPF = @CPF, RG = @RG, EMAIL = @EMAIL, TELEFONE = @TELEFONE, ENDERECO = @ENDERECO, CARGO_ID = @CARGO_ID,ATIVO = @ATIVO, SENHA = @SENHA";
+            string sql = "UPDATE FUNCIONARIOS SET NOME_FUNCIONARIO = @NOME, RG = @RG, TELEFONE = @TELEFONE, ENDERECO = @ENDERECO, CARGO_ID = @CARGO_ID,ATIVO = @ATIVO, SENHA = @SENHA";
             SqlCommand command = new SqlCommand(sql);
 
             command.Parameters.AddWithValue("@NOME", item.Nome_Funcionario);
-            command.Parameters.AddWithValue("@CPF", item.CPF);
             command.Parameters.AddWithValue("@RG", item.RG);
-            command.Parameters.AddWithValue("@EMAIL", item.Email);
             command.Parameters.AddWithValue("@TELEFONE", item.Telefone);
             command.Parameters.AddWithValue("@ENDERECO", item.Endereco.ID);
             command.Parameters.AddWithValue("@CARGO_ID", item.Cargo.ID);
@@ -63,19 +61,17 @@ namespace DataAccessLayer
             }
             catch (Exception ex)
             {
-                if (ex.Message.Contains("UQ_FUNCIONARIO_EMAIL"))
+                if (ex.Message.Contains("UQ_FUNCIONARIOS_EMAIL"))
                 {
                     ResponseFactory.CreateInstance().CreateFailedUniqueEmail();
                 }
-                if (ex.Message.Contains("UQ_FUNCIONARIO_CPF"))
+                if (ex.Message.Contains("UQ_FUNCIONARIOS_CPF"))
                 {
                     ResponseFactory.CreateInstance().CreateFailedUniqueCpf();
                 }
-                return new Response("Erro no banco de dados, contate o administrador.", false);
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
-            return ResponseFactory.CreateInstance().CreateFailedResponse();
-
-
+            return ResponseFactory.CreateInstance().CreateSuccessResponse();
         }
         public static SingleResponse<Funcionario> LoginDAL(string email)
         {
@@ -108,7 +104,7 @@ namespace DataAccessLayer
                 {
                     return ResponseFactory.CreateInstance().CreateSuccessResponse();
                 }
-                return new Response("Funcionario não excluído.", false);
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
             catch (Exception)
             {
@@ -169,10 +165,9 @@ namespace DataAccessLayer
         }
         public SingleResponse<Funcionario> GetByID(int id)
         {
-            string sql = $"SELECT F.NOME_FUNCIONARIO,F.CPF,F.RG,F.EMAIL,F.TELEFONE,CAR.NOME_CARGO,F.ATIVO,E.NOME_RUA,E.ID AS E_ID,CID.NOME_CIDADE FROM FUNCIONARIOS F INNER JOIN CARGOS CAR ON F.CARGO_ID = CAR.ID INNER JOIN ENDERECOS E ON F.ENDERECO = E.ID INNER JOIN CIDADES CID ON E.CIDADE_ID = CID.ID WHERE ID = @ID";
+            string sql = $"SELECT F.NOME_FUNCIONARIO,F.CPF,F.RG,F.EMAIL,F.TELEFONE,CAR.NOME_CARGO,F.ATIVO,E.NOME_RUA,E.ID AS E_ID,CID.NOME_CIDADE FROM FUNCIONARIOS F INNER JOIN CARGOS CAR ON F.CARGO_ID = CAR.ID INNER JOIN ENDERECOS E ON F.ENDERECO = E.ID INNER JOIN CIDADES CID ON E.CIDADE_ID = CID.ID WHERE F.ID = @ID";
 
             DbConnection db = new DbConnection();
-
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@ID", id);
             db.AttachCommand(command);
@@ -180,40 +175,44 @@ namespace DataAccessLayer
             try
             {
                 db.Open();
-
                 SqlDataReader reader = command.ExecuteReader();
-                Funcionario funcionarios = new();
+                    Funcionario Fun = new Funcionario();
                 while (reader.Read())
                 {
                     Cidade c = new Cidade();
-                    Funcionario F = new Funcionario();
                     Cargo cargo = new Cargo();
                     Endereco e = new Endereco();
 
-                    F.Nome_Funcionario = (string)reader["NOME_FUNCIONARIO"];
-                    F.CPF = (string)reader["CPF"];
-                    F.RG = (string)reader["RG"];
-                    F.Email = (string)reader["EMAIL"];
-                    F.Telefone = (string)reader["TELEFONE"];
-                    F.Ativo = (bool)reader["ATIVO"];
+                    
+                    Fun.Nome_Funcionario = (string)reader["NOME_FUNCIONARIO"];
+                    Fun.CPF = (string)reader["CPF"];
+                    Fun.RG = (string)reader["RG"];
+                    Fun.Email = (string)reader["EMAIL"];
+                    Fun.Telefone = (string)reader["TELEFONE"];
+                    Fun.Ativo = (bool)reader["ATIVO"];
 
                     cargo.Nome_Cargo = (string)reader["NOME_CARGO"];
-
                     e.ID = (int)reader["E_ID"];
                     e.NomeRua = (string)reader["NOME_RUA"];
 
                     c.Nome_Cidade = (string)reader["NOME_CIDADE"];
-                    F.Cargo = cargo;
-                    F.Endereco = e;
+                    Fun.Cargo = cargo;
+                    Fun.Endereco = e;
 
-                    F.Endereco.Cidade = c;
+                    Fun.Endereco.Cidade = c;
 
+                   
                 }
-                return ResponseFactory.CreateInstance().CreateSingleSuccessResponse(funcionarios);
+                 return ResponseFactory.CreateInstance().CreateSingleSuccessResponse(Fun);
             }
+
             catch (Exception ex)
             {
                 return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Funcionario>(null);
+            }
+            finally
+            {
+                db.Close();
             }
         }
         public SingleResponse<Funcionario> GetByEmail(string email)

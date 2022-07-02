@@ -53,7 +53,7 @@
             this.BtnDesabilitados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnDesabilitados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDesabilitados.ForeColor = System.Drawing.Color.White;
-            this.BtnDesabilitados.Location = new System.Drawing.Point(687, 647);
+            this.BtnDesabilitados.Location = new System.Drawing.Point(661, 703);
             this.BtnDesabilitados.Name = "BtnDesabilitados";
             this.BtnDesabilitados.Size = new System.Drawing.Size(277, 79);
             this.BtnDesabilitados.TabIndex = 40;
@@ -66,7 +66,7 @@
             this.BtnDeletarProdutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnDeletarProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDeletarProdutos.ForeColor = System.Drawing.Color.White;
-            this.BtnDeletarProdutos.Location = new System.Drawing.Point(1021, 647);
+            this.BtnDeletarProdutos.Location = new System.Drawing.Point(995, 703);
             this.BtnDeletarProdutos.Name = "BtnDeletarProdutos";
             this.BtnDeletarProdutos.Size = new System.Drawing.Size(277, 79);
             this.BtnDeletarProdutos.TabIndex = 39;
@@ -79,7 +79,7 @@
             this.BtnAlterarProdutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnAlterarProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAlterarProdutos.ForeColor = System.Drawing.Color.White;
-            this.BtnAlterarProdutos.Location = new System.Drawing.Point(357, 647);
+            this.BtnAlterarProdutos.Location = new System.Drawing.Point(331, 703);
             this.BtnAlterarProdutos.Name = "BtnAlterarProdutos";
             this.BtnAlterarProdutos.Size = new System.Drawing.Size(277, 79);
             this.BtnAlterarProdutos.TabIndex = 38;
@@ -92,7 +92,7 @@
             this.BtnCadastrarProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnCadastrarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastrarProduto.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarProduto.Location = new System.Drawing.Point(38, 647);
+            this.BtnCadastrarProduto.Location = new System.Drawing.Point(12, 703);
             this.BtnCadastrarProduto.Name = "BtnCadastrarProduto";
             this.BtnCadastrarProduto.Size = new System.Drawing.Size(277, 79);
             this.BtnCadastrarProduto.TabIndex = 42;
@@ -105,7 +105,7 @@
             this.pnlProduto.Controls.Add(this.Gridprodutos);
             this.pnlProduto.Location = new System.Drawing.Point(12, 12);
             this.pnlProduto.Name = "pnlProduto";
-            this.pnlProduto.Size = new System.Drawing.Size(1295, 629);
+            this.pnlProduto.Size = new System.Drawing.Size(1295, 685);
             this.pnlProduto.TabIndex = 44;
             // 
             // Gridprodutos
@@ -149,7 +149,7 @@
             this.Gridprodutos.RowHeadersWidth = 51;
             this.Gridprodutos.RowTemplate.Height = 29;
             this.Gridprodutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Gridprodutos.Size = new System.Drawing.Size(1307, 633);
+            this.Gridprodutos.Size = new System.Drawing.Size(1307, 689);
             this.Gridprodutos.TabIndex = 45;
             // 
             // GridID
@@ -207,7 +207,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(1319, 765);
+            this.ClientSize = new System.Drawing.Size(1326, 794);
             this.Controls.Add(this.BtnCadastrarProduto);
             this.Controls.Add(this.BtnDesabilitados);
             this.Controls.Add(this.BtnDeletarProdutos);

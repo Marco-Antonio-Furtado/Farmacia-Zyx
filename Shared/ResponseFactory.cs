@@ -77,7 +77,6 @@ namespace Entities
         {
             return new Response("Não é possível deletar um cargo conectado à um funcionario", false);
         }
-        /*
         public Response CreateFailedForeignFornecedor()
         {
             return new Response("Não é possível deletar uma entrada conectada à um fornecedor", false);
@@ -98,6 +97,6 @@ namespace Entities
         {
             return new Response("Não é possível deletar uma transação conectado à uma saída", false);
         }
-        */
+
     }
 }

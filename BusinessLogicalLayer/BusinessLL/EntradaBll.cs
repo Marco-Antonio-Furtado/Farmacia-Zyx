@@ -24,11 +24,14 @@ namespace BusinessLogicalLayer.BusinessLL
             }
             return ResponseFactory.CreateInstance().CreateFailedResponse();
         }
-        public DataResponse<EntradaViewModel> GetAll(DateTime inicio, DateTime fim)
+        public DataResponse<EntradaViewModel> LerTransacoes(DateTime inicio, DateTime fim)
         {
             return entradaDal.LerTransacoes( inicio,  fim);
         }
-        
+        public DataResponse<EntradaViewModel> GetAll()
+        {
+            return entradaDal.GetAll();
+        }
         public SingleResponse<Entrada> GetByID(int id)
         {
             return entradaDal.GetByID(id);

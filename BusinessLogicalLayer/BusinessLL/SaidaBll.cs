@@ -1,4 +1,5 @@
-﻿using DataAccessLayer;
+﻿using BusinessLogicalLayer.RegraDePreco;
+using DataAccessLayer;
 using Entities;
 using Entities.viewmodel;
 using Shared;
@@ -8,8 +9,8 @@ namespace BusinessLogicalLayer.BusinessLL
     public class SaidaBll
     {
         SaidaDAL saidaDAL = new SaidaDAL();
-        ClienteDAL clienteDAL = new ClienteDAL();
         ProdutoBll produtoBll = new ProdutoBll();
+        RegraDescontoCliente descontoCliente = new RegraDescontoCliente();
         public Response Insert(Saida transacao)
         {
             foreach (var item in transacao.Items)
@@ -24,28 +25,18 @@ namespace BusinessLogicalLayer.BusinessLL
                     }
                 }
             }
-               
-                bool discountFlag = false;
-                Cliente cli = clienteDAL.GetByID(transacao.Cliente.ID).Item;
-                if(cli.Programa_Fidelidade >= 10)
-                {
-                    cli.Programa_Fidelidade -= 10;
-                    transacao.ValorTotal *= 0.9;
-                    discountFlag = true;
-                }
-
-                if(!discountFlag)
-                {
-                int pontosGanhos = (int)Math.Floor(transacao.ValorTotal/10);
-                transacao.Cliente.Programa_Fidelidade += pontosGanhos;
-                }
+            descontoCliente.DescontoCliente(transacao);
 
             return saidaDAL.EfetuarTransacao(transacao);
 
         }
-        public DataResponse<SaidaViewModel> GetAll(DateTime inicio, DateTime fim)
+        public DataResponse<SaidaViewModel> LerTransacoes(DateTime inicio, DateTime fim)
         {
             return saidaDAL.LerTransacoes(inicio,fim);
+        }
+        public DataResponse<SaidaViewModel> GetAll()
+        {
+            return saidaDAL.GetAll();
         }
         public SingleResponse<Saida> GetByID(int id)
         {

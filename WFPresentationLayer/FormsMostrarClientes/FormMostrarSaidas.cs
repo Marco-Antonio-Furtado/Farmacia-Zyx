@@ -16,10 +16,16 @@ namespace WfPresentationLayer.Alteraçoes
         public FormMostrarSaidas(ParametrosDatas datas)
         {
             InitializeComponent();
-            DataResponse<SaidaViewModel> Dados = saidaBll.GetAll(datas.Inicio, datas.Fim);
+            DataResponse<SaidaViewModel> Dados = saidaBll.LerTransacoes(datas.Inicio, datas.Fim);
 
+            if (Dados.Dados == null)
+            {
+                MeuMessageBox.Show("Nao ha itens a mostrar");
+                return;
+            }
             foreach (SaidaViewModel item in Dados.Dados)
             {
+                
                 SincronizarListaGrid(item);
             }
         }
@@ -43,6 +49,22 @@ namespace WfPresentationLayer.Alteraçoes
             //PnlVendas.Controls.Add(_objForm6);
             //_objForm6.Show();
             //_objForm6.BringToFront();
+        }
+
+        private void BtnProcurarCompra_Click(object sender, EventArgs e)
+        {
+            DataResponse<SaidaViewModel> Dados = saidaBll.GetAll();
+
+            if (Dados.Dados == null)
+            {
+                MeuMessageBox.Show("Nao ha itens a mostrar");
+                return;
+            }
+            foreach (SaidaViewModel item in Dados.Dados)
+            {
+
+                SincronizarListaGrid(item);
+            }
         }
     }
 }

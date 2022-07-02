@@ -53,7 +53,7 @@
             this.BtnCadastrarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnCadastrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastrarCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarCliente.Location = new System.Drawing.Point(12, 648);
+            this.BtnCadastrarCliente.Location = new System.Drawing.Point(12, 704);
             this.BtnCadastrarCliente.Name = "BtnCadastrarCliente";
             this.BtnCadastrarCliente.Size = new System.Drawing.Size(312, 79);
             this.BtnCadastrarCliente.TabIndex = 22;
@@ -66,7 +66,7 @@
             this.BtnAlterarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnAlterarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAlterarCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnAlterarCliente.Location = new System.Drawing.Point(341, 648);
+            this.BtnAlterarCliente.Location = new System.Drawing.Point(341, 704);
             this.BtnAlterarCliente.Name = "BtnAlterarCliente";
             this.BtnAlterarCliente.Size = new System.Drawing.Size(312, 79);
             this.BtnAlterarCliente.TabIndex = 23;
@@ -79,7 +79,7 @@
             this.BtnDeletarClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnDeletarClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDeletarClientes.ForeColor = System.Drawing.Color.White;
-            this.BtnDeletarClientes.Location = new System.Drawing.Point(1000, 648);
+            this.BtnDeletarClientes.Location = new System.Drawing.Point(1000, 704);
             this.BtnDeletarClientes.Name = "BtnDeletarClientes";
             this.BtnDeletarClientes.Size = new System.Drawing.Size(312, 79);
             this.BtnDeletarClientes.TabIndex = 24;
@@ -92,7 +92,7 @@
             this.BtnClienteDesabilitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnClienteDesabilitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnClienteDesabilitado.ForeColor = System.Drawing.Color.White;
-            this.BtnClienteDesabilitado.Location = new System.Drawing.Point(668, 648);
+            this.BtnClienteDesabilitado.Location = new System.Drawing.Point(668, 704);
             this.BtnClienteDesabilitado.Name = "BtnClienteDesabilitado";
             this.BtnClienteDesabilitado.Size = new System.Drawing.Size(312, 79);
             this.BtnClienteDesabilitado.TabIndex = 25;
@@ -106,7 +106,7 @@
             this.PnlCl.Controls.Add(this.GridClientes);
             this.PnlCl.Location = new System.Drawing.Point(12, 12);
             this.PnlCl.Name = "PnlCl";
-            this.PnlCl.Size = new System.Drawing.Size(1300, 617);
+            this.PnlCl.Size = new System.Drawing.Size(1300, 686);
             this.PnlCl.TabIndex = 26;
             // 
             // GridClientes
@@ -152,7 +152,7 @@
             this.GridClientes.RowHeadersWidth = 51;
             this.GridClientes.RowTemplate.Height = 29;
             this.GridClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridClientes.Size = new System.Drawing.Size(1294, 618);
+            this.GridClientes.Size = new System.Drawing.Size(1294, 680);
             this.GridClientes.TabIndex = 33;
             // 
             // GRIDID
@@ -217,7 +217,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(1324, 750);
+            this.ClientSize = new System.Drawing.Size(1324, 795);
             this.Controls.Add(this.PnlCl);
             this.Controls.Add(this.BtnClienteDesabilitado);
             this.Controls.Add(this.BtnDeletarClientes);

@@ -116,5 +116,43 @@ namespace DataAccessLayer
                 return ResponseFactory.CreateInstance().CreateDataFailedResponse<SaidaViewModel>();
             }
         }
+
+        public DataResponse<SaidaViewModel> GetAll()
+        {
+            string sql = $"SELECT PS.SAIDA_ID, P.NOME_PRODUTO, P.VALOR_UNITARIO, PS.QUANTIDADE,S.FORMA_PAGAMENTO, C.NOME_CLIENTE, S.VALOR, S.DATA_SAIDA, F.NOME_FUNCIONARIO FROM PRODUTOS_SAIDAS PS INNER JOIN SAIDAS S ON PS.SAIDA_ID = S.ID INNER JOIN PRODUTOS P ON PS.PRODUTOS_ID = P.ID INNER JOIN CLIENTES C ON S.CLIENTES_ID = C.ID INNER JOIN FUNCIONARIOS F ON S.FUNCIONARIOS_ID = F.ID ";
+
+            DbConnection db = new DbConnection();
+            SqlCommand command = new SqlCommand(sql);
+            db.AttachCommand(command);
+            command.CommandText = sql;
+            try
+            {
+                db.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<SaidaViewModel> saidas = new List<SaidaViewModel>();
+                while (reader.Read())
+                {
+                    SaidaViewModel svm = new SaidaViewModel()
+                    {
+
+                        funcionario = Convert.ToString(reader["NOME_FUNCIONARIO"]),
+                        TransacaoID = Convert.ToInt32(reader["SAIDA_ID"]),
+                        ProdutoNome = Convert.ToString(reader["NOME_PRODUTO"]),
+                        ValorUnitario = Convert.ToDouble(reader["VALOR_UNITARIO"]),
+                        Quantidade = Convert.ToDouble(reader["QUANTIDADE"]),
+                        FormaPagamento = Convert.ToString(reader["FORMA_PAGAMENTO"]),
+                        ClienteNome = Convert.ToString(reader["NOME_CLIENTE"]),
+                        ValorTotal = Convert.ToDouble(reader["VALOR"]),
+                        Data = Convert.ToDateTime(reader["DATA_SAIDA"])
+                    };
+                    saidas.Add(svm);
+                }
+                return ResponseFactory.CreateInstance().CreateDataSuccessResponse(saidas);
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory.CreateInstance().CreateDataFailedResponse<SaidaViewModel>();
+            }
+        }
     }
 }

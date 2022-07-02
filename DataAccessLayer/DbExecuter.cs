@@ -73,7 +73,6 @@ namespace DataAccessLayer
             finally
             {
                 conn.Close();
-
             }
         }
 
@@ -145,8 +144,8 @@ internal class DbConnection
 
     public DbConnection()
     {
-        conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\SAMSUNG\Documents\banco\BancoFarmaciaZYX.mdf;Integrated Security=True;Connect Timeout=30");
-    }
+        conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Marco Antônio\Desktop\BancoFarmaciaZYX.mdf;Integrated Security=True;Connect Timeout=30");
+    }                            
     public void Open()
     {
         if (conn.State == ConnectionState.Closed)

@@ -14,11 +14,14 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@ID", id);
             try
             {
-                DbExecuter dbexecutor = new();
                 return DbExecuter.Execute(command);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                if(ex.Message.Contains("FK_FUNCIONARIOS_CARGO"))
+                {
+                    return ResponseFactory.CreateInstance().CreateFailedForeignCargo();
+                }
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }

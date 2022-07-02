@@ -33,30 +33,40 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void BtnNovoIten_Click(object sender, EventArgs e)
         {
-            if (CmbBoxProduto.Text == "")
+            if (CmbBoxProduto.Text == "" || CmbFormaPagamento.Text == "" || TxtBoxQuantidade.Text == "" || CmbBoxFornecedores.Text == "")
             {
-                MeuMessageBox.Show("Voce nao selecionou Produto");
+                MeuMessageBox.Show("Voce nao Informou todos os campos");
+                if (CheckPreco.Checked == true)
+                {
+                    if (textBox1TxtBoxPrecoAlterado.Text == "")
+                    {
+                        MeuMessageBox.Show("Preco novo nao informado");
+                        return;
+                    }
+
+                }
+                return;
             }
-            else if (CmbFormaPagamento.Text == "")
+
+            Item item = new Item();
+            Produto produto = new();
+            produto.ID = (int)CmbBoxProduto.SelectedValue;
+
+            if (CheckPreco.Checked == true)
             {
-                MeuMessageBox.Show("voce nao colocou a opcao de forma de pagamento");
+                item.Preco = double.Parse(textBox1TxtBoxPrecoAlterado.Text);
+                produto.IsPrecoAlterado = true;
             }
-            else if (TxtBoxQuantidade.Text == "") { MeuMessageBox.Show("voce nao colocou a Quantidade");  }
-            else if(CmbBoxFornecedores.Text == "") { MeuMessageBox.Show("voce nao colocou o fornecedor"); }
             else
             {
-                Produto produto = new();
-                Item item = new Item();
-                produto.ID = (int)CmbBoxProduto.SelectedValue;
+                item.Preco = produtoBLL.GetByID(produto.ID).Item.Valor_Venda;
+            }   
                 item.IDProduto = produto;
-                Produto proselcionado = produtoBLL.GetByID(produto.ID).Item;
-                item.Preco = proselcionado.Valor_Venda;
                 item.Qtd = int.Parse(TxtBoxQuantidade.Text);
-
                 ItemsEntrada.Add(item);
                 SincronizarListaGrid(item);
                 LimparFormulario();
-            }
+            
         }
         private void LimparFormulario()
         {
@@ -65,6 +75,9 @@ namespace WfPresentationLayer.Trancaçoes
             DateTime.Enabled = false;
             CmbBoxProduto.SelectedIndex = -1;
             TxtBoxQuantidade.Clear();
+            CheckPreco.Checked = false;
+            textBox1TxtBoxPrecoAlterado.Visible = false;
+            textBox1TxtBoxPrecoAlterado.Text = "";
         }
         private void SincronizarListaGrid(Item item)
         {
@@ -78,6 +91,7 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void BtnCadastrarCompra_Click(object sender, EventArgs e)
         {
+
             Entrada entrada = new Entrada();
             double soma = 0;
             foreach (Item item in ItemsEntrada)
@@ -96,14 +110,9 @@ namespace WfPresentationLayer.Trancaçoes
             entrada.IDFuncionario = funcionario;
             
             Response resposta = entradaBLL.Insert(entrada);
-            if (resposta.HasSuccess)
-            {
-                MeuMessageBox.Show("Entrada Cadastrada");
-            }
-            else
-            {
-                MeuMessageBox.Show(resposta.Message);
-            }
+           
+            MeuMessageBox.Show(resposta.Message);
+            
 
 
 
@@ -119,6 +128,9 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void FormNovaCompra_Load(object sender, EventArgs e)
         {
+            
+
+
             List<Fornecedor> ForneAtivo = new();
             List<Fornecedor> fornecedors = fornecedorBLL.GetAll().Dados;
             foreach (Fornecedor fornecedor in fornecedors)
@@ -147,6 +159,37 @@ namespace WfPresentationLayer.Trancaçoes
             CmbBoxProduto.DataSource = produtosAtivos;
 
             CmbFormaPagamento.DataSource = Enum.GetNames(typeof(FormaPagamento));
+        }
+        private void CheckPreco_CheckedChanged(object sender, EventArgs e)
+        {
+            if(textBox1TxtBoxPrecoAlterado.Visible == true)
+            {
+                textBox1TxtBoxPrecoAlterado.Visible = false;
+                return;
+            }
+            if (textBox1TxtBoxPrecoAlterado.Visible == false)
+            {
+                textBox1TxtBoxPrecoAlterado.Visible = true;
+            }
+
+        }
+        private void textBox1TxtBoxPrecoAlterado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.' || e.KeyChar == ',')
+            {
+                //troca o . pela virgula
+                e.KeyChar = ',';
+                //Verifica se já existe alguma vírgula na string
+                if (TxtBoxQuantidade.Text.Contains(","))
+                {
+                    e.Handled = true; // Caso exista, aborte 
+                }
+            }
+            //aceita apenas números, tecla backspace.
+            else if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

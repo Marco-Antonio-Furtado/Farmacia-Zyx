@@ -21,7 +21,7 @@
         public Laboratorio ID_Laboratorio { get; set; }
         public double Quantia_Estoque { get; set; }
         public bool Ativo { get; set; }
-
+        public bool IsPrecoAlterado { get; set; }
         public override string ToString()
         {
             return this.Nome + "\r\n" +

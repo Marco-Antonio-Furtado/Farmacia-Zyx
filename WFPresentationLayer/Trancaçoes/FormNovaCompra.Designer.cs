@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnNovoFornecedor = new System.Windows.Forms.Button();
             this.BtnProcurarFornecedor = new System.Windows.Forms.Button();
             this.GroupBoxCompra = new System.Windows.Forms.GroupBox();
+            this.textBox1TxtBoxPrecoAlterado = new System.Windows.Forms.TextBox();
+            this.CheckPreco = new System.Windows.Forms.CheckBox();
             this.CmbBoxProduto = new System.Windows.Forms.ComboBox();
             this.TxtBoxQuantidade = new System.Windows.Forms.TextBox();
             this.BtnExcluir = new System.Windows.Forms.Button();
@@ -88,6 +90,8 @@
             // 
             // GroupBoxCompra
             // 
+            this.GroupBoxCompra.Controls.Add(this.textBox1TxtBoxPrecoAlterado);
+            this.GroupBoxCompra.Controls.Add(this.CheckPreco);
             this.GroupBoxCompra.Controls.Add(this.CmbBoxProduto);
             this.GroupBoxCompra.Controls.Add(this.TxtBoxQuantidade);
             this.GroupBoxCompra.Controls.Add(this.BtnExcluir);
@@ -108,6 +112,29 @@
             this.GroupBoxCompra.TabIndex = 19;
             this.GroupBoxCompra.TabStop = false;
             this.GroupBoxCompra.Text = "Nova Compra";
+            // 
+            // textBox1TxtBoxPrecoAlterado
+            // 
+            this.textBox1TxtBoxPrecoAlterado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.textBox1TxtBoxPrecoAlterado.Location = new System.Drawing.Point(755, 76);
+            this.textBox1TxtBoxPrecoAlterado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1TxtBoxPrecoAlterado.Name = "textBox1TxtBoxPrecoAlterado";
+            this.textBox1TxtBoxPrecoAlterado.Size = new System.Drawing.Size(238, 27);
+            this.textBox1TxtBoxPrecoAlterado.TabIndex = 35;
+            this.textBox1TxtBoxPrecoAlterado.Visible = false;
+            this.textBox1TxtBoxPrecoAlterado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1TxtBoxPrecoAlterado_KeyPress);
+            // 
+            // CheckPreco
+            // 
+            this.CheckPreco.AutoSize = true;
+            this.CheckPreco.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CheckPreco.Location = new System.Drawing.Point(538, 76);
+            this.CheckPreco.Name = "CheckPreco";
+            this.CheckPreco.Size = new System.Drawing.Size(217, 29);
+            this.CheckPreco.TabIndex = 34;
+            this.CheckPreco.Text = "Alterar Preco Produto";
+            this.CheckPreco.UseVisualStyleBackColor = true;
+            this.CheckPreco.CheckedChanged += new System.EventHandler(this.CheckPreco_CheckedChanged);
             // 
             // CmbBoxProduto
             // 
@@ -225,14 +252,14 @@
             this.DataGrid.AllowUserToResizeColumns = false;
             this.DataGrid.AllowUserToResizeRows = false;
             this.DataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DataGridProduto,
@@ -243,25 +270,25 @@
             this.DataGridFuncionario,
             this.DataGridFornecedor,
             this.DatagridData});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle5;
             this.DataGrid.Location = new System.Drawing.Point(6, 217);
             this.DataGrid.Name = "DataGrid";
             this.DataGrid.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DataGrid.RowHeadersWidth = 51;
             this.DataGrid.RowTemplate.Height = 29;
             this.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -425,5 +452,7 @@
         private DataGridViewTextBoxColumn DataGridFuncionario;
         private DataGridViewTextBoxColumn DataGridFornecedor;
         private DataGridViewTextBoxColumn DatagridData;
+        private CheckBox CheckPreco;
+        private TextBox textBox1TxtBoxPrecoAlterado;
     }
 }

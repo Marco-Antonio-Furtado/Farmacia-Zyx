@@ -10,14 +10,19 @@ namespace BusinessLogicalLayer.BusinessLL
     {
         EntradaDal entradaDal = new EntradaDal();
         RegraControleEstoque Regra = new RegraControleEstoque();
+        RegraDeNovoPreco NovoPreco = new RegraDeNovoPreco();
         public Response Insert(Entrada item)
         {
-            SingleResponse<Entrada> single = entradaDal.EfetuarTransacao(item);
+            SingleResponse<Entrada> single = entradaDal.EfetuarTransacao(NovoPreco.RefaturarPreco(item).Item);
             if (single.HasSuccess)
             {
-                Regra.EstoqueProduto(single.Item);
+                Response Resposta = Regra.EstoqueProduto(single.Item);
+                if (Resposta.HasSuccess)
+                {
+                    return ResponseFactory.CreateInstance().CreateSuccessResponse();
+                }
             }
-            return new Response("chato", false);
+            return ResponseFactory.CreateInstance().CreateFailedResponse();
         }
         public DataResponse<EntradaViewModel> GetAll(DateTime inicio, DateTime fim)
         {

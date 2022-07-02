@@ -11,8 +11,9 @@ namespace BusinessLogicalLayer.BusinessLL
         readonly ProdutoDal produtoDAL = new ProdutoDal();
         public Response Insert(Produto item)
         {
-            
-            Response resposta = ProdutoValidator.ValidateIten(RegraPrecoProduto.CalcularPrecoBase(item).Item);
+            double ValorVenda = RegraPrecoProduto.CalcularPrecoBase(item.Valor_Unitario);
+            item.Valor_Venda = ValorVenda;
+            Response resposta = ProdutoValidator.ValidateIten(item);
             if (resposta.HasSuccess)
             {
                 return produtoDAL.Insert(item);
@@ -22,7 +23,9 @@ namespace BusinessLogicalLayer.BusinessLL
 
         public Response Update(Produto item)
         {
-            Response resposta = ProdutoValidator.ValidateIten(RegraPrecoProduto.CalcularPrecoBase(item).Item);
+            double ValorVenda = RegraPrecoProduto.CalcularPrecoBase(item.Valor_Unitario);
+            item.Valor_Venda = ValorVenda;
+            Response resposta = ProdutoValidator.ValidateIten(item);
             if (resposta.HasSuccess)
             {
                return produtoDAL.Update(item);

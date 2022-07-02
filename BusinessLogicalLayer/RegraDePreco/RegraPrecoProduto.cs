@@ -10,34 +10,35 @@ namespace BusinessLogicalLayer.RegraDePreco
 {
     public class RegraPrecoProduto
     {
-        public static SingleResponse<Produto> CalcularPrecoBase(Produto item)
+        public static double CalcularPrecoBase(double precoantigo)
         {
+            double preconovo = 0;
             //No Doc nao ta falando sobre Preco mais fiz uma base aqui 
-            if (item.Valor_Unitario < 10)
+            if (precoantigo < 10)
             {
-                item.Valor_Venda = item.Valor_Unitario * 2.5;
+                preconovo = precoantigo * 2.5;
             }
-            else if (item.Valor_Unitario < 20)
+            else if (precoantigo < 20)
             {
-                item.Valor_Venda = item.Valor_Unitario * 2.1;
+                preconovo = precoantigo * 2.1;
             }
-            else if (item.Valor_Unitario < 30)
+            else if (precoantigo < 30)
             {
-                item.Valor_Venda = item.Valor_Unitario * 2.0;
+                preconovo = precoantigo * 2.0;
             }
-            else if (item.Valor_Unitario < 40)
+            else if (precoantigo < 40)
             {
-                item.Valor_Venda = item.Valor_Unitario * 1.8;
+                preconovo = precoantigo * 1.8;
             }
-            else if (item.Valor_Unitario < 50)
+            else if (precoantigo < 50)
             {
-                item.Valor_Venda = item.Valor_Unitario * 1.7;           
+                preconovo = precoantigo * 1.7;           
             }
             else
             {
-                item.Valor_Venda = item.Valor_Unitario * 1.6;
+                preconovo = precoantigo * 1.6;
             }
-            return new SingleResponse<Produto> ("Operacao Bem Realizada", true, item);
+            return preconovo;
         }
     }
 }

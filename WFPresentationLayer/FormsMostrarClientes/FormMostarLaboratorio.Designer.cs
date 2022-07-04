@@ -44,10 +44,14 @@
             this.BtnCadastrarlaboratorio = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.PNLLaboratorio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridLaboratorio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // PNLLaboratorio
@@ -152,7 +156,7 @@
             this.BtnDesabilitados.Name = "BtnDesabilitados";
             this.BtnDesabilitados.Size = new System.Drawing.Size(277, 79);
             this.BtnDesabilitados.TabIndex = 30;
-            this.BtnDesabilitados.Text = "Mostrar Laboratorios Desabilitados";
+            this.BtnDesabilitados.Text = "        Mostrar Laboratorios Desabilitados";
             this.BtnDesabilitados.UseVisualStyleBackColor = false;
             this.BtnDesabilitados.Click += new System.EventHandler(this.BtnDesabilitados_Click);
             // 
@@ -178,7 +182,7 @@
             this.BtnAlterarLaboratorio.Name = "BtnAlterarLaboratorio";
             this.BtnAlterarLaboratorio.Size = new System.Drawing.Size(277, 79);
             this.BtnAlterarLaboratorio.TabIndex = 28;
-            this.BtnAlterarLaboratorio.Text = "Alterar / Habilitar   Laboratorio";
+            this.BtnAlterarLaboratorio.Text = "       Alterar / Habilitar   Laboratorio";
             this.BtnAlterarLaboratorio.UseVisualStyleBackColor = false;
             this.BtnAlterarLaboratorio.Click += new System.EventHandler(this.BtnAlterarLaboratorio_Click);
             // 
@@ -219,12 +223,37 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.BtnCadastrarlaboratorio_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox3.Image = global::WfPresentationLayer.Properties.Resources.icons8_laboratory_48;
+            this.pictureBox3.Location = new System.Drawing.Point(388, 723);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(55, 59);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 51;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.BtnAlterarLaboratorio_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox4.Image = global::WfPresentationLayer.Properties.Resources.icons8_bunsen_burner_100;
+            this.pictureBox4.Location = new System.Drawing.Point(712, 723);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(55, 59);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 52;
+            this.pictureBox4.TabStop = false;
+            // 
             // FormMostarLaboratorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1343, 802);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.PNLLaboratorio);
@@ -239,6 +268,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridLaboratorio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -259,5 +290,7 @@
         private DataGridViewTextBoxColumn GridCNPJ;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
     }
 }

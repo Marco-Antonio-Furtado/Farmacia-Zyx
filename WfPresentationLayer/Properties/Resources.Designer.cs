@@ -263,6 +263,16 @@ namespace WfPresentationLayer.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_bunsen_burner_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-bunsen-burner-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_button_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-button-50", resourceCulture);
@@ -313,6 +323,16 @@ namespace WfPresentationLayer.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_laboratory_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-laboratory-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_no_drugs_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-no-drugs-64", resourceCulture);
@@ -326,6 +346,16 @@ namespace WfPresentationLayer.Properties {
         internal static System.Drawing.Bitmap icons8_no_drugs_64__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-no-drugs-64 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_semi_truck_side_view_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-semi-truck-side-view-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

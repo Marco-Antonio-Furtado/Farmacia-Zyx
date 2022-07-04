@@ -23,7 +23,7 @@ namespace DataAccessLayer
             commInsertSaida.Parameters.AddWithValue("@FORMA_PAGAMENTO", transacao.Forma_Pagamento);
 
             string sql2 = $"UPDATE CLIENTES SET PROGRAMA_FIDELIDADE = @PROGRAMA_FIDELIDADE WHERE ID = @CLIENTE_ID";
-            //admin@gmail.com
+
 
             SqlCommand commUpdateProgramaFidelidade = new SqlCommand(sql2);
             commUpdateProgramaFidelidade.Parameters.AddWithValue("@PROGRAMA_FIDELIDADE", transacao.Cliente.Programa_Fidelidade);

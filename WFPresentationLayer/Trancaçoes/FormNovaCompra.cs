@@ -191,5 +191,10 @@ namespace WfPresentationLayer.Trancaçoes
                 e.Handled = true;
             }
         }
+
+        private void ImageBtnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

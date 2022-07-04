@@ -38,21 +38,11 @@ namespace WfPresentationLayer.Alteraçoes
         {
             FormNovaVenda form = new FormNovaVenda();
             form.ShowDialog();
-
-            //_objForm6?.Close();
-            //_objForm6 = new FormNovaVenda()
-            //{
-            //    TopLevel = false,
-            //    FormBorderStyle = FormBorderStyle.None,
-            //    Dock = DockStyle.Fill,
-            //};
-            //PnlVendas.Controls.Add(_objForm6);
-            //_objForm6.Show();
-            //_objForm6.BringToFront();
         }
 
         private void BtnProcurarCompra_Click(object sender, EventArgs e)
         {
+            LimparGrid();
             DataResponse<SaidaViewModel> Dados = saidaBll.GetAll();
 
             if (Dados.Dados == null)
@@ -65,6 +55,14 @@ namespace WfPresentationLayer.Alteraçoes
 
                 SincronizarListaGrid(item);
             }
+
         }
+            private void LimparGrid()
+            {
+                GridSaidas.Rows.Clear();
+                GridSaidas.Refresh();
+                GridSaidas.DataSource = null;
+
+            }
     }
 }

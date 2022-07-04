@@ -34,6 +34,12 @@ namespace WfPresentationLayer
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            ParametrosDatas parametros = new ParametrosDatas()
+            {
+                Inicio = DateTime.Now,
+                Fim = DateTime.Now,
+            };
+            this.ParametrosDatas = parametros;
             this.Close();
         }
         private void BtnOk_Click_1(object sender, EventArgs e)

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Marco Antônio\\Desktop\\3\\WfPresentationLayer\\WfPresentationLayer.csproj": {}
+    "C:\\Users\\SAMSUNG\\Desktop\\3\\WfPresentationLayer\\WfPresentationLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Marco Antônio\\Desktop\\3\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj": {
+    "C:\\Users\\SAMSUNG\\Desktop\\3\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marco Antônio\\Desktop\\3\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
+        "projectUniqueName": "C:\\Users\\SAMSUNG\\Desktop\\3\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
         "projectName": "BusinessLogicalLayer",
-        "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
-        "packagesPath": "C:\\Users\\Marco Antônio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\BusinessLogicalLayer\\obj\\",
+        "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
+        "packagesPath": "C:\\Users\\SAMSUNG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\BusinessLogicalLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Marco Antônio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SAMSUNG\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,14 +28,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Marco Antônio\\Desktop\\3\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\SAMSUNG\\Desktop\\3\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "C:\\Users\\Marco Antônio\\Desktop\\3\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\Entities\\Entities.csproj"
+              "C:\\Users\\SAMSUNG\\Desktop\\3\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Entities\\Entities.csproj"
               },
-              "C:\\Users\\Marco Antônio\\Desktop\\3\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\Shared\\Shared.csproj"
+              "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj"
               }
             }
           }
@@ -68,17 +68,17 @@
         }
       }
     },
-    "C:\\Users\\Marco Antônio\\Desktop\\3\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "C:\\Users\\SAMSUNG\\Desktop\\3\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marco Antônio\\Desktop\\3\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\SAMSUNG\\Desktop\\3\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\DataAccessLayer\\DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\Marco Antônio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\DataAccessLayer\\obj\\",
+        "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\DataAccessLayer\\DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\SAMSUNG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Marco Antônio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SAMSUNG\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,11 +92,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Marco Antônio\\Desktop\\3\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\Entities\\Entities.csproj"
+              "C:\\Users\\SAMSUNG\\Desktop\\3\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Entities\\Entities.csproj"
               },
-              "C:\\Users\\Marco Antônio\\Desktop\\3\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\Shared\\Shared.csproj"
+              "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj"
               }
             }
           }
@@ -139,17 +139,17 @@
         }
       }
     },
-    "C:\\Users\\Marco Antônio\\Desktop\\3\\Entities\\Entities.csproj": {
+    "C:\\Users\\SAMSUNG\\Desktop\\3\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marco Antônio\\Desktop\\3\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\SAMSUNG\\Desktop\\3\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\Marco Antônio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\SAMSUNG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Marco Antônio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SAMSUNG\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -163,8 +163,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Marco Antônio\\Desktop\\3\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\Shared\\Shared.csproj"
+              "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj"
               }
             }
           }
@@ -203,17 +203,17 @@
         }
       }
     },
-    "C:\\Users\\Marco Antônio\\Desktop\\3\\Shared\\Shared.csproj": {
+    "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marco Antônio\\Desktop\\3\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\Marco Antônio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\SAMSUNG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Marco Antônio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SAMSUNG\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -257,17 +257,17 @@
         }
       }
     },
-    "C:\\Users\\Marco Antônio\\Desktop\\3\\WfPresentationLayer\\WfPresentationLayer.csproj": {
+    "C:\\Users\\SAMSUNG\\Desktop\\3\\WfPresentationLayer\\WfPresentationLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marco Antônio\\Desktop\\3\\WfPresentationLayer\\WfPresentationLayer.csproj",
+        "projectUniqueName": "C:\\Users\\SAMSUNG\\Desktop\\3\\WfPresentationLayer\\WfPresentationLayer.csproj",
         "projectName": "WfPresentationLayer",
-        "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\WfPresentationLayer\\WfPresentationLayer.csproj",
-        "packagesPath": "C:\\Users\\Marco Antônio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\WfPresentationLayer\\obj\\",
+        "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\WfPresentationLayer\\WfPresentationLayer.csproj",
+        "packagesPath": "C:\\Users\\SAMSUNG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\WfPresentationLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Marco Antônio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SAMSUNG\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -281,14 +281,14 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Marco Antônio\\Desktop\\3\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj": {
-                "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj"
+              "C:\\Users\\SAMSUNG\\Desktop\\3\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj": {
+                "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj"
               },
-              "C:\\Users\\Marco Antônio\\Desktop\\3\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\Entities\\Entities.csproj"
+              "C:\\Users\\SAMSUNG\\Desktop\\3\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Entities\\Entities.csproj"
               },
-              "C:\\Users\\Marco Antônio\\Desktop\\3\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\Marco Antônio\\Desktop\\3\\Shared\\Shared.csproj"
+              "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj"
               }
             }
           }

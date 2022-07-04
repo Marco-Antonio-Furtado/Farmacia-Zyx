@@ -27,7 +27,7 @@ namespace WfPresentationLayer
         }
         private void BtnMenuVendas_Click(object sender, EventArgs e)
         {
-            ParametrosDatas Parametros = MeumsgBoxWithDates.ShowMessageWithDates("Selecione a Data De busaca das venda");
+            ParametrosDatas Parametros = MeumsgBoxWithDates.ShowMessageWithDates("Selecione a Data De busca das Vendas");
             _objForm?.Close();
             _objForm = new FormMostrarSaidas(Parametros)
             {
@@ -40,7 +40,7 @@ namespace WfPresentationLayer
         }
         private void BtnMenuCompras_Click(object sender, EventArgs e)
         {
-            ParametrosDatas Parametros = MeumsgBoxWithDates.ShowMessageWithDates("Selecione a Data De busaca das venda");
+            ParametrosDatas Parametros = MeumsgBoxWithDates.ShowMessageWithDates("Selecione a Data De busca das Compras");
             _objForm?.Close();
             _objForm = new FormMostrarEntradas(Parametros)
             {

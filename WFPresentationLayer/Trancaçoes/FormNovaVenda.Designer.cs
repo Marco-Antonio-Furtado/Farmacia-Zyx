@@ -55,9 +55,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.BtnNovoCliente = new System.Windows.Forms.Button();
             this.CmbBoxClientes = new System.Windows.Forms.ComboBox();
+            this.ImageBtnFechar = new System.Windows.Forms.PictureBox();
+            this.LblText = new System.Windows.Forms.Label();
             this.GroupBoxVenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelNomeCLiente
@@ -65,7 +68,7 @@
             this.LabelNomeCLiente.AutoSize = true;
             this.LabelNomeCLiente.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LabelNomeCLiente.ForeColor = System.Drawing.Color.White;
-            this.LabelNomeCLiente.Location = new System.Drawing.Point(381, 15);
+            this.LabelNomeCLiente.Location = new System.Drawing.Point(445, 73);
             this.LabelNomeCLiente.Name = "LabelNomeCLiente";
             this.LabelNomeCLiente.Size = new System.Drawing.Size(115, 23);
             this.LabelNomeCLiente.TabIndex = 13;
@@ -87,9 +90,9 @@
             this.GroupBoxVenda.Controls.Add(this.pictureBox1);
             this.GroupBoxVenda.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.GroupBoxVenda.ForeColor = System.Drawing.Color.White;
-            this.GroupBoxVenda.Location = new System.Drawing.Point(12, 54);
+            this.GroupBoxVenda.Location = new System.Drawing.Point(9, 105);
             this.GroupBoxVenda.Name = "GroupBoxVenda";
-            this.GroupBoxVenda.Size = new System.Drawing.Size(1290, 707);
+            this.GroupBoxVenda.Size = new System.Drawing.Size(1274, 707);
             this.GroupBoxVenda.TabIndex = 14;
             this.GroupBoxVenda.TabStop = false;
             this.GroupBoxVenda.Text = "Nova venda";
@@ -118,7 +121,7 @@
             this.BtnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnExcluir.ForeColor = System.Drawing.Color.White;
-            this.BtnExcluir.Location = new System.Drawing.Point(817, 131);
+            this.BtnExcluir.Location = new System.Drawing.Point(775, 126);
             this.BtnExcluir.Name = "BtnExcluir";
             this.BtnExcluir.Size = new System.Drawing.Size(200, 79);
             this.BtnExcluir.TabIndex = 28;
@@ -139,7 +142,7 @@
             this.BtnCadastrarNovaVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnCadastrarNovaVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastrarNovaVenda.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarNovaVenda.Location = new System.Drawing.Point(1036, 131);
+            this.BtnCadastrarNovaVenda.Location = new System.Drawing.Point(994, 126);
             this.BtnCadastrarNovaVenda.Name = "BtnCadastrarNovaVenda";
             this.BtnCadastrarNovaVenda.Size = new System.Drawing.Size(240, 79);
             this.BtnCadastrarNovaVenda.TabIndex = 24;
@@ -173,7 +176,7 @@
             this.BtnNovoIten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnNovoIten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnNovoIten.ForeColor = System.Drawing.Color.White;
-            this.BtnNovoIten.Location = new System.Drawing.Point(522, 131);
+            this.BtnNovoIten.Location = new System.Drawing.Point(480, 126);
             this.BtnNovoIten.Name = "BtnNovoIten";
             this.BtnNovoIten.Size = new System.Drawing.Size(277, 79);
             this.BtnNovoIten.TabIndex = 21;
@@ -233,7 +236,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGrid.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DataGrid.Location = new System.Drawing.Point(18, 232);
+            this.DataGrid.Location = new System.Drawing.Point(18, 222);
             this.DataGrid.Name = "DataGrid";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
@@ -246,7 +249,7 @@
             this.DataGrid.RowHeadersWidth = 51;
             this.DataGrid.RowTemplate.Height = 29;
             this.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGrid.Size = new System.Drawing.Size(1246, 469);
+            this.DataGrid.Size = new System.Drawing.Size(1232, 469);
             this.DataGrid.TabIndex = 20;
             // 
             // DataGridProduto
@@ -313,7 +316,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(723, 12);
+            this.button2.Location = new System.Drawing.Point(810, 70);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 29);
             this.button2.TabIndex = 15;
@@ -325,7 +328,7 @@
             this.BtnNovoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnNovoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnNovoCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnNovoCliente.Location = new System.Drawing.Point(245, 13);
+            this.BtnNovoCliente.Location = new System.Drawing.Point(288, 67);
             this.BtnNovoCliente.Name = "BtnNovoCliente";
             this.BtnNovoCliente.Size = new System.Drawing.Size(130, 29);
             this.BtnNovoCliente.TabIndex = 16;
@@ -337,22 +340,47 @@
             // 
             this.CmbBoxClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbBoxClientes.FormattingEnabled = true;
-            this.CmbBoxClientes.Location = new System.Drawing.Point(502, 12);
+            this.CmbBoxClientes.Location = new System.Drawing.Point(570, 68);
             this.CmbBoxClientes.Name = "CmbBoxClientes";
             this.CmbBoxClientes.Size = new System.Drawing.Size(215, 28);
             this.CmbBoxClientes.TabIndex = 33;
+            // 
+            // ImageBtnFechar
+            // 
+            this.ImageBtnFechar.Image = global::WfPresentationLayer.Properties.Resources.delete_sign;
+            this.ImageBtnFechar.Location = new System.Drawing.Point(1228, 6);
+            this.ImageBtnFechar.Name = "ImageBtnFechar";
+            this.ImageBtnFechar.Size = new System.Drawing.Size(68, 28);
+            this.ImageBtnFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImageBtnFechar.TabIndex = 103;
+            this.ImageBtnFechar.TabStop = false;
+            this.ImageBtnFechar.Click += new System.EventHandler(this.ImageBtnFechar_Click);
+            // 
+            // LblText
+            // 
+            this.LblText.AutoSize = true;
+            this.LblText.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LblText.ForeColor = System.Drawing.Color.White;
+            this.LblText.Location = new System.Drawing.Point(489, 6);
+            this.LblText.Name = "LblText";
+            this.LblText.Size = new System.Drawing.Size(136, 23);
+            this.LblText.TabIndex = 102;
+            this.LblText.Text = "Cadastrar Venda";
             // 
             // FormNovaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(1313, 773);
+            this.ClientSize = new System.Drawing.Size(1298, 823);
+            this.Controls.Add(this.ImageBtnFechar);
+            this.Controls.Add(this.LblText);
             this.Controls.Add(this.CmbBoxClientes);
             this.Controls.Add(this.BtnNovoCliente);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.GroupBoxVenda);
             this.Controls.Add(this.LabelNomeCLiente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormNovaVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormNovaVenda";
@@ -361,6 +389,7 @@
             this.GroupBoxVenda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,5 +421,7 @@
         private DataGridViewTextBoxColumn DataGridFuncionario;
         private DataGridViewTextBoxColumn DataGridData;
         private ComboBox CmbBoxClientes;
+        private PictureBox ImageBtnFechar;
+        private Label LblText;
     }
 }

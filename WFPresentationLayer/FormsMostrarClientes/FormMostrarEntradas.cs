@@ -50,6 +50,7 @@ namespace WfPresentationLayer.Alteraçoes
 
         private void BtnProcurarCompra_Click(object sender, EventArgs e)
         {
+            LimparGrid();
             DataResponse<EntradaViewModel> data = entradaBll.GetAll();
             if (data.Dados == null)
             {
@@ -60,5 +61,13 @@ namespace WfPresentationLayer.Alteraçoes
                 SincronizarListaGrid(item);
             }
         }
+        private void LimparGrid()
+        {
+            GridEntrada.Rows.Clear();
+            GridEntrada.Refresh();
+            GridEntrada.DataSource = null;
+
+        }
+
     }
 }

@@ -13,7 +13,7 @@
     ],
     "additionalProbingPaths": [
       "C:\\Users\\SAMSUNG\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\SAMSUNG\\.nuget\\packages"
+      "C:\\Users\\entra21\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

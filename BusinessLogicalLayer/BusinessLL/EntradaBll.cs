@@ -1,4 +1,5 @@
 ﻿using BusinessLogicalLayer.RegraDePreco;
+using BusinessLogicalLayer.RegraEstoque;
 using DataAccessLayer;
 using Entities;
 using Entities.viewmodel;
@@ -13,7 +14,7 @@ namespace BusinessLogicalLayer.BusinessLL
     
         public Response Insert(Entrada entrada)
         {
-            Response estoqueResponse = regraEstoque.EstoqueProduto(entrada);
+            Response estoqueResponse = RegraControleEstoque.EstoqueEntrada(entrada);
             if (!estoqueResponse.HasSuccess)
             {
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
@@ -26,7 +27,7 @@ namespace BusinessLogicalLayer.BusinessLL
         }
         public Response Insert(Entrada entrada, double taxaDeLucro)
         {
-            Response estoqueResponse = regraEstoque.EstoqueProduto(entrada);
+            Response estoqueResponse = RegraControleEstoque.EstoqueEntrada(entrada);
             if (!estoqueResponse.HasSuccess)
             {
                 return ResponseFactory.CreateInstance().CreateFailedResponse();

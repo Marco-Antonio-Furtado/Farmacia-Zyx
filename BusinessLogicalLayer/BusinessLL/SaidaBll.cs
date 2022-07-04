@@ -1,4 +1,5 @@
 ﻿using BusinessLogicalLayer.RegraDePreco;
+using BusinessLogicalLayer.RegraEstoque;
 using DataAccessLayer;
 using Entities;
 using Entities.viewmodel;
@@ -9,25 +10,11 @@ namespace BusinessLogicalLayer.BusinessLL
     public class SaidaBll
     {
         SaidaDAL saidaDAL = new SaidaDAL();
-        ProdutoBll produtoBll = new ProdutoBll();
-        RegraDescontoCliente descontoCliente = new RegraDescontoCliente();
+
+   
         public Response Insert(Saida transacao)
         {
-            foreach (var item in transacao.Items)
-            {
-
-                SingleResponse<Produto> response = produtoBll.GetByID(item.IDProduto.ID);
-                if (response.HasSuccess)
-                {
-                    if (response.Item.Quantia_Estoque < item.Qtd)
-                    {
-                        return new SingleResponse<Saida>("Itens insuficientes em estoque", false, null);
-                    }
-                }
-            }
-            descontoCliente.DescontoCliente(transacao);
-
-            return saidaDAL.EfetuarTransacao(transacao);
+           return RegraControleEstoque.EstoqueSaida(transacao);
 
         }
         public DataResponse<SaidaViewModel> LerTransacoes(DateTime inicio, DateTime fim)

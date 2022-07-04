@@ -138,47 +138,5 @@ namespace DataAccessLayer
         }
     }
 }
-internal class DbConnection
-{
-    private SqlConnection conn;
-
-    public DbConnection()
-    {
-        conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\SAMSUNG\Documents\banco\BancoFarmaciaZYX.mdf;Integrated Security=True;Connect Timeout=30");
-    }                            
-    public void Open()
-    {
-        if (conn.State == ConnectionState.Closed)
-        {
-            conn.Open();
-        }
-    }
-    public void Close()
-    {
-        conn.Dispose();
-    }
-    public void AttachCommand(SqlCommand command)
-    {
-        command.Connection = this.conn;
-    }
-}
-
-//-------------------------------------------------------------------------------------------------
-//Exemplo de uso:
-//public DataResponse<Cliente> GetAll()
-//    {
-//        string sql = $"SELECT ID,NOME,CPF,RG,TELEFONE_UM," +
-//            $"TELEFONE_DOIS,EMAIL,PONTOS,ATIVO FROM CLIENTES";
 
 
-//        SqlCommand command = new SqlCommand(sql);
-//        try
-//        {
-//            return new DbExecuter().GetData<Cliente>(command);
-//        }
-//        catch (Exception ex)
-//        {
-//            return new DataResponse<Cliente>("Erro no banco de dados, contate  administrador", false, null);
-//        }
-//    }
-//}

@@ -25,11 +25,6 @@ namespace DataAccessLayer
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
-        public Response Disable(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public DataResponse<Cargo> GetAll()
         {
             string sql = $"SELECT ID,NOME_CARGO,ATIVO FROM CARGOS";

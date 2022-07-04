@@ -8,11 +8,13 @@ namespace BusinessLogicalLayer.BusinessLL
 {
     public class ProdutoBll : ICRUD<Produto>
     {
+        //
         readonly ProdutoDal produtoDAL = new ProdutoDal();
+
         public Response Insert(Produto item)
         {
-            double ValorVenda = RegraPrecoProduto.CalcularPrecoBase(item.Valor_Unitario);
-            item.Valor_Venda = ValorVenda;
+            //Produtos novos possuem uma margem automática de lucro de 20%
+            item.Valor_Venda = item.Valor_Unitario * 1.2;
             Response resposta = ProdutoValidator.ValidateIten(item);
             if (resposta.HasSuccess)
             {
@@ -23,8 +25,10 @@ namespace BusinessLogicalLayer.BusinessLL
 
         public Response Update(Produto item)
         {
-            double ValorVenda = RegraPrecoProduto.CalcularPrecoBase(item.Valor_Unitario);
-            item.Valor_Venda = ValorVenda;
+            //CHECA ISSO AQUI!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+            //double ValorVenda = RegraPrecoProduto.CalcularNovoPreco(item, 20);
+            //item.Valor_Venda = ValorVenda;
             Response resposta = ProdutoValidator.ValidateIten(item);
             if (resposta.HasSuccess)
             {

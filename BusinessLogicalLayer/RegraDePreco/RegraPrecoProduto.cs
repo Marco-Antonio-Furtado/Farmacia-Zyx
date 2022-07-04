@@ -1,44 +1,47 @@
-﻿using Entities;
+﻿using DataAccessLayer;
+using Entities;
+using Entities.Propriedades;
 using Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer.RegraDePreco
 {
     public class RegraPrecoProduto
     {
-        public static double CalcularPrecoBase(double precoantigo)
+        public static Response AtualizarPrecos(Entrada entrada, double taxaDeLucro)
         {
-            double preconovo = 0;
-            //No Doc nao ta falando sobre Preco mais fiz uma base aqui 
-            if (precoantigo < 10)
+            ProdutoDal produtoDal = new ProdutoDal();
+    
+            try
             {
-                preconovo = precoantigo * 2.5;
+                foreach (Item item in entrada.Items)
+                {
+                    if (item.IDProduto.IsPrecoAlterado == true)
+                    {    
+                        Produto produto = produtoDal.GetByID(item.IDProduto.ID).Item;
+
+                        double estoqueAntigo = produto.Quantia_Estoque;
+                        double estoqueNovo = produto.Quantia_Estoque + item.Qtd;
+                        double precoAntigo = produto.Valor_Unitario;
+                        double precoNovo = item.Preco;
+
+                        double precoBase = ((precoAntigo * estoqueAntigo) + (precoNovo * estoqueNovo)) / (estoqueNovo + estoqueAntigo);
+                        double precoAtualizado = Math.Ceiling(precoBase * (1 + taxaDeLucro/100));
+
+                        produto.Valor_Unitario = Math.Floor(precoBase);
+                        produto.Valor_Venda = precoAtualizado;
+                        produtoDal.Update(produto);
+                    }
+                }
+                
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
-            else if (precoantigo < 20)
+
+            catch(Exception ex)
             {
-                preconovo = precoantigo * 2.1;
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
-            else if (precoantigo < 30)
-            {
-                preconovo = precoantigo * 2.0;
-            }
-            else if (precoantigo < 40)
-            {
-                preconovo = precoantigo * 1.8;
-            }
-            else if (precoantigo < 50)
-            {
-                preconovo = precoantigo * 1.7;           
-            }
-            else
-            {
-                preconovo = precoantigo * 1.6;
-            }
-            return preconovo;
+            
         }
     }
 }
+

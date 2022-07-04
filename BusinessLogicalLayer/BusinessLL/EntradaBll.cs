@@ -9,20 +9,33 @@ namespace BusinessLogicalLayer.BusinessLL
     public class EntradaBll
     {
         EntradaDal entradaDal = new EntradaDal();
-        RegraControleEstoque Regra = new RegraControleEstoque();
-        RegraDeNovoPreco NovoPreco = new RegraDeNovoPreco();
-        public Response Insert(Entrada item)
+        RegraControleEstoque regraEstoque = new RegraControleEstoque();
+    
+        public Response Insert(Entrada entrada)
         {
-            SingleResponse<Entrada> single = entradaDal.EfetuarTransacao(NovoPreco.RefaturarPreco(item).Item);
-            if (single.HasSuccess)
+            Response estoqueResponse = regraEstoque.EstoqueProduto(entrada);
+            if (!estoqueResponse.HasSuccess)
             {
-                Response Resposta = Regra.EstoqueProduto(single.Item);
-                if (Resposta.HasSuccess)
-                {
-                    return ResponseFactory.CreateInstance().CreateSuccessResponse();
-                }
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
-            return ResponseFactory.CreateInstance().CreateFailedResponse();
+            if(!RegraPrecoProduto.AtualizarPrecos(entrada, 20).HasSuccess )
+            {
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
+            }
+            return ResponseFactory.CreateInstance().CreateSuccessResponse();     
+        }
+        public Response Insert(Entrada entrada, double taxaDeLucro)
+        {
+            Response estoqueResponse = regraEstoque.EstoqueProduto(entrada);
+            if (!estoqueResponse.HasSuccess)
+            {
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
+            }
+            if(!RegraPrecoProduto.AtualizarPrecos(entrada, taxaDeLucro).HasSuccess )
+            {
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
+            }
+            return ResponseFactory.CreateInstance().CreateSuccessResponse();  
         }
         public DataResponse<EntradaViewModel> LerTransacoes(DateTime inicio, DateTime fim)
         {

@@ -141,7 +141,7 @@ namespace WfPresentationLayer.FormsMostrarClientes
             }
             if (GridLaboratorio.RowCount == 1)
             {
-                MeuMessageBox.Show("Nao a Laboratorios Desabilitados");
+                MeuMessageBox.Show("Nao há Laboratorios Desabilitados");
                 LimparGrid();
             }
 

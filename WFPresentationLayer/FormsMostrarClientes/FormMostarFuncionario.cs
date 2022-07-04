@@ -14,19 +14,6 @@ namespace WfPresentationLayer.Alteraçoes
             InitializeComponent();
         }
         List<Funcionario> funcionarios = new List<Funcionario>();
-        private void BtnCadastrarFornecedor_Click(object sender, EventArgs e)
-        {
-            _objForm2?.Close();
-            _objForm2 = new FormCadastroFuncionario
-            {
-                TopLevel = false,
-                FormBorderStyle = FormBorderStyle.None,
-                Dock = DockStyle.Fill,
-            };
-            pnlFunc.Controls.Add(_objForm2);
-            _objForm2.Show();
-            _objForm2.BringToFront();
-        }
         private void Alteracao_Funcionario_Load(object sender, EventArgs e)
         {
             funcionarios = funcionarioBll.GetAll().Dados;
@@ -129,7 +116,7 @@ namespace WfPresentationLayer.Alteraçoes
             }
             if (GridFuncionario.RowCount == 1)
             {
-                MeuMessageBox.Show("Nao a Funcionarios Desabilitados");
+                MeuMessageBox.Show("Nao há Funcionarios Desabilitados");
                 LimparGrid();
             }
         }
@@ -138,6 +125,20 @@ namespace WfPresentationLayer.Alteraçoes
             GridFuncionario.Rows.Clear();
             GridFuncionario.Refresh();
             GridFuncionario.DataSource = null;
+        }
+
+        private void BtnCadastrarFuncionario_Click(object sender, EventArgs e)
+        {
+            _objForm2?.Close();
+            _objForm2 = new FormCadastroFuncionario
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill,
+            };
+            pnlFunc.Controls.Add(_objForm2);
+            _objForm2.Show();
+            _objForm2.BringToFront();
         }
     }
 }

@@ -42,8 +42,12 @@
             this.BtnDeletarLaboratorio = new System.Windows.Forms.Button();
             this.BtnAlterarLaboratorio = new System.Windows.Forms.Button();
             this.BtnCadastrarlaboratorio = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PNLLaboratorio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridLaboratorio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // PNLLaboratorio
@@ -161,7 +165,7 @@
             this.BtnDeletarLaboratorio.Name = "BtnDeletarLaboratorio";
             this.BtnDeletarLaboratorio.Size = new System.Drawing.Size(277, 79);
             this.BtnDeletarLaboratorio.TabIndex = 29;
-            this.BtnDeletarLaboratorio.Text = "Deletar/Desabilitar Laboratorio";
+            this.BtnDeletarLaboratorio.Text = "       Deletar/Desabilitar Laboratorio";
             this.BtnDeletarLaboratorio.UseVisualStyleBackColor = false;
             this.BtnDeletarLaboratorio.Click += new System.EventHandler(this.BtnDeletarLaboratorio_Click);
             // 
@@ -187,9 +191,33 @@
             this.BtnCadastrarlaboratorio.Name = "BtnCadastrarlaboratorio";
             this.BtnCadastrarlaboratorio.Size = new System.Drawing.Size(277, 79);
             this.BtnCadastrarlaboratorio.TabIndex = 27;
-            this.BtnCadastrarlaboratorio.Text = "Cadastrar Laboratorio";
+            this.BtnCadastrarlaboratorio.Text = "           Cadastrar Laboratorio";
             this.BtnCadastrarlaboratorio.UseVisualStyleBackColor = false;
             this.BtnCadastrarlaboratorio.Click += new System.EventHandler(this.BtnCadastrarlaboratorio_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox1.Image = global::WfPresentationLayer.Properties.Resources.delete__v1;
+            this.pictureBox1.Location = new System.Drawing.Point(1023, 720);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(59, 59);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.BtnDeletarLaboratorio_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox2.Image = global::WfPresentationLayer.Properties.Resources.thin_test_tube;
+            this.pictureBox2.Location = new System.Drawing.Point(68, 720);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(55, 59);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 50;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.BtnCadastrarlaboratorio_Click);
             // 
             // FormMostarLaboratorio
             // 
@@ -197,6 +225,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1343, 802);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.PNLLaboratorio);
             this.Controls.Add(this.BtnDesabilitados);
             this.Controls.Add(this.BtnDeletarLaboratorio);
@@ -207,6 +237,8 @@
             this.Load += new System.EventHandler(this.FormMostarLaboratorio_Load);
             this.PNLLaboratorio.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridLaboratorio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -225,5 +257,7 @@
         private DataGridViewTextBoxColumn GridNomeResponsavel;
         private DataGridViewTextBoxColumn GridEmail;
         private DataGridViewTextBoxColumn GridCNPJ;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

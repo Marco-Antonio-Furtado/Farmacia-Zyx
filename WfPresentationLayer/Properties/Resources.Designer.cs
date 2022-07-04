@@ -63,6 +63,16 @@ namespace WfPresentationLayer.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _7483870521_9a75e56a_b89d_43c8_b258_6ecb310f3b06 {
+            get {
+                object obj = ResourceManager.GetObject("7483870521_9a75e56a-b89d-43c8-b258-6ecb310f3b06", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _7483870524_1d1b5666_d340_43e4_88fe_1a4f91666ba7 {
             get {
                 object obj = ResourceManager.GetObject("7483870524_1d1b5666-d340-43e4-88fe-1a4f91666ba7", resourceCulture);
@@ -86,6 +96,16 @@ namespace WfPresentationLayer.Properties {
         internal static System.Drawing.Bitmap _7483870576_6ab43f2e_d6eb_46e1_a824_b7a61aaf6a32 {
             get {
                 object obj = ResourceManager.GetObject("7483870576_6ab43f2e-d6eb-46e1-a824-b7a61aaf6a32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap circled_left_2 {
+            get {
+                object obj = ResourceManager.GetObject("circled-left-2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +153,179 @@ namespace WfPresentationLayer.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap external_drugs_virus_icongeek26_outline_icongeek26 {
+            get {
+                object obj = ResourceManager.GetObject("external-drugs-virus-icongeek26-outline-icongeek26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap external_NO_DRUGS_capsule_hotel_bearicons_blue_bearicons {
+            get {
+                object obj = ResourceManager.GetObject("external-NO-DRUGS-capsule-hotel-bearicons-blue-bearicons", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap external_NO_DRUGS_capsule_hotel_bearicons_blue_bearicons1 {
+            get {
+                object obj = ResourceManager.GetObject("external-NO-DRUGS-capsule-hotel-bearicons-blue-bearicons1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap external_NO_DRUGS_capsule_hotel_bearicons_flat_bearicons {
+            get {
+                object obj = ResourceManager.GetObject("external-NO-DRUGS-capsule-hotel-bearicons-flat-bearicons", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap external_person_human_body_anatomy_good_lines_kalash {
             get {
                 object obj = ResourceManager.GetObject("external-person-human-body-anatomy-good-lines-kalash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_agency_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-agency-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_botão2_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-botão2-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_botão2_48__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-botão2-48 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_botão2_48__2_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-botão2-48 (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_botão2_48__3_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-botão2-48 (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_botão2_48__3_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-botão2-48 (3)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_button_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-button-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_button_50__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-button-50 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_drugs_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-drugs-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_funcionário_homem_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-funcionário-homem-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_funcionário_homem_80__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-funcionário-homem-80 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_no_drugs_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-no-drugs-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_no_drugs_64__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-no-drugs-64 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +363,39 @@ namespace WfPresentationLayer.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap remove_administrator {
+            get {
+                object obj = ResourceManager.GetObject("remove-administrator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap services__v1 {
             get {
                 object obj = ResourceManager.GetObject("services--v1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stacking {
+            get {
+                object obj = ResourceManager.GetObject("stacking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thin_test_tube {
+            get {
+                object obj = ResourceManager.GetObject("thin-test-tube", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

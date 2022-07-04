@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GridFuncionario = new System.Windows.Forms.DataGridView();
             this.GridID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,26 +46,34 @@
             this.BtnAlterarFuncionario = new System.Windows.Forms.Button();
             this.BtnCadastrarFuncionario = new System.Windows.Forms.Button();
             this.pnlFunc = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridFuncionario)).BeginInit();
             this.pnlFunc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // GridFuncionario
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.GridFuncionario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.GridFuncionario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.GridFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridFuncionario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridFuncionario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.GridFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GridID,
@@ -76,30 +84,30 @@
             this.GridEmail,
             this.GridCNPJ,
             this.GridCargo});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridFuncionario.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridFuncionario.DefaultCellStyle = dataGridViewCellStyle7;
             this.GridFuncionario.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.GridFuncionario.Location = new System.Drawing.Point(0, 3);
             this.GridFuncionario.Name = "GridFuncionario";
             this.GridFuncionario.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridFuncionario.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridFuncionario.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.GridFuncionario.RowHeadersWidth = 51;
             this.GridFuncionario.RowTemplate.Height = 29;
             this.GridFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridFuncionario.Size = new System.Drawing.Size(1261, 682);
+            this.GridFuncionario.Size = new System.Drawing.Size(1297, 682);
             this.GridFuncionario.TabIndex = 36;
             // 
             // GridID
@@ -175,7 +183,7 @@
             this.BtnDesabilitados.Name = "BtnDesabilitados";
             this.BtnDesabilitados.Size = new System.Drawing.Size(277, 79);
             this.BtnDesabilitados.TabIndex = 35;
-            this.BtnDesabilitados.Text = "Mostrar Funcionarios Desabilitados";
+            this.BtnDesabilitados.Text = "         Mostrar Funcionarios Desabilitados";
             this.BtnDesabilitados.UseVisualStyleBackColor = false;
             this.BtnDesabilitados.Click += new System.EventHandler(this.BtnDesabilitados_Click);
             // 
@@ -188,7 +196,7 @@
             this.BtnDeletarFuncionario.Name = "BtnDeletarFuncionario";
             this.BtnDeletarFuncionario.Size = new System.Drawing.Size(277, 79);
             this.BtnDeletarFuncionario.TabIndex = 34;
-            this.BtnDeletarFuncionario.Text = "Deletar/Desabilitar Funcionario";
+            this.BtnDeletarFuncionario.Text = "        Deletar/Desabilitar Funcionario";
             this.BtnDeletarFuncionario.UseVisualStyleBackColor = false;
             this.BtnDeletarFuncionario.Click += new System.EventHandler(this.BtnDeletarFuncionario_Click);
             // 
@@ -201,7 +209,7 @@
             this.BtnAlterarFuncionario.Name = "BtnAlterarFuncionario";
             this.BtnAlterarFuncionario.Size = new System.Drawing.Size(277, 79);
             this.BtnAlterarFuncionario.TabIndex = 33;
-            this.BtnAlterarFuncionario.Text = "Alterar / Habilitar   Funcionario";
+            this.BtnAlterarFuncionario.Text = "        Alterar / Habilitar   Funcionario";
             this.BtnAlterarFuncionario.UseVisualStyleBackColor = false;
             this.BtnAlterarFuncionario.Click += new System.EventHandler(this.BtnAlterarFuncionario_Click);
             // 
@@ -214,9 +222,9 @@
             this.BtnCadastrarFuncionario.Name = "BtnCadastrarFuncionario";
             this.BtnCadastrarFuncionario.Size = new System.Drawing.Size(277, 79);
             this.BtnCadastrarFuncionario.TabIndex = 32;
-            this.BtnCadastrarFuncionario.Text = "Cadastrar Funcionario";
+            this.BtnCadastrarFuncionario.Text = "          Cadastrar Funcionario";
             this.BtnCadastrarFuncionario.UseVisualStyleBackColor = false;
-            this.BtnCadastrarFuncionario.Click += new System.EventHandler(this.BtnCadastrarFornecedor_Click);
+            this.BtnCadastrarFuncionario.Click += new System.EventHandler(this.BtnCadastrarFuncionario_Click);
             // 
             // pnlFunc
             // 
@@ -224,8 +232,56 @@
             this.pnlFunc.Controls.Add(this.GridFuncionario);
             this.pnlFunc.Location = new System.Drawing.Point(6, 12);
             this.pnlFunc.Name = "pnlFunc";
-            this.pnlFunc.Size = new System.Drawing.Size(1261, 685);
+            this.pnlFunc.Size = new System.Drawing.Size(1300, 685);
             this.pnlFunc.TabIndex = 37;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox1.Image = global::WfPresentationLayer.Properties.Resources.delete__v1;
+            this.pictureBox1.Location = new System.Drawing.Point(994, 713);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(59, 59);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.BtnDeletarFuncionario_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox2.Image = global::WfPresentationLayer.Properties.Resources.icons8_funcionário_homem_80;
+            this.pictureBox2.Location = new System.Drawing.Point(44, 713);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(55, 59);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 49;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.BtnCadastrarFuncionario_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox3.Image = global::WfPresentationLayer.Properties.Resources.remove_administrator;
+            this.pictureBox3.Location = new System.Drawing.Point(684, 713);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(62, 62);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 48;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.BtnDesabilitados_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox4.Image = global::WfPresentationLayer.Properties.Resources.icons8_funcionário_homem_80__1_;
+            this.pictureBox4.Location = new System.Drawing.Point(365, 713);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(55, 59);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 50;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.BtnAlterarFuncionario_Click);
             // 
             // Alteracao_Funcionario
             // 
@@ -233,6 +289,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1318, 794);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnDesabilitados);
             this.Controls.Add(this.BtnDeletarFuncionario);
             this.Controls.Add(this.BtnAlterarFuncionario);
@@ -244,6 +304,10 @@
             this.Load += new System.EventHandler(this.Alteracao_Funcionario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridFuncionario)).EndInit();
             this.pnlFunc.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -264,5 +328,9 @@
         private DataGridViewTextBoxColumn GridCNPJ;
         private DataGridViewTextBoxColumn GridCargo;
         private Panel pnlFunc;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
     }
 }

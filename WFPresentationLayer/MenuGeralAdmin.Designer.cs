@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.MidlePanel = new System.Windows.Forms.Panel();
+            this.LblMenu = new System.Windows.Forms.Label();
+            this.PctMenu = new System.Windows.Forms.PictureBox();
             this.BtnMenuFornecedor = new System.Windows.Forms.Button();
             this.BtnMenuFuncionario = new System.Windows.Forms.Button();
             this.BtnMenuClientes = new System.Windows.Forms.Button();
@@ -40,8 +42,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.LblFuncionarioLogado = new System.Windows.Forms.Label();
             this.PctBack = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.MidlePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PctMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PctBtnClose)).BeginInit();
             this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PctBack)).BeginInit();
@@ -49,13 +51,33 @@
             // 
             // MidlePanel
             // 
-            this.MidlePanel.BackColor = System.Drawing.Color.DimGray;
-            this.MidlePanel.Controls.Add(this.flowLayoutPanel1);
+            this.MidlePanel.BackColor = System.Drawing.Color.LightCoral;
+            this.MidlePanel.Controls.Add(this.LblMenu);
+            this.MidlePanel.Controls.Add(this.PctMenu);
             this.MidlePanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.MidlePanel.Location = new System.Drawing.Point(0, 93);
             this.MidlePanel.Name = "MidlePanel";
             this.MidlePanel.Size = new System.Drawing.Size(1318, 802);
             this.MidlePanel.TabIndex = 1;
+            // 
+            // LblMenu
+            // 
+            this.LblMenu.AutoSize = true;
+            this.LblMenu.Location = new System.Drawing.Point(844, 730);
+            this.LblMenu.Name = "LblMenu";
+            this.LblMenu.Size = new System.Drawing.Size(115, 20);
+            this.LblMenu.TabIndex = 8;
+            this.LblMenu.Text = "ByMarco&Gabriel";
+            // 
+            // PctMenu
+            // 
+            this.PctMenu.Image = global::WfPresentationLayer.Properties.Resources._7483870521_9a75e56a_b89d_43c8_b258_6ecb310f3b06;
+            this.PctMenu.Location = new System.Drawing.Point(3, 3);
+            this.PctMenu.Name = "PctMenu";
+            this.PctMenu.Size = new System.Drawing.Size(1312, 761);
+            this.PctMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PctMenu.TabIndex = 0;
+            this.PctMenu.TabStop = false;
             // 
             // BtnMenuFornecedor
             // 
@@ -189,7 +211,7 @@
             // 
             // PctBack
             // 
-            this.PctBack.Image = global::WfPresentationLayer.Properties.Resources.external_Back_arrows_simple_solid_edt_graphics_3;
+            this.PctBack.Image = global::WfPresentationLayer.Properties.Resources.circled_left_2;
             this.PctBack.Location = new System.Drawing.Point(3, 0);
             this.PctBack.Name = "PctBack";
             this.PctBack.Size = new System.Drawing.Size(125, 35);
@@ -197,13 +219,6 @@
             this.PctBack.TabIndex = 0;
             this.PctBack.TabStop = false;
             this.PctBack.Click += new System.EventHandler(this.PctBack_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(699, 318);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(8, 8);
-            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // MenuGeralAdmin
             // 
@@ -218,6 +233,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Geral Admin";
             this.MidlePanel.ResumeLayout(false);
+            this.MidlePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PctMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PctBtnClose)).EndInit();
             this.TopPanel.ResumeLayout(false);
             this.TopPanel.PerformLayout();
@@ -239,6 +256,8 @@
         private PictureBox PctBack;
         private Label LblFuncionarioLogado;
         private Button button1;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private Label label1;
+        private PictureBox PctMenu;
+        private Label LblMenu;
     }
 }

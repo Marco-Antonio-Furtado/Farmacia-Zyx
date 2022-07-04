@@ -44,8 +44,16 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pnlProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gridprodutos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnDesabilitados
@@ -57,7 +65,7 @@
             this.BtnDesabilitados.Name = "BtnDesabilitados";
             this.BtnDesabilitados.Size = new System.Drawing.Size(277, 79);
             this.BtnDesabilitados.TabIndex = 40;
-            this.BtnDesabilitados.Text = "Mostrar Produtos Desabilitados";
+            this.BtnDesabilitados.Text = "     Mostrar Produtos Desabilitados";
             this.BtnDesabilitados.UseVisualStyleBackColor = false;
             this.BtnDesabilitados.Click += new System.EventHandler(this.BtnDesabilitados_Click);
             // 
@@ -70,7 +78,7 @@
             this.BtnDeletarProdutos.Name = "BtnDeletarProdutos";
             this.BtnDeletarProdutos.Size = new System.Drawing.Size(277, 79);
             this.BtnDeletarProdutos.TabIndex = 39;
-            this.BtnDeletarProdutos.Text = "Deletar / Desabilitar      Produtos";
+            this.BtnDeletarProdutos.Text = "          Deletar / Desabilitar      Produtos";
             this.BtnDeletarProdutos.UseVisualStyleBackColor = false;
             this.BtnDeletarProdutos.Click += new System.EventHandler(this.BtnDeletarProdutos_Click);
             // 
@@ -83,7 +91,7 @@
             this.BtnAlterarProdutos.Name = "BtnAlterarProdutos";
             this.BtnAlterarProdutos.Size = new System.Drawing.Size(277, 79);
             this.BtnAlterarProdutos.TabIndex = 38;
-            this.BtnAlterarProdutos.Text = "Alterar / Habilitar         Produtos";
+            this.BtnAlterarProdutos.Text = "             Alterar / Habilitar         Produtos";
             this.BtnAlterarProdutos.UseVisualStyleBackColor = false;
             this.BtnAlterarProdutos.Click += new System.EventHandler(this.BtnAlterarProdutos_Click);
             // 
@@ -96,7 +104,7 @@
             this.BtnCadastrarProduto.Name = "BtnCadastrarProduto";
             this.BtnCadastrarProduto.Size = new System.Drawing.Size(277, 79);
             this.BtnCadastrarProduto.TabIndex = 42;
-            this.BtnCadastrarProduto.Text = "Cadastrar Produtos";
+            this.BtnCadastrarProduto.Text = "          Cadastrar Produtos";
             this.BtnCadastrarProduto.UseVisualStyleBackColor = false;
             this.BtnCadastrarProduto.Click += new System.EventHandler(this.BtnCadastrarProduto_Click);
             // 
@@ -202,12 +210,64 @@
             this.Column2.Name = "Column2";
             this.Column2.Width = 175;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox1.Image = global::WfPresentationLayer.Properties.Resources.delete__v1;
+            this.pictureBox1.Location = new System.Drawing.Point(1005, 712);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(59, 59);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 45;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.BtnDeletarProdutos_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox2.Image = global::WfPresentationLayer.Properties.Resources.external_drugs_virus_icongeek26_outline_icongeek26;
+            this.pictureBox2.Location = new System.Drawing.Point(23, 712);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(69, 62);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 46;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.BtnCadastrarProduto_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox3.Image = global::WfPresentationLayer.Properties.Resources.icons8_no_drugs_64__1_;
+            this.pictureBox3.Location = new System.Drawing.Point(668, 712);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(62, 62);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 47;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.BtnDesabilitados_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox4.Image = global::WfPresentationLayer.Properties.Resources.icons8_drugs_64;
+            this.pictureBox4.Location = new System.Drawing.Point(341, 712);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(62, 62);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 48;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.BtnAlterarProdutos_Click);
+            // 
             // FormMostrarProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1326, 794);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnCadastrarProduto);
             this.Controls.Add(this.BtnDesabilitados);
             this.Controls.Add(this.BtnDeletarProdutos);
@@ -219,6 +279,10 @@
             this.Load += new System.EventHandler(this.FormMostrarProdutos_Load);
             this.pnlProduto.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Gridprodutos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -237,5 +301,9 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewTextBoxColumn Column2;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
     }
 }

@@ -140,7 +140,7 @@ namespace WfPresentationLayer.Alteraçoes
             }
             if (GridClientes.RowCount == 1)
             {
-                MeuMessageBox.Show("Nao a Clientes Desabilitados");
+                MeuMessageBox.Show("Nao há Clientes Desabilitados");
                 LimparGrid();
             }
         }

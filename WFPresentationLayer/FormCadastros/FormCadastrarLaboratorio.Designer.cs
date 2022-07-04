@@ -80,8 +80,13 @@
             this.TxtBoxNomeResponsavel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxNomeResponsavel.Name = "TxtBoxNomeResponsavel";
             this.TxtBoxNomeResponsavel.Size = new System.Drawing.Size(196, 27);
-            this.TxtBoxNomeResponsavel.TabIndex = 91;
+            this.TxtBoxNomeResponsavel.TabIndex = 7;
+            this.TxtBoxNomeResponsavel.Text = "Digite O Nome Contato";
             this.TxtBoxNomeResponsavel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtBoxNomeResponsavel.Click += new System.EventHandler(this.TxtBoxNomeResponsavel_TextChanged);
+            this.TxtBoxNomeResponsavel.TextChanged += new System.EventHandler(this.TxtBoxNomeResponsavel_TextChanged);
+            this.TxtBoxNomeResponsavel.DoubleClick += new System.EventHandler(this.TxtBoxNomeResponsavel_TextChanged);
+            this.TxtBoxNomeResponsavel.Leave += new System.EventHandler(this.TxtBoxNomeResponsavel_TextChanged);
             // 
             // TxtBoxTelefone
             // 
@@ -92,7 +97,7 @@
             this.TxtBoxTelefone.Mask = "+55 (99) 90000-0000";
             this.TxtBoxTelefone.Name = "TxtBoxTelefone";
             this.TxtBoxTelefone.Size = new System.Drawing.Size(186, 27);
-            this.TxtBoxTelefone.TabIndex = 90;
+            this.TxtBoxTelefone.TabIndex = 5;
             // 
             // label5
             // 
@@ -126,7 +131,12 @@
             this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(196, 27);
-            this.txtBoxEmail.TabIndex = 88;
+            this.txtBoxEmail.TabIndex = 2;
+            this.txtBoxEmail.Text = "Digite O Email";
+            this.txtBoxEmail.Click += new System.EventHandler(this.txtBoxEmail_TextChanged);
+            this.txtBoxEmail.TextChanged += new System.EventHandler(this.txtBoxEmail_TextChanged);
+            this.txtBoxEmail.DoubleClick += new System.EventHandler(this.txtBoxEmail_TextChanged);
+            this.txtBoxEmail.Leave += new System.EventHandler(this.txtBoxEmail_TextChanged);
             // 
             // TxtBoxCnpjFornecedor
             // 
@@ -137,7 +147,7 @@
             this.TxtBoxCnpjFornecedor.Mask = "00.000.000/0000-00";
             this.TxtBoxCnpjFornecedor.Name = "TxtBoxCnpjFornecedor";
             this.TxtBoxCnpjFornecedor.Size = new System.Drawing.Size(186, 27);
-            this.TxtBoxCnpjFornecedor.TabIndex = 89;
+            this.TxtBoxCnpjFornecedor.TabIndex = 3;
             // 
             // label2
             // 
@@ -172,7 +182,12 @@
             this.txtBoxRazaoSocial.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBoxRazaoSocial.Name = "txtBoxRazaoSocial";
             this.txtBoxRazaoSocial.Size = new System.Drawing.Size(196, 27);
-            this.txtBoxRazaoSocial.TabIndex = 87;
+            this.txtBoxRazaoSocial.TabIndex = 0;
+            this.txtBoxRazaoSocial.Text = "Digite A Razão Social";
+            this.txtBoxRazaoSocial.Click += new System.EventHandler(this.txtBoxRazaoSocial_TextChanged);
+            this.txtBoxRazaoSocial.TextChanged += new System.EventHandler(this.txtBoxRazaoSocial_TextChanged);
+            this.txtBoxRazaoSocial.DoubleClick += new System.EventHandler(this.txtBoxRazaoSocial_TextChanged);
+            this.txtBoxRazaoSocial.Leave += new System.EventHandler(this.txtBoxRazaoSocial_TextChanged);
             // 
             // TxtBoxId
             // 

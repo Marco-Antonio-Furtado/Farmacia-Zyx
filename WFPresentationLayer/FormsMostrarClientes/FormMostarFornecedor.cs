@@ -126,7 +126,7 @@ namespace WfPresentationLayer.Alteraçoes
             }
             if (GridFornecedor.RowCount == 1)
             {
-                MeuMessageBox.Show("Nao a Fornecedores Desabilitados");
+                MeuMessageBox.Show("Nao há Fornecedores Desabilitados");
                 LimparGrid();
             }
 

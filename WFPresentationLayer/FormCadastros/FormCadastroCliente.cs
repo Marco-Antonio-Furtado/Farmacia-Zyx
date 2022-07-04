@@ -33,6 +33,8 @@ namespace WfPresentationLayer
                                           txtBoxEmailCliente.Text, TxtBoxTelefone1Cliente.Text
                                           , TxtBoxTelefone2Cliente.Text);
             cliente.Ativo = true;
+
+
             if (TxtBoxID.Visible == true)
             {
                 

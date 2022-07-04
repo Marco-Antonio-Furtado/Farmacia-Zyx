@@ -27,6 +27,8 @@ namespace WfPresentationLayer
         }
         private void BtnMenuVendas_Click(object sender, EventArgs e)
         {
+            PctMenu.Hide();
+            LblMenu.Hide();
             ParametrosDatas Parametros = MeumsgBoxWithDates.ShowMessageWithDates("Selecione a Data De busca das Vendas");
             _objForm?.Close();
             _objForm = new FormMostrarSaidas(Parametros)
@@ -40,6 +42,8 @@ namespace WfPresentationLayer
         }
         private void BtnMenuCompras_Click(object sender, EventArgs e)
         {
+            PctMenu.Hide();
+            LblMenu.Hide();
             ParametrosDatas Parametros = MeumsgBoxWithDates.ShowMessageWithDates("Selecione a Data De busca das Compras");
             _objForm?.Close();
             _objForm = new FormMostrarEntradas(Parametros)
@@ -53,7 +57,9 @@ namespace WfPresentationLayer
         }
         private void BtnMenuClientes_Click(object sender, EventArgs e)
         {
-            
+            PctMenu.Hide();
+            LblMenu.Hide();
+
             _objForm?.Close();
             _objForm = new FormMostarClientes
             {
@@ -66,6 +72,8 @@ namespace WfPresentationLayer
         }
         private void BtnMenuProduto_Click(object sender, EventArgs e)
         {
+            PctMenu.Hide();
+            LblMenu.Hide();
             _objForm?.Close();
             _objForm = new FormMostrarProdutos
             {
@@ -78,6 +86,8 @@ namespace WfPresentationLayer
         }
         private void BtnMenuFornecedor_Click(object sender, EventArgs e)
         {
+            PctMenu.Hide();
+            LblMenu.Hide();
             _objForm?.Close();
             _objForm = new Alteracao_Fornecedor
             {
@@ -90,6 +100,8 @@ namespace WfPresentationLayer
         }
         private void BtnMenuFuncionario_Click(object sender, EventArgs e)
         {
+            PctMenu.Hide();
+            LblMenu.Hide();
             _objForm?.Close();
             _objForm = new Alteracao_Funcionario
             {
@@ -103,10 +115,14 @@ namespace WfPresentationLayer
         private void PctBack_Click(object sender, EventArgs e)
         {
             _objForm?.Close();
+            PctMenu.Show();
+            LblMenu.Show();
         }
 
         private void BtnMostraLab(object sender, EventArgs e)
         {
+            PctMenu.Hide();
+            LblMenu.Hide();
             _objForm?.Close();
             _objForm = new FormMostarLaboratorio
             {

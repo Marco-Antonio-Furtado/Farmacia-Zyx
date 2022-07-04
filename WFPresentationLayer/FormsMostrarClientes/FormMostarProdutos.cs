@@ -131,7 +131,7 @@ namespace WfPresentationLayer.Alteraçoes
             }
             if (Gridprodutos.RowCount == 1)
             {
-                MeuMessageBox.Show("Nao a Produtos Desabilitados");
+                MeuMessageBox.Show("Nao há Produtos Desabilitados");
                 LimparGrid();
             }
         }

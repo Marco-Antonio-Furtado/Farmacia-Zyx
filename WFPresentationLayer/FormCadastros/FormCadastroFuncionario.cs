@@ -23,8 +23,6 @@ namespace WfPresentationLayer
             List<Cargo> Cargos = cargo.GetAll().Dados;
             LblIdAlteracao.Visible = false;
             TxtBoxID.Visible = false;
-            LblIdEndereco.Visible = false;
-            TxtBoxIDEndereco.Visible = false;
 
             foreach (Cargo cargo in Cargos)
             {

@@ -9,7 +9,7 @@ namespace DataAccessLayer
         public Response Insert(Produto item)
         {
             string sql = $"INSERT INTO PRODUTOS (NOME_PRODUTO,DESCRICAO,ID_LABORATORIO,VALOR_UNITARIO,VALOR_VENDA) VALUES (@NOME_PRODUTO,@DESCRICAO,@ID_LABORATORIO,@VALOR_UNITARIO,@VALOR_VENDA)";
-
+             
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@NOME_PRODUTO", item.Nome);
             command.Parameters.AddWithValue("@DESCRICAO", item.Descricao);

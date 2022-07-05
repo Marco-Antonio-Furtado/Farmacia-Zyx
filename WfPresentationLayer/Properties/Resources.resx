@@ -124,11 +124,8 @@
   <data name="icons8-botão2-48 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-botão2-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-botão2-48 (3)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-botão2-48 (3)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="remove-administrator" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\remove-administrator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AQUI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AQUI.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-botão2-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-botão2-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,20 +139,35 @@
   <data name="icons8-laboratory-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-laboratory-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="zyro-image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zyro-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="external-Back-arrows-simple-solid-edt.graphics-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\external-Back-arrows-simple-solid-edt.graphics-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-homem-com-carrinho-de-compras-de-óculos-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-homem-com-carrinho-de-compras-de-óculos-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="external-NO-DRUGS-capsule-hotel-bearicons-blue-bearicons" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\external-NO-DRUGS-capsule-hotel-bearicons-blue-bearicons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-bunsen-burner-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-bunsen-burner-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-agency-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-agency-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-comprar-80" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-comprar-80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="7483870576_6ab43f2e-d6eb-46e1-a824-b7a61aaf6a32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\7483870576_6ab43f2e-d6eb-46e1-a824-b7a61aaf6a32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-linkedin-circundado-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-linkedin-circundado-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="long-arrow-left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\long-arrow-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="external-person-human-body-anatomy-good-lines-kalash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\external-person-human-body-anatomy-good-lines-kalash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-semi-truck-side-view-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-semi-truck-side-view-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,14 +175,14 @@
   <data name="external-drugs-virus-icongeek26-outline-icongeek26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\external-drugs-virus-icongeek26-outline-icongeek26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete--v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete--v1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-pergunte-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-pergunte-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-funcionário-homem-80" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-funcionário-homem-80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="remove-administrator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\remove-administrator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="menu--v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu--v1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="thin-test-tube" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thin-test-tube.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-no-drugs-64 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-no-drugs-64 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,11 +196,14 @@
   <data name="7483870527_29e254b8-532a-4433-b417-33c0da1f117b" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7483870527_29e254b8-532a-4433-b417-33c0da1f117b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="7483870521_9a75e56a-b89d-43c8-b258-6ecb310f3b06" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tailor Brands - Instant Logo Maker &amp; Online Logo Design_files\7483870521_9a75e56a-b89d-43c8-b258-6ecb310f3b06.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-botão2-48 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-botão2-48 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="external-person-human-body-anatomy-good-lines-kalash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\external-person-human-body-anatomy-good-lines-kalash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-log-in-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-log-in-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-funcionário-homem-80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-funcionário-homem-80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="unlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,14 +211,23 @@
   <data name="icons8-funcionário-homem-80 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-funcionário-homem-80 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="thin-test-tube" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thin-test-tube.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="zyro-image1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zyro-image1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menu--v11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu--v1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menu--v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu--v1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="external-NO-DRUGS-capsule-hotel-bearicons-flat-bearicons" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\external-NO-DRUGS-capsule-hotel-bearicons-flat-bearicons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-botão2-48 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-botão2-48 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-funcionário-homem-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-funcionário-homem-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="7483870521_9a75e56a-b89d-43c8-b258-6ecb310f3b06" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tailor Brands - Instant Logo Maker &amp; Online Logo Design_files\7483870521_9a75e56a-b89d-43c8-b258-6ecb310f3b06.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="7483870524_1d1b5666-d340-43e4-88fe-1a4f91666ba7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7483870524_1d1b5666-d340-43e4-88fe-1a4f91666ba7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,34 +235,49 @@
   <data name="icons8-botão2-48 (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-botão2-48 (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-botão2-48 (3)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-botão2-48 (3)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="circled-left-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\circled-left-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="external-NO-DRUGS-capsule-hotel-bearicons-blue-bearicons1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\external-NO-DRUGS-capsule-hotel-bearicons-blue-bearicons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-funcionário-homem-1001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-funcionário-homem-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-no-drugs-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-no-drugs-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="web-help" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\web-help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="delete-sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete-sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="7483870576_6ab43f2e-d6eb-46e1-a824-b7a61aaf6a32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\7483870576_6ab43f2e-d6eb-46e1-a824-b7a61aaf6a32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-bunsen-burner-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-bunsen-burner-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-button-50 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-button-50 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="services--v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\services--v1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="menu--v11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu--v1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="web-help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\web-help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-button-50 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-button-50 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete-sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete-sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete--v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete--v1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-close-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-close-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-excluir-480" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-excluir-480.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-fechar-janela-80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-fechar-janela-80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-comprar-80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-comprar-80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-linkedin-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-linkedin-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

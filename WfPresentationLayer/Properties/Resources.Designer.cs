@@ -103,6 +103,16 @@ namespace WfPresentationLayer.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AQUI {
+            get {
+                object obj = ResourceManager.GetObject("AQUI", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap circled_left_2 {
             get {
                 object obj = ResourceManager.GetObject("circled-left-2", resourceCulture);
@@ -293,6 +303,16 @@ namespace WfPresentationLayer.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_close_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-close-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_comprar_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-comprar-80", resourceCulture);
@@ -306,6 +326,46 @@ namespace WfPresentationLayer.Properties {
         internal static System.Drawing.Bitmap icons8_drugs_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-drugs-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_excluir_480 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-excluir-480", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_fechar_janela_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-fechar-janela-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_funcionário_homem_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-funcionário-homem-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_funcionário_homem_1001 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-funcionário-homem-1001", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,9 +393,49 @@ namespace WfPresentationLayer.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_homem_com_carrinho_de_compras_de_óculos_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-homem-com-carrinho-de-compras-de-óculos-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_laboratory_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-laboratory-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_linkedin_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-linkedin-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_linkedin_circundado_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-linkedin-circundado-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_log_in_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-log-in-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -356,6 +456,16 @@ namespace WfPresentationLayer.Properties {
         internal static System.Drawing.Bitmap icons8_no_drugs_64__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-no-drugs-64 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pergunte_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pergunte-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -466,6 +576,26 @@ namespace WfPresentationLayer.Properties {
         internal static System.Drawing.Bitmap web_help {
             get {
                 object obj = ResourceManager.GetObject("web-help", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zyro_image {
+            get {
+                object obj = ResourceManager.GetObject("zyro-image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zyro_image1 {
+            get {
+                object obj = ResourceManager.GetObject("zyro-image1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

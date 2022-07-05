@@ -2682,19 +2682,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\entra21\\.nuget\\packages\\": {}
+    "C:\\Users\\SAMSUNG\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\entra21\\Desktop\\5\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\SAMSUNG\\Desktop\\3\\DataAccessLayer\\DataAccessLayer.csproj",
       "projectName": "DataAccessLayer",
-      "projectPath": "C:\\Users\\entra21\\Desktop\\5\\DataAccessLayer\\DataAccessLayer.csproj",
-      "packagesPath": "C:\\Users\\entra21\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\entra21\\Desktop\\5\\DataAccessLayer\\obj\\",
+      "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\DataAccessLayer\\DataAccessLayer.csproj",
+      "packagesPath": "C:\\Users\\SAMSUNG\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\DataAccessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\entra21\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\SAMSUNG\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2708,11 +2708,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\entra21\\Desktop\\5\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\entra21\\Desktop\\5\\Entities\\Entities.csproj"
+            "C:\\Users\\SAMSUNG\\Desktop\\3\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Entities\\Entities.csproj"
             },
-            "C:\\Users\\entra21\\Desktop\\5\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\entra21\\Desktop\\5\\Shared\\Shared.csproj"
+            "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj": {
+              "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj"
             }
           }
         }

@@ -43,8 +43,8 @@
             this.LblFuncionarioLogado = new System.Windows.Forms.Label();
             this.PctBack = new System.Windows.Forms.PictureBox();
             this.PnlTOPTOP = new System.Windows.Forms.Panel();
-            this.BtnRelogar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.BtnRelogar = new System.Windows.Forms.Button();
             this.MidlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PctMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PctBtnClose)).BeginInit();
@@ -77,7 +77,6 @@
             // 
             // PctMenu
             // 
-            this.PctMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PctMenu.Image = global::WfPresentationLayer.Properties.Resources._7483870521_9a75e56a_b89d_43c8_b258_6ecb310f3b06;
             this.PctMenu.Location = new System.Drawing.Point(0, 0);
             this.PctMenu.Name = "PctMenu";
@@ -256,6 +255,16 @@
             this.PnlTOPTOP.Size = new System.Drawing.Size(1312, 54);
             this.PnlTOPTOP.TabIndex = 8;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(145, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(143, 29);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // BtnRelogar
             // 
             this.BtnRelogar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -271,16 +280,6 @@
             this.BtnRelogar.Text = "Relogar";
             this.BtnRelogar.UseVisualStyleBackColor = false;
             this.BtnRelogar.Click += new System.EventHandler(this.BtnRelogar_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(145, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 29);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MenuGeralAdmin
             // 

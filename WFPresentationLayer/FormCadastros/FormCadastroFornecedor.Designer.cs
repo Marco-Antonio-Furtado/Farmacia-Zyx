@@ -67,7 +67,9 @@
             this.TxtBoxNomeResponsavel.Name = "TxtBoxNomeResponsavel";
             this.TxtBoxNomeResponsavel.Size = new System.Drawing.Size(203, 27);
             this.TxtBoxNomeResponsavel.TabIndex = 5;
-            this.TxtBoxNomeResponsavel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtBoxNomeResponsavel.Text = "Digite O Nome Contato";
+            this.TxtBoxNomeResponsavel.Enter += new System.EventHandler(this.TxtBoxNomeResponsavel_Enter);
+            this.TxtBoxNomeResponsavel.Leave += new System.EventHandler(this.TxtBoxNomeResponsavel_Enter);
             // 
             // TxtBoxTelefoneFornecedor
             // 
@@ -113,6 +115,9 @@
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(203, 27);
             this.txtBoxEmail.TabIndex = 2;
+            this.txtBoxEmail.Text = "Digite O Email";
+            this.txtBoxEmail.Enter += new System.EventHandler(this.txtBoxEmail_Enter);
+            this.txtBoxEmail.Leave += new System.EventHandler(this.txtBoxEmail_Enter);
             // 
             // TxtBoxCnpjFornecedor
             // 
@@ -159,6 +164,9 @@
             this.txtBoxRazaoSocial.Name = "txtBoxRazaoSocial";
             this.txtBoxRazaoSocial.Size = new System.Drawing.Size(203, 27);
             this.txtBoxRazaoSocial.TabIndex = 1;
+            this.txtBoxRazaoSocial.Text = "Digite A Razão Social";
+            this.txtBoxRazaoSocial.Enter += new System.EventHandler(this.txtBoxRazaoSocial_Enter);
+            this.txtBoxRazaoSocial.Leave += new System.EventHandler(this.txtBoxRazaoSocial_Enter);
             // 
             // BtnCadastroFornecedor
             // 

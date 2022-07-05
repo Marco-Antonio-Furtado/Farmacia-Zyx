@@ -82,11 +82,8 @@
             this.TxtBoxNomeResponsavel.Size = new System.Drawing.Size(196, 27);
             this.TxtBoxNomeResponsavel.TabIndex = 7;
             this.TxtBoxNomeResponsavel.Text = "Digite O Nome Contato";
-            this.TxtBoxNomeResponsavel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TxtBoxNomeResponsavel.Click += new System.EventHandler(this.TxtBoxNomeResponsavel_TextChanged);
-            this.TxtBoxNomeResponsavel.TextChanged += new System.EventHandler(this.TxtBoxNomeResponsavel_TextChanged);
-            this.TxtBoxNomeResponsavel.DoubleClick += new System.EventHandler(this.TxtBoxNomeResponsavel_TextChanged);
-            this.TxtBoxNomeResponsavel.Leave += new System.EventHandler(this.TxtBoxNomeResponsavel_TextChanged);
+            this.TxtBoxNomeResponsavel.Enter += new System.EventHandler(this.TxtBoxNomeResponsavel_Enter);
+            this.TxtBoxNomeResponsavel.Leave += new System.EventHandler(this.TxtBoxNomeResponsavel_Enter);
             // 
             // TxtBoxTelefone
             // 
@@ -133,10 +130,8 @@
             this.txtBoxEmail.Size = new System.Drawing.Size(196, 27);
             this.txtBoxEmail.TabIndex = 2;
             this.txtBoxEmail.Text = "Digite O Email";
-            this.txtBoxEmail.Click += new System.EventHandler(this.txtBoxEmail_TextChanged);
-            this.txtBoxEmail.TextChanged += new System.EventHandler(this.txtBoxEmail_TextChanged);
-            this.txtBoxEmail.DoubleClick += new System.EventHandler(this.txtBoxEmail_TextChanged);
-            this.txtBoxEmail.Leave += new System.EventHandler(this.txtBoxEmail_TextChanged);
+            this.txtBoxEmail.Enter += new System.EventHandler(this.txtBoxEmail_Enter_1);
+            this.txtBoxEmail.Leave += new System.EventHandler(this.txtBoxEmail_Enter_1);
             // 
             // TxtBoxCnpjFornecedor
             // 
@@ -184,10 +179,8 @@
             this.txtBoxRazaoSocial.Size = new System.Drawing.Size(196, 27);
             this.txtBoxRazaoSocial.TabIndex = 0;
             this.txtBoxRazaoSocial.Text = "Digite A Razão Social";
-            this.txtBoxRazaoSocial.Click += new System.EventHandler(this.txtBoxRazaoSocial_TextChanged);
-            this.txtBoxRazaoSocial.TextChanged += new System.EventHandler(this.txtBoxRazaoSocial_TextChanged);
-            this.txtBoxRazaoSocial.DoubleClick += new System.EventHandler(this.txtBoxRazaoSocial_TextChanged);
-            this.txtBoxRazaoSocial.Leave += new System.EventHandler(this.txtBoxRazaoSocial_TextChanged);
+            this.txtBoxRazaoSocial.Enter += new System.EventHandler(this.txtBoxRazaoSocial_Enter);
+            this.txtBoxRazaoSocial.Leave += new System.EventHandler(this.txtBoxRazaoSocial_Enter);
             // 
             // TxtBoxId
             // 

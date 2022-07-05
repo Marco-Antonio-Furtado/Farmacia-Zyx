@@ -57,6 +57,9 @@
             this.TxtBoxNomeCargo.Name = "TxtBoxNomeCargo";
             this.TxtBoxNomeCargo.Size = new System.Drawing.Size(224, 30);
             this.TxtBoxNomeCargo.TabIndex = 92;
+            this.TxtBoxNomeCargo.Text = "Digite o Cargo";
+            this.TxtBoxNomeCargo.Enter += new System.EventHandler(this.TxtBoxNomeCargo_Enter);
+            this.TxtBoxNomeCargo.Leave += new System.EventHandler(this.TxtBoxNomeCargo_Enter);
             // 
             // BtnCadastrarCargo
             // 

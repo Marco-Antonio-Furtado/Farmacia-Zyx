@@ -32,5 +32,17 @@ namespace WfPresentationLayer.FormCadastros
         {
             this.Close();
         }
+
+        private void TxtBoxNomeCargo_Enter(object sender, EventArgs e)
+        {
+            if (TxtBoxNomeCargo.Text == "Digite o Cargo")
+            {
+                TxtBoxNomeCargo.Text = "";
+            }
+            else if (TxtBoxNomeCargo.Text == "")
+            {
+                TxtBoxNomeCargo.Text = "Digite o Cargo";
+            }
+        }
     }
 }

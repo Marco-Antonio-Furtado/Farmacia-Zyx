@@ -93,6 +93,11 @@ namespace WfPresentationLayer.FormsMostrarClientes
 
         private void BtnDeletarLaboratorio_Click(object sender, EventArgs e)
         {
+            if (GridLaboratorio.CurrentRow.Cells[0].Value == null)
+            {
+                MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");
+                return;
+            }
             DataGridViewRow row = this.GridLaboratorio.SelectedRows[0];
             int IDCLiente = Convert.ToInt32(GridLaboratorio.CurrentRow.Cells[0].Value.ToString());
             string nome = Convert.ToString(GridLaboratorio.CurrentRow.Cells[1].Value.ToString());

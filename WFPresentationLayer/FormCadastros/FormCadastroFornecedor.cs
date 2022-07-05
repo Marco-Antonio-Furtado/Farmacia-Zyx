@@ -57,5 +57,43 @@ namespace WfPresentationLayer.FormCadastros
         {
             this.Close();
         }
+
+        private void txtBoxRazaoSocial_Enter(object sender, EventArgs e)
+        {
+            if (txtBoxRazaoSocial.Text == "Digite A Razão Social")
+            {
+                txtBoxRazaoSocial.Text = "";
+            }
+            else if (txtBoxRazaoSocial.Text == "")
+            {
+                txtBoxRazaoSocial.Text = "Digite A Razão Social";
+            }
+        }
+
+        private void txtBoxEmail_Enter(object sender, EventArgs e)
+        {
+            if (txtBoxEmail.Text == "Digite O Email")
+            {
+                txtBoxEmail.Text = "";
+
+            }
+            else if (txtBoxEmail.Text == "")
+            {
+                txtBoxEmail.Text = "Digite O Email";
+            }
+        }
+
+        private void TxtBoxNomeResponsavel_Enter(object sender, EventArgs e)
+        {
+            if (TxtBoxNomeResponsavel.Text == "Digite O Nome Contato")
+            {
+                TxtBoxNomeResponsavel.Text = "";
+            }
+            else if (TxtBoxNomeResponsavel.Text == "")
+            {
+                TxtBoxNomeResponsavel.Text = "Digite O Nome Contato";
+            }
+            
+        }
     }
 }

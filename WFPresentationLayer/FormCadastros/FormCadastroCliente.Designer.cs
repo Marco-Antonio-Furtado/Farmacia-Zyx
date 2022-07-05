@@ -69,7 +69,8 @@
             this.TxtBoxRgCliente.Name = "TxtBoxRgCliente";
             this.TxtBoxRgCliente.Size = new System.Drawing.Size(203, 30);
             this.TxtBoxRgCliente.TabIndex = 6;
-            this.TxtBoxRgCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtBoxRgCliente.Text = "Digite o Rg";
+            this.TxtBoxRgCliente.Enter += new System.EventHandler(this.TxtBoxRgCliente_Enter);
             // 
             // TxtBoxTelefone1Cliente
             // 
@@ -115,6 +116,9 @@
             this.txtBoxEmailCliente.Name = "txtBoxEmailCliente";
             this.txtBoxEmailCliente.Size = new System.Drawing.Size(203, 30);
             this.txtBoxEmailCliente.TabIndex = 2;
+            this.txtBoxEmailCliente.Text = "Digite O email";
+            this.txtBoxEmailCliente.Enter += new System.EventHandler(this.txtBoxEmailCliente_Enter);
+            this.txtBoxEmailCliente.Leave += new System.EventHandler(this.txtBoxEmailCliente_Enter);
             // 
             // TxtBoxCpfCLiente
             // 
@@ -160,6 +164,9 @@
             this.txtBoxNomeCliente.Name = "txtBoxNomeCliente";
             this.txtBoxNomeCliente.Size = new System.Drawing.Size(203, 30);
             this.txtBoxNomeCliente.TabIndex = 1;
+            this.txtBoxNomeCliente.Text = "Digite o Nome";
+            this.txtBoxNomeCliente.Enter += new System.EventHandler(this.txtBoxNomeCliente_Enter);
+            this.txtBoxNomeCliente.Leave += new System.EventHandler(this.txtBoxNomeCliente_Enter);
             // 
             // TxtBoxTelefone2Cliente
             // 

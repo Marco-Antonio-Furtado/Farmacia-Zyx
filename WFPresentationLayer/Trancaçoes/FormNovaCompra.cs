@@ -112,11 +112,19 @@ namespace WfPresentationLayer.Trancaçoes
             Response resposta = entradaBLL.Insert(entrada);
            
             MeuMessageBox.Show(resposta.Message);
-            
 
-
-
-
+            CmbBoxFornecedores.Enabled = true;
+            CmbFormaPagamento.Enabled = true;
+            CmbBoxFornecedores.SelectedIndex = 0;
+            CmbFormaPagamento.SelectedIndex = 0;
+            DateTime.Enabled = true;
+            CmbBoxProduto.SelectedIndex = -1;
+            TxtBoxQuantidade.Clear();
+            CheckPreco.Checked = false;
+            textBox1TxtBoxPrecoAlterado.Visible = false;
+            textBox1TxtBoxPrecoAlterado.Text = "";
+            DataGrid.Rows.Clear();
+            DataGrid.Refresh();
         }
         private void TxtBoxQuantidade_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -159,6 +167,9 @@ namespace WfPresentationLayer.Trancaçoes
             CmbBoxProduto.DataSource = produtosAtivos;
 
             CmbFormaPagamento.DataSource = Enum.GetNames(typeof(FormaPagamento));
+
+
+            
         }
         private void CheckPreco_CheckedChanged(object sender, EventArgs e)
         {

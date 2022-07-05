@@ -11,7 +11,6 @@ namespace WfPresentationLayer
         LaboratorioBLL LB = new();
         ProdutoBll produtoBll = new();
 
-
         List<Laboratorio> listaAtiva = new List<Laboratorio>();
         public FormCadastroProduto()
         {
@@ -28,7 +27,6 @@ namespace WfPresentationLayer
             }
             CmbBoxLaboratorio.DataSource = listaAtiva;
         }
-
         public FormCadastroProduto(Produto p)
         {
             InitializeComponent();
@@ -56,14 +54,13 @@ namespace WfPresentationLayer
             TxtBoxDescrisaoProduto.Text = p.ID_Laboratorio.Razao_Social;
             TxtBoxPrecoUnitario.Text = p.Valor_Unitario.ToString();
         }
-
         private void BtnCadastrarProduto_Click_1(object sender, EventArgs e)
         {
             Laboratorio lab = new Laboratorio();
             lab.ID = Convert.ToInt32(CmbBoxLaboratorio.SelectedValue.ToString());
 
             Produto produto = new Produto();
-            
+
             produto.Nome = TxtBoxNomeProduto.Text;
             produto.Descricao = TxtBoxDescrisaoProduto.Text;
             produto.ID_Laboratorio = lab;
@@ -88,7 +85,6 @@ namespace WfPresentationLayer
                 }
             }
         }
-
         private void TxtBoxPrecoUnitario_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '.' || e.KeyChar == ',')
@@ -109,16 +105,37 @@ namespace WfPresentationLayer
             }
 
         }
-
         private void BtnCadastrarLab_Click(object sender, EventArgs e)
         {
             FormCadastrarLaboratorio formCadastrarLaboratorio = new FormCadastrarLaboratorio();
             formCadastrarLaboratorio.ShowDialog();
         }
-
         private void ImageBtnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void TxtBoxNomeProduto_Enter(object sender, EventArgs e)
+        {
+            if (TxtBoxNomeProduto.Text == "Digite Nome Produto")
+            {
+                TxtBoxNomeProduto.Text = "";
+            }
+            else if (TxtBoxNomeProduto.Text == "")
+            {
+                TxtBoxNomeProduto.Text = "Digite Nome Produto";
+            }
+        }
+
+        private void TxtBoxDescrisaoProduto_Enter(object sender, EventArgs e)
+        {
+            if (TxtBoxDescrisaoProduto.Text == "Digite A Descrisao")
+            {
+                TxtBoxDescrisaoProduto.Text = "";
+            }
+            else if (TxtBoxDescrisaoProduto.Text == "")
+            {
+                TxtBoxDescrisaoProduto.Text = "Digite A Descrisao";
+            }
         }
     }
 }

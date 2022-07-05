@@ -26,14 +26,14 @@ namespace WfPresentationLayer
 
             foreach (Cargo cargo in Cargos)
             {
-                if(cargo.Ativo = true)
+                if (cargo.Ativo = true)
                 {
                     listaAtiva.Add(cargo);
                 }
             }
             CmbBoxCargos.DisplayMember = "Nome_Cargo";
             CmbBoxCargos.ValueMember = "ID";
-            CmbBoxCargos.DataSource = listaAtiva;   
+            CmbBoxCargos.DataSource = listaAtiva;
         }
 
         public FormCadastroFuncionario(Funcionario fun)
@@ -56,7 +56,7 @@ namespace WfPresentationLayer
             TxtBoxID.Text = fun.ID.ToString();
             txtBoxNomeFuncionario.Text = fun.Nome_Funcionario;
             txtBoxEmailFuncionario.Text = fun.Email;
-            TxtBoxRgFuncionario.Text =fun.RG;
+            TxtBoxRgFuncionario.Text = fun.RG;
             TxtBoxTelefone1Funcionario.Text = fun.Telefone;
             TxtBoxCpfFuncionario.Text = fun.CPF;
             //LblIdAlteracao.Visible = true;
@@ -70,7 +70,7 @@ namespace WfPresentationLayer
             {
                 MeuMessageBox.Show("Voce nao inseriu todos os campos");
             }
-            else 
+            else
             {
                 TabGeral.TabPages.Add(TabEndereco);
                 this.TabGeral.SelectedIndex = 1;
@@ -82,19 +82,19 @@ namespace WfPresentationLayer
         private void BtnCadastroFuncionario_Click_1(object sender, EventArgs e)
         {
             string cep = TxtBoxCep.Text;
-       int idfunc = int.Parse(TxtBoxID.Text);
+            int idfunc = int.Parse(TxtBoxID.Text);
             if (cep == "     -")
             {
                 cep = "";
             }
-            
+
             Cargo cargo = new Cargo(nome: CmbBoxCargos.Text);
             cargo.ID = (int)CmbBoxCargos.SelectedValue;
             Endereco endereco = new Endereco(nomeRua: TxtBoxRua.Text,
                                                         cEP: cep,
                                                         numeroCasa: TxtBoxNumero.Text,
                                                         estadoID: (int)CmbBoxEstado.SelectedValue,
-                                                        cidadeID: (int)CmbBoxCidade.SelectedValue); 
+                                                        cidadeID: (int)CmbBoxCidade.SelectedValue);
             Funcionario funcionario = new Funcionario(nome: txtBoxNomeFuncionario.Text,
                                                       cPF: TxtBoxCpfFuncionario.Text,
                                                       rG: TxtBoxRgFuncionario.Text,
@@ -103,11 +103,11 @@ namespace WfPresentationLayer
                                                       cargo: cargo,
                                                       endereco: endereco,
                                                       senha: TxtBoxSenhaFuncionario.Text
-                                                      ) ;
+                                                      );
             funcionario.Ativo = true;
             if (LblTitulo.Visible == true)
             {
-            Funcionario PegarEndereco = funcionarioBll.GetByID(idfunc).Item;
+                Funcionario PegarEndereco = funcionarioBll.GetByID(idfunc).Item;
                 string s = "";
                 funcionario.Endereco.ID = PegarEndereco.Endereco.ID;
                 funcionario.ID = int.Parse(TxtBoxID.Text);
@@ -162,6 +162,40 @@ namespace WfPresentationLayer
         private void ImageBtnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtBoxNomeFuncionario_Enter(object sender, EventArgs e)
+        {
+            if (txtBoxNomeFuncionario.Text == "Digite o Nome")
+            {
+                txtBoxNomeFuncionario.Text = "";
+            }
+            else if (txtBoxNomeFuncionario.Text == "")
+            {
+                txtBoxNomeFuncionario.Text = "Digite o Nome";
+            }
+        }
+        private void txtBoxEmailFuncionario_Enter(object sender, EventArgs e)
+        {
+            if (txtBoxEmailFuncionario.Text == "Digite o Email")
+            {
+                txtBoxEmailFuncionario.Text = "";
+            }
+            else if (txtBoxEmailFuncionario.Text == "")
+            {
+                txtBoxEmailFuncionario.Text = "Digite o Email";
+            }
+        }
+        private void TxtBoxRgFuncionario_Enter(object sender, EventArgs e)
+        {
+            if (TxtBoxRgFuncionario.Text == "Digite o Rg")
+            {
+                TxtBoxRgFuncionario.Text = "";
+            }
+            else if (TxtBoxRgFuncionario.Text == "")
+            {
+                TxtBoxRgFuncionario.Text = "Digite o Rg";
+            }
         }
     }
 }

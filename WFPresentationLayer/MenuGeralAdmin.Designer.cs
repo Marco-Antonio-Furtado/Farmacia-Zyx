@@ -51,19 +51,21 @@
             // 
             // MidlePanel
             // 
+            this.MidlePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MidlePanel.BackColor = System.Drawing.Color.LightCoral;
             this.MidlePanel.Controls.Add(this.LblMenu);
             this.MidlePanel.Controls.Add(this.PctMenu);
-            this.MidlePanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.MidlePanel.Location = new System.Drawing.Point(0, 93);
             this.MidlePanel.Name = "MidlePanel";
-            this.MidlePanel.Size = new System.Drawing.Size(1318, 802);
+            this.MidlePanel.Size = new System.Drawing.Size(1315, 802);
             this.MidlePanel.TabIndex = 1;
             // 
             // LblMenu
             // 
             this.LblMenu.AutoSize = true;
-            this.LblMenu.Location = new System.Drawing.Point(844, 730);
+            this.LblMenu.Location = new System.Drawing.Point(773, 747);
             this.LblMenu.Name = "LblMenu";
             this.LblMenu.Size = new System.Drawing.Size(115, 20);
             this.LblMenu.TabIndex = 8;
@@ -74,7 +76,7 @@
             this.PctMenu.Image = global::WfPresentationLayer.Properties.Resources._7483870521_9a75e56a_b89d_43c8_b258_6ecb310f3b06;
             this.PctMenu.Location = new System.Drawing.Point(3, 3);
             this.PctMenu.Name = "PctMenu";
-            this.PctMenu.Size = new System.Drawing.Size(1312, 761);
+            this.PctMenu.Size = new System.Drawing.Size(1309, 796);
             this.PctMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PctMenu.TabIndex = 0;
             this.PctMenu.TabStop = false;
@@ -183,7 +185,7 @@
             this.TopPanel.Controls.Add(this.BtnMenuProduto);
             this.TopPanel.Location = new System.Drawing.Point(0, 0);
             this.TopPanel.Name = "TopPanel";
-            this.TopPanel.Size = new System.Drawing.Size(1318, 100);
+            this.TopPanel.Size = new System.Drawing.Size(1318, 97);
             this.TopPanel.TabIndex = 7;
             // 
             // button1

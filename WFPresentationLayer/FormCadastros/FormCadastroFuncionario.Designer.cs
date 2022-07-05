@@ -209,7 +209,9 @@
             this.TxtBoxRgFuncionario.Name = "TxtBoxRgFuncionario";
             this.TxtBoxRgFuncionario.Size = new System.Drawing.Size(203, 27);
             this.TxtBoxRgFuncionario.TabIndex = 6;
-            this.TxtBoxRgFuncionario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtBoxRgFuncionario.Text = "Digite o Rg";
+            this.TxtBoxRgFuncionario.Enter += new System.EventHandler(this.TxtBoxRgFuncionario_Enter);
+            this.TxtBoxRgFuncionario.Leave += new System.EventHandler(this.TxtBoxRgFuncionario_Enter);
             // 
             // TxtBoxTelefone1Funcionario
             // 
@@ -253,6 +255,9 @@
             this.txtBoxEmailFuncionario.Name = "txtBoxEmailFuncionario";
             this.txtBoxEmailFuncionario.Size = new System.Drawing.Size(203, 27);
             this.txtBoxEmailFuncionario.TabIndex = 2;
+            this.txtBoxEmailFuncionario.Text = "Digite o Email";
+            this.txtBoxEmailFuncionario.Enter += new System.EventHandler(this.txtBoxEmailFuncionario_Enter);
+            this.txtBoxEmailFuncionario.Leave += new System.EventHandler(this.txtBoxEmailFuncionario_Enter);
             // 
             // TxtBoxCpfFuncionario
             // 
@@ -296,6 +301,8 @@
             this.txtBoxNomeFuncionario.Name = "txtBoxNomeFuncionario";
             this.txtBoxNomeFuncionario.Size = new System.Drawing.Size(203, 27);
             this.txtBoxNomeFuncionario.TabIndex = 1;
+            this.txtBoxNomeFuncionario.Text = "Digite o Nome";
+            this.txtBoxNomeFuncionario.Enter += new System.EventHandler(this.txtBoxNomeFuncionario_Enter);
             // 
             // TabEndereco
             // 

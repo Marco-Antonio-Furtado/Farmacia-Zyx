@@ -2702,19 +2702,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\entra21\\.nuget\\packages\\": {}
+    "C:\\Users\\SAMSUNG\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\entra21\\Desktop\\MARCO-ZYX\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
+      "projectUniqueName": "C:\\Users\\SAMSUNG\\Desktop\\3\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
       "projectName": "BusinessLogicalLayer",
-      "projectPath": "C:\\Users\\entra21\\Desktop\\MARCO-ZYX\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
-      "packagesPath": "C:\\Users\\entra21\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\entra21\\Desktop\\MARCO-ZYX\\BusinessLogicalLayer\\obj\\",
+      "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
+      "packagesPath": "C:\\Users\\SAMSUNG\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\BusinessLogicalLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\entra21\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\SAMSUNG\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2728,14 +2728,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\entra21\\Desktop\\MARCO-ZYX\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\entra21\\Desktop\\MARCO-ZYX\\DataAccessLayer\\DataAccessLayer.csproj"
+            "C:\\Users\\SAMSUNG\\Desktop\\3\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\DataAccessLayer\\DataAccessLayer.csproj"
             },
-            "C:\\Users\\entra21\\Desktop\\MARCO-ZYX\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\entra21\\Desktop\\MARCO-ZYX\\Entities\\Entities.csproj"
+            "C:\\Users\\SAMSUNG\\Desktop\\3\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Entities\\Entities.csproj"
             },
-            "C:\\Users\\entra21\\Desktop\\MARCO-ZYX\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\entra21\\Desktop\\MARCO-ZYX\\Shared\\Shared.csproj"
+            "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj": {
+              "projectPath": "C:\\Users\\SAMSUNG\\Desktop\\3\\Shared\\Shared.csproj"
             }
           }
         }
@@ -2764,7 +2764,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

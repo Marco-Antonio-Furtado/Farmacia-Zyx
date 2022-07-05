@@ -13,7 +13,7 @@ namespace WfPresentationLayer.FormCadastros
             TxtBoxId.Visible = false;
             LblIdAlteracao.Visible = false;
         }
-        public FormCadastrarLaboratorio(Laboratorio lab) 
+        public FormCadastrarLaboratorio(Laboratorio lab)
         {
             InitializeComponent();
             LblText.Text = "Alterar Laboratorio";
@@ -56,13 +56,23 @@ namespace WfPresentationLayer.FormCadastros
 
 
         }
-
         private void ImageBtnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        private void TxtBoxNomeResponsavel_Enter(object sender, EventArgs e)
+        {
 
-        private void txtBoxRazaoSocial_TextChanged(object sender, EventArgs e)
+            if (TxtBoxNomeResponsavel.Text == "Digite O Nome Contato")
+            {
+                TxtBoxNomeResponsavel.Text = "";
+            }
+            else if (TxtBoxNomeResponsavel.Text == "")
+            {
+                TxtBoxNomeResponsavel.Text = "Digite O Nome Contato";
+            }
+        }
+        private void txtBoxRazaoSocial_Enter(object sender, EventArgs e)
         {
             if (txtBoxRazaoSocial.Text == "Digite A Razão Social")
             {
@@ -73,29 +83,16 @@ namespace WfPresentationLayer.FormCadastros
                 txtBoxRazaoSocial.Text = "Digite A Razão Social";
             }
         }
-
-        private void txtBoxEmail_TextChanged(object sender, EventArgs e)
+        private void txtBoxEmail_Enter_1(object sender, EventArgs e)
         {
             if (txtBoxEmail.Text == "Digite O Email")
             {
                 txtBoxEmail.Text = "";
+
             }
             else if (txtBoxEmail.Text == "")
             {
                 txtBoxEmail.Text = "Digite O Email";
-            }
-        }
-
-        private void TxtBoxNomeResponsavel_TextChanged(object sender, EventArgs e)
-        {
-            
-                if (TxtBoxNomeResponsavel.Text == "Digite O Nome Contato")
-            {
-                TxtBoxNomeResponsavel.Text = "";
-            }
-            else if (TxtBoxNomeResponsavel.Text == "")
-            {
-                TxtBoxNomeResponsavel.Text = "Digite O Nome Contato";
             }
         }
     }

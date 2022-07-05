@@ -36,18 +36,7 @@ namespace WfPresentationLayer.Alteraçoes
         {
             FormNovaCompra form = new FormNovaCompra();
             form.ShowDialog();
-            //_objForm6?.Close();
-            //_objForm6 = new FormNovaCompra
-            //{
-            //    TopLevel = false,
-            //    FormBorderStyle = FormBorderStyle.None,
-            //    Dock = DockStyle.Fill,
-            //};
-            //PnlCompras.Controls.Add(_objForm6);
-            //_objForm6.Show();
-            //_objForm6.BringToFront();
         }
-
         private void BtnProcurarCompra_Click(object sender, EventArgs e)
         {
             LimparGrid();
@@ -69,5 +58,21 @@ namespace WfPresentationLayer.Alteraçoes
 
         }
 
+        private void BtnSelecionarVendas_Click(object sender, EventArgs e)
+        {
+            LimparGrid();
+            DataResponse<EntradaViewModel> Dados = entradaBll.GetAll();
+
+            if (Dados.Dados == null)
+            {
+                MeuMessageBox.Show("Nao ha itens a mostrar");
+                return;
+            }
+            foreach (EntradaViewModel item in Dados.Dados)
+            {
+
+                SincronizarListaGrid(item);
+            }
+        }
     }
 }

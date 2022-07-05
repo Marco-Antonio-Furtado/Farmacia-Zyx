@@ -6,7 +6,7 @@ namespace WfPresentationLayer
 {
     public partial class FormCadastroCliente : Form
     {
-        ClienteBll clientebll = new ClienteBll();
+        readonly ClienteBll clientebll = new ClienteBll();
         public FormCadastroCliente()
         {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace WfPresentationLayer
             txtBoxNomeCliente.Text = cli.Nome_Cliente;
             TxtBoxCpfCLiente.Text = cli.CPF;
             txtBoxEmailCliente.Text = cli.Email;
-            TxtBoxRgCliente.Text= cli.RG;
+            TxtBoxRgCliente.Text = cli.RG;
             TxtBoxTelefone1Cliente.Text = cli.Telefone;
             TxtBoxTelefone2Cliente.Text = cli.Telefone2;
             LblIdAlteracao.Visible = true;
@@ -37,7 +37,7 @@ namespace WfPresentationLayer
 
             if (TxtBoxID.Visible == true)
             {
-                
+
                 cliente.ID = int.Parse(TxtBoxID.Text);
                 Response resposta = clientebll.Update(cliente);
                 MeuMessageBox.Show(resposta.Message);
@@ -58,6 +58,42 @@ namespace WfPresentationLayer
         private void ImageBtnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtBoxNomeCliente_Enter(object sender, EventArgs e)
+        {
+            if (txtBoxNomeCliente.Text == "Digite o Nome")
+            {
+                txtBoxNomeCliente.Text = "";
+            }
+            else if (txtBoxNomeCliente.Text == "")
+            {
+                txtBoxNomeCliente.Text = "Digite o Nome";
+            }
+        }
+        private void txtBoxEmailCliente_Enter(object sender, EventArgs e)
+        {
+            if (txtBoxEmailCliente.Text == "Digite O email")
+            {
+                txtBoxEmailCliente.Text = "";
+            }
+            else if (txtBoxEmailCliente.Text == "")
+            {
+                txtBoxEmailCliente.Text = "Digite O email";
+            }
+
+        }
+
+        private void TxtBoxRgCliente_Enter(object sender, EventArgs e)
+        {
+            if (TxtBoxRgCliente.Text == "Digite o Rg")
+            {
+                TxtBoxRgCliente.Text = "";
+            }
+            else if (TxtBoxRgCliente.Text == "")
+            {
+                TxtBoxRgCliente.Text = "Digite o Rg";
+            }
         }
     }
 }

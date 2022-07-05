@@ -43,8 +43,12 @@
             this.BtnProcurarCompra = new System.Windows.Forms.Button();
             this.BtnCadastrarVendas = new System.Windows.Forms.Button();
             this.PnlVendas = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridSaidas)).BeginInit();
             this.PnlVendas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // GridSaidas
@@ -79,6 +83,7 @@
             this.GridSaidas.DefaultCellStyle = dataGridViewCellStyle2;
             this.GridSaidas.Location = new System.Drawing.Point(-2, 0);
             this.GridSaidas.Name = "GridSaidas";
+            this.GridSaidas.RowHeadersVisible = false;
             this.GridSaidas.RowHeadersWidth = 51;
             this.GridSaidas.RowTemplate.Height = 29;
             this.GridSaidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -157,7 +162,7 @@
             this.BtnProcurarCompra.Name = "BtnProcurarCompra";
             this.BtnProcurarCompra.Size = new System.Drawing.Size(277, 79);
             this.BtnProcurarCompra.TabIndex = 50;
-            this.BtnProcurarCompra.Text = "Selecionar Todas as vendas";
+            this.BtnProcurarCompra.Text = "              Selecionar Todas as vendas";
             this.BtnProcurarCompra.UseVisualStyleBackColor = false;
             this.BtnProcurarCompra.Click += new System.EventHandler(this.BtnProcurarCompra_Click);
             // 
@@ -170,7 +175,7 @@
             this.BtnCadastrarVendas.Name = "BtnCadastrarVendas";
             this.BtnCadastrarVendas.Size = new System.Drawing.Size(277, 79);
             this.BtnCadastrarVendas.TabIndex = 47;
-            this.BtnCadastrarVendas.Text = "Cadastrar Venda";
+            this.BtnCadastrarVendas.Text = "        Cadastrar Venda";
             this.BtnCadastrarVendas.UseVisualStyleBackColor = false;
             this.BtnCadastrarVendas.Click += new System.EventHandler(this.BtnCadastrarVendas_Click);
             // 
@@ -184,12 +189,38 @@
             this.PnlVendas.Size = new System.Drawing.Size(1286, 681);
             this.PnlVendas.TabIndex = 52;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox2.Image = global::WfPresentationLayer.Properties.Resources.icons8_comprar_80;
+            this.pictureBox2.Location = new System.Drawing.Point(18, 708);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(56, 62);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 52;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.BtnCadastrarVendas_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox1.Image = global::WfPresentationLayer.Properties.Resources.menu__v11;
+            this.pictureBox1.Location = new System.Drawing.Point(352, 708);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(56, 62);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 53;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.BtnProcurarCompra_Click);
+            // 
             // FormMostrarSaidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1312, 790);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.BtnProcurarCompra);
             this.Controls.Add(this.BtnCadastrarVendas);
             this.Controls.Add(this.PnlVendas);
@@ -198,6 +229,8 @@
             this.Text = "FormMostrarSaidas";
             ((System.ComponentModel.ISupportInitialize)(this.GridSaidas)).EndInit();
             this.PnlVendas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -217,5 +250,7 @@
         private DataGridViewTextBoxColumn GridValorTotal;
         private DataGridViewTextBoxColumn GridData;
         private DataGridViewTextBoxColumn GridFuncionario;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox1;
     }
 }

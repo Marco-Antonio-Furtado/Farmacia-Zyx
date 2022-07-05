@@ -31,11 +31,16 @@ namespace WfPresentationLayer.Alteraçoes
         }
         private void BtnDeletarFuncionario_Click(object sender, EventArgs e)
         {
+            if (GridFuncionario.CurrentRow.Cells[0].Value == null)
+            {
+                MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");
+                return;
+            }
             DataGridViewRow row = this.GridFuncionario.SelectedRows[0];
             int IDCLiente = Convert.ToInt32(GridFuncionario.CurrentRow.Cells[0].Value.ToString());
             string nome = Convert.ToString(GridFuncionario.CurrentRow.Cells[1].Value.ToString());
 
-            DialogResult r = MeuMessageBox.Show("Deseja Apagar o " + nome + " Da tabela Ou do banco " + "\r\n" + "X Para Voltar", "Escolha", "Deletar Do banco", "deletar da tabela");
+            DialogResult r = MeuMessageBox.Show("Deseja Apagar o Funcionario " + nome + " Da tabela Ou do banco " + "\r\n" + "X Para Voltar", "Escolha", "Deletar Do banco", "deletar da tabela");
             if (r == DialogResult.Yes)
             {
                 DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja deletar o Funcionario " + nome, " Tem Certeza?", "Sim", "Nao");

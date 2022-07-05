@@ -43,7 +43,7 @@ namespace DataAccessLayer
         }
         public Response Update(Funcionario item)
         {
-            string sql = "UPDATE FUNCIONARIOS SET NOME_FUNCIONARIO = @NOME, RG = @RG, TELEFONE = @TELEFONE, ENDERECO = @ENDERECO, CARGO_ID = @CARGO_ID,ATIVO = @ATIVO, SENHA = @SENHA";
+            string sql = "UPDATE FUNCIONARIOS SET NOME_FUNCIONARIO = @NOME, RG = @RG, TELEFONE = @TELEFONE, ENDERECO = @ENDERECO, CARGO_ID = @CARGO_ID,ATIVO = @ATIVO, SENHA = @SENHA WHERE ID = @ID";
             SqlCommand command = new SqlCommand(sql);
 
             command.Parameters.AddWithValue("@NOME", item.Nome_Funcionario);
@@ -53,6 +53,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@CARGO_ID", item.Cargo.ID);
             command.Parameters.AddWithValue("@SENHA", item.Senha);
             command.Parameters.AddWithValue("@ATIVO", item.Ativo);
+            command.Parameters.AddWithValue("@ID", item.ID);
 
             try
             {

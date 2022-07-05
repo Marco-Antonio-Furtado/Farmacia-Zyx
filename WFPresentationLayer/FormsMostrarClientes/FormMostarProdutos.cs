@@ -65,14 +65,18 @@ namespace WfPresentationLayer.Alteraçoes
         }
         private void BtnDeletarProdutos_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = this.Gridprodutos.SelectedRows[0];
+            if (Gridprodutos.CurrentRow.Cells[0].Value == null)
+            {
+                MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");
+                return;
+            }
             int IDCLiente = Convert.ToInt32(Gridprodutos.CurrentRow.Cells[0].Value.ToString());
             string nome = Convert.ToString(Gridprodutos.CurrentRow.Cells[1].Value.ToString());
 
-            DialogResult r = MeuMessageBox.Show("Deseja Apagar o " + nome + " Da tabela Ou do banco " + "\r\n" + "X Para Voltar", "Escolha", "Deletar Do banco", "deletar da tabela");
+            DialogResult r = MeuMessageBox.Show("Deseja Apagar o Produto " + nome + " Da tabela Ou do banco " + "\r\n" + "X Para Voltar", "Escolha", "Deletar Do banco", "deletar da tabela");
             if (r == DialogResult.Yes)
             {
-                DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja deletar o usuario " + nome, " Tem Certeza?", "Sim", "Nao");
+                DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja deletar o Produto " + nome, " Tem Certeza?", "Sim", "Nao");
                 if (re == DialogResult.Yes)
                 {
                     Response resposta = ProdutoBll.Delete(IDCLiente);

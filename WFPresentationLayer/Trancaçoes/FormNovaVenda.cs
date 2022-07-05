@@ -106,6 +106,17 @@ namespace WfPresentationLayer
             {
                 MeuMessageBox.Show(resposta.Message);
             }
+
+            CmbBoxClientes.Enabled = true;
+            CmbFormaPagamento.Enabled = true;
+            CmbBoxClientes.SelectedIndex = 0;
+            CmbFormaPagamento.SelectedIndex = 0;
+            DateTime.Enabled = true;
+            CmbBoxProduto.SelectedIndex = -1;
+            TxtBoxQuantidade.Clear();
+            DataGrid.Rows.Clear();
+            DataGrid.Refresh();
+
         }
         private void TxtBoxQuantidade_KeyPress(object sender, KeyPressEventArgs e)
         {

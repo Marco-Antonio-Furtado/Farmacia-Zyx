@@ -65,6 +65,8 @@
             this.TxtBoxDescrisaoProduto.Name = "TxtBoxDescrisaoProduto";
             this.TxtBoxDescrisaoProduto.Size = new System.Drawing.Size(203, 27);
             this.TxtBoxDescrisaoProduto.TabIndex = 2;
+            this.TxtBoxDescrisaoProduto.Text = "Digite A Descrisao";
+            this.TxtBoxDescrisaoProduto.Enter += new System.EventHandler(this.TxtBoxDescrisaoProduto_Enter);
             // 
             // Laboratorio
             // 
@@ -97,6 +99,9 @@
             this.TxtBoxNomeProduto.Name = "TxtBoxNomeProduto";
             this.TxtBoxNomeProduto.Size = new System.Drawing.Size(203, 27);
             this.TxtBoxNomeProduto.TabIndex = 1;
+            this.TxtBoxNomeProduto.Text = "Digite Nome Produto";
+            this.TxtBoxNomeProduto.Enter += new System.EventHandler(this.TxtBoxNomeProduto_Enter);
+            this.TxtBoxNomeProduto.Leave += new System.EventHandler(this.TxtBoxNomeProduto_Enter);
             // 
             // label2
             // 

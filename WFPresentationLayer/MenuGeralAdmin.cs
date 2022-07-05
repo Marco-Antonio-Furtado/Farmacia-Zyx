@@ -117,7 +117,6 @@ namespace WfPresentationLayer
             PctMenu.Show();
             LblMenu.Show();
         }
-
         private void BtnMostraLab(object sender, EventArgs e)
         {
             PctMenu.Hide();
@@ -132,12 +131,14 @@ namespace WfPresentationLayer
             MidlePanel.Controls.Add(_objForm);
             _objForm.Show();
         }
-
         private void BtnRelogar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormLogin form = new FormLogin();
-            form.ShowDialog();
+           Application.Restart();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TopPanel.Visible = true;
         }
     }
 }

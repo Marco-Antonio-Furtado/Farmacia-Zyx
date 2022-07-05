@@ -44,6 +44,7 @@
             this.PctBack = new System.Windows.Forms.PictureBox();
             this.PnlTOPTOP = new System.Windows.Forms.Panel();
             this.BtnRelogar = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.MidlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PctMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PctBtnClose)).BeginInit();
@@ -202,6 +203,7 @@
             this.TopPanel.Name = "TopPanel";
             this.TopPanel.Size = new System.Drawing.Size(1312, 79);
             this.TopPanel.TabIndex = 7;
+            this.TopPanel.Visible = false;
             // 
             // button1
             // 
@@ -243,6 +245,7 @@
             // PnlTOPTOP
             // 
             this.PnlTOPTOP.BackColor = System.Drawing.Color.IndianRed;
+            this.PnlTOPTOP.Controls.Add(this.button2);
             this.PnlTOPTOP.Controls.Add(this.BtnRelogar);
             this.PnlTOPTOP.Controls.Add(this.PctBtnClose);
             this.PnlTOPTOP.Controls.Add(this.PctBack);
@@ -268,6 +271,16 @@
             this.BtnRelogar.Text = "Relogar";
             this.BtnRelogar.UseVisualStyleBackColor = false;
             this.BtnRelogar.Click += new System.EventHandler(this.BtnRelogar_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(145, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(143, 29);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MenuGeralAdmin
             // 
@@ -313,5 +326,6 @@
         private Label LblMenu;
         private Panel PnlTOPTOP;
         private Button BtnRelogar;
+        private Button button2;
     }
 }

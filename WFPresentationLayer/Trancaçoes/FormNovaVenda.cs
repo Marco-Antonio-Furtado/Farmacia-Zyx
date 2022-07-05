@@ -1,5 +1,6 @@
 ﻿using BusinessLogicalLayer;
 using BusinessLogicalLayer.BusinessLL;
+using BusinessLogicalLayer.RegraDePreco;
 using Entities;
 using Entities.enums;
 using Entities.Propriedades;
@@ -9,6 +10,7 @@ namespace WfPresentationLayer
 {
     public partial class FormNovaVenda : Form
     {
+        RegraDescontoCliente Regra = new RegraDescontoCliente();
         ClienteBll clienteBll = new ClienteBll();
         ProdutoBll produtoBLL = new ProdutoBll();
         SaidaBll SaidaBLL = new SaidaBll();
@@ -35,17 +37,15 @@ namespace WfPresentationLayer
         }
         private void BtnNovoIten_Click(object sender, EventArgs e)
         {
-            if (CmbBoxProduto.Text == "")
+            if (CmbBoxProduto.Text == "" || CmbFormaPagamento.Text == "" || CmbFormaPagamento.Text == "")
             {
-                MeuMessageBox.Show("Voce nao selecionou Produto");
+                MeuMessageBox.Show("Voce nao selecionou os itens");
             }
-            else if (CmbFormaPagamento.Text == "")
-            {
-                MeuMessageBox.Show("voce nao colocou a opcao de forma de pagamento");
-            }
-            else if (TxtBoxQuantidade.Text == "") { MeuMessageBox.Show("voce nao colocou a Quantidade"); }
             else
-            {
+            { 
+                
+
+                
                 Produto produto = new();
                 Item item = new Item();
                 produto.ID = (int)CmbBoxProduto.SelectedValue;
@@ -54,6 +54,10 @@ namespace WfPresentationLayer
                 item.Preco = proselcionado.Valor_Venda;
                 item.Qtd = int.Parse(TxtBoxQuantidade.Text);
 
+
+                double valorAntigo = double.Parse(LblValorTotal.Text);
+                double valorNovo = item.Preco * item.Qtd;
+                LblValorTotal.Text = Convert.ToString(valorAntigo + valorNovo);
 
                 ItemsSaida.Add(item);
                 SincronizarListaGrid(item);
@@ -83,40 +87,80 @@ namespace WfPresentationLayer
             Cliente cliente = new Cliente();
                 Saida saida = new Saida();
             Funcionario funcionario = new();
-            double soma = 0;
-            foreach (Item item in ItemsSaida)
-            {
-                soma += (item.Preco * item.Qtd);
-            }
-            saida.Forma_Pagamento = CmbFormaPagamento.Text;
-            saida.ValorTotal = soma;
-
             cliente.ID = (int)CmbBoxClientes.SelectedValue;
+            saida.ValorTotal = double.Parse(LblValorTotal.Text);
+            saida.Forma_Pagamento = CmbFormaPagamento.Text;
+
             saida.Cliente = cliente;
             saida.Items = ItemsSaida;
             saida.Data = DateTime.Value;
             funcionario.ID = (int)SystemParameters.GetID();
             saida.IDFuncionario = funcionario;
-            Response resposta = SaidaBLL.Insert(saida);
-            if (resposta.HasSuccess)
+            
+
+            bool IsDesconto = Regra.ChecarDesconto(saida);
+            if (!IsDesconto)
             {
-                MeuMessageBox.Show("Venda Cadastrada");
+                DialogResult responsemsgbox = MeuMessageBox.Show("A sua Compra deu o valor de " + saida.ValorTotal.ToString() + " Deseja encerrar a compra?", "Escolha", "Sim", "Nao");
+
+                if (responsemsgbox == DialogResult.Yes)
+                {
+                    Response resposta = SaidaBLL.Insert(saida);
+                    if (resposta.HasSuccess)
+                    {
+                        MeuMessageBox.Show("Venda Cadastrada");
+                    }
+                    else
+                    {
+                        MeuMessageBox.Show(resposta.Message);
+                    }
+
+                    CmbBoxClientes.Enabled = true;
+                    CmbFormaPagamento.Enabled = true;
+                    CmbBoxClientes.SelectedIndex = 0;
+                    CmbFormaPagamento.SelectedIndex = 0;
+                    DateTime.Enabled = true;
+                    CmbBoxProduto.SelectedIndex = -1;
+                    TxtBoxQuantidade.Clear();
+                    DataGrid.Rows.Clear();
+                    DataGrid.Refresh();
+                }
+                else
+                {
+                    return;
+                }
             }
             else
             {
-                MeuMessageBox.Show(resposta.Message);
+                DialogResult responsemsgbox = MeuMessageBox.Show("A sua Compra Com Desconto deu o valor de " + (saida.ValorTotal * 0.9).ToString() + " Deseja encerrar a compra?", "Escolha", "Sim", "Nao");
+
+                if (responsemsgbox == DialogResult.Yes)
+                {
+                    Response resposta = SaidaBLL.Insert(saida);
+                    if (resposta.HasSuccess)
+                    {
+                        MeuMessageBox.Show("Venda Cadastrada");
+                    }
+                    else
+                    {
+                        MeuMessageBox.Show(resposta.Message);
+                    }
+
+                    CmbBoxClientes.Enabled = true;
+                    CmbFormaPagamento.Enabled = true;
+                    CmbBoxClientes.SelectedIndex = 0;
+                    CmbFormaPagamento.SelectedIndex = 0;
+                    DateTime.Enabled = true;
+                    CmbBoxProduto.SelectedIndex = -1;
+                    TxtBoxQuantidade.Clear();
+                    DataGrid.Rows.Clear();
+                    DataGrid.Refresh();
+                }
+                else
+                {
+                    return;
+                }
             }
-
-            CmbBoxClientes.Enabled = true;
-            CmbFormaPagamento.Enabled = true;
-            CmbBoxClientes.SelectedIndex = 0;
-            CmbFormaPagamento.SelectedIndex = 0;
-            DateTime.Enabled = true;
-            CmbBoxProduto.SelectedIndex = -1;
-            TxtBoxQuantidade.Clear();
-            DataGrid.Rows.Clear();
-            DataGrid.Refresh();
-
         }
         private void TxtBoxQuantidade_KeyPress(object sender, KeyPressEventArgs e)
         {

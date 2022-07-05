@@ -22,6 +22,7 @@ namespace WfPresentationLayer
                 LabelResposta.Text = "Bem vindo";
                 MenuGeralAdmin menuGeralAdmin = new MenuGeralAdmin();
                 menuGeralAdmin.ShowDialog();
+                this.Close();
             }
             else 
             { 

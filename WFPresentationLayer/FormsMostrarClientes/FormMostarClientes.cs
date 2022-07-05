@@ -44,7 +44,7 @@ namespace WfPresentationLayer.Alteraçoes
         }
         private void SincronizarListaGrid(Cliente item)
         {
-            GridClientes.Rows.Add(item.ID, item.Nome_Cliente,item.Email, item.RG, item.CPF, item.Telefone, item.Telefone2);
+            GridClientes.Rows.Add(item.ID, item.Nome_Cliente,item.Email, item.RG, item.CPF, item.Telefone, item.Telefone2,item.Programa_Fidelidade);
         }
 
         private void BtnAlterarCliente_Click(object sender, EventArgs e)

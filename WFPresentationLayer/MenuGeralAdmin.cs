@@ -19,7 +19,6 @@ namespace WfPresentationLayer
             LblFuncionarioLogado.Text = "Bem vindo Senhor " + SystemParameters.UsuarioLogado.Nome_Funcionario;
             Cargo ca = SystemParameters.GetPermissao();
             if(ca.Nome_Cargo != "Administrador") { BtnMenuFuncionario.Visible = false; }
-
         }
         private void PctBtnClose_Click(object sender, EventArgs e)
         {
@@ -132,6 +131,13 @@ namespace WfPresentationLayer
             };
             MidlePanel.Controls.Add(_objForm);
             _objForm.Show();
+        }
+
+        private void BtnRelogar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin form = new FormLogin();
+            form.ShowDialog();
         }
     }
 }

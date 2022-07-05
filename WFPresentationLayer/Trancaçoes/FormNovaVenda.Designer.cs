@@ -57,6 +57,8 @@
             this.CmbBoxClientes = new System.Windows.Forms.ComboBox();
             this.ImageBtnFechar = new System.Windows.Forms.PictureBox();
             this.LblText = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LblValorTotal = new System.Windows.Forms.Label();
             this.GroupBoxVenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,6 +78,8 @@
             // 
             // GroupBoxVenda
             // 
+            this.GroupBoxVenda.Controls.Add(this.LblValorTotal);
+            this.GroupBoxVenda.Controls.Add(this.label1);
             this.GroupBoxVenda.Controls.Add(this.CmbBoxProduto);
             this.GroupBoxVenda.Controls.Add(this.TxtBoxQuantidade);
             this.GroupBoxVenda.Controls.Add(this.BtnExcluir);
@@ -367,6 +371,24 @@
             this.LblText.TabIndex = 102;
             this.LblText.Text = "Cadastrar Venda";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(893, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(199, 23);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Valor Total Da Compra =";
+            // 
+            // LblValorTotal
+            // 
+            this.LblValorTotal.AutoSize = true;
+            this.LblValorTotal.Location = new System.Drawing.Point(1109, 64);
+            this.LblValorTotal.Name = "LblValorTotal";
+            this.LblValorTotal.Size = new System.Drawing.Size(19, 23);
+            this.LblValorTotal.TabIndex = 34;
+            this.LblValorTotal.Text = "0";
+            // 
             // FormNovaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -423,5 +445,7 @@
         private ComboBox CmbBoxClientes;
         private PictureBox ImageBtnFechar;
         private Label LblText;
+        private Label LblValorTotal;
+        private Label label1;
     }
 }

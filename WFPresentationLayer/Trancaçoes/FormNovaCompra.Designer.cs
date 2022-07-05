@@ -61,6 +61,8 @@
             this.CmbBoxFornecedores = new System.Windows.Forms.ComboBox();
             this.ImageBtnFechar = new System.Windows.Forms.PictureBox();
             this.LblText = new System.Windows.Forms.Label();
+            this.LblValorTotal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.GroupBoxCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).BeginInit();
@@ -93,6 +95,8 @@
             // 
             // GroupBoxCompra
             // 
+            this.GroupBoxCompra.Controls.Add(this.LblValorTotal);
+            this.GroupBoxCompra.Controls.Add(this.label1);
             this.GroupBoxCompra.Controls.Add(this.textBox1TxtBoxPrecoAlterado);
             this.GroupBoxCompra.Controls.Add(this.CheckPreco);
             this.GroupBoxCompra.Controls.Add(this.CmbBoxProduto);
@@ -426,6 +430,24 @@
             this.LblText.TabIndex = 104;
             this.LblText.Text = "Cadastrar Entrada";
             // 
+            // LblValorTotal
+            // 
+            this.LblValorTotal.AutoSize = true;
+            this.LblValorTotal.Location = new System.Drawing.Point(1215, 37);
+            this.LblValorTotal.Name = "LblValorTotal";
+            this.LblValorTotal.Size = new System.Drawing.Size(17, 20);
+            this.LblValorTotal.TabIndex = 37;
+            this.LblValorTotal.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(999, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(174, 20);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Valor Total Da Compra =";
+            // 
             // FormNovaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -485,5 +507,7 @@
         private TextBox textBox1TxtBoxPrecoAlterado;
         private PictureBox ImageBtnFechar;
         private Label LblText;
+        private Label LblValorTotal;
+        private Label label1;
     }
 }

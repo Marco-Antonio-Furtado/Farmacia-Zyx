@@ -13,8 +13,6 @@ namespace WfPresentationLayer.Trancaçoes
         public FormNovaCompra()
         {
             InitializeComponent();
-            
-            
         }
         FornecedorBll fornecedorBLL = new FornecedorBll();
         ProdutoBll produtoBLL = new ProdutoBll();
@@ -60,9 +58,16 @@ namespace WfPresentationLayer.Trancaçoes
             else
             {
                 item.Preco = produtoBLL.GetByID(produto.ID).Item.Valor_Venda;
-            }   
+            }
                 item.IDProduto = produto;
                 item.Qtd = int.Parse(TxtBoxQuantidade.Text);
+
+            double valorAntigo = double.Parse(LblValorTotal.Text);
+            double valorNovo = item.Preco * item.Qtd;
+            LblValorTotal.Text = (valorAntigo + valorNovo).ToString();
+
+
+
                 ItemsEntrada.Add(item);
                 SincronizarListaGrid(item);
                 LimparFormulario();
@@ -93,38 +98,43 @@ namespace WfPresentationLayer.Trancaçoes
         {
 
             Entrada entrada = new Entrada();
-            double soma = 0;
-            foreach (Item item in ItemsEntrada)
-            {
-                 soma += (item.Preco * item.Qtd);
-            }
             Fornecedor fornecedor = new();
             Funcionario funcionario = new();
             fornecedor.ID = (int)CmbBoxFornecedores.SelectedValue;
             entrada.Forma_Pagamento = CmbFormaPagamento.Text;
-            entrada.ValorTotal = soma;
+            entrada.ValorTotal = double.Parse(LblValorTotal.Text);
             entrada.IDFornecedor = fornecedor;
             entrada.Items = ItemsEntrada;
             entrada.Data = DateTime.Value;
             funcionario.ID = (int)SystemParameters.GetID();
             entrada.IDFuncionario = funcionario;
-            
-            Response resposta = entradaBLL.Insert(entrada);
-           
-            MeuMessageBox.Show(resposta.Message);
+            DialogResult ResponseMsg = MeuMessageBox.Show("A Entrada de Produtos deu o valor de " + entrada.ValorTotal + "Deseja Continuar a entrada dos produtos", "Escolha", "SIM", "Nao");
+            if (ResponseMsg == DialogResult.Yes)
+            {
+                Response resposta = entradaBLL.Insert(entrada);
 
-            CmbBoxFornecedores.Enabled = true;
-            CmbFormaPagamento.Enabled = true;
-            CmbBoxFornecedores.SelectedIndex = 0;
-            CmbFormaPagamento.SelectedIndex = 0;
-            DateTime.Enabled = true;
-            CmbBoxProduto.SelectedIndex = -1;
-            TxtBoxQuantidade.Clear();
-            CheckPreco.Checked = false;
-            textBox1TxtBoxPrecoAlterado.Visible = false;
-            textBox1TxtBoxPrecoAlterado.Text = "";
-            DataGrid.Rows.Clear();
-            DataGrid.Refresh();
+                MeuMessageBox.Show(resposta.Message);
+
+                CmbBoxFornecedores.Enabled = true;
+                CmbFormaPagamento.Enabled = true;
+                CmbBoxFornecedores.SelectedIndex = 0;
+                CmbFormaPagamento.SelectedIndex = 0;
+                DateTime.Enabled = true;
+                CmbBoxProduto.SelectedIndex = -1;
+                TxtBoxQuantidade.Clear();
+                CheckPreco.Checked = false;
+                textBox1TxtBoxPrecoAlterado.Visible = false;
+                textBox1TxtBoxPrecoAlterado.Text = "";
+                DataGrid.Rows.Clear();
+                DataGrid.Refresh();
+            }
+            else
+            {
+                return;
+            }
+
+
+            
         }
         private void TxtBoxQuantidade_KeyPress_1(object sender, KeyPressEventArgs e)
         {

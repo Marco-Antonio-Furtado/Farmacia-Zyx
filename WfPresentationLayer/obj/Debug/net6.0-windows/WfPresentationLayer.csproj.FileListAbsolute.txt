@@ -47,7 +47,6 @@ C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresen
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastros.FormCadastrarLaboratorio.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastros.FormCadastroCargo.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastroCliente.resources
-C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastroEndereco.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastros.FormCadastroFornecedor.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastroFuncionario.resources
 C:\Users\SAMSUNG\Desktop\3\WfPresentationLayer\obj\Debug\net6.0-windows\WfPresentationLayer.FormCadastroProduto.resources

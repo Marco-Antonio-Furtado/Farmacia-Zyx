@@ -5,13 +5,14 @@ using Entities;
 using Entities.enums;
 using Entities.Propriedades;
 using Shared;
+using WfPresentationLayer.Alteraçoes;
 
 namespace WfPresentationLayer
 {
     public partial class FormNovaVenda : Form
     {
+        
         RegraDescontoCliente Regra = new RegraDescontoCliente();
-        ClienteBll clienteBll = new ClienteBll();
         ProdutoBll produtoBLL = new ProdutoBll();
         SaidaBll SaidaBLL = new SaidaBll();
         public FormNovaVenda()
@@ -19,12 +20,11 @@ namespace WfPresentationLayer
             InitializeComponent();
             CmbFormaPagamento.DataSource = Enum.GetNames(typeof(FormaPagamento));
             DataGrid.DataBindings.Add(nameof(DataGrid.BackgroundColor), this, nameof(Control.BackColor));
-            CmbBoxClientes.SelectedIndex = -1;
-            CmbBoxProduto.SelectedIndex = -1;
+            TxtProcurarCliente.Text = "";
+            TxtBoxProcurarProduto.Text = "";
             CmbFormaPagamento.SelectedIndex = -1;
         }
         List<Item> ItemsSaida = new List<Item>();
-
         private void BtnNovoCliente_Click(object sender, EventArgs e)
         {
             FormCadastroCliente formCadastroCliente = new FormCadastroCliente();
@@ -37,18 +37,20 @@ namespace WfPresentationLayer
         }
         private void BtnNovoIten_Click(object sender, EventArgs e)
         {
-            if (CmbBoxProduto.Text == "" || CmbFormaPagamento.Text == "" || CmbFormaPagamento.Text == "")
+            if (TxtBoxProcurarProduto.Text == "Selecione o Produto" || CmbFormaPagamento.Text == "" || TxtProcurarCliente.Text == "Selecione o Cliente")
             {
                 MeuMessageBox.Show("Voce nao selecionou os itens");
             }
             else
             { 
-                
-
-                
                 Produto produto = new();
                 Item item = new Item();
-                produto.ID = (int)CmbBoxProduto.SelectedValue;
+
+                string[] prselc = (TxtBoxProcurarProduto.Text).Split(" - ");
+                
+
+
+                produto.ID = int.Parse(prselc[0]);
                 item.IDProduto = produto;
                 Produto proselcionado = produtoBLL.GetByID(produto.ID).Item;
                 item.Preco = proselcionado.Valor_Venda;
@@ -66,28 +68,45 @@ namespace WfPresentationLayer
         }
         private void LimparFormulario()
         {
-            CmbBoxClientes.Enabled = false;
-            CmbBoxProduto.SelectedIndex = -1;
+            TxtProcurarCliente.Enabled = false;
+            BtnProcurarCliente.Enabled = false;
+            TxtBoxProcurarProduto.Text = "Selecione o Produto";
             CmbFormaPagamento.Enabled = false;
             DateTime.Enabled = false;
             TxtBoxQuantidade.Clear();
         }
         private void SincronizarListaGrid(Item item)
         {
-            DataGrid.Rows.Add(CmbBoxProduto.Text, item.Preco, item.Qtd, (item.Preco * item.Qtd), CmbBoxClientes.Text,SystemParameters.GetNome(), DateTime.Value); ;
+
+            string[] prselc = (TxtBoxProcurarProduto.Text).Split(" - ");
+            string[] clienteselc = (TxtProcurarCliente.Text).Split(" - ");
+
+            DataGrid.Rows.Add(prselc[1], item.Preco, item.Qtd, (item.Preco * item.Qtd), clienteselc[1],SystemParameters.GetNome(), DateTime.Value); ;
         }
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = this.DataGrid.SelectedRows[0];
+
+            double valorAntigo = double.Parse(LblValorTotal.Text);
+            double valorNovo = valorAntigo - double.Parse(row.Cells[3].ToString());
+
+
+
+            LblValorTotal.Text = valorNovo.ToString();
+
             ItemsSaida.RemoveAt(row.Index);
             DataGrid.Rows.RemoveAt(row.Index);
         }
         private void BtnCadastrarNovaVenda_Click(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente();
-                Saida saida = new Saida();
+            Saida saida = new Saida();
             Funcionario funcionario = new();
-            cliente.ID = (int)CmbBoxClientes.SelectedValue;
+
+            string[] clienteselc = (TxtProcurarCliente.Text).Split(" - ");
+
+
+            cliente.ID = int.Parse(clienteselc[0]);
             saida.ValorTotal = double.Parse(LblValorTotal.Text);
             saida.Forma_Pagamento = CmbFormaPagamento.Text;
 
@@ -96,7 +115,6 @@ namespace WfPresentationLayer
             saida.Data = DateTime.Value;
             funcionario.ID = (int)SystemParameters.GetID();
             saida.IDFuncionario = funcionario;
-            
 
             bool IsDesconto = Regra.ChecarDesconto(saida);
             if (!IsDesconto)
@@ -115,12 +133,12 @@ namespace WfPresentationLayer
                         MeuMessageBox.Show(resposta.Message);
                     }
 
-                    CmbBoxClientes.Enabled = true;
+                    TxtProcurarCliente.Enabled = true;
                     CmbFormaPagamento.Enabled = true;
-                    CmbBoxClientes.SelectedIndex = 0;
+                    TxtProcurarCliente.Text = "Selecione o Cliente";
                     CmbFormaPagamento.SelectedIndex = 0;
                     DateTime.Enabled = true;
-                    CmbBoxProduto.SelectedIndex = -1;
+                    TxtBoxProcurarProduto.Text = "Selecione o Produto";
                     TxtBoxQuantidade.Clear();
                     DataGrid.Rows.Clear();
                     DataGrid.Refresh();
@@ -146,15 +164,16 @@ namespace WfPresentationLayer
                         MeuMessageBox.Show(resposta.Message);
                     }
 
-                    CmbBoxClientes.Enabled = true;
+                    TxtProcurarCliente.Enabled = true;
                     CmbFormaPagamento.Enabled = true;
-                    CmbBoxClientes.SelectedIndex = 0;
+                    TxtProcurarCliente.Text = "Selecione o Cliente";
                     CmbFormaPagamento.SelectedIndex = 0;
                     DateTime.Enabled = true;
-                    CmbBoxProduto.SelectedIndex = -1;
+                    TxtBoxProcurarProduto.Text = "Selecione o Produto";
                     TxtBoxQuantidade.Clear();
                     DataGrid.Rows.Clear();
                     DataGrid.Refresh();
+
                 }
                 else
                 {
@@ -171,36 +190,33 @@ namespace WfPresentationLayer
         }
         private void FormNovaVenda_Load(object sender, EventArgs e)
         {
-            List<Cliente> ClienteAtivo = new();
-            List<Cliente> Clientes = clienteBll.GetAll().Dados;
-            foreach (Cliente cl in Clientes)
-            {
-                if (cl.Ativo == true)
-                {
-                    ClienteAtivo.Add(cl);
-                }
-            }
-            CmbBoxClientes.DisplayMember = "Nome_Cliente";
-            CmbBoxClientes.ValueMember = "ID";
-            CmbBoxClientes.DataSource = ClienteAtivo;
-
-            List<Produto> produtosAtivos = new();
-            List<Produto> produtos = produtoBLL.GetAll().Dados;
-            foreach (Produto Produto in produtos)
-            {
-                if (Produto.Ativo == true)
-                {
-                    produtosAtivos.Add(Produto);
-                }
-            }
-            CmbBoxProduto.DisplayMember = "Nome";
-            CmbBoxProduto.ValueMember = "ID";
-            CmbBoxProduto.DataSource = produtosAtivos;
         }
-
         private void ImageBtnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        private void BtnProdutoSelecionado_Click(object sender, EventArgs e)
+        {
+            FormMostrarProdutos frm = new FormMostrarProdutos(true);
+            frm.ShowDialog();
+
+           
+           if (frm.ProdutoSelecionado123 != null)
+           {
+                TxtBoxProcurarProduto.Text = frm.ProdutoSelecionado123.ID + " - " + frm.ProdutoSelecionado123.Nome + " - " + frm.ProdutoSelecionado123.Valor_Unitario;
+
+            }
+        }
+        private void BtnProcurarCliente_Click(object sender, EventArgs e)
+        {
+            FormMostarClientes frmC = new FormMostarClientes(true);
+            frmC.ShowDialog();
+
+            if (frmC.ClienteSelecionado != null)
+            {
+                TxtProcurarCliente.Text = frmC.ClienteSelecionado.ID + " - " + frmC.ClienteSelecionado.Nome_Cliente + " - " + frmC.ClienteSelecionado.Email;
+            }
+        }
+        
     }
 }

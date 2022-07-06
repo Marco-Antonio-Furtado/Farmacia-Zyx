@@ -31,6 +31,10 @@ namespace WfPresentationLayer.Alteraçoes
         }
         private void BtnDeletarFuncionario_Click(object sender, EventArgs e)
         {
+            if (this.GridFuncionario.SelectedRows.Count == 0)
+            {
+                return;
+            }
             if (GridFuncionario.CurrentRow.Cells[0].Value == null)
             {
                 MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");

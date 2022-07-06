@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelNomeCLiente = new System.Windows.Forms.Label();
             this.GroupBoxVenda = new System.Windows.Forms.GroupBox();
-            this.CmbBoxProduto = new System.Windows.Forms.ComboBox();
+            this.TxtBoxProcurarProduto = new System.Windows.Forms.TextBox();
+            this.BtnProdutoSelecionado = new System.Windows.Forms.Button();
+            this.LblValorTotal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.TxtBoxQuantidade = new System.Windows.Forms.TextBox();
             this.BtnExcluir = new System.Windows.Forms.Button();
             this.DateTime = new System.Windows.Forms.DateTimePicker();
@@ -52,13 +55,11 @@
             this.DataGridFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataGridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnProcurarCliente = new System.Windows.Forms.Button();
             this.BtnNovoCliente = new System.Windows.Forms.Button();
-            this.CmbBoxClientes = new System.Windows.Forms.ComboBox();
             this.ImageBtnFechar = new System.Windows.Forms.PictureBox();
             this.LblText = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.LblValorTotal = new System.Windows.Forms.Label();
+            this.TxtProcurarCliente = new System.Windows.Forms.TextBox();
             this.GroupBoxVenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,9 +79,10 @@
             // 
             // GroupBoxVenda
             // 
+            this.GroupBoxVenda.Controls.Add(this.TxtBoxProcurarProduto);
+            this.GroupBoxVenda.Controls.Add(this.BtnProdutoSelecionado);
             this.GroupBoxVenda.Controls.Add(this.LblValorTotal);
             this.GroupBoxVenda.Controls.Add(this.label1);
-            this.GroupBoxVenda.Controls.Add(this.CmbBoxProduto);
             this.GroupBoxVenda.Controls.Add(this.TxtBoxQuantidade);
             this.GroupBoxVenda.Controls.Add(this.BtnExcluir);
             this.GroupBoxVenda.Controls.Add(this.DateTime);
@@ -101,19 +103,50 @@
             this.GroupBoxVenda.TabStop = false;
             this.GroupBoxVenda.Text = "Nova venda";
             // 
-            // CmbBoxProduto
+            // TxtBoxProcurarProduto
             // 
-            this.CmbBoxProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbBoxProduto.FormattingEnabled = true;
-            this.CmbBoxProduto.Location = new System.Drawing.Point(167, 29);
-            this.CmbBoxProduto.Name = "CmbBoxProduto";
-            this.CmbBoxProduto.Size = new System.Drawing.Size(233, 31);
-            this.CmbBoxProduto.TabIndex = 32;
+            this.TxtBoxProcurarProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxProcurarProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TxtBoxProcurarProduto.ForeColor = System.Drawing.Color.White;
+            this.TxtBoxProcurarProduto.Location = new System.Drawing.Point(162, 29);
+            this.TxtBoxProcurarProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxProcurarProduto.Name = "TxtBoxProcurarProduto";
+            this.TxtBoxProcurarProduto.Size = new System.Drawing.Size(238, 31);
+            this.TxtBoxProcurarProduto.TabIndex = 37;
+            this.TxtBoxProcurarProduto.Text = "Selecione o Produto";
+            // 
+            // BtnProdutoSelecionado
+            // 
+            this.BtnProdutoSelecionado.Location = new System.Drawing.Point(406, 31);
+            this.BtnProdutoSelecionado.Name = "BtnProdutoSelecionado";
+            this.BtnProdutoSelecionado.Size = new System.Drawing.Size(94, 29);
+            this.BtnProdutoSelecionado.TabIndex = 35;
+            this.BtnProdutoSelecionado.Text = "button1";
+            this.BtnProdutoSelecionado.UseVisualStyleBackColor = true;
+            this.BtnProdutoSelecionado.Click += new System.EventHandler(this.BtnProdutoSelecionado_Click);
+            // 
+            // LblValorTotal
+            // 
+            this.LblValorTotal.AutoSize = true;
+            this.LblValorTotal.Location = new System.Drawing.Point(1109, 64);
+            this.LblValorTotal.Name = "LblValorTotal";
+            this.LblValorTotal.Size = new System.Drawing.Size(19, 23);
+            this.LblValorTotal.TabIndex = 34;
+            this.LblValorTotal.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(893, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(199, 23);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Valor Total Da Compra =";
             // 
             // TxtBoxQuantidade
             // 
             this.TxtBoxQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxQuantidade.Location = new System.Drawing.Point(561, 30);
+            this.TxtBoxQuantidade.Location = new System.Drawing.Point(871, 21);
             this.TxtBoxQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBoxQuantidade.Name = "TxtBoxQuantidade";
             this.TxtBoxQuantidade.Size = new System.Drawing.Size(238, 30);
@@ -193,7 +226,7 @@
             this.LabelQuantidade.AutoSize = true;
             this.LabelQuantidade.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LabelQuantidade.ForeColor = System.Drawing.Color.White;
-            this.LabelQuantidade.Location = new System.Drawing.Point(436, 35);
+            this.LabelQuantidade.Location = new System.Drawing.Point(746, 26);
             this.LabelQuantidade.Name = "LabelQuantidade";
             this.LabelQuantidade.Size = new System.Drawing.Size(100, 23);
             this.LabelQuantidade.TabIndex = 16;
@@ -215,14 +248,14 @@
             this.DataGrid.AllowUserToResizeColumns = false;
             this.DataGrid.AllowUserToResizeRows = false;
             this.DataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DataGridProduto,
@@ -232,24 +265,24 @@
             this.DataGridNomeCliente,
             this.DataGridFuncionario,
             this.DataGridData});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle8;
             this.DataGrid.Location = new System.Drawing.Point(18, 222);
             this.DataGrid.Name = "DataGrid";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.DataGrid.RowHeadersWidth = 51;
             this.DataGrid.RowTemplate.Height = 29;
             this.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -315,17 +348,18 @@
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
-            // button2
+            // BtnProcurarCliente
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(810, 70);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 29);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Procurar Cliente";
-            this.button2.UseVisualStyleBackColor = false;
+            this.BtnProcurarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnProcurarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnProcurarCliente.ForeColor = System.Drawing.Color.White;
+            this.BtnProcurarCliente.Location = new System.Drawing.Point(810, 70);
+            this.BtnProcurarCliente.Name = "BtnProcurarCliente";
+            this.BtnProcurarCliente.Size = new System.Drawing.Size(174, 29);
+            this.BtnProcurarCliente.TabIndex = 15;
+            this.BtnProcurarCliente.Text = "Procurar Cliente";
+            this.BtnProcurarCliente.UseVisualStyleBackColor = false;
+            this.BtnProcurarCliente.Click += new System.EventHandler(this.BtnProcurarCliente_Click);
             // 
             // BtnNovoCliente
             // 
@@ -339,15 +373,6 @@
             this.BtnNovoCliente.Text = "Novo Cliente";
             this.BtnNovoCliente.UseVisualStyleBackColor = false;
             this.BtnNovoCliente.Click += new System.EventHandler(this.BtnNovoCliente_Click);
-            // 
-            // CmbBoxClientes
-            // 
-            this.CmbBoxClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbBoxClientes.FormattingEnabled = true;
-            this.CmbBoxClientes.Location = new System.Drawing.Point(570, 68);
-            this.CmbBoxClientes.Name = "CmbBoxClientes";
-            this.CmbBoxClientes.Size = new System.Drawing.Size(215, 28);
-            this.CmbBoxClientes.TabIndex = 33;
             // 
             // ImageBtnFechar
             // 
@@ -371,23 +396,17 @@
             this.LblText.TabIndex = 102;
             this.LblText.Text = "Cadastrar Venda";
             // 
-            // label1
+            // TxtProcurarCliente
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(893, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 23);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Valor Total Da Compra =";
-            // 
-            // LblValorTotal
-            // 
-            this.LblValorTotal.AutoSize = true;
-            this.LblValorTotal.Location = new System.Drawing.Point(1109, 64);
-            this.LblValorTotal.Name = "LblValorTotal";
-            this.LblValorTotal.Size = new System.Drawing.Size(19, 23);
-            this.LblValorTotal.TabIndex = 34;
-            this.LblValorTotal.Text = "0";
+            this.TxtProcurarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtProcurarCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TxtProcurarCliente.ForeColor = System.Drawing.Color.White;
+            this.TxtProcurarCliente.Location = new System.Drawing.Point(566, 69);
+            this.TxtProcurarCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtProcurarCliente.Name = "TxtProcurarCliente";
+            this.TxtProcurarCliente.Size = new System.Drawing.Size(238, 31);
+            this.TxtProcurarCliente.TabIndex = 36;
+            this.TxtProcurarCliente.Text = "Selecione o Cliente";
             // 
             // FormNovaVenda
             // 
@@ -395,11 +414,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1298, 823);
+            this.Controls.Add(this.TxtProcurarCliente);
             this.Controls.Add(this.ImageBtnFechar);
             this.Controls.Add(this.LblText);
-            this.Controls.Add(this.CmbBoxClientes);
             this.Controls.Add(this.BtnNovoCliente);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BtnProcurarCliente);
             this.Controls.Add(this.GroupBoxVenda);
             this.Controls.Add(this.LabelNomeCLiente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -427,14 +446,13 @@
         private Label LabelFormaPagemento;
         private Button BtnNovoIten;
         private ComboBox CmbFormaPagamento;
-        private Button button2;
+        private Button BtnProcurarCliente;
         private Button BtnNovoCliente;
         private Button BtnCadastrarNovaVenda;
         private DateTimePicker DateTime;
         private Button BtnExcluir;
         private TextBox TxtBoxQuantidade;
         private PictureBox pictureBox1;
-        private ComboBox CmbBoxProduto;
         private DataGridViewTextBoxColumn DataGridProduto;
         private DataGridViewTextBoxColumn DataGridValorUnitario;
         private DataGridViewTextBoxColumn DatagridQuantidade;
@@ -442,10 +460,12 @@
         private DataGridViewTextBoxColumn DataGridNomeCliente;
         private DataGridViewTextBoxColumn DataGridFuncionario;
         private DataGridViewTextBoxColumn DataGridData;
-        private ComboBox CmbBoxClientes;
         private PictureBox ImageBtnFechar;
         private Label LblText;
         private Label LblValorTotal;
         private Label label1;
+        private Button BtnProdutoSelecionado;
+        private TextBox TxtBoxProcurarProduto;
+        private TextBox TxtProcurarCliente;
     }
 }

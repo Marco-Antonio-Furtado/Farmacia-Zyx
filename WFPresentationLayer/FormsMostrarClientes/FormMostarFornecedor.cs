@@ -9,6 +9,13 @@ namespace WfPresentationLayer.Alteraçoes
     {
         private Form _objForm5;
         FornecedorBll fornecedorBll = new FornecedorBll();
+        public Fornecedor fornecedorSelecionado { get; set; }
+        private bool _isOpenedByAnotherForm;
+        public Alteracao_Fornecedor(bool v)
+        {
+            InitializeComponent();
+            this._isOpenedByAnotherForm = v;
+        }
         public Alteracao_Fornecedor()
         {
             InitializeComponent();
@@ -35,6 +42,10 @@ namespace WfPresentationLayer.Alteraçoes
 
         private void BtnAlterarFornecedor_Click(object sender, EventArgs e)
         {
+            if (this.GridFornecedor.SelectedRows.Count == 0)
+            {
+                return;
+            }
             DataGridViewRow row = this.GridFornecedor.SelectedRows[0];
             if (GridFornecedor.CurrentRow.Cells[0].Value == null)
             {
@@ -77,6 +88,10 @@ namespace WfPresentationLayer.Alteraçoes
 
         private void BtnDeletarFornecedor_Click(object sender, EventArgs e)
         {
+            if (this.GridFornecedor.SelectedRows.Count == 0)
+            {
+                return;
+            }
             DataGridViewRow row = this.GridFornecedor.SelectedRows[0];
             int IDCLiente = Convert.ToInt32(GridFornecedor.CurrentRow.Cells[0].Value.ToString());
             string nome = Convert.ToString(GridFornecedor.CurrentRow.Cells[1].Value.ToString());
@@ -136,6 +151,23 @@ namespace WfPresentationLayer.Alteraçoes
             GridFornecedor.Rows.Clear();
             GridFornecedor.Refresh();
             GridFornecedor.DataSource = null;
+        }
+
+        private void GridFornecedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Fornecedor fornecedorselecionado = new Fornecedor();
+            fornecedorselecionado.ID = Convert.ToInt32(GridFornecedor.Rows[e.RowIndex].Cells[0].Value);
+            SingleResponse<Fornecedor> response = fornecedorBll.GetByID(fornecedorselecionado.ID);
+            if (!response.HasSuccess)
+            {
+                MessageBox.Show(response.Message);
+                return;
+            }
+            if (this._isOpenedByAnotherForm)
+            {
+                this.fornecedorSelecionado = response.Item;
+                this.Close();
+            }
         }
     }
     

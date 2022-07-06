@@ -131,14 +131,16 @@ namespace WfPresentationLayer
             MidlePanel.Controls.Add(_objForm);
             _objForm.Show();
         }
+
         private void BtnRelogar_Click(object sender, EventArgs e)
         {
-           Application.Restart();
+            Application.Restart();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void PctDuvida_Click(object sender, EventArgs e)
         {
-            TopPanel.Visible = true;
+            FormDuvida formDuvida = new FormDuvida();
+            formDuvida.ShowDialog();
         }
     }
 }

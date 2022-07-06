@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDuvida));
             this.ImageBtnFechar = new System.Windows.Forms.PictureBox();
             this.LblText = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.LinkMarco = new System.Windows.Forms.LinkLabel();
+            this.LinkGabriel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -69,33 +70,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(128, 97);
+            this.label1.Location = new System.Drawing.Point(12, 67);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 23);
+            this.label1.Size = new System.Drawing.Size(435, 115);
             this.label1.TabIndex = 104;
-            this.label1.Text = "A Quem Quiser Ler";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(110, 256);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 23);
-            this.label2.TabIndex = 105;
-            this.label2.Text = "A Quem Quiser Ler";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(110, 326);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(155, 23);
-            this.label3.TabIndex = 106;
-            this.label3.Text = "A Quem Quiser Ler";
+            this.label1.Text = resources.GetString("label1.Text");
             // 
             // pictureBox1
             // 
@@ -127,17 +106,41 @@
             this.pictureBox3.TabIndex = 111;
             this.pictureBox3.TabStop = false;
             // 
+            // LinkMarco
+            // 
+            this.LinkMarco.AutoSize = true;
+            this.LinkMarco.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LinkMarco.Location = new System.Drawing.Point(110, 256);
+            this.LinkMarco.Name = "LinkMarco";
+            this.LinkMarco.Size = new System.Drawing.Size(240, 28);
+            this.LinkMarco.TabIndex = 112;
+            this.LinkMarco.TabStop = true;
+            this.LinkMarco.Text = "Linkedin Marco Antonio";
+            this.LinkMarco.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkMarco_LinkClicked);
+            // 
+            // LinkGabriel
+            // 
+            this.LinkGabriel.AutoSize = true;
+            this.LinkGabriel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LinkGabriel.Location = new System.Drawing.Point(110, 326);
+            this.LinkGabriel.Name = "LinkGabriel";
+            this.LinkGabriel.Size = new System.Drawing.Size(260, 31);
+            this.LinkGabriel.TabIndex = 113;
+            this.LinkGabriel.TabStop = true;
+            this.LinkGabriel.Text = "Linkedin Gabriel Felipe";
+            this.LinkGabriel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkGabriel_LinkClicked);
+            // 
             // FormDuvida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(456, 514);
+            this.Controls.Add(this.LinkGabriel);
+            this.Controls.Add(this.LinkMarco);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ImageBtnFechar);
             this.Controls.Add(this.LblText);
@@ -159,10 +162,10 @@
         private PictureBox ImageBtnFechar;
         private Label LblText;
         private Label label1;
-        private Label label2;
-        private Label label3;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
+        private LinkLabel LinkMarco;
+        private LinkLabel LinkGabriel;
     }
 }

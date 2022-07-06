@@ -9,6 +9,13 @@ namespace WfPresentationLayer.Alteraçoes
     {
         private Form _objForm1;
         private ClienteBll clienteBLL = new ClienteBll();
+        public Cliente ClienteSelecionado { get; set; }
+        private bool _isOpenedByAnotherForm;
+        public FormMostarClientes(bool v)
+        {
+            InitializeComponent();
+            this._isOpenedByAnotherForm = v;
+        }
         public FormMostarClientes()
         {
             InitializeComponent();
@@ -90,6 +97,10 @@ namespace WfPresentationLayer.Alteraçoes
         }
         private void BtnDeletarClientes_Click(object sender, EventArgs e)
         {
+            if (this.GridClientes.SelectedRows.Count == 0)
+            {
+                return;
+            }
             DataGridViewRow row = this.GridClientes.SelectedRows[0];
             int IDCLiente = Convert.ToInt32(GridClientes.CurrentRow.Cells[0].Value.ToString());
             string nome = Convert.ToString(GridClientes.CurrentRow.Cells[1].Value.ToString());
@@ -142,6 +153,23 @@ namespace WfPresentationLayer.Alteraçoes
             {
                 MeuMessageBox.Show("Nao há Clientes Desabilitados");
                 LimparGrid();
+            }
+        }
+
+        private void GridClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Cliente clienteselecionado = new Cliente();
+            clienteselecionado.ID = Convert.ToInt32(GridClientes.Rows[e.RowIndex].Cells[0].Value);
+            SingleResponse<Cliente> response = clienteBLL.GetByID(clienteselecionado.ID);
+            if (!response.HasSuccess)
+            {
+                MessageBox.Show(response.Message);
+                return;
+            }
+            if (this._isOpenedByAnotherForm)
+            {
+                this.ClienteSelecionado = response.Item;
+                this.Close();
             }
         }
     }

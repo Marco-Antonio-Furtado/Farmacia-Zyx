@@ -217,6 +217,7 @@
             this.BtnCadastrarVendas.TabIndex = 55;
             this.BtnCadastrarVendas.Text = "        Cadastrar Venda";
             this.BtnCadastrarVendas.UseVisualStyleBackColor = false;
+            this.BtnCadastrarVendas.Click += new System.EventHandler(this.BtnCadastrarVendas_Click);
             // 
             // FormMostrarEntradas
             // 

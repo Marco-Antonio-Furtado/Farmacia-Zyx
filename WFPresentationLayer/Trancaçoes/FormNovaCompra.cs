@@ -4,6 +4,7 @@ using Entities;
 using Entities.enums;
 using Entities.Propriedades;
 using Shared;
+using WfPresentationLayer.Alteraçoes;
 using WfPresentationLayer.FormCadastros;
 
 namespace WfPresentationLayer.Trancaçoes
@@ -14,11 +15,10 @@ namespace WfPresentationLayer.Trancaçoes
         {
             InitializeComponent();
         }
-        FornecedorBll fornecedorBLL = new FornecedorBll();
         ProdutoBll produtoBLL = new ProdutoBll();
         EntradaBll entradaBLL = new EntradaBll();
-        
         List<Item> ItemsEntrada = new List<Item>();
+
         private void BtnNovoFornecedor_Click(object sender, EventArgs e)
         {
             FormCadastroFornecedor form = new FormCadastroFornecedor();
@@ -31,7 +31,7 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void BtnNovoIten_Click(object sender, EventArgs e)
         {
-            if (CmbBoxProduto.Text == "" || CmbFormaPagamento.Text == "" || TxtBoxQuantidade.Text == "" || CmbBoxFornecedores.Text == "")
+            if (TxtBoxSelecionarProduto.Text == "Selecione o Produto" || CmbFormaPagamento.Text == "" || TxtBoxQuantidade.Text == "" || TxtBoxSelecionarFornecedor.Text == "Selecione o Fornecedor")
             {
                 MeuMessageBox.Show("Voce nao Informou todos os campos");
                 if (CheckPreco.Checked == true)
@@ -48,8 +48,10 @@ namespace WfPresentationLayer.Trancaçoes
 
             Item item = new Item();
             Produto produto = new();
-            produto.ID = (int)CmbBoxProduto.SelectedValue;
 
+            string[] prselc = (TxtBoxSelecionarProduto.Text).Split(" - ");
+            produto.ID = int.Parse(prselc[0]);
+            
             if (CheckPreco.Checked == true)
             {
                 item.Preco = double.Parse(textBox1TxtBoxPrecoAlterado.Text);
@@ -61,6 +63,7 @@ namespace WfPresentationLayer.Trancaçoes
             }
                 item.IDProduto = produto;
                 item.Qtd = int.Parse(TxtBoxQuantidade.Text);
+
 
             double valorAntigo = double.Parse(LblValorTotal.Text);
             double valorNovo = item.Preco * item.Qtd;
@@ -75,10 +78,11 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void LimparFormulario()
         {
-            CmbBoxFornecedores.Enabled = false;
+            TxtBoxSelecionarFornecedor.Enabled = false;
+            BtnProcurarFornecedor.Enabled = false;
             CmbFormaPagamento.Enabled = false;
             DateTime.Enabled = false;
-            CmbBoxProduto.SelectedIndex = -1;
+            TxtBoxSelecionarProduto.Text = "";
             TxtBoxQuantidade.Clear();
             CheckPreco.Checked = false;
             textBox1TxtBoxPrecoAlterado.Visible = false;
@@ -86,21 +90,33 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void SincronizarListaGrid(Item item)
         {
-            DataGrid.Rows.Add(CmbBoxProduto.Text, item.Preco, item.Qtd,(item.Preco * item.Qtd), CmbFormaPagamento.Text, SystemParameters.GetNome(), CmbBoxFornecedores.Text,DateTime.Value);
+            string[] prselc = (TxtBoxSelecionarProduto.Text).Split(" - ");
+            string[] forneselc = (TxtBoxSelecionarFornecedor.Text).Split(" - ");
+
+            DataGrid.Rows.Add(prselc[1], item.Preco, item.Qtd,(item.Preco * item.Qtd), CmbFormaPagamento.Text, SystemParameters.GetNome(), forneselc[1],DateTime.Value);
         }
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = this.DataGrid.SelectedRows[0];
+
+            double valorAntigo = double.Parse(LblValorTotal.Text);
+            double valorNovo = valorAntigo - double.Parse(row.Cells[3].ToString());
+            LblValorTotal.Text = valorNovo.ToString();
+
             ItemsEntrada.RemoveAt(row.Index);
             DataGrid.Rows.RemoveAt(row.Index);
         }
         private void BtnCadastrarCompra_Click(object sender, EventArgs e)
         {
+            string[] prselc = (TxtBoxSelecionarProduto.Text).Split(" - ");
+            string[] forneselc = (TxtBoxSelecionarFornecedor.Text).Split(" - ");
 
             Entrada entrada = new Entrada();
             Fornecedor fornecedor = new();
             Funcionario funcionario = new();
-            fornecedor.ID = (int)CmbBoxFornecedores.SelectedValue;
+
+
+            fornecedor.ID = int.Parse(forneselc[0]);
             entrada.Forma_Pagamento = CmbFormaPagamento.Text;
             entrada.ValorTotal = double.Parse(LblValorTotal.Text);
             entrada.IDFornecedor = fornecedor;
@@ -108,19 +124,21 @@ namespace WfPresentationLayer.Trancaçoes
             entrada.Data = DateTime.Value;
             funcionario.ID = (int)SystemParameters.GetID();
             entrada.IDFuncionario = funcionario;
-            DialogResult ResponseMsg = MeuMessageBox.Show("A Entrada de Produtos deu o valor de " + entrada.ValorTotal + "Deseja Continuar a entrada dos produtos", "Escolha", "SIM", "Nao");
+
+
+            DialogResult ResponseMsg = MeuMessageBox.Show("A Entrada de Produtos deu o valor de " + entrada.ValorTotal + " Deseja Continuar a entrada dos produtos", "Escolha", "SIM", "Nao");
             if (ResponseMsg == DialogResult.Yes)
             {
                 Response resposta = entradaBLL.Insert(entrada);
 
                 MeuMessageBox.Show(resposta.Message);
 
-                CmbBoxFornecedores.Enabled = true;
+                TxtBoxSelecionarFornecedor.Enabled = true;
                 CmbFormaPagamento.Enabled = true;
-                CmbBoxFornecedores.SelectedIndex = 0;
+                TxtBoxSelecionarFornecedor.Text = "Selecione o Fornecedor";
                 CmbFormaPagamento.SelectedIndex = 0;
                 DateTime.Enabled = true;
-                CmbBoxProduto.SelectedIndex = -1;
+                TxtBoxSelecionarProduto.Text = "Selecione o Produto";
                 TxtBoxQuantidade.Clear();
                 CheckPreco.Checked = false;
                 textBox1TxtBoxPrecoAlterado.Visible = false;
@@ -132,9 +150,6 @@ namespace WfPresentationLayer.Trancaçoes
             {
                 return;
             }
-
-
-            
         }
         private void TxtBoxQuantidade_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -146,40 +161,7 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void FormNovaCompra_Load(object sender, EventArgs e)
         {
-            
-
-
-            List<Fornecedor> ForneAtivo = new();
-            List<Fornecedor> fornecedors = fornecedorBLL.GetAll().Dados;
-            foreach (Fornecedor fornecedor in fornecedors)
-            {
-                if (fornecedor.Ativo == true)
-                {
-                    ForneAtivo.Add(fornecedor);
-                } 
-            }
-            CmbBoxFornecedores.DisplayMember = "Razao_Social";
-            CmbBoxFornecedores.ValueMember = "ID";
-            CmbBoxFornecedores.DataSource = ForneAtivo;
-
-            List<Produto> produtosAtivos = new();
-            List<Produto> produtos = produtoBLL.GetAll().Dados;
-            foreach (Produto Produto in produtos)
-            {
-                if (Produto.Ativo == true)
-                {
-                    produtosAtivos.Add(Produto);
-                    
-                }
-            }
-            CmbBoxProduto.DisplayMember = "Nome";
-            CmbBoxProduto.ValueMember = "ID";
-            CmbBoxProduto.DataSource = produtosAtivos;
-
             CmbFormaPagamento.DataSource = Enum.GetNames(typeof(FormaPagamento));
-
-
-            
         }
         private void CheckPreco_CheckedChanged(object sender, EventArgs e)
         {
@@ -212,10 +194,30 @@ namespace WfPresentationLayer.Trancaçoes
                 e.Handled = true;
             }
         }
-
         private void ImageBtnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void BtnProcurarFornecedor_Click(object sender, EventArgs e)
+        {
+            Alteracao_Fornecedor form = new Alteracao_Fornecedor(true);
+           form.ShowDialog();
+
+
+            if(form.fornecedorSelecionado != null)
+            {
+                TxtBoxSelecionarFornecedor.Text = form.fornecedorSelecionado.ID + " - " + form.fornecedorSelecionado.Razao_Social + " - " + form.fornecedorSelecionado.Email;
+            }
+        }
+        private void BtnProcurarProduto_Click(object sender, EventArgs e)
+        {
+            FormMostrarProdutos form = new FormMostrarProdutos(true);
+            form.ShowDialog();
+
+            if(form.ProdutoSelecionado123 != null)
+            {
+                TxtBoxSelecionarProduto.Text = form.ProdutoSelecionado123.ID + " - " + form.ProdutoSelecionado123.Nome + " - " + form.ProdutoSelecionado123.Valor_Unitario;
+            }
         }
     }
 }

@@ -8,10 +8,20 @@ namespace WfPresentationLayer.Alteraçoes
     {
         private Form _objForm3;
         ProdutoBll ProdutoBll = new ProdutoBll();
+        
+        private bool _isOpenedByAnotherForm;
+
+        public FormMostrarProdutos(bool v)
+        {
+            InitializeComponent();
+            this._isOpenedByAnotherForm = v;
+        }
         public FormMostrarProdutos()
         {
             InitializeComponent();
         }
+
+        public Produto ProdutoSelecionado123 { get; set; }
         List<Produto> Produtos = new List<Produto>();
         private void BtnCadastrarProduto_Click(object sender, EventArgs e)
         {
@@ -65,6 +75,10 @@ namespace WfPresentationLayer.Alteraçoes
         }
         private void BtnDeletarProdutos_Click(object sender, EventArgs e)
         {
+            if (this.Gridprodutos.SelectedRows.Count == 0)
+            {
+                return;
+            }
             if (Gridprodutos.CurrentRow.Cells[0].Value == null)
             {
                 MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");
@@ -137,6 +151,24 @@ namespace WfPresentationLayer.Alteraçoes
             {
                 MeuMessageBox.Show("Nao há Produtos Desabilitados");
                 LimparGrid();
+            }
+        }
+
+        private void Gridprodutos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            Produto ProdutoSelecionado = new Produto();
+            ProdutoSelecionado.ID = Convert.ToInt32(Gridprodutos.Rows[e.RowIndex].Cells[0].Value);
+            SingleResponse<Produto> response = ProdutoBll.GetByID(ProdutoSelecionado.ID);
+            if (!response.HasSuccess)
+            {
+                MessageBox.Show(response.Message);
+                return;
+            }
+            if (this._isOpenedByAnotherForm)
+            {
+                this.ProdutoSelecionado123 = response.Item;
+                this.Close();
             }
         }
     }

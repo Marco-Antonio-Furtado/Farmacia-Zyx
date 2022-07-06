@@ -10,7 +10,6 @@ namespace BusinessLogicalLayer.BusinessLL
     {
         FuncionarioDAL funcionarioDAL = new FuncionarioDAL();
         EnderecoDAL enderecoDAL = new EnderecoDAL();
-
         public Response Insert(Funcionario funcionario)
         {
             Response response = FuncionarioValidator.Validate(funcionario);
@@ -23,7 +22,6 @@ namespace BusinessLogicalLayer.BusinessLL
                     {
                         return response;
                     }
-
                     funcionario.Senha = HashSenha.ComputeSha256Hash(funcionario.Senha);
                     response = funcionarioDAL.Insert(funcionario);
 
@@ -31,13 +29,11 @@ namespace BusinessLogicalLayer.BusinessLL
                     {
                         return response;
                     }
-
                     scope.Complete();
                 }
             }
             return response;
         }
-
         public Response Update(Funcionario funcionario)
         {
             Response response = FuncionarioValidator.Validate(funcionario);
@@ -55,7 +51,6 @@ namespace BusinessLogicalLayer.BusinessLL
                         {
                             return response;
                         }
-
                         response = funcionarioDAL.Update(funcionario);
 
                         if (!response.HasSuccess)
@@ -73,23 +68,18 @@ namespace BusinessLogicalLayer.BusinessLL
         {
             return funcionarioDAL.Delete(id);
         }
-
         public DataResponse<Funcionario> GetAll()
         {
             return funcionarioDAL.GetAll();
         }
-
         public SingleResponse<Funcionario> GetByEmail(string email)
         {
             return funcionarioDAL.GetByEmail(email);
-
         }
         public SingleResponse<Funcionario> GetByID(int id)
         {
             return funcionarioDAL.GetByID(id);
-
         }
-
         public Response LoginBLL(string email, string senha)
         {
             SingleResponse<Funcionario> response = FuncionarioDAL.LoginDAL(email);
@@ -104,7 +94,6 @@ namespace BusinessLogicalLayer.BusinessLL
             }
             else return new Response("login errado", false);
         }
-
         public Response Disable(int iDCLiente)
         {
             return funcionarioDAL.Disable(iDCLiente);

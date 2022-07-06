@@ -74,5 +74,11 @@ namespace WfPresentationLayer.Alteraçoes
                 SincronizarListaGrid(item);
             }
         }
+
+        private void BtnCadastrarVendas_Click(object sender, EventArgs e)
+        {
+            FormNovaCompra form = new FormNovaCompra();
+            form.ShowDialog();
+        }
     }
 }

@@ -50,9 +50,9 @@
             this.LblFuncionarioLogado = new System.Windows.Forms.Label();
             this.PctBack = new System.Windows.Forms.PictureBox();
             this.PnlTOPTOP = new System.Windows.Forms.Panel();
+            this.PctDuvida = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnRelogar = new System.Windows.Forms.Button();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.MidlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PctMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PctBtnClose)).BeginInit();
@@ -66,8 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PctBack)).BeginInit();
             this.PnlTOPTOP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PctDuvida)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // MidlePanel
@@ -86,7 +86,7 @@
             // LblMenu
             // 
             this.LblMenu.AutoSize = true;
-            this.LblMenu.Location = new System.Drawing.Point(758, 737);
+            this.LblMenu.Location = new System.Drawing.Point(705, 633);
             this.LblMenu.Name = "LblMenu";
             this.LblMenu.Size = new System.Drawing.Size(115, 20);
             this.LblMenu.TabIndex = 8;
@@ -348,7 +348,7 @@
             // PnlTOPTOP
             // 
             this.PnlTOPTOP.BackColor = System.Drawing.Color.IndianRed;
-            this.PnlTOPTOP.Controls.Add(this.pictureBox9);
+            this.PnlTOPTOP.Controls.Add(this.PctDuvida);
             this.PnlTOPTOP.Controls.Add(this.pictureBox1);
             this.PnlTOPTOP.Controls.Add(this.BtnRelogar);
             this.PnlTOPTOP.Controls.Add(this.PctBtnClose);
@@ -360,6 +360,18 @@
             this.PnlTOPTOP.Size = new System.Drawing.Size(1312, 54);
             this.PnlTOPTOP.TabIndex = 8;
             // 
+            // PctDuvida
+            // 
+            this.PctDuvida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.PctDuvida.Image = global::WfPresentationLayer.Properties.Resources.icons8_pergunte_100;
+            this.PctDuvida.Location = new System.Drawing.Point(340, 3);
+            this.PctDuvida.Name = "PctDuvida";
+            this.PctDuvida.Size = new System.Drawing.Size(76, 48);
+            this.PctDuvida.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PctDuvida.TabIndex = 52;
+            this.PctDuvida.TabStop = false;
+            this.PctDuvida.Click += new System.EventHandler(this.PctDuvida_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.LightCoral;
@@ -370,7 +382,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.BtnRelogar_Click);
             // 
             // BtnRelogar
             // 
@@ -387,17 +398,6 @@
             this.BtnRelogar.Text = "           Relogar";
             this.BtnRelogar.UseVisualStyleBackColor = false;
             this.BtnRelogar.Click += new System.EventHandler(this.BtnRelogar_Click);
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.pictureBox9.Image = global::WfPresentationLayer.Properties.Resources.icons8_pergunte_100;
-            this.pictureBox9.Location = new System.Drawing.Point(340, 3);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(76, 48);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 52;
-            this.pictureBox9.TabStop = false;
             // 
             // MenuGeralAdmin
             // 
@@ -428,8 +428,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PctBack)).EndInit();
             this.PnlTOPTOP.ResumeLayout(false);
             this.PnlTOPTOP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PctDuvida)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -460,6 +460,6 @@
         private PictureBox pictureBox6;
         private PictureBox pictureBox7;
         private PictureBox pictureBox8;
-        private PictureBox pictureBox9;
+        private PictureBox PctDuvida;
     }
 }

@@ -34,15 +34,17 @@
             this.BtnNovoFornecedor = new System.Windows.Forms.Button();
             this.BtnProcurarFornecedor = new System.Windows.Forms.Button();
             this.GroupBoxCompra = new System.Windows.Forms.GroupBox();
+            this.TxtBoxSelecionarProduto = new System.Windows.Forms.TextBox();
+            this.BtnProcurarProduto = new System.Windows.Forms.Button();
+            this.LblValorTotal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox1TxtBoxPrecoAlterado = new System.Windows.Forms.TextBox();
             this.CheckPreco = new System.Windows.Forms.CheckBox();
-            this.CmbBoxProduto = new System.Windows.Forms.ComboBox();
             this.TxtBoxQuantidade = new System.Windows.Forms.TextBox();
             this.BtnExcluir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.DateTime = new System.Windows.Forms.DateTimePicker();
             this.BtnCadastrarCompra = new System.Windows.Forms.Button();
-            this.BtnNovoProduto = new System.Windows.Forms.Button();
             this.CmbFormaPagamento = new System.Windows.Forms.ComboBox();
             this.LabelFormaPagemento = new System.Windows.Forms.Label();
             this.BtnNovoIten = new System.Windows.Forms.Button();
@@ -57,12 +59,11 @@
             this.DatagridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LabelQuantidade = new System.Windows.Forms.Label();
             this.LabelCodigoProduto = new System.Windows.Forms.Label();
+            this.BtnNovoProduto = new System.Windows.Forms.Button();
             this.LabelNomeCLiente = new System.Windows.Forms.Label();
-            this.CmbBoxFornecedores = new System.Windows.Forms.ComboBox();
             this.ImageBtnFechar = new System.Windows.Forms.PictureBox();
             this.LblText = new System.Windows.Forms.Label();
-            this.LblValorTotal = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.TxtBoxSelecionarFornecedor = new System.Windows.Forms.TextBox();
             this.GroupBoxCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).BeginInit();
@@ -92,20 +93,21 @@
             this.BtnProcurarFornecedor.TabIndex = 20;
             this.BtnProcurarFornecedor.Text = "Procurar Fornecedor";
             this.BtnProcurarFornecedor.UseVisualStyleBackColor = false;
+            this.BtnProcurarFornecedor.Click += new System.EventHandler(this.BtnProcurarFornecedor_Click);
             // 
             // GroupBoxCompra
             // 
+            this.GroupBoxCompra.Controls.Add(this.TxtBoxSelecionarProduto);
+            this.GroupBoxCompra.Controls.Add(this.BtnProcurarProduto);
             this.GroupBoxCompra.Controls.Add(this.LblValorTotal);
             this.GroupBoxCompra.Controls.Add(this.label1);
             this.GroupBoxCompra.Controls.Add(this.textBox1TxtBoxPrecoAlterado);
             this.GroupBoxCompra.Controls.Add(this.CheckPreco);
-            this.GroupBoxCompra.Controls.Add(this.CmbBoxProduto);
             this.GroupBoxCompra.Controls.Add(this.TxtBoxQuantidade);
             this.GroupBoxCompra.Controls.Add(this.BtnExcluir);
             this.GroupBoxCompra.Controls.Add(this.label2);
             this.GroupBoxCompra.Controls.Add(this.DateTime);
             this.GroupBoxCompra.Controls.Add(this.BtnCadastrarCompra);
-            this.GroupBoxCompra.Controls.Add(this.BtnNovoProduto);
             this.GroupBoxCompra.Controls.Add(this.CmbFormaPagamento);
             this.GroupBoxCompra.Controls.Add(this.LabelFormaPagemento);
             this.GroupBoxCompra.Controls.Add(this.BtnNovoIten);
@@ -119,6 +121,49 @@
             this.GroupBoxCompra.TabIndex = 19;
             this.GroupBoxCompra.TabStop = false;
             this.GroupBoxCompra.Text = "Nova Compra";
+            // 
+            // TxtBoxSelecionarProduto
+            // 
+            this.TxtBoxSelecionarProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxSelecionarProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TxtBoxSelecionarProduto.ForeColor = System.Drawing.Color.White;
+            this.TxtBoxSelecionarProduto.Location = new System.Drawing.Point(168, 25);
+            this.TxtBoxSelecionarProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxSelecionarProduto.Name = "TxtBoxSelecionarProduto";
+            this.TxtBoxSelecionarProduto.Size = new System.Drawing.Size(238, 31);
+            this.TxtBoxSelecionarProduto.TabIndex = 39;
+            this.TxtBoxSelecionarProduto.Text = "Selecione o Produto";
+            // 
+            // BtnProcurarProduto
+            // 
+            this.BtnProcurarProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnProcurarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnProcurarProduto.ForeColor = System.Drawing.Color.White;
+            this.BtnProcurarProduto.Location = new System.Drawing.Point(412, 24);
+            this.BtnProcurarProduto.Name = "BtnProcurarProduto";
+            this.BtnProcurarProduto.Size = new System.Drawing.Size(125, 29);
+            this.BtnProcurarProduto.TabIndex = 38;
+            this.BtnProcurarProduto.Text = "Procurar Fornecedor";
+            this.BtnProcurarProduto.UseVisualStyleBackColor = false;
+            this.BtnProcurarProduto.Click += new System.EventHandler(this.BtnProcurarProduto_Click);
+            // 
+            // LblValorTotal
+            // 
+            this.LblValorTotal.AutoSize = true;
+            this.LblValorTotal.Location = new System.Drawing.Point(1215, 37);
+            this.LblValorTotal.Name = "LblValorTotal";
+            this.LblValorTotal.Size = new System.Drawing.Size(17, 20);
+            this.LblValorTotal.TabIndex = 37;
+            this.LblValorTotal.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(999, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(174, 20);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Valor Total Da Compra =";
             // 
             // textBox1TxtBoxPrecoAlterado
             // 
@@ -142,15 +187,6 @@
             this.CheckPreco.Text = "Alterar Preco Produto";
             this.CheckPreco.UseVisualStyleBackColor = true;
             this.CheckPreco.CheckedChanged += new System.EventHandler(this.CheckPreco_CheckedChanged);
-            // 
-            // CmbBoxProduto
-            // 
-            this.CmbBoxProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbBoxProduto.FormattingEnabled = true;
-            this.CmbBoxProduto.Location = new System.Drawing.Point(173, 26);
-            this.CmbBoxProduto.Name = "CmbBoxProduto";
-            this.CmbBoxProduto.Size = new System.Drawing.Size(233, 28);
-            this.CmbBoxProduto.TabIndex = 33;
             // 
             // TxtBoxQuantidade
             // 
@@ -206,19 +242,6 @@
             this.BtnCadastrarCompra.Text = "Cadastrar Entrada";
             this.BtnCadastrarCompra.UseVisualStyleBackColor = false;
             this.BtnCadastrarCompra.Click += new System.EventHandler(this.BtnCadastrarCompra_Click);
-            // 
-            // BtnNovoProduto
-            // 
-            this.BtnNovoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.BtnNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnNovoProduto.ForeColor = System.Drawing.Color.White;
-            this.BtnNovoProduto.Location = new System.Drawing.Point(429, 28);
-            this.BtnNovoProduto.Name = "BtnNovoProduto";
-            this.BtnNovoProduto.Size = new System.Drawing.Size(158, 29);
-            this.BtnNovoProduto.TabIndex = 17;
-            this.BtnNovoProduto.Text = "Novo Produto";
-            this.BtnNovoProduto.UseVisualStyleBackColor = false;
-            this.BtnNovoProduto.Click += new System.EventHandler(this.BtnNovoProduto_Click);
             // 
             // CmbFormaPagamento
             // 
@@ -388,6 +411,19 @@
             this.LabelCodigoProduto.TabIndex = 14;
             this.LabelCodigoProduto.Text = "Codigo Produto";
             // 
+            // BtnNovoProduto
+            // 
+            this.BtnNovoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnNovoProduto.ForeColor = System.Drawing.Color.White;
+            this.BtnNovoProduto.Location = new System.Drawing.Point(81, 74);
+            this.BtnNovoProduto.Name = "BtnNovoProduto";
+            this.BtnNovoProduto.Size = new System.Drawing.Size(158, 29);
+            this.BtnNovoProduto.TabIndex = 17;
+            this.BtnNovoProduto.Text = "Novo Produto";
+            this.BtnNovoProduto.UseVisualStyleBackColor = false;
+            this.BtnNovoProduto.Click += new System.EventHandler(this.BtnNovoProduto_Click);
+            // 
             // LabelNomeCLiente
             // 
             this.LabelNomeCLiente.AutoSize = true;
@@ -398,15 +434,6 @@
             this.LabelNomeCLiente.Size = new System.Drawing.Size(149, 23);
             this.LabelNomeCLiente.TabIndex = 18;
             this.LabelNomeCLiente.Text = "Nome Fornecedor";
-            // 
-            // CmbBoxFornecedores
-            // 
-            this.CmbBoxFornecedores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbBoxFornecedores.FormattingEnabled = true;
-            this.CmbBoxFornecedores.Location = new System.Drawing.Point(622, 74);
-            this.CmbBoxFornecedores.Name = "CmbBoxFornecedores";
-            this.CmbBoxFornecedores.Size = new System.Drawing.Size(233, 28);
-            this.CmbBoxFornecedores.TabIndex = 34;
             // 
             // ImageBtnFechar
             // 
@@ -430,23 +457,17 @@
             this.LblText.TabIndex = 104;
             this.LblText.Text = "Cadastrar Entrada";
             // 
-            // LblValorTotal
+            // TxtBoxSelecionarFornecedor
             // 
-            this.LblValorTotal.AutoSize = true;
-            this.LblValorTotal.Location = new System.Drawing.Point(1215, 37);
-            this.LblValorTotal.Name = "LblValorTotal";
-            this.LblValorTotal.Size = new System.Drawing.Size(17, 20);
-            this.LblValorTotal.TabIndex = 37;
-            this.LblValorTotal.Text = "0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(999, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 20);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Valor Total Da Compra =";
+            this.TxtBoxSelecionarFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxSelecionarFornecedor.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TxtBoxSelecionarFornecedor.ForeColor = System.Drawing.Color.White;
+            this.TxtBoxSelecionarFornecedor.Location = new System.Drawing.Point(613, 70);
+            this.TxtBoxSelecionarFornecedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxSelecionarFornecedor.Name = "TxtBoxSelecionarFornecedor";
+            this.TxtBoxSelecionarFornecedor.Size = new System.Drawing.Size(238, 31);
+            this.TxtBoxSelecionarFornecedor.TabIndex = 106;
+            this.TxtBoxSelecionarFornecedor.Text = "Selecione o Fornecedor";
             // 
             // FormNovaCompra
             // 
@@ -454,13 +475,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1287, 791);
+            this.Controls.Add(this.TxtBoxSelecionarFornecedor);
             this.Controls.Add(this.ImageBtnFechar);
             this.Controls.Add(this.LblText);
-            this.Controls.Add(this.CmbBoxFornecedores);
             this.Controls.Add(this.BtnNovoFornecedor);
             this.Controls.Add(this.BtnProcurarFornecedor);
             this.Controls.Add(this.GroupBoxCompra);
             this.Controls.Add(this.LabelNomeCLiente);
+            this.Controls.Add(this.BtnNovoProduto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormNovaCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -491,10 +513,8 @@
         private Label label2;
         private Button BtnExcluir;
         private TextBox TxtBoxQuantidade;
-        private ComboBox CmbBoxProduto;
         private ComboBox CmbFormaPagamento;
         private Label LabelFormaPagemento;
-        private ComboBox CmbBoxFornecedores;
         private DataGridViewTextBoxColumn DataGridProduto;
         private DataGridViewTextBoxColumn DataGridValorUnitario;
         private DataGridViewTextBoxColumn DataGridQuantidade;
@@ -509,5 +529,8 @@
         private Label LblText;
         private Label LblValorTotal;
         private Label label1;
+        private Button BtnProcurarProduto;
+        private TextBox TxtBoxSelecionarProduto;
+        private TextBox TxtBoxSelecionarFornecedor;
     }
 }

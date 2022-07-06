@@ -159,6 +159,7 @@
             this.Gridprodutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Gridprodutos.Size = new System.Drawing.Size(1307, 689);
             this.Gridprodutos.TabIndex = 45;
+            this.Gridprodutos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Gridprodutos_CellDoubleClick);
             // 
             // GridID
             // 

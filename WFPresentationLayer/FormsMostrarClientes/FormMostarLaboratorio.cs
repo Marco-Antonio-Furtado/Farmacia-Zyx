@@ -93,6 +93,10 @@ namespace WfPresentationLayer.FormsMostrarClientes
 
         private void BtnDeletarLaboratorio_Click(object sender, EventArgs e)
         {
+            if (this.GridLaboratorio.SelectedRows.Count == 0)
+            {
+                return;
+            }
             if (GridLaboratorio.CurrentRow.Cells[0].Value == null)
             {
                 MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");

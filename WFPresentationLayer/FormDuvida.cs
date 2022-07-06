@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Diagnostics;
 
 namespace WfPresentationLayer
 {
@@ -16,10 +8,17 @@ namespace WfPresentationLayer
         {
             InitializeComponent();
         }
-
         private void ImageBtnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void LinkMarco_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo { FileName = "https://www.linkedin.com/in/marco-ant%C3%B4nio-furtado-615164221", UseShellExecute = true });
+        }
+        private void LinkGabriel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo { FileName = "https://www.linkedin.com/in/gabriel-felipe-nicoletti-102706191", UseShellExecute = true });
         }
     }
 }

@@ -1,13 +1,17 @@
 ﻿namespace WfPresentationLayer
 {
+    /// <summary>
+    /// form de messege box que retorna vazio ou retorna botoes de ok yes no 
+    /// fiz o form para deixar elegante/apresentavel 
+    /// sem o messegebox do form padrao entao criei um proprio onde dependendo da sobrecarga ele é feito ou escondido tais botoes etc
+    /// 
+    /// </summary>
     public partial class MeuMessageBox : Form
     {
         public MeuMessageBox()
         {
             InitializeComponent();
-            
         }
-        
         public DialogResult Resultado { get; private set; }
         public static DialogResult Show(string mensagem, string Titulo)
         {
@@ -88,11 +92,7 @@
         {
             this.Close();
         }
-       
-
-
     }
-
     public struct ParametrosDatas
     {
 

@@ -4,6 +4,17 @@ using Shared;
 
 namespace WfPresentationLayer.Alteraçoes
 {
+
+    /// <summary>
+    /// Form Padrão mostrar Funcionarios em uma datagrid 
+    /// dentro desse form a algumas Funcoes que ele faz dentro delas 
+    /// Cadastro de Funcionarios que abre o form de cliente vazio
+    /// alterar Funcionario que abre o form de cadastro de Funcionario preenchido onde o mesmo é feito clicando na linha e clicando no botao
+    /// mostrar desabilitados mostra na grid todos os Funcionarios desabilitados
+    /// deletar deleta ou desabilita os Funcionario da grid e do banco de dados onde o mesmo é feito clicando na linha e clicando no botao
+    /// 
+    /// onde todos esse forms sao aberto dentro de um panel padrão
+    /// </summary>
     public partial class Alteracao_Funcionario : Form
     {
         private Form _objForm2;
@@ -14,6 +25,19 @@ namespace WfPresentationLayer.Alteraçoes
             InitializeComponent();
         }
         List<Funcionario> funcionarios = new List<Funcionario>();
+        private void BtnCadastrarFuncionario_Click(object sender, EventArgs e)
+        {
+            _objForm2?.Close();
+            _objForm2 = new FormCadastroFuncionario
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill,
+            };
+            pnlFunc.Controls.Add(_objForm2);
+            _objForm2.Show();
+            _objForm2.BringToFront();
+        }
         private void Alteracao_Funcionario_Load(object sender, EventArgs e)
         {
             funcionarios = funcionarioBll.GetAll().Dados;
@@ -24,10 +48,6 @@ namespace WfPresentationLayer.Alteraçoes
                     SincronizarListaGrid(Funcionario);
                 }
             }
-        }
-        private void SincronizarListaGrid(Funcionario item)
-        {
-            GridFuncionario.Rows.Add(item.ID, item.Nome_Funcionario, item.RG, item.CPF,item.Telefone, item.Email,item.Endereco.Cidade.Nome_Cidade,item.Cargo.Nome_Cargo);
         }
         private void BtnDeletarFuncionario_Click(object sender, EventArgs e)
         {
@@ -111,7 +131,6 @@ namespace WfPresentationLayer.Alteraçoes
                 _objForm2.BringToFront();
             }
         }
-
         private void BtnDesabilitados_Click(object sender, EventArgs e)
         {
             LimparGrid();
@@ -129,6 +148,13 @@ namespace WfPresentationLayer.Alteraçoes
                 LimparGrid();
             }
         }
+        private void SincronizarListaGrid(Funcionario item)
+        {
+            GridFuncionario.Rows.Add(item.ID, item.Nome_Funcionario, item.RG, item.CPF,item.Telefone, item.Email,item.Endereco.Cidade.Nome_Cidade,item.Cargo.Nome_Cargo);
+        }
+
+
+        // Metodos padrões Para melhor visualizacao e entendimento do usuario 
         private void LimparGrid()
         {
             GridFuncionario.Rows.Clear();
@@ -136,18 +162,5 @@ namespace WfPresentationLayer.Alteraçoes
             GridFuncionario.DataSource = null;
         }
 
-        private void BtnCadastrarFuncionario_Click(object sender, EventArgs e)
-        {
-            _objForm2?.Close();
-            _objForm2 = new FormCadastroFuncionario
-            {
-                TopLevel = false,
-                FormBorderStyle = FormBorderStyle.None,
-                Dock = DockStyle.Fill,
-            };
-            pnlFunc.Controls.Add(_objForm2);
-            _objForm2.Show();
-            _objForm2.BringToFront();
-        }
     }
 }

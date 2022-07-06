@@ -1,5 +1,10 @@
 ﻿namespace Entities
 {
+    /// <summary>
+    /// Classe padrao de produto que determina cada produto a sua diferenca
+    /// e tem um contrutor padrao e outro preenchido por causa da um melhor funcionamento do sistema 
+    /// por exemplo o funcionamento do dbexecuter
+    /// </summary>
     public class Produto
     {
         public Produto()

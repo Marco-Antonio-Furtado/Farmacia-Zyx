@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entities.Propriedades.Pessoas
+﻿namespace Entities.Propriedades.Pessoas
 {
+
+    /// <summary>
+    /// Classe de pessoa geral para depois ser a classe pai de outras classes
+    /// </summary>
     public class Pessoa
     {
         public int ID { get; set; }

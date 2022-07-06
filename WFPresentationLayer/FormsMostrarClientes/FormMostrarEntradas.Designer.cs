@@ -95,7 +95,7 @@
             this.GridEntrada.RowHeadersWidth = 51;
             this.GridEntrada.RowTemplate.Height = 29;
             this.GridEntrada.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridEntrada.Size = new System.Drawing.Size(1290, 706);
+            this.GridEntrada.Size = new System.Drawing.Size(1290, 694);
             this.GridEntrada.TabIndex = 46;
             // 
             // GridID
@@ -166,14 +166,14 @@
             this.PnlCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.PnlCompras.Location = new System.Drawing.Point(3, 3);
             this.PnlCompras.Name = "PnlCompras";
-            this.PnlCompras.Size = new System.Drawing.Size(1293, 706);
+            this.PnlCompras.Size = new System.Drawing.Size(1293, 694);
             this.PnlCompras.TabIndex = 47;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.pictureBox3.Image = global::WfPresentationLayer.Properties.Resources.menu__v11;
-            this.pictureBox3.Location = new System.Drawing.Point(352, 724);
+            this.pictureBox3.Location = new System.Drawing.Point(352, 715);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(56, 62);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -185,7 +185,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.pictureBox4.Image = global::WfPresentationLayer.Properties.Resources.icons8_comprar_80;
-            this.pictureBox4.Location = new System.Drawing.Point(18, 724);
+            this.pictureBox4.Location = new System.Drawing.Point(18, 713);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(56, 62);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -198,7 +198,7 @@
             this.BtnSelecionarVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnSelecionarVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnSelecionarVendas.ForeColor = System.Drawing.Color.White;
-            this.BtnSelecionarVendas.Location = new System.Drawing.Point(343, 715);
+            this.BtnSelecionarVendas.Location = new System.Drawing.Point(343, 705);
             this.BtnSelecionarVendas.Name = "BtnSelecionarVendas";
             this.BtnSelecionarVendas.Size = new System.Drawing.Size(277, 79);
             this.BtnSelecionarVendas.TabIndex = 56;
@@ -211,7 +211,7 @@
             this.BtnCadastrarVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnCadastrarVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastrarVendas.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarVendas.Location = new System.Drawing.Point(12, 715);
+            this.BtnCadastrarVendas.Location = new System.Drawing.Point(12, 704);
             this.BtnCadastrarVendas.Name = "BtnCadastrarVendas";
             this.BtnCadastrarVendas.Size = new System.Drawing.Size(277, 79);
             this.BtnCadastrarVendas.TabIndex = 55;

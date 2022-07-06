@@ -1,5 +1,8 @@
 ﻿namespace Shared
 {
+    /// <summary>
+    /// classe padrao de cargo para cadastrar cada cargo e ter varias funcoes dentro da empresa
+    /// </summary>
     public class Cargo
     {
         public Cargo()

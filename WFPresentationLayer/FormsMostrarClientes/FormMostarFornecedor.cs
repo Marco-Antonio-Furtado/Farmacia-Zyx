@@ -5,6 +5,18 @@ using WfPresentationLayer.FormCadastros;
 
 namespace WfPresentationLayer.Alteraçoes
 {
+    /// <summary>
+    /// Form Padrão mostrar Fornecedor em uma datagrid 
+    /// dentro desse form a algumas Funcoes que ele faz dentro delas 
+    /// Cadastro de Fornecedores que abre o form de cliente vazio
+    /// alterar Fornecedor que abre o form de cadastro de Fornecedor preenchido onde o mesmo é feito clicando na linha e clicando no botao
+    /// mostrar desabilitados mostra na grid todos os Fornecedor desabilitados
+    /// deletar deleta ou desabilita os Fornecedor da grid e do banco de dados onde o mesmo é feito clicando na linha e clicando no botao
+    /// 
+    /// onde dentro do form ele tem uma sobrecarga se ele for aberto para gerar um Fornecedor em tela de Cadastros ou vendas
+    /// 
+    /// onde todos esse forms sao aberto dentro de um panel padrão
+    /// </summary>
     public partial class Alteracao_Fornecedor : Form
     {
         private Form _objForm5;
@@ -20,7 +32,17 @@ namespace WfPresentationLayer.Alteraçoes
         {
             InitializeComponent();
         }
-
+        private void Alteracao_Fornecedor_Load(object sender, EventArgs e)
+        {
+            List<Fornecedor> fornecedores = fornecedorBll.GetAll().Dados;
+            foreach (Fornecedor Fornecedor in fornecedores)
+            {
+                if (Fornecedor.Ativo == true)
+                {
+                    SincronizarListaGrid(Fornecedor);
+                }
+            }
+        }
         private void BtnCadastrarFornecedor_Click(object sender, EventArgs e)
         {
             _objForm5?.Close();
@@ -39,7 +61,6 @@ namespace WfPresentationLayer.Alteraçoes
         {
          GridFornecedor.Rows.Add(item.ID, item.Razao_Social, item.Telefone, item.Nome_Contato, item.Email, item.CNPJ);
         }
-
         private void BtnAlterarFornecedor_Click(object sender, EventArgs e)
         {
             if (this.GridFornecedor.SelectedRows.Count == 0)
@@ -73,19 +94,25 @@ namespace WfPresentationLayer.Alteraçoes
                 _objForm5.BringToFront();
             }
         }
-
-        private void Alteracao_Fornecedor_Load(object sender, EventArgs e)
+        private void BtnDesabilitados_Click(object sender, EventArgs e)
         {
-            List<Fornecedor> fornecedores = fornecedorBll.GetAll().Dados;
-            foreach (Fornecedor Fornecedor in fornecedores)
+            LimparGrid();
+
+            List<Fornecedor> fornecedoresOFF = fornecedorBll.GetAll().Dados;
+            foreach (Fornecedor fornecedor in fornecedoresOFF)
             {
-                if (Fornecedor.Ativo == true)
+                if (fornecedor.Ativo == false)
                 {
-                    SincronizarListaGrid(Fornecedor);
+                    SincronizarListaGrid(fornecedor);
                 }
             }
-        }
+            if (GridFornecedor.RowCount == 1)
+            {
+                MeuMessageBox.Show("Nao há Fornecedores Desabilitados");
+                LimparGrid();
+            }
 
+        }
         private void BtnDeletarFornecedor_Click(object sender, EventArgs e)
         {
             if (this.GridFornecedor.SelectedRows.Count == 0)
@@ -127,25 +154,7 @@ namespace WfPresentationLayer.Alteraçoes
             }
         }
 
-        private void BtnDesabilitados_Click(object sender, EventArgs e)
-        {
-            LimparGrid();
-
-            List<Fornecedor> fornecedoresOFF = fornecedorBll.GetAll().Dados;
-            foreach (Fornecedor fornecedor in fornecedoresOFF)
-            {
-                if (fornecedor.Ativo == false)
-                {
-                    SincronizarListaGrid(fornecedor);
-                }
-            }
-            if (GridFornecedor.RowCount == 1)
-            {
-                MeuMessageBox.Show("Nao há Fornecedores Desabilitados");
-                LimparGrid();
-            }
-
-        }
+        // Metodos padrões Para melhor visualizacao e entendimento do usuario 
         private void LimparGrid()
         {
             GridFornecedor.Rows.Clear();
@@ -153,6 +162,11 @@ namespace WfPresentationLayer.Alteraçoes
             GridFornecedor.DataSource = null;
         }
 
+        /// <summary>
+        /// Metodo Para Trazer dados de cliente para melhor procura do mesmo 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GridFornecedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Fornecedor fornecedorselecionado = new Fornecedor();

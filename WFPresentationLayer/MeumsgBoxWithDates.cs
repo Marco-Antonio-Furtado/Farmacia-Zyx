@@ -1,24 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace WfPresentationLayer
+﻿namespace WfPresentationLayer
 {
+    /// <summary>
+    /// Form de messege box que retorna duas datas 
+    /// para mehlor visualizacao do usuario na lista de vendas e compras
+    /// </summary>
     public partial class MeumsgBoxWithDates : Form
     {
         public MeumsgBoxWithDates()
         {
             InitializeComponent();
         }
-
         public ParametrosDatas ParametrosDatas { get; set; }
-
         public static ParametrosDatas ShowMessageWithDates(string mensagem)
         {
             var msgBox = new MeumsgBoxWithDates();
@@ -30,8 +22,6 @@ namespace WfPresentationLayer
             msgBox.ShowDialog();
             return msgBox.ParametrosDatas;
         }
-
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             ParametrosDatas parametros = new ParametrosDatas()
@@ -53,11 +43,4 @@ namespace WfPresentationLayer
             this.Close();
         }
     }
-
-    //public struct ParametrosDatas
-    //{
-    //    public DateTime Inicio { get; set; }
-    //    public DateTime Fim { get; set; }
-    //}
-
 }

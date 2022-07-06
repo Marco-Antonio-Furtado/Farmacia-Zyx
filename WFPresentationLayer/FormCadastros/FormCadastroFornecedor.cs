@@ -6,6 +6,14 @@ namespace WfPresentationLayer.FormCadastros
 {
     public partial class FormCadastroFornecedor : Form
     {
+
+        /// <summary>
+        /// Form de cadastro de Fornecedor padrao de todo cadastro 
+        /// onde o mesmo pode fazer o uptade se a textbox id for visivel 
+        /// e insert se nao for visivel 
+        /// Uma sobrecarga que abre com Fornecedor ja preenchido para alteracao 
+        /// e sem sobrecarga que abre para cadastro 
+        /// </summary>
         public FormCadastroFornecedor()
         {
             InitializeComponent();
@@ -52,6 +60,8 @@ namespace WfPresentationLayer.FormCadastros
                 }
             }
         }
+
+        // Metodos padrões Para melhor visualizacao e entendimento do usuario 
 
         private void ImageBtnFechar_Click(object sender, EventArgs e)
         {

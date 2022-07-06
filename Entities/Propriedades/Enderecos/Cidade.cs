@@ -1,5 +1,8 @@
 ﻿namespace Entities.Propriedades
 {
+    /// <summary>
+    /// Classe de endereco de cidade para melhor funcionamento de busca de enderecos
+    /// </summary>
     public class Cidade
     {
         public Cidade()

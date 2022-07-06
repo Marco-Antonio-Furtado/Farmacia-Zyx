@@ -39,7 +39,7 @@
             this.BtnMostrarVendas = new System.Windows.Forms.Button();
             this.PctBtnClose = new System.Windows.Forms.PictureBox();
             this.TopPanel = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pctFuncionario = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -57,7 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PctMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PctBtnClose)).BeginInit();
             this.TopPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -208,7 +208,7 @@
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
-            this.TopPanel.Controls.Add(this.pictureBox8);
+            this.TopPanel.Controls.Add(this.pctFuncionario);
             this.TopPanel.Controls.Add(this.pictureBox7);
             this.TopPanel.Controls.Add(this.pictureBox6);
             this.TopPanel.Controls.Add(this.pictureBox5);
@@ -228,16 +228,16 @@
             this.TopPanel.Size = new System.Drawing.Size(1312, 74);
             this.TopPanel.TabIndex = 7;
             // 
-            // pictureBox8
+            // pctFuncionario
             // 
-            this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.pictureBox8.Image = global::WfPresentationLayer.Properties.Resources.icons8_funcionário_homem_1001;
-            this.pictureBox8.Location = new System.Drawing.Point(1134, 12);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(42, 48);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 51;
-            this.pictureBox8.TabStop = false;
+            this.pctFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pctFuncionario.Image = global::WfPresentationLayer.Properties.Resources.icons8_funcionário_homem_1001;
+            this.pctFuncionario.Location = new System.Drawing.Point(1134, 12);
+            this.pctFuncionario.Name = "pctFuncionario";
+            this.pctFuncionario.Size = new System.Drawing.Size(42, 48);
+            this.pctFuncionario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctFuncionario.TabIndex = 51;
+            this.pctFuncionario.TabStop = false;
             // 
             // pictureBox7
             // 
@@ -418,7 +418,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PctMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PctBtnClose)).EndInit();
             this.TopPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctFuncionario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -459,7 +459,7 @@
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
         private PictureBox pictureBox7;
-        private PictureBox pictureBox8;
+        private PictureBox pctFuncionario;
         private PictureBox PctDuvida;
     }
 }

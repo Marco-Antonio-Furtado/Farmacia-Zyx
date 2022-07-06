@@ -1,5 +1,8 @@
 ﻿namespace Entities
 {
+    /// <summary>
+    /// Classe de endereco de Estado para melhor funcionamento de busca de enderecos
+    /// </summary>
     public class Estado
     {
         public Estado()

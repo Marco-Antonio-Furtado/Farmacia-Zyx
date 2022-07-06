@@ -2,6 +2,9 @@
 
 namespace Entities
 {
+    /// <summary>
+    /// Classe de endereco Para ser agregado a funcionario
+    /// </summary>
     public class Endereco
     {
         public Endereco()

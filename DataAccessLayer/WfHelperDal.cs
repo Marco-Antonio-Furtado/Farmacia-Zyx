@@ -5,6 +5,9 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
+    /// <summary>
+    /// Classe que ajuda o WfPresentationlayer que retorna os dados da cidade e estado 
+    /// </summary>
     public class WfHelperDal 
     {
         public DataResponse<Cidade> GetAllCidade(int id)

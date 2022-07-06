@@ -5,6 +5,19 @@ using WfPresentationLayer.FormCadastros;
 
 namespace WfPresentationLayer.Alteraçoes
 {
+
+    /// <summary>
+    /// Form Padrão mostrar clientes em uma datagrid 
+    /// dentro desse form a algumas Funcoes que ele faz dentro delas 
+    /// Cadastro de cliente que abre o form de cliente vazio
+    /// alterar cliente que abre o form de cadastro de cliente preenchido onde o mesmo é feito clicando na linha e clicando no botao
+    /// mostrar desabilitados mostra na grid todos os clientes desabilitados
+    /// deletar deleta ou desabilita os cliente da grid e do banco de dados onde o mesmo é feito clicando na linha e clicando no botao
+    /// 
+    /// onde dentro do form ele tem uma sobrecarga se ele for aberto para gerar um cliente em tela de Cadastros ou vendas
+    /// 
+    /// onde todos esse forms sao aberto dentro de um panel padrão
+    /// </summary>
     public partial class FormMostarClientes : Form
     {
         private Form _objForm1;
@@ -21,8 +34,10 @@ namespace WfPresentationLayer.Alteraçoes
             InitializeComponent();
         }
         List<Cliente> Clientes = new List<Cliente>();
+
+        
         private void FormMostarClientes_Load(object sender, EventArgs e)
-        {
+        {    //mostrar ativos
             Clientes = clienteBLL.GetAll().Dados;
             foreach (Cliente cliente in Clientes)
             {
@@ -31,10 +46,6 @@ namespace WfPresentationLayer.Alteraçoes
                     SincronizarListaGrid(cliente);
                 }
             }
-        }
-        private void PctBtnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
@@ -88,13 +99,6 @@ namespace WfPresentationLayer.Alteraçoes
                 _objForm1.BringToFront();
             }
         }
-
-        private void LimparGrid()
-        {
-            GridClientes.Rows.Clear();
-            GridClientes.Refresh();
-            GridClientes.DataSource = null;
-        }
         private void BtnDeletarClientes_Click(object sender, EventArgs e)
         {
             if (this.GridClientes.SelectedRows.Count == 0)
@@ -136,7 +140,6 @@ namespace WfPresentationLayer.Alteraçoes
             }
             
         }
-
         private void BtnClienteDesabilitado_Click(object sender, EventArgs e)
         {
             LimparGrid();
@@ -156,6 +159,23 @@ namespace WfPresentationLayer.Alteraçoes
             }
         }
 
+        // Metodos padrões Para melhor visualizacao e entendimento do usuario 
+        private void LimparGrid()
+        {
+            GridClientes.Rows.Clear();
+            GridClientes.Refresh();
+            GridClientes.DataSource = null;
+        }
+        private void PctBtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        /// <summary>
+        /// Metodo Para Trazer dados de cliente para melhor procura do mesmo 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GridClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Cliente clienteselecionado = new Cliente();

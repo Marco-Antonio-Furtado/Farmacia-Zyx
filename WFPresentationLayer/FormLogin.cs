@@ -6,6 +6,10 @@ using Shared;
 
 namespace WfPresentationLayer
 {
+    /// <summary>
+    /// form de login os mesmo sao passados email e senha para a textbox e comparado com o banco de dados
+    /// 
+    /// </summary>
     public partial class FormLogin : Form
     {
         FuncionarioBll funcionario = new FuncionarioBll();
@@ -31,6 +35,21 @@ namespace WfPresentationLayer
             }
            
         }
+        private Response Logar(string Email,string Senha)
+        {
+           return funcionario.LoginBLL(Email, Senha);
+        }
+
+
+        // Metodos padrões Para melhor visualizacao e entendimento do usuario 
+        private void KeyChanger(object sender, EventArgs e)
+        {
+             this.TxtBoxSenha.PasswordChar = '*'; 
+        }
+        private void ImageBtnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void TxtBoxLogin_TextChanged(object sender, EventArgs e)
         {
             if(TxtBoxLogin.Text == "Digite Seu Email")
@@ -52,20 +71,6 @@ namespace WfPresentationLayer
             {
                 TxtBoxSenha.Text = "Digite Sua Senha";
             }
-        }
-        private void KeyChanger(object sender, EventArgs e)
-        {
-             this.TxtBoxSenha.PasswordChar = '*'; 
-        }
-        private void ImageBtnFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        private Response Logar(string Email,string Senha)
-        {
-            
-           return funcionario.LoginBLL(Email, Senha);
-            
         }
     }
 }

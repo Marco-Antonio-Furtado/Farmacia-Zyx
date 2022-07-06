@@ -1,20 +1,20 @@
 ﻿using BusinessLogicalLayer.BusinessLL;
-using DataAccessLayer;
 using Entities;
 using Shared;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using WfPresentationLayer.FormCadastros;
 
 namespace WfPresentationLayer.FormsMostrarClientes
 {
+    /// <summary>
+    /// Form Padrão mostrar Laboratorios em uma datagrid 
+    /// dentro desse form a algumas Funcoes que ele faz dentro delas 
+    /// Cadastro de Laboratorio que abre o form de Laboratorio vazio
+    /// alterar Laboratorios que abre o form de cadastro de Laboratorio preenchido onde o mesmo é feito clicando na linha e clicando no botao
+    /// mostrar desabilitados mostra na grid todos os Laboratorios desabilitados
+    /// deletar deleta ou desabilita os Laboratorio da grid e do banco de dados onde o mesmo é feito clicando na linha e clicando no botao
+    /// 
+    /// onde todos esse forms sao aberto dentro de um panel padrão
+    /// </summary>
     public partial class FormMostarLaboratorio : Form
     {
         Form _objForm5;
@@ -37,23 +37,6 @@ namespace WfPresentationLayer.FormsMostrarClientes
             _objForm5.Show();
             _objForm5.BringToFront();
         }
-
-        private void FormMostarLaboratorio_Load(object sender, EventArgs e)
-        {
-            Laboratorios = laboratorioBLL.GetAll().Dados;
-            foreach (Laboratorio laboratorio in Laboratorios)
-            {
-                if (laboratorio.Ativo == true)
-                {
-                    SincronizarListaGrid(laboratorio);
-                }
-            }
-        }
-        private void SincronizarListaGrid(Laboratorio item)
-        {
-            GridLaboratorio.Rows.Add(item.ID, item.Razao_Social, item.Telefone, item.Nome_Contato, item.Email, item.CNPJ);
-        }
-
         private void BtnAlterarLaboratorio_Click(object sender, EventArgs e)
         {
             if (this.GridLaboratorio.SelectedRows.Count == 0)
@@ -90,7 +73,35 @@ namespace WfPresentationLayer.FormsMostrarClientes
             
 
         }
+        private void FormMostarLaboratorio_Load(object sender, EventArgs e)
+        {
+            Laboratorios = laboratorioBLL.GetAll().Dados;
+            foreach (Laboratorio laboratorio in Laboratorios)
+            {
+                if (laboratorio.Ativo == true)
+                {
+                    SincronizarListaGrid(laboratorio);
+                }
+            }
+        }
+        private void BtnDesabilitados_Click(object sender, EventArgs e)
+        {
+            LimparGrid();
+            List<Laboratorio> LaboratoriosOFF = laboratorioBLL.GetAll().Dados;
+            foreach (Laboratorio laboratorio in LaboratoriosOFF)
+            {
+                if (laboratorio.Ativo == false)
+                {
+                    SincronizarListaGrid(laboratorio);
+                }
+            }
+            if (GridLaboratorio.RowCount == 1)
+            {
+                MeuMessageBox.Show("Nao há Laboratorios Desabilitados");
+                LimparGrid();
+            }
 
+        }
         private void BtnDeletarLaboratorio_Click(object sender, EventArgs e)
         {
             if (this.GridLaboratorio.SelectedRows.Count == 0)
@@ -136,25 +147,13 @@ namespace WfPresentationLayer.FormsMostrarClientes
                 else { }
             }
         }
-
-        private void BtnDesabilitados_Click(object sender, EventArgs e)
+        private void SincronizarListaGrid(Laboratorio item)
         {
-            LimparGrid();
-            List<Laboratorio> LaboratoriosOFF = laboratorioBLL.GetAll().Dados;
-            foreach (Laboratorio laboratorio in LaboratoriosOFF)
-            {
-                if (laboratorio.Ativo == false)
-                {
-                    SincronizarListaGrid(laboratorio);
-                }
-            }
-            if (GridLaboratorio.RowCount == 1)
-            {
-                MeuMessageBox.Show("Nao há Laboratorios Desabilitados");
-                LimparGrid();
-            }
-
+            GridLaboratorio.Rows.Add(item.ID, item.Razao_Social, item.Telefone, item.Nome_Contato, item.Email, item.CNPJ);
         }
+
+
+        // Metodos padrões Para melhor visualizacao e entendimento do usuario 
         private void LimparGrid()
         {
             GridLaboratorio.Rows.Clear();

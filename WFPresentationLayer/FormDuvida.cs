@@ -2,6 +2,10 @@
 
 namespace WfPresentationLayer
 {
+
+    /// <summary>
+    /// Form De agradecimento Geral pela oportunidade que o programa tras
+    /// </summary>
     public partial class FormDuvida : Form
     {
         public FormDuvida()

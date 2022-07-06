@@ -4,8 +4,16 @@ using Shared;
 
 namespace WfPresentationLayer.FormCadastros
 {
+    /// <summary>
+    /// Form de cadastro de Laboratorio padrao de todo cadastro 
+    /// onde o mesmo pode fazer o uptade se a textbox id for visivel 
+    /// e insert se nao for visivel 
+    /// Uma sobrecarga que abre com Laboratorio ja preenchido para alteracao 
+    /// e sem sobrecarga que abre para cadastro 
+    /// </summary>
     public partial class FormCadastrarLaboratorio : Form
     {
+        
         LaboratorioBLL labbll = new LaboratorioBLL();
         public FormCadastrarLaboratorio()
         {
@@ -27,7 +35,6 @@ namespace WfPresentationLayer.FormCadastros
             TxtBoxId.Visible = true;
             LblIdAlteracao.Visible = true;
         }
-
         private void BtnCadastroLaboratorio_Click(object sender, EventArgs e)
         {
             Laboratorio lab = new Laboratorio(razaoSocial: txtBoxRazaoSocial.Text,
@@ -53,16 +60,15 @@ namespace WfPresentationLayer.FormCadastros
                     this.Close();
                 }
             }
-
-
         }
+
+        // Metodos padrões Para melhor visualizacao e entendimento do usuario 
         private void ImageBtnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
         private void TxtBoxNomeResponsavel_Enter(object sender, EventArgs e)
         {
-
             if (TxtBoxNomeResponsavel.Text == "Digite O Nome Contato")
             {
                 TxtBoxNomeResponsavel.Text = "";
@@ -95,5 +101,6 @@ namespace WfPresentationLayer.FormCadastros
                 txtBoxEmail.Text = "Digite O Email";
             }
         }
+        
     }
 }

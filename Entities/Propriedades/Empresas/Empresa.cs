@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entities.Propriedades
+﻿namespace Entities.Propriedades
 {
+    /// <summary>
+    /// Classe base para servir de classe pai para as duas empresas cadastradas no sistema
+    /// </summary>
     public class Empresa
     {
         public int ID { get; set; }

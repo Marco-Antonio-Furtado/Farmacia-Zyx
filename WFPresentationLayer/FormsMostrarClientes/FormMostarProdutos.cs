@@ -4,6 +4,19 @@ using Shared;
 
 namespace WfPresentationLayer.Alteraçoes
 {
+
+    /// <summary>
+    /// Form Padrão mostrar Produtos em uma datagrid 
+    /// dentro desse form a algumas Funcoes que ele faz dentro delas 
+    /// Cadastro de Produtos que abre o form de Produto vazio
+    /// alterar Produtos que abre o form de cadastro de Produto preenchido onde o mesmo é feito clicando na linha e clicando no botao
+    /// mostrar desabilitados mostra na grid todos os Produtos desabilitados
+    /// deletar deleta ou desabilita os Produtos da grid e do banco de dados onde o mesmo é feito clicando na linha e clicando no botao
+    /// 
+    /// onde dentro do form ele tem uma sobrecarga se ele for aberto para gerar um Produtos em tela de Cadastros ou vendas
+    /// 
+    /// onde todos esse forms sao aberto dentro de um panel padrão
+    /// </summary>
     public partial class FormMostrarProdutos : Form
     {
         private Form _objForm3;
@@ -36,10 +49,6 @@ namespace WfPresentationLayer.Alteraçoes
             _objForm3.Show();
             _objForm3.BringToFront();
         }
-        private void SincronizarListaGrid(Produto item)
-        {
-            Gridprodutos.Rows.Add(item.ID, item.Nome, item.ID_Laboratorio.Razao_Social, item.Descricao, item.Quantia_Estoque, item.Valor_Unitario,item.Valor_Venda);
-        }
         private void BtnAlterarProdutos_Click(object sender, EventArgs e)
         {
             if (this.Gridprodutos.SelectedRows.Count == 0)
@@ -71,6 +80,23 @@ namespace WfPresentationLayer.Alteraçoes
                 pnlProduto.Controls.Add(_objForm3);
                 _objForm3.Show();
                 _objForm3.BringToFront();
+            }
+        }
+        private void BtnDesabilitados_Click(object sender, EventArgs e)
+        {
+            LimparGrid();
+            Produtos = ProdutoBll.GetAll().Dados;
+            foreach (Produto Produto in Produtos)
+            {
+                if (Produto.Ativo == false)
+                {
+                    SincronizarListaGrid(Produto);
+                }
+            }
+            if (Gridprodutos.RowCount == 1)
+            {
+                MeuMessageBox.Show("Nao há Produtos Desabilitados");
+                LimparGrid();
             }
         }
         private void BtnDeletarProdutos_Click(object sender, EventArgs e)
@@ -128,32 +154,16 @@ namespace WfPresentationLayer.Alteraçoes
                 }
             }
         }
-        private void LimparGrid()
+        private void SincronizarListaGrid(Produto item)
         {
-            Gridprodutos.Rows.Clear();
-            Gridprodutos.Refresh();
-            Gridprodutos.DataSource = null;
-            
+            Gridprodutos.Rows.Add(item.ID, item.Nome, item.ID_Laboratorio.Razao_Social, item.Descricao, item.Quantia_Estoque, item.Valor_Unitario,item.Valor_Venda);
         }
 
-        private void BtnDesabilitados_Click(object sender, EventArgs e)
-        {
-            LimparGrid();
-            Produtos = ProdutoBll.GetAll().Dados;
-            foreach (Produto Produto in Produtos)
-            {
-                if (Produto.Ativo == false)
-                {
-                    SincronizarListaGrid(Produto);
-                }
-            }
-            if (Gridprodutos.RowCount == 1)
-            {
-                MeuMessageBox.Show("Nao há Produtos Desabilitados");
-                LimparGrid();
-            }
-        }
-
+        /// <summary>
+        /// Metodos padrões Para melhor visualizacao e entendimento do usuario 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Gridprodutos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             
@@ -170,6 +180,16 @@ namespace WfPresentationLayer.Alteraçoes
                 this.ProdutoSelecionado123 = response.Item;
                 this.Close();
             }
+        }
+        
+        
+        // Metodos padrões Para melhor visualizacao e entendimento do usuario 
+        private void LimparGrid()
+        {
+            Gridprodutos.Rows.Clear();
+            Gridprodutos.Refresh();
+            Gridprodutos.DataSource = null;
+            
         }
     }
 }

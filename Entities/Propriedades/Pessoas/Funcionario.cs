@@ -3,6 +3,11 @@ using Shared;
 
 namespace Entities
 {
+    /// <summary>
+    /// Classe que Herda de pessoa e representa cada Funcionario
+    /// e tem um contrutor padrao e outro preenchido por causa de um melhor funcionamento do sistema 
+    /// por exemplo o funcionamento do dbexecuter
+    /// </summary>
     public class Funcionario : Pessoa
     {
         public Funcionario()

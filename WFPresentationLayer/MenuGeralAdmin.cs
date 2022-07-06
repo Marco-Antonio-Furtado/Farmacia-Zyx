@@ -9,6 +9,11 @@ using WfPresentationLayer.Trancaçoes;
 
 namespace WfPresentationLayer
 {
+    /// <summary>
+    /// Form De menu geral onde antes de ser carregado ele checa se o usuario é administrador e se for ele mostra as alteracoes de funcionarios
+    /// no form ele abre o menu de alteracao de todos os campos possiveis (vendas,compras,cliente,produtos,fornecedores,funcionarios,laboratorios
+    /// 
+    /// </summary>
     public partial class MenuGeralAdmin : Form
     {
         private Form _objForm;
@@ -18,11 +23,9 @@ namespace WfPresentationLayer
             InitializeComponent();
             LblFuncionarioLogado.Text = "Bem vindo Senhor " + SystemParameters.UsuarioLogado.Nome_Funcionario;
             Cargo ca = SystemParameters.GetPermissao();
-            if(ca.Nome_Cargo != "Administrador") { BtnMenuFuncionario.Visible = false; }
-        }
-        private void PctBtnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            if(ca.Nome_Cargo != "Administrador") { BtnMenuFuncionario.Visible = false;
+                pctFuncionario.Visible = false;
+            }
         }
         private void BtnMenuVendas_Click(object sender, EventArgs e)
         {
@@ -111,12 +114,6 @@ namespace WfPresentationLayer
             MidlePanel.Controls.Add(_objForm);
             _objForm.Show();
         }
-        private void PctBack_Click(object sender, EventArgs e)
-        {
-            _objForm?.Close();
-            PctMenu.Show();
-            LblMenu.Show();
-        }
         private void BtnMostraLab(object sender, EventArgs e)
         {
             PctMenu.Hide();
@@ -132,15 +129,38 @@ namespace WfPresentationLayer
             _objForm.Show();
         }
 
-        private void BtnRelogar_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
-        }
-
+        /// <summary>
+        /// abrir form de agradecimentos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PctDuvida_Click(object sender, EventArgs e)
         {
             FormDuvida formDuvida = new FormDuvida();
             formDuvida.ShowDialog();
         }
+
+        /// <summary>
+        /// metodo para relogar no sistema
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnRelogar_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        // Metodos padrões Para melhor visualizacao e entendimento do usuario 
+        private void PctBtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void PctBack_Click(object sender, EventArgs e)
+        {
+            _objForm?.Close();
+            PctMenu.Show();
+            LblMenu.Show();
+        }
+
     }
 }

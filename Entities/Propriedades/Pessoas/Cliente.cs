@@ -2,6 +2,11 @@
 
 namespace Entities
 {
+    /// <summary>
+    /// Classe que Herda de pessoa e representa cada cliente
+    /// e tem um contrutor padrao e outro preenchido por causa de um melhor funcionamento do sistema 
+    /// por exemplo o funcionamento do dbexecuter
+    /// </summary>
     public class Cliente : Pessoa
     {
         public Cliente()
@@ -17,8 +22,6 @@ namespace Entities
             Telefone = telefone;
             Telefone2 = telefone2;
         }
-
-        //public Endereco ?Endereco { get; set; }
         public string Telefone2 { get; set; }
         public int Programa_Fidelidade { get; set; }
         public string Nome_Cliente { get; set; }

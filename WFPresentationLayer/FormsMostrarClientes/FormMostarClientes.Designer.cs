@@ -244,7 +244,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.pictureBox1.Image = global::WfPresentationLayer.Properties.Resources.delete__v1;
-            this.pictureBox1.Location = new System.Drawing.Point(1011, 714);
+            this.pictureBox1.Location = new System.Drawing.Point(1007, 713);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(59, 59);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

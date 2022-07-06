@@ -1,5 +1,9 @@
 ﻿namespace Shared
 {
+    /// <summary>
+    /// Classe Responsevel por trazer uma resposta em texto um boleano dizendo se foi efetiva e uma Classe preenchida
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class SingleResponse<T> : Response
     {
 

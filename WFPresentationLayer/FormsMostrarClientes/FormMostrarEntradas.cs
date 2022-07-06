@@ -7,6 +7,14 @@ using WfPresentationLayer.Trancaçoes;
 
 namespace WfPresentationLayer.Alteraçoes
 {
+
+    /// <summary>
+    /// Form para mostrar as entradas de produtos em uma datagrid
+    /// onde quando inicializado pelu menu ele ira gerar duas datas (padroes ou nao)
+    /// que ira fazer a busca das entradas com base nas datas
+    /// onde o mesmo pode abrir uma tela de nova compra 
+    /// e o mesmo pode mostrar a grid com todas as vendas cadastradas
+    /// </summary>
     public partial class FormMostrarEntradas : Form
     {
         EntradaBll entradaBll = new EntradaBll();
@@ -32,6 +40,11 @@ namespace WfPresentationLayer.Alteraçoes
         {
             GridEntrada.Rows.Add(item.TransacaoID, item.ProdutoNome, item.ValorUnitario, item.Quantidade, item.ValorTotal, item.FormaPagamento,item.Fornecedor, item.Data, item.Funcionario);
         }
+        private void BtnCadastrarVendas_Click(object sender, EventArgs e)
+        {
+            FormNovaCompra form = new FormNovaCompra();
+            form.ShowDialog();
+        }
         private void BtnCadastrarCompra_Click(object sender, EventArgs e)
         {
             FormNovaCompra form = new FormNovaCompra();
@@ -50,14 +63,8 @@ namespace WfPresentationLayer.Alteraçoes
                 SincronizarListaGrid(item);
             }
         }
-        private void LimparGrid()
-        {
-            GridEntrada.Rows.Clear();
-            GridEntrada.Refresh();
-            GridEntrada.DataSource = null;
 
-        }
-
+        // Metodos padrões Para melhor visualizacao e entendimento do usuario 
         private void BtnSelecionarVendas_Click(object sender, EventArgs e)
         {
             LimparGrid();
@@ -74,11 +81,13 @@ namespace WfPresentationLayer.Alteraçoes
                 SincronizarListaGrid(item);
             }
         }
-
-        private void BtnCadastrarVendas_Click(object sender, EventArgs e)
+        private void LimparGrid()
         {
-            FormNovaCompra form = new FormNovaCompra();
-            form.ShowDialog();
+            GridEntrada.Rows.Clear();
+            GridEntrada.Refresh();
+            GridEntrada.DataSource = null;
+
         }
+
     }
 }

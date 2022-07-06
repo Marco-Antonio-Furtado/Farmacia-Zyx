@@ -14,6 +14,10 @@ namespace WfPresentationLayer.FormCadastros
 {
     public partial class FormCadastroCargo : Form
     {
+        /// <summary>
+        /// Form padrao para cadastro de cargo Lembrando que apenas administradores podem 
+        /// gerenciar cadastrar alterar deletar e desabilitar funcionarios
+        /// </summary>
         public FormCadastroCargo()
         {
             InitializeComponent();

@@ -9,6 +9,17 @@ using WfPresentationLayer.FormCadastros;
 
 namespace WfPresentationLayer.Trancaçoes
 {
+    /// <summary>
+    /// Form padrao de Nova compra 
+    /// onde o mesmo faz a busca dos itens pelo botao de procurar fornecedor ou pela textbox que abre o form de mostrar fornecedor e tras
+    /// a informacao direto pra textbox
+    /// 
+    /// onde o produto faz o mesmo tanto a busca como onde achar
+    /// 
+    /// o form tambem tem os botões de cadastro tanto de produto como de fornecedor 
+    /// 
+    /// o total da compra é feito no proprio label para melhor visualizacao 
+    /// </summary>
     public partial class FormNovaCompra : Form
     {
         public FormNovaCompra()
@@ -19,16 +30,6 @@ namespace WfPresentationLayer.Trancaçoes
         EntradaBll entradaBLL = new EntradaBll();
         List<Item> ItemsEntrada = new List<Item>();
 
-        private void BtnNovoFornecedor_Click(object sender, EventArgs e)
-        {
-            FormCadastroFornecedor form = new FormCadastroFornecedor();
-            form.ShowDialog();
-        }
-        private void BtnNovoProduto_Click(object sender, EventArgs e)
-        {
-            FormCadastroProduto formCadastroProduto = new FormCadastroProduto();    
-            formCadastroProduto.ShowDialog();
-        }
         private void BtnNovoIten_Click(object sender, EventArgs e)
         {
             if (TxtBoxSelecionarProduto.Text == "Selecione o Produto" || CmbFormaPagamento.Text == "" || TxtBoxQuantidade.Text == "" || TxtBoxSelecionarFornecedor.Text == "Selecione o Fornecedor")
@@ -82,7 +83,7 @@ namespace WfPresentationLayer.Trancaçoes
             BtnProcurarFornecedor.Enabled = false;
             CmbFormaPagamento.Enabled = false;
             DateTime.Enabled = false;
-            TxtBoxSelecionarProduto.Text = "";
+            TxtBoxSelecionarProduto.Text = "Selecione o Produto";
             TxtBoxQuantidade.Clear();
             CheckPreco.Checked = false;
             textBox1TxtBoxPrecoAlterado.Visible = false;
@@ -114,7 +115,7 @@ namespace WfPresentationLayer.Trancaçoes
             Entrada entrada = new Entrada();
             Fornecedor fornecedor = new();
             Funcionario funcionario = new();
-
+            
 
             fornecedor.ID = int.Parse(forneselc[0]);
             entrada.Forma_Pagamento = CmbFormaPagamento.Text;
@@ -151,18 +152,27 @@ namespace WfPresentationLayer.Trancaçoes
                 return;
             }
         }
-        private void TxtBoxQuantidade_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            //aceita apenas números, tecla backspace.
-            if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
-            {
-                e.Handled = true;
-            }
-        }
         private void FormNovaCompra_Load(object sender, EventArgs e)
         {
             CmbFormaPagamento.DataSource = Enum.GetNames(typeof(FormaPagamento));
         }
+
+
+        //Botoes de cadastro
+        private void BtnNovoFornecedor_Click(object sender, EventArgs e)
+        {
+            FormCadastroFornecedor form = new FormCadastroFornecedor();
+            form.ShowDialog();
+        }
+        private void BtnNovoProduto_Click(object sender, EventArgs e)
+        {
+            FormCadastroProduto formCadastroProduto = new FormCadastroProduto();    
+            formCadastroProduto.ShowDialog();
+        }
+
+
+
+        // Metodos padrões Para melhor visualizacao e entendimento do usuario 
         private void CheckPreco_CheckedChanged(object sender, EventArgs e)
         {
             if(textBox1TxtBoxPrecoAlterado.Visible == true)
@@ -190,6 +200,14 @@ namespace WfPresentationLayer.Trancaçoes
             }
             //aceita apenas números, tecla backspace.
             else if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+        private void TxtBoxQuantidade_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            //aceita apenas números, tecla backspace.
+            if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
             {
                 e.Handled = true;
             }

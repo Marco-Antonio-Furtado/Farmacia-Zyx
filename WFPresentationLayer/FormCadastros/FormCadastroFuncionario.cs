@@ -7,6 +7,15 @@ using WfPresentationLayer.FormCadastros;
 
 namespace WfPresentationLayer
 {
+
+
+    /// <summary>
+    /// Form de cadastro de funcionario padrao de todo cadastro 
+    /// onde o mesmo pode fazer o uptade se a textbox id for visivel 
+    /// e insert se nao for visivel 
+    /// Uma sobrecarga que abre com funcionario ja preenchido para alteracao 
+    /// e sem sobrecarga que abre para cadastros 
+    /// </summary>
     public partial class FormCadastroFuncionario : Form
     {
         WfHelperDal wf = new();
@@ -39,7 +48,6 @@ namespace WfPresentationLayer
         public FormCadastroFuncionario(Funcionario fun)
         {
             InitializeComponent();
-            TabGeral.TabPages.Remove(TabEndereco);
             LblTitulo.Text = "Alterar Funcionario";
             List<Cargo> Cargos = cargo.GetAll().Dados;
             foreach (Cargo cargo in Cargos)
@@ -72,7 +80,7 @@ namespace WfPresentationLayer
             }
             else
             {
-                TabGeral.TabPages.Add(TabEndereco);
+                
                 this.TabGeral.SelectedIndex = 1;
                 CmbBoxEstado.ValueMember = "ID";
                 CmbBoxEstado.DisplayMember = "Nome_Estado";
@@ -126,6 +134,16 @@ namespace WfPresentationLayer
                 }
             }
         }
+        private void BtnCadastrarCargo_Click(object sender, EventArgs e)
+        {
+            FormCadastroCargo formCadastroCargo = new FormCadastroCargo();
+            formCadastroCargo.Show();
+        }
+
+
+
+
+        // Metodos padrões Para melhor visualizacao e entendimento do usuario 
         private void TxtBoxNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '.' || e.KeyChar == ',')
@@ -152,18 +170,10 @@ namespace WfPresentationLayer
         {
             CmbBoxCidade.DroppedDown = true;
         }
-
-        private void BtnCadastrarCargo_Click(object sender, EventArgs e)
-        {
-            FormCadastroCargo formCadastroCargo = new FormCadastroCargo();
-            formCadastroCargo.Show();
-        }
-
         private void ImageBtnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void txtBoxNomeFuncionario_Enter(object sender, EventArgs e)
         {
             if (txtBoxNomeFuncionario.Text == "Digite o Nome")

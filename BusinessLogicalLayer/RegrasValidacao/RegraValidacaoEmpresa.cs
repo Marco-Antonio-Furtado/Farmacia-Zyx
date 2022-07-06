@@ -1,8 +1,16 @@
 ﻿namespace BusinessLogicalLayer.RegrasValidacao
 {
+    /// <summary>
+    /// Nesta classe contem as validacões de empresa 
+    /// </summary>
     internal class RegraValidacaoEmpresa
     {
         private const int CARACTERES_CNPJ = 14;
+        /// <summary>
+        /// classe que verifica se é um cnpj valido
+        /// </summary>
+        /// <param name="cnpj"></param>
+        /// <returns></returns>
         internal static bool IsCnpj(string cnpj)
         {
             int[] multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -37,6 +45,12 @@
             digito += resto.ToString();
             return cnpj.EndsWith(digito);
         }
+
+        /// <summary>
+        /// Como nao ha um padrao este metodo retorna se a razao social da empresa é valida
+        /// </summary>
+        /// <param name="RazaoSocial"></param>
+        /// <returns></returns>
         internal static string ValidateRazaoSocial(string RazaoSocial)
         {
             if (string.IsNullOrWhiteSpace(RazaoSocial))

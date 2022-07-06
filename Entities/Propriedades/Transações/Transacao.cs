@@ -1,5 +1,8 @@
 ﻿namespace Entities.Propriedades
 {
+    /// <summary>
+    /// Classe padrao de transacao que serve para ser classe pai de outras transaçoes
+    /// </summary>
     public abstract class Transacao
     {
         public int ID { get; set; }

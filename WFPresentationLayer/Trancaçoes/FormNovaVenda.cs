@@ -9,31 +9,31 @@ using WfPresentationLayer.Alteraçoes;
 
 namespace WfPresentationLayer
 {
+    /// <summary>
+    /// Form padrao de Nova Venda 
+    /// onde o mesmo faz a busca dos itens pelo botao de procurar Clientes ou pela textbox que abre o form de mostrar Clientes e tras
+    /// a informacao direto pra textbox
+    /// 
+    /// onde o produto faz o mesmo tanto a busca como onde achar
+    /// 
+    /// o form tambem tem os botões de cadastro tanto de produto como de Cliente 
+    /// 
+    /// o total da compra é feito no proprio label para melhor visualizacao 
+    /// </summary>
     public partial class FormNovaVenda : Form
     {
-        
         RegraDescontoCliente Regra = new RegraDescontoCliente();
         ProdutoBll produtoBLL = new ProdutoBll();
         SaidaBll SaidaBLL = new SaidaBll();
         public FormNovaVenda()
         {
             InitializeComponent();
-            CmbFormaPagamento.DataSource = Enum.GetNames(typeof(FormaPagamento));
-            DataGrid.DataBindings.Add(nameof(DataGrid.BackgroundColor), this, nameof(Control.BackColor));
-            TxtProcurarCliente.Text = "";
-            TxtBoxProcurarProduto.Text = "";
-            CmbFormaPagamento.SelectedIndex = -1;
+            
         }
         List<Item> ItemsSaida = new List<Item>();
-        private void BtnNovoCliente_Click(object sender, EventArgs e)
+        private void FormNovaVenda_Load(object sender, EventArgs e)
         {
-            FormCadastroCliente formCadastroCliente = new FormCadastroCliente();
-            formCadastroCliente.ShowDialog();
-        }
-        private void BtnNovoProduto_Click(object sender, EventArgs e)
-        {
-            FormCadastroProduto formCadastroProduto = new FormCadastroProduto();
-            formCadastroProduto.ShowDialog();
+            CmbFormaPagamento.DataSource = Enum.GetNames(typeof(FormaPagamento));
         }
         private void BtnNovoIten_Click(object sender, EventArgs e)
         {
@@ -82,20 +82,6 @@ namespace WfPresentationLayer
             string[] clienteselc = (TxtProcurarCliente.Text).Split(" - ");
 
             DataGrid.Rows.Add(prselc[1], item.Preco, item.Qtd, (item.Preco * item.Qtd), clienteselc[1],SystemParameters.GetNome(), DateTime.Value); ;
-        }
-        private void BtnExcluir_Click(object sender, EventArgs e)
-        {
-            DataGridViewRow row = this.DataGrid.SelectedRows[0];
-
-            double valorAntigo = double.Parse(LblValorTotal.Text);
-            double valorNovo = valorAntigo - double.Parse(row.Cells[3].ToString());
-
-
-
-            LblValorTotal.Text = valorNovo.ToString();
-
-            ItemsSaida.RemoveAt(row.Index);
-            DataGrid.Rows.RemoveAt(row.Index);
         }
         private void BtnCadastrarNovaVenda_Click(object sender, EventArgs e)
         {
@@ -173,7 +159,6 @@ namespace WfPresentationLayer
                     TxtBoxQuantidade.Clear();
                     DataGrid.Rows.Clear();
                     DataGrid.Refresh();
-
                 }
                 else
                 {
@@ -181,6 +166,34 @@ namespace WfPresentationLayer
                 }
             }
         }
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = this.DataGrid.SelectedRows[0];
+
+            double valorAntigo = double.Parse(LblValorTotal.Text);
+            double valorNovo = valorAntigo - double.Parse(row.Cells[3].ToString());
+
+
+
+            LblValorTotal.Text = valorNovo.ToString();
+
+            ItemsSaida.RemoveAt(row.Index);
+            DataGrid.Rows.RemoveAt(row.Index);
+        }
+
+        //Botoes de cadastro
+        private void BtnNovoCliente_Click(object sender, EventArgs e)
+        {
+            FormCadastroCliente formCadastroCliente = new FormCadastroCliente();
+            formCadastroCliente.ShowDialog();
+        }
+        private void BtnNovoProduto_Click(object sender, EventArgs e)
+        {
+            FormCadastroProduto form = new FormCadastroProduto();
+            form.ShowDialog();
+        }
+
+        // Metodos padrões Para melhor visualizacao e entendimento do usuario 
         private void TxtBoxQuantidade_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
@@ -188,24 +201,9 @@ namespace WfPresentationLayer
                 e.Handled = true;
             }
         }
-        private void FormNovaVenda_Load(object sender, EventArgs e)
-        {
-        }
         private void ImageBtnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        private void BtnProdutoSelecionado_Click(object sender, EventArgs e)
-        {
-            FormMostrarProdutos frm = new FormMostrarProdutos(true);
-            frm.ShowDialog();
-
-           
-           if (frm.ProdutoSelecionado123 != null)
-           {
-                TxtBoxProcurarProduto.Text = frm.ProdutoSelecionado123.ID + " - " + frm.ProdutoSelecionado123.Nome + " - " + frm.ProdutoSelecionado123.Valor_Unitario;
-
-            }
         }
         private void BtnProcurarCliente_Click(object sender, EventArgs e)
         {
@@ -217,6 +215,17 @@ namespace WfPresentationLayer
                 TxtProcurarCliente.Text = frmC.ClienteSelecionado.ID + " - " + frmC.ClienteSelecionado.Nome_Cliente + " - " + frmC.ClienteSelecionado.Email;
             }
         }
-        
+        private void BtnProcurarProduto_Click(object sender, EventArgs e)
+        {
+            FormMostrarProdutos frm = new FormMostrarProdutos(true);
+            frm.ShowDialog();
+
+
+            if (frm.ProdutoSelecionado123 != null)
+            {
+                TxtBoxProcurarProduto.Text = frm.ProdutoSelecionado123.ID + " - " + frm.ProdutoSelecionado123.Nome + " - " + frm.ProdutoSelecionado123.Valor_Unitario;
+            }
+        }
+
     }
 }

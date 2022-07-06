@@ -6,12 +6,23 @@ using WfPresentationLayer.FormCadastros;
 
 namespace WfPresentationLayer
 {
+
+    /// <summary>
+    /// Form de cadastro de Produto padrao de todo cadastro 
+    /// onde o mesmo pode fazer o uptade se a textbox id for visivel 
+    /// e insert se nao for visivel 
+    /// Uma sobrecarga que abre com Produto ja preenchido para alteracao 
+    /// e sem sobrecarga que abre para cadastro 
+    /// 
+    /// esse form ainda chama o cadastro de laboratorio
+    /// </summary>
     public partial class FormCadastroProduto : Form
     {
         LaboratorioBLL LB = new();
         ProdutoBll produtoBll = new();
-
         List<Laboratorio> listaAtiva = new List<Laboratorio>();
+
+
         public FormCadastroProduto()
         {
             InitializeComponent();
@@ -85,6 +96,14 @@ namespace WfPresentationLayer
                 }
             }
         }
+        private void BtnCadastrarLab_Click(object sender, EventArgs e)
+        {
+            FormCadastrarLaboratorio formCadastrarLaboratorio = new FormCadastrarLaboratorio();
+            formCadastrarLaboratorio.ShowDialog();
+        }
+
+
+        // Metodos padrões Para melhor visualizacao e entendimento do usuario 
         private void TxtBoxPrecoUnitario_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '.' || e.KeyChar == ',')
@@ -104,11 +123,6 @@ namespace WfPresentationLayer
                 e.Handled = true;
             }
 
-        }
-        private void BtnCadastrarLab_Click(object sender, EventArgs e)
-        {
-            FormCadastrarLaboratorio formCadastrarLaboratorio = new FormCadastrarLaboratorio();
-            formCadastrarLaboratorio.ShowDialog();
         }
         private void ImageBtnFechar_Click(object sender, EventArgs e)
         {

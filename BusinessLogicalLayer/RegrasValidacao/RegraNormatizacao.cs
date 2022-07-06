@@ -3,6 +3,9 @@ using System.Text.RegularExpressions;
 
 namespace BusinessLogicalLayer
 {
+    /// <summary>
+    /// nesta classe Contem a globalizacao padrao para brasileiro
+    /// </summary>
     internal class RegraNormatizacao
     {
         internal static string NormatizeName(string nome)

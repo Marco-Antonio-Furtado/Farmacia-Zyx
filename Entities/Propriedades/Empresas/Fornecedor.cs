@@ -2,6 +2,11 @@
 
 namespace Entities
 {
+    /// <summary>
+    /// Classe que herda de Empresa
+    /// e tem um contrutor padrao e outro preenchido por causa da um melhor funcionamento do sistema 
+    /// por exemplo o funcionamento do dbexecuter
+    /// </summary>
     public class Fornecedor : Empresa
     {
         public Fornecedor()

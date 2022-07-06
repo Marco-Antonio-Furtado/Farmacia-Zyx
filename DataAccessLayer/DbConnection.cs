@@ -9,7 +9,7 @@ namespace DataAccessLayer
 
         public DbConnection()
         {
-            conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\SAMSUNG\Documents\banco\BancoFarmaciaZYX.mdf;Integrated Security=True;Connect Timeout=30");
+            conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\SAMSUNG\Desktop\3\Banco\BancoFarmaciaZYX.mdf;Integrated Security=True;Connect Timeout=30");
         }
         public void Open()
         {

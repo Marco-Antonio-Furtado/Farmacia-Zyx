@@ -15,7 +15,7 @@ namespace BusinessLogicalLayer.RegraDePreco
                 transacao.ValorTotal *= 0.9;
                 
             }
-            if (cli.Nome_Cliente != "CLIENTE_PADRAO")
+            if (cli.Nome_Cliente != "CLIENTE PADRÃO")
             {
                 int pontosGanhos = (int)Math.Floor(transacao.ValorTotal / 10);
                 transacao.Cliente.Programa_Fidelidade += pontosGanhos;
@@ -27,7 +27,7 @@ namespace BusinessLogicalLayer.RegraDePreco
         {
             Cliente cli = clienteDAL.GetByID(transacao.Cliente.ID).Item;
 
-            if(cli.Programa_Fidelidade >= 10 && cli.Nome_Cliente != "CLIENTE_PADRAO")
+            if(cli.Programa_Fidelidade >= 10 && cli.Nome_Cliente != "CLIENTE PADRÃO")
             {
                 return true;
             }

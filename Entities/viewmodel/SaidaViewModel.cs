@@ -8,14 +8,14 @@ namespace Entities.viewmodel
 {
     public class SaidaViewModel
     {
-        public int TransacaoID { get; set; }
-        public string ProdutoNome { get; set; }
-        public double ValorUnitario { get; set; }
+        public int SAIDA_ID { get; set; }
+        public string NOME_PRODUTO { get; set; }
+        public double VALOR_UNITARIO { get; set; }
         public double Quantidade { get; set; }
-        public string FormaPagamento { get; set; }
-        public string funcionario { get; set; }
-        public string ClienteNome { get; set; }
-        public double ValorTotal { get; set; }
-        public DateTime Data { get; set; }
+        public string FORMA_PAGAMENTO { get; set; }
+        public string NOME_FUNCIONARIO { get; set; }
+        public string NOME_CLIENTE { get; set; }
+        public double VALOR { get; set; }
+        public DateTime DATA_SAIDA { get; set; }
     }
 }

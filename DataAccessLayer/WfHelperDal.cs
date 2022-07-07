@@ -14,11 +14,11 @@ namespace DataAccessLayer
         {
             string sql = $"SELECT ID,NOME_CIDADE,ID_ESTADO FROM CIDADES WHERE ID_ESTADO = @ID";
 
-            SqlCommand command = new SqlCommand(sql);
+            SqlCommand command = new(sql);
             command.Parameters.AddWithValue("@ID", id);
             try
             {
-                DbExecuter dbexecutor = new DbExecuter();
+                DbExecuter dbexecutor = new();
                 return DbExecuter.GetData<Cidade>(command);
             }
             catch (Exception ex)
@@ -30,10 +30,10 @@ namespace DataAccessLayer
         {
             string sql = $"SELECT ID,NOME_ESTADO,UF FROM ESTADOS";
 
-            SqlCommand command = new SqlCommand(sql);
+            SqlCommand command = new(sql);
             try
             {
-                DbExecuter dbexecutor = new DbExecuter();
+                DbExecuter dbexecutor = new();
                 return DbExecuter.GetData<Estado>(command);
             }
             catch (Exception ex)

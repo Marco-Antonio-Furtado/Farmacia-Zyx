@@ -1,6 +1,7 @@
 ﻿using BusinessLogicalLayer.BusinessLL;
 using Entities;
 using Shared;
+using System.ComponentModel;
 using WfPresentationLayer.FormCadastros;
 
 namespace WfPresentationLayer.FormsMostrarClientes
@@ -150,6 +151,8 @@ namespace WfPresentationLayer.FormsMostrarClientes
         private void SincronizarListaGrid(Laboratorio item)
         {
             GridLaboratorio.Rows.Add(item.ID, item.Razao_Social, item.Telefone, item.Nome_Contato, item.Email, item.CNPJ);
+            GridLaboratorio.Sort(GridLaboratorio.Columns[0], ListSortDirection.Ascending);
+
         }
 
 

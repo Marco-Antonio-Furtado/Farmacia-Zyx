@@ -6,15 +6,19 @@ using Shared;
 
 namespace BusinessLogicalLayer.BusinessLL
 {
+
+    /// <summary>
+    /// Meio para ligar o banco de dados de Produtos com a tela 
+    /// e fazendo sua regras de negocios onde no caso de Produtos Sao validacoes
+    /// e as taxas de lucro de compra e venda
+    /// </summary>
     public class ProdutoBll : ICRUD<Produto>
     {
-        //
-        readonly ProdutoDal produtoDAL = new ProdutoDal();
-
+        
+        readonly ProdutoDal produtoDAL = new();
         public Response Insert(Produto item)
         {
-            //Produtos novos possuem uma margem automática de lucro de 20%
-            item.Valor_Venda = item.Valor_Unitario * 1.2;
+            RegraPrecoProduto.TaxaLucroPadrao(item);
             Response resposta = ProdutoValidator.ValidateIten(item);
             if (resposta.HasSuccess)
             {
@@ -22,13 +26,9 @@ namespace BusinessLogicalLayer.BusinessLL
             }
             else { return resposta; }
         }
-
         public Response Update(Produto item)
         {
-            //CHECA ISSO AQUI!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-            //double ValorVenda = RegraPrecoProduto.CalcularNovoPreco(item, 20);
-            //item.Valor_Venda = ValorVenda;
+            RegraPrecoProduto.TaxaLucroPadrao(item);
             Response resposta = ProdutoValidator.ValidateIten(item);
             if (resposta.HasSuccess)
             {
@@ -40,24 +40,17 @@ namespace BusinessLogicalLayer.BusinessLL
         {
             return produtoDAL.Delete(id);
         }
-
         public DataResponse<Produto> GetAll()
         {
             return produtoDAL.GetAll();
         }
-
         public SingleResponse<Produto> GetByID(int id)
         {
             return produtoDAL.GetByID(id);
         }
-
         public Response Disable(int iDCLiente)
         {
             return produtoDAL.Disable(iDCLiente);
-        }
-        public Response Estoque(int a,int qtd)
-        {
-            return produtoDAL.SetEstoque(qtd ,a);
         }
     }
 }

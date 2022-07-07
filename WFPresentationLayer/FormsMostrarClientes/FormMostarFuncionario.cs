@@ -1,6 +1,7 @@
 ﻿using BusinessLogicalLayer.BusinessLL;
 using Entities;
 using Shared;
+using System.ComponentModel;
 
 namespace WfPresentationLayer.Alteraçoes
 {
@@ -9,9 +10,9 @@ namespace WfPresentationLayer.Alteraçoes
     /// Form Padrão mostrar Funcionarios em uma datagrid 
     /// dentro desse form a algumas Funcoes que ele faz dentro delas 
     /// Cadastro de Funcionarios que abre o form de cliente vazio
-    /// alterar Funcionario que abre o form de cadastro de Funcionario preenchido onde o mesmo é feito clicando na linha e clicando no botao
+    /// alterar NOME_FUNCIONARIO que abre o form de cadastro de NOME_FUNCIONARIO preenchido onde o mesmo é feito clicando na linha e clicando no botao
     /// mostrar desabilitados mostra na grid todos os Funcionarios desabilitados
-    /// deletar deleta ou desabilita os Funcionario da grid e do banco de dados onde o mesmo é feito clicando na linha e clicando no botao
+    /// deletar deleta ou desabilita os NOME_FUNCIONARIO da grid e do banco de dados onde o mesmo é feito clicando na linha e clicando no botao
     /// 
     /// onde todos esse forms sao aberto dentro de um panel padrão
     /// </summary>
@@ -64,10 +65,10 @@ namespace WfPresentationLayer.Alteraçoes
             int IDCLiente = Convert.ToInt32(GridFuncionario.CurrentRow.Cells[0].Value.ToString());
             string nome = Convert.ToString(GridFuncionario.CurrentRow.Cells[1].Value.ToString());
 
-            DialogResult r = MeuMessageBox.Show("Deseja Apagar o Funcionario " + nome + " Da tabela Ou do banco " + "\r\n" + "X Para Voltar", "Escolha", "Deletar Do banco", "deletar da tabela");
+            DialogResult r = MeuMessageBox.Show("Deseja Apagar o NOME_FUNCIONARIO " + nome + " Da tabela Ou do banco " + "\r\n" + "X Para Voltar", "Escolha", "Deletar Do banco", "deletar da tabela");
             if (r == DialogResult.Yes)
             {
-                DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja deletar o Funcionario " + nome, " Tem Certeza?", "Sim", "Nao");
+                DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja deletar o NOME_FUNCIONARIO " + nome, " Tem Certeza?", "Sim", "Nao");
                 if (re == DialogResult.Yes)
                 {
                     Response resposta = funcionarioBll.Delete(IDCLiente);
@@ -81,7 +82,7 @@ namespace WfPresentationLayer.Alteraçoes
             }
             else if (r == DialogResult.No)
             {
-                DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja Apagar o Funcionario " + nome, " Tem Certeza?", "Sim", "Nao");
+                DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja Apagar o NOME_FUNCIONARIO " + nome, " Tem Certeza?", "Sim", "Nao");
                 if (re == DialogResult.Yes)
                 {
                     Response resposta = funcionarioBll.Disable(IDCLiente);
@@ -151,6 +152,7 @@ namespace WfPresentationLayer.Alteraçoes
         private void SincronizarListaGrid(Funcionario item)
         {
             GridFuncionario.Rows.Add(item.ID, item.Nome_Funcionario, item.RG, item.CPF,item.Telefone, item.Email,item.Endereco.Cidade.Nome_Cidade,item.Cargo.Nome_Cargo);
+            GridFuncionario.Sort(GridFuncionario.Columns[0], ListSortDirection.Ascending);
         }
 
 

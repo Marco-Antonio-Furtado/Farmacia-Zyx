@@ -22,15 +22,18 @@ namespace WfPresentationLayer
     /// </summary>
     public partial class FormNovaVenda : Form
     {
-        RegraDescontoCliente Regra = new RegraDescontoCliente();
-        ProdutoBll produtoBLL = new ProdutoBll();
-        SaidaBll SaidaBLL = new SaidaBll();
+        RegraDescontoCliente Regra = new();
+        ProdutoBll produtoBLL = new();
+        SaidaBll SaidaBLL = new();
+        int clienteID = 0;
+        int prodID = 0;
+        string prodNome = "";
+        string CLiNome = "";
         public FormNovaVenda()
         {
             InitializeComponent();
-            
         }
-        List<Item> ItemsSaida = new List<Item>();
+        List<Item> ItemsSaida = new();
         private void FormNovaVenda_Load(object sender, EventArgs e)
         {
             CmbFormaPagamento.DataSource = Enum.GetNames(typeof(FormaPagamento));
@@ -44,25 +47,17 @@ namespace WfPresentationLayer
             else
             { 
                 Produto produto = new();
-                Item item = new Item();
+                Item item = new();
 
-                string[] prselc = (TxtBoxProcurarProduto.Text).Split(" - ");
-                
-
-
-                produto.ID = int.Parse(prselc[0]);
+                produto.ID = prodID;
                 item.IDProduto = produto;
                 Produto proselcionado = produtoBLL.GetByID(produto.ID).Item;
                 item.Preco = proselcionado.Valor_Venda;
                 item.Qtd = int.Parse(TxtBoxQuantidade.Text);
 
-
-                double valorAntigo = double.Parse(LblValorTotal.Text);
-                double valorNovo = item.Preco * item.Qtd;
-                LblValorTotal.Text = Convert.ToString(valorAntigo + valorNovo);
-
                 ItemsSaida.Add(item);
                 SincronizarListaGrid(item);
+                AtualizarLblTotal();
                 LimparFormulario();
             }
         }
@@ -77,22 +72,15 @@ namespace WfPresentationLayer
         }
         private void SincronizarListaGrid(Item item)
         {
-
-            string[] prselc = (TxtBoxProcurarProduto.Text).Split(" - ");
-            string[] clienteselc = (TxtProcurarCliente.Text).Split(" - ");
-
-            DataGrid.Rows.Add(prselc[1], item.Preco, item.Qtd, (item.Preco * item.Qtd), clienteselc[1],SystemParameters.GetNome(), DateTime.Value); ;
+            DataGrid.Rows.Add(prodNome, item.Preco, item.Qtd, (item.Preco * item.Qtd), CLiNome,SystemParameters.GetNome(), DateTime.Value); ;
         }
         private void BtnCadastrarNovaVenda_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente();
-            Saida saida = new Saida();
+            Cliente cliente = new();
+            Saida saida = new();
             Funcionario funcionario = new();
 
-            string[] clienteselc = (TxtProcurarCliente.Text).Split(" - ");
-
-
-            cliente.ID = int.Parse(clienteselc[0]);
+            cliente.ID = clienteID;
             saida.ValorTotal = double.Parse(LblValorTotal.Text);
             saida.Forma_Pagamento = CmbFormaPagamento.Text;
 
@@ -170,26 +158,29 @@ namespace WfPresentationLayer
         {
             DataGridViewRow row = this.DataGrid.SelectedRows[0];
 
-            double valorAntigo = double.Parse(LblValorTotal.Text);
-            double valorNovo = valorAntigo - double.Parse(row.Cells[3].ToString());
-
-
-
-            LblValorTotal.Text = valorNovo.ToString();
-
             ItemsSaida.RemoveAt(row.Index);
             DataGrid.Rows.RemoveAt(row.Index);
+            AtualizarLblTotal();
+        }
+        private void AtualizarLblTotal()
+        {
+            double novoValor = 0;
+            foreach (Item item in ItemsSaida)
+            {
+                novoValor += (item.Qtd * item.Preco);
+            }
+            LblValorTotal.Text = novoValor.ToString();
         }
 
         //Botoes de cadastro
         private void BtnNovoCliente_Click(object sender, EventArgs e)
         {
-            FormCadastroCliente formCadastroCliente = new FormCadastroCliente();
+            FormCadastroCliente formCadastroCliente = new();
             formCadastroCliente.ShowDialog();
         }
         private void BtnNovoProduto_Click(object sender, EventArgs e)
         {
-            FormCadastroProduto form = new FormCadastroProduto();
+            FormCadastroProduto form = new();
             form.ShowDialog();
         }
 
@@ -207,25 +198,30 @@ namespace WfPresentationLayer
         }
         private void BtnProcurarCliente_Click(object sender, EventArgs e)
         {
-            FormMostarClientes frmC = new FormMostarClientes(true);
+            FormMostarClientes frmC = new(true);
             frmC.ShowDialog();
 
             if (frmC.ClienteSelecionado != null)
             {
+                this.clienteID = frmC.ClienteSelecionado.ID;
+                this.CLiNome = frmC.ClienteSelecionado.Nome_Cliente;
                 TxtProcurarCliente.Text = frmC.ClienteSelecionado.ID + " - " + frmC.ClienteSelecionado.Nome_Cliente + " - " + frmC.ClienteSelecionado.Email;
             }
         }
         private void BtnProcurarProduto_Click(object sender, EventArgs e)
         {
-            FormMostrarProdutos frm = new FormMostrarProdutos(true);
+            FormMostrarProdutos frm = new(true);
             frm.ShowDialog();
-
 
             if (frm.ProdutoSelecionado123 != null)
             {
+                this.prodID = frm.ProdutoSelecionado123.ID;
+                this.prodNome = frm.ProdutoSelecionado123.Nome;
+
                 TxtBoxProcurarProduto.Text = frm.ProdutoSelecionado123.ID + " - " + frm.ProdutoSelecionado123.Nome + " - " + frm.ProdutoSelecionado123.Valor_Unitario;
             }
         }
+        
 
     }
 }

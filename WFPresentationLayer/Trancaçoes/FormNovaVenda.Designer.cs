@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelNomeCLiente = new System.Windows.Forms.Label();
             this.GroupBoxVenda = new System.Windows.Forms.GroupBox();
             this.BtnProcurarProduto = new System.Windows.Forms.Button();
@@ -47,13 +47,6 @@
             this.LabelQuantidade = new System.Windows.Forms.Label();
             this.LabelCodigoProduto = new System.Windows.Forms.Label();
             this.DataGrid = new System.Windows.Forms.DataGridView();
-            this.DataGridProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DatagridQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridNomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnProcurarCliente = new System.Windows.Forms.Button();
             this.BtnNovoCliente = new System.Windows.Forms.Button();
@@ -61,6 +54,13 @@
             this.LblText = new System.Windows.Forms.Label();
             this.TxtProcurarCliente = new System.Windows.Forms.TextBox();
             this.BtnNovoProduto = new System.Windows.Forms.Button();
+            this.DataGridProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DatagridQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridNomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBoxVenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -253,14 +253,14 @@
             this.DataGrid.AllowUserToResizeColumns = false;
             this.DataGrid.AllowUserToResizeRows = false;
             this.DataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DataGridProduto,
@@ -270,78 +270,29 @@
             this.DataGridNomeCliente,
             this.DataGridFuncionario,
             this.DataGridData});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.DataGrid.Location = new System.Drawing.Point(18, 222);
             this.DataGrid.Name = "DataGrid";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DataGrid.RowHeadersWidth = 51;
             this.DataGrid.RowTemplate.Height = 29;
             this.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGrid.Size = new System.Drawing.Size(1237, 473);
             this.DataGrid.TabIndex = 20;
-            // 
-            // DataGridProduto
-            // 
-            this.DataGridProduto.HeaderText = "Produto";
-            this.DataGridProduto.MinimumWidth = 6;
-            this.DataGridProduto.Name = "DataGridProduto";
-            this.DataGridProduto.Width = 125;
-            // 
-            // DataGridValorUnitario
-            // 
-            this.DataGridValorUnitario.HeaderText = "Valor Unitario";
-            this.DataGridValorUnitario.MinimumWidth = 50;
-            this.DataGridValorUnitario.Name = "DataGridValorUnitario";
-            this.DataGridValorUnitario.Width = 150;
-            // 
-            // DatagridQuantidade
-            // 
-            this.DatagridQuantidade.HeaderText = "Quantidade";
-            this.DatagridQuantidade.MinimumWidth = 6;
-            this.DatagridQuantidade.Name = "DatagridQuantidade";
-            this.DatagridQuantidade.Width = 130;
-            // 
-            // DataGridValorTotal
-            // 
-            this.DataGridValorTotal.HeaderText = "Valor Total";
-            this.DataGridValorTotal.MinimumWidth = 6;
-            this.DataGridValorTotal.Name = "DataGridValorTotal";
-            this.DataGridValorTotal.Width = 125;
-            // 
-            // DataGridNomeCliente
-            // 
-            this.DataGridNomeCliente.HeaderText = "Nome Cliente";
-            this.DataGridNomeCliente.MinimumWidth = 6;
-            this.DataGridNomeCliente.Name = "DataGridNomeCliente";
-            this.DataGridNomeCliente.Width = 160;
-            // 
-            // DataGridFuncionario
-            // 
-            this.DataGridFuncionario.HeaderText = "Funcionario";
-            this.DataGridFuncionario.MinimumWidth = 6;
-            this.DataGridFuncionario.Name = "DataGridFuncionario";
-            this.DataGridFuncionario.Width = 125;
-            // 
-            // DataGridData
-            // 
-            this.DataGridData.HeaderText = "DIa";
-            this.DataGridData.MinimumWidth = 6;
-            this.DataGridData.Name = "DataGridData";
-            this.DataGridData.Width = 125;
             // 
             // pictureBox1
             // 
@@ -427,6 +378,55 @@
             this.BtnNovoProduto.UseVisualStyleBackColor = false;
             this.BtnNovoProduto.Click += new System.EventHandler(this.BtnNovoProduto_Click);
             // 
+            // DataGridProduto
+            // 
+            this.DataGridProduto.HeaderText = "Produto";
+            this.DataGridProduto.MinimumWidth = 6;
+            this.DataGridProduto.Name = "DataGridProduto";
+            this.DataGridProduto.Width = 125;
+            // 
+            // DataGridValorUnitario
+            // 
+            this.DataGridValorUnitario.HeaderText = "Valor Unitario";
+            this.DataGridValorUnitario.MinimumWidth = 50;
+            this.DataGridValorUnitario.Name = "DataGridValorUnitario";
+            this.DataGridValorUnitario.Width = 150;
+            // 
+            // DatagridQuantidade
+            // 
+            this.DatagridQuantidade.HeaderText = "Quantidade";
+            this.DatagridQuantidade.MinimumWidth = 6;
+            this.DatagridQuantidade.Name = "DatagridQuantidade";
+            this.DatagridQuantidade.Width = 130;
+            // 
+            // DataGridValorTotal
+            // 
+            this.DataGridValorTotal.HeaderText = "Valor Total";
+            this.DataGridValorTotal.MinimumWidth = 6;
+            this.DataGridValorTotal.Name = "DataGridValorTotal";
+            this.DataGridValorTotal.Width = 125;
+            // 
+            // DataGridNomeCliente
+            // 
+            this.DataGridNomeCliente.HeaderText = "Nome Cliente";
+            this.DataGridNomeCliente.MinimumWidth = 6;
+            this.DataGridNomeCliente.Name = "DataGridNomeCliente";
+            this.DataGridNomeCliente.Width = 160;
+            // 
+            // DataGridFuncionario
+            // 
+            this.DataGridFuncionario.HeaderText = "Nome Funcionario";
+            this.DataGridFuncionario.MinimumWidth = 6;
+            this.DataGridFuncionario.Name = "DataGridFuncionario";
+            this.DataGridFuncionario.Width = 200;
+            // 
+            // DataGridData
+            // 
+            this.DataGridData.HeaderText = "DIa";
+            this.DataGridData.MinimumWidth = 6;
+            this.DataGridData.Name = "DataGridData";
+            this.DataGridData.Width = 125;
+            // 
             // FormNovaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -473,13 +473,6 @@
         private Button BtnExcluir;
         private TextBox TxtBoxQuantidade;
         private PictureBox pictureBox1;
-        private DataGridViewTextBoxColumn DataGridProduto;
-        private DataGridViewTextBoxColumn DataGridValorUnitario;
-        private DataGridViewTextBoxColumn DatagridQuantidade;
-        private DataGridViewTextBoxColumn DataGridValorTotal;
-        private DataGridViewTextBoxColumn DataGridNomeCliente;
-        private DataGridViewTextBoxColumn DataGridFuncionario;
-        private DataGridViewTextBoxColumn DataGridData;
         private PictureBox ImageBtnFechar;
         private Label LblText;
         private Label LblValorTotal;
@@ -488,5 +481,12 @@
         private TextBox TxtProcurarCliente;
         private Button BtnProcurarProduto;
         private Button BtnNovoProduto;
+        private DataGridViewTextBoxColumn DataGridProduto;
+        private DataGridViewTextBoxColumn DataGridValorUnitario;
+        private DataGridViewTextBoxColumn DatagridQuantidade;
+        private DataGridViewTextBoxColumn DataGridValorTotal;
+        private DataGridViewTextBoxColumn DataGridNomeCliente;
+        private DataGridViewTextBoxColumn DataGridFuncionario;
+        private DataGridViewTextBoxColumn DataGridData;
     }
 }

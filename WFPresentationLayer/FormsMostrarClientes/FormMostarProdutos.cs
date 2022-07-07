@@ -1,6 +1,7 @@
 ﻿using BusinessLogicalLayer.BusinessLL;
 using Entities;
 using Shared;
+using System.ComponentModel;
 
 namespace WfPresentationLayer.Alteraçoes
 {
@@ -157,6 +158,8 @@ namespace WfPresentationLayer.Alteraçoes
         private void SincronizarListaGrid(Produto item)
         {
             Gridprodutos.Rows.Add(item.ID, item.Nome, item.ID_Laboratorio.Razao_Social, item.Descricao, item.Quantia_Estoque, item.Valor_Unitario,item.Valor_Venda);
+            Gridprodutos.Sort(Gridprodutos.Columns[0], ListSortDirection.Ascending);
+
         }
 
         /// <summary>

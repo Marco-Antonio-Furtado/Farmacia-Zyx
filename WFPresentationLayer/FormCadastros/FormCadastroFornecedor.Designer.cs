@@ -254,7 +254,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCadastroFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastrar Funcionario";
+            this.Text = "Cadastrar NOME_FUNCIONARIO";
             ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

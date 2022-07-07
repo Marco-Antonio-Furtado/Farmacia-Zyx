@@ -8,14 +8,14 @@ namespace Entities.viewmodel
 {
     public class EntradaViewModel
     {
-        public double ValorUnitario { get; set; }   
-        public int TransacaoID { get; set; }
-        public string ProdutoNome { get; set; }
-        public double ValorTotal { get; set; }
+        public double Valor_Unitario { get; set; }   
+        public int ENTRADA_ID { get; set; }
+        public string NOME_PRODUTO { get; set; }
+        public double preco { get; set; }
         public double Quantidade { get; set; }
-        public string FormaPagamento { get; set; }
-        public string Fornecedor { get; set; }
-        public string Funcionario { get; set; }
-        public DateTime Data { get; set; }
+        public string FORMA_PAGAMENTO { get; set; }
+        public string RAZAO_SOCIAL { get; set; }
+        public string NOME_FUNCIONARIO { get; set; }
+        public DateTime DATA_ENTRADA { get; set; }
     }
 }

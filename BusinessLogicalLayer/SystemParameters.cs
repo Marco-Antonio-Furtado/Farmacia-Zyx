@@ -1,9 +1,13 @@
 ﻿using Entities;
-using Entities.enums;
 using Shared;
 
 namespace BusinessLogicalLayer
 {
+    /// <summary>
+    /// nesta classe se encontra o arquivo de suporte de login 
+    /// apos o login a classe estatica manten informado o NOME_FUNCIONARIO que esta logado
+    /// salvando desde nome,id e permissão
+    /// </summary>
     public static class SystemParameters
     {
         public static Funcionario UsuarioLogado { get; private set; }
@@ -12,17 +16,6 @@ namespace BusinessLogicalLayer
         {
             UsuarioLogado = funcionario;
         }
-
-        public static void LogOff()
-        {
-            UsuarioLogado = null;
-        }
-
-        public static bool IsUserLoggedIn()
-        {
-            return UsuarioLogado != null;
-        }
-
         public static Cargo GetPermissao()
         {
             return UsuarioLogado.Cargo;

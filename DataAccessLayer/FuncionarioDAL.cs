@@ -6,13 +6,16 @@ using System.Text;
 
 namespace DataAccessLayer
 {
+    /// <summary>
+    /// Classe que realiza as operacoes de banco de dados do Funcionario
+    /// </summary>
     public class FuncionarioDAL : ICRUD<Funcionario>
     {
         public Response Insert(Funcionario item)
         {
             string sql = $"INSERT INTO FUNCIONARIOS (NOME_FUNCIONARIO,CPF,RG,EMAIL,TELEFONE,ENDERECO,CARGO_ID,SENHA) VALUES (@NOME,@CPF,@RG,@EMAIL,@TELEFONE,@ENDERECO,@CARGO_ID,@SENHA)";
 
-            SqlCommand command = new SqlCommand(sql);
+            SqlCommand command = new(sql);
 
             command.Parameters.AddWithValue("@NOME", item.Nome_Funcionario);
             command.Parameters.AddWithValue("@CPF", item.CPF);
@@ -25,7 +28,7 @@ namespace DataAccessLayer
 
             try
             {
-                DbExecuter dbExecuter = new DbExecuter();
+                DbExecuter dbExecuter = new();
                 return DbExecuter.Execute(command);
             }
             catch (Exception ex)
@@ -44,7 +47,7 @@ namespace DataAccessLayer
         public Response Update(Funcionario item)
         {
             string sql = "UPDATE FUNCIONARIOS SET NOME_FUNCIONARIO = @NOME, RG = @RG, TELEFONE = @TELEFONE, ENDERECO = @ENDERECO, CARGO_ID = @CARGO_ID,ATIVO = @ATIVO, SENHA = @SENHA WHERE ID = @ID";
-            SqlCommand command = new SqlCommand(sql);
+            SqlCommand command = new(sql);
 
             command.Parameters.AddWithValue("@NOME", item.Nome_Funcionario);
             command.Parameters.AddWithValue("@RG", item.RG);
@@ -57,7 +60,7 @@ namespace DataAccessLayer
 
             try
             {
-                DbExecuter dbexecuter = new DbExecuter();
+                DbExecuter dbexecuter = new();
                 DbExecuter.Execute(command);
             }
             catch (Exception ex)
@@ -77,11 +80,11 @@ namespace DataAccessLayer
         public static SingleResponse<Funcionario> LoginDAL(string email)
         {
             string sql = $"SELECT F.ID,F.SENHA,F.NOME_FUNCIONARIO,CAR.NOME_CARGO,F.ATIVO FROM FUNCIONARIOS F INNER JOIN CARGOS CAR ON F.CARGO_ID = CAR.ID WHERE EMAIL = @EMAIL";
-            SqlCommand command = new SqlCommand(sql);
+            SqlCommand command = new(sql);
             command.Parameters.AddWithValue("@EMAIL", email);
             try
             {
-                DbExecuter dbexecutor = new DbExecuter();
+                DbExecuter dbexecutor = new();
                 return DbExecuter.Login(command);
             }
             catch (Exception ex)
@@ -92,9 +95,9 @@ namespace DataAccessLayer
         public Response Delete(int id)
         {
             string sql = "DELETE FROM FUNCIONARIOS WHERE ID = @ID";
-            DbExecuter dbexecuter = new DbExecuter();
+            DbExecuter dbexecuter = new();
 
-            SqlCommand command = new SqlCommand(sql);
+            SqlCommand command = new(sql);
             command.Parameters.AddWithValue("@ID", id);
 
             try
@@ -116,21 +119,21 @@ namespace DataAccessLayer
         {
             string sql = $"SELECT F.ID,F.NOME_FUNCIONARIO,F.CPF,F.RG,F.EMAIL,F.TELEFONE,CAR.NOME_CARGO,F.ATIVO,E.NOME_RUA,E.ID AS E_ID,CID.NOME_CIDADE FROM FUNCIONARIOS F INNER JOIN CARGOS CAR ON F.CARGO_ID = CAR.ID INNER JOIN ENDERECOS E ON F.ENDERECO = E.ID INNER JOIN CIDADES CID ON E.CIDADE_ID = CID.ID";
 
-            DbConnection db = new DbConnection();
-            SqlCommand command = new SqlCommand(sql);
+            DbConnection db = new();
+            SqlCommand command = new(sql);
             db.AttachCommand(command);
             command.CommandText = sql;
             try
             {
                 db.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                List<Funcionario> funcionarios = new List<Funcionario>();
+                List<Funcionario> funcionarios = new();
                 while (reader.Read())
                 {
-                    Cidade c = new Cidade();
-                    Funcionario F = new Funcionario();
-                    Cargo cargo = new Cargo();
-                    Endereco e = new Endereco();
+                    Cidade c = new();
+                    Funcionario F = new();
+                    Cargo cargo = new();
+                    Endereco e = new();
 
                     F.ID = (int)reader["ID"];
                     F.Nome_Funcionario = (string)reader["NOME_FUNCIONARIO"];
@@ -168,8 +171,8 @@ namespace DataAccessLayer
         {
             string sql = $"SELECT F.NOME_FUNCIONARIO,F.CPF,F.RG,F.EMAIL,F.TELEFONE,CAR.NOME_CARGO,F.ATIVO,E.NOME_RUA,E.ID AS E_ID,CID.NOME_CIDADE FROM FUNCIONARIOS F INNER JOIN CARGOS CAR ON F.CARGO_ID = CAR.ID INNER JOIN ENDERECOS E ON F.ENDERECO = E.ID INNER JOIN CIDADES CID ON E.CIDADE_ID = CID.ID WHERE F.ID = @ID";
 
-            DbConnection db = new DbConnection();
-            SqlCommand command = new SqlCommand(sql);
+            DbConnection db = new();
+            SqlCommand command = new(sql);
             command.Parameters.AddWithValue("@ID", id);
             db.AttachCommand(command);
             command.CommandText = sql;
@@ -177,12 +180,12 @@ namespace DataAccessLayer
             {
                 db.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                    Funcionario Fun = new Funcionario();
+                    Funcionario Fun = new();
                 while (reader.Read())
                 {
-                    Cidade c = new Cidade();
-                    Cargo cargo = new Cargo();
-                    Endereco e = new Endereco();
+                    Cidade c = new();
+                    Cargo cargo = new();
+                    Endereco e = new();
 
                     
                     Fun.Nome_Funcionario = (string)reader["NOME_FUNCIONARIO"];
@@ -216,31 +219,15 @@ namespace DataAccessLayer
                 db.Close();
             }
         }
-        public SingleResponse<Funcionario> GetByEmail(string email)
-        {
-            string query = $"SELECT ID,NOME,CPF,RG,EMAIL,TELEFONE,ENDERECO,CARGO_ID,ATIVO,SENHA FROM FUNCIONARIO WHERE EMAIL = @EMAIL";
-
-            SqlCommand command = new SqlCommand(query);
-            command.Parameters.AddWithValue("@EMAIL", email);
-            try
-            {
-                DbExecuter dbexecutor = new DbExecuter();
-                return DbExecuter.GetItem<Funcionario>(command);
-            }
-            catch (Exception ex)
-            {
-                return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Funcionario>(null);
-            }
-        }
         public Response Disable(int id)
         {
-            string sql = $"UPDATE FUNCIONARIO SET ATIVO = 0 WHERE ID = @ID";
+            string sql = $"UPDATE FUNCIONARIOS SET ATIVO = 0 WHERE ID = @ID";
 
-            SqlCommand command = new SqlCommand(sql);
+            SqlCommand command = new(sql);
             command.Parameters.AddWithValue("@ID", id);
             try
             {
-                DbExecuter dbexecutor = new DbExecuter();
+                DbExecuter dbexecutor = new();
                 return DbExecuter.Execute(command);
             }
             catch (Exception ex)

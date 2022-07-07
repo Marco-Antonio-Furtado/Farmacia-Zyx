@@ -9,7 +9,7 @@ namespace BusinessLogicalLayer.Verificaçoes
     {
         internal static Response Validate(Empresa item)
         {
-            StringBuilder erros = new StringBuilder("");
+            StringBuilder erros = new("");
 
             if (!RegraValidacaoEmpresa.IsCnpj(item.CNPJ))
             {

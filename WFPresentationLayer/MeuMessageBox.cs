@@ -95,7 +95,6 @@
     }
     public struct ParametrosDatas
     {
-
         public DateTime Inicio { get; set; }
         public DateTime Fim{ get; set; }
 

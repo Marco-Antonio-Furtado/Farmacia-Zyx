@@ -4,13 +4,16 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
+    /// <summary>
+    /// Classe que realiza as operacoes de banco de dados do Fornecedor
+    /// </summary>
     public class FornecedorDAL : ICRUD<Fornecedor>
     {
         public Response Insert(Fornecedor fornecedor)
         {
             string sql = $"INSERT INTO FORNECEDORES (RAZAO_SOCIAL,CNPJ,EMAIL,TELEFONE,NOME_CONTATO,ATIVO) VALUES (@RAZAO_SOCIAL,@CNPJ,@EMAIL,@TELEFONE,@NOME_CONTATO,@ATIVO)";
 
-            SqlCommand command = new SqlCommand(sql);
+            SqlCommand command = new(sql);
             command.Parameters.AddWithValue("@RAZAO_SOCIAL", fornecedor.Razao_Social);
             command.Parameters.AddWithValue("@NOME_CONTATO", fornecedor.Nome_Contato);
             command.Parameters.AddWithValue("@CNPJ", fornecedor.CNPJ);
@@ -19,7 +22,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@ATIVO", fornecedor.Ativo);
             try
             {
-                DbExecuter dbexecutor = new DbExecuter();
+                DbExecuter dbexecutor = new();
                 return DbExecuter.Execute(command);
             }
             catch (Exception ex)
@@ -35,16 +38,15 @@ namespace DataAccessLayer
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
-
         public Response Disable(int iDCLiente)
         {
             string sql = $"UPDATE FORNECEDORES SET ATIVO = 0 WHERE ID = @ID";
 
-            SqlCommand command = new SqlCommand(sql);
+            SqlCommand command = new(sql);
             command.Parameters.AddWithValue("@ID", iDCLiente);
             try
             {
-                DbExecuter dbexecutor = new DbExecuter();
+                DbExecuter dbexecutor = new();
                 return DbExecuter.Execute(command);
             }
             catch (Exception ex)
@@ -52,12 +54,11 @@ namespace DataAccessLayer
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
-
         public Response Update(Fornecedor fornecedor)
         {
             string sql = $"UPDATE FORNECEDORES SET RAZAO_SOCIAL = @RAZAO_SOCIAL,NOME_CONTATO = @NOME_CONTATO,CNPJ = @CNPJ,EMAIL = @EMAIL, TELEFONE = @TELEFONE,ATIVO = @ATIVO WHERE ID = @ID";
 
-            SqlCommand command = new SqlCommand(sql);
+            SqlCommand command = new(sql);
             command.Parameters.AddWithValue("@RAZAO_SOCIAL", fornecedor.Razao_Social);
             command.Parameters.AddWithValue("@NOME_CONTATO", fornecedor.Nome_Contato);
             command.Parameters.AddWithValue("@CNPJ", fornecedor.CNPJ);
@@ -67,7 +68,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@ATIVO", fornecedor.Ativo);
             try
             {
-                DbExecuter dbexecutor = new DbExecuter();
+                DbExecuter dbexecutor = new();
                 return DbExecuter.Execute(command);
             }
             catch (Exception ex)
@@ -87,11 +88,11 @@ namespace DataAccessLayer
         {
             string sql = "DELETE FROM FORNECEDORES WHERE ID = @ID";
 
-            SqlCommand command = new SqlCommand(sql);
+            SqlCommand command = new(sql);
             command.Parameters.AddWithValue("@ID", id);
             try
             {
-                DbExecuter dbexecutor = new DbExecuter();
+                DbExecuter dbexecutor = new();
                 return DbExecuter.Execute(command);
             }
             catch (Exception ex)
@@ -99,15 +100,14 @@ namespace DataAccessLayer
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
         }
-
         public DataResponse<Fornecedor> GetAll()
         {
             string sql = $"SELECT ID,RAZAO_SOCIAL,CNPJ,NOME_CONTATO,TELEFONE,EMAIL,ATIVO FROM FORNECEDORES";
 
-            SqlCommand command = new SqlCommand(sql);
+            SqlCommand command = new(sql);
             try
             {
-                DbExecuter dbExecuter = new DbExecuter();
+                DbExecuter dbExecuter = new();
                 return DbExecuter.GetData<Fornecedor>(command);
             }
             catch (Exception ex)
@@ -116,39 +116,20 @@ namespace DataAccessLayer
             }
 
         }
-
         public SingleResponse<Fornecedor> GetByID(int id)
         {
             string sql = $"SELECT ID,RAZAO_SOCIAL,CNPJ,NOME_CONTATO,TELEFONE,EMAIL,ATIVO FROM FORNECEDORES WHERE ID = @ID";
           
-            SqlCommand command = new SqlCommand(sql);
+            SqlCommand command = new(sql);
             command.Parameters.AddWithValue("@ID", id);
             try
             {
-                DbExecuter dbexecutor = new DbExecuter();
+                DbExecuter dbexecutor = new();
                 return DbExecuter.GetItem<Fornecedor>(command);
             }
             catch (Exception ex)
             {
                 return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Fornecedor>(null);
-            }
-        }
-
-        public SingleResponse<Fornecedor> GetByEmail(string email)
-        {
-            string sql = $"SELECT ID,RAZAO_SOCIAL,CNPJ,NOME_CONTATO,TELEFONE,EMAIL,ATIVO FROM FORNECEDOR WHERE EMAIL = @EMAIL";
-
-            SqlCommand command = new SqlCommand(sql);
-            command.Parameters.AddWithValue("@EMAIL", email);
-            try
-            {
-                DbExecuter dbexecutor = new DbExecuter();
-                return DbExecuter.GetItem<Fornecedor>(command);
-            }
-            catch (Exception)
-            {
-                return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Fornecedor>(null);
-
             }
         }
     }

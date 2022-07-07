@@ -26,9 +26,13 @@ namespace WfPresentationLayer.Trancaçoes
         {
             InitializeComponent();
         }
-        ProdutoBll produtoBLL = new ProdutoBll();
-        EntradaBll entradaBLL = new EntradaBll();
-        List<Item> ItemsEntrada = new List<Item>();
+        ProdutoBll produtoBLL = new();
+        EntradaBll entradaBLL = new();
+        List<Item> ItemsEntrada = new();
+        int ForneID = 0;
+        string forneRazao = "";
+        int prodID = 0;
+        string prodNome = "";
 
         private void BtnNovoIten_Click(object sender, EventArgs e)
         {
@@ -42,16 +46,13 @@ namespace WfPresentationLayer.Trancaçoes
                         MeuMessageBox.Show("Preco novo nao informado");
                         return;
                     }
-
                 }
                 return;
             }
-
-            Item item = new Item();
+            Item item = new();
             Produto produto = new();
 
-            string[] prselc = (TxtBoxSelecionarProduto.Text).Split(" - ");
-            produto.ID = int.Parse(prselc[0]);
+            produto.ID = prodID;
             
             if (CheckPreco.Checked == true)
             {
@@ -66,16 +67,13 @@ namespace WfPresentationLayer.Trancaçoes
                 item.Qtd = int.Parse(TxtBoxQuantidade.Text);
 
 
-            double valorAntigo = double.Parse(LblValorTotal.Text);
-            double valorNovo = item.Preco * item.Qtd;
-            LblValorTotal.Text = (valorAntigo + valorNovo).ToString();
-
+            
 
 
                 ItemsEntrada.Add(item);
                 SincronizarListaGrid(item);
+            AtualizarLblTotal();
                 LimparFormulario();
-            
         }
         private void LimparFormulario()
         {
@@ -91,33 +89,16 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void SincronizarListaGrid(Item item)
         {
-            string[] prselc = (TxtBoxSelecionarProduto.Text).Split(" - ");
-            string[] forneselc = (TxtBoxSelecionarFornecedor.Text).Split(" - ");
-
-            DataGrid.Rows.Add(prselc[1], item.Preco, item.Qtd,(item.Preco * item.Qtd), CmbFormaPagamento.Text, SystemParameters.GetNome(), forneselc[1],DateTime.Value);
-        }
-        private void BtnExcluir_Click(object sender, EventArgs e)
-        {
-            DataGridViewRow row = this.DataGrid.SelectedRows[0];
-
-            double valorAntigo = double.Parse(LblValorTotal.Text);
-            double valorNovo = valorAntigo - double.Parse(row.Cells[3].ToString());
-            LblValorTotal.Text = valorNovo.ToString();
-
-            ItemsEntrada.RemoveAt(row.Index);
-            DataGrid.Rows.RemoveAt(row.Index);
+            DataGrid.Rows.Add(prodNome, item.Preco, item.Qtd,(item.Preco * item.Qtd), CmbFormaPagamento.Text, SystemParameters.GetNome(),forneRazao,DateTime.Value);
         }
         private void BtnCadastrarCompra_Click(object sender, EventArgs e)
         {
-            string[] prselc = (TxtBoxSelecionarProduto.Text).Split(" - ");
-            string[] forneselc = (TxtBoxSelecionarFornecedor.Text).Split(" - ");
 
-            Entrada entrada = new Entrada();
+            Entrada entrada = new();
             Fornecedor fornecedor = new();
             Funcionario funcionario = new();
-            
 
-            fornecedor.ID = int.Parse(forneselc[0]);
+            fornecedor.ID = ForneID;
             entrada.Forma_Pagamento = CmbFormaPagamento.Text;
             entrada.ValorTotal = double.Parse(LblValorTotal.Text);
             entrada.IDFornecedor = fornecedor;
@@ -126,51 +107,65 @@ namespace WfPresentationLayer.Trancaçoes
             funcionario.ID = (int)SystemParameters.GetID();
             entrada.IDFuncionario = funcionario;
 
-
             DialogResult ResponseMsg = MeuMessageBox.Show("A Entrada de Produtos deu o valor de " + entrada.ValorTotal + " Deseja Continuar a entrada dos produtos", "Escolha", "SIM", "Nao");
             if (ResponseMsg == DialogResult.Yes)
             {
                 Response resposta = entradaBLL.Insert(entrada);
 
                 MeuMessageBox.Show(resposta.Message);
-
-                TxtBoxSelecionarFornecedor.Enabled = true;
-                CmbFormaPagamento.Enabled = true;
-                TxtBoxSelecionarFornecedor.Text = "Selecione o Fornecedor";
-                CmbFormaPagamento.SelectedIndex = 0;
-                DateTime.Enabled = true;
-                TxtBoxSelecionarProduto.Text = "Selecione o Produto";
-                TxtBoxQuantidade.Clear();
-                CheckPreco.Checked = false;
-                textBox1TxtBoxPrecoAlterado.Visible = false;
-                textBox1TxtBoxPrecoAlterado.Text = "";
-                DataGrid.Rows.Clear();
-                DataGrid.Refresh();
             }
             else
             {
                 return;
             }
+
+            BtnProcurarFornecedor.Enabled = true;
+            TxtBoxSelecionarFornecedor.Enabled = true;
+            LblValorTotal.Text = 0.ToString();
+            CmbFormaPagamento.Enabled = true;
+            TxtBoxSelecionarFornecedor.Text = "Selecione o Fornecedor";
+            CmbFormaPagamento.SelectedIndex = 0;
+            DateTime.Enabled = true;
+            TxtBoxSelecionarProduto.Text = "Selecione o Produto";
+            TxtBoxQuantidade.Clear();
+            CheckPreco.Checked = false;
+            textBox1TxtBoxPrecoAlterado.Visible = false;
+            textBox1TxtBoxPrecoAlterado.Text = "";
+            DataGrid.Rows.Clear();
+            DataGrid.Refresh();
         }
         private void FormNovaCompra_Load(object sender, EventArgs e)
         {
             CmbFormaPagamento.DataSource = Enum.GetNames(typeof(FormaPagamento));
         }
-
+        private void AtualizarLblTotal()
+        {
+            double novoValor = 0;
+            foreach (Item item in ItemsEntrada)
+            {
+                novoValor += (item.Qtd * item.Preco);
+            }
+            LblValorTotal.Text = novoValor.ToString();
+        }
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = this.DataGrid.SelectedRows[0];
+            ItemsEntrada.RemoveAt(row.Index);
+            DataGrid.Rows.RemoveAt(row.Index);
+            AtualizarLblTotal();
+        }
 
         //Botoes de cadastro
         private void BtnNovoFornecedor_Click(object sender, EventArgs e)
         {
-            FormCadastroFornecedor form = new FormCadastroFornecedor();
+            FormCadastroFornecedor form = new();
             form.ShowDialog();
         }
         private void BtnNovoProduto_Click(object sender, EventArgs e)
         {
-            FormCadastroProduto formCadastroProduto = new FormCadastroProduto();    
+            FormCadastroProduto formCadastroProduto = new();    
             formCadastroProduto.ShowDialog();
         }
-
-
 
         // Metodos padrões Para melhor visualizacao e entendimento do usuario 
         private void CheckPreco_CheckedChanged(object sender, EventArgs e)
@@ -218,22 +213,26 @@ namespace WfPresentationLayer.Trancaçoes
         }
         private void BtnProcurarFornecedor_Click(object sender, EventArgs e)
         {
-            Alteracao_Fornecedor form = new Alteracao_Fornecedor(true);
+            Alteracao_Fornecedor form = new(true);
            form.ShowDialog();
 
 
             if(form.fornecedorSelecionado != null)
             {
+                this.ForneID = form.fornecedorSelecionado.ID;
+                this.forneRazao = form.fornecedorSelecionado.Razao_Social;
                 TxtBoxSelecionarFornecedor.Text = form.fornecedorSelecionado.ID + " - " + form.fornecedorSelecionado.Razao_Social + " - " + form.fornecedorSelecionado.Email;
             }
         }
         private void BtnProcurarProduto_Click(object sender, EventArgs e)
         {
-            FormMostrarProdutos form = new FormMostrarProdutos(true);
+            FormMostrarProdutos form = new(true);
             form.ShowDialog();
 
             if(form.ProdutoSelecionado123 != null)
             {
+                this.prodID = form.ProdutoSelecionado123.ID;
+                this.prodNome = form.ProdutoSelecionado123.Nome;
                 TxtBoxSelecionarProduto.Text = form.ProdutoSelecionado123.ID + " - " + form.ProdutoSelecionado123.Nome + " - " + form.ProdutoSelecionado123.Valor_Unitario;
             }
         }

@@ -14,7 +14,7 @@ namespace WfPresentationLayer.FormCadastros
     public partial class FormCadastrarLaboratorio : Form
     {
         
-        LaboratorioBLL labbll = new LaboratorioBLL();
+        LaboratorioBLL labbll = new();
         public FormCadastrarLaboratorio()
         {
             InitializeComponent();
@@ -37,15 +37,20 @@ namespace WfPresentationLayer.FormCadastros
         }
         private void BtnCadastroLaboratorio_Click(object sender, EventArgs e)
         {
-            Laboratorio lab = new Laboratorio(razaoSocial: txtBoxRazaoSocial.Text,
+            if (txtBoxRazaoSocial.Text == "Digite A Razão Social" || TxtBoxNomeResponsavel.Text == "Digite O Nome Contato" || txtBoxEmail.Text == "Digite O Email")
+            {
+                MeuMessageBox.Show("VOce nao informou todos os dados");
+                return;
+            }
+            Laboratorio lab = new(razaoSocial: txtBoxRazaoSocial.Text,
                                               cNPJ: TxtBoxCnpjFornecedor.Text,
                                               nomeContato: TxtBoxNomeResponsavel.Text,
                                               email: txtBoxEmail.Text,
                                               telefone: TxtBoxTelefone.Text);
-            lab.ID = int.Parse(TxtBoxId.Text);
             lab.Ativo = true;
             if (TxtBoxId.Visible == true)
             {
+                lab.ID = int.Parse(TxtBoxId.Text);
                 Response resposta = labbll.Update(lab);
                 MeuMessageBox.Show(resposta.Message);
                 if (resposta.HasSuccess)

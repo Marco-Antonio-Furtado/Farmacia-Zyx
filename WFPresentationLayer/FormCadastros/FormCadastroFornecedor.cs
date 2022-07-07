@@ -18,7 +18,7 @@ namespace WfPresentationLayer.FormCadastros
         {
             InitializeComponent();
         }
-        FornecedorBll fornecedorBll = new FornecedorBll();
+        FornecedorBll fornecedorBll = new();
         public FormCadastroFornecedor(Fornecedor forne)
         {
             InitializeComponent();
@@ -36,7 +36,11 @@ namespace WfPresentationLayer.FormCadastros
 
         private void BtnCadastroFornecedor_Click_1(object sender, EventArgs e)
         {
-            Fornecedor fornecedor = new Fornecedor(razaoSocial: txtBoxRazaoSocial.Text,
+            if (txtBoxRazaoSocial.Text == "Digite A Razão Social" || TxtBoxNomeResponsavel.Text == "Digite O Nome Contato" || txtBoxEmail.Text == "Digite O Email")
+            {
+                MeuMessageBox.Show("Voce nao informou todos os campos");
+            }
+            Fornecedor fornecedor = new(razaoSocial: txtBoxRazaoSocial.Text,
                                                    cNPJ: TxtBoxCnpjFornecedor.Text,
                                                    nomeContato: TxtBoxNomeResponsavel.Text,
                                                    email: txtBoxEmail.Text,

@@ -46,9 +46,12 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.BtnSelecionarVendas = new System.Windows.Forms.Button();
             this.BtnCadastrarVendas = new System.Windows.Forms.Button();
+            this.BtnEntradasHoje = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridEntrada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // GridEntrada
@@ -156,7 +159,7 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Funcionario";
+            this.dataGridViewTextBoxColumn1.HeaderText = "NOME_FUNCIONARIO";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 125;
@@ -219,12 +222,39 @@
             this.BtnCadastrarVendas.UseVisualStyleBackColor = false;
             this.BtnCadastrarVendas.Click += new System.EventHandler(this.BtnCadastrarVendas_Click);
             // 
+            // BtnEntradasHoje
+            // 
+            this.BtnEntradasHoje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnEntradasHoje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnEntradasHoje.ForeColor = System.Drawing.Color.White;
+            this.BtnEntradasHoje.Location = new System.Drawing.Point(674, 706);
+            this.BtnEntradasHoje.Name = "BtnEntradasHoje";
+            this.BtnEntradasHoje.Size = new System.Drawing.Size(277, 79);
+            this.BtnEntradasHoje.TabIndex = 59;
+            this.BtnEntradasHoje.Text = "              Selecionar Todas as       Entradas de hoje";
+            this.BtnEntradasHoje.UseVisualStyleBackColor = false;
+            this.BtnEntradasHoje.Click += new System.EventHandler(this.BtnEntradasHoje_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox1.Image = global::WfPresentationLayer.Properties.Resources.icons8_calendário_96;
+            this.pictureBox1.Location = new System.Drawing.Point(683, 715);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(56, 62);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 60;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.BtnEntradasHoje_Click);
+            // 
             // FormMostrarEntradas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1308, 797);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.BtnEntradasHoje);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.BtnSelecionarVendas);
@@ -236,6 +266,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridEntrada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,5 +288,7 @@
         private PictureBox pictureBox4;
         private Button BtnSelecionarVendas;
         private Button BtnCadastrarVendas;
+        private Button BtnEntradasHoje;
+        private PictureBox pictureBox1;
     }
 }

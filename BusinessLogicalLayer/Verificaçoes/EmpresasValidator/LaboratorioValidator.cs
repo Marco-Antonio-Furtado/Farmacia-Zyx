@@ -1,19 +1,20 @@
 ﻿using Entities;
-using Entities.Propriedades;
 using Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer.Verificaçoes
 {
+
+    /// <summary>
+    /// Nesta classe eu valido o Laboratorio para ver se ele esta em condicoes de entrar no banco ou ser alterado
+    /// chamando os metodos da validacao de string e de Empresa
+    /// onde instancio um string builder e encho ele com as especificacoes que o Laboratorio pede
+    /// </summary>
     public class LaboratorioValidator
     {
         internal static Response Validate(Laboratorio item)
         {
-            StringBuilder erros = new StringBuilder("");
+            StringBuilder erros = new("");
 
             erros.Append(RegraValidacaoString.ValidateEmail(item.Email));
             erros.Append(RegraValidacaoString.ValidateTelefone(item.Telefone));

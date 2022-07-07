@@ -40,10 +40,5 @@ namespace Entities
                    this.Endereco.ToString() + "\r\n" +
                    this.Cargo.ToString();
         }
-
-
-
-
-
     }
 }

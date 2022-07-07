@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GridSaidas = new System.Windows.Forms.DataGridView();
             this.GridID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gridproduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,23 +45,26 @@
             this.PnlVendas = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.BtnVendasHoje = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridSaidas)).BeginInit();
             this.PnlVendas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // GridSaidas
             // 
             this.GridSaidas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridSaidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridSaidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.GridSaidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridSaidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GridID,
@@ -73,14 +76,14 @@
             this.GridValorTotal,
             this.GridData,
             this.GridFuncionario});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridSaidas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridSaidas.DefaultCellStyle = dataGridViewCellStyle4;
             this.GridSaidas.Location = new System.Drawing.Point(-2, 0);
             this.GridSaidas.Name = "GridSaidas";
             this.GridSaidas.RowHeadersVisible = false;
@@ -134,7 +137,7 @@
             // 
             // GridValorTotal
             // 
-            this.GridValorTotal.HeaderText = "ValorTotal";
+            this.GridValorTotal.HeaderText = "VALOR";
             this.GridValorTotal.MinimumWidth = 6;
             this.GridValorTotal.Name = "GridValorTotal";
             this.GridValorTotal.Width = 125;
@@ -148,7 +151,7 @@
             // 
             // GridFuncionario
             // 
-            this.GridFuncionario.HeaderText = "Funcionario";
+            this.GridFuncionario.HeaderText = "NOME_FUNCIONARIO";
             this.GridFuncionario.MinimumWidth = 6;
             this.GridFuncionario.Name = "GridFuncionario";
             this.GridFuncionario.Width = 125;
@@ -213,12 +216,39 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.BtnProcurarCompra_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox3.Image = global::WfPresentationLayer.Properties.Resources.icons8_calendário_96;
+            this.pictureBox3.Location = new System.Drawing.Point(664, 708);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(56, 62);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 62;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.BtnVendasHoje_Click);
+            // 
+            // BtnVendasHoje
+            // 
+            this.BtnVendasHoje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnVendasHoje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnVendasHoje.ForeColor = System.Drawing.Color.White;
+            this.BtnVendasHoje.Location = new System.Drawing.Point(655, 699);
+            this.BtnVendasHoje.Name = "BtnVendasHoje";
+            this.BtnVendasHoje.Size = new System.Drawing.Size(277, 79);
+            this.BtnVendasHoje.TabIndex = 61;
+            this.BtnVendasHoje.Text = "              Selecionar Todas as       vendas de hoje";
+            this.BtnVendasHoje.UseVisualStyleBackColor = false;
+            this.BtnVendasHoje.Click += new System.EventHandler(this.BtnVendasHoje_Click);
+            // 
             // FormMostrarSaidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1312, 790);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.BtnVendasHoje);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.BtnProcurarCompra);
@@ -231,6 +261,7 @@
             this.PnlVendas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -252,5 +283,7 @@
         private DataGridViewTextBoxColumn GridFuncionario;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox3;
+        private Button BtnVendasHoje;
     }
 }

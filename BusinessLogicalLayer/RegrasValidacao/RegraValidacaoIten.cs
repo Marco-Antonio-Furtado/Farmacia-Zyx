@@ -1,9 +1,15 @@
-﻿using Shared;
-
-namespace BusinessLogicalLayer.Verificaçoes
+﻿namespace BusinessLogicalLayer.Verificaçoes
 {
+    /// <summary>
+    /// Classe criada para validar itens/produtos para melhor organizacao do sistema
+    /// </summary>
     internal class RegraValidacaoIten
     {
+        /// <summary>
+        /// Validador de nome de produto
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
         internal static string ValidateProdutoNome(string nome)
         {
             if (String.IsNullOrWhiteSpace(nome))
@@ -17,6 +23,11 @@ namespace BusinessLogicalLayer.Verificaçoes
             }
             return "";
         }
+        /// <summary>
+        /// validador de descrisao de produto
+        /// </summary>
+        /// <param name="descrisao"></param>
+        /// <returns></returns>
         internal static string ValidateDescrisaoProduto(string descrisao)
         {
             if (String.IsNullOrWhiteSpace(descrisao))

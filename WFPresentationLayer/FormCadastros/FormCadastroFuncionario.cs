@@ -10,10 +10,10 @@ namespace WfPresentationLayer
 
 
     /// <summary>
-    /// Form de cadastro de funcionario padrao de todo cadastro 
+    /// Form de cadastro de NOME_FUNCIONARIO padrao de todo cadastro 
     /// onde o mesmo pode fazer o uptade se a textbox id for visivel 
     /// e insert se nao for visivel 
-    /// Uma sobrecarga que abre com funcionario ja preenchido para alteracao 
+    /// Uma sobrecarga que abre com NOME_FUNCIONARIO ja preenchido para alteracao 
     /// e sem sobrecarga que abre para cadastros 
     /// </summary>
     public partial class FormCadastroFuncionario : Form
@@ -22,20 +22,18 @@ namespace WfPresentationLayer
         int IdEstado;
         CargoBLL cargo = new();
         FuncionarioBll funcionarioBll = new();
-        List<Cargo> listaAtiva = new List<Cargo>();
+        List<Cargo> listaAtiva = new();
 
         public FormCadastroFuncionario()
         {
             InitializeComponent();
-            TabGeral.TabPages.Remove(TabEndereco);
-
+            TxtBoxIDfunci.Visible = false;
+            LblIDfunci.Visible = false;
             List<Cargo> Cargos = cargo.GetAll().Dados;
-            LblIdAlteracao.Visible = false;
-            TxtBoxID.Visible = false;
 
             foreach (Cargo cargo in Cargos)
             {
-                if (cargo.Ativo = true)
+                if (cargo.Ativo == true)
                 {
                     listaAtiva.Add(cargo);
                 }
@@ -48,6 +46,8 @@ namespace WfPresentationLayer
         public FormCadastroFuncionario(Funcionario fun)
         {
             InitializeComponent();
+            TxtBoxIDfunci.Visible = true;
+            LblIDfunci.Visible = true;
             LblTitulo.Text = "Alterar Funcionario";
             List<Cargo> Cargos = cargo.GetAll().Dados;
             foreach (Cargo cargo in Cargos)
@@ -61,26 +61,25 @@ namespace WfPresentationLayer
             CmbBoxCargos.ValueMember = "ID";
             CmbBoxCargos.DataSource = listaAtiva;
 
-            TxtBoxID.Text = fun.ID.ToString();
+            TxtBoxIDfunci.Text = fun.ID.ToString();
             txtBoxNomeFuncionario.Text = fun.Nome_Funcionario;
             txtBoxEmailFuncionario.Text = fun.Email;
             TxtBoxRgFuncionario.Text = fun.RG;
             TxtBoxTelefone1Funcionario.Text = fun.Telefone;
+            
             TxtBoxCpfFuncionario.Text = fun.CPF;
-            //LblIdAlteracao.Visible = true;
-            //TxtBoxID.Visible = true;
 
         }
 
         private void BtnCadastroEndereco_Click_1(object sender, EventArgs e)
         {
-            if (txtBoxNomeFuncionario.Text == "" || txtBoxEmailFuncionario.Text == "" || TxtBoxCpfFuncionario.Text == "" || TxtBoxTelefone1Funcionario.Text == "" || TxtBoxSenhaFuncionario.Text == "" || TxtBoxRgFuncionario.Text == "")
+            if (txtBoxNomeFuncionario.Text == "Digite o Nome" || txtBoxEmailFuncionario.Text == "Digite o Email" || TxtBoxCpfFuncionario.Text == "" || TxtBoxTelefone1Funcionario.Text == "" || TxtBoxSenhaFuncionario.Text == "" || TxtBoxRgFuncionario.Text == "Digite o Rg")
             {
                 MeuMessageBox.Show("Voce nao inseriu todos os campos");
+                return;
             }
             else
             {
-                
                 this.TabGeral.SelectedIndex = 1;
                 CmbBoxEstado.ValueMember = "ID";
                 CmbBoxEstado.DisplayMember = "Nome_Estado";
@@ -90,22 +89,21 @@ namespace WfPresentationLayer
         private void BtnCadastroFuncionario_Click_1(object sender, EventArgs e)
         {
             string cep = TxtBoxCep.Text;
-            int idfunc = int.Parse(TxtBoxID.Text);
             if (cep == "     -")
             {
                 cep = "";
             }
 
-            Cargo cargo = new Cargo(nome: CmbBoxCargos.Text);
+            Cargo cargo = new(nome: CmbBoxCargos.Text);
             cargo.ID = (int)CmbBoxCargos.SelectedValue;
-            Endereco endereco = new Endereco(nomeRua: TxtBoxRua.Text,
+            Endereco endereco = new(nomeRua: TxtBoxRua.Text,
                                                         cEP: cep,
                                                         numeroCasa: TxtBoxNumero.Text,
                                                         estadoID: (int)CmbBoxEstado.SelectedValue,
                                                         cidadeID: (int)CmbBoxCidade.SelectedValue);
-            Funcionario funcionario = new Funcionario(nome: txtBoxNomeFuncionario.Text,
+            Funcionario funcionario = new(nome: txtBoxNomeFuncionario.Text,
                                                       cPF: TxtBoxCpfFuncionario.Text,
-                                                      rG: TxtBoxRgFuncionario.Text,
+                                                       rG: TxtBoxRgFuncionario.Text,
                                                       email: txtBoxEmailFuncionario.Text,
                                                       telefone: TxtBoxTelefone1Funcionario.Text,
                                                       cargo: cargo,
@@ -113,12 +111,13 @@ namespace WfPresentationLayer
                                                       senha: TxtBoxSenhaFuncionario.Text
                                                       );
             funcionario.Ativo = true;
-            if (LblTitulo.Visible == true)
+            if (TxtBoxIDfunci.Text != "")
             {
+                int idfunc = int.Parse(TxtBoxIDfunci.Text);
                 Funcionario PegarEndereco = funcionarioBll.GetByID(idfunc).Item;
                 string s = "";
                 funcionario.Endereco.ID = PegarEndereco.Endereco.ID;
-                funcionario.ID = int.Parse(TxtBoxID.Text);
+                funcionario.ID = int.Parse(TxtBoxIDfunci.Text);
                 Response resposta = funcionarioBll.Update(funcionario);
                 MeuMessageBox.Show(resposta.Message);
                 if (resposta.HasSuccess)
@@ -136,7 +135,7 @@ namespace WfPresentationLayer
         }
         private void BtnCadastrarCargo_Click(object sender, EventArgs e)
         {
-            FormCadastroCargo formCadastroCargo = new FormCadastroCargo();
+            FormCadastroCargo formCadastroCargo = new();
             formCadastroCargo.Show();
         }
 

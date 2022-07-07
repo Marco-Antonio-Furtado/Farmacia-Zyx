@@ -30,9 +30,9 @@
         {
             this.TabGeral = new System.Windows.Forms.TabControl();
             this.TabFuncionario = new System.Windows.Forms.TabPage();
-            this.TxtBoxID = new System.Windows.Forms.TextBox();
+            this.LblIDfunci = new System.Windows.Forms.Label();
+            this.TxtBoxIDfunci = new System.Windows.Forms.MaskedTextBox();
             this.BtnCadastrarCargo = new System.Windows.Forms.Button();
-            this.LblIdAlteracao = new System.Windows.Forms.Label();
             this.CmbBoxCargos = new System.Windows.Forms.ComboBox();
             this.BtnCadastroEndereco = new System.Windows.Forms.Button();
             this.TxtBoxSenhaFuncionario = new System.Windows.Forms.MaskedTextBox();
@@ -81,9 +81,9 @@
             // TabFuncionario
             // 
             this.TabFuncionario.BackColor = System.Drawing.Color.IndianRed;
-            this.TabFuncionario.Controls.Add(this.TxtBoxID);
+            this.TabFuncionario.Controls.Add(this.LblIDfunci);
+            this.TabFuncionario.Controls.Add(this.TxtBoxIDfunci);
             this.TabFuncionario.Controls.Add(this.BtnCadastrarCargo);
-            this.TabFuncionario.Controls.Add(this.LblIdAlteracao);
             this.TabFuncionario.Controls.Add(this.CmbBoxCargos);
             this.TabFuncionario.Controls.Add(this.BtnCadastroEndereco);
             this.TabFuncionario.Controls.Add(this.TxtBoxSenhaFuncionario);
@@ -106,16 +106,28 @@
             this.TabFuncionario.TabIndex = 0;
             this.TabFuncionario.Text = "Funcionario";
             // 
-            // TxtBoxID
+            // LblIDfunci
             // 
-            this.TxtBoxID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TxtBoxID.Enabled = false;
-            this.TxtBoxID.ForeColor = System.Drawing.Color.White;
-            this.TxtBoxID.Location = new System.Drawing.Point(15, 392);
-            this.TxtBoxID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtBoxID.Name = "TxtBoxID";
-            this.TxtBoxID.Size = new System.Drawing.Size(203, 27);
-            this.TxtBoxID.TabIndex = 93;
+            this.LblIDfunci.AutoSize = true;
+            this.LblIDfunci.Enabled = false;
+            this.LblIDfunci.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LblIDfunci.ForeColor = System.Drawing.Color.White;
+            this.LblIDfunci.Location = new System.Drawing.Point(15, 369);
+            this.LblIDfunci.Name = "LblIDfunci";
+            this.LblIDfunci.Size = new System.Drawing.Size(104, 23);
+            this.LblIDfunci.TabIndex = 94;
+            this.LblIDfunci.Text = "ID Alteracao";
+            // 
+            // TxtBoxIDfunci
+            // 
+            this.TxtBoxIDfunci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtBoxIDfunci.Enabled = false;
+            this.TxtBoxIDfunci.ForeColor = System.Drawing.Color.White;
+            this.TxtBoxIDfunci.Location = new System.Drawing.Point(16, 396);
+            this.TxtBoxIDfunci.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBoxIDfunci.Name = "TxtBoxIDfunci";
+            this.TxtBoxIDfunci.Size = new System.Drawing.Size(203, 27);
+            this.TxtBoxIDfunci.TabIndex = 93;
             // 
             // BtnCadastrarCargo
             // 
@@ -130,18 +142,6 @@
             this.BtnCadastrarCargo.Text = "Cadastrar Cargo";
             this.BtnCadastrarCargo.UseVisualStyleBackColor = false;
             this.BtnCadastrarCargo.Click += new System.EventHandler(this.BtnCadastrarCargo_Click);
-            // 
-            // LblIdAlteracao
-            // 
-            this.LblIdAlteracao.AutoSize = true;
-            this.LblIdAlteracao.Enabled = false;
-            this.LblIdAlteracao.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblIdAlteracao.ForeColor = System.Drawing.Color.White;
-            this.LblIdAlteracao.Location = new System.Drawing.Point(15, 365);
-            this.LblIdAlteracao.Name = "LblIdAlteracao";
-            this.LblIdAlteracao.Size = new System.Drawing.Size(126, 23);
-            this.LblIdAlteracao.TabIndex = 91;
-            this.LblIdAlteracao.Text = "ID da alteracao";
             // 
             // CmbBoxCargos
             // 
@@ -528,12 +528,12 @@
         private TextBox TxtBoxNumero;
         private ComboBox CmbBoxEstado;
         private ComboBox CmbBoxCidade;
-        private Label LblIdAlteracao;
-        private TextBox TxtBoxID;
         private Button BtnCadastrarCargo;
         private PictureBox ImageBtnFechar;
         private Label LblTitulo;
         private Label LblIdEndereco;
         private TextBox TxtBoxIDEndereco;
+        private Label LblIDfunci;
+        public MaskedTextBox TxtBoxIDfunci;
     }
 }

@@ -25,10 +25,15 @@ namespace WfPresentationLayer.FormCadastros
 
         private void BtnCadastrarCargo_Click(object sender, EventArgs e)
         {
-            Cargo c = new Cargo();  
+            if (TxtBoxNomeCargo.Text == "Digite o Cargo")
+            {
+                MeuMessageBox.Show("voce nao informou o nome");
+                    return;
+            }
+            Cargo c = new();  
             c.Nome_Cargo = TxtBoxNomeCargo.Text;
 
-            CargoBLL cargo = new CargoBLL();
+            CargoBLL cargo = new();
             cargo.Insert(c);
         }
 

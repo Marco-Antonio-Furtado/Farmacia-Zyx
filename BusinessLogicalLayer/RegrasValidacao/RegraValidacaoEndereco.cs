@@ -2,11 +2,18 @@
 
 namespace BusinessLogicalLayer.RegrasValidacao
 {
-
+    /// <summary>
+    /// Nesta classe existe todas as regras de validacoes de endereco
+    /// </summary>
     internal class RegraValidacaoEndereco
     {
         private const int CARACTERES_CEP = 8;
 
+        /// <summary>
+        /// Como nao ha padrão apenas nao deixei a rua vazia
+        /// </summary>
+        /// <param name="rua"></param>
+        /// <returns></returns>
         internal static string ValidateRua(string rua)
         {
             if (string.IsNullOrWhiteSpace(rua))
@@ -15,6 +22,11 @@ namespace BusinessLogicalLayer.RegrasValidacao
             }
             else return "";
         }
+        /// <summary>
+        /// Como nao ha padrão apenas nao deixei a numero vazia
+        /// </summary>
+        /// <param name="numero"></param>
+        /// <returns></returns>
         internal static string ValidateNumero(string numero)
         {
             if (string.IsNullOrWhiteSpace(numero))
@@ -23,6 +35,11 @@ namespace BusinessLogicalLayer.RegrasValidacao
             }
             else return "";
         }
+        /// <summary>
+        /// Metodo padrão para validar cep que foi pego direto do site do governo federal
+        /// </summary>
+        /// <param name="cep"></param>
+        /// <returns></returns>
         internal static string ValidateCEP(string cep)
         {
             if (string.IsNullOrWhiteSpace(cep))

@@ -3,7 +3,7 @@
 namespace Entities
 {
     /// <summary>
-    /// Classe de endereco Para ser agregado a funcionario
+    /// Classe de endereco Para ser agregado a NOME_FUNCIONARIO
     /// </summary>
     public class Endereco
     {

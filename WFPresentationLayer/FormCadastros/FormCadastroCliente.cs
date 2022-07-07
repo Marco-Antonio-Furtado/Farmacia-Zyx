@@ -14,7 +14,7 @@ namespace WfPresentationLayer
         /// Uma sobrecarga que abre com cliente ja preenchido para alteracao 
         /// e sem sobrecarga que abre para cadastro 
         /// </summary>
-        readonly ClienteBll clientebll = new ClienteBll();
+        readonly ClienteBll clientebll = new();
         public FormCadastroCliente()
         {
             InitializeComponent();
@@ -37,7 +37,13 @@ namespace WfPresentationLayer
         }
         private void BtnCadastrarCliente_Click_1(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente(txtBoxNomeCliente.Text, TxtBoxCpfCLiente.Text, TxtBoxRgCliente.Text,
+            if(txtBoxNomeCliente.Text == "Digite o Nome" || txtBoxEmailCliente.Text == "Digite O email" || TxtBoxRgCliente.Text == "Digite o Rg")
+            {
+                MeuMessageBox.Show("voce nao informou todos os campos");
+                return;
+            }
+
+            Cliente cliente = new(txtBoxNomeCliente.Text, TxtBoxCpfCLiente.Text, TxtBoxRgCliente.Text,
                                           txtBoxEmailCliente.Text, TxtBoxTelefone1Cliente.Text
                                           , TxtBoxTelefone2Cliente.Text);
             cliente.Ativo = true;

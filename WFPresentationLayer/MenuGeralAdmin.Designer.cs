@@ -88,9 +88,9 @@
             this.LblMenu.AutoSize = true;
             this.LblMenu.Location = new System.Drawing.Point(705, 633);
             this.LblMenu.Name = "LblMenu";
-            this.LblMenu.Size = new System.Drawing.Size(115, 20);
+            this.LblMenu.Size = new System.Drawing.Size(164, 20);
             this.LblMenu.TabIndex = 8;
-            this.LblMenu.Text = "ByMarco&Gabriel";
+            this.LblMenu.Text = "By Marco A. /Gabriel N.";
             // 
             // PctMenu
             // 

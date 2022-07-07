@@ -4,9 +4,13 @@ using Shared;
 
 namespace BusinessLogicalLayer.BusinessLL
 {
+    /// <summary>
+    /// Meio para ligar o banco de dados de Clientes com a tela 
+    /// e fazendo sua regras de negocios onde no caso de cliente Sao validacoes
+    /// </summary>
     public class ClienteBll : ICRUD<Cliente>
     {
-        private ClienteDAL clienteDAL = new ClienteDAL();
+        private ClienteDAL clienteDAL = new();
         public Response Insert(Cliente item)
         {
             Response resposta = ClienteValidator.Validate(item);
@@ -29,7 +33,6 @@ namespace BusinessLogicalLayer.BusinessLL
         {
             return clienteDAL.Delete(id);
         }
-
         public DataResponse<Cliente> GetAll()
         {
             return clienteDAL.GetAll(); 
@@ -38,16 +41,6 @@ namespace BusinessLogicalLayer.BusinessLL
         {
             return clienteDAL.GetByID(id);
         }
-
-        public SingleResponse<Cliente> GetByEmail(string email)
-        {
-            return clienteDAL.GetByEmail(email);
-        }
-        public SingleResponse<Cliente> GetByCPF(string cpf)
-        {
-            return clienteDAL.GetByCPF(cpf);
-        }
-
         public Response Disable(int iDCLiente)
         {
             return clienteDAL.Disable(iDCLiente);

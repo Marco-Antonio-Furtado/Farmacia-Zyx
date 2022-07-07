@@ -4,11 +4,16 @@ using System.Text;
 
 namespace BusinessLogicalLayer
 {
+    /// <summary>
+    /// Nesta classe eu valido o Cliente para ver se ele esta em condicoes de entrar no banco ou ser alterado
+    /// chamando os metodos da validacao de string
+    /// onde instancio um string builder e encho ele com as especificacoes que o cliente pede
+    /// </summary>
     internal class ClienteValidator
     {
         internal static Response Validate(Cliente cliente)
         {
-            StringBuilder erros = new StringBuilder("");
+            StringBuilder erros = new("");
             
             erros.Append(RegraValidacaoString.ValidateNome(cliente.Nome_Cliente));
             erros.Append(RegraValidacaoString.ValidateCPF(cliente.CPF));

@@ -368,7 +368,7 @@
             // 
             // DataGridFuncionario
             // 
-            this.DataGridFuncionario.HeaderText = "Funcionario";
+            this.DataGridFuncionario.HeaderText = "NOME_FUNCIONARIO";
             this.DataGridFuncionario.MinimumWidth = 6;
             this.DataGridFuncionario.Name = "DataGridFuncionario";
             this.DataGridFuncionario.ReadOnly = true;

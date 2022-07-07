@@ -20,7 +20,7 @@ namespace WfPresentationLayer
     {
         LaboratorioBLL LB = new();
         ProdutoBll produtoBll = new();
-        List<Laboratorio> listaAtiva = new List<Laboratorio>();
+        List<Laboratorio> listaAtiva = new();
 
 
         public FormCadastroProduto()
@@ -67,10 +67,15 @@ namespace WfPresentationLayer
         }
         private void BtnCadastrarProduto_Click_1(object sender, EventArgs e)
         {
-            Laboratorio lab = new Laboratorio();
+            if(TxtBoxPrecoUnitario.Text == "" || TxtBoxNomeProduto.Text == "Digite Nome Produto" || TxtBoxDescrisaoProduto.Text == "Digite A Descrisao")
+            {
+                MeuMessageBox.Show("Voce nao informou todos os campos");
+                return;
+            }
+            Laboratorio lab = new();
             lab.ID = Convert.ToInt32(CmbBoxLaboratorio.SelectedValue.ToString());
 
-            Produto produto = new Produto();
+            Produto produto = new();
 
             produto.Nome = TxtBoxNomeProduto.Text;
             produto.Descricao = TxtBoxDescrisaoProduto.Text;
@@ -98,7 +103,7 @@ namespace WfPresentationLayer
         }
         private void BtnCadastrarLab_Click(object sender, EventArgs e)
         {
-            FormCadastrarLaboratorio formCadastrarLaboratorio = new FormCadastrarLaboratorio();
+            FormCadastrarLaboratorio formCadastrarLaboratorio = new();
             formCadastrarLaboratorio.ShowDialog();
         }
 

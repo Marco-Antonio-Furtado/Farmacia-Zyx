@@ -2,6 +2,10 @@
 
 namespace BusinessLogicalLayer
 {
+
+    /// <summary>
+    /// Nesta classe possui todas as regras de validacoes de string
+    /// </summary>
     internal class RegraValidacaoString
     {
         private const int MAXIMO_CARACTERES_NOME = 100;
@@ -9,6 +13,11 @@ namespace BusinessLogicalLayer
         private const int CARACTERES_CPF = 11;
         private const int MAXIMO_CARACTERES_EMAIL = 100;
         private const int MINIMO_CARACTERES_EMAIL = 3;
+        /// <summary>
+        /// Validador padrao de nome
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
         internal static string ValidateNome(string nome)
         {
             if (string.IsNullOrWhiteSpace(nome))
@@ -44,6 +53,11 @@ namespace BusinessLogicalLayer
             }
             return "";
         }
+        /// <summary>
+        /// validador de cpf 
+        /// </summary>
+        /// <param name="cpf"></param>
+        /// <returns></returns>
         internal static string ValidateCPF(string cpf)
         {
             if (string.IsNullOrWhiteSpace(cpf))
@@ -87,6 +101,11 @@ namespace BusinessLogicalLayer
             }
             return "";
         }
+        /// <summary>
+        /// validador de email
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         internal static string ValidateEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
@@ -109,6 +128,11 @@ namespace BusinessLogicalLayer
             }
             return "";
         }
+        /// <summary>
+        /// validador de telefone padrão
+        /// </summary>
+        /// <param name="telefone"></param>
+        /// <returns></returns>
         internal static string ValidateTelefone(string telefone)
         {
             if (string.IsNullOrWhiteSpace(telefone))
@@ -134,6 +158,11 @@ namespace BusinessLogicalLayer
             }
             return "";
         }
+        /// <summary>
+        /// validador padrao de RG
+        /// </summary>
+        /// <param name="RG"></param>
+        /// <returns></returns>
         internal static string ValidateRG(string RG)
         {
             if (string.IsNullOrWhiteSpace(RG))
@@ -142,6 +171,9 @@ namespace BusinessLogicalLayer
             }
             return "";
         }
+
+
+        
     }
 }
        

@@ -7,6 +7,9 @@ using System.Transactions;
 
 namespace DataAccessLayer
 {
+    /// <summary>
+    /// Classe que realiza as operacoes de banco de dados do Da saida de produtos
+    /// </summary>
     public class SaidaDAL : ITransacaoProdutos<Saida, SaidaViewModel>
     {
         public SingleResponse<Saida> EfetuarTransacao(Saida transacao)
@@ -15,7 +18,7 @@ namespace DataAccessLayer
             string sql1 = $"INSERT INTO SAIDAS (DATA_SAIDA,CLIENTES_ID,VALOR,FUNCIONARIOS_ID,FORMA_PAGAMENTO)" +
                        $" VALUES (@DATA,@CLIENTES_ID,@PRECO,@FUNCIONARIOS_ID,@FORMA_PAGAMENTO); SELECT SCOPE_IDENTITY()";
 
-            SqlCommand commInsertSaida = new SqlCommand(sql1);
+            SqlCommand commInsertSaida = new(sql1);
             commInsertSaida.Parameters.AddWithValue("@DATA", transacao.Data);
             commInsertSaida.Parameters.AddWithValue("@CLIENTES_ID", transacao.Cliente.ID);
             commInsertSaida.Parameters.AddWithValue("@FUNCIONARIOS_ID", transacao.IDFuncionario.ID);
@@ -25,11 +28,11 @@ namespace DataAccessLayer
             string sql2 = $"UPDATE CLIENTES SET PROGRAMA_FIDELIDADE = @PROGRAMA_FIDELIDADE WHERE ID = @CLIENTE_ID";
 
 
-            SqlCommand commUpdateProgramaFidelidade = new SqlCommand(sql2);
+            SqlCommand commUpdateProgramaFidelidade = new(sql2);
             commUpdateProgramaFidelidade.Parameters.AddWithValue("@PROGRAMA_FIDELIDADE", transacao.Cliente.Programa_Fidelidade);
             commUpdateProgramaFidelidade.Parameters.AddWithValue("@CLIENTE_ID", transacao.Cliente.ID);
 
-            using (TransactionScope scope = new TransactionScope())
+            using (TransactionScope scope = new())
             {
                 try
                 {
@@ -39,7 +42,7 @@ namespace DataAccessLayer
                     {
                         string sql3 = "INSERT INTO PRODUTOS_SAIDAS (SAIDA_ID,PRODUTOS_ID,QUANTIDADE,VALOR_UNITARIO) VALUES (@ENTRADA_ID,@PRODUTOS_ID,@QUANTIDADE,@VALOR_UNITARIO)";
 
-                        SqlCommand commInsertProdutosSaida = new SqlCommand(sql3);
+                        SqlCommand commInsertProdutosSaida = new(sql3);
                         commInsertProdutosSaida.Parameters.AddWithValue("@ENTRADA_ID", transacao.ID);
                         commInsertProdutosSaida.Parameters.AddWithValue("@PRODUTOS_ID", item.IDProduto.ID);
                         commInsertProdutosSaida.Parameters.AddWithValue("@QUANTIDADE", item.Qtd);
@@ -64,11 +67,11 @@ namespace DataAccessLayer
         {
             string sql = $"SELECT ID,DATA_SAIDA,PRODUTO,CLIENTES_ID,QUANTIDADE,VALOR_UNITARIO,VALOR_TOTAL FROM SAIDAS WHERE ID = @ID";
 
-            SqlCommand command = new SqlCommand(sql);
+            SqlCommand command = new(sql);
             command.Parameters.AddWithValue("@ID", id);
             try
             {
-                DbExecuter dbExecuter = new DbExecuter();
+                DbExecuter dbExecuter = new();
                 return DbExecuter.GetItem<Saida>(command);
             }
             catch (Exception)
@@ -81,8 +84,8 @@ namespace DataAccessLayer
         {
             string sql = $"SELECT PS.SAIDA_ID, P.NOME_PRODUTO, P.VALOR_UNITARIO, PS.QUANTIDADE,S.FORMA_PAGAMENTO, C.NOME_CLIENTE, S.VALOR, S.DATA_SAIDA, F.NOME_FUNCIONARIO FROM PRODUTOS_SAIDAS PS INNER JOIN SAIDAS S ON PS.SAIDA_ID = S.ID INNER JOIN PRODUTOS P ON PS.PRODUTOS_ID = P.ID INNER JOIN CLIENTES C ON S.CLIENTES_ID = C.ID INNER JOIN FUNCIONARIOS F ON S.FUNCIONARIOS_ID = F.ID WHERE DATA_SAIDA BETWEEN @inicio AND @fim";
 
-            DbConnection db = new DbConnection();
-            SqlCommand command = new SqlCommand(sql);
+            DbConnection db = new();
+            SqlCommand command = new(sql);
             command.Parameters.AddWithValue("@inicio", inicio);
             command.Parameters.AddWithValue("@fim", fim);
             db.AttachCommand(command);
@@ -91,21 +94,21 @@ namespace DataAccessLayer
             {
                 db.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                List<SaidaViewModel> saidas = new List<SaidaViewModel>();
+                List<SaidaViewModel> saidas = new();
                 while (reader.Read())
                 {
-                    SaidaViewModel svm = new SaidaViewModel()
+                    SaidaViewModel svm = new()
                     {
                         
-                        funcionario = Convert.ToString(reader["NOME_FUNCIONARIO"]),
-                        TransacaoID = Convert.ToInt32(reader["SAIDA_ID"]),
-                        ProdutoNome = Convert.ToString(reader["NOME_PRODUTO"]),
-                        ValorUnitario = Convert.ToDouble(reader["VALOR_UNITARIO"]),
+                        NOME_FUNCIONARIO = Convert.ToString(reader["NOME_FUNCIONARIO"]),
+                        SAIDA_ID = Convert.ToInt32(reader["SAIDA_ID"]),
+                        NOME_PRODUTO = Convert.ToString(reader["NOME_PRODUTO"]),
+                        VALOR_UNITARIO = Convert.ToDouble(reader["VALOR_UNITARIO"]),
                         Quantidade = Convert.ToDouble(reader["QUANTIDADE"]),
-                        FormaPagamento = Convert.ToString(reader["FORMA_PAGAMENTO"]),
-                        ClienteNome = Convert.ToString(reader["NOME_CLIENTE"]),
-                        ValorTotal = Convert.ToDouble(reader["VALOR"]),
-                        Data = Convert.ToDateTime(reader["DATA_SAIDA"])
+                        FORMA_PAGAMENTO = Convert.ToString(reader["FORMA_PAGAMENTO"]),
+                        NOME_CLIENTE = Convert.ToString(reader["NOME_CLIENTE"]),
+                        VALOR = Convert.ToDouble(reader["VALOR"]),
+                        DATA_SAIDA = Convert.ToDateTime(reader["DATA_SAIDA"])
                     };
                     saidas.Add(svm);
                 }
@@ -121,33 +124,11 @@ namespace DataAccessLayer
         {
             string sql = $"SELECT PS.SAIDA_ID, P.NOME_PRODUTO, P.VALOR_UNITARIO, PS.QUANTIDADE,S.FORMA_PAGAMENTO, C.NOME_CLIENTE, S.VALOR, S.DATA_SAIDA, F.NOME_FUNCIONARIO FROM PRODUTOS_SAIDAS PS INNER JOIN SAIDAS S ON PS.SAIDA_ID = S.ID INNER JOIN PRODUTOS P ON PS.PRODUTOS_ID = P.ID INNER JOIN CLIENTES C ON S.CLIENTES_ID = C.ID INNER JOIN FUNCIONARIOS F ON S.FUNCIONARIOS_ID = F.ID ";
 
-            DbConnection db = new DbConnection();
-            SqlCommand command = new SqlCommand(sql);
-            db.AttachCommand(command);
-            command.CommandText = sql;
+            SqlCommand command = new(sql);
             try
             {
-                db.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                List<SaidaViewModel> saidas = new List<SaidaViewModel>();
-                while (reader.Read())
-                {
-                    SaidaViewModel svm = new SaidaViewModel()
-                    {
-
-                        funcionario = Convert.ToString(reader["NOME_FUNCIONARIO"]),
-                        TransacaoID = Convert.ToInt32(reader["SAIDA_ID"]),
-                        ProdutoNome = Convert.ToString(reader["NOME_PRODUTO"]),
-                        ValorUnitario = Convert.ToDouble(reader["VALOR_UNITARIO"]),
-                        Quantidade = Convert.ToDouble(reader["QUANTIDADE"]),
-                        FormaPagamento = Convert.ToString(reader["FORMA_PAGAMENTO"]),
-                        ClienteNome = Convert.ToString(reader["NOME_CLIENTE"]),
-                        ValorTotal = Convert.ToDouble(reader["VALOR"]),
-                        Data = Convert.ToDateTime(reader["DATA_SAIDA"])
-                    };
-                    saidas.Add(svm);
-                }
-                return ResponseFactory.CreateInstance().CreateDataSuccessResponse(saidas);
+                DbExecuter dbexecutor = new();
+                return DbExecuter.GetData<SaidaViewModel>(command);
             }
             catch (Exception ex)
             {

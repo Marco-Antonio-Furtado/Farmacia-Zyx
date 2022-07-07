@@ -42,7 +42,9 @@
             this.BtnCadastrarLab = new System.Windows.Forms.Button();
             this.LblText = new System.Windows.Forms.Label();
             this.ImageBtnFechar = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -67,6 +69,7 @@
             this.TxtBoxDescrisaoProduto.TabIndex = 2;
             this.TxtBoxDescrisaoProduto.Text = "Digite A Descrisao";
             this.TxtBoxDescrisaoProduto.Enter += new System.EventHandler(this.TxtBoxDescrisaoProduto_Enter);
+            this.TxtBoxDescrisaoProduto.Leave += new System.EventHandler(this.TxtBoxDescrisaoProduto_Enter);
             // 
             // Laboratorio
             // 
@@ -179,7 +182,7 @@
             this.BtnCadastrarLab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnCadastrarLab.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastrarLab.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarLab.Location = new System.Drawing.Point(338, 275);
+            this.BtnCadastrarLab.Location = new System.Drawing.Point(270, 261);
             this.BtnCadastrarLab.Name = "BtnCadastrarLab";
             this.BtnCadastrarLab.Size = new System.Drawing.Size(156, 75);
             this.BtnCadastrarLab.TabIndex = 22;
@@ -209,12 +212,23 @@
             this.ImageBtnFechar.TabStop = false;
             this.ImageBtnFechar.Click += new System.EventHandler(this.ImageBtnFechar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WfPresentationLayer.Properties.Resources.external_drugs_virus_icongeek26_outline_icongeek261;
+            this.pictureBox1.Location = new System.Drawing.Point(451, 296);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 89);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(554, 388);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ImageBtnFechar);
             this.Controls.Add(this.LblText);
             this.Controls.Add(this.BtnCadastrarLab);
@@ -234,6 +248,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroProduto";
             ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,5 +271,6 @@
         private Button BtnCadastrarLab;
         private Label LblText;
         private PictureBox ImageBtnFechar;
+        private PictureBox pictureBox1;
     }
 }

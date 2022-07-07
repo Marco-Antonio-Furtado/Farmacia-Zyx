@@ -5,9 +5,13 @@ using DataAccessLayer;
 
 namespace BusinessLogicalLayer.BusinessLL
 {
+    /// <summary>
+    /// Meio para ligar o banco de dados de Fornecedores com a tela 
+    /// e fazendo sua regras de negocios onde no caso de Fornecedor Sao validacoes
+    /// </summary>
     public class FornecedorBll : ICRUD<Fornecedor>
     {
-        FornecedorDAL fornecedorDAL = new FornecedorDAL();
+        FornecedorDAL fornecedorDAL = new();
         public Response Insert(Fornecedor item)
         {
             Response resposta = FornecedorValidator.Validate(item);
@@ -40,11 +44,6 @@ namespace BusinessLogicalLayer.BusinessLL
         {
             return fornecedorDAL.GetByID(id);
         }
-        public SingleResponse<Fornecedor> GetByEmail(string email)
-        {
-            return fornecedorDAL.GetByEmail(email);
-        }
-
         public Response Disable(int iDCLiente)
         {
             return fornecedorDAL.Disable(iDCLiente);

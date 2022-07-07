@@ -1,6 +1,7 @@
 ﻿using BusinessLogicalLayer.BusinessLL;
 using Entities;
 using Shared;
+using System.ComponentModel;
 using WfPresentationLayer.FormCadastros;
 
 namespace WfPresentationLayer.Alteraçoes
@@ -60,6 +61,8 @@ namespace WfPresentationLayer.Alteraçoes
         private void SincronizarListaGrid(Fornecedor item)
         {
          GridFornecedor.Rows.Add(item.ID, item.Razao_Social, item.Telefone, item.Nome_Contato, item.Email, item.CNPJ);
+            GridFornecedor.Sort(GridFornecedor.Columns[0], ListSortDirection.Ascending);
+
         }
         private void BtnAlterarFornecedor_Click(object sender, EventArgs e)
         {

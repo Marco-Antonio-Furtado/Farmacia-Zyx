@@ -1,7 +1,7 @@
 ﻿using BusinessLogicalLayer.BusinessLL;
-using Entities;
 using Entities.viewmodel;
 using Shared;
+using System.ComponentModel;
 
 namespace WfPresentationLayer.Alteraçoes
 {
@@ -15,7 +15,6 @@ namespace WfPresentationLayer.Alteraçoes
     public partial class FormMostrarSaidas : Form
     {
         SaidaBll saidaBll = new SaidaBll();
-        private Form _objForm6;
         public FormMostrarSaidas()
         {
             InitializeComponent();
@@ -24,7 +23,6 @@ namespace WfPresentationLayer.Alteraçoes
         {
             InitializeComponent();
             DataResponse<SaidaViewModel> Dados = saidaBll.LerTransacoes(datas.Inicio, datas.Fim);
-
             if (Dados.Dados == null)
             {
                 MeuMessageBox.Show("Nao ha itens a mostrar");
@@ -32,13 +30,13 @@ namespace WfPresentationLayer.Alteraçoes
             }
             foreach (SaidaViewModel item in Dados.Dados)
             {
-                
                 SincronizarListaGrid(item);
             }
         }
         private void SincronizarListaGrid(SaidaViewModel item)
         {
-            GridSaidas.Rows.Add(item.TransacaoID, item.ProdutoNome, item.ValorUnitario, item.Quantidade, item.FormaPagamento, item.ClienteNome, item.ValorTotal,item.Data,item.funcionario);
+            GridSaidas.Rows.Add(item.SAIDA_ID, item.NOME_PRODUTO, item.VALOR_UNITARIO, item.Quantidade, item.FORMA_PAGAMENTO, item.NOME_CLIENTE, item.VALOR, item.DATA_SAIDA, item.NOME_FUNCIONARIO);
+            GridSaidas.Sort(GridSaidas.Columns[0], ListSortDirection.Ascending);
         }
         private void BtnCadastrarVendas_Click(object sender, EventArgs e)
         {
@@ -62,16 +60,26 @@ namespace WfPresentationLayer.Alteraçoes
             }
 
         }
-
-
+        private void BtnVendasHoje_Click(object sender, EventArgs e)
+        {
+            LimparGrid();
+            DataResponse<SaidaViewModel> data = saidaBll.LerTransacoes(DateTime.Today, DateTime.Now);
+            if (data.Dados == null)
+            {
+                MeuMessageBox.Show("nao ha itens a mostrar");
+            }
+            foreach (SaidaViewModel item in data.Dados)
+            {
+                SincronizarListaGrid(item);
+            }
+        }
 
         // Metodos padrões Para melhor visualizacao e entendimento do usuario 
         private void LimparGrid()
-            {
-                GridSaidas.Rows.Clear();
-                GridSaidas.Refresh();
-                GridSaidas.DataSource = null;
-
-            }
+        {
+            GridSaidas.Rows.Clear();
+            GridSaidas.Refresh();
+            GridSaidas.DataSource = null;
+        }
     }
 }

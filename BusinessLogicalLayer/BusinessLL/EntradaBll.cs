@@ -1,25 +1,30 @@
 ﻿using BusinessLogicalLayer.RegraDePreco;
 using BusinessLogicalLayer.RegraEstoque;
-using DataAccessLayer;
 using Entities;
 using Entities.viewmodel;
 using Shared;
 
 namespace BusinessLogicalLayer.BusinessLL
 {
+    /// <summary>
+    /// Meio para ligar o banco de dados Das entradas de produtos com a tela
+    /// e fazendo sua regras de negocios onde no caso de das entradas das vendas sao
+    /// as regras de estoque e regras de novo preco de produto
+    /// </summary>
     public class EntradaBll
     {
-        EntradaDal entradaDal = new EntradaDal();
-        RegraControleEstoque regraEstoque = new RegraControleEstoque();
-    
+        EntradaDal entradaDal = new();
         public Response Insert(Entrada entrada)
         {
-            Response estoqueResponse = RegraControleEstoque.EstoqueEntrada(entrada);
-            if (!estoqueResponse.HasSuccess)
+            if(!RegraPrecoProduto.AtualizarPrecos(entrada, 20).HasSuccess )
             {
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
-            if(!RegraPrecoProduto.AtualizarPrecos(entrada, 20).HasSuccess )
+            if (!RegraControleEstoque.EstoqueEntrada(entrada).HasSuccess)
+            {
+                return ResponseFactory.CreateInstance().CreateFailedResponse();
+            }
+            if (!entradaDal.EfetuarTransacao(entrada).HasSuccess)
             {
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
@@ -46,10 +51,5 @@ namespace BusinessLogicalLayer.BusinessLL
         {
             return entradaDal.GetAll();
         }
-        public SingleResponse<Entrada> GetByID(int id)
-        {
-            return entradaDal.GetByID(id);
-        }
-
     }
 }

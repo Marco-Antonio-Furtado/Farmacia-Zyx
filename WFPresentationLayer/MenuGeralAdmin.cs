@@ -21,7 +21,7 @@ namespace WfPresentationLayer
         public MenuGeralAdmin()
         {
             InitializeComponent();
-            LblFuncionarioLogado.Text = "Bem vindo Senhor " + SystemParameters.UsuarioLogado.Nome_Funcionario;
+            LblFuncionarioLogado.Text = "Bem vindo Senhor(A) " + SystemParameters.UsuarioLogado.Nome_Funcionario;
             Cargo ca = SystemParameters.GetPermissao();
             if(ca.Nome_Cargo != "Administrador") { BtnMenuFuncionario.Visible = false;
                 pctFuncionario.Visible = false;
@@ -136,7 +136,7 @@ namespace WfPresentationLayer
         /// <param name="e"></param>
         private void PctDuvida_Click(object sender, EventArgs e)
         {
-            FormDuvida formDuvida = new FormDuvida();
+            FormDuvida formDuvida = new();
             formDuvida.ShowDialog();
         }
 

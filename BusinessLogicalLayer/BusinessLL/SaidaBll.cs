@@ -7,9 +7,14 @@ using Shared;
 
 namespace BusinessLogicalLayer.BusinessLL
 {
+    /// <summary>
+    /// Meio para ligar o banco de dados Das Saidas dos produtos com a tela
+    /// e fazendo sua regras de negocios onde no caso de das saidas das vendas sao
+    /// as regras de estoque e regras de fidelidade do cliente
+    /// </summary>
     public class SaidaBll
     {
-        SaidaDAL saidaDAL = new SaidaDAL();
+        SaidaDAL saidaDAL = new();
 
    
         public Response Insert(Saida transacao)
@@ -25,10 +30,5 @@ namespace BusinessLogicalLayer.BusinessLL
         {
             return saidaDAL.GetAll();
         }
-        public SingleResponse<Saida> GetByID(int id)
-        {
-            return saidaDAL.GetByID(id);
-        }
-
     }
 }

@@ -6,16 +6,21 @@ using System.Transactions;
 
 namespace BusinessLogicalLayer.BusinessLL
 {
+    /// <summary>
+    /// Meio para ligar o banco de dados de Funcionario com a tela 
+    /// e fazendo sua regras de negocios onde no caso de Funcionario Sao validacoes
+    /// o insert e o uptade tem o TransactionScope de endereco junto pois nao pode haver um endereco sem funcionario 
+    /// </summary>
     public class FuncionarioBll : ICRUD<Funcionario>
     {
-        FuncionarioDAL funcionarioDAL = new FuncionarioDAL();
-        EnderecoDAL enderecoDAL = new EnderecoDAL();
+        FuncionarioDAL funcionarioDAL = new();
+        EnderecoDAL enderecoDAL = new();
         public Response Insert(Funcionario funcionario)
         {
             Response response = FuncionarioValidator.Validate(funcionario);
             if (response.HasSuccess)
             {
-                using (TransactionScope scope = new TransactionScope())
+                using (TransactionScope scope = new())
                 {
                     response = enderecoDAL.Insert(funcionario.Endereco);
                     if (!response.HasSuccess)
@@ -40,9 +45,9 @@ namespace BusinessLogicalLayer.BusinessLL
             if (response.HasSuccess)
             {
                 {
-                    using (TransactionScope scope = new TransactionScope())
+                    using (TransactionScope scope = new())
                     {
-                        EnderecoDAL enderecoDAL = new EnderecoDAL();
+                        EnderecoDAL enderecoDAL = new();
 
                         response = enderecoDAL.Update(funcionario.Endereco);
                         funcionario.Senha = HashSenha.ComputeSha256Hash(funcionario.Senha);
@@ -72,10 +77,6 @@ namespace BusinessLogicalLayer.BusinessLL
         {
             return funcionarioDAL.GetAll();
         }
-        public SingleResponse<Funcionario> GetByEmail(string email)
-        {
-            return funcionarioDAL.GetByEmail(email);
-        }
         public SingleResponse<Funcionario> GetByID(int id)
         {
             return funcionarioDAL.GetByID(id);
@@ -85,7 +86,7 @@ namespace BusinessLogicalLayer.BusinessLL
             SingleResponse<Funcionario> response = FuncionarioDAL.LoginDAL(email);
             if (response.Item.Ativo == false)
             {
-                return new Response("Funcionario Desabilitado", false);
+                return new Response("NOME_FUNCIONARIO Desabilitado", false);
             }
             if (response.Item.Senha == HashSenha.ComputeSha256Hash(senha))
             {
@@ -94,9 +95,9 @@ namespace BusinessLogicalLayer.BusinessLL
             }
             else return new Response("login errado", false);
         }
-        public Response Disable(int iDCLiente)
+        public Response Disable(int FunID)
         {
-            return funcionarioDAL.Disable(iDCLiente);
+            return funcionarioDAL.Disable(FunID);
         }
     }
 }

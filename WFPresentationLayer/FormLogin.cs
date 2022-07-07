@@ -12,7 +12,7 @@ namespace WfPresentationLayer
     /// </summary>
     public partial class FormLogin : Form
     {
-        FuncionarioBll funcionario = new FuncionarioBll();
+        FuncionarioBll funcionario = new();
         public FormLogin()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace WfPresentationLayer
             if (r.HasSuccess)
             {
                 LabelResposta.Text = "Bem vindo";
-                MenuGeralAdmin menuGeralAdmin = new MenuGeralAdmin();
+                MenuGeralAdmin menuGeralAdmin = new();
                 menuGeralAdmin.ShowDialog();
                 this.Close();
             }

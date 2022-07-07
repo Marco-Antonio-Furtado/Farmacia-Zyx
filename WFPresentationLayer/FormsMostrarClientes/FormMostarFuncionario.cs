@@ -103,7 +103,6 @@ namespace WfPresentationLayer.Alteraçoes
                 return;
             }
             DataGridViewRow row = this.GridFuncionario.SelectedRows[0];
-            int i = 32;
             if (GridFuncionario.CurrentRow.Cells[0].Value == null)
             {
                 MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");
@@ -158,6 +157,17 @@ namespace WfPresentationLayer.Alteraçoes
             GridFuncionario.Refresh();
             GridFuncionario.DataSource = null;
         }
-
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            LimparGrid();
+            List<Funcionario> Funcionarios = funcionarioBll.GetAll().Dados;
+            foreach (Funcionario item in Funcionarios)
+            {
+                if (item.Ativo == true)
+                {
+                    SincronizarListaGrid(item);
+                }
+            }
+        }
     }
 }

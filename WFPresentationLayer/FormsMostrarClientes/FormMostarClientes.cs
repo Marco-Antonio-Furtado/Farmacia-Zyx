@@ -193,7 +193,7 @@ namespace WfPresentationLayer.Alteraçoes
         /// <param name="e"></param>
         private void GridClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Cliente clienteselecionado = new Cliente();
+            Cliente clienteselecionado = new();
             clienteselecionado.ID = Convert.ToInt32(GridClientes.Rows[e.RowIndex].Cells[0].Value);
             SingleResponse<Cliente> response = clienteBLL.GetByID(clienteselecionado.ID);
             if (!response.HasSuccess)

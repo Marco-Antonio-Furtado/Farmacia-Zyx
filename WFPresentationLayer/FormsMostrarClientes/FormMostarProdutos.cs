@@ -187,7 +187,6 @@ namespace WfPresentationLayer.Alteraçoes
             }
         }
         
-        
         // Metodos padrões Para melhor visualizacao e entendimento do usuario 
         private void LimparGrid()
         {
@@ -195,6 +194,19 @@ namespace WfPresentationLayer.Alteraçoes
             Gridprodutos.Refresh();
             Gridprodutos.DataSource = null;
             
+        }
+
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            LimparGrid();
+            Produtos = ProdutoBll.GetAll().Dados;
+            foreach (Produto Produto in Produtos)
+            {
+                if (Produto.Ativo == true)
+                {
+                    SincronizarListaGrid(Produto);
+                }
+            }
         }
     }
 }

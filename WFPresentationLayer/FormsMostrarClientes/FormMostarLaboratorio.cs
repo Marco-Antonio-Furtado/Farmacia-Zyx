@@ -52,7 +52,7 @@ namespace WfPresentationLayer.FormsMostrarClientes
             }
             else
           {
-                Laboratorio lab = new Laboratorio();
+                Laboratorio lab = new();
               lab.ID = Convert.ToInt32(GridLaboratorio.CurrentRow.Cells[0].Value.ToString());
               lab.Razao_Social = Convert.ToString(GridLaboratorio.CurrentRow.Cells[1].Value.ToString());
               lab.Telefone = Convert.ToString(GridLaboratorio.CurrentRow.Cells[2].Value.ToString());
@@ -155,13 +155,24 @@ namespace WfPresentationLayer.FormsMostrarClientes
 
         }
 
-
         // Metodos padrões Para melhor visualizacao e entendimento do usuario 
         private void LimparGrid()
         {
             GridLaboratorio.Rows.Clear();
             GridLaboratorio.Refresh();
             GridLaboratorio.DataSource = null;
+        }
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            LimparGrid();
+            List<Laboratorio> LaboratoriosOFF = laboratorioBLL.GetAll().Dados;
+            foreach (Laboratorio laboratorio in LaboratoriosOFF)
+            {
+                if (laboratorio.Ativo == true)
+                {
+                    SincronizarListaGrid(laboratorio);
+                }
+            }
         }
     }
 }

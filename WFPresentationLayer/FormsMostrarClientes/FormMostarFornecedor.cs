@@ -186,6 +186,17 @@ namespace WfPresentationLayer.Alteraçoes
                 this.Close();
             }
         }
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            LimparGrid();
+            List<Fornecedor> fornecedores = fornecedorBll.GetAll().Dados;
+            foreach (Fornecedor fornecedor in fornecedores)
+            {
+                if (fornecedor.Ativo == true)
+                {
+                    SincronizarListaGrid(fornecedor);
+                }
+            }
+        }
     }
-    
 }

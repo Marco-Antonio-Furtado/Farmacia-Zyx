@@ -1,8 +1,11 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using static System.Environment;
 
 namespace DataAccessLayer
 {
+   
+
     /// <summary>
     /// classe que auxilia as operacoes do dal 
     /// </summary>
@@ -15,7 +18,8 @@ namespace DataAccessLayer
 
         public DbConnection()
         {
-            conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\SAMSUNG\Desktop\3\Banco\BancoFarmaciaZYX.mdf;Integrated Security=True;Connect Timeout=30");
+            conn = new
+                SqlConnection(@$"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={FileLocator.GetInstance().GetPath()}\BancoFarmaciaZYX.mdf;Integrated Security=True;Connect Timeout=30");
         }
         /// <summary>
         /// Metodo que abre a conexao com o banco de dados

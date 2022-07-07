@@ -25,7 +25,7 @@ namespace WfPresentationLayer.Alteraçoes
         {
             InitializeComponent();
         }
-        List<Funcionario> funcionarios = new List<Funcionario>();
+        List<Funcionario> funcionarios = new();
         private void BtnCadastrarFuncionario_Click(object sender, EventArgs e)
         {
             _objForm2?.Close();
@@ -65,7 +65,7 @@ namespace WfPresentationLayer.Alteraçoes
             int IDCLiente = Convert.ToInt32(GridFuncionario.CurrentRow.Cells[0].Value.ToString());
             string nome = Convert.ToString(GridFuncionario.CurrentRow.Cells[1].Value.ToString());
 
-            DialogResult r = MeuMessageBox.Show("Deseja Apagar o NOME_FUNCIONARIO " + nome + " Da tabela Ou do banco " + "\r\n" + "X Para Voltar", "Escolha", "Deletar Do banco", "deletar da tabela");
+            DialogResult r = MeuMessageBox.Show("Deseja Apagar o Funcionario " + nome + " Da tabela Ou do banco " + "\r\n" + "X Para Voltar", "Escolha", "Deletar Do banco", "deletar da tabela");
             if (r == DialogResult.Yes)
             {
                 DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja deletar o NOME_FUNCIONARIO " + nome, " Tem Certeza?", "Sim", "Nao");
@@ -82,7 +82,7 @@ namespace WfPresentationLayer.Alteraçoes
             }
             else if (r == DialogResult.No)
             {
-                DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja Apagar o NOME_FUNCIONARIO " + nome, " Tem Certeza?", "Sim", "Nao");
+                DialogResult re = MeuMessageBox.Show("Tem Certeza que deseja Apagar o Funcionario " + nome, " Tem Certeza?", "Sim", "Nao");
                 if (re == DialogResult.Yes)
                 {
                     Response resposta = funcionarioBll.Disable(IDCLiente);
@@ -110,8 +110,8 @@ namespace WfPresentationLayer.Alteraçoes
             }
             else
             {
-
                 Funcionario fun = funcionarioBll.GetByID(Convert.ToInt32(GridFuncionario.CurrentRow.Cells[0].Value)).Item;
+                fun.ID = Convert.ToInt32(GridFuncionario.CurrentRow.Cells[0].Value);
                 Cargo c = new();
                 c.Nome_Cargo = Convert.ToString(GridFuncionario.CurrentRow.Cells[7].Value.ToString());
                 fun.Cargo = c;

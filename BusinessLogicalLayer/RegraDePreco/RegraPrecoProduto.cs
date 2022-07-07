@@ -62,7 +62,6 @@ namespace BusinessLogicalLayer.RegraDePreco
         public static Response TaxaLucroPadrao(Produto item)
         {
             double taxaDeLucro = 20;
-            ProdutoDal produtoDal = new();
 
             item.Valor_Unitario = Math.Floor(item.Valor_Unitario);
             item.Valor_Venda = Math.Ceiling(item.Valor_Unitario * (1 + taxaDeLucro / 100));

@@ -38,6 +38,10 @@ namespace WfPresentationLayer
                     listaAtiva.Add(cargo);
                 }
             }
+            CmbBoxEstado.ValueMember = "ID";
+            CmbBoxEstado.DisplayMember = "Nome_Estado";
+            CmbBoxEstado.DataSource = wf.GetAllEstado().Dados;
+
             CmbBoxCargos.DisplayMember = "Nome_Cargo";
             CmbBoxCargos.ValueMember = "ID";
             CmbBoxCargos.DataSource = listaAtiva;
@@ -69,6 +73,9 @@ namespace WfPresentationLayer
             
             TxtBoxCpfFuncionario.Text = fun.CPF;
 
+            CmbBoxEstado.ValueMember = "ID";
+            CmbBoxEstado.DisplayMember = "Nome_Estado";
+            CmbBoxEstado.DataSource = wf.GetAllEstado().Dados;
 
             TxtBoxCep.Text = fun.Endereco.CEP;
 
@@ -85,31 +92,19 @@ namespace WfPresentationLayer
             else
             {
                 this.TabGeral.SelectedIndex = 1;
-                CmbBoxEstado.ValueMember = "ID";
-                CmbBoxEstado.DisplayMember = "Nome_Estado";
-                CmbBoxEstado.DataSource = wf.GetAllEstado().Dados;
+                
             }
             
         }
         private void BtnCadastroFuncionario_Click_1(object sender, EventArgs e)
         {
-            string cep = TxtBoxCep.Text;
-            if (cep == "     -")
             {
-                cep = "";
-            }
+                string cep = TxtBoxCep.Text;
+                if (cep == "     -")
+                {
+                    cep = "";
+                }
 
-            if (TxtBoxIDfunci.Text != "")
-            {
-                Funcionario funcionario = funcionarioBll.GetByID(int.Parse(TxtBoxIDfunci.Text)).Item;
-                TxtBoxCep.Text = funcionario.Endereco.CEP;
-                Response r = funcionarioBll.Update(funcionario);
-                MeuMessageBox.Show(r.Message);
-                if (r.HasSuccess)
-                { this.Close(); }
-            }
-            else
-            {
                 Cargo cargo = new(nome: CmbBoxCargos.Text);
                 cargo.ID = (int)CmbBoxCargos.SelectedValue;
                 Endereco endereco = new(nomeRua: TxtBoxRua.Text,
@@ -127,11 +122,25 @@ namespace WfPresentationLayer
                                                           senha: TxtBoxSenhaFuncionario.Text
                                                           );
                 funcionario.Ativo = true;
-                Response resposta = funcionarioBll.Insert(funcionario);
-                MeuMessageBox.Show(resposta.Message);
-                if (resposta.HasSuccess)
+                if (TxtBoxIDfunci.Text != "")
                 {
-                    this.Close();
+                    int idfunc = int.Parse(TxtBoxIDfunci.Text);
+                    Funcionario PegarEndereco = funcionarioBll.GetByID(idfunc).Item;
+                    funcionario.Endereco.ID = PegarEndereco.Endereco.ID;
+                    funcionario.ID = int.Parse(TxtBoxIDfunci.Text);
+                    Response resposta = funcionarioBll.Update(funcionario);
+                    MeuMessageBox.Show(resposta.Message);
+                    if (resposta.HasSuccess)
+                    { this.Close(); }
+                }
+                else
+                {
+                    Response resposta = funcionarioBll.Insert(funcionario);
+                    MeuMessageBox.Show(resposta.Message);
+                    if (resposta.HasSuccess)
+                    {
+                        this.Close();
+                    }
                 }
             }
 

@@ -145,11 +145,12 @@ namespace WfPresentationLayer
             }
 
         }
-        private void BtnCadastrarCargo_Click(object sender, EventArgs e)
+        private void BtnCadastrarCargo_Click_1(object sender, EventArgs e)
         {
             FormCadastroCargo formCadastroCargo = new();
             formCadastroCargo.Show();
         }
+        
 
 
 
@@ -218,5 +219,6 @@ namespace WfPresentationLayer
                 TxtBoxRgFuncionario.Text = "Digite o Rg";
             }
         }
+
     }
 }

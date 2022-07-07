@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataAccessLayer
+﻿namespace DataAccessLayer
 {
-  internal class FileLocator
+    internal class FileLocator
     {
         private FileLocator()
         {

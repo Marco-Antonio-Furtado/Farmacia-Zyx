@@ -44,7 +44,7 @@ namespace DataAccessLayer
         }
         public Response Insert(Cargo item)
         {
-            string sql = $"INSERT INTO CARGOS (NOME) VALUES (@NOME)";
+            string sql = $"INSERT INTO CARGOS (NOME_CARGO) VALUES (@NOME)";
 
             SqlCommand command = new(sql);
 

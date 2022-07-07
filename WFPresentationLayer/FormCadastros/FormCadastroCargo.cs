@@ -34,7 +34,12 @@ namespace WfPresentationLayer.FormCadastros
             c.Nome_Cargo = TxtBoxNomeCargo.Text;
 
             CargoBLL cargo = new();
-            cargo.Insert(c);
+            Response resposta = cargo.Insert(c);
+            if (resposta.HasSuccess)
+            {
+                this.Close();
+            }
+
         }
 
         private void ImageBtnFechar_Click(object sender, EventArgs e)

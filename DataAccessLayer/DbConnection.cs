@@ -15,7 +15,7 @@ namespace DataAccessLayer
 
         public DbConnection()
         {
-            conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\SAMSUNG\Desktop\3\Banco\BancoFarmaciaZYX.mdf;Integrated Security=True;Connect Timeout=30");
+            conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Marco Antônio\Desktop\7\Banco\BancoFarmaciaZYX.mdf;Integrated Security=True;Connect Timeout=30");
         }
         /// <summary>
         /// Metodo que abre a conexao com o banco de dados

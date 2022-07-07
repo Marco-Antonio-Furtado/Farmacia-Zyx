@@ -69,7 +69,9 @@ namespace WfPresentationLayer.Alteraçoes
                 p.Nome = Convert.ToString(Gridprodutos.CurrentRow.Cells[1].Value.ToString());
                 lab.Razao_Social = Convert.ToString(Gridprodutos.CurrentRow.Cells[2].Value.ToString());
                 p.Descricao = Convert.ToString(Gridprodutos.CurrentRow.Cells[3].Value.ToString());
-                p.Valor_Venda = Convert.ToInt32(Gridprodutos.CurrentRow.Cells[5].Value.ToString());
+                p.Quantia_Estoque = Convert.ToInt32(Gridprodutos.CurrentRow.Cells[4].Value.ToString());
+                p.Valor_Unitario = Convert.ToInt32(Gridprodutos.CurrentRow.Cells[5].Value.ToString());
+                p.Valor_Venda = Convert.ToInt32(Gridprodutos.CurrentRow.Cells[6].Value.ToString());
                 p.ID_Laboratorio = lab;
                 _objForm3?.Close();
                 _objForm3 = new FormCadastroProduto(p)

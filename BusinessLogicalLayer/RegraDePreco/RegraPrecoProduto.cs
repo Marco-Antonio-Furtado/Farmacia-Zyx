@@ -12,27 +12,32 @@ namespace BusinessLogicalLayer.RegraDePreco
     public class RegraPrecoProduto
     {
         /// <summary>
-        /// metodo que atualiza o preco na hora da entrada
+        /// Deve ser chamado numa entrada de produtos já cadastrados para atualizar seus preços baseado em quanto foi pago pela quantidade de itens novos no estoque 
         /// </summary>
         /// <param name="entrada"></param>
-        /// <param name="taxaDeLucro"></param>
+        /// <param name="taxaDeLucro">Taxa de lucro desejada em numeros inteiros (20,40, 70...)</param>
         /// <returns></returns>
-        public static Response AtualizarPrecos(Entrada entrada, double taxaDeLucro)
+        public static Response AtualizarPrecosEntrada(Entrada entrada, double taxaDeLucro)
         {
             try
             {
                ProdutoDal produtoDal = new();
                 foreach (Item item in entrada.Items)
                 {
+                    //se o preço do produto foi alterado no form, ele irá entrar nesse if e sofrerá as alterações necessárias no preço
                     if (item.IDProduto.IsPrecoAlterado == true)
-                    {    
+                    {   
+                        //adiquirindo todas as informações necessárias do produto no banco de dados
                         Produto produto = produtoDal.GetByID(item.IDProduto.ID).Item;
-
+                        
+                        //esses são os dados antes da atualização, por isso "estoqueAntigo" e "precoAntigo" estão ligados ao "produto"
+                        //enquanto "item" carrega os dados que o usuário deseja atualizar                       
                         double estoqueAntigo = produto.Quantia_Estoque;
                         double estoqueNovo = item.Qtd;
                         double precoAntigo = produto.Valor_Unitario;
                         double precoNovo = item.Preco;
 
+                        //fórmula para calcular o preço mínimo de venda para não sofrer perdas
                         double precoBase = ((precoAntigo * estoqueAntigo) + (precoNovo * estoqueNovo)) / (estoqueNovo + estoqueAntigo);
                         double precoAtualizado = Math.Ceiling(precoBase * (1 + taxaDeLucro/100));
 
@@ -59,8 +64,8 @@ namespace BusinessLogicalLayer.RegraDePreco
             double taxaDeLucro = 20;
             ProdutoDal produtoDal = new();
 
-            item.Valor_Venda = item.Valor_Unitario;
-            item.Valor_Venda *= (1 + taxaDeLucro / 100);
+            item.Valor_Unitario = Math.Floor(item.Valor_Unitario);
+            item.Valor_Venda = Math.Ceiling(item.Valor_Unitario * (1 + taxaDeLucro / 100));
 
             return ResponseFactory.CreateInstance().CreateSuccessResponse();
         }

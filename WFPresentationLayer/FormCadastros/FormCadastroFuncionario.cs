@@ -69,10 +69,14 @@ namespace WfPresentationLayer
             
             TxtBoxCpfFuncionario.Text = fun.CPF;
 
+
+            TxtBoxCep.Text = fun.Endereco.CEP;
+
         }
 
         private void BtnCadastroEndereco_Click_1(object sender, EventArgs e)
         {
+
             if (txtBoxNomeFuncionario.Text == "Digite o Nome" || txtBoxEmailFuncionario.Text == "Digite o Email" || TxtBoxCpfFuncionario.Text == "" || TxtBoxTelefone1Funcionario.Text == "" || TxtBoxSenhaFuncionario.Text == "" || TxtBoxRgFuncionario.Text == "Digite o Rg")
             {
                 MeuMessageBox.Show("Voce nao inseriu todos os campos");
@@ -85,6 +89,7 @@ namespace WfPresentationLayer
                 CmbBoxEstado.DisplayMember = "Nome_Estado";
                 CmbBoxEstado.DataSource = wf.GetAllEstado().Dados;
             }
+            
         }
         private void BtnCadastroFuncionario_Click_1(object sender, EventArgs e)
         {
@@ -94,37 +99,34 @@ namespace WfPresentationLayer
                 cep = "";
             }
 
-            Cargo cargo = new(nome: CmbBoxCargos.Text);
-            cargo.ID = (int)CmbBoxCargos.SelectedValue;
-            Endereco endereco = new(nomeRua: TxtBoxRua.Text,
-                                                        cEP: cep,
-                                                        numeroCasa: TxtBoxNumero.Text,
-                                                        estadoID: (int)CmbBoxEstado.SelectedValue,
-                                                        cidadeID: (int)CmbBoxCidade.SelectedValue);
-            Funcionario funcionario = new(nome: txtBoxNomeFuncionario.Text,
-                                                      cPF: TxtBoxCpfFuncionario.Text,
-                                                       rG: TxtBoxRgFuncionario.Text,
-                                                      email: txtBoxEmailFuncionario.Text,
-                                                      telefone: TxtBoxTelefone1Funcionario.Text,
-                                                      cargo: cargo,
-                                                      endereco: endereco,
-                                                      senha: TxtBoxSenhaFuncionario.Text
-                                                      );
-            funcionario.Ativo = true;
             if (TxtBoxIDfunci.Text != "")
             {
-                int idfunc = int.Parse(TxtBoxIDfunci.Text);
-                Funcionario PegarEndereco = funcionarioBll.GetByID(idfunc).Item;
-                string s = "";
-                funcionario.Endereco.ID = PegarEndereco.Endereco.ID;
-                funcionario.ID = int.Parse(TxtBoxIDfunci.Text);
-                Response resposta = funcionarioBll.Update(funcionario);
-                MeuMessageBox.Show(resposta.Message);
-                if (resposta.HasSuccess)
+                Funcionario funcionario = funcionarioBll.GetByID(int.Parse(TxtBoxIDfunci.Text)).Item;
+                TxtBoxCep.Text = funcionario.Endereco.CEP;
+                Response r = funcionarioBll.Update(funcionario);
+                MeuMessageBox.Show(r.Message);
+                if (r.HasSuccess)
                 { this.Close(); }
             }
             else
             {
+                Cargo cargo = new(nome: CmbBoxCargos.Text);
+                cargo.ID = (int)CmbBoxCargos.SelectedValue;
+                Endereco endereco = new(nomeRua: TxtBoxRua.Text,
+                                                            cEP: cep,
+                                                            numeroCasa: TxtBoxNumero.Text,
+                                                            estadoID: (int)CmbBoxEstado.SelectedValue,
+                                                            cidadeID: (int)CmbBoxCidade.SelectedValue);
+                Funcionario funcionario = new(nome: txtBoxNomeFuncionario.Text,
+                                                          cPF: TxtBoxCpfFuncionario.Text,
+                                                           rG: TxtBoxRgFuncionario.Text,
+                                                          email: txtBoxEmailFuncionario.Text,
+                                                          telefone: TxtBoxTelefone1Funcionario.Text,
+                                                          cargo: cargo,
+                                                          endereco: endereco,
+                                                          senha: TxtBoxSenhaFuncionario.Text
+                                                          );
+                funcionario.Ativo = true;
                 Response resposta = funcionarioBll.Insert(funcionario);
                 MeuMessageBox.Show(resposta.Message);
                 if (resposta.HasSuccess)
@@ -132,6 +134,7 @@ namespace WfPresentationLayer
                     this.Close();
                 }
             }
+
         }
         private void BtnCadastrarCargo_Click(object sender, EventArgs e)
         {

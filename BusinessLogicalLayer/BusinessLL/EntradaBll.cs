@@ -16,7 +16,7 @@ namespace BusinessLogicalLayer.BusinessLL
         EntradaDal entradaDal = new();
         public Response Insert(Entrada entrada)
         {
-            if(!RegraPrecoProduto.AtualizarPrecos(entrada, 20).HasSuccess )
+            if(!RegraPrecoProduto.AtualizarPrecosEntrada(entrada, 20).HasSuccess )
             {
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
@@ -37,7 +37,7 @@ namespace BusinessLogicalLayer.BusinessLL
             {
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
-            if(!RegraPrecoProduto.AtualizarPrecos(entrada, taxaDeLucro).HasSuccess )
+            if(!RegraPrecoProduto.AtualizarPrecosEntrada(entrada, taxaDeLucro).HasSuccess )
             {
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }

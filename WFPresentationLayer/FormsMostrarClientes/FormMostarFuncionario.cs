@@ -110,14 +110,9 @@ namespace WfPresentationLayer.Alteraçoes
             }
             else
             {
-                Funcionario fun = new();
+
+                Funcionario fun = funcionarioBll.GetByID(Convert.ToInt32(GridFuncionario.CurrentRow.Cells[0].Value)).Item;
                 Cargo c = new();
-                fun.ID = Convert.ToInt32(GridFuncionario.CurrentRow.Cells[0].Value.ToString());
-                fun.Nome_Funcionario = Convert.ToString(GridFuncionario.CurrentRow.Cells[1].Value.ToString());
-                fun.RG = Convert.ToString(GridFuncionario.CurrentRow.Cells[2].Value.ToString());
-                fun.CPF = Convert.ToString(GridFuncionario.CurrentRow.Cells[3].Value.ToString());
-                fun.Telefone = Convert.ToString(GridFuncionario.CurrentRow.Cells[4].Value.ToString());
-                fun.Email = Convert.ToString(GridFuncionario.CurrentRow.Cells[5].Value.ToString());
                 c.Nome_Cargo = Convert.ToString(GridFuncionario.CurrentRow.Cells[7].Value.ToString());
                 fun.Cargo = c;
                 _objForm2?.Close();

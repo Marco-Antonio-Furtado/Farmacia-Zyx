@@ -62,12 +62,12 @@ namespace WfPresentationLayer
             TxtBoxDescrisaoProduto.Text = p.Descricao;
             TxtBoxId.Text = p.ID.ToString();
             TxtBoxNomeProduto.Text = p.Nome;
-            TxtBoxDescrisaoProduto.Text = p.ID_Laboratorio.Razao_Social;
             TxtBoxPrecoUnitario.Text = p.Valor_Unitario.ToString();
+            CmbBoxLaboratorio.SelectedText = p.ID_Laboratorio.Razao_Social;
         }
         private void BtnCadastrarProduto_Click_1(object sender, EventArgs e)
         {
-            if(TxtBoxPrecoUnitario.Text == "" || TxtBoxNomeProduto.Text == "Digite Nome Produto" || TxtBoxDescrisaoProduto.Text == "Digite A Descrisao")
+            if(TxtBoxPrecoUnitario.Text == "" || TxtBoxNomeProduto.Text == "Digite Nome Produto" || TxtBoxDescrisaoProduto.Text == "Digite A Descrição")
             {
                 MeuMessageBox.Show("Voce nao informou todos os campos");
                 return;
@@ -92,7 +92,6 @@ namespace WfPresentationLayer
             }
             else
             {
-                //asd
                 Response resposta = produtoBll.Insert(produto);
                 MeuMessageBox.Show(resposta.Message);
                 if (resposta.HasSuccess)
@@ -147,13 +146,13 @@ namespace WfPresentationLayer
 
         private void TxtBoxDescrisaoProduto_Enter(object sender, EventArgs e)
         {
-            if (TxtBoxDescrisaoProduto.Text == "Digite A Descrisao")
+            if (TxtBoxDescrisaoProduto.Text == "Digite A Descrição")
             {
                 TxtBoxDescrisaoProduto.Text = "";
             }
             else if (TxtBoxDescrisaoProduto.Text == "")
             {
-                TxtBoxDescrisaoProduto.Text = "Digite A Descrisao";
+                TxtBoxDescrisaoProduto.Text = "Digite A Descrição";
             }
         }
     }

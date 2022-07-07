@@ -78,6 +78,8 @@ namespace WfPresentationLayer
             CmbBoxEstado.DataSource = wf.GetAllEstado().Dados;
 
             TxtBoxCep.Text = fun.Endereco.CEP;
+            TxtBoxRua.Text = fun.Endereco.NomeRua;
+            TxtBoxNumero.Text = fun.Endereco.NumeroCasa;
 
         }
 

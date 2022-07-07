@@ -46,11 +46,13 @@ namespace DataAccessLayer
         }
         public Response Update(Funcionario item)
         {
-            string sql = "UPDATE FUNCIONARIOS SET NOME_FUNCIONARIO = @NOME, RG = @RG, TELEFONE = @TELEFONE, ENDERECO = @ENDERECO, CARGO_ID = @CARGO_ID,ATIVO = @ATIVO, SENHA = @SENHA WHERE ID = @ID";
+            string sql = "UPDATE FUNCIONARIOS SET NOME_FUNCIONARIO = @NOME, RG = @RG,CPF = @CPF,EMAIL = @EMAIL, TELEFONE = @TELEFONE, ENDERECO = @ENDERECO, CARGO_ID = @CARGO_ID,ATIVO = @ATIVO, SENHA = @SENHA WHERE ID = @ID";
             SqlCommand command = new(sql);
 
             command.Parameters.AddWithValue("@NOME", item.Nome_Funcionario);
             command.Parameters.AddWithValue("@RG", item.RG);
+            command.Parameters.AddWithValue("@CPF", item.CPF);
+            command.Parameters.AddWithValue("@EMAIL", item.Email);
             command.Parameters.AddWithValue("@TELEFONE", item.Telefone);
             command.Parameters.AddWithValue("@ENDERECO", item.Endereco.ID);
             command.Parameters.AddWithValue("@CARGO_ID", item.Cargo.ID);
@@ -169,7 +171,7 @@ namespace DataAccessLayer
         }
         public SingleResponse<Funcionario> GetByID(int id)
         {
-            string sql = $"SELECT F.NOME_FUNCIONARIO,F.CPF,F.RG,F.EMAIL,F.TELEFONE,CAR.NOME_CARGO,F.ATIVO,E.NOME_RUA,E.ID AS E_ID,CID.NOME_CIDADE FROM FUNCIONARIOS F INNER JOIN CARGOS CAR ON F.CARGO_ID = CAR.ID INNER JOIN ENDERECOS E ON F.ENDERECO = E.ID INNER JOIN CIDADES CID ON E.CIDADE_ID = CID.ID WHERE F.ID = @ID";
+            string sql = $"SELECT F.NOME_FUNCIONARIO,F.CPF,F.RG,F.EMAIL,F.TELEFONE,CAR.NOME_CARGO,F.ATIVO,E.NOME_RUA,E.ID AS E_ID,E.CEP,E.NUMERO_CASA,CID.NOME_CIDADE FROM FUNCIONARIOS F INNER JOIN CARGOS CAR ON F.CARGO_ID = CAR.ID INNER JOIN ENDERECOS E ON F.ENDERECO = E.ID INNER JOIN CIDADES CID ON E.CIDADE_ID = CID.ID WHERE F.ID = @ID";
 
             DbConnection db = new();
             SqlCommand command = new(sql);
@@ -198,7 +200,8 @@ namespace DataAccessLayer
                     cargo.Nome_Cargo = (string)reader["NOME_CARGO"];
                     e.ID = (int)reader["E_ID"];
                     e.NomeRua = (string)reader["NOME_RUA"];
-
+                    e.CEP = (string)reader["CEP"];
+                    e.NumeroCasa = (string)reader["NUMERO_CASA"];
                     c.Nome_Cidade = (string)reader["NOME_CIDADE"];
                     Fun.Cargo = cargo;
                     Fun.Endereco = e;

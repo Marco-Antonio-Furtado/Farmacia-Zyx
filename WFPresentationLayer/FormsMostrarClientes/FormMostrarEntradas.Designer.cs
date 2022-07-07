@@ -32,6 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GridEntrada = new System.Windows.Forms.DataGridView();
+            this.PnlCompras = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.BtnSelecionarVendas = new System.Windows.Forms.Button();
+            this.BtnCadastrarVendas = new System.Windows.Forms.Button();
+            this.BtnEntradasHoje = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.GridID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,13 +48,6 @@
             this.GridFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PnlCompras = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.BtnSelecionarVendas = new System.Windows.Forms.Button();
-            this.BtnCadastrarVendas = new System.Windows.Forms.Button();
-            this.BtnEntradasHoje = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridEntrada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -100,69 +100,6 @@
             this.GridEntrada.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridEntrada.Size = new System.Drawing.Size(1290, 694);
             this.GridEntrada.TabIndex = 46;
-            // 
-            // GridID
-            // 
-            this.GridID.HeaderText = "ID";
-            this.GridID.MinimumWidth = 6;
-            this.GridID.Name = "GridID";
-            this.GridID.Width = 50;
-            // 
-            // GridProduto
-            // 
-            this.GridProduto.HeaderText = "Produtos";
-            this.GridProduto.MinimumWidth = 6;
-            this.GridProduto.Name = "GridProduto";
-            this.GridProduto.Width = 125;
-            // 
-            // GridValorUnitario
-            // 
-            this.GridValorUnitario.HeaderText = "Valor Unitario";
-            this.GridValorUnitario.MinimumWidth = 6;
-            this.GridValorUnitario.Name = "GridValorUnitario";
-            this.GridValorUnitario.Width = 125;
-            // 
-            // GridQuantidade
-            // 
-            this.GridQuantidade.HeaderText = "Quantidade";
-            this.GridQuantidade.MinimumWidth = 6;
-            this.GridQuantidade.Name = "GridQuantidade";
-            this.GridQuantidade.Width = 120;
-            // 
-            // GridValorCompra
-            // 
-            this.GridValorCompra.HeaderText = "Valor Total";
-            this.GridValorCompra.MinimumWidth = 6;
-            this.GridValorCompra.Name = "GridValorCompra";
-            this.GridValorCompra.Width = 125;
-            // 
-            // GridFormaPagamento
-            // 
-            this.GridFormaPagamento.HeaderText = "Forma Pagamento";
-            this.GridFormaPagamento.MinimumWidth = 6;
-            this.GridFormaPagamento.Name = "GridFormaPagamento";
-            this.GridFormaPagamento.Width = 125;
-            // 
-            // GridFornecedor
-            // 
-            this.GridFornecedor.HeaderText = "Fornecedor";
-            this.GridFornecedor.MinimumWidth = 6;
-            this.GridFornecedor.Name = "GridFornecedor";
-            this.GridFornecedor.Width = 120;
-            // 
-            // GridData
-            // 
-            this.GridData.HeaderText = "Data";
-            this.GridData.MinimumWidth = 6;
-            this.GridData.Name = "GridData";
-            this.GridData.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "NOME_FUNCIONARIO";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // PnlCompras
             // 
@@ -247,6 +184,69 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.BtnEntradasHoje_Click);
             // 
+            // GridID
+            // 
+            this.GridID.HeaderText = "ID";
+            this.GridID.MinimumWidth = 6;
+            this.GridID.Name = "GridID";
+            this.GridID.Width = 50;
+            // 
+            // GridProduto
+            // 
+            this.GridProduto.HeaderText = "Produtos";
+            this.GridProduto.MinimumWidth = 6;
+            this.GridProduto.Name = "GridProduto";
+            this.GridProduto.Width = 125;
+            // 
+            // GridValorUnitario
+            // 
+            this.GridValorUnitario.HeaderText = "Valor Unitario";
+            this.GridValorUnitario.MinimumWidth = 6;
+            this.GridValorUnitario.Name = "GridValorUnitario";
+            this.GridValorUnitario.Width = 125;
+            // 
+            // GridQuantidade
+            // 
+            this.GridQuantidade.HeaderText = "Quantidade";
+            this.GridQuantidade.MinimumWidth = 6;
+            this.GridQuantidade.Name = "GridQuantidade";
+            this.GridQuantidade.Width = 120;
+            // 
+            // GridValorCompra
+            // 
+            this.GridValorCompra.HeaderText = "Valor Total";
+            this.GridValorCompra.MinimumWidth = 6;
+            this.GridValorCompra.Name = "GridValorCompra";
+            this.GridValorCompra.Width = 125;
+            // 
+            // GridFormaPagamento
+            // 
+            this.GridFormaPagamento.HeaderText = "Forma Pagamento";
+            this.GridFormaPagamento.MinimumWidth = 6;
+            this.GridFormaPagamento.Name = "GridFormaPagamento";
+            this.GridFormaPagamento.Width = 125;
+            // 
+            // GridFornecedor
+            // 
+            this.GridFornecedor.HeaderText = "Fornecedor";
+            this.GridFornecedor.MinimumWidth = 6;
+            this.GridFornecedor.Name = "GridFornecedor";
+            this.GridFornecedor.Width = 120;
+            // 
+            // GridData
+            // 
+            this.GridData.HeaderText = "Data";
+            this.GridData.MinimumWidth = 6;
+            this.GridData.Name = "GridData";
+            this.GridData.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Funcionario";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
             // FormMostrarEntradas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -275,20 +275,20 @@
 
         private DataGridView GridEntrada;
         private Panel PnlCompras;
-        private DataGridViewTextBoxColumn GridID;
-        private DataGridViewTextBoxColumn GridProduto;
-        private DataGridViewTextBoxColumn GridValorCompra;
-        private DataGridViewTextBoxColumn GridQuantidade;
-        private DataGridViewTextBoxColumn GridFormaPagamento;
-        private DataGridViewTextBoxColumn GridFornecedor;
-        private DataGridViewTextBoxColumn GridData;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn GridValorUnitario;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
         private Button BtnSelecionarVendas;
         private Button BtnCadastrarVendas;
         private Button BtnEntradasHoje;
         private PictureBox pictureBox1;
+        private DataGridViewTextBoxColumn GridID;
+        private DataGridViewTextBoxColumn GridProduto;
+        private DataGridViewTextBoxColumn GridValorUnitario;
+        private DataGridViewTextBoxColumn GridQuantidade;
+        private DataGridViewTextBoxColumn GridValorCompra;
+        private DataGridViewTextBoxColumn GridFormaPagamento;
+        private DataGridViewTextBoxColumn GridFornecedor;
+        private DataGridViewTextBoxColumn GridData;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

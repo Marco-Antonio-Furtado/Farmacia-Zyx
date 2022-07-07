@@ -30,6 +30,7 @@
         {
             this.TabGeral = new System.Windows.Forms.TabControl();
             this.TabFuncionario = new System.Windows.Forms.TabPage();
+            this.BtnCadastrarCargo = new System.Windows.Forms.Button();
             this.LblIDfunci = new System.Windows.Forms.Label();
             this.TxtBoxIDfunci = new System.Windows.Forms.MaskedTextBox();
             this.CmbBoxCargos = new System.Windows.Forms.ComboBox();
@@ -60,11 +61,12 @@
             this.TxtBoxCep = new System.Windows.Forms.MaskedTextBox();
             this.ImageBtnFechar = new System.Windows.Forms.PictureBox();
             this.LblTitulo = new System.Windows.Forms.Label();
-            this.BtnCadastrarCargo = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TabGeral.SuspendLayout();
             this.TabFuncionario.SuspendLayout();
             this.TabEndereco.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TabGeral
@@ -81,6 +83,7 @@
             // TabFuncionario
             // 
             this.TabFuncionario.BackColor = System.Drawing.Color.IndianRed;
+            this.TabFuncionario.Controls.Add(this.pictureBox1);
             this.TabFuncionario.Controls.Add(this.BtnCadastrarCargo);
             this.TabFuncionario.Controls.Add(this.LblIDfunci);
             this.TabFuncionario.Controls.Add(this.TxtBoxIDfunci);
@@ -101,10 +104,24 @@
             this.TabFuncionario.ForeColor = System.Drawing.Color.White;
             this.TabFuncionario.Location = new System.Drawing.Point(4, 29);
             this.TabFuncionario.Name = "TabFuncionario";
-            this.TabFuncionario.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.TabFuncionario.Padding = new System.Windows.Forms.Padding(3);
             this.TabFuncionario.Size = new System.Drawing.Size(477, 472);
             this.TabFuncionario.TabIndex = 0;
             this.TabFuncionario.Text = "Funcionario";
+            // 
+            // BtnCadastrarCargo
+            // 
+            this.BtnCadastrarCargo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.BtnCadastrarCargo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnCadastrarCargo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnCadastrarCargo.ForeColor = System.Drawing.Color.White;
+            this.BtnCadastrarCargo.Location = new System.Drawing.Point(229, 304);
+            this.BtnCadastrarCargo.Name = "BtnCadastrarCargo";
+            this.BtnCadastrarCargo.Size = new System.Drawing.Size(144, 119);
+            this.BtnCadastrarCargo.TabIndex = 95;
+            this.BtnCadastrarCargo.Text = "Cadastrar Cargo";
+            this.BtnCadastrarCargo.UseVisualStyleBackColor = false;
+            this.BtnCadastrarCargo.Click += new System.EventHandler(this.BtnCadastrarCargo_Click_1);
             // 
             // LblIDfunci
             // 
@@ -308,7 +325,7 @@
             this.TabEndereco.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.TabEndereco.Location = new System.Drawing.Point(4, 29);
             this.TabEndereco.Name = "TabEndereco";
-            this.TabEndereco.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.TabEndereco.Padding = new System.Windows.Forms.Padding(3);
             this.TabEndereco.Size = new System.Drawing.Size(477, 472);
             this.TabEndereco.TabIndex = 1;
             this.TabEndereco.Text = "Endereco";
@@ -458,19 +475,15 @@
             this.LblTitulo.TabIndex = 94;
             this.LblTitulo.Text = "Cadastro Funcionario";
             // 
-            // BtnCadastrarCargo
+            // pictureBox1
             // 
-            this.BtnCadastrarCargo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.BtnCadastrarCargo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnCadastrarCargo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnCadastrarCargo.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrarCargo.Location = new System.Drawing.Point(229, 304);
-            this.BtnCadastrarCargo.Name = "BtnCadastrarCargo";
-            this.BtnCadastrarCargo.Size = new System.Drawing.Size(144, 119);
-            this.BtnCadastrarCargo.TabIndex = 95;
-            this.BtnCadastrarCargo.Text = "Cadastrar Cargo";
-            this.BtnCadastrarCargo.UseVisualStyleBackColor = false;
-            this.BtnCadastrarCargo.Click += new System.EventHandler(this.BtnCadastrarCargo_Click_1);
+            this.pictureBox1.Image = global::WfPresentationLayer.Properties.Resources.icons8_funcionário_homem_1002;
+            this.pictureBox1.Location = new System.Drawing.Point(379, 384);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(98, 82);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 96;
+            this.pictureBox1.TabStop = false;
             // 
             // FormCadastroFuncionario
             // 
@@ -491,6 +504,7 @@
             this.TabEndereco.ResumeLayout(false);
             this.TabEndereco.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -535,5 +549,6 @@
         private Label LblIDfunci;
         public MaskedTextBox TxtBoxIDfunci;
         private Button BtnCadastrarCargo;
+        private PictureBox pictureBox1;
     }
 }

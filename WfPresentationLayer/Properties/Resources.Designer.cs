@@ -343,6 +343,16 @@ namespace WfPresentationLayer.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_caminhão_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-caminhão-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_close_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-close-64", resourceCulture);
@@ -413,6 +423,16 @@ namespace WfPresentationLayer.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_funcionário_homem_1002 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-funcionário-homem-1002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_funcionário_homem_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-funcionário-homem-80", resourceCulture);
@@ -433,9 +453,29 @@ namespace WfPresentationLayer.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_homem__com__barba__em__azul__camisa_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-homem,-com,-barba,-em,-azul,-camisa-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_homem_com_carrinho_de_compras_de_óculos_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-homem-com-carrinho-de-compras-de-óculos-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_homem_com_carrinho_de_compras_de_óculos_1001 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-homem-com-carrinho-de-compras-de-óculos-1001", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

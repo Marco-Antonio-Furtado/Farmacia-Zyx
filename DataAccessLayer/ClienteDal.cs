@@ -66,8 +66,10 @@ namespace DataAccessLayer
 
             SqlCommand command = new(sql);
             command.Parameters.AddWithValue("@ID", cliente.ID);
+            command.Parameters.AddWithValue("@CPF", cliente.CPF);
             command.Parameters.AddWithValue("@NOME_CLIENTE", cliente.Nome_Cliente);
             command.Parameters.AddWithValue("@RG", cliente.RG);
+            command.Parameters.AddWithValue("@EMAIL", cliente.Email);
             command.Parameters.AddWithValue("@TELEFONE", cliente.Telefone);
             command.Parameters.AddWithValue("@TELEFONE2", cliente.Telefone2);
             command.Parameters.AddWithValue("@PROGRAMA_FIDELIDADE", cliente.Programa_Fidelidade);

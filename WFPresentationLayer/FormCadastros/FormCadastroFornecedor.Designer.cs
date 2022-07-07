@@ -43,7 +43,9 @@
             this.TxtBoxID = new System.Windows.Forms.TextBox();
             this.ImageBtnFechar = new System.Windows.Forms.PictureBox();
             this.LblTitulo = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -230,12 +232,23 @@
             this.LblTitulo.TabIndex = 95;
             this.LblTitulo.Text = "Cadastrar Fornecedor";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WfPresentationLayer.Properties.Resources.icons8_caminhão_100;
+            this.pictureBox1.Location = new System.Drawing.Point(388, 283);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 71);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 96;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormCadastroFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(518, 354);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LblTitulo);
             this.Controls.Add(this.ImageBtnFechar);
             this.Controls.Add(this.LblIdAlteracao);
@@ -256,6 +269,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar NOME_FUNCIONARIO";
             ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +291,6 @@
         private TextBox TxtBoxID;
         private PictureBox ImageBtnFechar;
         private Label LblTitulo;
+        private PictureBox pictureBox1;
     }
 }

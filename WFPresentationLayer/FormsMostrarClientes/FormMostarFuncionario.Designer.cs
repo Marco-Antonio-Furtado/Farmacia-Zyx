@@ -195,7 +195,7 @@
             this.BtnDeletarFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnDeletarFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDeletarFuncionario.ForeColor = System.Drawing.Color.White;
-            this.BtnDeletarFuncionario.Location = new System.Drawing.Point(894, 703);
+            this.BtnDeletarFuncionario.Location = new System.Drawing.Point(894, 705);
             this.BtnDeletarFuncionario.Name = "BtnDeletarFuncionario";
             this.BtnDeletarFuncionario.Size = new System.Drawing.Size(277, 79);
             this.BtnDeletarFuncionario.TabIndex = 34;
@@ -291,7 +291,7 @@
             this.PctRefresh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PctRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.PctRefresh.Image = global::WfPresentationLayer.Properties.Resources.icons8_actualizar_40;
-            this.PctRefresh.Location = new System.Drawing.Point(1197, 713);
+            this.PctRefresh.Location = new System.Drawing.Point(1197, 714);
             this.PctRefresh.Name = "PctRefresh";
             this.PctRefresh.Size = new System.Drawing.Size(97, 59);
             this.PctRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -305,7 +305,7 @@
             this.BtnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnRefresh.ForeColor = System.Drawing.Color.White;
-            this.BtnRefresh.Location = new System.Drawing.Point(1185, 704);
+            this.BtnRefresh.Location = new System.Drawing.Point(1185, 705);
             this.BtnRefresh.Name = "BtnRefresh";
             this.BtnRefresh.Size = new System.Drawing.Size(118, 79);
             this.BtnRefresh.TabIndex = 53;

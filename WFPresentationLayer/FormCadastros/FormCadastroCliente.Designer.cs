@@ -45,7 +45,9 @@
             this.LblIdAlteracao = new System.Windows.Forms.Label();
             this.LblTitulo = new System.Windows.Forms.Label();
             this.ImageBtnFechar = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -252,12 +254,24 @@
             this.ImageBtnFechar.TabStop = false;
             this.ImageBtnFechar.Click += new System.EventHandler(this.ImageBtnFechar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.IndianRed;
+            this.pictureBox1.Image = global::WfPresentationLayer.Properties.Resources.icons8_homem__com__barba__em__azul__camisa_100;
+            this.pictureBox1.Location = new System.Drawing.Point(340, 338);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 117);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 98;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(491, 456);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LblTitulo);
             this.Controls.Add(this.ImageBtnFechar);
             this.Controls.Add(this.LblIdAlteracao);
@@ -280,6 +294,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCadastroCliente";
             ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +318,6 @@
         private Label LblIdAlteracao;
         private Label LblTitulo;
         private PictureBox ImageBtnFechar;
+        private PictureBox pictureBox1;
     }
 }

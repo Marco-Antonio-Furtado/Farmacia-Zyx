@@ -49,12 +49,15 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PnlCl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnCadastrarCliente
@@ -65,9 +68,9 @@
             this.BtnCadastrarCliente.ForeColor = System.Drawing.Color.White;
             this.BtnCadastrarCliente.Location = new System.Drawing.Point(12, 704);
             this.BtnCadastrarCliente.Name = "BtnCadastrarCliente";
-            this.BtnCadastrarCliente.Size = new System.Drawing.Size(312, 79);
+            this.BtnCadastrarCliente.Size = new System.Drawing.Size(287, 79);
             this.BtnCadastrarCliente.TabIndex = 22;
-            this.BtnCadastrarCliente.Text = "Cadastrar Cliente";
+            this.BtnCadastrarCliente.Text = "          Cadastrar Cliente";
             this.BtnCadastrarCliente.UseVisualStyleBackColor = false;
             this.BtnCadastrarCliente.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
@@ -77,9 +80,9 @@
             this.BtnAlterarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnAlterarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAlterarCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnAlterarCliente.Location = new System.Drawing.Point(341, 704);
+            this.BtnAlterarCliente.Location = new System.Drawing.Point(313, 704);
             this.BtnAlterarCliente.Name = "BtnAlterarCliente";
-            this.BtnAlterarCliente.Size = new System.Drawing.Size(312, 79);
+            this.BtnAlterarCliente.Size = new System.Drawing.Size(292, 79);
             this.BtnAlterarCliente.TabIndex = 23;
             this.BtnAlterarCliente.Text = "             Alterar / Habilitar   Cliente";
             this.BtnAlterarCliente.UseVisualStyleBackColor = false;
@@ -91,9 +94,9 @@
             this.BtnDeletarClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnDeletarClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDeletarClientes.ForeColor = System.Drawing.Color.White;
-            this.BtnDeletarClientes.Location = new System.Drawing.Point(997, 704);
+            this.BtnDeletarClientes.Location = new System.Drawing.Point(905, 704);
             this.BtnDeletarClientes.Name = "BtnDeletarClientes";
-            this.BtnDeletarClientes.Size = new System.Drawing.Size(312, 79);
+            this.BtnDeletarClientes.Size = new System.Drawing.Size(271, 79);
             this.BtnDeletarClientes.TabIndex = 24;
             this.BtnDeletarClientes.Text = "          Deletar / Desabilitar  Cliente";
             this.BtnDeletarClientes.UseVisualStyleBackColor = false;
@@ -105,11 +108,12 @@
             this.BtnClienteDesabilitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnClienteDesabilitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnClienteDesabilitado.ForeColor = System.Drawing.Color.White;
-            this.BtnClienteDesabilitado.Location = new System.Drawing.Point(668, 704);
+            this.BtnClienteDesabilitado.Location = new System.Drawing.Point(613, 704);
             this.BtnClienteDesabilitado.Name = "BtnClienteDesabilitado";
-            this.BtnClienteDesabilitado.Size = new System.Drawing.Size(312, 79);
+            this.BtnClienteDesabilitado.Size = new System.Drawing.Size(286, 79);
             this.BtnClienteDesabilitado.TabIndex = 25;
-            this.BtnClienteDesabilitado.Text = "     Mostrar Clientes       Desabilitados";
+            this.BtnClienteDesabilitado.Text = "             Mostrar Clientes           Desabilitados";
+            this.BtnClienteDesabilitado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnClienteDesabilitado.UseVisualStyleBackColor = false;
             this.BtnClienteDesabilitado.Click += new System.EventHandler(this.BtnClienteDesabilitado_Click);
             // 
@@ -244,7 +248,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.pictureBox1.Image = global::WfPresentationLayer.Properties.Resources.delete__v1;
-            this.pictureBox1.Location = new System.Drawing.Point(1007, 713);
+            this.pictureBox1.Location = new System.Drawing.Point(915, 713);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(59, 59);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -257,7 +261,7 @@
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.pictureBox3.Image = global::WfPresentationLayer.Properties.Resources.remove_administrator;
-            this.pictureBox3.Location = new System.Drawing.Point(679, 714);
+            this.pictureBox3.Location = new System.Drawing.Point(624, 714);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(62, 62);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -270,7 +274,7 @@
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.pictureBox4.Image = global::WfPresentationLayer.Properties.Resources.icons8_funcionário_homem_80__1_;
-            this.pictureBox4.Location = new System.Drawing.Point(354, 714);
+            this.pictureBox4.Location = new System.Drawing.Point(325, 717);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(55, 59);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -291,12 +295,39 @@
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(1191, 704);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 79);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "         ";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox2.Image = global::WfPresentationLayer.Properties.Resources.icons8_actualizar_40;
+            this.pictureBox2.Location = new System.Drawing.Point(1205, 714);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(88, 59);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 48;
+            this.pictureBox2.TabStop = false;
+            // 
             // FormMostarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1324, 795);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox5);
@@ -317,6 +348,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -340,5 +372,7 @@
         private DataGridViewTextBoxColumn GridTelefone1;
         private DataGridViewTextBoxColumn GridTelefone2;
         private DataGridViewTextBoxColumn GridPontuacao;
+        private Button button1;
+        private PictureBox pictureBox2;
     }
 }

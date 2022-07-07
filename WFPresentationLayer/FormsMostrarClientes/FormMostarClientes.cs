@@ -168,6 +168,19 @@ namespace WfPresentationLayer.Alteraçoes
             GridClientes.Refresh();
             GridClientes.DataSource = null;
         }
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            LimparGrid();
+            Clientes = clienteBLL.GetAll().Dados;
+            foreach (Cliente cliente in Clientes)
+            {
+
+                if (cliente.Ativo == true)
+                {
+                    SincronizarListaGrid(cliente);
+                }
+            }
+        }
         private void PctBtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -194,5 +207,6 @@ namespace WfPresentationLayer.Alteraçoes
                 this.Close();
             }
         }
+
     }
 }

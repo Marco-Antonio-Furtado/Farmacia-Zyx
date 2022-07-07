@@ -48,12 +48,15 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.PctRefresh = new System.Windows.Forms.PictureBox();
+            this.BtnRefresh = new System.Windows.Forms.Button();
             this.pnlProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gridprodutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PctRefresh)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnDesabilitados
@@ -61,7 +64,7 @@
             this.BtnDesabilitados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnDesabilitados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDesabilitados.ForeColor = System.Drawing.Color.White;
-            this.BtnDesabilitados.Location = new System.Drawing.Point(661, 703);
+            this.BtnDesabilitados.Location = new System.Drawing.Point(602, 703);
             this.BtnDesabilitados.Name = "BtnDesabilitados";
             this.BtnDesabilitados.Size = new System.Drawing.Size(277, 79);
             this.BtnDesabilitados.TabIndex = 40;
@@ -74,7 +77,7 @@
             this.BtnDeletarProdutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnDeletarProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDeletarProdutos.ForeColor = System.Drawing.Color.White;
-            this.BtnDeletarProdutos.Location = new System.Drawing.Point(995, 703);
+            this.BtnDeletarProdutos.Location = new System.Drawing.Point(901, 703);
             this.BtnDeletarProdutos.Name = "BtnDeletarProdutos";
             this.BtnDeletarProdutos.Size = new System.Drawing.Size(277, 79);
             this.BtnDeletarProdutos.TabIndex = 39;
@@ -87,7 +90,7 @@
             this.BtnAlterarProdutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnAlterarProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAlterarProdutos.ForeColor = System.Drawing.Color.White;
-            this.BtnAlterarProdutos.Location = new System.Drawing.Point(331, 703);
+            this.BtnAlterarProdutos.Location = new System.Drawing.Point(306, 703);
             this.BtnAlterarProdutos.Name = "BtnAlterarProdutos";
             this.BtnAlterarProdutos.Size = new System.Drawing.Size(277, 79);
             this.BtnAlterarProdutos.TabIndex = 38;
@@ -215,7 +218,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.pictureBox1.Image = global::WfPresentationLayer.Properties.Resources.delete__v1;
-            this.pictureBox1.Location = new System.Drawing.Point(1005, 712);
+            this.pictureBox1.Location = new System.Drawing.Point(911, 712);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(59, 59);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -239,7 +242,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.pictureBox3.Image = global::WfPresentationLayer.Properties.Resources.icons8_no_drugs_64__1_;
-            this.pictureBox3.Location = new System.Drawing.Point(668, 712);
+            this.pictureBox3.Location = new System.Drawing.Point(609, 712);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(62, 62);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -251,7 +254,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.pictureBox4.Image = global::WfPresentationLayer.Properties.Resources.icons8_drugs_64;
-            this.pictureBox4.Location = new System.Drawing.Point(341, 712);
+            this.pictureBox4.Location = new System.Drawing.Point(316, 712);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(62, 62);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -259,12 +262,38 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.BtnAlterarProdutos_Click);
             // 
+            // PctRefresh
+            // 
+            this.PctRefresh.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PctRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.PctRefresh.Image = global::WfPresentationLayer.Properties.Resources.icons8_actualizar_40;
+            this.PctRefresh.Location = new System.Drawing.Point(1201, 712);
+            this.PctRefresh.Name = "PctRefresh";
+            this.PctRefresh.Size = new System.Drawing.Size(97, 59);
+            this.PctRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PctRefresh.TabIndex = 50;
+            this.PctRefresh.TabStop = false;
+            // 
+            // BtnRefresh
+            // 
+            this.BtnRefresh.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnRefresh.ForeColor = System.Drawing.Color.White;
+            this.BtnRefresh.Location = new System.Drawing.Point(1189, 703);
+            this.BtnRefresh.Name = "BtnRefresh";
+            this.BtnRefresh.Size = new System.Drawing.Size(118, 79);
+            this.BtnRefresh.TabIndex = 49;
+            this.BtnRefresh.Text = "         ";
+            this.BtnRefresh.UseVisualStyleBackColor = false;
+            // 
             // FormMostrarProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1326, 794);
+            this.Controls.Add(this.PctRefresh);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -274,6 +303,7 @@
             this.Controls.Add(this.BtnDeletarProdutos);
             this.Controls.Add(this.BtnAlterarProdutos);
             this.Controls.Add(this.pnlProduto);
+            this.Controls.Add(this.BtnRefresh);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "FormMostrarProdutos";
             this.Text = "Produtos";
@@ -284,6 +314,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PctRefresh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -306,5 +337,7 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
+        private PictureBox PctRefresh;
+        private Button BtnRefresh;
     }
 }

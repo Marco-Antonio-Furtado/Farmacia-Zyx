@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnCadastrarCliente = new System.Windows.Forms.Button();
             this.BtnAlterarCliente = new System.Windows.Forms.Button();
             this.BtnDeletarClientes = new System.Windows.Forms.Button();
@@ -49,15 +49,15 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.BtnRefresh = new System.Windows.Forms.Button();
+            this.PctRefresh = new System.Windows.Forms.PictureBox();
             this.PnlCl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PctRefresh)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnCadastrarCliente
@@ -80,7 +80,7 @@
             this.BtnAlterarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnAlterarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAlterarCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnAlterarCliente.Location = new System.Drawing.Point(313, 704);
+            this.BtnAlterarCliente.Location = new System.Drawing.Point(305, 704);
             this.BtnAlterarCliente.Name = "BtnAlterarCliente";
             this.BtnAlterarCliente.Size = new System.Drawing.Size(292, 79);
             this.BtnAlterarCliente.TabIndex = 23;
@@ -96,7 +96,7 @@
             this.BtnDeletarClientes.ForeColor = System.Drawing.Color.White;
             this.BtnDeletarClientes.Location = new System.Drawing.Point(905, 704);
             this.BtnDeletarClientes.Name = "BtnDeletarClientes";
-            this.BtnDeletarClientes.Size = new System.Drawing.Size(271, 79);
+            this.BtnDeletarClientes.Size = new System.Drawing.Size(280, 79);
             this.BtnDeletarClientes.TabIndex = 24;
             this.BtnDeletarClientes.Text = "          Deletar / Desabilitar  Cliente";
             this.BtnDeletarClientes.UseVisualStyleBackColor = false;
@@ -108,12 +108,11 @@
             this.BtnClienteDesabilitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnClienteDesabilitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnClienteDesabilitado.ForeColor = System.Drawing.Color.White;
-            this.BtnClienteDesabilitado.Location = new System.Drawing.Point(613, 704);
+            this.BtnClienteDesabilitado.Location = new System.Drawing.Point(603, 704);
             this.BtnClienteDesabilitado.Name = "BtnClienteDesabilitado";
-            this.BtnClienteDesabilitado.Size = new System.Drawing.Size(286, 79);
+            this.BtnClienteDesabilitado.Size = new System.Drawing.Size(296, 79);
             this.BtnClienteDesabilitado.TabIndex = 25;
             this.BtnClienteDesabilitado.Text = "             Mostrar Clientes           Desabilitados";
-            this.BtnClienteDesabilitado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnClienteDesabilitado.UseVisualStyleBackColor = false;
             this.BtnClienteDesabilitado.Click += new System.EventHandler(this.BtnClienteDesabilitado_Click);
             // 
@@ -133,14 +132,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.GridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GRIDID,
@@ -151,26 +150,26 @@
             this.GridTelefone1,
             this.GridTelefone2,
             this.GridPontuacao});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridClientes.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridClientes.DefaultCellStyle = dataGridViewCellStyle11;
             this.GridClientes.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.GridClientes.Location = new System.Drawing.Point(3, 3);
             this.GridClientes.Name = "GridClientes";
             this.GridClientes.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.GridClientes.RowHeadersWidth = 51;
             this.GridClientes.RowTemplate.Height = 29;
             this.GridClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -261,7 +260,7 @@
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.pictureBox3.Image = global::WfPresentationLayer.Properties.Resources.remove_administrator;
-            this.pictureBox3.Location = new System.Drawing.Point(624, 714);
+            this.pictureBox3.Location = new System.Drawing.Point(615, 714);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(62, 62);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -274,7 +273,7 @@
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.pictureBox4.Image = global::WfPresentationLayer.Properties.Resources.icons8_funcionário_homem_80__1_;
-            this.pictureBox4.Location = new System.Drawing.Point(325, 717);
+            this.pictureBox4.Location = new System.Drawing.Point(317, 717);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(55, 59);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -295,30 +294,32 @@
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
-            // button1
+            // BtnRefresh
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1191, 704);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 79);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "         ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.BtnRefresh.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.BtnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnRefresh.ForeColor = System.Drawing.Color.White;
+            this.BtnRefresh.Location = new System.Drawing.Point(1191, 704);
+            this.BtnRefresh.Name = "BtnRefresh";
+            this.BtnRefresh.Size = new System.Drawing.Size(118, 79);
+            this.BtnRefresh.TabIndex = 34;
+            this.BtnRefresh.Text = "         ";
+            this.BtnRefresh.UseVisualStyleBackColor = false;
+            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
-            // pictureBox2
+            // PctRefresh
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.pictureBox2.Image = global::WfPresentationLayer.Properties.Resources.icons8_actualizar_40;
-            this.pictureBox2.Location = new System.Drawing.Point(1205, 714);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(88, 59);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 48;
-            this.pictureBox2.TabStop = false;
+            this.PctRefresh.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PctRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.PctRefresh.Image = global::WfPresentationLayer.Properties.Resources.icons8_actualizar_40;
+            this.PctRefresh.Location = new System.Drawing.Point(1203, 713);
+            this.PctRefresh.Name = "PctRefresh";
+            this.PctRefresh.Size = new System.Drawing.Size(97, 59);
+            this.PctRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PctRefresh.TabIndex = 48;
+            this.PctRefresh.TabStop = false;
+            this.PctRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // FormMostarClientes
             // 
@@ -326,8 +327,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1324, 795);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.PctRefresh);
+            this.Controls.Add(this.BtnRefresh);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox5);
@@ -348,7 +349,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PctRefresh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -372,7 +373,7 @@
         private DataGridViewTextBoxColumn GridTelefone1;
         private DataGridViewTextBoxColumn GridTelefone2;
         private DataGridViewTextBoxColumn GridPontuacao;
-        private Button button1;
-        private PictureBox pictureBox2;
+        private Button BtnRefresh;
+        private PictureBox PctRefresh;
     }
 }

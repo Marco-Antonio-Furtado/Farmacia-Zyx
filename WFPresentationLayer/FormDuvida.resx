@@ -64,4 +64,28 @@ entregue através do programa Entra21.
 Abaixo seguem os contatos 
 para futuros projetos e eventos </value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABGdBTUEAALGPC/xhBQAAA/5JREFUaEPt
+        2lmoTVEcx/FrnuchU2QWUUreCIlQ5hISMpfpxfiANxEZypvkwYMnHjyIvChDyPBoiOTBPM8z31/Zta3+
+        5+y99tl7nyv7V5+63bvvWuvcs87aa/33rSlSpEiRIv9xOmEO9uEU7uAlvv6hr/U9/UzXzIZ+559KO6zG
+        FfxK6DJWQW3V2nTDXnyA9SKSeI896IpakwZYg3ewBp0G/RG3oRGqmv64AWuQWbiOfqhKZiDLd7WUt5iG
+        XLMA32ANKA/fsRy5ZBmsQVSDVvJMo2msv67VeTVoLFORSfrgDayOq0nryACkmoaIWo13ojmGYDMewbrO
+        x0NswmCo7V2wrrsG3R5Ty0ZYHYUNQji6Z+re+QPW9eVoqm6Fe9/VC7eul3VIJdrlaMdjdRLWFlam4DYO
+        YR6GoTua/tEDwzEfh6G99WRYaQ+rb9HU7oyKo+2i1YGrMbJOE1h9B3ajomjzHndv3AtZRwun1XdAM7Gi
+        A4fuc1bDlrHIOuNh9R22Eonjc8TbgqyjRdDqO+wSEkULwE9YjVoWI+usgNV3mMbcEd5R9cFq0HIUeeU4
+        rDGEzYJ3VHKxGnN9gg7/eUWL4xdYYwmoaOAd1ZmsxlwHkXeOwBpL4CS8cxdWY66JyDs6xFhjCWjz4p0X
+        sBpzpbK78YymtTWWwDN4J+pzIloR6yHvaEtqjSfwGd5R3dhqzNUKeUezyhpLQGP3zitYjbncU1Ie0QHE
+        GktAY/eOPvhWYy6VaPPOBlhjCdyCd07Dasx1EXmmDlSutcYS0Ni9E3fjIdORV+bCGkPYdnhHD8GsxixP
+        0RdZR8fDJ7DGEDYB3ukCn8ODqhpZPhUYiHuw+g5TeaglEkVHLavRUvRUQKemNO/N9aFTUtxCxAUkjlZg
+        q9EoereXQjWopNERTy807hY3oKciidMGH2E1HIem1znsgAaiaVkq+pmu0bXnkaTa+Ryqe1WUUkU8VRon
+        4Wboe+Xo9lXuOa92T7rG+t24VBuvOBqIVabVC9W/J6g8G1Wk1xRvjahoRj2A1UYUvbuVfIT+ynpYnRyD
+        os+bXpR1jYxE3IyB1UaUVEtMeoxxFW4num0NhdITKhoEs0GF8ftQcd03+gy7fZWj6+si1WhjoduO29l+
+        pJ2FcPspRZuezGri2sG4D8J1MmmGNKMTWLiPUnRmH4VMswTuDuwA0oweooXbt+i2pX11LlkE98H4CYxG
+        nNU4TsJtu1QpnYlcMw5xigRJY7UlqrWNQFXSG1GbhaSx2jqDPB7alY0292vxGtYgkybcht5VbTt1+K81
+        6QAdvN1bV9Lodx9DD+lS20FlkRbQSn4WWtiSLGKaNXpHq/6vhr7RPls15CJFihQpUiQyNTW/AT7o8u7y
+        BHdpAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

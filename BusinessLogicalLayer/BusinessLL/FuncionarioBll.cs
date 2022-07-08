@@ -84,15 +84,21 @@ namespace BusinessLogicalLayer.BusinessLL
         public Response LoginBLL(string email, string senha)
         {
             SingleResponse<Funcionario> response = FuncionarioDAL.LoginDAL(email);
-            if (response.Item.Ativo == false)
+            if(response.Item.ID == 0)
             {
-                return new Response("NOME_FUNCIONARIO Desabilitado", false);
+                return new Response("Login Errado", false);
             }
             if (response.Item.Senha == HashSenha.ComputeSha256Hash(senha))
             {
+                if (response.Item.Ativo == false)
+                {
+                    return new Response("Funcionario Desabilitado", false);
+                }
                 SystemParameters.Logar(response.Item);
                 return new Response("login Certo", true);
+                
             }
+            
             else return new Response("login errado", false);
         }
         public Response Disable(int FunID)

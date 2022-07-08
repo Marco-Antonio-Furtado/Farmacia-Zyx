@@ -19,7 +19,7 @@ namespace WfPresentationLayer.Alteraçoes
     public partial class Alteracao_Funcionario : Form
     {
         private Form _objForm2;
-        FuncionarioBll funcionarioBll = new FuncionarioBll();
+        FuncionarioBll funcionarioBll = new();
 
         public Alteracao_Funcionario()
         {

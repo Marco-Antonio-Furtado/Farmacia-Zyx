@@ -1,7 +1,4 @@
-﻿
-using BusinessLogicalLayer;
-using BusinessLogicalLayer.BusinessLL;
-using Entities;
+﻿using BusinessLogicalLayer.BusinessLL;
 using Shared;
 
 namespace WfPresentationLayer

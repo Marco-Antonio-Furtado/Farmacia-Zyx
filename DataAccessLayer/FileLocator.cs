@@ -2,6 +2,10 @@
 {
     internal class FileLocator
     {
+        /// <summary>
+        /// Classe para deixar um caminho padrao do banco de dados do sistema 
+        /// onde o mesmo devera se encontrar nos documentos do windows para ser achado
+        /// </summary>
         private FileLocator()
         {
 

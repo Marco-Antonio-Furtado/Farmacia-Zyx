@@ -19,7 +19,7 @@ namespace DataAccessLayer
                 DbExecuter dbExecuter = new();
                 return DbExecuter.GetData<Cargo>(command);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateDataFailedResponse<Cargo>();
 
@@ -36,7 +36,7 @@ namespace DataAccessLayer
                 DbExecuter dbExecuter = new();
                 return DbExecuter.GetItem<Cargo>(command);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Cargo>(null);
 

@@ -1,10 +1,9 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
-using static System.Environment;
 
 namespace DataAccessLayer
 {
-   
+
 
     /// <summary>
     /// classe que auxilia as operacoes do dal 

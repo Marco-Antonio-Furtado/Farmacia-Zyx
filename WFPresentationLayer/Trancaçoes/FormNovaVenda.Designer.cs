@@ -47,13 +47,6 @@
             this.LabelQuantidade = new System.Windows.Forms.Label();
             this.LabelCodigoProduto = new System.Windows.Forms.Label();
             this.DataGrid = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BtnProcurarCliente = new System.Windows.Forms.Button();
-            this.BtnNovoCliente = new System.Windows.Forms.Button();
-            this.ImageBtnFechar = new System.Windows.Forms.PictureBox();
-            this.LblText = new System.Windows.Forms.Label();
-            this.TxtProcurarCliente = new System.Windows.Forms.TextBox();
-            this.BtnNovoProduto = new System.Windows.Forms.Button();
             this.DataGridProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataGridValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatagridQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,10 +54,23 @@
             this.DataGridNomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataGridFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataGridData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnProcurarCliente = new System.Windows.Forms.Button();
+            this.BtnNovoCliente = new System.Windows.Forms.Button();
+            this.ImageBtnFechar = new System.Windows.Forms.PictureBox();
+            this.LblText = new System.Windows.Forms.Label();
+            this.TxtProcurarCliente = new System.Windows.Forms.TextBox();
+            this.BtnNovoProduto = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.GroupBoxVenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelNomeCLiente
@@ -80,6 +86,9 @@
             // 
             // GroupBoxVenda
             // 
+            this.GroupBoxVenda.Controls.Add(this.pictureBox4);
+            this.GroupBoxVenda.Controls.Add(this.pictureBox3);
+            this.GroupBoxVenda.Controls.Add(this.pictureBox2);
             this.GroupBoxVenda.Controls.Add(this.BtnProcurarProduto);
             this.GroupBoxVenda.Controls.Add(this.TxtBoxProcurarProduto);
             this.GroupBoxVenda.Controls.Add(this.LblValorTotal);
@@ -163,11 +172,11 @@
             this.BtnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.BtnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnExcluir.ForeColor = System.Drawing.Color.White;
-            this.BtnExcluir.Location = new System.Drawing.Point(775, 126);
+            this.BtnExcluir.Location = new System.Drawing.Point(746, 126);
             this.BtnExcluir.Name = "BtnExcluir";
-            this.BtnExcluir.Size = new System.Drawing.Size(200, 79);
+            this.BtnExcluir.Size = new System.Drawing.Size(229, 79);
             this.BtnExcluir.TabIndex = 28;
-            this.BtnExcluir.Text = "Excluir Linha";
+            this.BtnExcluir.Text = "            Excluir Linha";
             this.BtnExcluir.UseVisualStyleBackColor = false;
             this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
@@ -188,7 +197,7 @@
             this.BtnCadastrarNovaVenda.Name = "BtnCadastrarNovaVenda";
             this.BtnCadastrarNovaVenda.Size = new System.Drawing.Size(240, 79);
             this.BtnCadastrarNovaVenda.TabIndex = 24;
-            this.BtnCadastrarNovaVenda.Text = "Cadastrar Venda";
+            this.BtnCadastrarNovaVenda.Text = "        Cadastrar Venda";
             this.BtnCadastrarNovaVenda.UseVisualStyleBackColor = false;
             this.BtnCadastrarNovaVenda.Click += new System.EventHandler(this.BtnCadastrarNovaVenda_Click);
             // 
@@ -220,9 +229,9 @@
             this.BtnNovoIten.ForeColor = System.Drawing.Color.White;
             this.BtnNovoIten.Location = new System.Drawing.Point(480, 126);
             this.BtnNovoIten.Name = "BtnNovoIten";
-            this.BtnNovoIten.Size = new System.Drawing.Size(277, 79);
+            this.BtnNovoIten.Size = new System.Drawing.Size(257, 79);
             this.BtnNovoIten.TabIndex = 21;
-            this.BtnNovoIten.Text = "Novo Item";
+            this.BtnNovoIten.Text = "         Novo Item";
             this.BtnNovoIten.UseVisualStyleBackColor = false;
             this.BtnNovoIten.Click += new System.EventHandler(this.BtnNovoIten_Click);
             // 
@@ -293,6 +302,55 @@
             this.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGrid.Size = new System.Drawing.Size(1237, 473);
             this.DataGrid.TabIndex = 20;
+            // 
+            // DataGridProduto
+            // 
+            this.DataGridProduto.HeaderText = "Produto";
+            this.DataGridProduto.MinimumWidth = 6;
+            this.DataGridProduto.Name = "DataGridProduto";
+            this.DataGridProduto.Width = 125;
+            // 
+            // DataGridValorUnitario
+            // 
+            this.DataGridValorUnitario.HeaderText = "Valor Unitario";
+            this.DataGridValorUnitario.MinimumWidth = 50;
+            this.DataGridValorUnitario.Name = "DataGridValorUnitario";
+            this.DataGridValorUnitario.Width = 150;
+            // 
+            // DatagridQuantidade
+            // 
+            this.DatagridQuantidade.HeaderText = "Quantidade";
+            this.DatagridQuantidade.MinimumWidth = 6;
+            this.DatagridQuantidade.Name = "DatagridQuantidade";
+            this.DatagridQuantidade.Width = 130;
+            // 
+            // DataGridValorTotal
+            // 
+            this.DataGridValorTotal.HeaderText = "Valor Total";
+            this.DataGridValorTotal.MinimumWidth = 6;
+            this.DataGridValorTotal.Name = "DataGridValorTotal";
+            this.DataGridValorTotal.Width = 125;
+            // 
+            // DataGridNomeCliente
+            // 
+            this.DataGridNomeCliente.HeaderText = "Nome Cliente";
+            this.DataGridNomeCliente.MinimumWidth = 6;
+            this.DataGridNomeCliente.Name = "DataGridNomeCliente";
+            this.DataGridNomeCliente.Width = 160;
+            // 
+            // DataGridFuncionario
+            // 
+            this.DataGridFuncionario.HeaderText = "Nome Funcionario";
+            this.DataGridFuncionario.MinimumWidth = 6;
+            this.DataGridFuncionario.Name = "DataGridFuncionario";
+            this.DataGridFuncionario.Width = 200;
+            // 
+            // DataGridData
+            // 
+            this.DataGridData.HeaderText = "DIa";
+            this.DataGridData.MinimumWidth = 6;
+            this.DataGridData.Name = "DataGridData";
+            this.DataGridData.Width = 125;
             // 
             // pictureBox1
             // 
@@ -378,54 +436,41 @@
             this.BtnNovoProduto.UseVisualStyleBackColor = false;
             this.BtnNovoProduto.Click += new System.EventHandler(this.BtnNovoProduto_Click);
             // 
-            // DataGridProduto
+            // pictureBox2
             // 
-            this.DataGridProduto.HeaderText = "Produto";
-            this.DataGridProduto.MinimumWidth = 6;
-            this.DataGridProduto.Name = "DataGridProduto";
-            this.DataGridProduto.Width = 125;
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox2.Image = global::WfPresentationLayer.Properties.Resources.icons8_add_shopping_cart_80;
+            this.pictureBox2.Location = new System.Drawing.Point(493, 139);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(68, 55);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 104;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.BtnNovoIten_Click);
             // 
-            // DataGridValorUnitario
+            // pictureBox3
             // 
-            this.DataGridValorUnitario.HeaderText = "Valor Unitario";
-            this.DataGridValorUnitario.MinimumWidth = 50;
-            this.DataGridValorUnitario.Name = "DataGridValorUnitario";
-            this.DataGridValorUnitario.Width = 150;
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox3.Image = global::WfPresentationLayer.Properties.Resources.delete_sign1;
+            this.pictureBox3.Location = new System.Drawing.Point(758, 139);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(68, 55);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 105;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
-            // DatagridQuantidade
+            // pictureBox4
             // 
-            this.DatagridQuantidade.HeaderText = "Quantidade";
-            this.DatagridQuantidade.MinimumWidth = 6;
-            this.DatagridQuantidade.Name = "DatagridQuantidade";
-            this.DatagridQuantidade.Width = 130;
-            // 
-            // DataGridValorTotal
-            // 
-            this.DataGridValorTotal.HeaderText = "Valor Total";
-            this.DataGridValorTotal.MinimumWidth = 6;
-            this.DataGridValorTotal.Name = "DataGridValorTotal";
-            this.DataGridValorTotal.Width = 125;
-            // 
-            // DataGridNomeCliente
-            // 
-            this.DataGridNomeCliente.HeaderText = "Nome Cliente";
-            this.DataGridNomeCliente.MinimumWidth = 6;
-            this.DataGridNomeCliente.Name = "DataGridNomeCliente";
-            this.DataGridNomeCliente.Width = 160;
-            // 
-            // DataGridFuncionario
-            // 
-            this.DataGridFuncionario.HeaderText = "Nome Funcionario";
-            this.DataGridFuncionario.MinimumWidth = 6;
-            this.DataGridFuncionario.Name = "DataGridFuncionario";
-            this.DataGridFuncionario.Width = 200;
-            // 
-            // DataGridData
-            // 
-            this.DataGridData.HeaderText = "DIa";
-            this.DataGridData.MinimumWidth = 6;
-            this.DataGridData.Name = "DataGridData";
-            this.DataGridData.Width = 125;
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.pictureBox4.Image = global::WfPresentationLayer.Properties.Resources.icons8_money_80;
+            this.pictureBox4.Location = new System.Drawing.Point(1009, 139);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(50, 55);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 106;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.BtnCadastrarNovaVenda_Click);
             // 
             // FormNovaVenda
             // 
@@ -451,6 +496,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBtnFechar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -488,5 +536,8 @@
         private DataGridViewTextBoxColumn DataGridNomeCliente;
         private DataGridViewTextBoxColumn DataGridFuncionario;
         private DataGridViewTextBoxColumn DataGridData;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox2;
     }
 }

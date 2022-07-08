@@ -56,7 +56,7 @@ namespace DataAccessLayer
                     scope.Complete();
                     return ResponseFactory.CreateInstance().CreateSingleSuccessResponse(transacao);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Saida>(null);
                 }
@@ -114,7 +114,7 @@ namespace DataAccessLayer
                 }
                 return ResponseFactory.CreateInstance().CreateDataSuccessResponse(saidas);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateDataFailedResponse<SaidaViewModel>();
             }
@@ -130,7 +130,7 @@ namespace DataAccessLayer
                 DbExecuter dbexecutor = new();
                 return DbExecuter.GetData<SaidaViewModel>(command);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateDataFailedResponse<SaidaViewModel>();
             }

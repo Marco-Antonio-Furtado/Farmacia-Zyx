@@ -55,7 +55,7 @@ namespace DataAccessLayer
                 DbExecuter dbexecutor = new();
                 return DbExecuter.Execute(command);               
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
@@ -102,7 +102,7 @@ namespace DataAccessLayer
             {
                 return DbExecuter.Execute(command);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
@@ -117,7 +117,7 @@ namespace DataAccessLayer
                 DbExecuter dbexecutor = new();
                 return DbExecuter.GetData<Cliente>(command);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateDataFailedResponse<Cliente>();
             }
@@ -131,7 +131,7 @@ namespace DataAccessLayer
             {
                 return DbExecuter.GetItem<Cliente>(command);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Cliente>(null);
             }

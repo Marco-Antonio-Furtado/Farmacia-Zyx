@@ -21,7 +21,7 @@ namespace WfPresentationLayer.Alteraçoes
     public partial class FormMostrarProdutos : Form
     {
         private Form _objForm3;
-        ProdutoBll ProdutoBll = new ProdutoBll();
+        ProdutoBll ProdutoBll = new();
         
         private bool _isOpenedByAnotherForm;
 
@@ -36,7 +36,7 @@ namespace WfPresentationLayer.Alteraçoes
         }
 
         public Produto ProdutoSelecionado123 { get; set; }
-        List<Produto> Produtos = new List<Produto>();
+        List<Produto> Produtos = new();
         private void BtnCadastrarProduto_Click(object sender, EventArgs e)
         {
             _objForm3?.Close();
@@ -64,7 +64,7 @@ namespace WfPresentationLayer.Alteraçoes
             else
             {
                 Produto p = new();
-                Laboratorio lab = new Laboratorio();
+                Laboratorio lab = new();
                 p.ID = Convert.ToInt32(Gridprodutos.CurrentRow.Cells[0].Value.ToString());
                 p.Nome = Convert.ToString(Gridprodutos.CurrentRow.Cells[1].Value.ToString());
                 lab.Razao_Social = Convert.ToString(Gridprodutos.CurrentRow.Cells[2].Value.ToString());
@@ -172,7 +172,7 @@ namespace WfPresentationLayer.Alteraçoes
         private void Gridprodutos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            Produto ProdutoSelecionado = new Produto();
+            Produto ProdutoSelecionado = new();
             ProdutoSelecionado.ID = Convert.ToInt32(Gridprodutos.Rows[e.RowIndex].Cells[0].Value);
             SingleResponse<Produto> response = ProdutoBll.GetByID(ProdutoSelecionado.ID);
             if (!response.HasSuccess)

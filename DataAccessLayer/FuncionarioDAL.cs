@@ -2,7 +2,6 @@
 using Entities.Propriedades;
 using Shared;
 using System.Data.SqlClient;
-using System.Text;
 
 namespace DataAccessLayer
 {
@@ -89,7 +88,7 @@ namespace DataAccessLayer
                 DbExecuter dbexecutor = new();
                 return DbExecuter.Login(command);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Funcionario>(null);
             }
@@ -160,7 +159,7 @@ namespace DataAccessLayer
                 return ResponseFactory.CreateInstance().CreateDataSuccessResponse(funcionarios);
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateDataFailedResponse<Funcionario>();
             }
@@ -213,7 +212,7 @@ namespace DataAccessLayer
                  return ResponseFactory.CreateInstance().CreateSingleSuccessResponse(Fun);
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Funcionario>(null);
             }
@@ -233,7 +232,7 @@ namespace DataAccessLayer
                 DbExecuter dbexecutor = new();
                 return DbExecuter.Execute(command);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }

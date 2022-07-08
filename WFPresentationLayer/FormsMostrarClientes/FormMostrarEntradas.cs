@@ -18,7 +18,7 @@ namespace WfPresentationLayer.Alteraçoes
     /// </summary>
     public partial class FormMostrarEntradas : Form
     {
-        EntradaBll entradaBll = new EntradaBll();
+        EntradaBll entradaBll = new();
         public FormMostrarEntradas()
         {
             InitializeComponent();
@@ -43,12 +43,12 @@ namespace WfPresentationLayer.Alteraçoes
         }
         private void BtnCadastrarVendas_Click(object sender, EventArgs e)
         {
-            FormNovaCompra form = new FormNovaCompra();
+            FormNovaCompra form = new();
             form.ShowDialog();
         }
         private void BtnCadastrarCompra_Click(object sender, EventArgs e)
         {
-            FormNovaCompra form = new FormNovaCompra();
+            FormNovaCompra form = new();
             form.ShowDialog();
         }
         private void BtnProcurarCompra_Click(object sender, EventArgs e)

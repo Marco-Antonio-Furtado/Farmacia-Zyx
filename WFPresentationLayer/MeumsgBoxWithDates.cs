@@ -24,7 +24,7 @@
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            ParametrosDatas parametros = new ParametrosDatas()
+            ParametrosDatas parametros = new()
             {
                 Inicio = DateTime.Now,
                 Fim = DateTime.Now,
@@ -34,7 +34,7 @@
         }
         private void BtnOk_Click_1(object sender, EventArgs e)
         {
-            ParametrosDatas parametros = new ParametrosDatas()
+            ParametrosDatas parametros = new()
             {
                 Inicio = DataInicio.Value,
                 Fim = DataFim.Value,

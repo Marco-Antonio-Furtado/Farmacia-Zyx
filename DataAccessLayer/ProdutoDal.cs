@@ -56,7 +56,7 @@ namespace DataAccessLayer
                 }
                 return ResponseFactory.CreateInstance().CreateSingleSuccessResponse(produto);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Produto>(null);
             }
@@ -101,7 +101,7 @@ namespace DataAccessLayer
                 DbExecuter.Execute(command);
                 return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
@@ -119,7 +119,7 @@ namespace DataAccessLayer
                 DbExecuter.Execute(command);
                 return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
@@ -136,7 +136,7 @@ namespace DataAccessLayer
                 DbExecuter.Execute(command);
                 return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
@@ -176,7 +176,7 @@ namespace DataAccessLayer
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateDataFailedResponse<Produto>();
             }
@@ -212,7 +212,7 @@ namespace DataAccessLayer
                 }
                 return ResponseFactory.CreateInstance().CreateSingleSuccessResponse(p);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Produto>(null);
             }

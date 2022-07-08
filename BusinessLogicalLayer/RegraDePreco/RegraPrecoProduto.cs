@@ -48,7 +48,7 @@ namespace BusinessLogicalLayer.RegraDePreco
                 }
                 return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
-            catch(Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }

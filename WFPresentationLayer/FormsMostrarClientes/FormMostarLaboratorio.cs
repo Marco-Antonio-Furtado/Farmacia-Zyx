@@ -19,12 +19,12 @@ namespace WfPresentationLayer.FormsMostrarClientes
     public partial class FormMostarLaboratorio : Form
     {
         Form _objForm5;
-        LaboratorioBLL laboratorioBLL = new LaboratorioBLL();
+        LaboratorioBLL laboratorioBLL = new();
         public FormMostarLaboratorio()
         {
             InitializeComponent();
         }
-        List<Laboratorio> Laboratorios = new List<Laboratorio>();
+        List<Laboratorio> Laboratorios = new();
         private void BtnCadastrarlaboratorio_Click(object sender, EventArgs e)
         {
             _objForm5?.Close();
@@ -45,7 +45,6 @@ namespace WfPresentationLayer.FormsMostrarClientes
                 return;
             }
             DataGridViewRow row = this.GridLaboratorio.SelectedRows[0];
-            int i = 32;
             if (GridLaboratorio.CurrentRow.Cells[0].Value == null)
             {
                 MeuMessageBox.Show("Voce nao selecionou nenhuma coluna");

@@ -48,7 +48,7 @@ namespace DataAccessLayer
                 DbExecuter dbexecutor = new();
                 return DbExecuter.Execute(command);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateFailedResponse();
             }
@@ -114,7 +114,7 @@ namespace DataAccessLayer
                 DbExecuter dbexecutor = new();
                 return DbExecuter.GetData<Laboratorio>(command);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateDataFailedResponse<Laboratorio>();
             }

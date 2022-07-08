@@ -14,7 +14,7 @@ namespace WfPresentationLayer.Alteraçoes
     /// </summary>
     public partial class FormMostrarSaidas : Form
     {
-        SaidaBll saidaBll = new SaidaBll();
+        SaidaBll saidaBll = new();
         public FormMostrarSaidas()
         {
             InitializeComponent();
@@ -40,7 +40,7 @@ namespace WfPresentationLayer.Alteraçoes
         }
         private void BtnCadastrarVendas_Click(object sender, EventArgs e)
         {
-            FormNovaVenda form = new FormNovaVenda();
+            FormNovaVenda form = new();
             form.ShowDialog();
         }
         private void BtnProcurarCompra_Click(object sender, EventArgs e)

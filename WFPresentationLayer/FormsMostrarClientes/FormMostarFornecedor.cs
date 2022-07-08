@@ -21,7 +21,7 @@ namespace WfPresentationLayer.Alteraçoes
     public partial class Alteracao_Fornecedor : Form
     {
         private Form _objForm5;
-        FornecedorBll fornecedorBll = new FornecedorBll();
+        FornecedorBll fornecedorBll = new();
         public Fornecedor fornecedorSelecionado { get; set; }
         private bool _isOpenedByAnotherForm;
         public Alteracao_Fornecedor(bool v)
@@ -77,7 +77,7 @@ namespace WfPresentationLayer.Alteraçoes
             }
             else
             {
-                Fornecedor forne = new Fornecedor();
+                Fornecedor forne = new();
                 forne.ID = Convert.ToInt32(GridFornecedor.CurrentRow.Cells[0].Value.ToString());
                 forne.Razao_Social = Convert.ToString(GridFornecedor.CurrentRow.Cells[1].Value.ToString());
                 forne.Telefone = Convert.ToString(GridFornecedor.CurrentRow.Cells[2].Value.ToString());
@@ -172,7 +172,7 @@ namespace WfPresentationLayer.Alteraçoes
         /// <param name="e"></param>
         private void GridFornecedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Fornecedor fornecedorselecionado = new Fornecedor();
+            Fornecedor fornecedorselecionado = new();
             fornecedorselecionado.ID = Convert.ToInt32(GridFornecedor.Rows[e.RowIndex].Cells[0].Value);
             SingleResponse<Fornecedor> response = fornecedorBll.GetByID(fornecedorselecionado.ID);
             if (!response.HasSuccess)

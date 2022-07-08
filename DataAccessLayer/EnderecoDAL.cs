@@ -60,9 +60,6 @@ namespace DataAccessLayer
                 return new Response(ex.Message, false);
 
             }
-            return new Response("Endereco alterado com sucesso", true);
-
-
         }
         public Response Delete(int id)
         {

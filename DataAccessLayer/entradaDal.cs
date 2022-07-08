@@ -48,7 +48,7 @@ namespace Entities
                     scope.Complete();
                     return ResponseFactory.CreateInstance().CreateSingleSuccessResponse(transacao);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     return ResponseFactory.CreateInstance().CreateSingleFailedResponse<Entrada>(null);
                 }
@@ -104,7 +104,7 @@ namespace Entities
                 }
                 return ResponseFactory.CreateInstance().CreateDataSuccessResponse(entradas);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateDataFailedResponse<EntradaViewModel>();
 
@@ -120,7 +120,7 @@ namespace Entities
                 DbExecuter dbexecutor = new();
                 return DbExecuter.GetData<EntradaViewModel>(command);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ResponseFactory.CreateInstance().CreateDataFailedResponse<EntradaViewModel>();
             }

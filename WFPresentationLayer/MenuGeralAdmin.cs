@@ -1,10 +1,7 @@
 ﻿using BusinessLogicalLayer;
-using BusinessLogicalLayer.BusinessLL;
 using Shared;
 using WfPresentationLayer.Alteraçoes;
-using WfPresentationLayer.FormCadastros;
 using WfPresentationLayer.FormsMostrarClientes;
-using WfPresentationLayer.Trancaçoes;
 
 
 namespace WfPresentationLayer

@@ -143,6 +143,16 @@ namespace WfPresentationLayer.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_sign1 {
+            get {
+                object obj = ResourceManager.GetObject("delete-sign1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap expand {
             get {
                 object obj = ResourceManager.GetObject("expand", resourceCulture);
@@ -236,6 +246,16 @@ namespace WfPresentationLayer.Properties {
         internal static System.Drawing.Bitmap icons8_actualizar_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-actualizar-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_shopping_cart_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-shopping-cart-80", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -516,6 +536,16 @@ namespace WfPresentationLayer.Properties {
         internal static System.Drawing.Bitmap icons8_log_in_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-log-in-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_money_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-money-80", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

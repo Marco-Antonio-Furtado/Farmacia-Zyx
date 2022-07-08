@@ -22,7 +22,7 @@ namespace WfPresentationLayer.Alteraçoes
     public partial class FormMostarClientes : Form
     {
         private Form _objForm1;
-        private ClienteBll clienteBLL = new ClienteBll();
+        private ClienteBll clienteBLL = new();
         public Cliente ClienteSelecionado { get; set; }
         private bool _isOpenedByAnotherForm;
         public FormMostarClientes(bool v)
@@ -34,7 +34,7 @@ namespace WfPresentationLayer.Alteraçoes
         {
             InitializeComponent();
         }
-        List<Cliente> Clientes = new List<Cliente>();
+        List<Cliente> Clientes = new();
 
         
         private void FormMostarClientes_Load(object sender, EventArgs e)

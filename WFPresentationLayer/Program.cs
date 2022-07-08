@@ -1,10 +1,3 @@
-using System.Globalization;
-using WfPresentationLayer.Alteraçoes;
-using WfPresentationLayer.FormCadastros;
-using WfPresentationLayer.FormsMostrarClientes;
-using WfPresentationLayer.Trancaçoes;
-using static System.Environment;
-
 namespace WfPresentationLayer
 {
     internal static class Program

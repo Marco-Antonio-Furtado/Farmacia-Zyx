@@ -56,7 +56,7 @@ namespace WfPresentationLayer
             List<Cargo> Cargos = cargo.GetAll().Dados;
             foreach (Cargo cargo in Cargos)
             {
-                if (cargo.Ativo = true)
+                if (cargo.Ativo == true)
                 {
                     listaAtiva.Add(cargo);
                 }
